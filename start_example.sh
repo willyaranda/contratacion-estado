@@ -1,0 +1,3 @@
+#!/bin/bash
+
+env AWS_ACCESS_KEY_ID=AKIA4D3DPGPNKP2LKTE3 AWS_SECRET_ACCESS_KEY=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 node index.js
