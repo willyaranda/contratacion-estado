@@ -191,6 +191,7 @@ footer{padding:24px 0 40px}
     <section class="kpis" id="kpis2"></section>
     <section class="grid2">
       <div class="panel"><h2>Importe adjudicado por año <span class="note">(clic para filtrar)</span></h2><div id="c-year"></div></div>
+      <div class="panel"><h2>Contratos adjudicados por año <span class="note">(clic para filtrar)</span></h2><div id="c-year-n"></div></div>
       <div class="panel"><h2>Nº de contratos por mes <span class="note">(clic para filtrar)</span></h2><div id="c-month"></div></div>
       <div class="panel"><h2>Por tipo de contrato</h2><div id="c-type" class="bars"></div></div>
       <div class="panel"><h2>Por procedimiento</h2><div id="c-proc" class="bars"></div></div>
@@ -329,7 +330,7 @@ const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin a
 // licitaciones por la fecha de publicación del anuncio; contratos menores (sin licitación) por la de adjudicación.
 const PERIOD_START = "2023-06-17";
 const PERIODS = [{ label: "Partido Popular (hasta el 16/06/2023)" }, { label: "Sentir Aranda (desde el 17/06/2023)" }];
-const emptyP = () => [{ n: 0, sum: 0 }, { n: 0, sum: 0 }];
+const emptyP = () => [{ n: 0, nAw: 0, sum: 0 }, { n: 0, nAw: 0, sum: 0 }];
 const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["sentiraranda","Sentir Aranda vs Partido Popular"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
@@ -472,9 +473,9 @@ function passes(r, skip = []) {
 function agg(list, keyFn) {
   const m = new Map();
   for (const r of list) {
-    const k = keyFn(r), e = m.get(k) || { key:k, n:0, sum:0, byP: emptyP() };
+    const k = keyFn(r), e = m.get(k) || { key:k, n:0, nAw:0, sum:0, byP: emptyP() };
     e.n++; e.byP[r.period].n++;
-    if (r.hasAward) { e.sum += r.amount; e.byP[r.period].sum += r.amount; }
+    if (r.hasAward) { e.sum += r.amount; e.nAw++; e.byP[r.period].sum += r.amount; e.byP[r.period].nAw++; }
     m.set(k, e);
   }
   return [...m.values()];
@@ -721,6 +722,11 @@ function renderResumen() {
   colChart($("c-year"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, sum:0, byP: emptyP() }) })), {
     label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: sumParts,
     title: (e) => `${e.y}: ${eur.format(e.sum)} en ${e.n} contratos`,
+    active: (e) => String(e.y) === String(state.year), onclick: (e) => toggleFilter("year", e.y, "f-year"),
+  });
+  colChart($("c-year-n"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, nAw:0, sum:0, byP: emptyP() }) })), {
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.nAw, parts: (e) => [e.byP[0].nAw, e.byP[1].nAw],
+    title: (e) => `${e.y}: ${nf.format(e.nAw)} contratos adjudicados` + (e.n !== e.nAw ? ` (${nf.format(e.n)} en total, con los no adjudicados)` : ""),
     active: (e) => String(e.y) === String(state.year), onclick: (e) => toggleFilter("year", e.y, "f-year"),
   });
   const forMonth = R.filter((r) => passes(r, ["month"]));
