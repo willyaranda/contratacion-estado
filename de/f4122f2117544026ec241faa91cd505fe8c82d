@@ -1,0 +1,48 @@
+transparencia/build.js
+  s_3e20ed0ad9d3d2::t_f36f4a6041547a 65
+  s_3e20ed0ad9d3d2::t_b33f882048a6a9 22-35,38-40
+docs/index.html
+  s_3e20ed0ad9d3d2::t_ae1871352cfc4d 109-113,277-334,385,403,460,715,722,734,1123-1176,1297,1299
+test/build.test.js
+  s_3e20ed0ad9d3d2::t_f6398e6bdda650 6-8,72,77-91
+test/dump.test.js
+  s_3e20ed0ad9d3d2::t_17d734ebff0119 133-147
+test/extract.test.js
+  s_3e20ed0ad9d3d2::t_3c60e34c1054d7 6,99,102-103,106,188-247
+test/fixtures/dump/licitaciones/11055187-1702891820880.json
+  s_3e20ed0ad9d3d2::t_c744f29063377b 1-853
+test/fixtures/dump/licitaciones/12305268-1686900863185.json
+  s_3e20ed0ad9d3d2::t_28477d0ac01b85 1-657
+test/fixtures/dump/licitaciones/12581278-1683900221244.json
+  s_3e20ed0ad9d3d2::t_394c0afcd83b97 1-433
+test/fixtures/dump/licitaciones/18074070-1769779750555.json
+  s_3e20ed0ad9d3d2::t_1b439b19af2bd9 1-766
+test/fixtures/dump/menores/11997705-1675620018843.json
+  s_3e20ed0ad9d3d2::t_11d7cb1a30c6e0 1-256
+transparencia/assets/README.md
+  s_3e20ed0ad9d3d2::t_91deedfdf37c79 1-9
+transparencia/assets/bandera-ue.svg
+  s_3e20ed0ad9d3d2::t_28723b1d75a946 1-16
+transparencia/assets/prtr.svg
+  s_3e20ed0ad9d3d2::t_93308a2afb99cc 1-244
+transparencia/extract.js
+  s_3e20ed0ad9d3d2::t_936797d2dc6140 36-62,108-110,135-139
+transparencia/template.html
+  s_3e20ed0ad9d3d2::t_dbdf6afc58f35e 108-112,276-333,402,459,714,721,733,1122-1175,1296,1298
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "def4122f2117544026ec241faa91cd505fe8c82d",
+  "prompts": {},
+  "sessions": {
+    "s_3e20ed0ad9d3d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c192d70d-4c3e-4c50-8895-b3f641832bed",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
