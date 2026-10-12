@@ -156,7 +156,7 @@ footer{padding:24px 0 40px}
       <div class="panel">
         <h2>Por tramo de importe adjudicado <span class="note">(clic para filtrar)</span></h2>
         <div id="c-range" class="bars"></div>
-        <p class="note">Referencia: el contrato menor tiene un límite de 15.000 € en servicios y suministros y de 40.000 € en obras (art. 118 LCSP).</p>
+        <p class="note">Cada tramo incluye su importe superior (en «Hasta 3.000 €» entra un contrato de 3.000,00 €). Referencia: el contrato menor tiene un límite de 15.000 € en servicios y suministros y de 40.000 € en obras (art. 118 LCSP).</p>
       </div>
       <div class="panel">
         <h2>Contratos de mayor importe</h2>
@@ -248,7 +248,8 @@ const KIND = {licitacion:"Licitación",menor:"Contrato menor"};
 const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
-const RANGES = [["Hasta 2.000 €",0,2000],["2.000 – 15.000 €",2000,15000],["15.000 – 40.000 €",15000,40000],["Más de 40.000 €",40000,Infinity]];
+// Tramos (desde, hasta]: cada uno incluye su importe superior ("hasta 3.000" incluye 3.000,00 €)
+const RANGES = [["Hasta 3.000 €",-Infinity,3000],["3.000 – 5.000 €",3000,5000],["5.000 – 15.000 €",5000,15000],["15.000 – 40.000 €",15000,40000],["Más de 40.000 €",40000,Infinity]];
 const TYPE_GROUPS = ["Servicios","Suministros","Obras","Otros"];
 const typeGroup = (t) => ({1:"Suministros",2:"Servicios",3:"Obras"}[t] || "Otros");
 const PROC_GROUPS = ["Abierto","Abierto simplificado","Contrato menor","Negociado sin publicidad","Otros"];
@@ -582,15 +583,21 @@ function renderResumen() {
   });
   // tramos: ignoran el filtro de importe para poder compararse entre sí
   const byRange = RANGES.map(([label, lo, hi]) => {
-    const rs = R.filter((r) => r.hasAward && r.amount >= lo && r.amount < hi && passesNoAmount(r));
-    return { label, lo, hi, n: rs.length, sum: rs.reduce((s, r) => s + r.amount, 0) };
+    // Mismo criterio que el filtro de importe: sin importe adjudicado cuenta el presupuesto (r.amount).
+    // El número de contratos coincide así con el que queda al hacer clic; la suma solo incluye adjudicados.
+    const rs = R.filter((r) => r.amount > lo && r.amount <= hi && passesNoAmount(r));
+    return { label, lo, hi, n: rs.length, sum: rs.filter((r) => r.hasAward).reduce((s, r) => s + r.amount, 0) };
   });
+  // Los filtros de importe mínimo/máximo son inclusivos: "más de lo" equivale a mínimo lo + 1 céntimo
+  const rangeBounds = (e) => ({ min: e.lo > 0 ? (e.lo + 0.01).toFixed(2) : "", max: e.hi === Infinity ? "" : String(e.hi) });
+  const same = (a, b) => (a === "" || b === "" ? a === b : +a === +b);
+  const rangeActive = (e) => { const b = rangeBounds(e); return same(state.min, b.min) && same(state.max, b.max); };
   barList($("c-range"), byRange, {
     label: (e) => e.label, value: (e) => e.n, disp: (e) => `${e.n} · ${compact(e.sum)}`,
-    active: (e) => state.min !== "" && +state.min === e.lo && (e.hi === Infinity ? state.max === "" : +state.max === e.hi - 0.01),
+    active: rangeActive,
     onclick: (e) => {
-      const on = state.min !== "" && +state.min === e.lo;
-      state.min = on ? "" : String(e.lo); state.max = on || e.hi === Infinity ? "" : String(e.hi - 0.01);
+      const b = rangeBounds(e), on = rangeActive(e);
+      state.min = on ? "" : b.min; state.max = on ? "" : b.max;
       $("f-min").value = state.min; $("f-max").value = state.max; render();
     },
   });
