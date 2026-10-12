@@ -1,0 +1,31 @@
+transparencia/template.html
+  s_98f5518a9c38bb::t_8916f10f7ac691 237-257
+  s_98f5518a9c38bb::t_7fe916be342464 160
+  s_3e20ed0ad9d3d2::t_16d1f39423ed55 106,322,326,583,644,656,892,902,904-916,922-925,939,941-945
+docs/index.html
+  s_3e20ed0ad9d3d2::t_aa7fecfbdeadb1 107,161,238-258,323,327,584,645,657,893,903,905-917,923-926,940,942-946
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "76ade416986900e3d490c53cd5b1c1b2b09b270e",
+  "prompts": {},
+  "sessions": {
+    "s_3e20ed0ad9d3d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c192d70d-4c3e-4c50-8895-b3f641832bed",
+        "model": "unknown"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    },
+    "s_98f5518a9c38bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "10858a44-8cf4-4211-9a71-45742fafad66",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
