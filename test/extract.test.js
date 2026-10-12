@@ -2,7 +2,9 @@ import test from 'ava';
 import { mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
-import { SOURCES, buildRecords, recordFromEntry } from '../transparencia/extract.js';
+import {
+  SOURCES, buildRecords, outcomeOf, recordFromEntry,
+} from '../transparencia/extract.js';
 import {
   FIXTURES_DUMP, entryFor, loadFixture, tmpDir,
 } from './helpers.js';
@@ -94,11 +96,13 @@ test('recordFromEntry tolera un anuncio casi vacío', (t) => {
 
 test('buildRecords usa la última versión de cada anuncio y ordena por fecha descendente', (t) => {
   const { files, records, generated } = buildRecords(FIXTURES_DUMP);
-  t.is(files, 7);
+  t.is(files, 10);
   // 1007341 tiene 3 versiones en los fixtures (PUB, ANUL, RES): queda una
-  t.deepEqual(records.map((r) => r.id), ['l-11626687', 'l-10196911', 'm-10094109', 'l-1007341', 'l-1007343']);
+  t.deepEqual(records.map((r) => r.id), [
+    'l-12062354', 'l-11626687', 'l-10344985', 'l-10196911', 'm-10094109', 'l-8386676', 'l-1007341', 'l-1007343',
+  ]);
   t.is(records.find((r) => r.id === 'l-1007341').status, 'RES');
-  t.is(generated, '2022-11-24T21:50:49.770+01:00');
+  t.is(generated, '2023-03-14T13:17:47.953+01:00');
 });
 
 test('buildRecords tolera carpetas inexistentes', (t) => {
@@ -130,6 +134,54 @@ test('el mismo id en licitaciones y en menores son registros distintos', (t) => 
   }
   const { records } = buildRecords(dump);
   t.deepEqual(records.map((r) => r.id).sort(), ['l-50', 'm-50']);
+});
+
+test('outcomeOf clasifica por los códigos de resultado de todos los lotes', (t) => {
+  t.is(outcomeOf([]), null);
+  for (const code of [1, 2, 8, 9, 11]) t.is(outcomeOf([code]), 'adjudicado', `código ${code}`);
+  for (const code of [3, 6, 7]) t.is(outcomeOf([code]), 'desierto', `código ${code}`);
+  t.is(outcomeOf([4]), 'desistimiento');
+  t.is(outcomeOf([5]), 'renuncia');
+  t.is(outcomeOf([10]), 'otro');
+  t.is(outcomeOf([99]), 'otro');
+  // varios lotes con el mismo resultado conservan el resultado; con resultados distintos es mixto
+  t.is(outcomeOf([9, 9, 9]), 'adjudicado');
+  t.is(outcomeOf([3, 7]), 'desierto'); // provisional + definitivo: ambos desiertos
+  t.is(outcomeOf([8, 3]), 'mixto');
+  t.is(outcomeOf([4, 5]), 'mixto');
+});
+
+test('resultado de contratos reales: adjudicado, desierto, desistimiento, renuncia y mixto', (t) => {
+  const cases = [
+    ['licitaciones', '1007341-1481547245528', 'adjudicado', [8]],
+    ['menores', '10094109-1652862625721', 'adjudicado', [8]],
+    ['licitaciones', '1007343-1468580170621', 'desierto', [3]],
+    ['licitaciones', '12062354-1678796267953', 'desistimiento', [4]],
+    ['licitaciones', '8386676-1632991834377', 'renuncia', [5]],
+    ['licitaciones', '10344985-1663321827016', 'mixto', [9, 9, 9, 9, 3]],
+    ['licitaciones', '1007341-1462267141275', null, []], // en plazo: aún sin resultado
+    ['licitaciones', '1007341-1467371633406', null, []], // anulada
+  ];
+  for (const [dir, name, outcome, codes] of cases) {
+    const r = record(dir, name);
+    t.is(r.outcome, outcome, `${dir}/${name}`);
+    t.deepEqual(r.resultCodes, codes, `${dir}/${name}`);
+  }
+});
+
+test('un contrato parcialmente adjudicado suma solo los lotes adjudicados', (t) => {
+  const r = record('licitaciones', '10344985-1663321827016');
+  t.is(r.outcome, 'mixto');
+  t.is(r.awarded, 30886);
+  t.is(r.winners.length, 4); // el lote desierto no aporta adjudicatario
+});
+
+test('desierto, desistimiento y renuncia no tienen ganadores ni importe', (t) => {
+  for (const name of ['1007343-1468580170621', '12062354-1678796267953', '8386676-1632991834377']) {
+    const r = record('licitaciones', name);
+    t.is(r.awarded, 0, name);
+    t.deepEqual(r.winners, [], name);
+  }
 });
 
 test('SOURCES incluye las carpetas que genera la descarga', (t) => {

@@ -135,6 +135,7 @@ footer{padding:24px 0 40px}
       <div><label for="f-type">Tipo de contrato</label><select id="f-type"></select></div>
       <div><label for="f-proc">Procedimiento</label><select id="f-proc"></select></div>
       <div><label for="f-status">Estado</label><select id="f-status"></select></div>
+      <div><label for="f-result">Resultado</label><select id="f-result"></select></div>
       <div><label for="f-min">Importe mínimo (€)</label><input id="f-min" type="number" min="0" step="any" inputmode="decimal"></div>
       <div><label for="f-max">Importe máximo (€)</label><input id="f-max" type="number" min="0" step="any" inputmode="decimal"></div>
       <div><label for="f-from">Desde</label><input id="f-from" type="date"></div>
@@ -153,6 +154,11 @@ footer{padding:24px 0 40px}
       <div class="panel"><h2>Nº de contratos por mes <span class="note">(clic para filtrar)</span></h2><div id="c-month"></div></div>
       <div class="panel"><h2>Por tipo de contrato</h2><div id="c-type" class="bars"></div></div>
       <div class="panel"><h2>Por procedimiento</h2><div id="c-proc" class="bars"></div></div>
+      <div class="panel">
+        <h2>Por resultado del procedimiento <span class="note">(clic para filtrar)</span></h2>
+        <div id="c-outcome" class="bars"></div>
+        <p class="note">Desierto, desistimiento y renuncia no tienen importe adjudicado. «Parcialmente adjudicado» son contratos con varios lotes en los que unos se adjudicaron y otros no.</p>
+      </div>
       <div class="panel">
         <h2>Por tramo de importe adjudicado <span class="note">(clic para filtrar)</span></h2>
         <div id="c-range" class="bars"></div>
@@ -245,6 +251,9 @@ const TYPE = {1:"Suministros",2:"Servicios",3:"Obras",7:"Administrativo especial
 const PROC = {1:"Abierto",2:"Restringido",3:"Negociado sin publicidad",4:"Negociado con publicidad",5:"Diálogo competitivo",6:"Contrato menor",7:"Derivado de acuerdo marco",8:"Concurso de proyectos",9:"Abierto simplificado",10:"Asociación para la innovación",11:"Derivado de asociación para la innovación",12:"Sistema dinámico de adquisición",13:"Licitación con negociación",100:"Normas internas",999:"Otros"};
 const STATUS = {PUB:"Publicada",EV:"En evaluación",ADJ:"Adjudicada",RES:"Resuelta",ANUL:"Anulada",PRE:"Anuncio previo"};
 const KIND = {licitacion:"Licitación",menor:"Contrato menor"};
+// Resultado del procedimiento (calculado en transparencia/extract.js a partir del código de resultado de cada lote)
+const OUTCOME = {adjudicado:"Adjudicado",desierto:"Desierto",desistimiento:"Desistimiento",renuncia:"Renuncia",mixto:"Parcialmente adjudicado",otro:"Otro resultado"};
+const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin adjudicar
 const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
@@ -297,15 +306,15 @@ const winnerLabel = (key) => {
 };
 
 // ---------- estado ----------
-const state = { q:"", year:"", month:"", body:"", kind:"", type:"", proc:"", status:"", min:"", max:"", from:"", to:"", winner:"",
+const state = { q:"", year:"", month:"", body:"", kind:"", type:"", proc:"", status:"", result:"", min:"", max:"", from:"", to:"", winner:"",
   tab:"resumen", rank:"amount", cmpA:"", cmpB:"", cmpM:"sum", adjQ:"" };
 const tbl = {
   adj:  { sort:"sum", dir:-1, page:0 },
   open: { sort:"deadline", dir:1, page:0 },
   list: { sort:"date", dir:-1, page:0 },
 };
-const OPT_COLS = [["body","Órgano"],["procedure","Procedimiento"],["status","Estado"],["published","Publicación"],["deadline","Fecha límite"],["offers","Ofertas"],["budget","Presupuesto"],["duration","Duración"]];
-const optCols = new Set(["procedure","status"]);
+const OPT_COLS = [["body","Órgano"],["procedure","Procedimiento"],["status","Estado"],["outcome","Resultado"],["published","Publicación"],["deadline","Fecha límite"],["offers","Ofertas"],["budget","Presupuesto"],["duration","Duración"]];
+const optCols = new Set(["procedure","status","outcome"]);
 
 function fillSelect(el, opts, allLabel) {
   el.innerHTML = (allLabel ? `<option value="">${esc(allLabel)}</option>` : "") + opts.map(([v,l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("");
@@ -319,6 +328,7 @@ fillSelect($("f-kind"), Object.entries(KIND), "Todas");
 fillSelect($("f-type"), uniqSorted((r) => r.type).sort((a,b) => a-b).map((t) => [t, TYPE[t] || "Código "+t]), "Todos");
 fillSelect($("f-proc"), uniqSorted((r) => r.procedure).sort((a,b) => a-b).map((p) => [p, PROC[p] || "Código "+p]), "Todos");
 fillSelect($("f-status"), uniqSorted((r) => r.status).map((s) => [s, STATUS[s] || s]), "Todos");
+fillSelect($("f-result"), [...Object.entries(OUTCOME).filter(([k]) => R.some((r) => r.outcome === k)), ["none", "Sin resultado todavía"]], "Todos");
 fillSelect($("cmp-a"), [...YEARS].reverse().map((y) => [y,y]));
 fillSelect($("cmp-b"), [["","Sin comparar"], ...[...YEARS].reverse().map((y) => [y,y])]);
 const lastYear = YEARS[YEARS.length - 1];
@@ -326,7 +336,7 @@ state.cmpA = String(lastYear); state.cmpB = String(lastYear - 1);
 $("cmp-a").value = state.cmpA; $("cmp-b").value = state.cmpB;
 
 let timer;
-const bind = [["q","q",150],["f-year","year",0],["f-month","month",0],["f-body","body",0],["f-kind","kind",0],["f-type","type",0],["f-proc","proc",0],["f-status","status",0],["f-min","min",250],["f-max","max",250],["f-from","from",0],["f-to","to",0],["cmp-a","cmpA",0],["cmp-b","cmpB",0],["cmp-m","cmpM",0],["adj-q","adjQ",150]];
+const bind = [["q","q",150],["f-year","year",0],["f-month","month",0],["f-body","body",0],["f-kind","kind",0],["f-type","type",0],["f-proc","proc",0],["f-status","status",0],["f-result","result",0],["f-min","min",250],["f-max","max",250],["f-from","from",0],["f-to","to",0],["cmp-a","cmpA",0],["cmp-b","cmpB",0],["cmp-m","cmpM",0],["adj-q","adjQ",150]];
 for (const [id,key,delay] of bind) {
   $(id).addEventListener(delay ? "input" : "change", (e) => {
     state[key] = e.target.value; for (const t of Object.values(tbl)) t.page = 0;
@@ -334,7 +344,7 @@ for (const [id,key,delay] of bind) {
   });
 }
 $("reset").addEventListener("click", () => {
-  Object.assign(state, { q:"",year:"",month:"",body:"",kind:"",type:"",proc:"",status:"",min:"",max:"",from:"",to:"",winner:"" });
+  Object.assign(state, { q:"",year:"",month:"",body:"",kind:"",type:"",proc:"",status:"",result:"",min:"",max:"",from:"",to:"",winner:"" });
   for (const [id,key] of bind) if (!key.startsWith("cmp") && key !== "adjQ") $(id).value = "";
   for (const t of Object.values(tbl)) t.page = 0;
   render();
@@ -367,6 +377,7 @@ function passes(r, skip = []) {
   if (!s("date") && state.from && r.date < state.from) return false;
   if (!s("date") && state.to && r.date > state.to) return false;
   if (!s("status") && state.status && r.status !== state.status) return false;
+  if (state.result && (state.result === "none" ? r.outcome !== null : r.outcome !== state.result)) return false;
   if (state.body && r.buyer !== state.body) return false;
   if (state.kind && r.kind !== state.kind) return false;
   if (state.type && String(r.type) !== state.type) return false;
@@ -512,7 +523,8 @@ const winnerLinks = (r) => r.winners.length
   ? r.winners.map((w) => `<div><a href="#" data-w="${esc(w.key)}">${esc(winnerLabel(w.key))}</a>${w.nif ? `<div class="sub">${esc(w.nif)}</div>` : ""}</div>`).join("")
   : '<span class="muted">—</span>';
 const amountCell = (r) => r.hasAward ? eur2.format(r.amount)
-  : `<span class="est" title="Sin importe adjudicado: se muestra el presupuesto">${eur2.format(r.amount)}</span><div class="sub">presupuesto</div>`;
+  : `<span class="est" title="Sin importe adjudicado: se muestra el presupuesto">${eur2.format(r.amount)}</span><div class="sub">${
+    VOID_OUTCOMES.includes(r.outcome) ? `${OUTCOME[r.outcome].toLowerCase()} · presupuesto` : "presupuesto"}</div>`;
 const titleCell = (r) => `${esc(r.title)}<div class="sub"><span class="tag">${esc(KIND[r.kind])}</span></div>`;
 const linkCell = (r) => r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">Ver</a>` : "";
 
@@ -531,6 +543,19 @@ function render() {
   $("chips").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { state[b.dataset.k] = ""; for (const t of Object.values(tbl)) t.page = 0; render(); }));
 
   ({ resumen: renderResumen, evolucion: renderEvolucion, adjudicatarios: renderAdj, abiertas: renderOpen, listado: renderList })[state.tab]();
+}
+
+// Contratos que terminaron sin adjudicar (desiertos, desistidos o con renuncia) sobre los que ya tienen resultado
+function unawardedKpi(list) {
+  const withResult = list.filter((r) => r.outcome !== null).length;
+  const by = (o) => list.filter((r) => r.outcome === o).length;
+  const parts = [[by("desierto"), "desiertos"], [by("desistimiento"), "desistimientos"], [by("renuncia"), "renuncias"]]
+    .filter(([n]) => n > 0).map(([n, l]) => `${nf.format(n)} ${l}`);
+  const n = list.filter((r) => VOID_OUTCOMES.includes(r.outcome)).length;
+  const partial = by("mixto");
+  const detail = [parts.join(" · "), partial ? `además ${nf.format(partial)} parcialmente adjudicados` : ""].filter(Boolean).join(" · ");
+  return kpi(nf.format(n), withResult ? `contratos sin adjudicar (${pct(n / withResult * 100)} de los que tienen resultado)` : "contratos sin adjudicar",
+    detail || "Ninguno");
 }
 
 function renderResumen() {
@@ -557,7 +582,8 @@ function renderResumen() {
     kpi(tt.length ? Math.round(tt.reduce((a, b) => a + b, 0) / tt.length) + " días" : "—", "del cierre de ofertas a la adjudicación",
         tt.length ? `Mediana ${tt[tt.length >> 1]} · mínimo ${tt[0]} · ${nf.format(tt.length)} licitaciones` : "Sin datos suficientes") +
     kpi(m.sum && cs.length ? `${nf.format(k)} de ${nf.format(cs.length)}` : "—", "adjudicatarios suman la mitad del importe",
-        cs.length ? `El mayor adjudicatario concentra el ${pct(cs[0].sum / m.sum * 100)}` : "");
+        cs.length ? `El mayor adjudicatario concentra el ${pct(cs[0].sum / m.sum * 100)}` : "") +
+    unawardedKpi(filtered);
 
   const forYear = R.filter((r) => passes(r, ["year"]));
   const yAgg = new Map(agg(forYear, (r) => r.year).map((e) => [e.key, e]));
@@ -580,6 +606,11 @@ function renderResumen() {
   barList($("c-proc"), agg(filtered, (r) => r.procedure).sort((a, b) => b.sum - a.sum), {
     label: (e) => PROC[e.key] || "Código " + e.key, value: (e) => e.sum,
     active: (e) => String(e.key) === state.proc, onclick: (e) => toggleFilter("proc", e.key, "f-proc"),
+  });
+  barList($("c-outcome"), agg(filtered, (r) => r.outcome ?? "none").sort((a, b) => b.n - a.n), {
+    label: (e) => (e.key === "none" ? "Sin resultado todavía" : OUTCOME[e.key] || e.key), value: (e) => e.n,
+    disp: (e) => (e.sum ? `${e.n} · ${compact(e.sum)}` : String(e.n)),
+    active: (e) => e.key === state.result, onclick: (e) => toggleFilter("result", e.key, "f-result"),
   });
   // tramos: ignoran el filtro de importe para poder compararse entre sí
   const byRange = RANGES.map(([label, lo, hi]) => {
@@ -702,6 +733,7 @@ function renderList() {
     ...(optCols.has("body") ? [{ key:"body", label:"Órgano", sort: (r) => r.bodyShort, html: (r) => esc(r.bodyShort) }] : []),
     ...(optCols.has("procedure") ? [{ key:"procedure", label:"Procedimiento", sort: (r) => PROC[r.procedure] || "", html: (r) => esc(PROC[r.procedure] || "—") }] : []),
     ...(optCols.has("status") ? [{ key:"status", label:"Estado", sort: (r) => r.status || "", html: (r) => esc(STATUS[r.status] || r.status || "—") }] : []),
+    ...(optCols.has("outcome") ? [{ key:"outcome", label:"Resultado", sort: (r) => r.outcome || "", html: (r) => (r.outcome ? `<span class="tag">${esc(OUTCOME[r.outcome] || r.outcome)}</span>` : '<span class="muted">—</span>') }] : []),
     ...(optCols.has("published") ? [{ key:"published", label:"Publicación", desc:true, sort: (r) => r.published || "", html: (r) => fmtDate(r.published) }] : []),
     ...(optCols.has("deadline") ? [{ key:"deadline", label:"Fecha límite", desc:true, sort: (r) => r.deadline || "", html: (r) => fmtDate(r.deadline) }] : []),
     ...(optCols.has("offers") ? [{ key:"offers", label:"Ofertas", num:true, sort: (r) => r.offers ?? -1, html: (r) => r.offers ?? "—" }] : []),
@@ -717,16 +749,18 @@ function renderList() {
   $("col-picker").querySelectorAll("input").forEach((i) => i.addEventListener("change", () => {
     i.checked ? optCols.add(i.dataset.c) : optCols.delete(i.dataset.c); render();
   }));
-  const noAward = filtered.filter((r) => !r.hasAward).length;
-  $("count-note").textContent = `(${nf.format(filtered.length)}${noAward ? `; ${noAward} sin importe adjudicado` : ""})`;
+  const noAward = filtered.filter((r) => !r.hasAward);
+  const nVoid = noAward.filter((r) => VOID_OUTCOMES.includes(r.outcome)).length;
+  const nNoAmount = noAward.length - nVoid;
+  $("count-note").textContent = `(${nf.format(filtered.length)}${nVoid ? `; ${nf.format(nVoid)} sin adjudicar` : ""}${nNoAmount ? `; ${nf.format(nNoAmount)} sin importe adjudicado` : ""})`;
   listRows = drawTable("t-list", cols, filtered, tbl.list);
 }
 $("csv").addEventListener("click", () => {
   // Los visores de artefactos bloquean las descargas: se copia al portapapeles (separado por tabuladores, que las
   // hojas de cálculo reparten en columnas al pegar) y, si el navegador lo rechaza, se muestra el texto.
-  const head = ["fecha","expediente","objeto","clase","tipo","procedimiento","estado","organo","contratistas","nif","importe_adjudicado_iva","presupuesto_iva","fecha_limite","url"];
+  const head = ["fecha","expediente","objeto","clase","tipo","procedimiento","estado","resultado","organo","contratistas","nif","importe_adjudicado_iva","presupuesto_iva","fecha_limite","url"];
   copyTSV([head, ...filtered.map((r) => [
-    r.date, r.folder, r.title, KIND[r.kind], TYPE[r.type] || r.type, PROC[r.procedure] || r.procedure, STATUS[r.status] || r.status, r.bodyShort,
+    r.date, r.folder, r.title, KIND[r.kind], TYPE[r.type] || r.type, PROC[r.procedure] || r.procedure, STATUS[r.status] || r.status, r.outcome ? OUTCOME[r.outcome] : "", r.bodyShort,
     r.winners.map((w) => winnerLabel(w.key)).join(" | "), r.winners.map((w) => w.nif || "").join(" | "),
     r.hasAward ? dec(r.amount) : "", dec(r.budgetTotal), r.deadline || "", r.url,
   ])], $("csv-msg"), "csv-box");
@@ -736,6 +770,7 @@ $("foot").innerHTML = `Fuente: Plataforma de Contratación del Sector Público (
   «Fecha» es la de adjudicación o, si no consta, la de última actualización del anuncio. «Importe» es el adjudicado con IVA; si el contrato aún no
   tiene importe adjudicado se muestra el presupuesto y no se suma en los totales. Si un contrato tiene varias versiones publicadas se usa la más reciente.
   El tiempo hasta la adjudicación se mide desde el cierre del plazo de ofertas y solo en licitaciones con ambas fechas.
+  El «Resultado» (adjudicado, desierto, desistimiento, renuncia) sale del código de resultado de cada lote del anuncio.
   Las medias anuales incluyen años con menos datos (los contratos menores constan desde 2018), por lo que la comparación con los últimos 12 meses tiende a salir al alza.
   Herramienta de consulta no oficial: la referencia es siempre el anuncio original (enlace «Ver»).`;
 setTab(location.hash.slice(1) || "resumen");

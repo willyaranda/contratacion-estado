@@ -11,6 +11,28 @@ import {
 // (un mismo id puede existir en ambos feeds).
 export const SOURCES = ['licitaciones', 'menores', 'other', 'agregacion'];
 
+// Resultado del procedimiento (cbc:ResultCode, lista oficial TenderResultCode de la Plataforma):
+//   1 adjudicado provisionalmente, 2 adjudicado definitivamente, 8 adjudicado, 9 formalizado, 11 encargo formalizado
+//   3 desierto, 6 desierto provisionalmente, 7 desierto definitivamente
+//   4 desistimiento, 5 renuncia, 10 licitador mejor valorado (requerimiento de documentación, aún no adjudicado)
+const OUTCOME_BY_CODE = {
+  1: 'adjudicado', 2: 'adjudicado', 8: 'adjudicado', 9: 'adjudicado', 11: 'adjudicado',
+  3: 'desierto', 6: 'desierto', 7: 'desierto',
+  4: 'desistimiento',
+  5: 'renuncia',
+};
+
+// Resultado de un contrato a partir de los códigos de todos sus lotes:
+//   null          sin resultado todavía (en plazo, en evaluación o anulado)
+//   'adjudicado' | 'desierto' | 'desistimiento' | 'renuncia'   todos los lotes igual
+//   'mixto'       lotes con resultados distintos (p. ej. unos adjudicados y otro desierto)
+//   'otro'        códigos sin interpretación clara (p. ej. 10, mejor valorado)
+export const outcomeOf = (codes) => {
+  if (codes.length === 0) return null;
+  const outcomes = new Set(codes.map((code) => OUTCOME_BY_CODE[code] ?? 'otro'));
+  return outcomes.size === 1 ? [...outcomes][0] : 'mixto';
+};
+
 const num = (x) => {
   const v = text(x);
   return !isPresent(v) || v === '' ? null : Number(v);
@@ -34,6 +56,7 @@ export const recordFromEntry = (entry, dir) => {
   const proc = cf['cac:TenderingProcess'] || {};
   const entryId = entry.id.split('/').pop();
 
+  const resultCodes = results.map((result) => num(result['cbc:ResultCode'])).filter(isPresent);
   const winners = [];
   let awarded = 0;
   let awardedNet = 0;
@@ -72,6 +95,8 @@ export const recordFromEntry = (entry, dir) => {
     estimated: num(budget['cbc:EstimatedOverallContractAmount']),
     awarded: results.length ? awarded : null,
     awardedNet: results.length ? awardedNet : null,
+    resultCodes,
+    outcome: outcomeOf(resultCodes),
     winners,
     offers,
     awardDate,

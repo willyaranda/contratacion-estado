@@ -111,6 +111,25 @@ test('adjudicados con importe tienen adjudicatario con nombre', (t) => {
   t.is(unnamed.length, 0);
 });
 
+test('el resultado es coherente con los códigos, los ganadores y los importes', (t) => {
+  const known = ['adjudicado', 'desierto', 'desistimiento', 'renuncia', 'mixto', 'otro', null];
+  const unknown = records.filter((r) => !known.includes(r.outcome));
+  t.is(unknown.length, 0, `Resultado desconocido: ${where(unknown)}`);
+
+  // sin resultado <=> sin códigos
+  const mismatch = records.filter((r) => (r.outcome === null) !== (r.resultCodes.length === 0));
+  t.is(mismatch.length, 0, `Resultado y códigos incoherentes: ${where(mismatch)}`);
+
+  // lo que termina sin adjudicar no tiene ganador ni importe adjudicado
+  const voidWithWinner = records.filter((r) => ['desierto', 'desistimiento', 'renuncia'].includes(r.outcome)
+    && (r.winners.length > 0 || r.awarded > 0));
+  t.is(voidWithWinner.length, 0, `Sin adjudicar pero con ganador o importe: ${where(voidWithWinner)}`);
+
+  // lo adjudicado (o parcialmente) tiene ganador
+  const awardedWithoutWinner = records.filter((r) => ['adjudicado', 'mixto'].includes(r.outcome) && r.winners.length === 0);
+  t.is(awardedWithoutWinner.length, 0, `Adjudicado sin ganador: ${where(awardedWithoutWinner)}`);
+});
+
 test('los contratos menores son procedimiento 6 y las licitaciones no', (t) => {
   const wrongMenor = records.filter((r) => r.kind === 'menor' && r.procedure !== 6);
   t.is(wrongMenor.length, 0, `Menores con otro procedimiento: ${where(wrongMenor)}`);

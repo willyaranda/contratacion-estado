@@ -67,7 +67,7 @@ test('el build desde la línea de comandos genera data.json, index.html y artifa
   }
 
   const data = JSON.parse(readFileSync(join(out, 'data.json'), 'utf8'));
-  t.is(data.records.length, 5);
+  t.is(data.records.length, 8);
   t.deepEqual(embeddedData(readFileSync(join(out, 'index.html'), 'utf8')), data);
   t.deepEqual(embeddedData(readFileSync(join(out, 'artifact.html'), 'utf8')), data);
 });
