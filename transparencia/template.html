@@ -65,6 +65,8 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .chip{background:var(--chip);border-radius:999px;padding:3px 10px;font-size:.82rem}
 .chip button{border:0;background:none;padding:0 0 0 6px;font-weight:700}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px}
+.grid-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:700px){.grid-pair{grid-template-columns:minmax(0,1fr)}}
 .bars{display:grid;gap:5px}
 .bar{display:grid;grid-template-columns:minmax(90px,170px) 1fr auto;gap:8px;align-items:center;font-size:.85rem;background:none;border:0;padding:2px 0;text-align:left;width:100%}
 .bar .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -188,9 +190,11 @@ footer{padding:24px 0 40px}
     <p class="legend periods" id="period-legend" aria-live="polite"></p>
     <section class="kpis" id="kpis" aria-live="polite"></section>
     <section class="kpis" id="kpis2"></section>
-    <section class="grid2">
+    <section class="grid-pair">
       <div class="panel"><h2>Importe adjudicado por año <span class="note">(clic para filtrar)</span></h2><div id="c-year"></div></div>
       <div class="panel"><h2>Contratos adjudicados por año <span class="note">(clic para filtrar)</span></h2><div id="c-year-n"></div></div>
+    </section>
+    <section class="grid2">
       <div class="panel"><h2>Nº de contratos por mes <span class="note">(clic para filtrar)</span></h2><div id="c-month"></div></div>
       <div class="panel"><h2>Por tipo de contrato</h2><div id="c-type" class="bars"></div></div>
       <div class="panel"><h2>Por procedimiento</h2><div id="c-proc" class="bars"></div></div>
