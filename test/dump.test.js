@@ -24,7 +24,9 @@ const loaded = DIRS.flatMap((dir) => {
     return { ...item, error };
   }
 });
-const { files, records, generated } = buildRecords(REAL_DUMP);
+const {
+  files, records, generated, details,
+} = buildRecords(REAL_DUMP);
 const where = (items) => items.slice(0, 5).map((r) => r.file ?? r.id).join(', ');
 
 test('el dump tiene ficheros de licitaciones y de menores', (t) => {
@@ -143,6 +145,25 @@ test('NextGenerationEU: la detección es coherente con los campos de financiaci�
   // un contrato por el campo de financiación nunca es "texto"
   const wrong = records.filter((r) => r.fundingCodes.includes('PRTR') && r.nextgenBy !== 'financiacion');
   t.is(wrong.length, 0, `PRTR con origen incorrecto: ${where(wrong)}`);
+});
+
+test('cada contrato tiene su ficha, con órgano, histórico y documentos bien formados', (t) => {
+  const missing = records.filter((r) => !details.items[r.id]);
+  t.is(missing.length, 0, `Sin ficha: ${where(missing)}`);
+  t.is(Object.keys(details.items).length, records.length);
+
+  const badOrg = Object.entries(details.items).filter(([, d]) => d.o !== undefined && !details.orgs[d.o]);
+  t.is(badOrg.length, 0, `Órgano inexistente: ${badOrg.slice(0, 5).map(([id]) => id).join(', ')}`);
+
+  const noHistory = Object.entries(details.items).filter(([, d]) => !(d.history || []).length);
+  t.is(noHistory.length, 0, `Sin histórico: ${noHistory.slice(0, 5).map(([id]) => id).join(', ')}`);
+
+  // la última versión del histórico coincide con el estado del registro
+  const stale = records.filter((r) => details.items[r.id].history.at(-1).status !== r.status);
+  t.is(stale.length, 0, `Histórico incoherente: ${where(stale)}`);
+
+  const docs = Object.values(details.items).flatMap((d) => [...(d.docs || []), ...(d.notices || []).flatMap((n) => n.docs || [])]);
+  t.true(docs.every((x) => x.id || /^https?:\/\//.test(x.url)), 'documento sin identificador ni URL válida');
 });
 
 test('los contratos menores son procedimiento 6 y las licitaciones no', (t) => {

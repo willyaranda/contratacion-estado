@@ -32,10 +32,13 @@ export const assetUris = (assetsDir = join(HERE, 'assets')) => Object.fromEntrie
 ));
 
 // Plantilla + datos + fuente + imágenes -> HTML autocontenido.
-export const renderPage = (template, data, fonts, assets = {}) => {
+export const renderPage = (template, data, fonts, assets = {}, details = {}) => {
   // "<" escapado para que los datos no puedan cerrar el <script> por accidente
-  const json = JSON.stringify(data).replace(/</g, '\\u003c');
-  let html = template.replace('/*FONTFACE*/', () => fonts).replace('/*DATA*/', () => json);
+  const escape = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
+  let html = template.replace('/*FONTFACE*/', () => fonts)
+    .replace('/*DATA*/', () => escape(data))
+    // fichas de contrato: la página las lee solo al abrir una
+    .replace('/*DETAILS*/', () => escape(details));
   for (const [marker, uri] of Object.entries(assets)) html = html.replaceAll(marker, () => uri);
   return html;
 };
@@ -57,12 +60,13 @@ const arg = (name, fallback) => {
 const main = () => {
   const dumpDir = arg('dump', join(HERE, '..', 'dump'));
   const outDir = arg('out', HERE);
-  const { files, generated, records } = buildRecords(dumpDir);
+  const { files, generated, records, details } = buildRecords(dumpDir);
   const data = { generated, records };
 
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, 'data.json'), JSON.stringify(data));
-  const html = renderPage(readFileSync(join(HERE, 'template.html'), 'utf8'), data, fontCss(), assetUris());
+  writeFileSync(join(outDir, 'details.json'), JSON.stringify(details));
+  const html = renderPage(readFileSync(join(HERE, 'template.html'), 'utf8'), data, fontCss(), assetUris(), details);
   writeFileSync(join(outDir, 'index.html'), html);
   writeFileSync(join(outDir, 'artifact.html'), toArtifact(html));
 

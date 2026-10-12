@@ -74,6 +74,163 @@ const noticeDates = (cf, types) => asArray(cf['cac-place-ext:ValidNoticeInfo'])
   .filter(Boolean)
   .sort();
 
+// ---------- Ficha del contrato ----------
+// Datos adicionales de cada anuncio para la ventana de detalle de la página. Se guardan aparte (details.json) y la
+// página los lee solo al abrir una ficha. Los códigos se dejan tal cual: la página los traduce a su nombre oficial.
+
+// Primer valor cuya clave termine en `name` (con o sin prefijo de espacio de nombres: cac:, cbc:, cac-place-ext:…)
+const g = (obj, name) => {
+  if (!obj || typeof obj !== 'object') return undefined;
+  const key = Object.keys(obj).find((k) => k === name || k.endsWith(`:${name}`));
+  return key === undefined ? undefined : obj[key];
+};
+
+const clip = (x, max = 240) => {
+  const v = text(x);
+  if (!isPresent(v)) return null;
+  const s = `${v}`.replace(/\s+/g, ' ').trim();
+  if (!s) return null;
+  return s.length > max ? `${s.slice(0, max - 1)}…` : s;
+};
+const amount = (x) => {
+  const v = num(x);
+  return v !== null && Number.isFinite(v) ? v : null;
+};
+// Quita valores vacíos: null, undefined, '', listas vacías y objetos sin claves
+const clean = (o) => Object.fromEntries(Object.entries(o).filter(([, v]) => v !== null && v !== undefined && v !== ''
+  && !(Array.isArray(v) && v.length === 0)
+  && !(typeof v === 'object' && !Array.isArray(v) && Object.keys(v).length === 0)));
+const cap = (list, n) => list.slice(0, n);
+
+// Todos los documentos de la Plataforma comparten este prefijo: de cada uno solo se guarda su identificador
+// (la página reconstruye la URL con `docPrefix`, que va en details.json).
+export const DOC_PREFIX = 'https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=';
+
+const docOf = (ref, kind) => {
+  const att = g(ref, 'Attachment');
+  const ext = g(att, 'ExternalReference');
+  const url = clip(g(ext, 'URI'), 400);
+  const name = clip(g(ref, 'ID'), 140) || clip(g(ext, 'FileName'), 140);
+  if (!url) return null;
+  return url.startsWith(DOC_PREFIX) ? clean({ kind, name, id: url.slice(DOC_PREFIX.length) }) : clean({ kind, name, url });
+};
+
+export const detailFromEntry = (entry, versions = []) => {
+  const cf = entry['cac-place-ext:ContractFolderStatus'];
+  const party = asArray(g(g(cf, 'LocatedContractingParty'), 'Party'))[0] || {};
+  const addr = g(party, 'PostalAddress') || {};
+  const contact = g(party, 'Contact') || {};
+  const terms = g(cf, 'TenderingTerms') || {};
+  const proc = g(cf, 'TenderingProcess') || {};
+  const pp = g(cf, 'ProcurementProject') || {};
+  const deadline = asArray(g(proc, 'TenderSubmissionDeadlinePeriod'))[0] || {};
+  const results = asArray(g(cf, 'TenderResult'));
+  const lotsRaw = asArray(g(cf, 'ProcurementProjectLot'));
+
+  const criteriaOf = (container, lot) => asArray(g(g(container, 'AwardingTerms'), 'AwardingCriteria')).map((c) => clean({
+    lot, kind: clip(g(c, 'AwardingCriteriaTypeCode')), text: clip(g(c, 'Description'), 220), weight: amount(g(c, 'WeightNumeric')),
+  }));
+  const perLot = lotsRaw.map((lot) => criteriaOf(g(lot, 'TenderingTerms'), clip(g(lot, 'ID'))));
+  const sig = (list) => JSON.stringify(list.map(({ kind, text: t, weight }) => [kind, t, weight]).sort());
+  const sameForAllLots = perLot.length > 1 && perLot.every((l) => sig(l) === sig(perLot[0]));
+  const criteria = [
+    ...criteriaOf(terms, null),
+    // los mismos criterios en todos los lotes: una sola vez, sin lote
+    ...(sameForAllLots ? perLot[0].map((c) => clean({ ...c, lot: null })) : perLot.flat()),
+  ];
+
+  const lots = lotsRaw.map((lot) => {
+    const lp = g(lot, 'ProcurementProject') || {};
+    const lb = g(lp, 'BudgetAmount') || {};
+    return clean({
+      id: clip(g(lot, 'ID')), name: clip(g(lp, 'Name'), 160),
+      net: amount(g(lb, 'TaxExclusiveAmount')), total: amount(g(lb, 'TotalAmount')),
+    });
+  });
+
+  const resultsOut = results.map((r) => {
+    const win = g(r, 'WinningParty') || {};
+    const loc = g(g(win, 'PhysicalLocation'), 'Address') || {};
+    const money = g(g(r, 'AwardedTenderedProject'), 'LegalMonetaryTotal') || {};
+    const contract = g(r, 'Contract') || {};
+    return clean({
+      lot: clip(g(g(r, 'AwardedTenderedProject'), 'ProcurementProjectLotID')),
+      code: num(g(r, 'ResultCode')),
+      motive: clip(g(r, 'Description'), 320),
+      offers: amount(g(r, 'ReceivedTenderQuantity')),
+      smeOffers: amount(g(r, 'SMEsReceivedTenderQuantity')),
+      sme: typeof g(r, 'SMEAwardedIndicator') === 'boolean' ? g(r, 'SMEAwardedIndicator') : null,
+      winner: clip(g(asArray(g(win, 'PartyName'))[0], 'Name'), 140),
+      nif: clip(g(asArray(g(win, 'PartyIdentification'))[0], 'ID'), 20),
+      city: clip(g(loc, 'CityName'), 60),
+      net: amount(g(money, 'TaxExclusiveAmount')), total: amount(g(money, 'PayableAmount')),
+      lower: amount(g(r, 'LowerTenderAmount')), higher: amount(g(r, 'HigherTenderAmount')),
+      awarded: clip(g(r, 'AwardDate')), contract: clip(g(contract, 'ID')), formalized: clip(g(contract, 'IssueDate')),
+      start: clip(g(r, 'StartDate')),
+    });
+  });
+
+  const docs = [
+    ...asArray(g(cf, 'LegalDocumentReference')).map((d) => docOf(d, 'pcap')),
+    ...asArray(g(cf, 'TechnicalDocumentReference')).map((d) => docOf(d, 'ppt')),
+    ...asArray(g(cf, 'AdditionalDocumentReference')).map((d) => docOf(d, 'otro')),
+  ].filter(Boolean);
+
+  const notices = asArray(g(cf, 'ValidNoticeInfo')).map((n) => {
+    const status = g(n, 'AdditionalPublicationStatus') || {};
+    const refs = asArray(g(status, 'AdditionalPublicationDocumentReference'));
+    const dates = refs.map((r) => clip(g(r, 'IssueDate'))).filter(Boolean).sort();
+    return clean({
+      type: clip(g(n, 'NoticeTypeCode')), medium: clip(g(status, 'PublicationMediaName'), 80), date: dates[0] ?? null,
+      docs: cap(refs.map((r) => docOf(r, clip(g(r, 'DocumentTypeCode')))).filter(Boolean), 2),
+    });
+  });
+
+  const guarantees = asArray(g(terms, 'RequiredFinancialGuarantee')).map((x) => clean({
+    type: num(g(x, 'GuaranteeTypeCode')), pct: amount(g(x, 'AmountRate')), amount: amount(g(x, 'LiabilityAmount')),
+  }));
+  const mods = asArray(g(cf, 'ContractModification')).map((m) => clean({
+    net: amount(g(g(m, 'ContractModificationLegalMonetaryTotal'), 'TaxExclusiveAmount')),
+    finalNet: amount(g(g(m, 'FinalLegalMonetaryTotal'), 'TaxExclusiveAmount')),
+  }));
+  const exec = asArray(g(terms, 'ContractExecutionRequirement')).map((x) => clean({
+    code: num(g(x, 'ExecutionRequirementCode')), name: clip(g(x, 'Name'), 120), desc: clip(g(x, 'Description'), 240),
+  }));
+  const ext = g(pp, 'ContractExtension') || {};
+  const duration = g(g(pp, 'PlannedPeriod'), 'DurationMeasure');
+  const period = g(pp, 'PlannedPeriod') || {};
+  const endTime = clip(g(deadline, 'EndTime'));
+
+  return clean({
+    org: clean({
+      address: [clip(g(asArray(g(addr, 'AddressLine'))[0], 'Line'), 120), clip(g(addr, 'PostalZone'), 10), clip(g(addr, 'CityName'), 60)]
+        .filter(Boolean).join(', ') || null,
+      phone: clip(g(contact, 'Telephone'), 30), email: clip(g(contact, 'ElectronicMail'), 80), web: clip(g(party, 'WebsiteURI'), 120),
+    }),
+    proc: clean({
+      urgency: num(g(proc, 'UrgencyCode')), submission: num(g(proc, 'SubmissionMethodCode')),
+      system: num(g(proc, 'ContractingSystemCode')),
+      over: typeof g(proc, 'OverThresholdIndicator') === 'boolean' ? g(proc, 'OverThresholdIndicator') : null,
+      lotsMax: amount(g(proc, 'MaximumLotPresentationQuantity')),
+    }),
+    deadline: clean({ date: clip(g(deadline, 'EndDate')), time: endTime ? endTime.slice(0, 5) : null }),
+    duration: isPresent(duration) ? clean({ value: num(duration), unit: clip(duration['@_unitCode'] ?? null, 10) }) : null,
+    plannedStart: clip(g(period, 'StartDate')), plannedEnd: clip(g(period, 'EndDate')),
+    options: clip(g(ext, 'OptionsDescription'), 200),
+    guarantees: cap(guarantees, 4),
+    criteria: cap(criteria, 16),
+    lots: cap(lots, 24),
+    results: cap(resultsOut, 24),
+    mods: cap(mods, 6),
+    exec: cap(exec, 4),
+    subcontract: clip(g(g(terms, 'AllowedSubcontractTerms'), 'Description'), 240),
+    appeals: amount(g(terms, 'ReceivedAppealQuantity')),
+    docs: cap(docs, 8),
+    notices: cap(notices, 8),
+    history: versions,
+  });
+};
+
 // Un anuncio del feed -> un registro plano. `dir` es la carpeta de origen ('menores' marca los contratos menores).
 export const recordFromEntry = (entry, dir) => {
   const cf = entry['cac-place-ext:ContractFolderStatus'];
@@ -150,6 +307,7 @@ const listDir = (dir) => (existsSync(dir) ? readdirSync(dir).sort() : []);
 // fichero) se queda con la más reciente.
 export const buildRecords = (dumpDir) => {
   const latest = new Map();
+  const versions = new Map(); // anuncio -> [{ at, status }] de todas sus versiones
   let files = 0;
 
   for (const dir of SOURCES) {
@@ -159,6 +317,9 @@ export const buildRecords = (dumpDir) => {
         const entry = JSON.parse(readFileSync(join(dumpDir, dir, file), 'utf8'));
         if (entry['cac-place-ext:ContractFolderStatus'] && isFromAyuntamiento(entry)) {
           const key = `${dir === 'menores' ? 'm' : 'l'}-${entry.id.split('/').pop()}`;
+          const list = versions.get(key) || [];
+          list.push({ at: entry.updated, status: text(entry['cac-place-ext:ContractFolderStatus']['cbc-place-ext:ContractFolderStatusCode']) ?? null });
+          versions.set(key, list);
           const prev = latest.get(key);
           if (!prev || prev.entry.updated < entry.updated) {
             latest.set(key, { entry, dir });
@@ -169,11 +330,26 @@ export const buildRecords = (dumpDir) => {
   }
 
   const records = [...latest.values()].map(({ entry, dir }) => recordFromEntry(entry, dir));
+  // Los datos del órgano de contratación se repiten en casi todos los contratos: se guardan una vez y cada ficha
+  // lleva el índice (`o`).
+  const orgs = [];
+  const items = {};
+  for (const [key, { entry }] of latest) {
+    const { org, ...detail } = detailFromEntry(entry, versions.get(key).sort((a, b) => a.at.localeCompare(b.at)));
+    if (org) {
+      const sig = JSON.stringify(org);
+      let index = orgs.findIndex((o) => JSON.stringify(o) === sig);
+      if (index < 0) { orgs.push(org); index = orgs.length - 1; }
+      detail.o = index;
+    }
+    items[key] = detail;
+  }
+  const details = { docPrefix: DOC_PREFIX, orgs, items };
   records.sort((a, b) => (b.awardDate || b.updated).localeCompare(a.awardDate || a.updated) || a.id.localeCompare(b.id));
 
   // "generated" es la fecha del dato más reciente (no la hora del build): sin datos nuevos la página sale
   // idéntica y el commit automático no tiene nada que añadir.
   const generated = records.reduce((max, r) => (r.updated > max ? r.updated : max), '') || new Date().toISOString();
 
-  return { files, generated, records };
+  return { files, generated, records, details };
 };

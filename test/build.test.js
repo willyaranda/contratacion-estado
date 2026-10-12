@@ -12,6 +12,7 @@ const TEMPLATE = readFileSync(join(ROOT, 'transparencia', 'template.html'), 'utf
 
 // Extrae el JSON de datos incrustado en la página
 const embeddedData = (html) => JSON.parse(html.match(/<script type="application\/json" id="data">([\s\S]*?)<\/script>/)[1]);
+const embeddedDetails = (html) => JSON.parse(html.match(/<script type="application\/json" id="details">([\s\S]*?)<\/script>/)[1]);
 
 const buildInto = (out) => spawnSync(
   process.execPath,
@@ -64,7 +65,7 @@ test('el build desde la línea de comandos genera data.json, index.html y artifa
   const out = tmpDir('build-');
   const result = buildInto(out);
   t.is(result.status, 0, result.stderr);
-  for (const file of ['data.json', 'index.html', 'artifact.html']) {
+  for (const file of ['data.json', 'details.json', 'index.html', 'artifact.html']) {
     t.true(existsSync(join(out, file)), file);
   }
 
@@ -72,6 +73,19 @@ test('el build desde la línea de comandos genera data.json, index.html y artifa
   t.is(data.records.length, 13);
   t.deepEqual(embeddedData(readFileSync(join(out, 'index.html'), 'utf8')), data);
   t.deepEqual(embeddedData(readFileSync(join(out, 'artifact.html'), 'utf8')), data);
+
+  // las fichas van aparte y la página las lleva incrustadas
+  const details = JSON.parse(readFileSync(join(out, 'details.json'), 'utf8'));
+  t.is(Object.keys(details.items).length, 13);
+  t.deepEqual(embeddedDetails(readFileSync(join(out, 'index.html'), 'utf8')), details);
+});
+
+test('renderPage incrusta las fichas y escapa "<" en ellas', (t) => {
+  const details = { docPrefix: 'x', orgs: [], items: { 'l-1': { subcontract: 'a </script><img onerror=1> b' } } };
+  const html = renderPage(TEMPLATE, { generated: 'x', records: [] }, '', {}, details);
+  t.false(html.includes('/*DETAILS*/'));
+  t.false(html.includes('</script><img'));
+  t.deepEqual(embeddedDetails(html), details);
 });
 
 test('los logotipos de NextGenerationEU se incrustan y no queda ningún marcador', (t) => {

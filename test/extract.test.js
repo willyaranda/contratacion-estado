@@ -3,7 +3,7 @@ import { mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 import {
-  SOURCES, buildRecords, nextGenProgram, nextGenSource, outcomeOf, recordFromEntry,
+  DOC_PREFIX, SOURCES, buildRecords, detailFromEntry, nextGenProgram, nextGenSource, outcomeOf, recordFromEntry,
 } from '../transparencia/extract.js';
 import {
   FIXTURES_DUMP, entryFor, loadFixture, tmpDir,
@@ -243,6 +243,97 @@ test('nextGenProgram reconoce el campo, el texto del programa y la mención en e
   t.is(nextGenProgram({}), null);
   t.is(nextGenSource(withTerms({ 'cbc:FundingProgramCode': 'PRTR' })), 'financiacion');
   t.is(nextGenSource(withTerms({ 'cbc:FundingProgramCode': 'NO-EU' }, { title: 'PRTR' })), 'texto');
+});
+
+// ---- ficha del contrato
+
+const folder = (inner) => ({
+  ...entryFor('Alcaldía del Ayuntamiento de Aranda de Duero'),
+  'cac-place-ext:ContractFolderStatus': {
+    'cac-place-ext:LocatedContractingParty': { 'cac:Party': { 'cac:PartyName': { 'cbc:Name': 'Alcaldía del Ayuntamiento de Aranda de Duero' } } },
+    ...inner,
+  },
+});
+
+test('detalle de un contrato con lotes: lotes, criterios y resultado por lote', (t) => {
+  const d = detailFromEntry(loadFixture('licitaciones', '10344985-1663321827016'));
+  t.is(d.lots.length, 5);
+  t.is(d.lots[0].id, '1');
+  t.is(d.lots[0].name, 'lote 1: actividades de navidad');
+  t.is(d.lots[0].net, 5400);
+  t.deepEqual(d.criteria.filter((c) => c.lot === '1').map((c) => [c.kind, c.weight]).sort(), [['OBJ', 60], ['SUBJ', 3], ['SUBJ', 30], ['SUBJ', 7]]);
+  t.is(d.results.length, 5);
+  t.is(d.results[0].winner, 'Mack producciones S.C');
+  t.is(d.results[0].nif, 'J09583741');
+  t.is(d.results[0].lot, '1');
+  t.is(d.results[0].offers, 3);
+  t.true(d.results[0].sme);
+  t.is(d.results[0].formalized, '2022-09-08');
+  t.regex(d.results[0].motive, /^Motivación para adjudicar a Mack/);
+  t.deepEqual(d.guarantees.map((g) => [g.type, g.pct]), [[3, 5], [2, 5]]);
+  t.is(d.proc.urgency, 1);
+  t.is(d.proc.submission, 1);
+  t.is(d.deadline.date, '2022-06-27');
+  t.deepEqual(d.duration, { value: 24, unit: 'MON' });
+});
+
+test('los criterios iguales en todos los lotes se guardan una sola vez, sin lote', (t) => {
+  const criteria = { 'cac:AwardingTerms': { 'cac:AwardingCriteria': [
+    { 'cbc:AwardingCriteriaTypeCode': { '#text': 'OBJ' }, 'cbc:Description': 'Precio', 'cbc:WeightNumeric': 60 },
+    { 'cbc:AwardingCriteriaTypeCode': { '#text': 'SUBJ' }, 'cbc:Description': 'Memoria técnica', 'cbc:WeightNumeric': 40 },
+  ] } };
+  const lot = (id) => ({ 'cbc:ID': { '#text': id }, 'cac:TenderingTerms': criteria });
+  const d = detailFromEntry(folder({ 'cac:ProcurementProjectLot': [lot(1), lot(2), lot(3)] }));
+  t.is(d.criteria.length, 2);
+  t.true(d.criteria.every((c) => c.lot === undefined));
+  t.deepEqual(d.criteria.map((c) => c.weight), [60, 40]);
+});
+
+test('los documentos de la Plataforma guardan solo el identificador; los demás, la URL', (t) => {
+  const ref = (id, uri) => ({
+    'cbc:ID': id, 'cac:Attachment': { 'cac:ExternalReference': { 'cbc:URI': uri } },
+  });
+  const d = detailFromEntry(folder({
+    'cac:LegalDocumentReference': ref('pliego.pdf', `${DOC_PREFIX}abc-123`),
+    'cac:AdditionalDocumentReference': [ref('anexo.docx', 'https://example.test/anexo.docx'), { 'cbc:ID': 'sin-url.pdf' }],
+  }));
+  t.deepEqual(d.docs, [
+    { kind: 'pcap', name: 'pliego.pdf', id: 'abc-123' },
+    { kind: 'otro', name: 'anexo.docx', url: 'https://example.test/anexo.docx' },
+  ]);
+});
+
+test('detalle: modificaciones, condiciones de ejecución y tolerancia a anuncios casi vacíos', (t) => {
+  const d = detailFromEntry(folder({
+    'cac-place-ext:ContractModification': {
+      'cbc:ID': 1,
+      'cac-place-ext:ContractModificationLegalMonetaryTotal': { 'cbc:TaxExclusiveAmount': { '#text': 41518.6 } },
+      'cac-place-ext:FinalLegalMonetaryTotal': { 'cbc:TaxExclusiveAmount': { '#text': 252179.27 } },
+    },
+    'cac:TenderingTerms': { 'cac:ContractExecutionRequirement': { 'cbc:ExecutionRequirementCode': { '#text': 1 }, 'cbc:Name': 'Ambiental', 'cbc:Description': 'Según anexo XI.' } },
+  }));
+  t.deepEqual(d.mods, [{ net: 41518.6, finalNet: 252179.27 }]);
+  t.deepEqual(d.exec, [{ code: 1, name: 'Ambiental', desc: 'Según anexo XI.' }]);
+
+  const empty = detailFromEntry(folder({}));
+  t.deepEqual(empty, {});
+});
+
+test('la ficha incluye el histórico de versiones del anuncio, ordenado por fecha', (t) => {
+  const { details } = buildRecords(FIXTURES_DUMP);
+  const h = details.items['l-1007341'].history;
+  t.deepEqual(h.map((v) => v.status), ['PUB', 'ANUL', 'RES']);
+  t.deepEqual(h.map((v) => v.at), [...h.map((v) => v.at)].sort());
+});
+
+test('buildRecords devuelve fichas de todos los contratos y los órganos compartidos', (t) => {
+  const { records, details } = buildRecords(FIXTURES_DUMP);
+  t.is(details.docPrefix, DOC_PREFIX);
+  t.deepEqual(Object.keys(details.items).sort(), records.map((r) => r.id).sort());
+  t.true(details.orgs.length >= 1 && details.orgs.length <= 3);
+  for (const item of Object.values(details.items)) {
+    if (item.o !== undefined) t.truthy(details.orgs[item.o]);
+  }
 });
 
 test('SOURCES incluye las carpetas que genera la descarga', (t) => {

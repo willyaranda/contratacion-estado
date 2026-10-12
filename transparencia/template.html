@@ -105,6 +105,37 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .col .fill .seg{width:100%}
 .col .fill .seg:first-child{border-radius:0}
 .periods{margin:0 0 12px}
+.linkbtn{border:0;background:none;padding:0;color:var(--accent);text-decoration:underline;cursor:pointer;font-size:inherit}
+.linkbtn:hover{text-decoration:none}
+body:has(dialog[open]){overflow:hidden}
+dialog#detail{padding:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);
+  width:min(920px,calc(100vw - 24px));max-height:calc(100vh - 32px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+dialog#detail::backdrop{background:rgba(10,12,16,.55)}
+.dlg{display:flex;flex-direction:column;max-height:calc(100vh - 34px)}
+.dlg-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between;padding:16px 18px 10px;border-bottom:1px solid var(--line)}
+.dlg-head h2{margin:0;font-size:1.1rem;line-height:1.3}
+.dlg-x{flex:none;font-size:1.3rem;line-height:1;padding:4px 10px}
+.dlg-body{overflow:auto;padding:14px 18px 20px}
+.dsec{margin:0 0 18px}
+.dsec h3{margin:0 0 8px;font-size:.92rem;text-transform:none;border-bottom:1px solid var(--line);padding-bottom:4px}
+.dbadges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.dkpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:18px}
+.dkpi{border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.dkpi .v{font-weight:700;font-variant-numeric:tabular-nums}
+.dkpi .l{font-size:.78rem;color:var(--muted)}
+.kv{display:grid;grid-template-columns:minmax(120px,210px) 1fr;gap:4px 14px;margin:0}
+.kv dt{color:var(--muted);font-size:.85rem}
+.kv dd{margin:0;overflow-wrap:anywhere}
+.dtable{width:100%;border-collapse:collapse;font-size:.85rem}
+.dtable th,.dtable td{padding:5px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.dtable td.num,.dtable th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.wbar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:var(--line);margin:6px 0 4px}
+.wbar span{display:block;height:100%}
+.dtl{list-style:none;margin:0;padding:0}
+.dtl li{display:grid;grid-template-columns:128px 1fr;gap:10px;padding:3px 0;border-bottom:1px dashed var(--line)}
+.dtl .when{color:var(--muted);font-variant-numeric:tabular-nums}
+.motive{margin:6px 0 0;padding:8px 10px;border-left:3px solid var(--line);color:var(--ink);font-size:.88rem}
+@media (max-width:560px){.kv{grid-template-columns:1fr}.dlg-body{padding:12px}.dtl li{grid-template-columns:1fr}}
 .logos{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;margin:4px 0 16px}
 .logos img{display:block;height:56px;width:auto;max-width:100%}
 .ngtext{max-width:78ch}
@@ -382,6 +413,14 @@ footer{padding:24px 0 40px}
 <footer><div class="wrap note" id="foot"></div></footer>
 
 <script type="application/json" id="data">/*DATA*/</script>
+<script type="application/json" id="details">/*DETAILS*/</script>
+
+<dialog id="detail" aria-labelledby="d-title">
+  <div class="dlg">
+    <div class="dlg-head"><h2 id="d-title"></h2><button type="button" id="d-close" class="dlg-x" aria-label="Cerrar la ficha">×</button></div>
+    <div class="dlg-body" id="d-body"></div>
+  </div>
+</dialog>
 <script>
 "use strict";
 const DATA = JSON.parse(document.getElementById("data").textContent);
@@ -508,9 +547,11 @@ function setTab(t) {
 }
 window.addEventListener("hashchange", () => setTab(location.hash.slice(1)));
 document.addEventListener("click", (e) => {
+  const open = e.target.closest("[data-d]");
+  if (open) { openDetail(open.dataset.d); return; }
   const a = e.target.closest("a[data-w]");
   if (!a) return;
-  e.preventDefault(); state.winner = a.dataset.w; for (const t of Object.values(tbl)) t.page = 0;
+  e.preventDefault(); if ($("detail").open) $("detail").close(); state.winner = a.dataset.w; for (const t of Object.values(tbl)) t.page = 0;
   goTab("listado"); window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
@@ -657,13 +698,18 @@ function showTip(e) {
   tip.innerHTML = `<strong>${esc(r.title.length > 140 ? r.title.slice(0, 140) + "…" : r.title)}</strong>
     <div>${eur2.format(r.amount)} · ${fmtDate(r.date)}</div>
     <div class="muted">${esc(TYPE[r.type] || "—")} · ${esc(r.bodyShort)}${who ? " · " + esc(who) : ""}</div>
-    <div class="muted"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>Sacado por: ${esc(PERIODS[r.period].label)}</div>`;
+    <div class="muted"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>Sacado por: ${esc(PERIODS[r.period].label)}</div>
+    <div class="muted">Clic para ver la ficha del contrato</div>`;
   tip.hidden = false;
   moveTip(e);
 }
 const bubbleBox = $("c-bubbles");
 for (const type of ["pointerover", "pointermove", "pointerdown"]) bubbleBox.addEventListener(type, showTip);
 bubbleBox.addEventListener("pointerleave", () => { tip.hidden = true; });
+bubbleBox.addEventListener("click", (e) => {
+  const c = e.target.closest ? e.target.closest("circle[data-i]") : null;
+  if (c && bubblePoints[+c.dataset.i]) openDetail(bubblePoints[+c.dataset.i].id);
+});
 
 // ---------- tablas ordenables y paginadas ----------
 function mountTable(id) {
@@ -712,7 +758,182 @@ const amountCell = (r) => r.hasAward ? eur2.format(r.amount)
   : `<span class="est" title="Sin importe adjudicado: se muestra el presupuesto">${eur2.format(r.amount)}</span><div class="sub">${
     VOID_OUTCOMES.includes(r.outcome) ? `${OUTCOME[r.outcome].toLowerCase()} · presupuesto` : "presupuesto"}</div>`;
 const titleCell = (r) => `${esc(r.title)}<div class="sub"><span class="tag">${esc(KIND[r.kind])}</span>${r.nextgen ? ' <span class="tag">NextGenerationEU</span>' : ""}</div>`;
-const linkCell = (r) => r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">Ver</a>` : "";
+const linkCell = (r) => `<button type="button" class="linkbtn" data-d="${esc(r.id)}">Ficha</button>${r.url ? ` · <a href="${esc(r.url)}" target="_blank" rel="noopener">Ver</a>` : ""}`;
+
+// ---------- ficha del contrato (ventana de detalle) ----------
+const RECORD_BY_ID = new Map(R.map((r) => [r.id, r]));
+let DETAILS = null;
+const getDetails = () => { DETAILS ??= JSON.parse($("details").textContent); return DETAILS; };
+const safeUrl = (u) => (/^https?:\/\//i.test(u || "") ? u : null);
+
+// Nombres oficiales de los códigos de la Plataforma de Contratación (listas CODICE)
+const URGENCY = { 1: "Ordinaria", 2: "Urgente", 3: "Emergencia" };
+const SUBMISSION = { 1: "Electrónica", 2: "Manual", 3: "Manual y/o electrónica" };
+const GUARANTEE = { 1: "Provisional", 2: "Definitiva", 3: "Especial" };
+const SYSTEM = { 1: "Establecimiento de un acuerdo marco", 2: "Establecimiento de un sistema dinámico de adquisición", 3: "Basado en un acuerdo marco", 4: "Basado en un sistema dinámico de adquisición" };
+const CRIT_KIND = { OBJ: "Automático", SUBJ: "Juicio de valor" };
+const EXEC_REQ = { 1: "Ambiental", 2: "Social", 3: "Empleo de personas con dificultades de inserción", 4: "Igualdad entre mujeres y hombres", 5: "Lucha contra el paro", 6: "Formación en el lugar de trabajo", 7: "Convenios fundamentales de la OIT", 8: "Protección de datos" };
+const NOTICE = { DOC_PIN: "Anuncio previo", DOC_CN: "Anuncio de licitación", DOC_CD: "Anuncio de pliegos", DOC_CAN_PROV: "Adjudicación provisional", DOC_CAN_DEF: "Adjudicación definitiva", DOC_CAN_ADJ: "Anuncio de adjudicación", DOC_FORM: "Anuncio de formalización", RENUNCIA: "Renuncia", DESISTIMIENTO: "Desistimiento", DOC_MOD: "Modificación del contrato", DOC_CCN: "Finalización del contrato", ANUL_CN: "Anulación de la licitación", ANUL_CAN_ADJ: "Anulación de la adjudicación", ANUL_FORM: "Anulación de la formalización" };
+const DOC_KIND = { pcap: "Pliego de cláusulas administrativas", ppt: "Pliego de prescripciones técnicas", otro: "Documento", ACTA_ADJ: "Resolución de adjudicación", DOC_PCAP: "Pliego administrativo", DOC_PPT: "Pliego técnico", DOC_ADD_CD: "Documento adicional", ACTA_FORM: "Acta de formalización", CONTR_FORM: "Contrato formalizado", ACTA_ADM_EXCL: "Admisión y exclusión", CONTRACT_MODIFICATION: "Modificación del contrato" };
+const DURATION_UNIT = { MON: "meses", ANN: "años", DAY: "días", WEE: "semanas" };
+const CPV_DIV = { "03": "Productos agrícolas", "09": "Combustibles y energía", "14": "Productos de la minería", 15: "Alimentos y bebidas", 16: "Maquinaria agrícola", 18: "Prendas de vestir y calzado", 19: "Cuero y textiles", 22: "Material impreso", 24: "Productos químicos", 30: "Equipos de oficina e informática", 31: "Maquinaria y material eléctrico", 32: "Equipos de radio, televisión y comunicaciones", 33: "Equipo médico y farmacéutico", 34: "Equipos de transporte", 35: "Equipos de seguridad", 37: "Instrumentos musicales, deporte y juegos", 38: "Equipos de laboratorio y óptica", 39: "Mobiliario y equipamiento", 41: "Agua", 42: "Maquinaria industrial", 43: "Maquinaria de minería y construcción", 44: "Estructuras y materiales de construcción", 45: "Trabajos de construcción", 48: "Software", 50: "Reparación y mantenimiento", 51: "Servicios de instalación", 55: "Hostelería y restauración", 60: "Transporte", 63: "Apoyo al transporte", 64: "Correos y telecomunicaciones", 65: "Servicios públicos", 66: "Servicios financieros y seguros", 70: "Servicios inmobiliarios", 71: "Arquitectura, ingeniería e inspección", 72: "Servicios informáticos", 73: "Investigación y desarrollo", 75: "Administración pública", 77: "Servicios agrícolas, forestales y jardinería", 79: "Servicios a empresas", 80: "Enseñanza y formación", 85: "Servicios sanitarios y sociales", 90: "Alcantarillado, residuos, limpieza y medio ambiente", 92: "Ocio, cultura y deporte", 98: "Otros servicios comunitarios y personales" };
+
+const kv = (rows) => {
+  const items = rows.filter(([, v]) => v !== null && v !== undefined && v !== "");
+  return items.length ? `<dl class="kv">${items.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${v}</dd>`).join("")}</dl>` : "";
+};
+const dsec = (title, inner) => (inner ? `<section class="dsec"><h3>${esc(title)}</h3>${inner}</section>` : "");
+const dateOr = (d) => (d ? esc(fmtDate(d)) : "");
+
+function renderDetail(id) {
+  const r = RECORD_BY_ID.get(id);
+  const all = getDetails();
+  const d = all.items[id] || {};
+  const org = d.o != null ? all.orgs[d.o] : null;
+  const docUrl = (x) => safeUrl(x.id ? all.docPrefix + x.id : x.url);
+  const link = (x, label) => { const u = docUrl(x); return u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(label || x.name || "Documento")}</a>` : esc(label || x.name || ""); };
+  const out = [];
+
+  // Cabecera
+  const cpv = (r.cpv || []).map((c) => { const code = String(c).padStart(8, "0"); const div = CPV_DIV[code.slice(0, 2)]; return `${code}${div ? ` (${esc(div)})` : ""}`; });
+  const badges = [KIND[r.kind], TYPE[r.type], PROC[r.procedure], r.outcome ? OUTCOME[r.outcome] : STATUS[r.status], PERIODS[r.period].label, r.nextgenProgram ? "NextGenerationEU" : null]
+    .filter(Boolean).map((b) => `<span class="tag">${esc(b)}</span>`).join("");
+  out.push(`<div class="dbadges">${badges}</div>`);
+
+  // Cifras clave
+  const baja = r.kind === "licitacion" && r.outcome === "adjudicado" && r.awardedNet > 0 && r.budgetNet > 0 ? (1 - r.awardedNet / r.budgetNet) * 100 : null;
+  const dur = d.duration ? `${nfix(d.duration.value, 0)} ${DURATION_UNIT[d.duration.unit] || d.duration.unit || ""}`.trim() : null;
+  const k = (l, v, sub) => (v ? `<div class="dkpi"><div class="v">${v}</div><div class="l">${esc(l)}${sub ? ` · ${esc(sub)}` : ""}</div></div>` : "");
+  out.push(`<div class="dkpis">${[
+    k("Presupuesto base (sin IVA)", r.budgetNet != null ? esc(eur2.format(r.budgetNet)) : "", r.budgetTotal != null ? `${eur2.format(r.budgetTotal)} con IVA` : ""),
+    k("Valor estimado", r.estimated != null ? esc(eur2.format(r.estimated)) : ""),
+    k("Adjudicado (con IVA)", r.hasAward ? esc(eur2.format(r.awarded)) : "", r.awardedNet > 0 ? `${eur2.format(r.awardedNet)} sin IVA` : ""),
+    k("Baja sobre el presupuesto", baja != null ? esc(nfix(baja, 1) + " %") : ""),
+    k("Ofertas recibidas", r.offers != null ? esc(String(r.offers)) : ""),
+    k("Duración", dur ? esc(dur) : ""),
+  ].join("")}</div>`);
+
+  // Adjudicación
+  const results = d.results || [];
+  if (results.length) {
+    const lotName = (lot) => (d.lots || []).find((l) => String(l.id) === String(lot))?.name;
+    out.push(dsec("Adjudicación", results.map((x) => {
+      const w = x.winner ? `<a href="#" data-w="${esc(x.nif || norm(x.winner).toUpperCase())}">${esc(x.winner)}</a>${x.nif ? ` <span class="muted">(${esc(x.nif)}${x.city ? `, ${esc(x.city)}` : ""})</span>` : ""}` : "";
+      const code = x.code ? ({ 3: "Desierto", 4: "Desistimiento", 5: "Renuncia" }[x.code] || "") : "";
+      return `<div style="margin-bottom:12px">${x.lot ? `<strong>Lote ${esc(x.lot)}${lotName(x.lot) ? `: ${esc(lotName(x.lot))}` : ""}</strong>` : ""}${kv([
+        ["Resultado", code ? esc(code) : ""],
+        ["Adjudicatario", w],
+        ["Importe", x.total != null && x.total > 0 ? `${esc(eur2.format(x.total))}${x.net != null ? ` <span class="muted">(${esc(eur2.format(x.net))} sin IVA)</span>` : ""}` : ""],
+        ["Ofertas", x.offers != null ? `${esc(String(x.offers))}${x.smeOffers != null ? ` <span class="muted">(${esc(String(x.smeOffers))} de PYMES)</span>` : ""}` : ""],
+        ["Oferta más baja / alta", x.lower != null || x.higher != null ? `${x.lower != null ? esc(eur2.format(x.lower)) : "—"} / ${x.higher != null ? esc(eur2.format(x.higher)) : "—"}` : ""],
+        ["¿Adjudicado a una PYME?", x.sme === true ? "Sí" : x.sme === false ? "No" : ""],
+        ["Fecha de adjudicación", dateOr(x.awarded)],
+        ["Nº de contrato y formalización", x.contract ? `${esc(x.contract)}${x.formalized ? `, formalizado el ${esc(fmtDate(x.formalized))}` : ""}` : ""],
+      ])}${x.motive ? `<p class="motive"><strong>Motivación:</strong> ${esc(x.motive)}</p>` : ""}</div>`;
+    }).join("")));
+  }
+
+  // Criterios de adjudicación
+  const crit = d.criteria || [];
+  if (crit.length) {
+    const sum = (kind) => crit.filter((c) => c.kind === kind && !c.lot).reduce((a, c) => a + (c.weight || 0), 0)
+      || crit.filter((c) => c.kind === kind).reduce((a, c) => a + (c.weight || 0), 0);
+    const obj = sum("OBJ"), subj = sum("SUBJ"), tot = obj + subj;
+    out.push(dsec("Criterios de adjudicación", `${tot > 0 ? `<div class="wbar" role="img" aria-label="Automáticos ${Math.round(obj / tot * 100)} %, juicio de valor ${Math.round(subj / tot * 100)} %">
+        <span style="width:${obj / tot * 100}%;background:var(--c2)"></span><span style="width:${subj / tot * 100}%;background:var(--c3)"></span></div>
+      <div class="note" style="margin-bottom:8px">Automáticos (precio u otros cuantificables): ${esc(nfix(obj / tot * 100, 0))} % · Juicio de valor: ${esc(nfix(subj / tot * 100, 0))} %${crit.some((c) => c.lot) ? " (suma de lotes)" : ""}</div>` : ""}
+      <table class="dtable"><thead><tr><th>Criterio</th><th>Tipo</th><th class="num">Peso</th></tr></thead><tbody>${crit.map((c) => `<tr>
+        <td>${c.lot ? `<span class="muted">Lote ${esc(c.lot)} · </span>` : ""}${esc(c.text || "—")}</td><td>${esc(CRIT_KIND[c.kind] || c.kind || "—")}</td>
+        <td class="num">${c.weight != null ? esc(nfix(c.weight, c.weight % 1 ? 1 : 0)) : "—"}</td></tr>`).join("")}</tbody></table>`));
+  }
+
+  // Lotes
+  if ((d.lots || []).length > 1) {
+    out.push(dsec(`Lotes (${d.lots.length})`, `<table class="dtable"><thead><tr><th>Lote</th><th>Objeto</th><th class="num">Presupuesto (sin IVA)</th></tr></thead><tbody>${d.lots.map((l) => `<tr>
+      <td>${esc(l.id ?? "")}</td><td>${esc(l.name || "—")}</td><td class="num">${l.net != null ? esc(eur2.format(l.net)) : "—"}</td></tr>`).join("")}</tbody></table>`));
+  }
+
+  // Calendario
+  const when = [
+    [r.published, "Publicación del anuncio"],
+    [d.deadline?.date ? `${d.deadline.date}${d.deadline.time ? ` ${d.deadline.time}` : ""}` : null, "Fin del plazo de ofertas"],
+    [r.awardDate, "Adjudicación"],
+    [results.find((x) => x.formalized)?.formalized, "Formalización del contrato"],
+    [results.find((x) => x.start)?.start || d.plannedStart, "Inicio de la ejecución"],
+    [d.plannedEnd, "Fin previsto"],
+  ].filter(([x]) => x);
+  const toAward = r.toAward != null ? `${r.toAward} días entre el cierre de ofertas y la adjudicación` : "";
+  out.push(dsec("Calendario", when.length ? `<ul class="dtl">${when.map(([x, l]) => `<li><span class="when">${esc(fmtDate(String(x).slice(0, 10)))}${String(x).length > 10 ? ` ${esc(String(x).slice(11))}` : ""}</span><span>${esc(l)}</span></li>`).join("")}</ul>${toAward ? `<p class="note" style="margin:6px 0 0">${esc(toAward)}</p>` : ""}` : ""));
+
+  // Procedimiento y condiciones
+  const pr = d.proc || {};
+  const guarantees = (d.guarantees || []).map((x) => `${GUARANTEE[x.type] || "Garantía"}${x.pct != null ? ` ${nfix(x.pct, 0)} %` : ""}${x.amount != null ? ` (${eur2.format(x.amount)})` : ""}`);
+  out.push(dsec("Procedimiento y condiciones", kv([
+    ["Expediente", esc(r.folder || "")],
+    ["Procedimiento", esc(PROC[r.procedure] || "")],
+    ["Tramitación", esc(URGENCY[pr.urgency] || "")],
+    ["Presentación de ofertas", esc(SUBMISSION[pr.submission] || "")],
+    ["Sistema de contratación", pr.system ? esc(SYSTEM[pr.system] || "") : ""],
+    ["Supera el umbral europeo", pr.over === true ? "Sí" : pr.over === false ? "No" : ""],
+    ["Categoría (CPV)", cpv.join("<br>")],
+    ["Garantías", esc(guarantees.join(" · "))],
+    ["Prórroga u opciones", esc(d.options || "")],
+    ["Recursos recibidos", d.appeals != null ? esc(String(d.appeals)) : ""],
+    ["Subcontratación", esc(d.subcontract || "")],
+  ])));
+
+  // Modificaciones y ejecución
+  const mods = d.mods || [];
+  out.push(dsec("Modificaciones del contrato", mods.length ? `<table class="dtable"><thead><tr><th>#</th><th class="num">Importe modificado (sin IVA)</th><th class="num">Importe final (sin IVA)</th></tr></thead><tbody>${mods.map((m, i) => `<tr>
+    <td>${i + 1}</td><td class="num">${m.net != null ? esc(eur2.format(m.net)) : "—"}</td><td class="num">${m.finalNet != null ? esc(eur2.format(m.finalNet)) : "—"}</td></tr>`).join("")}</tbody></table>` : ""));
+  out.push(dsec("Condiciones especiales de ejecución", (d.exec || []).length
+    ? `<ul style="margin:0;padding-left:18px">${d.exec.map((x) => `<li><strong>${esc(EXEC_REQ[x.code] || x.name || "Condición")}</strong>${x.desc ? `: ${esc(x.desc)}` : ""}</li>`).join("")}</ul>` : ""));
+
+  // Financiación europea
+  const fin = [...(r.fundingCodes || [])].filter((c) => c !== "NO-EU");
+  out.push(dsec("Financiación europea", r.nextgenProgram || fin.length ? kv([
+    ["Fondos", esc(r.nextgenProgram ? `${r.nextgenProgram} (NextGenerationEU)` : fin.join(" + "))],
+    ["Programa", esc(r.fundingProgram || "")],
+    ["Consta", r.nextgenBy === "texto" ? "Solo en el título o la documentación; el campo de financiación dice otra cosa" : r.nextgenBy ? "En el campo de financiación del anuncio" : ""],
+  ]) : ""));
+
+  // Documentos y publicaciones
+  const docs = (d.docs || []).map((x) => `<li>${link(x, `${DOC_KIND[x.kind] || "Documento"}${x.name ? `: ${x.name}` : ""}`)}</li>`);
+  const notices = (d.notices || []).map((n) => `<li><span class="when">${n.date ? esc(fmtDate(n.date)) : "—"}</span><span>${esc(NOTICE[n.type] || n.type || "Publicación")}${n.medium ? ` · ${esc(n.medium)}` : ""}${(n.docs || []).map((x) => ` · ${link(x, DOC_KIND[x.kind] || x.name || "documento")}`).join("")}</span></li>`);
+  out.push(dsec("Documentos", docs.length ? `<ul style="margin:0;padding-left:18px">${docs.join("")}</ul>` : ""));
+  out.push(dsec("Publicaciones", notices.length ? `<ul class="dtl">${notices.join("")}</ul>` : ""));
+
+  // Histórico de versiones del anuncio
+  const hist = d.history || [];
+  out.push(dsec(`Histórico del anuncio (${hist.length} ${hist.length === 1 ? "versión" : "versiones"})`, hist.length > 1
+    ? `<ul class="dtl">${hist.map((h) => `<li><span class="when">${esc(fmtDate(String(h.at).slice(0, 10)))}</span><span>${esc(STATUS[h.status] || h.status || "—")}</span></li>`).join("")}</ul>` : ""));
+
+  // Órgano de contratación
+  out.push(dsec("Órgano de contratación", kv([
+    ["Órgano", esc(r.buyer)],
+    ["Dirección", esc(org?.address || "")],
+    ["Teléfono", esc(org?.phone || "")],
+    ["Correo", org?.email ? `<a href="mailto:${esc(org.email)}">${esc(org.email)}</a>` : ""],
+    ["Web", safeUrl(org?.web) ? `<a href="${esc(org.web)}" target="_blank" rel="noopener">${esc(org.web)}</a>` : ""],
+  ])));
+
+  // Enlace al anuncio original
+  out.push(`<p style="margin:4px 0 0">${safeUrl(r.url) ? `<a href="${esc(r.url)}" target="_blank" rel="noopener"><strong>Ver el anuncio original en la Plataforma de Contratación →</strong></a>` : ""}</p>`);
+
+  $("d-title").textContent = r.title;
+  $("d-body").innerHTML = out.join("");
+}
+
+function openDetail(id) {
+  if (!RECORD_BY_ID.has(id)) return;
+  tip.hidden = true;
+  renderDetail(id);
+  const dlg = $("detail");
+  if (!dlg.open) dlg.showModal();
+  $("d-body").scrollTop = 0;
+}
+$("d-close").addEventListener("click", () => $("detail").close());
+$("detail").addEventListener("click", (e) => { if (e.target === $("detail")) $("detail").close(); }); // clic fuera de la ficha
 
 // ---------- render ----------
 let filtered = [], listRows = [], adjRows = [];
@@ -841,7 +1062,7 @@ function renderResumen() {
   });
   const topC = filtered.filter((r) => r.hasAward).sort((a, b) => b.amount - a.amount).slice(0, 8);
   $("c-top").innerHTML = topC.length ? `<table><tbody>` + topC.map((r) =>
-    `<tr><td>${esc(r.title.length > 90 ? r.title.slice(0, 90) + "…" : r.title)}<div class="sub">${esc(r.winners.map((w) => winnerLabel(w.key)).join(", ") || "—")} · ${fmtDate(r.date)}</div></td>
+    `<tr><td>${esc(r.title.length > 90 ? r.title.slice(0, 90) + "…" : r.title)}<div class="sub">${esc(r.winners.map((w) => winnerLabel(w.key)).join(", ") || "—")} · ${fmtDate(r.date)} · <button type="button" class="linkbtn" data-d="${esc(r.id)}">Ficha</button></div></td>
      <td class="num"><strong>${eur.format(r.amount)}</strong></td></tr>`).join("") + `</tbody></table>` : '<div class="empty">Sin datos</div>';
   bubbles($("c-bubbles"), filtered);
 }
@@ -916,7 +1137,7 @@ const INDICATORS = [
     what: "Porcentaje del importe adjudicado que acumulan las diez empresas que más reciben.",
     why: "Complementa al anterior: mide la concentración del gasto en un grupo reducido de proveedores." },
   { key: "savings", ctx: CTX.savings, group: "Eficiencia", label: "Baja media sobre el presupuesto de licitación", kind: "pct", better: "higher", nKey: "savings",
-    what: "Diferencia entre el presupuesto base y lo adjudicado (ambos sin IVA) en las licitaciones, ponderada por importe.",
+    what: "Diferencia entre el presupuesto base y lo adjudicado (ambos sin IVA) en las licitaciones adjudicadas por completo, ponderada por importe.",
     why: "Es dinero público que no se gasta: el mismo servicio u obra por menos. Una baja mayor suele ser fruto de una buena competencia y de presupuestos bien ajustados." },
   { key: "daysToAward", group: "Eficiencia", label: "Días del cierre de ofertas a la adjudicación", kind: "days", better: "lower", nKey: "days",
     what: "Tiempo medio que pasa entre el fin del plazo de ofertas y la adjudicación (solo licitaciones con ambas fechas).",
@@ -953,7 +1174,7 @@ function mandateStats(list, from, to) {
   const byWinner = new Map();
   for (const r of aw) for (const w of r.winners) byWinner.set(w.key, (byWinner.get(w.key) || 0) + r.amount / r.winners.length);
   const ranked = [...byWinner.values()].sort((a, b) => b - a);
-  const awLic = lic.filter((r) => r.awardedNet > 0 && r.budgetNet > 0);
+  const awLic = lic.filter((r) => r.outcome === "adjudicado" && r.awardedNet > 0 && r.budgetNet > 0);
   const budget = awLic.reduce((s, r) => s + r.budgetNet, 0);
   const tt = lic.map((r) => r.toAward).filter((x) => x != null);
   const resolved = lic.filter((r) => r.outcome !== null);
@@ -961,7 +1182,7 @@ function mandateStats(list, from, to) {
   const avg = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : null);
   const prtrRe = /PRTR|Recuperaci[oó]n,? Transformaci/i;
   const bajaOf = (list) => {
-    const a = list.filter((r) => r.awardedNet > 0 && r.budgetNet > 0);
+    const a = list.filter((r) => r.outcome === "adjudicado" && r.awardedNet > 0 && r.budgetNet > 0);
     const b = a.reduce((s, r) => s + r.budgetNet, 0);
     return b > 0 ? (1 - a.reduce((s, r) => s + r.awardedNet, 0) / b) * 100 : null;
   };
@@ -980,7 +1201,7 @@ function mandateStats(list, from, to) {
         singleBid: offT.length ? offT.filter((o) => o === 1).length / offT.length * 100 : null,
         savings: bajaOf(licT),
       },
-      n: { offers: offT.length, savings: licT.filter((r) => r.awardedNet > 0 && r.budgetNet > 0).length },
+      n: { offers: offT.length, savings: licT.filter((r) => r.outcome === "adjudicado" && r.awardedNet > 0 && r.budgetNet > 0).length },
     };
   }
   const prtrLic = lic.filter((r) => prtrRe.test(r.title));
