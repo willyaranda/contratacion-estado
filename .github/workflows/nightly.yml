@@ -2,7 +2,7 @@ name: Actualización nocturna
 
 # Cada noche: descarga los anuncios nuevos del Ayuntamiento de Aranda de Duero, reconstruye la página de
 # transparencia y sube todo en un único commit automático (dump/ + docs/index.html).
-# GitHub Pages sirve la página desde la carpeta /docs de la rama principal.
+# Si la página ha cambiado, se publica en GitHub Pages llamando a pages.yml (ver ese fichero).
 # También se puede lanzar a mano desde la pestaña Actions ("Run workflow").
 on:
   schedule:
@@ -20,6 +20,9 @@ jobs:
     timeout-minutes: 45
     permissions:
       contents: write
+    outputs:
+      # 'true' si el commit de esta ejecución cambió la página (docs/)
+      pages_changed: ${{ steps.commit.outputs.pages_changed }}
     steps:
       - uses: actions/checkout@v7
 
@@ -53,14 +56,29 @@ jobs:
           touch docs/.nojekyll
 
       - name: Commit y push
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add dump docs
+          pages_changed=false
           if git diff --cached --quiet; then
             echo "Sin cambios: ni ficheros nuevos ni página distinta."
           else
+            git diff --cached --quiet -- docs || pages_changed=true
             n=$(git diff --cached --name-only -- dump | wc -l | tr -d ' ')
             git commit -m "datos: ${n} ficheros nuevos y página reconstruida ($(date -u +%F))"
             git push
           fi
+          echo "pages_changed=${pages_changed}" >> "$GITHUB_OUTPUT"
+
+  # Los push hechos con el GITHUB_TOKEN no disparan otros workflows, así que el despliegue se invoca desde aquí.
+  deploy:
+    name: Publicar la página
+    needs: update
+    if: needs.update.outputs.pages_changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml
