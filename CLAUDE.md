@@ -31,16 +31,15 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
 La página de GitHub Pages **sí** se actualiza sola (cada noche y en cada push que cambie `docs/`).
 **No** se actualizan solos:
 
-1. **El artefacto publicado en claude.ai**: es una copia aparte, publicada a mano. Su URL está en la memoria del
-   proyecto, no en este fichero.
-2. **Las cifras y análisis dados en una conversación** (comparativas entre mandatos, totales, rankings): son una
+1. **Las cifras y análisis dados en una conversación** (comparativas entre mandatos, totales, rankings): son una
    foto de la fecha en que se calcularon.
-3. **Los textos fijos de la página**: guía de indicadores, umbrales legales, fechas de constitución de las
+2. **Los textos fijos de la página**: guía de indicadores, umbrales legales, fechas de constitución de las
    corporaciones. Solo cambian si se editan en `template.html`.
 
-**Regla:** al terminar cualquier cambio en `transparencia/`, o al dar cifras o análisis, recuérdale al usuario en una
-línea que los puntos 1 y 2 son una foto y que puede pedirte actualizarlos con los últimos datos.
+(El artefacto de claude.ai que existía se borró a petición del usuario; no hay otra copia publicada.)
+
+**Regla:** al dar cifras o análisis, recuérdale al usuario en una línea que son una foto de la fecha de los datos y
+que puede pedirte recalcularlos con los últimos datos.
 
 Cuando lo pida: `git pull --rebase origin main` (trae los datos de la noche), `npm run build:site`, copiar a
-`docs/index.html`, volver a calcular el análisis y, solo si el usuario lo pide, republicar el artefacto de claude.ai
-sobre su URL existente. No republicar el artefacto por iniciativa propia.
+`docs/index.html` y volver a calcular el análisis.
