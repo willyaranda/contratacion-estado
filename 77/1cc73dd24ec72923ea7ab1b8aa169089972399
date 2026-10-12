@@ -1,0 +1,23 @@
+.github/workflows/nightly.yml
+  s_98f5518a9c38bb::t_c218c2f3e17cc6 59,64,68,73-84
+  s_98f5518a9c38bb::t_5b176d5d6873a3 23-25
+  s_98f5518a9c38bb::t_c23a2f75f29540 5
+.github/workflows/pages.yml
+  s_98f5518a9c38bb::t_a19ea4f0195763 1-48
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "771cc73dd24ec72923ea7ab1b8aa169089972399",
+  "prompts": {},
+  "sessions": {
+    "s_98f5518a9c38bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "10858a44-8cf4-4211-9a71-45742fafad66",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
