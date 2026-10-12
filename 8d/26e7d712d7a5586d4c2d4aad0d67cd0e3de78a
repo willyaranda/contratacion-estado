@@ -1,0 +1,57 @@
+transparencia/template.html
+  s_98f5518a9c38bb::t_8fb806a73134c7 316
+  s_98f5518a9c38bb::t_27a07dfba57eab 736
+  s_98f5518a9c38bb::t_a4d0c001b9e72b 763
+  s_98f5518a9c38bb::t_086f97e1be4a40 254-256
+  s_98f5518a9c38bb::t_e0f564569a1a88 347
+  s_98f5518a9c38bb::t_d7969ef0cfe69e 585-586
+  s_98f5518a9c38bb::t_8c16fdb2aefa1c 548-551,553-554,557,559-560
+  s_98f5518a9c38bb::t_618f68b9914e1b 552,555-556,558
+  s_98f5518a9c38bb::t_5f64f307c34700 773
+  s_98f5518a9c38bb::t_da6cab4d571acf 317
+  s_98f5518a9c38bb::t_b33d728a52d413 309
+  s_98f5518a9c38bb::t_a10757ea9c016e 610-614
+  s_98f5518a9c38bb::t_2bc90806c99ef2 761
+  s_98f5518a9c38bb::t_f276552dbcb898 339
+  s_98f5518a9c38bb::t_ef0d1459792c08 158-161
+  s_98f5518a9c38bb::t_62f73aa5be7bcf 752-755
+  s_98f5518a9c38bb::t_aded9c397d0b76 331
+  s_98f5518a9c38bb::t_a0a7424c12a5c3 526-527
+  s_98f5518a9c38bb::t_8b1cfb633cef07 138
+  s_98f5518a9c38bb::t_a7465d8bdac125 380
+  s_98f5518a9c38bb::t_5efa6174658c52 157
+transparencia/extract.js
+  s_98f5518a9c38bb::t_b4635f35101a05 59
+  s_98f5518a9c38bb::t_a4f1f153d0afe6 14-35
+  s_98f5518a9c38bb::t_0bf89e4883b2f2 98-99
+test/build.test.js
+  s_98f5518a9c38bb::t_695e1d85c35fbb 70
+test/dump.test.js
+  s_98f5518a9c38bb::t_c78271e57f3fb7 114-132
+test/extract.test.js
+  s_98f5518a9c38bb::t_f20cc1b4a7d618 5-7
+  s_98f5518a9c38bb::t_3c04efb10d65a1 99,101-103,105
+  s_98f5518a9c38bb::t_fc16b58d691ac0 139-186
+test/fixtures/dump/licitaciones/10344985-1663321827016.json
+  s_98f5518a9c38bb::t_beb9954721640d 1-927
+test/fixtures/dump/licitaciones/12062354-1678796267953.json
+  s_98f5518a9c38bb::t_c9108d38710450 1-466
+test/fixtures/dump/licitaciones/8386676-1632991834377.json
+  s_98f5518a9c38bb::t_73d089013718a8 1-341
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8d26e7d712d7a5586d4c2d4aad0d67cd0e3de78a",
+  "prompts": {},
+  "sessions": {
+    "s_98f5518a9c38bb": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "10858a44-8cf4-4211-9a71-45742fafad66",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
