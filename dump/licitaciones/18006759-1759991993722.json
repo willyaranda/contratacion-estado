@@ -1,0 +1,1090 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/18006759",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=07upuxq1N1iP%2Bo96UAV7cQ%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR/OBR/2025000044; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 1998786.12 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "PRTR - Contratación de las Obras de Rehabilitación de 70 viviendas ubicadas en los portales C/ Castrojeriz 3, C/ Lerma 1-3-5 y C/ Miranda de Ebro 1-3-5, situadas en la UR-5 del ERRP de Santa Catalina. Plan de Recuperación, Transformación y Resiliencia - Financiado por la Unión Europea - NEXTGENERATION EU.",
+  "updated": "2025-10-09T08:39:53.722+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR/OBR/2025000044",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc",
+      "@_languageID": "es"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityCode-2.10.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityActivityCode-2.10.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500104,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      },
+      "cac-place-ext:ParentLocatedParty": {
+        "cac:PartyName": {
+          "cbc:Name": "Aranda de Duero"
+        },
+        "cac-place-ext:ParentLocatedParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "L04090313",
+              "@_schemeName": "DIR3"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Ayuntamientos"
+          },
+          "cac-place-ext:ParentLocatedParty": {
+            "cac:PartyName": {
+              "cbc:Name": "Burgos"
+            },
+            "cac-place-ext:ParentLocatedParty": {
+              "cac:PartyName": {
+                "cbc:Name": "Castilla y León"
+              },
+              "cac-place-ext:ParentLocatedParty": {
+                "cac:PartyName": {
+                  "cbc:Name": "ENTIDADES LOCALES"
+                },
+                "cac-place-ext:ParentLocatedParty": {
+                  "cac:PartyName": {
+                    "cbc:Name": "Sector Público"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "PRTR - Contratación de las Obras de Rehabilitación de 70 viviendas ubicadas en los portales C/ Castrojeriz 3, C/ Lerma 1-3-5 y C/ Miranda de Ebro 1-3-5, situadas en la UR-5 del ERRP de Santa Catalina. Plan de Recuperación, Transformación y Resiliencia - Financiado por la Unión Europea - NEXTGENERATION EU.",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4520,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cbc:MixContractIndicator": false,
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 2176401.87,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 2198664.73,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 1998786.12,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": [
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45000000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45330000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45320000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45110000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45100000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45310000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45300000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        }
+      ],
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 6,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/TenderResultCode-2.09.gc"
+      },
+      "cbc:AwardDate": "2025-10-08",
+      "cbc:ReceivedTenderQuantity": 0,
+      "cbc:SMEsReceivedTenderQuantity": 0
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": [
+        {
+          "#text": "EU",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+          "@_name": "Financiación con fondos de la UE"
+        },
+        {
+          "#text": "PRTR",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+          "@_name": "Asociado al Plan de Recuperación, Transformación y Resiliencia"
+        }
+      ],
+      "cbc:FundingProgram": "PRTR - ERRP Santa Catalina",
+      "cbc:ProcurementNationalLegislationCode": {
+        "#text": 3,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ProcurementNationalLegislationCode-2.08.gc"
+      },
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:RequiredFinancialGuarantee": [
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 3,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        },
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        }
+      ],
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:RequiredBusinessClassificationScheme": {
+          "cbc:ID": "RequiredBusinessProfileCode",
+          "cac:ClassificationCategory": [
+            {
+              "cbc:CodeValue": "C3-5"
+            },
+            {
+              "cbc:CodeValue": "C7-2"
+            }
+          ]
+        },
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "OSR-COMPTASK",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los CINCO últimos ejercicios, conforme a la descrito en el Anexo V del CCP_PCAP."
+        },
+        "cac:FinancialEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Acreditar una cifra anual de negocios en la actividad de ejecución de obras, referido al mejor ejercicio dentro de los TRES últimos, conforme a la descrito en el Anexo V del CCP_PCAP."
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del contrato, conforme se indica en le Anexo V del CCP_PCAP."
+          }
+        ],
+        "cac:SpecificTendererRequirement": {
+          "cbc:RequirementTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+          },
+          "cbc:Description": "Capacidad de obrar"
+        }
+      },
+      "cac:ContractExecutionRequirement": [
+        {
+          "cbc:Name": "Consideraciones de tipo social",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 2,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "La empresa adjudicataria del contrato deberá cumplir las condiciones especiales de ejecución de carácter social y medioambiental establecidas como preceptivas en el articulo 49 del Pliego Tipo de Cláusulas Administrativas Particulares, para la contratación de Obras, conforme a lo indicado en el Anexo XI del CCP_PCAP."
+        },
+        {
+          "cbc:Name": "Consideraciones de tipo medioambiental",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 1,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "La empresa adjudicataria del contrato deberá cumplir las condiciones especiales de ejecución de carácter social y medioambiental establecidas como preceptivas en el articulo 49 del Pliego Tipo de Clausulas Administrativas Particulares, para la contratación de Obras, conforme a lo indicado en el Anexo XI del CCP_PCAP."
+        }
+      ],
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "Contratación de desempleados, del Servicio Publico de Empleo: hasta 20 puntos, de acuerdo a lo indicado en el Anexo X del CCP_PCAP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 20
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "Mejora de la garantía: hasta 30 puntos, conforme al Anexo X del CCP_PCAP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 30
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "Oferta económica: hasta 50 puntos, conforme a lo descrito en el Anexo X del CCP_PCAP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 50
+          }
+        ]
+      },
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2025-10-02",
+        "cbc:EndTime": "23:59:00",
+        "cbc:Description": "El plazo de presentación de la oferta será de 15 días naturales, de conformidad con lo dispuesto en el art. 50 del R.D. 36/2020, dado que se trata de una tramitación urgente del expediente."
+      },
+      "cac:AuctionTerms": {
+        "cbc:AuctionConstraintIndicator": false
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP OBRA.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=XNQH3rzXfwAaTcQsYVVjS8SI0v1E8ZZekIA0b/t2hcQlYjYp/FByx8Viu3LVjBbV5fsXBIJN70yOdxC7xprWwYEXW0rxAlFpKdzaXa9c4%2Bs//q7NB2iMZvNyf0xrJmjt&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+          "cbc:DocumentHash": "rEJfPYPZMgOC7NyOJN/ntnCy5tw="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "13-Proy_Basico_y_Ejecucion_CASTROJERIZ_1-3-5_-_Pliego_de_Condiciones.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=7LNfvw0rt/OmbSD1Sv5vtqEzj%2BFom/cXrfvhzUJmiviBVlpwwekVV34heXFxUVI0tkBFL37HwfjTZLe3W4XSaNPWz3lZknHJsiAsnlgA/Qs//q7NB2iMZvNyf0xrJmjt&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+          "cbc:DocumentHash": "K/o05OSMHkBXIrE0aYE/G0Fyx8Q="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "10-Proy Basico y Ejecucion MIRANDA DE EBRO 1-3-5 - ANEXOS II-III.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=xvEZHEOUbJpN%2B54%2B9Ns4JOuNhnZ9IUhlKwVBH/w%2Bt/JEz8nZXsB0P4LIEb3EJPTmyiJfckhNvqvLu2Z3i1NBN8qNg1PQINbWvHbbiexOaz1t/o8fNevwsujgRzaBbugn&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "mEDXC/ydTOorJaS6L2XiNvvLNaA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "04-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Anejos - parte 3.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=IsRasC9Ho/R9ApQduNP6MKSZnXGm3kwgoScIc7K/XoleSvQ3mNT7yMuPm8ddwXnsmntGrOSJudKsfjB5MeszFiW2wWUf%2BEwbEwq18QMZkzJt/o8fNevwsujgRzaBbugn&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "vmxHBl2eS/Pv2T+kHeJCV07C/ko="
+          }
+        }
+      },
+      {
+        "cbc:ID": "07-Proy Basico y Ejecucion - Anejos - ESTUDIO GEOTECNICO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=QxqGnLPXKMMeIOIlXY0tBy%2BQFFCCoC80Le2dEPQ4NgKdUzTvNf8KNfUXX6uXzWSefkVtepr1ijfH1BEaDxOuzSF/MJ5NnB93BhyHo6E40yRJOVDbGCDM%2BMigrvuVS7Rv&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "oQnms6EoF/oubgNz5Kldsiqg/MA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria Justificativa ANEXO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=trZd2roWhgSWIqLfGeuNhhj8MbJH0oiU8cwWRqyq6YM4Nilpj9YjQUS5KcRoVa66Pj4MjJv4evtvsHj9P%2B%2Bh8/U3veDTBI1iNf5eep7%2BKdB7QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "aERqOFer55C2oo8Jr0cJ5C4xO8Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "12-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Planos - parte 2.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=qETOjnonnFoiudl9FN7DrE46uzejksoUFTLBh1tkRRq7%2B9m3wBimNJTowmy9vWGoPZCekIHNOkn7g3gm1oV8pi8pFbl5KmRGOxG8pLV%2BryYZyAJWGsSt0OzTSTyw9JAs&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "5vjhecpk/tJ15R1UxR/QmWdZ2/4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "09-Proy Basico y Ejecucion MIRANDA DE EBRO 1-3-5 - ANEXO I.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=tW3lvORwnSokeZRyNjc%2BTck23bds4/9Q5EwvAaLKW/hlJHyNaFS7odXggL/0JpXATQA8bkfCmb1jSElJG6GPrjURyFYr0GJszVhWPVeHozDVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "wJQh5Rks6DIGgB4HcZsLDA4gU4E="
+          }
+        }
+      },
+      {
+        "cbc:ID": "05-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Anejos - parte 4.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=gANotjrisDIgDLSUYlCvzfwn38efMCEiQygxa2VPAnRxDxnnXtDTCXp3hwhlRUKNNOP3oh/Km/dVLX8nJH0xS4jXm/WdqYbBFtpZYo7qqnZt/o8fNevwsujgRzaBbugn&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "EgzwwwVmz6Kn3TAh7AXfN+7EfPA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Informe Supervision LERMA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=r1lq247KLYdJVL4tRA8uKooNPPj6ZOejqTi9g9tVVZGDjh6t/OOJfk/SjKs0qVBtSPBVxuRE%2BcBYWTrpCTBZpQjs%2B9gfV6hzhPI0PnO8MYwZyAJWGsSt0OzTSTyw9JAs&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "8PiPH0WlJt+JHUcgo9ff5YL0Jj8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "12-Proy Basico y Ejecucion_LERMA 1-3-5 - Pliego de Condiciones.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=OcFZDV0WYqRl2fxf3fwTNwSQv8AHHsRZgI1Jqht6MxjUGM1q1Gq3me7Me06PivQkXpaUCUhESyD7bw952Boqa1ze1ZQQ6IaJnE3/m4ZTbd%2BCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "FkoF9UNgNWhT6dHIrAj+Q3wdNeA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "03-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Anejos - parte 2.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=zq7Fk4%2BdG74TW3VsRfVjhvAFter/Z5t2Ce69dICKijtG81b6tfEI0BbMq3g1aqCTuMWlMCuIIeejwbU0R9nAkr0AkRIhBxMxr%2BPdgJFRORWHAj0WEJrB5sP7amrh2jBD&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "oTcexRjnGrCNLRadcE/91qdxx4c="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion Aprobacion Proyecto LERMA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=ybn35JFiEeICnWFj3upphuzpVZImIsJrCzkRCwmES6lYxvCUU8Q8OvJRfeglmKHGS5mVhPDYmdQIP3FMw1vqPC9gSBEUzecxagL26t8q%2BHRJOVDbGCDM%2BMigrvuVS7Rv&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "z6ayH2F6/80c0B2RRtE1upLVs0Y="
+          }
+        }
+      },
+      {
+        "cbc:ID": "12-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Pliego de Condiciones.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=EJbOuNLYGw8Pn66oZYXwCnlQ7qrFTp/rBfzyS8bXWySr1cOXzfB4OcdYX2Q4BceHs2LDPHD72udErhn8qh2FA3bKSLjaVfCTqGWfCKp2m2/fdyQgZAdTm3EfcUAC7CJ6&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "okzwWxiK0do6TG3sUlt9ktPVw9I="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXOXV Declaracion compromiso PRTR.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=C/InD7efIwxKmTPMYyO8eP2AjTB9JDpzX0TNWHBX9/MxqsGvUna4zTRr4NeCi3PLN4qVil9XpLGr8QuE6xyZmaP4XGpm9%2Bhr/KwTXBKfUef6CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "yj4NZXJjI+E4i+H+rugGR3pxkx8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Informe Supervision CASTROJERIZ.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=Ab3L%2Bn0ONxKn8tVfziAv0jJCq7/cTMbevdoQEo6aX5zA1zRx6ExSaZb8nsaHLYgukzuWtWygxcjFh80UHOXPTQ7Qc8qL53fNjF%2B69qkrLtcZyAJWGsSt0OzTSTyw9JAs&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "DnnsvxtWvUZ1xFjpI4RHRSiFz+k="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion Aprob Pliego Gasto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=FjSMx32zzP68kUwSDhkkdqvIioHtTkNUocF4czGF1PGP7SoeuIv%2B6Yfwrep8tGOo0acFNsMWN7jcFt/2h241n2Du3t5Zs3U40P%2B8hXWlRjf3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "5+CQAxRHyRKVsb3wP3nCPfHmaSU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "04-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Anejos - parte 3.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=0N8ZNM3im1VmA8JXoOy6Kr7QpUrh72E2rz4sPzn/ZrOXxNlWllMFE1xwxdpYBcdVDiz/TaZV6KR6biWHAO4cD6iTKeVS1yOHW%2BRhzn4cpw945ClyWkoJ44mKM70IFcOu&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "WIFpeY5h3aFis+th53pL87T1h8c="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO I Instrucciones Deuc.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=xgzko75z2j52kj2rEy9Rj/r5OneMSEZ8Gts626d2i942HGXRcRNXwTFrQiqMjDVrWjoRpWyvYqdB4jk7Ig6qAgDft1UJnNU1zjALy7us6xB7QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "Wj8uZkx+znj5OghoMCVs0L1m+14="
+          }
+        }
+      },
+      {
+        "cbc:ID": "05-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Anejos - parte 4.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=XkrbAPZy2fzrpXc/r7xkq1BEdQXRvAMxCq0mYUOTj%2B00pYWwhfdg/RNVNPx42G3v/HgmC43yOaJf1IQ0VYW02949HwEanQapWa6B3mOoQFxt/o8fNevwsujgRzaBbugn&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "Ha1vtdq+8c0uPvliJM6226DxaAo="
+          }
+        }
+      },
+      {
+        "cbc:ID": "08-Proy Basico y Ejecucion_LERMA 1-3-5 - Anejos - ESTUDIO SEGURIDAD Y SALUD.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=Z/tAcuaHnda2JTZ%2B%2BM4hxtVCUDBfA0k2%2BqLeSQbT62wQVKUk6D1nJctIj4lzW4JnDqvZaH8q5hfAJTVAEFJWivvrjJu2owJfmnV/xe22gka1aXEvq3KHa/AEHgtDrQw0&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "2SkjnH1pAUHE6SLnMwpfC3Vdz4k="
+          }
+        }
+      },
+      {
+        "cbc:ID": "13-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Pliego de Condiciones.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=HlncCamdSZpi4cmnbfNEm3wSe5wxp/m1xqqagtHpI4FNFwgXltP8m9VbAd8O8%2BS5yxfvPNQq5SIFJBvT8vtk%2Bb9cJgkYfrFH4WSXBsupkK3fdyQgZAdTm3EfcUAC7CJ6&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "K/o05OSMHkBXIrE0aYE/G0Fyx8Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "05-Proy Basico y Ejecucion_LERMA 1-3-5 - Anejos - parte 4.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=sbzbKKvo9b%2B443d8JkUPT4%2BgNtF9%2B4pbkZvPFLT3fW2nHaTKiAgijh3t8gKZE4vdWTD5flH7Gyq9sdSF2wwHxhBfs8S1A2VS9yYtmz39AceHAj0WEJrB5sP7amrh2jBD&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "KMJozSRcd8IFFttKpSdjXVPGT8Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "02-Proy Basico y Ejecucion_LERMA 1-3-5 - Anejos - parte 1.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=7kC1VYjFN7CqZFjFnr0NoRe3DiJddER7kBWYYkG6TecDToP/i7RGVGOTHLDNuWe5tiaocOgfj0pfWGUO0w35KmYTMdFZTwFQPe3JbHePawnVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "fTOQ7uGGb+pD/fr1mHHK0eZgQuY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "13-Proy Basico y Ejecucion_LERMA 1-3-5 - Presupuesto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=a38Sp%2B6k5JTo/TdMCj1f0bYDI79JRcaikAP/gZf6GnJcJ6FPf9s8nqXHkTN54VMV884AXbklz7WSXy8s1OfZmIjMdCcaXkXQLEPFP4nnXACCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "AVjGU1nC+T0QyV2QhHSaUgQovDM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXOXV Cesion Datos.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=lTSkldU8hz27jysoX91V9LH6vb2ZcFBZJfYeT7iYv68N0WLyVqPfrHhutwbxkURzUJ1aqyJ0RAOuLOSmITAYs57q5ejnvXjJQi0Igmvzyj/3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "fsSUBnmCjMMgXBQLN+c5omcOSOc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO VIII Subcontratacion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=MB2XaG2ZfP3MNUFTVPcJHq/fDvDkTbKoDNV5K0rrVbpeDYeWIVtn3JS7F9JoT4b7hPTrUFpKUt7HHHXSedTvpTzMgsavZVUnuNnsLA57u8/fdyQgZAdTm3EfcUAC7CJ6&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "TdYmQiuVz9dOqFI9YFAqnxxRL4E="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria Justificativa RehabilitaciOn 70 viviendas Castrojeriz Lerma y Miranda.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=kKHm15i650LDv4jZp9jCgSvkvVglLm222kWhkTZuqXWQs1m8Eh/eNYuo1XoniI4V2CVXwDlF03AbmxPzct0NZ7xK2H5wQ6/%2BmAAlbbpY7gXVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "6qN2xZR2mPKSHXtbQ+l0yDlMg58="
+          }
+        }
+      },
+      {
+        "cbc:ID": "02-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Anejos - parte 1.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=QKY3lGYfo97mP3s/91d%2B55AY5sBrom8Cf88JXkT0zknBeT3iFwL1Q4Ge4qCB3bRx75ZI%2Bvmk%2B4s/wyP6grSjK9yjuI/QSCX5Jaf70hwbcmf6CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "IxNSxobssiMS2QAEh9CK05rVBIw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "13-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Presupuesto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=tuq1L4jrjumHYtL1TlQSOdQlsteSLuiy/5XLw2P6om0wTgz/59dwzPUinpMUP%2BID9CXWUgrHlcSzRAAHXJymQXAs42HksV9YuTYicOKKHdkZyAJWGsSt0OzTSTyw9JAs&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "CQbFPTm6U7M4fKUXcKcqOAeBuOM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "10-Proy_Basico_y_Ejecucion_CASTROJERIZ_1_3_5_-_ANEXOS_II-III_.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=8qB6Co2IU8GdrmYEeDqxy0oKDSBxkZbAtDOKTGJMgVqHWT0ahikvhw4dierd6kIK0Xo5vonvyiaCI08Mox2uImZK7/yd0By2kAV6w/WqyDTDdQD9RyhUmzT4jZ2In4zL&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "JiNgfGEJfvvZaQlXIAouD/Nhtyw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IIA Y II B.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=G9VR8jU5bw9cXmm4u%2Bt3OccuZrfXKXGgizY99P8oF3LBb%2B%2BjKkS1kHi4ORK4cIK%2BdzYXTQ7iU4LgmPeg7MQSu71pyCrztOUqIYJk2kpm8YiCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "mToL3x29WPLhl5DJN4dpY8FbJGk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "10-Proy_Basico_y_Ejecucion_LERMA_1_3_5_-_ANEXOS_II-III_.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=nzzX18slrAStRo4LP%2BmmHEiiLng9To/k0W7Dk9cvWugqCUVT6sTAk8b1fNz5NhpC1nROTxyHjpBmNcMDb/LTWQ1nCPtIfFyzYQIpnOzKnCvVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "6huya3OIHOuzXBK1SR3BcTc/ubM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "06-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Anejos - parte 5.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=XSCXzbX7/2F5daQggaWYdlJkTUP/AK3fryEtEajWbOG3rImeDXZIx7TIKXvEl6LLhao%2BM34uldbHAUVqz7XCTTt%2BusgL7bwS8jvHNvYsv5oC1/zDIE0Kw/PWNnLS0Z0z&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "MxFzYccpzj3sxTJ97K4qz2t7Ht4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "A0 Modelo Datos Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=nGJ9Di6Xio5VCo62OhUiS2GBgZBWI8kDgRjgj1KU3fAh0CHMhnTIRQmpU1F52p38jDfSrdZX/p7S9%2Bza1lOveyMdwXpQhh3SLydwfJMv4c36CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "jgc8RNLC2YqdCbvctpolGz9cDm4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "11-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Planos.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=tpzA/XMrKDd4D7qDGHh38Crrwha0ctqfuS37COjPoIYkxpvESfj3loIHihb/3CKOyy7kR39HUkCREzO8Ai6mxB5JWxlAFQzpCfF0OGLq%2B8lt/o8fNevwsujgRzaBbugn&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "XQOWIf2ZIPtuXEFZvL2mGM5F6vc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "03-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Anejos - parte 2.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=CmnFle9pBRoy/E%2BiBCtqWtnd94I/l/shgpNXzNMKd2D/K7WB/XqdVP/1/MtDlpqxZO9WRTOV3IZm/Ng80eQfbgWhhQxPsMEj3o5iHMzC57a1aXEvq3KHa/AEHgtDrQw0&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "MSwWtM2GKfvsLm6MwW8G390FXtk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "09-Proy_Basico_y_Ejecucion_CASTROJERIZ_1_3_5_-_ANEXO_I.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=qoypo80uk%2BJncORQw0pizXqDLn57s3jE6ZY3f9byiF5kViwYPRzerVJ2kYj1FhG%2BDWOqFbi6VcwCxZ2ULxYH9qXPAkl/Wrsx9AWuAG0VE1L6CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "ago4UIcADffHZ/KL8MUChRGwRUk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "09-Proy_Basico_y_Ejecucion_LERMA_1_3_5_-_ANEXO_I.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=P6%2BDa3zOEN%2BQoDPKAqsQAMpCrRaOPIT9h1CgSAYHgguPwigrmngCOWx7UHqRkTgN6gPIdL2cE8niHPxi307rUGYXiA6UPvb4aNBk4stK8xn3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "dcCd25iD8JUUDwg+pMuiN/dMfvw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "02-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Anejos - parte 1.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=sexLivCiTp1IjYI0a0dcRHLblvVXrGx8aADnzn%2BzsY9WPbzHFnZmgZxs%2B6ABjujz/LPGt1YSl8Fgh4YyqFt/rqupiuCViue%2BryhirkLXLtl7QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "PEgYxcCWzOnW1hzhWzAd+pi+Zvo="
+          }
+        }
+      },
+      {
+        "cbc:ID": "11-Proy Basico y Ejecucion_LERMA 1-3-5 - Planos.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=/cnnvTl09Xdy2V0D17rQLmOLaXC4qmXhT8/iV2iX8J0kJUjv/IzPMmjd3%2BLcPSd%2BfmyTfc4SAr%2BWsb2T72CNv3sFCGBk508CI%2BMtD%2BmlPu/3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "XVQdk0v1pSIxXuoDTazmXnsTDLI="
+          }
+        }
+      },
+      {
+        "cbc:ID": "04-Proy Basico y Ejecucion_LERMA 1-3-5 - Anejos - parte 3.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=jD2PvZm0NeYbFB7nTIgVBSW34flZAV16uJZSRahijhtnSxcjhhDSYWz3G9AolCckpnezLE1qwaEEktBqY9IV5wSUQ65VWTuJ05nkgGThwT8C1/zDIE0Kw/PWNnLS0Z0z&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "74y8Dd9Ck8USfTs50KkbIplyAZw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IIA Y II B.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=z7LBkM1NPcqGTn6M6oMaNEnoJMzobbPnp4O7WL6B6KB466Y1JaTDlWR%2BfgtDFkQ3zUQ9N/UAqn2x4LOtZbkIETTId1H4D6aLbF0dK3E7ajOCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "mToL3x29WPLhl5DJN4dpY8FbJGk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "01-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Memoria.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=FUZhoNwpu%2BFyuZwTGgOGSX8l%2Bqm9rjkPOYvyy79Vyb01NEpTHj4iivWf7jYR%2BspGkNe4G1VriC2LkQq%2BvXyBG1lonvpGM7v/bmFR0jb2D5145ClyWkoJ44mKM70IFcOu&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "bc9L38+5Ud5q7QsFZ8ORSfqXxkc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IV Oferta economica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=IjIwsWAl5D4KSz3oE8QDyeiRd57qDrfau22kZyawsPbxvdpGl0cmQCgkL6e1CmPa7xSAjmB3IHPp5sVquiNGZ5gn/akVLgHNTx%2BHu5MXHGGHAj0WEJrB5sP7amrh2jBD&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "UQ1qndAXh4O7XZm4XU5zYxvlP80="
+          }
+        }
+      },
+      {
+        "cbc:ID": "06-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Anejos - parte 5.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=m0rAHCQE4zjGYYHRET5iW2%2BWdJseYV8UOh8mK0juXNGWJMNsyavSsSgYZIRclQ5r7vs%2BSNT8eH81UibO8s5mnSHgEy3cetepCDnlGJMCL7P6CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "Q0evHsgZt9aS0T4BxEzq8Y8eP0s="
+          }
+        }
+      },
+      {
+        "cbc:ID": "08-Proy Basico y Ejecucion_MIRANDA 1-3-5 - Anejos - ESTUDIO SEGURIDAD Y SALUD.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=NwY7JmqTitgUB57nwOfPcq4w3PsXRm72Vekw/3/N8fg6C2cLp4VG3aqwnSIe47/k7D8u/qX20vHD7G6FUY6wcTG4Th%2Bo85mSg0e5cjjrJ3gZyAJWGsSt0OzTSTyw9JAs&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "eoeLVNjy523XQ+b6+S7XyQkzK98="
+          }
+        }
+      },
+      {
+        "cbc:ID": "03-Proy Basico y Ejecucion_LERMA 1-3-5 - Anejos - parte 2.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=fRsFS1Td%2B0M9W77GrutRM2ikKkcPq%2BsxVLRccpXzAF1KEtN5IWTNXtYsx%2BSeiE8Cik7lYLu1TVtepKXK/X/HyY4M%2BIoNUiVbd0kK2dUrcmmB0nvVKRzfe4rpHcnlPhSZ&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "Gk+tsibCnuovgeOOnA6bBWL/En8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion Aprobacion Proyecto MIRANDA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=hGtHP76V5an2bxfQzYzn1%2B0ui/sjZ%2BRtxyOiTvbfrKlQWyS3IDy80QU0YAynKYOEOVNKTd2KVAtcQM/2PHXHQQ3GYZhnWN14kL2coMdTUYCCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "TMYE1XS8bjSzgn2SGZsTl7tOBVI="
+          }
+        }
+      },
+      {
+        "cbc:ID": "06-Proy Basico y Ejecucion_LERMA 1-3-5 - Anejos - parte 5.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=sBNObmXECOn%2BQVOhQMrAbLDuHCDdqh3yQARz1DnR/azFOrKmU63lcJBihMUfVRw8zO7RL8PwSNUaHMs5oAYipvCICxY95wt/mTYNH4jn4LLVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "mtxswmU+JilSChCw5qdNy3ZEl4s="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion Aprobacion Proyecto CASTROJERIZ.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=6Ox9/O5gzllnI45cfAxkbocQloYFt9oBQFf2E8Ap%2B3dx/zH7WHz%2BnoroVO3fprU2OjbrOzF5xt5jF2FjRwzTjfe5M3i2p8DAbHO3VTwItxrVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "DU7HgZEU9rt59dayOvQb1slLl0Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Informe Supervision MIRANDA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=e8YEz7plwESBcnyb03IVlZ8zSbDQPKyl398NtL6jhd9go6Bm9jB6zZ99DHEkOopxqimNj1rwFOnvrVWNuT06/O37b1vTtNCLJX0/TdBliWOHAj0WEJrB5sP7amrh2jBD&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "1FxzwhHrTUUw+vGbvyij1ZdvxCM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "01-Proy Basico y Ejecucion_LERMA 1-3-5 - Memoria.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=6/%2Bj/2CBBmxW2kaPeMntl23tPB%2BXmzZcudz0o79x6BXP4mTg3vAO5JP2z9eTuVDecHUV/3MC9gFG9kToMepBPsgAbfppewLhgNZI2VJfrjJ45ClyWkoJ44mKM70IFcOu&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "A7zRE2XlWtIkLJDvr5RiEjy/hAM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Pliego Tipo de Obras.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=/WnrHmlHpyDlozcOsTs%2B9Fd%2BIcreOi1icDh5QzWN3qtF6uPPPXjymzUO9bt08ENYq9YNb7KNenV1YWLKp1jB8OAACSRdxidfXzyMnuBDO6r3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "ehU9q3etexP8QJH62mWkrL5B5kY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "08-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Anejos - ESTUDIO SEGURIDAD Y SALUD.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=BFkbZ5Ps1z9wpR6FPXrQ9Etg29uYcVPEIE%2BQIMuNdx0fnl2lkbaqNL/LS7dkh9VaKZ/W1a6G3dZPXOmQ3pfzRdN7SjBVV29l7Ce4WRWsKQX6CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "oqCmsbDXqiL/zq5YDxEfQPBoEY4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "07-Proy Basico y Ejecucion - Anejos - ESTUDIO GEOTECNICO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=7XfeotlOAv/LB3ohtTGIjLnsT3S7O80RtG992i3eolGFQd%2BQCvJJ5ibJjFOoC4wGlbeFDz2JQSFeU9XZ%2B4tqDaIyfOxuEB7FLdaA1ID9xou1aXEvq3KHa/AEHgtDrQw0&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "oQnms6EoF/oubgNz5Kldsiqg/MA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "11-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Planos - parte 1.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=ZFTY2E/qcvfJaNAir1utP91OKyi1GqQ9%2BPhXMPiQTshqKrF1R18LvopcDxR6X3dmZu2r4fdO8WRM6EcxSh304Az/3%2B7z6B6bLula2twWpz21aXEvq3KHa/AEHgtDrQw0&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "8f4gXNtEObWoT3Mw6Wr1/WrlZxs="
+          }
+        }
+      },
+      {
+        "cbc:ID": "01-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Memoria.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=yFa03xjZaidDcblLxEtJGcake2RKTBqatE9Aa9TWE8twvXWECH%2Ba7Z4O2%2BlLrhKy1pmfzoGlQGUf1nPjPwLFlXsZE8a4zWv6GDEwF7mnzBMZyAJWGsSt0OzTSTyw9JAs&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "5xWUUec+Paszuw1GHEAkJp7GSoU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "14-Proy Basico y Ejecucion_CASTROJERIZ 1-3-5 - Presupuesto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=/kPS6o3ObFU5g1zCer7JJe3Z7Y77tRDaPpxZYjDiLsxNhM8z4YSJzHM%2BGdexlDtl8ZisB6uA5yrBIlg%2BSXHjkiL/mNLE%2BhjTIRd33hQo8y4ZyAJWGsSt0OzTSTyw9JAs&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "uERE05ARVBRx9S6ZwwDzQEQ5QEg="
+          }
+        }
+      },
+      {
+        "cbc:ID": "07-Proy Basico y Ejecucion - Anejos - ESTUDIO GEOTECNICO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=EpGt155So2l10eBmEsk9GhR74Tv6NThpOZ3ru8AFPlr/0nfHBMIDojnbmvMpooT4G3dXEdIVCmdFiDts/dgkAEjPxQPePc0r8uO8pgD2NQ%2BCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "oQnms6EoF/oubgNz5Kldsiqg/MA="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2025-10-09"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingDocumentTypeCode-2.11.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=GngHGq50gm3uS4uukISs4GxMbXVTop6n0oIqlR1EA/F/iytbYIfBt5IXXuDxI56UcNCteSkz3YZL0wYC42tpP4ZIOOqs0PtTDxeKvDogdhnVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+                  "cbc:FileName": "Resolucion PRTR ARU.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2025-09-17"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2025-09-17"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-a9582500-e543-48ac-9744-5bb66da8ff00",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-a9582500-e543-48ac-9744-5bb66da8ff00",
+              "cbc:FileName": "PBE BC3 MIRANDA 3"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-5c7bdb21-46a3-497d-9c23-8b98b5a2ad93",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-5c7bdb21-46a3-497d-9c23-8b98b5a2ad93",
+              "cbc:FileName": "PBE BC3 LERMA 3"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-3a425a06-b2a9-4b87-a412-7806371a1c8e",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-3a425a06-b2a9-4b87-a412-7806371a1c8e",
+              "cbc:FileName": "PBE BC3 MIRANDA 5"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-f392cdbb-5c8f-4d32-8323-2c2bf78f778a",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-f392cdbb-5c8f-4d32-8323-2c2bf78f778a",
+              "cbc:FileName": "PBE BC3 LERMA 1"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-cd9e1d42-27c4-4ab0-ba16-f7fd9eb153f5",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-cd9e1d42-27c4-4ab0-ba16-f7fd9eb153f5",
+              "cbc:FileName": "PBE BC3 CASTROJERIZ"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-e8327ccd-4f6f-4ea9-b698-42889ca4e196",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-e8327ccd-4f6f-4ea9-b698-42889ca4e196",
+              "cbc:FileName": "PBE BC3 LERMA 5"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-2969039f-f07e-4f6c-9200-d343aeb22429",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-2969039f-f07e-4f6c-9200-d343aeb22429",
+              "cbc:FileName": "PBE BC3 MIRANDA 1"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

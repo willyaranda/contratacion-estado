@@ -1,0 +1,720 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/20658180",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=mjrSmRE7H%2FnIGlsa0Wad%2Bw%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR/OBR/2026000043; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 621666.51 EUR; Estado: PUB",
+    "@_type": "text"
+  },
+  "title": "PRTR - Contratación de las Obras de Reurbanización de las calles del entorno de Los Bloques, situados en la UR-5 del ERRP de Santa Catalina.",
+  "updated": "2026-10-07T11:32:00.170+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR/OBR/2026000043",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "PUB",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityCode-2.10.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityActivityCode-2.10.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500104,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      },
+      "cac-place-ext:ParentLocatedParty": {
+        "cac:PartyName": {
+          "cbc:Name": "Aranda de Duero"
+        },
+        "cac-place-ext:ParentLocatedParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "L04090313",
+              "@_schemeName": "DIR3"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Ayuntamientos"
+          },
+          "cac-place-ext:ParentLocatedParty": {
+            "cac:PartyName": {
+              "cbc:Name": "Burgos"
+            },
+            "cac-place-ext:ParentLocatedParty": {
+              "cac:PartyName": {
+                "cbc:Name": "Castilla y León"
+              },
+              "cac-place-ext:ParentLocatedParty": {
+                "cac:PartyName": {
+                  "cbc:Name": "ENTIDADES LOCALES"
+                },
+                "cac-place-ext:ParentLocatedParty": {
+                  "cac:PartyName": {
+                    "cbc:Name": "Sector Público"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "PRTR - Contratación de las Obras de Reurbanización de las calles del entorno de Los Bloques, situados en la UR-5 del ERRP de Santa Catalina.",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4521,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cbc:MixContractIndicator": false,
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 621666.51,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 752216.47,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 621666.51,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": [
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45233222,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45233140,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45232410,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45316100,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45232300,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        }
+      ],
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 6,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": [
+        {
+          "#text": "EU",
+          "@_name": "Financiación con fondos de la UE",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc"
+        },
+        {
+          "#text": "PRTR",
+          "@_name": "Asociado al Plan de Recuperación, Transformación y Resiliencia",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc"
+        }
+      ],
+      "cbc:FundingProgram": "ERRP Aranda de Duero",
+      "cbc:ProcurementNationalLegislationCode": {
+        "#text": 3,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ProcurementNationalLegislationCode-2.08.gc"
+      },
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:RequiredFinancialGuarantee": [
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 3,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        },
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        }
+      ],
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:RequiredBusinessClassificationScheme": {
+          "cbc:ID": "RequiredBusinessProfileCode",
+          "cac:ClassificationCategory": {
+            "cbc:CodeValue": "G6-3"
+          }
+        },
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "OSR-COMPTASK",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Solvencia técnica o profesional, Relación de los principales contratos de características similares al que esobjeto de la licitación, ejecutados por el licitador en los CINCO últimos\nejercicios, acompañadas de certificados o informes de buena ejecución de al\nmenos DOS de ellos, conforme Anexo V del PCAPO_CCP."
+        },
+        "cac:FinancialEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Acreditar una cifra anual de negocios en la actividad de ejecución de obras, referido al mejor ejercicio dentro de los TRES últimos (o desde la fecha de inicio de actividad de la empresa si es menor) por importe igual o superior al valor\nestimado del contrato, conforme Anexo V del PCAP_CP."
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del contrato, conforme Anexo V del PCAP_CCP."
+          }
+        ],
+        "cac:SpecificTendererRequirement": {
+          "cbc:RequirementTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+          },
+          "cbc:Description": "Capacidad de obrar"
+        }
+      },
+      "cac:ContractExecutionRequirement": [
+        {
+          "cbc:Name": "Consideraciones de tipo social",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 2,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "De conformidad con lo dispuesto en el art. 1.3 de la LCSP,   la empresa adjudicataria del contrato deberá cumplir las condiciones especiales de ejecución de carácter social y medioambiental establecidas como preceptivas en el artículo 49 del Pliego Tipo  y conforme Anexo  XI del PCAP_CCP."
+        },
+        {
+          "cbc:Name": "Consideraciones de tipo medioambiental",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 1,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "De conformidad con lo dispuesto en el art. 1.3 de la LCSP, esta contratación introduce unas condiciones especiales de ejecución del contrato para el contratista de carácter social y medioambiental, conforme Anexo XI del PCPA_CCP."
+        }
+      ],
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "MEJORA DE LA GARANTÍA: hasta 30 puntos, conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 30
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "OFERTA ECONÓMICA: hasta 50 puntos, conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 50
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "CONTRATACIÓN DE DESEMPLEADOS (Servicio Público de Empleo): hasta 20 puntos, conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 20
+          }
+        ]
+      },
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2026-10-21",
+        "cbc:EndTime": "23:59:00",
+        "cbc:Description": "Plazo para presentar ofertas: QUINCE (15) DÍAS NATURALES, de conformidad con lo previsto en el art. 156 LCSP y art. 50 del RD 36/2020 (especialidades en contratos PRTR)"
+      },
+      "cac:AuctionTerms": {
+        "cbc:AuctionConstraintIndicator": false
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP OBRA.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=PtnWTzmMUkdpNRt1Nc7THHIjaVmxkhEdAOfglbBVOmJqPnsOzZDQjOoeyoQmGBz4SUC6dgYsdV8FxNtLRH7OyLKnauQnQaPkq92Ppou3diu1aXEvq3KHa/AEHgtDrQw0",
+          "cbc:DocumentHash": "k26pBBVWdmcLkfvjizpE9xOtMUE="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "18_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PLIEGO.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=PX04qeOBQkllvnLDhnYiEnCRW/p99nbDdSqXtO2IKrevNrzJrOBkBPLYDL441Q/Ta3tNSn9rBDCZnA5aBpB8q8TdftD4gmb1KVFr6MgufJMC1/zDIE0Kw/PWNnLS0Z0z",
+          "cbc:DocumentHash": "x5S398bhCn/F6XEe3HtqjcpsECk="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "Memoria Justificativa.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=93927DnFQPRRF4B3PM/Y9G9PO6gzx3EdWmNbNnH/9MUpxFYPb4QsAW5GWdU7f4UVGM4nzZjrhO0uGJXhbK9ZtZkyGOc%2BIMef877HoD8OBxF7QB3HKyQaFUExmUVQCerk",
+            "cbc:DocumentHash": "nplC/LLgTsp2QbgYT95nQJ/HRjY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "RESOLUCION DE APROBACION DEL PROYECTO DE REURBANIZACION.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=Ha3qTsZfFMim3CNnKzBYy63dJbGozHYyDHo%2Br4YGaDUgCYuuc0BHF4Wp3ARpY/wBPnVS6K6Qe0j7f1p9ibOJvy7C6XyVov3aUkAbpsJg%2Bjf6CYyL7SIrUOBFfNf52ZqA",
+            "cbc:DocumentHash": "2VhLeZFbhO1PljGWJidaGfzOIyU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Pliego tipo de obras.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=86znJIBFAI9RzAvuKPpkeRw1UfO3rFKaumoIaGR915wr06S9aXpPmyYxYaXwJFlSmBekXG63zbZQlaov42d0z04p5acj8e9DTZRW5BHP4AYC1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "ehU9q3etexP8QJH62mWkrL5B5kY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo VIII.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=Dkp63a78/IdXeuPVdNjNy019QNKi4SGM4hvQKsQV4NR9AQ%2BSpbuokXdkeRwLU6nCW/ZPgkNAhXpaPxhf3hlwzBEWfOz%2Bf87%2Bypo2i6LXNnX3GVhXrFFqN7yFncy7YfRK",
+            "cbc:DocumentHash": "3kEgomW9oiEH7KtvKF6DbfHwvDU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo XV Declaracion Cesion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=guo35tXpFCYTh5gpSeU1rEmBri9Db5f2ir3vhA22HO1fO%2BSFqVPT8pBtEW5sfh2wYkaGXMqOmlCtdv7iypZ3v94sJ3BBdhrjmX11SbDpjwmB0nvVKRzfe4rpHcnlPhSZ",
+            "cbc:DocumentHash": "krRvFhRBevmg19mJ9OdkUf+CcEk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "A0 Modelo Datos Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=HlNCGlHn37VVqaZyZOgL6HN7dXXmfQEI50SongmvniepXOS3hpB8qYSthPQufSRf66JOKNyH1Lqav/lmlmuWcTNM1s4LT0K3wWp5S%2Bnk1ynDdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "4XdRj0XMRTahBQGmnKO4hiy01z8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo XV Declaracion Compromiso.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=D3/xGp4Zap4lMIPFlPLxssI9a2JsZWMJBLqOTkjYmHfAmPkpg9tHMAN/QrMYk5DUCSQDN7fIpvdptwbg67l3os7Bha62P8emY5DwRHFlVfoC1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "2m29tN9k8Ta9fRX/I1mJ3QjC3a0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo II A y IIB.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=ueoMBtG2CZGZFfdvMUPY3qiYNh/X5EIFq7CPMl8yuX/tuXkl9XpjGB1E2%2B4UZvYuzR4Hlci%2BUFoRpdF9jEZuk7O6zNfYyC0EKGLmhn795RX3GVhXrFFqN7yFncy7YfRK",
+            "cbc:DocumentHash": "TAbLM861rxSxO5S0krP0qd2SFt0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo IV.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=gElbDj37JReEHvEBvK/2xk5BjsCz7VMU9YtmtE//xHOi4KwFylTzBLgl%2BTyF93ArqVx2lp6F4tg6GEyaNEad9QjbsIBjLcLUh5jG31ei7J97QB3HKyQaFUExmUVQCerk",
+            "cbc:DocumentHash": "YXcqxAx+9wxGlaAlIUsH6coUfNI="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO I.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=4ktsuOwZBOA7XSiocCPUDH3MKYU7aDByTjWoyXlOz/oYP0AKexbBtPo2uHy2fGlGjlNwzgQHhQdKsgt5UeejsdarD5zhwoPdjre5gKwy4Wd45ClyWkoJ44mKM70IFcOu",
+            "cbc:DocumentHash": "Cw2HAyjU0cdoKziReBDztp2mxUw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "01_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_MEMORIA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=17ZaRfj%2BYwftRFIFxVLA1Hhw1xLjFRKLBFLmvo2pUIiOk9SeAuSOZkHPXRU5Wjh8yCPBRRxrnDYRMc3uLhDcABSsG5zGgpUMiGRNH5mRpCbfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "s6bmHkGQL0aYHC794a8KsQiJDgk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "06_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJO_12.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=uHXCa1vI6qpshPEh32H7l1MBMGViLVayKjTrH5lOreRuCtXMCxGa2PPF/2yPCeT6ffwbjZpdp2cR9frpJg3Um4GWQicypNE8vhpSaXkJy/RJOVDbGCDM%2BMigrvuVS7Rv",
+            "cbc:DocumentHash": "A9l7CP3DZ8ZftMdqOWYG02h/fsI="
+          }
+        }
+      },
+      {
+        "cbc:ID": "02_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJOS_1-5.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=AAPA79BN9DkG7BxUYW4CNqYDv/ZgfLlytLGcTRU6sJENI6veNciHzc1NoU5mvqmKneBBMtkILxci9ljAHc%2BCNd6VqD5Cbl5ZalzJSEs0tXd45ClyWkoJ44mKM70IFcOu",
+            "cbc:DocumentHash": "4INUhMANw3U3ronH7xM9aA+RqYU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "04_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJO_7.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=KVJrbK/kWcXilh88xkjyEXeno1ccaWh/2r/ThC6aP5BEMGetf1O8z1AOZKSNfyF/6CMJEO9c7M%2BJCSQP0742wR/gumYlTRJQwWs7m6P2N8HfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "3FfyPBjSe7eotVP1teA6TudgR3M="
+          }
+        }
+      },
+      {
+        "cbc:ID": "03_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJO_6.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=6rw2lo5l8gLT1OvcAbNpgxNpy9cJ4tPoGcf3JXGAemyDVpNgJaDRzhdCZDTBiEmJRU7suc6wN8p2Pp0fijXlJS7iFPA0/Naug%2B%2BZEmynFz4C1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "hD53W3kLk7toEDFKKE/ggWwHFDo="
+          }
+        }
+      },
+      {
+        "cbc:ID": "05_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJOS_8-11.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=mALc6vXm5RdAprkZwn3URab4NWkVJw3h5jDZhCSfS4Dt4O5gqVjCp95GG9G2xsMBo1qJH5n7iTVkYYqIIYCv5OBZSLQsbbOzVXKuJRVNtTfDdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "D+kV0jD7Gl0beEN2pULvOGwYUio="
+          }
+        }
+      },
+      {
+        "cbc:ID": "13_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PLANOS_6-8.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=j03qJNxHHemFYVgp/OTEY2aNz9q4qeBrQ1mtte5eN0kc6EhsxQgYFEg6mRPL0If1/wTB%2Buc8Dj%2BHxeonXWBzIdeqXXYulyR2O6Rp5kSMFyx7QB3HKyQaFUExmUVQCerk",
+            "cbc:DocumentHash": "gZ1QUutCJIp+HUTH+2bV4yjlDPQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "12_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PLANOS_1-5.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=pPzc/9/hj6arlySgL/V/v1pvDPvNTDO2yodGsIGI%2BlS3BqfFpd5anasSbspwaXR%2B3oV4hBOdqakOrZZForObQU33ywwhA41pmIXv4Jcb9uvDdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "TOxefntNJNS8TcHGdjlOsayyD6Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "10_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJOS_21-23.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=TEcuYdvmxxRggYwRJFp0Cdwc%2BumD%2BadNRoCsGrn8DxW0mm/a0JcApKsMyNpYDBvneAfe2opIVlY26QgLUnuygSgY1rWv9LMmlAnoDXp2IRbfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "WHjDX5aVhNLxwTvzYIdaUMUYyco="
+          }
+        }
+      },
+      {
+        "cbc:ID": "09_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJOS_15-20.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=d7ZvYv811hiNKAeCdZIvQJD5mfjoQOhNcODbZMoQcDROexWN9ZEk808qyc0KrEX4ecLOuJKafwR3le2/MQI3lDuTo4XFw%2Bba%2BWWmNhaSStp45ClyWkoJ44mKM70IFcOu",
+            "cbc:DocumentHash": "zEjlgwW6HiZAEFPrY0Szcb+9MXk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "RESOLUCION DE APROBACION DEL PROYECTO DE REURBANIZACION.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=YqZris3D/R7aBqB1qloVLit8lWuswLhupXff19zJK54VtHw12P0iYoSxHvkJEYFLGREb6iEkNH1/K5s6xKWXaEY2SkBRiaav6BeifJxM1J1JOVDbGCDM%2BMigrvuVS7Rv",
+            "cbc:DocumentHash": "amsLqKmwW2z0Cng94oyEHp4f03U="
+          }
+        }
+      },
+      {
+        "cbc:ID": "14_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PLANOS_9-11 2.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=kgo3g92SjNeBUA0nFIUIQuiduKPYKXFaJsDml5U7go/u0ywYw3ikHsxVSOs%2BtVTTopch1S3a5RrHcTUPoFplPPPLMEksMESii%2B9/H9HtoKMC1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "ez/d3uhBsy531dcQ9ZZl76SDTWA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo XV Declaracion Cesion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=mwucuVqciuW1DZ6Q06F5eHL1EXlZ8uWhgCi%2BCRLUS7Zf3319YclZehQP0A1fo8%2Bt%2B5dcsKn655NlwxJBVPDGLZZwcXM3TcBiYXUjFmFzpsiHAj0WEJrB5sP7amrh2jBD",
+            "cbc:DocumentHash": "krRvFhRBevmg19mJ9OdkUf+CcEk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "17_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PLANOS_23-25.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=E8%2Bii1w475/OcJCbnskQaNDA9uU2CbSIrJqI0n6INF3%2B9cpkx3o0e3TRHuHETqXJUwYRFvaAVr7urGRHCCQsnHTfxjVdl1LVdttthCyMRc57QB3HKyQaFUExmUVQCerk",
+            "cbc:DocumentHash": "ZcGZNwLtknuEyOOVdW6bFKq7MDE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "07_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJO_13.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=P68Yp5SDrFn9VumTLWj3AW5wW2THHer3T/7SfoH77Tbro210w08jTIEECB4yE3uRvq6FqoIgt1ATSUbVBqB6FInd/cgrJSiYIXoZV7rf4PZ45ClyWkoJ44mKM70IFcOu",
+            "cbc:DocumentHash": "307xKpNvG4wWQfYeygjtfbtpyuc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo XV Declaracion Compromiso.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=ptclmQux/h1Z2fofEVJhDtJcBi96ShnCMz4tyJVpVJevB3N5vqPcWACIIdTc/MtM0Bxox2dHjYtn3e7wTy2gokIB%2BJ8v/0A8CoL4oSd/TzFJOVDbGCDM%2BMigrvuVS7Rv",
+            "cbc:DocumentHash": "2m29tN9k8Ta9fRX/I1mJ3QjC3a0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "08_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJO_14.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=wbX1bjishsUagIsydvUWfSXePjzvmSz%2Bova8KAu7C89xn84nCKWL7DoLsXHEDw8Vzn47DD9r/HzxbKCZ95dad0Cxau%2Bg94m2tMyqz/fWTX4//q7NB2iMZvNyf0xrJmjt",
+            "cbc:DocumentHash": "FRhmz6f6S3UMT6y/diZI8SPMRNQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "15_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PLANOS_12-16.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=Lz02EZApWJgUl6Xv4RN/7iTHu5JZaE2zyhV0cc8EqdmVa1eUk0El59E8NbMTx0PFD8OT%2BipQtxo75drCIiQsgmH0QFU1y0SoLPQaicg6KLVJOVDbGCDM%2BMigrvuVS7Rv",
+            "cbc:DocumentHash": "QZKwoQ0DGTS3e9wsIgPBATvH72Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "19_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PRESUPUESTO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=jnqd81/mVQXhnGN3JO00pk4BuxEksXgt1MKVqKl5SMsrQH33WslpC1xKxY%2B3V6Xd6YunmeIMgY9XnXRgmDsw1gYmwKaxGqwGAwMXAyBDDfXDdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "F1EXA1Y6apYzuBw1QoVH0fPx/RQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "18_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PLIEGO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=fyEDuBh6NIyK86OtC/8iHnUFsDWjJZc2DMSUkGSisNyKlyfOyKNk4OqhoMjZ1a4r7nrvdDyNI9idmtAQDxxcSzv3uP8QEhwJm4g2m3ksLjPfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "x5S398bhCn/F6XEe3HtqjcpsECk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "16_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_PLANOS_17-22.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=Uzzel1tapk64T8m/TwAzY7d%2BQtYDvc1UbInCtny9L6ZGfNeISX27Ri6CvMfpVkODWw8EKIw7BNEdSHPqosGacbIUIr/lmmqNKY4lWl5majJt/o8fNevwsujgRzaBbugn",
+            "cbc:DocumentHash": "P/kkj7rkH/Ezat0BzGIt+53Enyg="
+          }
+        }
+      },
+      {
+        "cbc:ID": "11_Proy_de_Reurbanizacion_de_las_calles_del_entorno_de_Los_Bloques_ANEJO_24.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=E0IDtwcd3S3lAkBK6D3G60Xgsx/si/Zo/6iDxUsTIQ5who%2BSUwS7Qdf6lbolALWcbjvakAy3x8aw4RECRinwLmriGdW5CT6vZxfPM73opEzVTD3T98KC0nSgQFM0q%2B5s",
+            "cbc:DocumentHash": "QQh9S12c/KGHl4igRmMo6XWacyw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ARANDA_PRES_M_v9.bc3",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=%2BvOJ1wX8WKrwzYEvj7bQWK/joI/mVDuHJe9aPPW4Es7AhbcVUqOYU2ByEJvbRvnF1OxBVUjSyNfFCpfxkYh/SjLVSs3BnLG7Qj52835xSDL3GVhXrFFqN7yFncy7YfRK",
+            "cbc:DocumentHash": "Ss2uXnhk1sVcHVuXx6OVDOVvkFI="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2026-10-06"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2026-10-06"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": {
+      "cac-place-ext:GeneralDocumentDocumentReference": {
+        "cbc:ID": "2026-f4b2d8b2-1807-417d-b4fd-33c7ba2ffd73",
+        "cbc:DocumentTypeCode": {
+          "#text": "ZZZ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+        },
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2026-f4b2d8b2-1807-417d-b4fd-33c7ba2ffd73",
+            "cbc:FileName": "Resolución PRTR-ARU.pdf"
+          }
+        }
+      }
+    }
+  }
+}
