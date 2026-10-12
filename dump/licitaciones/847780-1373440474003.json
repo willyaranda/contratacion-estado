@@ -1,0 +1,255 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/847780",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=jP9BpOS0mTgQK2TEfXGy%2BA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 462/13; Órgano de Contratación: Junta de Gobierno del Ayuntamiento de Aranda de Duero; Importe: 948136.93 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "Contratación de las obras de reurbanización de las calles Ronda, Ricaposada y otras en Aranda de Duero",
+  "updated": "2013-07-10T09:14:34.003+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "462/13",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "L01090183",
+            "@_schemeName": "DIR3"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Contratación de las obras de reurbanización de las calles Ronda, Ricaposada y otras en Aranda de Duero",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/ContractCode-2.02.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4500,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 948136.93,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 1147245.6,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 948136.93,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 45210000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "ESPAÑA",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/NUTS-2009.gc"
+        },
+        "cac:Address": {
+          "cbc:CityName": "Aranda de Duero",
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 7,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+      },
+      "cbc:Description": "Conforme a los criterios establecidos en las Cláusulas Administrativas Particulares",
+      "cac:Contract": {
+        "cbc:ID": "462/13",
+        "cbc:IssueDate": "2013-09-11"
+      },
+      "cac:WinningParty": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "A09012279",
+            "@_schemeName": "NIF"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "Constructora Peache S.A.U."
+        }
+      },
+      "cac:AwardedTenderedProject": {
+        "cac:LegalMonetaryTotal": {
+          "cbc:TaxExclusiveAmount": {
+            "#text": 606997.26,
+            "@_currencyID": "EUR"
+          },
+          "cbc:PayableAmount": {
+            "#text": 734446.69,
+            "@_currencyID": "EUR"
+          }
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:VariantConstraintIndicator": false,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:TendererQualificationRequest": {
+        "cbc:Description": "Otros requisitos especificos: condiciones especiales de ejecución con arreglo a la cláusula 5.5 del Pliego de Cláusulas Administrativas Particulares",
+        "cac:RequiredBusinessClassificationScheme": {
+          "cbc:ID": "RequiredBusinessProfileCode",
+          "cac:ClassificationCategory": {
+            "cbc:CodeValue": "G6e"
+          }
+        }
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationTenderingProcessCode-2.04.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cac:DocumentAvailabilityPeriod": {
+        "cbc:EndDate": "2013-07-22",
+        "cbc:EndTime": "14:00:00"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2013-07-22",
+        "cbc:EndTime": "14:00:00",
+        "cbc:Description": "Durante los 13 días siguientes a la publicación del anuncio en el Boletín Oficial de la Provincia. Caso de coincidir en sábado, domingo o festivo, se trasladará al siguiente hábil."
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "AdministrativoRehabiliatacionRondaRicaposaday OtrasOA 462-13.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=c207e36d-2a9f-4332-a08d-3491e9a6096e",
+          "cbc:DocumentHash": "7jZ0CEzPg4CTwH/Ltu/NrXynNaM="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "TecnicoReurbanizacionRondaRicaposadaOA 462-13.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=bbb4c019-27fd-41c1-aed9-de8264b1c01c",
+          "cbc:DocumentHash": "jeN1mP1l4m4htmx2//JR5WFAbnw="
+        }
+      }
+    },
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2013-09-19"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2013-07-10"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2013-07-10"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2013-09-19"
+          }
+        }
+      }
+    ]
+  }
+}

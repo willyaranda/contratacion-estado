@@ -1,0 +1,420 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/6700227",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=43UO5Xi9qXKiEJrVRqloyA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 2020/00010059r; Órgano de Contratación: Junta de Gobierno del Ayuntamiento de Aranda de Duero; Importe: 60000 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "contrato de servicios relativo a la contratación de los seguros de responsabilidad civil/patrimonial del ayuntamiento de aranda de duero",
+  "updated": "2021-03-04T14:23:52.444+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "2020/00010059r",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "contrato de servicios relativo a la contratación de los seguros de responsabilidad civil/patrimonial del ayuntamiento de aranda de duero",
+      "cbc:TypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 6,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ServiceContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 120000,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 60000,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 60000,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 66516000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 12,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+      },
+      "cbc:Description": "Motivación para adjudicar a Mapfre España S.A.: Conforme a los criterios establecidos en el Pliego de Cláusulas Administrativas Particulares",
+      "cbc:AwardDate": "2021-02-26",
+      "cbc:ReceivedTenderQuantity": 2,
+      "cbc:StartDate": "2021-03-10",
+      "cac:Contract": {
+        "cbc:ID": "2020/10059R",
+        "cbc:IssueDate": "2021-03-03"
+      },
+      "cac:WinningParty": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "A28141935",
+            "@_schemeName": "NIF"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "Mapfre España S.A."
+        }
+      },
+      "cac:AwardedTenderedProject": {
+        "cac:LegalMonetaryTotal": {
+          "cbc:TaxExclusiveAmount": {
+            "#text": 40700,
+            "@_currencyID": "EUR"
+          },
+          "cbc:PayableAmount": {
+            "#text": 40700,
+            "@_currencyID": "EUR"
+          }
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "N/A"
+      },
+      "cac:TendererQualificationRequest": {
+        "cbc:Description": "Conforme al Anexo V del PCAP",
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme al Anexo V del PCAP"
+        },
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme al Anexo V del PCAP"
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 8,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          }
+        ]
+      },
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:Description": "Inclusión daños patrimoniales puros",
+            "cbc:WeightNumeric": 10
+          },
+          {
+            "cbc:Description": "Mejora en límites",
+            "cbc:WeightNumeric": 10
+          },
+          {
+            "cbc:Description": "Sustitución exclusión PP",
+            "cbc:WeightNumeric": 3
+          },
+          {
+            "cbc:Description": "Inclusión cobertura RC",
+            "cbc:WeightNumeric": 4
+          },
+          {
+            "cbc:Description": "Reducción exclusiones",
+            "cbc:WeightNumeric": 2
+          },
+          {
+            "cbc:Description": "Ampliación plazo de salida",
+            "cbc:WeightNumeric": 3
+          },
+          {
+            "cbc:Description": "Ampliación plazo retroactividad",
+            "cbc:WeightNumeric": 4
+          },
+          {
+            "cbc:Description": "Precio",
+            "cbc:WeightNumeric": 60
+          },
+          {
+            "cbc:Description": "Cobertura Protección Datos",
+            "cbc:WeightNumeric": 4
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2020-12-30",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "2020-10059R PliegoClausulasAdministrativasParticulares.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=efaeb7a2-b2fc-404d-8a89-3c4e7f03483c",
+          "cbc:DocumentHash": "69p6EH332uOfsOxw7RrPKEEQScg="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "2020-10059R PliegoPrescripcionesTecnicasParticulares.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=bd090f2e-a85c-462e-ae3f-a5c949390ddc",
+          "cbc:DocumentHash": "DNoOuhJwoym9GbTkWf2P+orSQMg="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "2020-10059R JGL AprobacionPliegoGasto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=8c2db3a0-2222-4d6a-bd88-926431944873",
+            "cbc:DocumentHash": "D5ry7YyZTYX3AUki5jkdAcUk5K4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "AnexoVIII OfertaEconomica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=37188cff-590e-4e96-a99b-4c24b1027de5",
+            "cbc:DocumentHash": "wogSFOEvgelXF5za6hsqnTNBOE0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "AnexoIV GrupoResponsable.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2c38eb02-65ea-432f-8545-00c1b328ad7e",
+            "cbc:DocumentHash": "r8rxpTCQnfx+MdIkrgv3BbUFDz4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2020-10059R MemoriaJustificativa.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b02195bc-da39-48ce-ae10-0f2f79b30050",
+            "cbc:DocumentHash": "UmAZoEmrjUNrTujKIOhCjehD7sI="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2021-03-04"
+            },
+            {
+              "cbc:IssueDate": "2021-03-04"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.07/TenderingDocumentTypeCode-2.07.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=78de3609-f9c5-45b8-8ebb-b462a15f5ba5",
+                  "cbc:FileName": "2020-10059R JGLAdjudicacionSegurosRCPatrimonial.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2020-12-02"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2020-12-02"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2021-03-04"
+          }
+        }
+      }
+    ]
+  }
+}

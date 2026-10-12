@@ -1,0 +1,398 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/7898762",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=nvCwsKt%2BK2tvYnTkQN0%2FZA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 2021/00002245y; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 26805.3 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "contrato del servicio de comunicación para la divulgación de las actividades y eventos del ayuntamiento de aranda de duero como ciudad europea del vino",
+  "updated": "2022-01-07T10:32:29.770+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "2021/00002245y",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 22,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.05/ContractingAuthorityActivityCode-2.05.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "contrato del servicio de comunicación para la divulgación de las actividades y eventos del ayuntamiento de aranda de duero como ciudad europea del vino",
+      "cbc:TypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 13,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ServiceContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 26805.3,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 32434.4,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 26805.3,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 79416200,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 18,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 4,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+      },
+      "cbc:AwardDate": "2022-01-07",
+      "cbc:ReceivedTenderQuantity": 2
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": true,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+        "@_name": "No hay financiación con fondos de la UE"
+      },
+      "cac:RequiredFinancialGuarantee": [
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        },
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 3,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        }
+      ],
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "N/A"
+      },
+      "cac:TendererQualificationRequest": {
+        "cbc:Description": "Conforme Anexo V del PCAP",
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme Anexo V del PCAP"
+        },
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme Anexo V del PCAP"
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 8,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          }
+        ]
+      },
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:Description": "Relación de medios",
+            "cbc:WeightNumeric": 5
+          },
+          {
+            "cbc:Description": "Oferta económica",
+            "cbc:WeightNumeric": 80
+          },
+          {
+            "cbc:Description": "Conocimiento de Aranda de Duero y la Ribera",
+            "cbc:WeightNumeric": 15
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2021-08-02",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "2021-2245Y PCAP AgenciaComunicacionCEV.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=be30b7b5-4931-4bba-89f2-d0a2e35738ae",
+          "cbc:DocumentHash": "f5QbjBnc4fvSIbX7ZpV+bfXEnP4="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "2021-2245Y PPTP AgenciaComunicacionCEV.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=5e69c4c1-f675-46ba-ba5f-6b968c106896",
+          "cbc:DocumentHash": "Do2tQhr4XjMGn4gNracDDPXBJmc="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "2021-2245Y Anexo III - DeclaracionResponsable.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=40a0f5d0-8f0c-4f42-a055-13812fc9435d",
+            "cbc:DocumentHash": "C5fOIM+z4BrPzZwuGIei+R4OJJ0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-2245Y MemoriaJustificativa AgenciaComunicacionCEV.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b99cdbda-210e-4d12-b652-c40b374f9f4c",
+            "cbc:DocumentHash": "lwEDtvRGUQc2qdNw8IyAzBHKFII="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-2245Y Anexo VIII - ModeloProposicionEconomica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=a4b07ea4-2fd3-459b-86bb-ccc651c6e2b9",
+            "cbc:DocumentHash": "5lr22QrwEd2Cqy419+VMnRx3eXg="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-2245Y ModeloDatosEfectoNotificacion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=042e6921-8ea6-4b88-9192-c752d7b9d29b",
+            "cbc:DocumentHash": "l2aPywDs7xrQrjgFCx/1l/BNPW4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-2245Y Anexo IV - GrupoEmpresarial.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=eea8bf2d-6ac1-4767-b910-bebe74c4aea1",
+            "cbc:DocumentHash": "KoRAWe0hHSCCc70lFFSHRK+TOE0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-2245Y Anexo VII - Subcontratacion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=4567ac41-86e6-4889-84c8-a3a78768850d",
+            "cbc:DocumentHash": "uilnEXQSKFNSfF/1kFu+OY8T28I="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DESISTIMIENTO",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-01-07"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2021-07-16"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2021-07-16"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "eab067d5-c8fb-494e-85f1-5f433570fcde",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=eab067d5-c8fb-494e-85f1-5f433570fcde",
+              "cbc:FileName": "Suspensión del procedimiento"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "44fe956a-2de8-45e1-aabc-df4b6aa92656",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=44fe956a-2de8-45e1-aabc-df4b6aa92656",
+              "cbc:FileName": "Acuerdo de iniciación del expediente"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,387 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/10789990",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Rb4LGrGEC%2FNvYnTkQN0%2FZA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR/OBR/2022000003; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 265248.89 EUR; Estado: PUB",
+    "@_type": "text"
+  },
+  "title": "Obras de renovación del entorno de la Glorieta Rosales en Aranda de Duero",
+  "updated": "2022-07-15T12:46:01.136+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR/OBR/2022000003",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "PUB",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 22,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.05/ContractingAuthorityActivityCode-2.05.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Obras de renovación del entorno de la Glorieta Rosales en Aranda de Duero",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4520,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 265248.89,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 320951.16,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 265248.89,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 45200000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 5,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+        "@_name": "No hay financiación con fondos de la UE"
+      },
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "N/A"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:RequiredBusinessClassificationScheme": {
+          "cbc:ID": "RequiredBusinessProfileCode",
+          "cac:ClassificationCategory": {
+            "cbc:CodeValue": "G6-2"
+          }
+        },
+        "cac:TechnicalEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": "ZZZ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "-\tRelación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los CINCO últimos ejercicios, acompañadas de certificados o informes de buena ejecución de al menos DOS de ellos. Se entenderá por ¿contratos similares¿ aquellos que sean del mismo grupo y subgrupo de clasificación al que corresponda el contrato. También se considerarán similares aquellos contratos cuyos tres primeros dígitos del CPV coincidan con los del contrato que se licita."
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": "OSR-TECH",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "-\tIndicación del personal técnico o unidades técnicas, integradas o no en la empresa, encargados del control de calidad en la ejecución de las obras objeto del contrato de que se trate. Se considerarán solventes las empresas por este criterio cuando dispongan de al menos un técnico de grado medio como director técnico de calidad, en el cuadro de la propia empresa o en otra contratada por ésta para realizar de forma sistemática el control de calidad de su trabajo, o dispongan, una u otra, de un certificado de calidad expedido por organismos independientes conforme a las normas europeas de certificación."
+          }
+        ],
+        "cac:FinancialEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "-\tAcreditar una cifra anual de negocios en la actividad de ejecución de obras, referido al mejor ejercicio dentro de los TRES últimos (o desde la fecha de inicio de actividad de la empresa si es menor) por importe igual o superior al valor estimado del contrato. La acreditación de este requisito se realizará como regla general mediante la aportación del resumen de la declaración del IVA presentada a Hacienda (modelo 390). Cuando el licitador sea una entidad que no esté obligada a realizar declaración de IVA, ese porcentaje deberá reflejarse en las cuentas anuales de la entidad de los tres últimos ejercicios, aprobadas por el órgano competente, e inscritas, en su caso, en el Registro público correspondiente"
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del contrato; la póliza deberá estar vigente hasta el final del plazo para presentar ofertas y deberá aportar, además, el compromiso de su renovación o prórroga que garantice el mantenimiento de su cobertura durante toda la ejecución del contrato y su plazo de garantía, en caso de resultar adjudicatario."
+          }
+        ],
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 8,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          }
+        ]
+      },
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:Description": "CONTRATACIÓN DE DESEMPLEADOS (INEM):Conforme Anexo X del CCP.",
+            "cbc:WeightNumeric": 12
+          },
+          {
+            "cbc:Description": "MENOR HUELLA DE CARBONO: Conforme Anexo X del CCP.",
+            "cbc:WeightNumeric": 13
+          },
+          {
+            "cbc:Description": "OFERTA ECONÓMICA: Conforme Anexo X del CCP.",
+            "cbc:WeightNumeric": 60
+          },
+          {
+            "cbc:Description": "MEJORA DE LA GARANTÍA: Conforme Anexo X del CCP.",
+            "cbc:WeightNumeric": 15
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2022-08-04",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "CCP PCAP Obras Glorieta.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=bf009889-0e55-4fbf-9a07-4138a7b3deea",
+          "cbc:DocumentHash": "P1v63yBncUjiMbSvx2ld2SF4TmA="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "Pliego de prescripciones tecnicas 1F.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=c2d12626-37ed-488b-9323-0631bdaaae2b",
+          "cbc:DocumentHash": "QBl0tXrPM0jaD5+Ui4qWKeXOAok="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "Presupuesto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=abecf3bf-0c60-4b33-b7b7-dac22df10dfe",
+            "cbc:DocumentHash": "+JHgsFER7CHQ1QAa2TNr5YKXnzg="
+          }
+        }
+      },
+      {
+        "cbc:ID": "PPTP Pliego Tecnico.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=aa175d50-e3ef-4e76-9619-541acb22de23",
+            "cbc:DocumentHash": "F0NEUsVcB/kp50PIPEimoT0uN8Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Planos.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=4214ed6b-df72-4338-bc56-dee5bdbebae4",
+            "cbc:DocumentHash": "9UdHjSN3HFsiJBtQdbgtoD+0i/Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria y anejos proyecto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=cdbf5b5f-1fd3-45a0-a371-08dd69b7d0ca",
+            "cbc:DocumentHash": "+pRTmUfdP7S6snyKeAaQg25I2Cs="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Pliego de clausulas administrativas 1F.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=9bd05f5a-849e-4ab0-8396-147931f3f3fd",
+            "cbc:DocumentHash": "G9lf/Zx8mRXqQxkjfdWZoRNEr9A="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria Justificativa 1F.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=4f098530-a772-49be-8999-38574f0728e9",
+            "cbc:DocumentHash": "SBRSwrSKyzCsGj/UCdxvN70D0RA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Acta_de_replanteo_del_proyecto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=fb55cb8b-52cb-4ef1-a567-b6e314314029",
+            "cbc:DocumentHash": "qJT63g/EQ7abwNRW8aVWvxzYloU="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-07-15"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-07-15"
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,925 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/17999078",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=npxZyC0Ev2G8ebB%2FXTwy0A%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR/OBR/2025000045; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 1431769.72 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "PRTR-Contratación de las Obras de Rehabilitación de 50 viviendas ubicadas en los portales C/ Roa de Duero 1-3-5 y C/ Sedano 3-5, situadas en la UR-5 del ERRP de Santa Catalina. Plan de Recuperación, Transformación y Resiliencia - Financiado por la Unión Europea - NEXTGENERATION EU.",
+  "updated": "2025-10-09T09:07:33.023+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR/OBR/2025000045",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc",
+      "@_languageID": "es"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityCode-2.10.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityActivityCode-2.10.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500104,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      },
+      "cac-place-ext:ParentLocatedParty": {
+        "cac:PartyName": {
+          "cbc:Name": "Aranda de Duero"
+        },
+        "cac-place-ext:ParentLocatedParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "L04090313",
+              "@_schemeName": "DIR3"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Ayuntamientos"
+          },
+          "cac-place-ext:ParentLocatedParty": {
+            "cac:PartyName": {
+              "cbc:Name": "Burgos"
+            },
+            "cac-place-ext:ParentLocatedParty": {
+              "cac:PartyName": {
+                "cbc:Name": "Castilla y León"
+              },
+              "cac-place-ext:ParentLocatedParty": {
+                "cac:PartyName": {
+                  "cbc:Name": "ENTIDADES LOCALES"
+                },
+                "cac-place-ext:ParentLocatedParty": {
+                  "cac:PartyName": {
+                    "cbc:Name": "Sector Público"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "PRTR-Contratación de las Obras de Rehabilitación de 50 viviendas ubicadas en los portales C/ Roa de Duero 1-3-5 y C/ Sedano 3-5, situadas en la UR-5 del ERRP de Santa Catalina. Plan de Recuperación, Transformación y Resiliencia - Financiado por la Unión Europea - NEXTGENERATION EU.",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4500,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cbc:MixContractIndicator": false,
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 1563099.27,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 1574946.69,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 1431769.72,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": [
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45000000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45300000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45330000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45213316,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45310000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45320000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45110000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        }
+      ],
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 6,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/TenderResultCode-2.09.gc"
+      },
+      "cbc:AwardDate": "2025-10-08",
+      "cbc:ReceivedTenderQuantity": 0,
+      "cbc:SMEsReceivedTenderQuantity": 0
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": [
+        {
+          "#text": "EU",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+          "@_name": "Financiación con fondos de la UE"
+        },
+        {
+          "#text": "PRTR",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+          "@_name": "Asociado al Plan de Recuperación, Transformación y Resiliencia"
+        }
+      ],
+      "cbc:FundingProgram": "PRTR - ERRP Santa Catalina",
+      "cbc:ProcurementNationalLegislationCode": {
+        "#text": 3,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ProcurementNationalLegislationCode-2.08.gc"
+      },
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:RequiredFinancialGuarantee": [
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 3,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        },
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        }
+      ],
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:RequiredBusinessClassificationScheme": {
+          "cbc:ID": "RequiredBusinessProfileCode",
+          "cac:ClassificationCategory": [
+            {
+              "cbc:CodeValue": "C3-5"
+            },
+            {
+              "cbc:CodeValue": "C7-2"
+            }
+          ]
+        },
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "OSR-COMPTASK",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Relación de los principales contratos de características similares al que es\nobjeto de la licitación, ejecutados por el licitador en los CINCO últimos\nejercicios, conforme a la descrito en el Anexo V del CCP_PCAP."
+        },
+        "cac:FinancialEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Acreditar una cifra anual de negocios en la actividad de ejecución de obras,\nreferido al mejor ejercicio dentro de los TRES últimos, conforme a la descrito en el Anexo V del CCP_PCAP."
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una\ncobertura igual o superior a una vez y media el importe del contrato, conforme se indica en le Anexo V del CCP_PCAP."
+          }
+        ],
+        "cac:SpecificTendererRequirement": {
+          "cbc:RequirementTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+          },
+          "cbc:Description": "Capacidad de obrar"
+        }
+      },
+      "cac:ContractExecutionRequirement": [
+        {
+          "cbc:Name": "Consideraciones de tipo medioambiental",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 1,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "La empresa adjudicataria del contrato deberá cumplir las condiciones\nespeciales de ejecución de carácter social y medioambiental establecidas como\npreceptivas en el artículo 49 del Pliego Tipo de Cláusulas Administrativas Particulares\npara la contratación de Obras, conforme a lo indicado en el Anexo XI del CCP_PCAP."
+        },
+        {
+          "cbc:Name": "Consideraciones de tipo social",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 2,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "La empresa adjudicataria del contrato deberá cumplir las condiciones\nespeciales de ejecución de carácter social y medioambiental establecidas como\npreceptivas en el artículo 49 del Pliego Tipo de Cláusulas Administrativas Particulares\npara la contratación de Obras, conforme a lo indicado en el Anexo XI del CCP_PCAP."
+        }
+      ],
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "MEJORA DE LA GARANTÍA: hasta 30 puntos, conforme al Anexo X del CCP_PCAP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 30
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "CONTRATACIÓN DE DESEMPLEADOS (Servicio Público de Empleo): hasta 20 puntos. Se valorará hasta 20 puntos, de acuerdo a lo indicado en el Anexo X del CCP_PCAP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 20
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "OFERTA ECONÓMICA: hasta 50 puntos, conforme a lo descrito en el Anexo X del CCP_PCAP",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 50
+          }
+        ]
+      },
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2025-10-02",
+        "cbc:EndTime": "23:59:00",
+        "cbc:Description": "El plazo para la presentación de ofertas será de 15 días naturales conforme a lo dispuesto en el art. 50 del RDL 36/2020, al ser un procedimiento con tramitación de urgencia."
+      },
+      "cac:AuctionTerms": {
+        "cbc:AuctionConstraintIndicator": false
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP OBRA.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=4m2YcqaGJpVTuU1opWifnIcxMWjYC%2BhvXj6brCK2F3FTM2Nh73JVG0JUyM3TmakYMFh7TV388BokuCaNRoGFHZS1du58fxpa0qWATUENc7H6CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+          "cbc:DocumentHash": "wOen+lTnZJS2HNqIQ/Hgnjs34Xk="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "13_Proy Basico y Ejecucion_SEDANO 1_3_5 _ Pliego de Condiciones.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=8/xvTUI2%2BDM2RpkfCFWnluiM1JYc5jFH%2BCDAEadhr8JTL3bX/gXSfRT/3PZuKKys8I0hzW1bgiIOxnWj2qD3GQDiyEHzRNsPYwYdB3dHIh8ZyAJWGsSt0OzTSTyw9JAs&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+          "cbc:DocumentHash": "ksZWWVQyosjQqQbkI27jbaLvjoQ="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "14-Proy Basico y Ejecucion_SEDANO 1-3-5 - Presupuesto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=VX120ZyEMsevujGD5du3VyX1dt5bqvJRop5/MDQQCsdxBSriZTCEZkksfCX90kwr3/H6iFxs5rO5dIwJlNI45mqpvyU8BYue%2BuntnpXWOi%2BB0nvVKRzfe4rpHcnlPhSZ&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "VTrwjO1yvN4FRMC1mXwkM36lOp4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXOXV Declaracion compromiso PRTR.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=tpzA/XMrKDd4D7qDGHh38Js0tuREIcGveQeEhkbjxgOStcrfQEbduITRM/dZveDPuMMpDGkuClyrI76fTEeSvsS8KdPIs2t%2BXUGkG/WAcw57QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "RwBB3bxKko6AtQ3EBfmDtePlb5k="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion Aprobacion Proyecto SEDANO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=Kn2bgdzopqBF4V/GPbK2ZueAVWy411d1ezv6%2BsF8Nwz1Zp3RBT1ntvqRwcd1jdmYR1APhh/fVN7UOLwyov0ckr2DylAMnhhP1ERsoZZodYmB0nvVKRzfe4rpHcnlPhSZ&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "sG5T9+YpCSZopnK21kFNeoXsGjc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "05-Proy Basico y Ejecucion_ROA 1-3-5 - Anejos - parte 4.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=unGPYoh91tWu2TV47IxQA3UptfaYbXQRypMZzRMdPKHuif858fHHyyyTCuO9qWl%2BfzAYQK%2BlCUZ7yMJuG1ecj0ebVvF/319N8hurizqgFf97QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "ufJPtByO9xkpb0U9S7sByr5IDQs="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria Justificativa ANEXO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=619QocX3TmomjPk4DA1hVT4sZrAl/ffFcFw4KeygB7e5JfcNh6U22UkmSMegolImSj91NxpTHNMI1VTl5QNjoXuhdvWVs2MQwdCZRM3%2Bm4mB0nvVKRzfe4rpHcnlPhSZ&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "aERqOFer55C2oo8Jr0cJ5C4xO8Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXOXV Cesion Datos.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=%2BXpMhOs0v6iXq9mRRhodfDCmkXeIQM4GqG%2BMMGA8SYRfm4%2BQjCzXX4O2AXbgi2Rntx5vu/BrFH3RYUzy2SiaScuD9bk0EsWnOUW1sIt51%2ByB0nvVKRzfe4rpHcnlPhSZ&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "KYUw4mzsL4QR/Jzbrj9sklPcO6Y="
+          }
+        }
+      },
+      {
+        "cbc:ID": "09-Proy Basico y Ejecucion_SEDANO_1_3_5_-_ANEXO_I.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=4Hab4WNO5hp9rehDB4DdyZgEwVHARnSTyMbc1BcJNB3hIH3mk4QRvgazCzWclZXVKaECFs59SJsI80/LLluDxxxe6pjluZEqIyjecCCFDnF45ClyWkoJ44mKM70IFcOu&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "j1/X6/blrThL5uMfTF3KSBe3DIE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "02-Proy Basico y Ejecucioin_ROA 1-3-5 - Anejos - parte 1.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=roRxM8D2j97aDekJV9rPotz/vr0uf7ZqVg%2B2zIaMe6nu1DEFCXLW/0%2BHDlTe%2BnPgk0C3j2nO8lYlnDf2iRs%2BQuCAAlheV35hz99FGocBwuuHAj0WEJrB5sP7amrh2jBD&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "izffEGXIeBglFIyT67nycz/5sHQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Acta de replanteo de los proyectos.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=GHgQsM39M28YalstEaaJZhOqBfpADS/4srAP67LUJvkAtMwOsxUexzJzoc9Ts915uXWE4OqZiPsuRsPh89A5lxHXpEq6MtPjxuwZfocET7zVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "Heq3N/Dx2i6Q/i8m1B88KK9NrPU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO VIII Subcontratacion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=XP/j06tGZ6J3Aa/0kmw9KM4lbiWw2z9wQTmFRv0bDT3kR1WXOLGcgs7sqwrzh9a3Ul7GB8h82fmlwWjSlpSzSkTBJovXQTN9NXdyyHh1g773GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "TdYmQiuVz9dOqFI9YFAqnxxRL4E="
+          }
+        }
+      },
+      {
+        "cbc:ID": "03-Proy Basico y Ejecucion_SEDANO 1-3-5 - Anejos - parte 2.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=TRXQ1vEEBq403KFK6U0%2BSpISZOFLuhuNrv7/Z6960s2C5WYk9RgAz8klFeGK403yt6XzE271sSqmGsXavIspZkLBdjPIVS567TwbzeN3xBiHAj0WEJrB5sP7amrh2jBD&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "yN/mn1LaUj+YMWTjopu6xBVeL8s="
+          }
+        }
+      },
+      {
+        "cbc:ID": "03-Proy Basico y Ejecucion_ROA 1-3-5 - Anejos - parte 2.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=GNnsY/6dcfOZ124/apKWwEoTwM1ni71t4cuAxvh7okAvnFZZH35A%2BCkwbr/NtEgZOKznUzAXc0U2gLU0%2BEJP/zVyQAfeEBejeV%2BP7KZ6jDX6CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "SigKF9U0VdiOZ1WLPd6+hjZa9Ts="
+          }
+        }
+      },
+      {
+        "cbc:ID": "10-Proy Basico y Ejecucion_ROA 1-3-5 - ANEXOS II-III.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=SHSyM5bMa/9znx27iio5XW3Y2xyzCn8nayvd0d5QTF8c64aBTEIsb3s/RziuryCq46UIoS1xTMvA8rQynaeYyK0jofiQfIY2QNCL8uD95O17QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "b8jdfIzuIcxnL5enohRZ5Fxmz6g="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Informe Supervision ROA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=yXn0j%2BogMxXR/D9hJ69i2u8R%2BMMhQCyJhg8cZuzy0lmsyiCLR43mfuBZ5jUhLtw8Znx5/NRaAQwY90t5Le6Iah0UCfqgWBLwu97OxIjTM0uB0nvVKRzfe4rpHcnlPhSZ&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "HZVbLSGcn1gDwlmJyLlgD/Cn2Yw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "02-Proy Basico y Ejecucion_SEDANO 1-3-5 - Anejos - parte 1.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=tKWm5osK0xo6ctNXYTrBnV%2BCixkTLj3RGg%2BomEqer5caww/YgznDllDFrk1lXp22RwvqI/YJjeovue0XsHieTwCuAkctwF3zcU0Jj3LZ3NY//q7NB2iMZvNyf0xrJmjt&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "EmfuSa3GO5aOY36kt94cWRBezCo="
+          }
+        }
+      },
+      {
+        "cbc:ID": "07-Proy Basico y Ejecucion - Anejos - Estudio geotecnico.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=/ET1Yie43l8O/URrX47corCxcPr/oV77hqLccNPbaAkxk8iZogTuXvghEVgKuRTMR7RyxZnzJgUC4kXqK/UKdTLHHlzvmz419pQLZ1OEl79JOVDbGCDM%2BMigrvuVS7Rv&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "oQnms6EoF/oubgNz5Kldsiqg/MA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "01-Proy Basico y Ejecucion_SEDANO 1-3-5 - Memoria.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=z13yrU8BAKW3OMuaF7jzhyLSo8HJkFwOJUjgX4XnPgkovA/YawdJJpRjIOkRGmnzV8zV6JpgcDF72ZUj1e0xAqXxhIUpLE7mfIobPF/z9Lh7QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "77ZOIaRIziRjsglcBtceRlko3UY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria_Justificativa_Rehabilitacion_50_Viv_Roa_1-3-5_y_Sedano_3-5.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=4D/yqkl6VJOBkRHB8nOpAvHdlFmouUR0Pb%2BfamioT%2B8CjagFHNuuCvEyKptdhNgiH/4jAJ2tRvzC94Tjp%2B25iZBGAqTw17G7YdHKADQAYmLVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "j0SM2nHVPp7mVP9fQz4hmPOBMSU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "06-Proy Basico y Ejecucion_SEDANO 1-3-5 - Anejos - parte 5.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=Ef7GgkXP2xjBTJlBw%2BgSkrgWjGrmzOj2GlTh4JwsBSHHA7R2y/9fH/%2BbsG8L%2BzJLV/qaeLlccKW4SdFMKu/u/XR0LBVrS%2BrNtufmBC7CTOd7QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "CtLnt30vWCwtmWKkYXV5RVkzQKE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IV Oferta economica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=ts7iQkTFpxy6eeBJK2rtP2JRfy3k4gDCl%2B529d4XyveoRGdlR4idtVAnXSn9ggN/GjKVT3HmKstWhYsBQ5kQQnM0VYN6Gtm0JBjThYSPFRd7QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "5gmDT6DcFOphNcuyga+AXMIH85A="
+          }
+        }
+      },
+      {
+        "cbc:ID": "08-Proy Basico y Ejecucion_SEDANO 1-3-5 - Anejos - Estudio seguridad y salud.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=RqIsOJLvoXmkXeN/2qQsUxGwhSZtN7Qy9XCGBZ99S8v3qcP/mqsmMQDxywzahba54hGWhTM1Bhw1cEv1RyrhcYESSmL5DEa26sUTnOcgQDr3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "g3q5pTThsqa9SiPMyKr9U3+wd3E="
+          }
+        }
+      },
+      {
+        "cbc:ID": "10-Proy Basico y Ejecucion_SEDANO_1_3_5_-_ANEXOS_II-III.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=VOZGla/ivVEgHRZK1Tz4toQ%2BY%2BDEMtnKolib1OHC9ts59FZGuEUDhbXX%2BLNVW5zl78a1lw2rJ4NwElKMC0nIddBKZXsjiWvFGv%2B71i8cGf6HAj0WEJrB5sP7amrh2jBD&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "Tx+kOfNYQTJIbN3NuHB8mp2/aPQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "13-Proy Basico y Ejecucion_ROA 1-3-5 - Presupuesto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=CxUKb/lp8OraHmYUb1t00Zz0D5zaFTJP/Se0rztxvdYu%2BADlpVN/hu1biOFDjIo69MapC3GSZUHiDvq/qWBdGNcrUamiBqnfhRsuJxd1ylX3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "tyZ9IlPwJOML7TQEZ4DwwMJ/2Go="
+          }
+        }
+      },
+      {
+        "cbc:ID": "05-Proy Basico y Ejecucion_SEDANO 1-3-5 - Anejos - parte 4.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=Mu%2BgXYg5KG%2B9wERWYdO3HJyf1FalQIWOyj5g19FYMWQXkf6ybLLE/OM6CTU%2BWYmMZg0JpoNkiWaIQ5erGnxIZfFvBIVXq1qoEyg5HqE4RPOHAj0WEJrB5sP7amrh2jBD&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "TklWF9zzScOF6uTLqK1f6CcbKyY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Pliego Tipo de Obras.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=Oi19g5LxmppP0XcomOwRSk9ahcBp4xow1l41zOHhX8XMCtLfWFgrtwiSXio0CTivV2RNQNIYNt51cmBDfIq5mzFHV3uH%2BVvwkYl66oX48A545ClyWkoJ44mKM70IFcOu&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "ehU9q3etexP8QJH62mWkrL5B5kY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "12-Proy Basico y Ejecucion_SEDANO 1-3-5 - Planos - parte 2.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=RAMVn7evGvZq0Ej69T0o05opWp3tEIQIY2e8gpIQQlOmYF4sX5UU0C4DncTm4K1HYJziEcFKw6UOpfmb8CqzGNAWjuS4B8QDg%2BLhre/iCM4C1/zDIE0Kw/PWNnLS0Z0z&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "4Iddr6b5cdJJ/b0Suvj19/zpTfg="
+          }
+        }
+      },
+      {
+        "cbc:ID": "06-Proy Basico y Ejecucion_ROA 1-3-5 - Anejos - parte 5.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=VHQPaR9faj2q5gyFcml4Oou%2BzElyjTFpHNpI3YoVhsAWXpk9Xf3CjNcMg7Cv4aRWxPd2ZeB7iC6HtD72BAQmaxGkZtzuR80iwBrvMlY6wrF45ClyWkoJ44mKM70IFcOu&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "YrjStKAb46w9v7GaWFJrP11c8as="
+          }
+        }
+      },
+      {
+        "cbc:ID": "09-Proy Basico y Ejecucion_ROA 1-3-5 - ANEXO I.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=zq7Fk4%2BdG74TW3VsRfVjhpV0ddCOASrIxQ6x/3TBNwhpVwIBNFCD9zLV6zxxePiRJlXt1GY4w8wISwp8PkwG0shUYoboXG8DzXjo14hU4LyB0nvVKRzfe4rpHcnlPhSZ&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "3aXk7nffR9168zC1GbV08iSJXgk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "07-Proy Basico y Ejecucion - Anejos - Estudio geotecnico.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=x6Y6mi89ik9zJUb5UgzBPi4ZfG1VlTRA6d3aJVaWqvVTx/p9Ec2Y0qrWsXg7tuCayPp6CRDj5n20Z1UxzkkATJfJ/V4nUTf4HLq//hH/iNdJOVDbGCDM%2BMigrvuVS7Rv&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "oQnms6EoF/oubgNz5Kldsiqg/MA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "13_Proy Basico y Ejecucion_SEDANO 1_3_5 _ Pliego de Condiciones.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=/GSYWiVxu%2BfHJYb0LBhgsdqIghAXNGAOoDIdasEkoiRMQpnWT//tnsi6rRPmsOOlfa%2BY%2B13%2BYpOVYu2KOLPvG8WNpnMdOiCggwNpV6/ZYL8C1/zDIE0Kw/PWNnLS0Z0z&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "ksZWWVQyosjQqQbkI27jbaLvjoQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "A0 Modelo Datos Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=Cz7P/zsQamOH686/dX8GlvxfRYkhz08ihtLhpjXYaYVedbo8YlwddKFJbuZQhlEhEnIVvhl0EwguryrjnHzAaTp5jxufQ/Tmgh18UF1OrYX3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "jgc8RNLC2YqdCbvctpolGz9cDm4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion Aprob Pliego Gasto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=uDfqEJmFUefvIdnlHlwZ3cYKmTS8z160lNQofmFgYnBKbFmnQp0Muj6tPTiu7QFd/hPDked1WXoWdE6OtTuPvifbpBDV2cDmX23YhGYsGl4C1/zDIE0Kw/PWNnLS0Z0z&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "1KW6lz9M/rWrQm5EOIw/Imvabl0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "11-Proy Basico y Ejecucion_SEDANO 1-3-5 - Planos - parte 1.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=/kPS6o3ObFU5g1zCer7JJWQhXLH88xGZvgISfl987eOvR81oYzeB83ld1HbZ%2B4EQdyhhIZOVdfWI9suZNHgfIX/FAReqKmrt1oWqqwTZY3XVTD3T98KC0nSgQFM0q%2B5s&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "dSNYfFzzY6kMQ85o3qukuOiyUYI="
+          }
+        }
+      },
+      {
+        "cbc:ID": "01-Proy Basico y Ejecucion_ROA 1-3-5 - Memoria.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=XSxchjMAK3Cd14vvQtbSw3VtwrZr8%2BUgnHcuSKuu6Wc27orm12t1OasXJdOB4jSdU9Mu0Npao%2BNRwOENH8HRYeWOuPo0pLmFF93eRndIOlP3GVhXrFFqN7yFncy7YfRK&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "plptfud/TE2mHSupwI338kXpiqI="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Informe Supervision SEDANO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=AeGQkbX4FcFLJMPTif%2BguWoaaB4m/Y5IHF2tGv2HozaGP0GHsE12aEr6BwKs7tCi8%2BkTrq9qEAHyeHwypdJNydH77U7iP8xV110elnmKVe36CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "KuuTWfQMQ9eINrVcBQpj8CV16SE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO I Instrucciones Deuc.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=XhwYzA%2B6brHxdJrzWp2s4dQlS2R9PwH5/FwGQA51WQcGBabjtR59skY4t0iBW%2B3wsJhPLSOgSLmBjdvsMn6KVfzz9zOU/AKETqzBSlkXQr%2BCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "Wj8uZkx+znj5OghoMCVs0L1m+14="
+          }
+        }
+      },
+      {
+        "cbc:ID": "08-Proy Basico y Ejecucion_ROA 1-3-5 - Anejos - Estudio seguridad y salud.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=Qs6ufuHM3uZ2xC7n1bWLPY0%2BITN5OoG6NR1RSkSztaYsf91tVE9jhYTOEKn5euiYGSfjytHATjs%2BUxb0PKdSJgvj9fi0aRBWqwPsI8U9imR7QB3HKyQaFUExmUVQCerk&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "tfoLaBpMVCc8Pg7unYyW6iSgwhU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "12-Proy Basico y Ejecucion_ROA 1-3-5 - Pliego de Condiciones.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=HBQBjmBD0Piyndvm7tpuJeQjIizkz%2Bv6gN7gmKoJOTEwQZiLHcjiX9GJ0fLMdES212NMSIDdLqRlhb7ULaNEJs7bQXkOJhTtiYnsrUTAfJG1aXEvq3KHa/AEHgtDrQw0&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "9I2v9EJF5U6LhEo02nEWP+h3mK0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "11-Proy Basico y Ejecucion_ROA 1-3-5 - Planos.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=5t8ZusmqNB3TaATDfaG7S3w%2BGDlZobBKrTRODU4hNRdNJMlYNA5YAngY3oo6MCvUGVgaVnjQvK24Y0xuuACXioaeW%2BonI8fu6ivtngCCU4GCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "h+g/48MQTVuhyBLm3a3nWRA4HB8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion Aprobacion Proyecto ROA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=g0QUw1jo4ANeQmrv8S7JyTIKgLqNME/TjtNJUp2iba3Ahsdd2g2X99ezaT0BQTZ44%2BG1kaeP9d7FttIgK8q9KmXGUD673v2AEs1/MS3tC/j6CYyL7SIrUOBFfNf52ZqA&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "67Quq1yb9v9mJCqjg7j5LAqwJoI="
+          }
+        }
+      },
+      {
+        "cbc:ID": "04-Proy Basico y Ejecucion_ROA 1-3-5 - Anejos - parte 3.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=KTtyfJAFeJGacgaaxlwnmRlndFAaWpkFABQhVOYNaUSzFnx88gLZMn5nXCIJrQGcLFdabULvur6djdM9uQ5ceFP5HDRcYDbzNqDjFcIU3ZnfdyQgZAdTm3EfcUAC7CJ6&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "AKsJCZpEzBupChec1gIVG5gq34I="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IIA Y II B.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=3cRNjk2OAEbduRqItwUt9B8bLhJIRPEBxvFdbEu3w30UrMupAgLinQJy7Lu10HjDkpyj07REuJeHZOaSWFzeHCrBbT/7Dcma4V6k1UpoEoWCx2e6p7hqtlp2aFupgHMr&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "eUmRsi91/cUbV/K7sHu9X5SnlNU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "04-Proy Basico y Ejecucion_SEDANO 1-3-5 - Anejos - parte 3.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=2WnBQrWZcRoDQ4UC3v70Au0O1q4/2gxdvumUMZ/Iqy3wgSanFbGu1P70dUZhM1m1LE2z0IePYtF2jI2wZpOsx4ckSb4zqY6Ub6CDsd%2BrwxM//q7NB2iMZvNyf0xrJmjt&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+            "cbc:DocumentHash": "NfKMIHVptoVOd0ISf0Ou8SnjY3k="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2025-10-09"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingDocumentTypeCode-2.11.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?DocumentIdParam=psZOyI%2BNKXwKAcPt21%2BV5maaDgIzp0GKUXJRJf4A66mzEtD/MmjfzCbbvCo4/I/CVIWXfkVVL0CEiM9SMlaU06NQFyrPdwqs/HWUIGdZI4DfdyQgZAdTm3EfcUAC7CJ6&cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D",
+                  "cbc:FileName": "Resolucion PRTR ARU.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2025-09-17"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2025-09-17"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-9bcdf265-7ec9-4f52-b9d9-2e7f4624264f",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-9bcdf265-7ec9-4f52-b9d9-2e7f4624264f",
+              "cbc:FileName": "PBE BC3 ROA 1"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-2179fd24-6c7c-4758-8f93-07faf09a95cb",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-2179fd24-6c7c-4758-8f93-07faf09a95cb",
+              "cbc:FileName": "PBE BC3 ROA 5"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-c1362c98-5a17-41a2-8c02-3ff9e9a4df21",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-c1362c98-5a17-41a2-8c02-3ff9e9a4df21",
+              "cbc:FileName": "PBE BC3 SEDANO 5"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-6bb8b57d-b523-4aeb-8631-190f071176bf",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-6bb8b57d-b523-4aeb-8631-190f071176bf",
+              "cbc:FileName": "PBE BC3 SEDANO 3"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-2eb0ac7f-e05c-4948-ac23-910d25e4d6ca",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-2eb0ac7f-e05c-4948-ac23-910d25e4d6ca",
+              "cbc:FileName": "PBE BC3 ROA 3"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

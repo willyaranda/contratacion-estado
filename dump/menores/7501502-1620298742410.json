@@ -1,0 +1,177 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/datosAbiertosMenores/7501502",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=2kMh7t7kohDnSoTX3z%2F7wA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 2021/00004116z; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 0 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "ejecución e instalación de cartel publicitario de subvención del fondo de cooperación económica local general año 2020",
+  "updated": "2021-05-06T12:59:02.410+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "2021/00004116z",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "ejecución e instalación de cartel publicitario de subvención del fondo de cooperación económica local general año 2020",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4500,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 2000,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 0,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 0,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 45200000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 10,
+          "@_unitCode": "DAY"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+      },
+      "cbc:Description": "Motivación para adjudicar a Transportes Y Construcciones Blasgon, S.A.:",
+      "cbc:AwardDate": "2021-05-03",
+      "cbc:ReceivedTenderQuantity": 1,
+      "cac:WinningParty": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "A09052598",
+            "@_schemeName": "NIF"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "TRANSPORTES Y CONSTRUCCIONES BLASGON, S.A."
+        }
+      },
+      "cac:AwardedTenderedProject": {
+        "cac:LegalMonetaryTotal": {
+          "cbc:TaxExclusiveAmount": {
+            "#text": 2000,
+            "@_currencyID": "EUR"
+          },
+          "cbc:PayableAmount": {
+            "#text": 2000,
+            "@_currencyID": "EUR"
+          }
+        }
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 6,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2021-04-30",
+        "cbc:EndTime": "12:00:00"
+      }
+    },
+    "cac-place-ext:ValidNoticeInfo": {
+      "cbc-place-ext:NoticeTypeCode": {
+        "#text": "DOC_CAN_ADJ",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+      },
+      "cac-place-ext:AdditionalPublicationStatus": {
+        "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+        "cac-place-ext:AdditionalPublicationDocumentReference": {
+          "cbc:IssueDate": "2021-05-06"
+        }
+      }
+    }
+  }
+}

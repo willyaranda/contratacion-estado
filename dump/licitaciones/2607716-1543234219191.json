@@ -1,0 +1,352 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/2607716",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Lce4L2TO7SV7h85%2Fpmmsfw%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 1634/18; Órgano de Contratación: Junta de Gobierno del Ayuntamiento de Aranda de Duero; Importe: 44991.8 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "Suministro básico de equipamientos para la musealización de la exposición del tren en la Estación Chelva de Aranda de Duero",
+  "updated": "2018-11-26T13:10:19.191+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "1634/18",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Suministro básico de equipamientos para la musealización de la exposición del tren en la Estación Chelva de Aranda de Duero",
+      "cbc:TypeCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GoodsContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 44991.8,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 54440.08,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 44991.8,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 39154000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 2,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+      },
+      "cbc:AwardDate": "2018-11-22",
+      "cbc:ReceivedTenderQuantity": 1
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Experiencia profesional conforme al Anexo V del PCAP"
+        },
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": 5,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme al Anexo V del PCAP"
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          }
+        ]
+      },
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:Description": "Cronograma de los trabajos a desarrollar",
+            "cbc:WeightNumeric": 14
+          },
+          {
+            "cbc:Description": "Origen de la madera de los materiales del pliego",
+            "cbc:WeightNumeric": 20
+          },
+          {
+            "cbc:Description": "Criterios relacionados con la igualdad de género",
+            "cbc:WeightNumeric": 10
+          },
+          {
+            "cbc:Description": "Plan de trabajo",
+            "cbc:WeightNumeric": 11
+          },
+          {
+            "cbc:Description": "Plan de coordinación",
+            "cbc:WeightNumeric": 6
+          },
+          {
+            "cbc:Description": "Plazo de garantía",
+            "cbc:WeightNumeric": 6
+          },
+          {
+            "cbc:Description": "Oferta económica",
+            "cbc:WeightNumeric": 33
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:DocumentAvailabilityPeriod": {
+        "cbc:EndDate": "2018-11-13",
+        "cbc:EndTime": "14:00:00"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2018-11-13",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "1634-2018 PCA MusealizacionEstacionChelva.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=229f5244-47cf-4ed2-86be-4f1a93fd0942",
+          "cbc:DocumentHash": "jomn44X48xuhp8MrI8VMIjEy0vE="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "1634-2018 PPT MusealizacionEstacionChelva.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=61c0e94f-850b-41cf-bd4a-6070c8836784",
+          "cbc:DocumentHash": "xlWNXah6k/YInKTCt7ySz6RnaHM="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": {
+      "cbc:ID": "1634-2018 AnteproyectoRenovacionMuseoTren.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=f587ca0e-59e4-4aca-9966-a6944cfac368",
+          "cbc:DocumentHash": "pudTlR9/Mk1S9G5fng/Yo1bVI2Q="
+        }
+      }
+    },
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2018-11-26"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/TenderingDocumentTypeCode-2.06.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=91c552ad-cf01-46ca-b051-ec8e1e4d548b",
+                  "cbc:FileName": "1634-2018 AcuerdoDesiertoJGLRenovacionMuseoTren.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2018-10-29"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2018-10-29"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "3bcfd65f-9762-4646-aad7-7fea903346a6",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=3bcfd65f-9762-4646-aad7-7fea903346a6",
+              "cbc:FileName": "Memoria justificativa"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "21d9b51f-45fb-47ad-8c62-ccb73d0aa017",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=21d9b51f-45fb-47ad-8c62-ccb73d0aa017",
+              "cbc:FileName": "Documento de aprobación del expediente"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

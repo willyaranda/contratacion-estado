@@ -1,0 +1,524 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/2615718",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=r8j7qbkuCVymq21uxhbaVQ%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 2043/18; Órgano de Contratación: Junta de Gobierno del Ayuntamiento de Aranda de Duero; Importe: 1074380.15 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "Ejecución de las obras de construcción del nuevo edificio para la sede de Policía Local de Aranda de Duero",
+  "updated": "2019-01-10T11:41:56.582+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "2043/18",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Ejecución de las obras de construcción del nuevo edificio para la sede de Policía Local de Aranda de Duero",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4521,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 1074380.15,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 1299999.98,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 1074380.15,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 45200000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 14,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+      },
+      "cbc:Description": "Oferta más ventajosa de acuerdo con los criterios establecidos",
+      "cbc:AwardDate": "2018-12-05",
+      "cbc:ReceivedTenderQuantity": 8,
+      "cac:Contract": {
+        "cbc:ID": "2043/18",
+        "cbc:IssueDate": "2018-12-28"
+      },
+      "cac:WinningParty": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "B09266420",
+            "@_schemeName": "NIF"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "CONSTRUCCIONES HERMANOS RIESGO DE ARANDA, S.L."
+        }
+      },
+      "cac:AwardedTenderedProject": {
+        "cac:LegalMonetaryTotal": {
+          "cbc:TaxExclusiveAmount": {
+            "#text": 963712.3,
+            "@_currencyID": "EUR"
+          },
+          "cbc:PayableAmount": {
+            "#text": 1166091.88,
+            "@_currencyID": "EUR"
+          }
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:RequiredBusinessClassificationScheme": {
+          "cbc:ID": "RequiredBusinessProfileCode",
+          "cac:ClassificationCategory": {
+            "cbc:CodeValue": "C*-4"
+          }
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          }
+        ]
+      },
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:Description": "1) OFERTA ECONÓMICA",
+            "cbc:WeightNumeric": 61
+          },
+          {
+            "cbc:Description": "4) Prevención de resgos de exclusión social",
+            "cbc:WeightNumeric": 6
+          },
+          {
+            "cbc:Description": "2) Mejora valorada",
+            "cbc:WeightNumeric": 19
+          },
+          {
+            "cbc:Description": "3) Ampliación plazo de garantía",
+            "cbc:WeightNumeric": 10
+          },
+          {
+            "cbc:Description": "5) Contratación desempliados  (INEM)",
+            "cbc:WeightNumeric": 4
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:DocumentAvailabilityPeriod": {
+        "cbc:EndDate": "2018-11-19",
+        "cbc:EndTime": "14:00:00"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2018-11-19",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "2043-2018 PCA ObrasComisariaPoliciaLocalOAs.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=093df081-696c-4cb7-83d7-784eb63d88e1",
+          "cbc:DocumentHash": "fZXdt7tUxmZeQKJ1cBqxHfCBTZw="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "2043-2018 PPT ObrasComisariaPoliciaLocalOAs.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=618a9160-e885-4cb7-a4ea-2743564653f3",
+          "cbc:DocumentHash": "zLqeWJ/MOiil1KMIaB1QOg3nks0="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "2043-2018 AnexoPliegosMejoraObrasComisaria.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=29bba4ea-09a9-462b-bfab-6e52f1c6fc5f",
+            "cbc:DocumentHash": "4rS09V/lnQIxRtyb3YubbFhoYVE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2043-2018 04 ESTUDIO GEOTECNICO ObrasComisariaPoliciaLocalOAs.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b3657d1c-4351-404a-9900-b0428521d837",
+            "cbc:DocumentHash": "L9OgIOL4oOTVXes9A7fxLZVBSdY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2043-2018 03 SEGURIDAD Y SALUD ObrasComisariaPoliciaLocalOAs.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=d6114a35-b77e-45ba-be2c-505c2fc203ee",
+            "cbc:DocumentHash": "3EqdY7uA26jCRswrq8Z67KAw8WM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2043-2018 02 PLANOS 318_PByE_PL_Rev01 ObrasComisariaPoliciaLocalOAs.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=8cda3467-f84d-455a-a87c-520731134b03",
+            "cbc:DocumentHash": "K1Qj80qUteSjEC87Xo0eqOkBGjo="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2043-2018 01 MEMORIA PPT Y ANEJOS ObrasComisariaPoliciaLocalOAs.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=6743cb0e-9b7d-4ca7-84d9-eee748026a62",
+            "cbc:DocumentHash": "tEJ3Wpzsk+WuqEu2vdeJNHm9vHQ="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2019-01-10"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/TenderingDocumentTypeCode-2.06.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=06e75af2-45b2-4785-be02-ff3242e8bfcf",
+                  "cbc:FileName": "2043-2018 JGL AcuerdoAdjudicacionObrasComisaria.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2018-10-30"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2018-10-30"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2019-01-10"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "1525aafd-538f-419c-917b-984c3e8dda26",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=1525aafd-538f-419c-917b-984c3e8dda26",
+              "cbc:FileName": "ProyectoBasicoEjecucionRefundido"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "ccb45275-c209-479a-8727-e98fdc40bcb8",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=ccb45275-c209-479a-8727-e98fdc40bcb8",
+              "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "19606cdd-9d59-40e4-b3a9-8c1a8d5397c4",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=19606cdd-9d59-40e4-b3a9-8c1a8d5397c4",
+              "cbc:FileName": "Archivo BC3 mediciones mejoras"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "14a1be02-5d5e-4807-ba02-a4416453386b",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=14a1be02-5d5e-4807-ba02-a4416453386b",
+              "cbc:FileName": "Archivo BC3 mediciones y economico extension placce"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "8a63fcdf-6c03-460a-9285-4c4ff4463942",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=8a63fcdf-6c03-460a-9285-4c4ff4463942",
+              "cbc:FileName": "Archivo BC3 mediciones y economico Mejoras"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "9a99a0c4-b632-4533-a983-10c099265da5",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=9a99a0c4-b632-4533-a983-10c099265da5",
+              "cbc:FileName": "Archivo BC3 mediciones"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "158dc9b3-07e4-42ad-ac4d-a209447aae16",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=158dc9b3-07e4-42ad-ac4d-a209447aae16",
+              "cbc:FileName": "Archivo BC3 mediciones extensiion place"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "382ab9f4-2e9e-479b-b220-ead33c0038a8",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=382ab9f4-2e9e-479b-b220-ead33c0038a8",
+              "cbc:FileName": "Archivo BC3 mediciones y economico mejoras extension place"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "3a0f6e25-1317-44d7-a295-5da5aedcf0f9",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=3a0f6e25-1317-44d7-a295-5da5aedcf0f9",
+              "cbc:FileName": "Archivo BC3 mediciones y economico extension placce"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "475d953d-9665-4ce2-9d7f-aaf5785b2e99",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=475d953d-9665-4ce2-9d7f-aaf5785b2e99",
+              "cbc:FileName": "Memoria justificativa"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "b0b3b7a1-b192-473d-900c-a2d25aaec8a0",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b0b3b7a1-b192-473d-900c-a2d25aaec8a0",
+              "cbc:FileName": "Archivo BC3 mediciones mejoras extensión place"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "337115a4-d5a8-4653-9cd6-6b99aa1b409f",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=337115a4-d5a8-4653-9cd6-6b99aa1b409f",
+              "cbc:FileName": "Archivo BC3 mediciones y economico"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

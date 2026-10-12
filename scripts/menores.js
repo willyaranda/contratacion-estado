@@ -26,13 +26,13 @@ const showDaysDiff = (tender) => {
   let money = -1;
   try {
     money = tender['cac-place-ext:ContractFolderStatus']['cac:TenderResult']['cac:AwardedTenderedProject']['cac:LegalMonetaryTotal']['cbc:PayableAmount']['#text'];
-  } catch (error) {
+  } catch {
     console.log(`No money for tender id ${id}`);
   }
   let awardedParty = '';
   try {
     awardedParty = tender['cac-place-ext:ContractFolderStatus']['cac:TenderResult']['cac:WinningParty']['cac:PartyIdentification']['cbc:ID']['#text'];
-  } catch (error) {
+  } catch {
     console.log(`No awarded party for tender id ${id}`);
   }
   // return the days difference between tenderDate and updated

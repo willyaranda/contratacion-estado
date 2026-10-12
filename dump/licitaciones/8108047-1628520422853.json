@@ -1,0 +1,354 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/8108047",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=oWiBkzE%2FnPOXQV0WE7lYPw%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación:  2021/00001427q; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 1735705.06 EUR; Estado: PUB",
+    "@_type": "text"
+  },
+  "title": "contratación de las obras de reurbanización de la avenida castilla, en el tramo comprendido entre la plaza de la cadena y la plaza de la hispanidad, en aranda de duero",
+  "updated": "2021-08-09T16:47:02.853+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "2021/00001427q",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "PUB",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "contratación de las obras de reurbanización de la avenida castilla, en el tramo comprendido entre la plaza de la cadena y la plaza de la hispanidad, en aranda de duero",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4500,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 1735705.06,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 2100203.12,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 1735705.06,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 45230000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 10,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cac:RequiredFinancialGuarantee": [
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        },
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 3,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        }
+      ],
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "N/A"
+      },
+      "cac:TendererQualificationRequest": {
+        "cbc:Description": "Conforme anexo  V clasificación  grupo G subgrupo 6 categoria 4",
+        "cac:RequiredBusinessClassificationScheme": {
+          "cbc:ID": "RequiredBusinessProfileCode",
+          "cac:ClassificationCategory": {
+            "cbc:CodeValue": "G6-4"
+          }
+        },
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Oferta Económica y Plazo de garantía"
+        }
+      },
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:Description": "Precio oferta económica",
+            "cbc:WeightNumeric": 70
+          },
+          {
+            "cbc:Description": "Ampliación plazo de garantía",
+            "cbc:WeightNumeric": 30
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2021-08-27",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "2021-1427Q PCAP Avda Castilla.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=81be699e-7bc4-4cf9-ab82-69485de3dc2d",
+          "cbc:DocumentHash": "dn9E8liRyF99p7FvAFoVIMDKFq4="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "2021-1427Q PPTP Proyecto Avda Castilla.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=ea7280a5-c3bc-44af-aab2-a6c97059b850",
+          "cbc:DocumentHash": "USB9l7HCliX6L9w1/SRgRn/VDjw="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "2021-1427Q ANEXO IV Declaracion Grupo Empresarial Obras Avda Castilla.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=7213bd7b-93c2-4246-80bb-0b629b576ca4",
+            "cbc:DocumentHash": "H1XR6MvFdf7eC1IAZpjoa9JUpVw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q Proyecto Documento 1 Memoria y Anejos reducido.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=fdd37767-231a-4c59-9fbd-4febcc004405",
+            "cbc:DocumentHash": "rnD3aZJaji/81J+11XWvFtEtSJc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q ANEXO VII Declaracion Subcontratacion Cesion Obras Avda Castilla.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=9765477a-30e7-4c40-8e4f-1d56aeafdfd2",
+            "cbc:DocumentHash": "2tRttyzWSSGch1GjtRWzgfq8b3c="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q ANEXO III Declaracion Responsable Obras Avda Castilla.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=c942b64d-ee43-48fa-aab3-3c99c7fe929b",
+            "cbc:DocumentHash": "xw27S4jFIAzEzs9sSP1Av0v1Clo="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q ANEXO VIII Modelo Oferta Economica Obras Avda Castilla.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=fa01c3ef-f08a-40cd-8b20-56936d4e25b9",
+            "cbc:DocumentHash": "O57bdMqzkkMXp5bUHRvC081KvxM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q Acta de Replanteo Avda Castilla.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=eecb9f69-4cd2-49f0-b895-236cddc0662e",
+            "cbc:DocumentHash": "yFpZ8qOPVAHDSfiKyVubg6Vu35E="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q Proyecto Documento 5 ESTUDIO SEGURIDAD Y SALUD_SYS_AVCast-7621.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=a6b9119b-8f89-4963-9202-10d2b74b6e14",
+            "cbc:DocumentHash": "gAymwcKWFmj4V41UEG4we+q8rns="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q JGL AcuerdoAprobacionProyecto Avda Castilla.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0ea5db24-7df7-462b-bc41-1c543dd8c511",
+            "cbc:DocumentHash": "bYLXQzzVKzpVthQBLrMTlnekeZI="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q Proyecto Documento 2 SYS.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=440c675a-9787-444a-9c8b-ae7760183671",
+            "cbc:DocumentHash": "Wo7waFua85Y+KtrnggUFy5jjeSM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q RESOLUCION ALCALDIA AprobacionPliegos y Gasto Avda Castilla.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2fad5f59-21cc-449b-889a-7dc6229ff578",
+            "cbc:DocumentHash": "zjqNKygvB6etsyQTwLcYP2Z5YFs="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Datos empresa a efectos de notificacion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=f5483717-589c-4516-81db-217293bc2cb9",
+            "cbc:DocumentHash": "ai0MHr4WDz9pWOZuL94qch2kp80="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-1427Q Proyecto Documento 4 MEDICIONES Y PRESUPUESTO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=aaf28560-9997-481a-b099-7c088fd72705",
+            "cbc:DocumentHash": "XJ8UOyiNyrCLDaRtJq2lPedEKV4="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2021-08-05"
+            },
+            {
+              "cbc:IssueDate": "2021-08-09"
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2021-08-05"
+          }
+        }
+      }
+    ]
+  }
+}

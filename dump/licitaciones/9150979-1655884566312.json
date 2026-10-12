@@ -1,0 +1,830 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/9150979",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=3JYDjTp6qAUuf4aBO%2BvQlQ%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 2021/00011258t; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 21000 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "suministros de fondos bibliográficos y audiovisuales para la biblioteca municipal de aranda de duero (burgos)",
+  "updated": "2022-06-22T09:56:06.312+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "2021/00011258t",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 22,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.05/ContractingAuthorityActivityCode-2.05.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "suministros de fondos bibliográficos y audiovisuales para la biblioteca municipal de aranda de duero (burgos)",
+      "cbc:TypeCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GoodsContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 42000,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 22860,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 21000,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 30234300,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 24,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:ProcurementProjectLot": [
+      {
+        "cbc:ID": {
+          "#text": 1,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "lote 1: material audiovisual",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 7260,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 6000,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 30234300,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 2,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "lote 2: libros de adultos, infantiles y juveniles en formato papel",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 15600,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 15000,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 30234300,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderResult": [
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Resultan dos empresas homologadas para el Lote 1 de acuerdo a lo establecido en el acuerdo marco con los siguientes porcentajes de bajas ofertados:\nDistriasvy, S.L.: 23,45 % de baja.\nTatarana, S.L.: 20 % de baja.",
+        "cbc:AwardDate": "2022-05-26",
+        "cbc:ReceivedTenderQuantity": 2,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/000258T",
+          "cbc:IssueDate": "2022-06-07"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B62818844",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "TATARANA, S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 1,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 3000,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 3630,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Resultan dos empresas homologadas para el Lote 1 de acuerdo a lo establecido en el acuerdo marco con los siguientes porcentajes de bajas ofertados:\nDistriasvy, S.L.: 23,45 % de baja.\nTatarana, S.L.: 20 % de baja.",
+        "cbc:AwardDate": "2022-05-26",
+        "cbc:ReceivedTenderQuantity": 2,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2022/00011258T",
+          "cbc:IssueDate": "2022-06-07"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B47753892",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "DISTRIASVY, S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 1,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 3000,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 3630,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Resultan seis empresas homologadas para el Lote 2 de acuerdo a lo establecido en el acuerdo marco con los siguientes porcentajes de bajas ofertados sobre el precio de venta al público:\nInfobibliotecas, S.L.: 15% de baja.\nSA Distribución, Edición y librerías: 15% de baja.\nPapelería Somar, S.L.: 15% de baja.\nDistriasvy, S.L.: 15 % de baja.\nBernardo Jseús León Álvarez: 12% de baja.\nTatarana, S.L.: 5 % de baja.",
+        "cbc:AwardDate": "2022-05-26",
+        "cbc:ReceivedTenderQuantity": 7,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/11258T",
+          "cbc:IssueDate": "2022-06-07"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B62818844",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "TATARANA, S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 2,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2500,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 2600,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Resultan seis empresas homologadas para el Lote 2 de acuerdo a lo establecido en el acuerdo marco con los siguientes porcentajes de bajas ofertados sobre el precio de venta al público:\nInfobibliotecas, S.L.: 15% de baja.\nSA Distribución, Edición y librerías: 15% de baja.\nPapelería Somar, S.L.: 15% de baja.\nDistriasvy, S.L.: 15 % de baja.\nBernardo Jseús León Álvarez: 12% de baja.\nTatarana, S.L.: 5 % de baja.",
+        "cbc:AwardDate": "2022-05-26",
+        "cbc:ReceivedTenderQuantity": 7,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00011258T",
+          "cbc:IssueDate": "2022-06-21"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "A28057230",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "SA DISTRIBUCIÓN, EDICIÓN Y LIBRERÍAS"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 2,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2500,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 2600,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Resultan seis empresas homologadas para el Lote 2 de acuerdo a lo establecido en el acuerdo marco con los siguientes porcentajes de bajas ofertados sobre el precio de venta al público:\nInfobibliotecas, S.L.: 15% de baja.\nSA Distribución, Edición y librerías: 15% de baja.\nPapelería Somar, S.L.: 15% de baja.\nDistriasvy, S.L.: 15 % de baja.\nBernardo Jseús León Álvarez: 12% de baja.\nTatarana, S.L.: 5 % de baja.",
+        "cbc:AwardDate": "2022-05-26",
+        "cbc:ReceivedTenderQuantity": 7,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00011258T",
+          "cbc:IssueDate": "2022-06-07"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B47753892",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "DISTRIASVY, S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 2,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2500,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 2600,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Resultan seis empresas homologadas para el Lote 2 de acuerdo a lo establecido en el acuerdo marco con los siguientes porcentajes de bajas ofertados sobre el precio de venta al público:\nInfobibliotecas, S.L.: 15% de baja.\nSA Distribución, Edición y librerías: 15% de baja.\nPapelería Somar, S.L.: 15% de baja.\nDistriasvy, S.L.: 15 % de baja.\nBernardo Jseús León Álvarez: 12% de baja.\nTatarana, S.L.: 5 % de baja.",
+        "cbc:AwardDate": "2022-05-26",
+        "cbc:ReceivedTenderQuantity": 7,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00011258T",
+          "cbc:IssueDate": "2022-06-13"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B95437810",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "INFOBIBLIOTECAS, S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 2,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2500,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 2600,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Resultan seis empresas homologadas para el Lote 2 de acuerdo a lo establecido en el acuerdo marco con los siguientes porcentajes de bajas ofertados sobre el precio de venta al público:\nInfobibliotecas, S.L.: 15% de baja.\nSA Distribución, Edición y librerías: 15% de baja.\nPapelería Somar, S.L.: 15% de baja.\nDistriasvy, S.L.: 15 % de baja.\nBernardo Jseús León Álvarez: 12% de baja.\nTatarana, S.L.: 5 % de baja.",
+        "cbc:AwardDate": "2022-05-26",
+        "cbc:ReceivedTenderQuantity": 7,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00011258T",
+          "cbc:IssueDate": "2022-06-07"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "13112574K",
+              "@_schemeName": "OTROS"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "BERNARDO JESÚS LEÓN ÁLVAREZ"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 2,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2500,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 2600,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Resultan seis empresas homologadas para el Lote 2 de acuerdo a lo establecido en el acuerdo marco con los siguientes porcentajes de bajas ofertados sobre el precio de venta al público:\nInfobibliotecas, S.L.: 15% de baja.\nSA Distribución, Edición y librerías: 15% de baja.\nPapelería Somar, S.L.: 15% de baja.\nDistriasvy, S.L.: 15 % de baja.\nBernardo Jseús León Álvarez: 12% de baja.\nTatarana, S.L.: 5 % de baja.",
+        "cbc:AwardDate": "2022-05-26",
+        "cbc:ReceivedTenderQuantity": 7,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00011258T",
+          "cbc:IssueDate": "2022-06-21"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B13634696",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "PAPELERÍA SOMAR, S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 2,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2500,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 2600,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+        "@_name": "No hay financiación con fondos de la UE"
+      },
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "N/A"
+      },
+      "cac:TendererQualificationRequest": {
+        "cbc:Description": "Conforme al anexo V del Pliego de Cláusulas Administrativas Particulares",
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Oferta económica conforme Anexo XII del Pliego de Cláusulas Administrativas"
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 8,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:PartPresentationCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderPresentationCode-1.04.gc",
+        "@_name": "A uno o varios lotes"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:MaximumLotPresentationQuantity": 2,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2022-02-10",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "2021-11258T PCAP AM LibrosBiblioteca.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=964e3f33-8caa-4619-a2db-378c5b539008",
+          "cbc:DocumentHash": "qHTRDp15RecAT4ntewDJpgecZNg="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "2021-11258T PPTP AM LibrosBiblioteca.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0183b288-ab65-45fe-9d9a-7d85bf54faa5",
+          "cbc:DocumentHash": "vYvwXufmfoTisydw4cKsXWcjX1E="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "2021-11258T Modelo Datos  Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b96a9c8c-efae-4ec5-9c31-819e21e9b34e",
+            "cbc:DocumentHash": "HCK/Ez/Urx7XxprUR0VwAYyFPy4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-11258T ANEXO VIII Modelo de Oferta Economical.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b820ea8a-008e-48a2-ad5e-85d980b2d5df",
+            "cbc:DocumentHash": "NACujn89nwixoLQkJ0Nl0gkgIUU="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-11258T ANEXO III Instrucciones Documento DEUC.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b1f3cd8d-18fc-45a7-81c8-f5a39477aad1",
+            "cbc:DocumentHash": "zPc1LOU7hsMcZDK/rUfx/HuYaJE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-11258T ANEXO IV Declaracion Grupo Empresarial.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=9e2f0457-e92b-4011-b547-8d1b918489f2",
+            "cbc:DocumentHash": "xkLjarVqfW6OcfAchwGWE+8S+30="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-11258T MemoriaJustificativa AM LibrosBiblioteca.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2d0f7280-25dc-4f49-b209-bd78da13eeaf",
+            "cbc:DocumentHash": "mF/NuNUy1Mrckh21wv2yab8V6Tc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-11258T Resolucion Aprobar Pliego y Gasto AM LibrosBiblioteca.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=21aaa2ff-3b57-421b-93e0-b29c13566431",
+            "cbc:DocumentHash": "avlzo87VuWOwoFKr5rOppJpBCHA="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2022-06-21"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.07/TenderingDocumentTypeCode-2.07.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b9530067-14dd-42e0-9cb2-d027f1092fa6",
+                  "cbc:FileName": "2021-11258T Resolucion Adjudicacion AM LibrosBiblioteca.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-01-25"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-01-25"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2022-06-21"
+            },
+            {
+              "cbc:IssueDate": "2022-06-22"
+            }
+          ]
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "21f67855-cdde-4053-a60a-7859951388e1",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=21f67855-cdde-4053-a60a-7859951388e1",
+              "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "ed4b37b9-1b34-423f-9373-ee6b985af281",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=ed4b37b9-1b34-423f-9373-ee6b985af281",
+              "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "665743c4-6a5d-46b3-a250-8699ee1cf204",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=665743c4-6a5d-46b3-a250-8699ee1cf204",
+              "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+            }
+          }
+        }
+      }
+    ],
+    "cac-place-ext:TendererStatus": [
+      {
+        "cbc:ProcurementProjectLotID": 1,
+        "cac:TendererParty": ""
+      },
+      {
+        "cbc:ProcurementProjectLotID": 1,
+        "cac:TendererParty": ""
+      },
+      {
+        "cbc:ProcurementProjectLotID": 2,
+        "cac:TendererParty": ""
+      },
+      {
+        "cbc:ProcurementProjectLotID": 2,
+        "cac:TendererParty": ""
+      },
+      {
+        "cbc:ProcurementProjectLotID": 2,
+        "cac:TendererParty": ""
+      },
+      {
+        "cbc:ProcurementProjectLotID": 2,
+        "cac:TendererParty": ""
+      },
+      {
+        "cbc:ProcurementProjectLotID": 2,
+        "cac:TendererParty": ""
+      },
+      {
+        "cbc:ProcurementProjectLotID": 2,
+        "cac:TendererParty": ""
+      }
+    ]
+  }
+}

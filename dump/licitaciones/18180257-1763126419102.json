@@ -1,0 +1,467 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/18180257",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=E0biHh49xvsQyBAnWzHfCg%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR_SMPL/SUMIN/2025000055; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 41250 EUR; Estado: EV",
+    "@_type": "text"
+  },
+  "title": "Suministro de material de informática para diversos departamentos del Ayuntamiento de Aranda de Duero",
+  "updated": "2025-11-14T14:20:19.102+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR_SMPL/SUMIN/2025000055",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "EV",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityCode-2.10.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityActivityCode-2.10.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500104,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      },
+      "cac-place-ext:ParentLocatedParty": {
+        "cac:PartyName": {
+          "cbc:Name": "Aranda de Duero"
+        },
+        "cac-place-ext:ParentLocatedParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "L04090313",
+              "@_schemeName": "DIR3"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Ayuntamientos"
+          },
+          "cac-place-ext:ParentLocatedParty": {
+            "cac:PartyName": {
+              "cbc:Name": "Burgos"
+            },
+            "cac-place-ext:ParentLocatedParty": {
+              "cac:PartyName": {
+                "cbc:Name": "Castilla y León"
+              },
+              "cac-place-ext:ParentLocatedParty": {
+                "cac:PartyName": {
+                  "cbc:Name": "ENTIDADES LOCALES"
+                },
+                "cac-place-ext:ParentLocatedParty": {
+                  "cac:PartyName": {
+                    "cbc:Name": "Sector Público"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Suministro de material de informática para diversos departamentos del Ayuntamiento de Aranda de Duero",
+      "cbc:TypeCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GoodsContractCode-1.04.gc"
+      },
+      "cbc:MixContractIndicator": false,
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 41250,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 49912.5,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 41250,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 30237300,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 3,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_name": "No hay financiación con fondos de la UE",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc"
+      },
+      "cbc:ProcurementNationalLegislationCode": {
+        "#text": 3,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ProcurementNationalLegislationCode-2.08.gc"
+      },
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "OSR-COMPTASK",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Una relación de los principales suministros realizados de igual o similar naturaleza que los que constituyen el objeto del contrato en el curso de como máximo, los tres últimos años, conforme Anexo V del PCAP_CCP"
+        },
+        "cac:FinancialEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos años, conforme Anexo V del PCAP_CCP"
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura por importe igual o superior al valor estimado del lote o lotes a los que se licita, conforme Anexo V del PCAP_CCP"
+          }
+        ],
+        "cac:SpecificTendererRequirement": {
+          "cbc:RequirementTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+          },
+          "cbc:Description": "Capacidad de obrar"
+        }
+      },
+      "cac:ContractExecutionRequirement": [
+        {
+          "cbc:Name": "Consideraciones de tipo social",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 2,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "De conformidad con lo dispuesto en el art. 1.3 de la Ley de Contratos del Sector Público esta contratación introduce condiciones especiales de ejecución del contrato para el contratista de carácter social y medioambiental, conforme Anexo XI del PCAP_CCP."
+        },
+        {
+          "cbc:Name": "Consideraciones de tipo medioambiental",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 1,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "De conformidad con lo dispuesto en el art. 1.3 de la Ley de Contratos del Sector Público esta contratación introduce condiciones especiales de ejecución del contrato para el contratista de carácter social y medioambiental, conforme Anexo XI del PCAP_CCP."
+        }
+      ],
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": {
+          "cbc:AwardingCriteriaTypeCode": {
+            "#text": "OBJ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+          },
+          "cbc:Description": "Oferta económica. Mejor precio 100 puntos, conforme Anexo X del PCAP_CCP.",
+          "cbc:AwardingCriteriaSubTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+          },
+          "cbc:WeightNumeric": 100
+        }
+      },
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2025-11-05",
+        "cbc:EndTime": "23:59:00",
+        "cbc:Description": "Plazo para la presentación de ofertas: 15 días naturales conforme a lo dispuesto en el art. 159 LCSP"
+      },
+      "cac:AuctionTerms": {
+        "cbc:AuctionConstraintIndicator": false
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP  SUMINISTROS.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=eUwNlGNVZtaeujoaXUY8Z1TVFzN%2BPiPWDFA3xfwaCZrBbpu%2BWwd0ABaPPPZgMYM/GzA0vZGaos4HHx2pWyKuY8f%2BUCdeIQZc8eL%2BAfiN0E545ClyWkoJ44mKM70IFcOu",
+          "cbc:DocumentHash": "wblN/dRHDKzaIVfnf2TG1UrrH5o="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "Pliego de prescripciones tecnicas 1F.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=fs7ezpevhNBo5H/WH96rK2Z695NPilXKSPbHmBz62X1AmR3PJxC5nuc7ABqkCTsVAJ4tuH6l1UsaY6x/5a0cZ5E%2BhZ0KiLGCC5BuaraM/xTfdyQgZAdTm3EfcUAC7CJ6",
+          "cbc:DocumentHash": "ntQ59mTBTg7S3bhTYJssdwxsaAs="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "Memoria Justificativa 1F.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=nrqOzHFQcSKVRUreg3S3WDPwuKWmWnuwBmCCk5kk788SXtXbdbdIChbaN4akx%2Bsc1MQBMVdNheM/v6eaY3BMB0UuR5OgHMOCypG6KmsiA/MC1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "y1gYWZszKi9yPbEOSfW0bYAnT30="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Pliego tipo de suministro.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=n92SXKLhVmT%2B7hX/QBicjFcyOndj9G961Twg/ShvoQFSB4MPOcWcpNGiPoqQ%2B0Mq0jFUQcAUJMAqBKcWSxbg3LUgVMMcJjUku9FyIzRsXhuB0nvVKRzfe4rpHcnlPhSZ",
+            "cbc:DocumentHash": "2a3ngsoXQHqawqTobKbw5QpYDBs="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO II A y II B.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=x4aM3gacNlA2FpdbbC2yVzCLE1DtMyeL8hlNLHLTxcJRjszHAbW7Jbc1ePWGhI0/YJMKaSYBpbIJJqg%2BaDSptnYeHRqcI2SRMTJKDMqy1PbfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "H9JzxpiHFM9uavJOwI0LXZBFD28="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO VIII.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=QwtiwwF1a7G29Pm5WGiZsF6o6xnVsScoNWjgSJLAFCAYPDWuPz6rn/XQxXlskKwrQNXeWdqm9elWHQqVN0OCaQZYgshnjnjuxnTE9VUzNvfDdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "9rrMvR9FTVc7gFTr9QiBeBfKfLQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "A0 Modelo Datos Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=E6olM%2B56ks4HGtbygCno2r6FP6GMSJjtJyQrJG3nKoPoh3oiFxA3INlo8wzQe/uiITz1bmStnsYOCC1hRdFgc5SBEV5AcWjzHNoACgHfCpeB0nvVKRzfe4rpHcnlPhSZ",
+            "cbc:DocumentHash": "jgc8RNLC2YqdCbvctpolGz9cDm4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IV Oferta economica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=7VG7dORlonM4qfZR0h2%2BbezpkgwYdXMYqSbVHIkO4Ykwxyh3Tu%2BVXLac5gNNBMlpfmxnA7NC%2BlNmkf%2BqxYRSraQnk0Rj7pTKCi5smYkNJlF7QB3HKyQaFUExmUVQCerk",
+            "cbc:DocumentHash": "kE1Ytlx+q84CRfxkREOfxMGmFnc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO I Instrucciones Deuc.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=K%2BTrDeMybjnY0VuhNY2PkMAB0LW6N8Cy72oJik/eFb0d98MJAP9VLygNirrVg7MXQBqP26ey4mhdMeVEbQ660JycypZQi0OmbHp0mFkLIWLfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "5IlQV02R/gBkrGRMOcrYME0qhkk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion aprobacion pliego y gasto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=Kkqsj%2Bjac1BgcytE8ktvGD5CmXRKKbeqOYsygIMslqp9677YoXrXLr6RGm45OVI9Ov1O4xxLvE9NHjEN2eGknPmWavSwVTDaR6Y9ebo6ucCB0nvVKRzfe4rpHcnlPhSZ",
+            "cbc:DocumentHash": "X5lvYr+1cUq8Bs5w50VCcEQPrXU="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2025-10-21"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2025-10-21"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-83e8f120-fb35-49d3-88b3-00ef958dc607",
+          "cbc:DocumentTypeCode": {
+            "#text": 12,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-83e8f120-fb35-49d3-88b3-00ef958dc607",
+              "cbc:FileName": "Acta del órgano de asistencia"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-838698b6-afc3-438f-883d-3b87de39e590",
+          "cbc:DocumentTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-838698b6-afc3-438f-883d-3b87de39e590",
+              "cbc:FileName": "Actos públicos informativos o de aperturas de ofertas"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-fbf3708e-a8e6-47b7-863b-91e0334a5f68",
+          "cbc:DocumentTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-fbf3708e-a8e6-47b7-863b-91e0334a5f68",
+              "cbc:FileName": "Nota aclaratoria"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2025-a602fbc9-49f5-4a14-b959-3cb12abc1974",
+          "cbc:DocumentTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-a602fbc9-49f5-4a14-b959-3cb12abc1974",
+              "cbc:FileName": "Actos públicos informativos o de aperturas de ofertas"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

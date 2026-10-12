@@ -1,0 +1,66 @@
+name: Actualización nocturna
+
+# Cada noche: descarga los anuncios nuevos del Ayuntamiento de Aranda de Duero, reconstruye la página de
+# transparencia y sube todo en un único commit automático (dump/ + docs/index.html).
+# GitHub Pages sirve la página desde la carpeta /docs de la rama principal.
+# También se puede lanzar a mano desde la pestaña Actions ("Run workflow").
+on:
+  schedule:
+    - cron: '17 2 * * *' # 02:17 UTC (04:17 en horario de verano de España)
+  workflow_dispatch:
+
+concurrency:
+  group: nightly
+  cancel-in-progress: false
+
+jobs:
+  update:
+    name: Descargar, construir y subir
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      # Descarga y, si hay anuncios nuevos, manda UN correo resumen a NOTIFY_TO (en CCO).
+      # La configuración llega solo a este paso y desde secrets del repositorio (Settings > Secrets and variables
+      # > Actions): GitHub oculta sus valores en los logs y el código nunca los imprime.
+      # Si NOTIFY_TO está vacía o mal formada, o faltan las credenciales, el job falla antes de descargar nada.
+      - name: Descargar anuncios nuevos y avisar por email
+        run: npm run fetch
+        env:
+          SEND_EMAILS: '1'
+          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          # opcionales (Settings > Secrets and variables > Actions > Variables); sin ellas se usan los valores por defecto
+          AWS_REGION: ${{ vars.AWS_REGION }}
+          MAIL_FROM: ${{ vars.MAIL_FROM }}
+
+      - name: Construir la página
+        run: |
+          npm run build:site
+          mkdir -p docs
+          cp transparencia/index.html docs/index.html
+          touch docs/.nojekyll
+
+      - name: Commit y push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dump docs
+          if git diff --cached --quiet; then
+            echo "Sin cambios: ni ficheros nuevos ni página distinta."
+          else
+            n=$(git diff --cached --name-only -- dump | wc -l | tr -d ' ')
+            git commit -m "datos: ${n} ficheros nuevos y página reconstruida ($(date -u +%F))"
+            git push
+          fi

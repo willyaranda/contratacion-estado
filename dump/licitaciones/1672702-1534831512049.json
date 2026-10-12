@@ -1,0 +1,494 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/1672702",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=NePOVFyBVr0QK2TEfXGy%2BA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 903/17; Órgano de Contratación: Pleno del Ayuntamiento de Aranda de Duero; Importe: 943300 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "Conservación y mantenimiento de las zonas verdes, elementos vegetales y áreas de juegos infantiles y biosaludables, así como la limpieza del mobiliario urbano de estas zonas de Aranda de Duero.",
+  "updated": "2018-08-21T08:05:12.049+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "903/17",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Pleno del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Pleno del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Conservación y mantenimiento de las zonas verdes, elementos vegetales y áreas de juegos infantiles y biosaludables, así como la limpieza del mobiliario urbano de estas zonas de Aranda de Duero.",
+      "cbc:TypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ServiceContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 2829900,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 1112339,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 943300,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 77311000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 2,
+          "@_unitCode": "ANN"
+        }
+      },
+      "cac:ContractExtension": {
+        "cbc:OptionsDescription": "El contrato podrá ser prorrogado por mutuo acuerdo de ambas partes por un año más, sin que la duración total del contrato, incluida la prórroga, pueda exceder de TRES (3) AÑOS.",
+        "cac:OptionValidityPeriod": {
+          "cbc:Description": "1 año"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+      },
+      "cbc:Description": "Oferta más ventajosa de acuerdo con los criterios establecidos",
+      "cbc:AwardDate": "2018-04-16",
+      "cbc:ReceivedTenderQuantity": 9,
+      "cac:Contract": {
+        "cbc:ID": "903/17",
+        "cbc:IssueDate": "2018-08-14"
+      },
+      "cac:WinningParty": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "A79524054",
+            "@_schemeName": "NIF"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "URBASER, S.A."
+        }
+      },
+      "cac:AwardedTenderedProject": {
+        "cac:LegalMonetaryTotal": {
+          "cbc:TaxExclusiveAmount": {
+            "#text": 869041.8,
+            "@_currencyID": "EUR"
+          },
+          "cbc:PayableAmount": {
+            "#text": 1024774.2,
+            "@_currencyID": "EUR"
+          }
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:RequiredBusinessClassificationScheme": {
+          "cbc:ID": "RequiredBusinessProfileCode",
+          "cac:ClassificationCategory": {
+            "cbc:CodeValue": "O6-4"
+          }
+        },
+        "cac:TechnicalEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": "OSR-COMPTASK",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Relación de trabajos del mismo tipo al que corresponde al objeto del contrato, efectuados por el interesado en el curso de los cinco últimos años, avalados por certificados de buena ejecución. El requisito mínimo será que el importe anual acumulado en el año de mayor ejecución sea igual o superior al 70% del valor estimado del contrato (70% de 2.829.900 € = 1.980.930 €, IVA excluido), o de su anualidad media si esta es inferior al valor estimado del contrato."
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": "ZZZ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Estar en posesión del Certificado de Sistema de Gestión de acuerdo con la norma UNE-EN-1176-7:2009: Instalación, inspección y mantenimiento de áreas de juegos y sus elementos."
+          }
+        ],
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": 3,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Justificante de la existencia de un seguro de indemnización por riesgos profesionales por importe igual o superior a 601.012,00 € aportando el último recibo pagado, o en su caso, compromiso de suscribir el referido seguro en el supuesto de resultar adjudicatario, presentando propuesta vinculante expedida por una compañía de seguros. El seguro deberá estar vigente durante toda la duración del contrato."
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          }
+        ]
+      },
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:Description": "Medios materiale",
+            "cbc:WeightNumeric": 10
+          },
+          {
+            "cbc:Description": "Criterios Evaluables mediente fórmula - Oferta económica",
+            "cbc:WeightNumeric": 50
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:DocumentAvailabilityPeriod": {
+        "cbc:EndDate": "2017-09-08",
+        "cbc:EndTime": "14:00:00"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2017-09-08",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "903-2017 AdministrativoMantenimientoJardinesZonasVerdesSPA.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=ade94072-edfa-4a59-a2af-63c14fda106b",
+          "cbc:DocumentHash": "7xbZ3hs7jyWa5AyiFAU5FybJIiQ="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "903-2017 TecnicoMantenimientoJardinesZonasVerdesSPA.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0b0c5a23-0718-4c31-a5ea-e091184b261a",
+          "cbc:DocumentHash": "uPTCMfJe29Uk98AGUUmdQp8JUhU="
+        }
+      }
+    },
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": [
+          {
+            "cbc-place-ext:PublicationMediaName": "BOE",
+            "cac-place-ext:AdditionalPublicationDocumentReference": [
+              {
+                "cbc:IssueDate": "2017-08-05"
+              },
+              {
+                "cbc:IssueDate": "2017-08-01"
+              }
+            ]
+          },
+          {
+            "cbc-place-ext:PublicationMediaName": "DOUE",
+            "cac-place-ext:AdditionalPublicationDocumentReference": [
+              {
+                "cbc:IssueDate": "2017-08-04"
+              },
+              {
+                "cbc:IssueDate": "2017-09-08"
+              }
+            ],
+            "cac-place-ext:AdditionalPublicationRequest": [
+              {
+                "cbc:AgencyID": "DOUE",
+                "cbc-place-ext:SendDate": "2017-08-01+02:00"
+              },
+              {
+                "cbc:AgencyID": "DOUE",
+                "cbc-place-ext:SendDate": "2017-09-06+02:00"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": [
+          {
+            "cbc-place-ext:PublicationMediaName": "BOE",
+            "cac-place-ext:AdditionalPublicationDocumentReference": {
+              "cbc:IssueDate": "2018-08-21"
+            },
+            "cac-place-ext:AdditionalPublicationRequest": {
+              "cbc:AgencyID": "BOE",
+              "cbc-place-ext:SendDate": "2018-08-17+02:00"
+            }
+          },
+          {
+            "cbc-place-ext:PublicationMediaName": "DOUE",
+            "cac-place-ext:AdditionalPublicationDocumentReference": {
+              "cbc:IssueDate": "2018-08-18"
+            },
+            "cac-place-ext:AdditionalPublicationRequest": {
+              "cbc:AgencyID": "DOUE",
+              "cbc-place-ext:SendDate": "2018-08-17+02:00"
+            }
+          }
+        ]
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2018-08-16"
+            },
+            {
+              "cbc:IssueDate": "2018-08-17"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/TenderingDocumentTypeCode-2.06.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=823849ce-fdcc-4cc7-9c37-76c040df6bab",
+                  "cbc:FileName": "603-2017 AcuerdoAdjudicacionMantenimientoZonasVerdesLimpiezaSeA.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2017-08-04"
+            },
+            {
+              "cbc:IssueDate": "2017-09-06"
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2017-08-04"
+            },
+            {
+              "cbc:IssueDate": "2017-09-06"
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2018-08-18"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_FORM",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/TenderingDocumentTypeCode-2.06.gc",
+                "@_name": "Documento de Acta de Formalización"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=c5866417-f096-4127-afb8-04975d648098",
+                  "cbc:FileName": "603-2017 ActaFormalizacionAdjudicacionMantenimientoZonasVerdesLimpiezaSeA.pdf"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "8efa5eb3-917e-4197-aa45-fc6e7651e0c5",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=8efa5eb3-917e-4197-aa45-fc6e7651e0c5",
+              "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "b937f38f-7786-41c8-93b7-53d0370fcf7f",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b937f38f-7786-41c8-93b7-53d0370fcf7f",
+              "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "05454118-3d15-4f13-8742-598594932533",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=05454118-3d15-4f13-8742-598594932533",
+              "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

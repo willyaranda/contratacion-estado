@@ -1,0 +1,530 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/3698317",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=v3Y2ET3SeeeiEJrVRqloyA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 625/2019; Órgano de Contratación: Junta de Gobierno del Ayuntamiento de Aranda de Duero; Importe: 44 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "servicio de vigilancia y seguridad para eventos de las concejalías de juventud y festejos",
+  "updated": "2019-06-10T14:44:58.977+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "625/2019",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "servicio de vigilancia y seguridad para eventos de las concejalías de juventud y festejos",
+      "cbc:TypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 23,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ServiceContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 55176,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 53.24,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 44,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 79710000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 48,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:ProcurementProjectLot": [
+      {
+        "cbc:ID": {
+          "#text": 1,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "lote.1",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 26.62,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 22,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 79710000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 2,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "lote.2",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 26.62,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 22,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 79710000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderResult": [
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Dassegur Seguridad S.L.:",
+        "cbc:AwardDate": "2019-07-19",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cac:Contract": {
+          "cbc:ID": "625/2019",
+          "cbc:IssueDate": "2019-09-03"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B73587024",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "DASSEGUR SEGURIDAD S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 1,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 20,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 20,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Dassegur Seguridad S.L.:",
+        "cbc:AwardDate": "2019-07-19",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cac:Contract": {
+          "cbc:ID": "625/2019",
+          "cbc:IssueDate": "2019-09-03"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B73587024",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "DASSEGUR SEGURIDAD S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 2,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 20,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 20,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 0
+      },
+      "cac:TendererQualificationRequest": {
+        "cbc:Description": "conforme Anexo V del Pliego de Cláusulas Administrativas",
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Criterios cualitativos relativos a la calidad"
+        },
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Oferta económica precio hora"
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 8,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:PartPresentationCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderPresentationCode-1.04.gc",
+        "@_name": "A uno o varios lotes"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2019-06-25",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "625-2019 PCAP VigilanciayseguridadParaJuventudyFestejos.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=6f0c7154-cedf-4149-a557-9716162f23a1",
+          "cbc:DocumentHash": "gwZ9Ihdjmk+xAE6oODWsR4WTseo="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "625-2019 PPT VigilanciayseguridadParaJuventudyFestejos.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=4f45628a-8243-4334-bcf2-97db0fbf83b1",
+          "cbc:DocumentHash": "4++z075zhkvyLlsf2tbEsPzZ5tA="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "625-2019 Anexo VIII OfertaEconomicayotros criteriosLote1y2.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=42aff3a0-eea1-4bd4-ba51-eebb70fbca4c",
+            "cbc:DocumentHash": "iHeMK777cOgGjYgdAHaov4f8IiY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "625-2019 Anexo VII Subcontratacion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=b1a2d583-b376-49d3-86df-5b1da6a90dba",
+            "cbc:DocumentHash": "XrdeLR4C4zo6hQVrywXu7Dzv25w="
+          }
+        }
+      },
+      {
+        "cbc:ID": "625-2019 Memoria Justificativa VigilanciayseguridadParaJuventudyFestejos.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=8ef2638d-e11e-48a6-927f-2a02fc75de17",
+            "cbc:DocumentHash": "KsNuXqyeDJOtmBjeR+0CtkFmzDQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "625-2019 Anexo IV DeclaracionGrupoEmpresarial.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=4fc8dd01-cdd7-46d9-982f-c587ea924ecd",
+            "cbc:DocumentHash": "OPbqFS1YngdHWkon6rDWRHWzr5A="
+          }
+        }
+      },
+      {
+        "cbc:ID": "625-2018 Acuerdo JGL VigilanciayseguridadParaJuventudyFestejos.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=9f4f3c93-8623-449d-86bf-6365ff776ca2",
+            "cbc:DocumentHash": "SOkIDKUEsZCtQujPlDdBqjHyu7U="
+          }
+        }
+      },
+      {
+        "cbc:ID": "625-2019 Anexo III DeclaracionResponsableSeguridadVigilanciaJuventudFestejos.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=22c6e486-844e-44b3-beff-8cf91b2f9d6d",
+            "cbc:DocumentHash": "qDEF7anQlumHfit40n9NEva0NO8="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2019-09-09"
+            },
+            {
+              "cbc:IssueDate": "2019-09-09"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/TenderingDocumentTypeCode-2.06.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=f69f80b1-bd44-4f0f-be21-25fbc353cbc0",
+                  "cbc:FileName": "625-2019 Acuerdo JGL ADJ VigilanciayseguridadParaJuventudyFestejos.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2019-06-10"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2019-06-10"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2019-09-09"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": {
+      "cac-place-ext:GeneralDocumentDocumentReference": {
+        "cbc:ID": "539bc860-987e-4cfb-ba64-e63685e8b2ce",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=539bc860-987e-4cfb-ba64-e63685e8b2ce",
+            "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+          }
+        }
+      }
+    }
+  }
+}

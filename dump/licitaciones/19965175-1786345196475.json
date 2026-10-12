@@ -1,0 +1,534 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/19965175",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=3AwZHRzA%2F7xPpzdqOdhuWg%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR_SMPL/SERV/2026000020; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 18796 EUR; Estado: ADJ",
+    "@_type": "text"
+  },
+  "title": "Contratación de infraestructura y gestión de circuito para la celebración del cross de la Constitución 2026 y 3 posibles prorrogas",
+  "updated": "2026-08-10T08:59:56.475+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR_SMPL/SERV/2026000020",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "ADJ",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityCode-2.10.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityActivityCode-2.10.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500104,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      },
+      "cac-place-ext:ParentLocatedParty": {
+        "cac:PartyName": {
+          "cbc:Name": "Aranda de Duero"
+        },
+        "cac-place-ext:ParentLocatedParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "L04090313",
+              "@_schemeName": "DIR3"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Ayuntamientos"
+          },
+          "cac-place-ext:ParentLocatedParty": {
+            "cac:PartyName": {
+              "cbc:Name": "Burgos"
+            },
+            "cac-place-ext:ParentLocatedParty": {
+              "cac:PartyName": {
+                "cbc:Name": "Castilla y León"
+              },
+              "cac-place-ext:ParentLocatedParty": {
+                "cac:PartyName": {
+                  "cbc:Name": "ENTIDADES LOCALES"
+                },
+                "cac-place-ext:ParentLocatedParty": {
+                  "cac:PartyName": {
+                    "cbc:Name": "Sector Público"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Contratación de infraestructura y gestión de circuito para la celebración del cross de la Constitución 2026 y 3 posibles prorrogas",
+      "cbc:TypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 26,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ServiceContractCode-1.04.gc"
+      },
+      "cbc:MixContractIndicator": false,
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 75184,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 22743.16,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 18796,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 92622000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 1,
+          "@_unitCode": "ANN"
+        }
+      },
+      "cac:ContractExtension": {
+        "cbc:OptionsDescription": "Duración de la prórroga 1 años",
+        "cac:OptionValidityPeriod": {
+          "cbc:Description": "Tres posibles prórrogas de un año de duración cada una (siendo el plazo de ejecución el día o días de celebración del evento deportivo en cuestión)"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/TenderResultCode-2.09.gc"
+      },
+      "cbc:Description": "oferta mejor valorada de acuerdo a los pliegos",
+      "cbc:AwardDate": "2026-08-07",
+      "cbc:ReceivedTenderQuantity": 2,
+      "cbc:SMEsReceivedTenderQuantity": 2,
+      "cbc:SMEAwardedIndicator": true,
+      "cac:WinningParty": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "B85536837",
+            "@_schemeName": "NIF"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "FOREVENT SERVICIOS ORGANIZATIVOS SLU"
+        },
+        "cac:PhysicalLocation": {
+          "cbc:CountrySubentityCode": {
+            "#text": "ES",
+            "@_name": "España",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+          },
+          "cac:Address": {
+            "cbc:CityName": "MADRID",
+            "cbc:PostalZone": 28022,
+            "cac:Country": {
+              "cbc:IdentificationCode": {
+                "#text": "ES",
+                "@_name": "España",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+              }
+            }
+          }
+        }
+      },
+      "cac:AwardedTenderedProject": {
+        "cac:LegalMonetaryTotal": {
+          "cbc:TaxExclusiveAmount": {
+            "#text": 16899,
+            "@_currencyID": "EUR"
+          },
+          "cbc:PayableAmount": {
+            "#text": 20447.79,
+            "@_currencyID": "EUR"
+          }
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_name": "No hay financiación con fondos de la UE",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc"
+      },
+      "cbc:ProcurementNationalLegislationCode": {
+        "#text": 3,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ProcurementNationalLegislationCode-2.08.gc"
+      },
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "N/A"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "Capacidad de obrar"
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "No prohibición para contratar"
+          }
+        ]
+      },
+      "cac:AllowedSubcontractTerms": {
+        "cbc:Description": "El presente contrato tendrá una duración de 1 año, con tres posibles prorrogas de 1 año de duración cada una de ellas (1+1+1+1)"
+      },
+      "cac:ContractExecutionRequirement": [
+        {
+          "cbc:Name": "Consideraciones de tipo medioambiental",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 1,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "La empresa adjudicataria del contrato deberá cumplir las condiciones especiales de ejecución de carácter social y medioambiental establecidas como preceptivas en el artículo 42 del Pliego Tipo de Cláusulas Administrativas Particulares para la contratación de Servicios, siempre que estén vinculadas al objeto del contrato."
+        },
+        {
+          "cbc:Name": "Consideraciones de tipo social",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 2,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "La empresa adjudicataria del contrato deberá cumplir las condiciones especiales de ejecución de carácter social y medioambiental establecidas como preceptivas en el artículo 42 del Pliego Tipo de Cláusulas Administrativas Particulares para la contratación de Servicios, siempre que estén vinculadas al objeto del contrato."
+        }
+      ],
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "Compromiso de aportar bebida isotónica y agua, conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 18
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "Compromiso de aporte de 14 posibles trofeos adicionales en cada edición anual del cross conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 4
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "El menor precio solicitado, calculado en base a las ofertas presentadas, conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 49
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "Aporte del servicio de un médico + ambulancia vital avanzada y un fisioterapeuta en cada edición anual, conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 29
+          }
+        ]
+      },
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2026-07-16",
+        "cbc:EndTime": "23:59:00",
+        "cbc:Description": "Plazo de presentación de proposiciones será de 15 días naturales"
+      },
+      "cac:AuctionTerms": {
+        "cbc:AuctionConstraintIndicator": false
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP  SERVICIOS.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=baV4DPcSILXW4OTUgJKpw5Qrqlds6coOj9wWHtoNi4jmLUtFosX04z6xVRea6k6BxCkZFaeCzDFLGuhmCgWCqbAEEr0PTJPP6Mzqy1reV1iCx2e6p7hqtlp2aFupgHMr",
+          "cbc:DocumentHash": "XV3/lDB9UWLTBLtTagvtEcpZZok="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "Pliego de prescripciones tecnicas 1F.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=5n5QZwxMZkm6qS/PmYCTL1BEPpPfgX/dOsBpfxybRxZNCZ%2B4taVcajnJj6d%2Bt2o2nQnsEpBLnlDN6ZVnFxe2umXMdcuDt%2B1EPUqvjUqKe9X3GVhXrFFqN7yFncy7YfRK",
+          "cbc:DocumentHash": "42VIeZjnYXQl4bxYu0aAfbJ5Uiw="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "Memoria Justificativa 1F.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=lygCXqwNANCYAYChvmfjT22VTGT3CZqelHhy4qUeL0kewcgs8svOYU2yeiZLd%2BGHzbsm1S5JBnx%2B/8alLuhsM8KbiNoHY/JYMZNSiWfYXiP3GVhXrFFqN7yFncy7YfRK",
+            "cbc:DocumentHash": "MbFsOUYFnyMHFS0nDZnhKstj3gg="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Pliego tipo de servicios.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=LgzZ%2BHBcchlWDVFugf9ikCYSYoRMSYlotsl7Zi/eD%2BL44RA1iur5CWAPbtElkCMlXYnZn8SjtpsHcO8vk%2BQSmk38526a2gdxT//IemOlQVCB0nvVKRzfe4rpHcnlPhSZ",
+            "cbc:DocumentHash": "PvJYgvYzkT9GJqPlXUraST32Qtc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo VIII.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=EgLaMhtXMxlcemiOsi05%2By7eP66tttmEUbcyyBzQl2NYf63h1rkHuiW94Jr6RYzJVDOQkadKT51eCWvO4WXh62j49joYZ3ZVs%2BXnWnb6ZGs//q7NB2iMZvNyf0xrJmjt",
+            "cbc:DocumentHash": "5B1GtEkpJalgBukwUQdKeQ+nz2U="
+          }
+        }
+      },
+      {
+        "cbc:ID": "A0 Modelo Datos Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=ExizSCbJLWRvMgRwkgKP6HMFhQ4ewMrgm2256hV0hbQRn0rJh5OArJveTz2VFsmwj3XwSysaEc%2BO2ToegLqXuPwpC3C3Ev%2BE7jBBPN1f0p8//q7NB2iMZvNyf0xrJmjt",
+            "cbc:DocumentHash": "4XdRj0XMRTahBQGmnKO4hiy01z8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO II.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=/i8EJMkUlwtj05M/Q16z7ZEcrEx81cPoPj3jLwle7oOYtXPlCHlrKarYKrcbfUX6I5QivjnioyGW0lDcE6BZUVCBiLiH%2Ba%2BmcQ/2/ilOFeOB0nvVKRzfe4rpHcnlPhSZ",
+            "cbc:DocumentHash": "Alj3mhjNNMokqnVQyd2XGp5RYPw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IV Oferta Economica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=EYi9uJk5r9pX90xPhp7KWrtqnQ/rL5KHJglYl2QYXQDRGFqUS9kE4vGcVgB5SY2osHXqBpMiSlC6Xkd7/N92inQ6SqK34yMKhcSUf8Rx5d%2BCx2e6p7hqtlp2aFupgHMr",
+            "cbc:DocumentHash": "TkK1ogteeYSpdQweEKqPHR/Q+Vw="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo I instrucciones DEUC.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=a9NWWF/zwuDV6SpX41naQy06%2B6eWNtvbfW9b3JSaKBR/0xuX8qeSgssgyFXEpVQR4A14Gjt7GAT88TBP9v42ceTpTnE/sT4Nt0vDXUzTRQSCx2e6p7hqtlp2aFupgHMr",
+            "cbc:DocumentHash": "Lsc1sHMQPI2VBVhdEul69Wi2w5M="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion aprobacion pliego y gasto.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=hOAXU8c6ESbU0FcTaVguW3uPIN8oIFa6DuuWBgSYoBvsgff8jB9LX%2BcpzODLr8sHRI7duuLor9%2B1WLE2egH1hgVMiXeOOnNpUZJpPYWW7M8C1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "xHQNPlsPbYXnsSKAmu8w1qLDbzc="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2026-08-10"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2026-07-01"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2026-07-01"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2026-8a1cba3c-ec42-4396-95c3-f2393cb7bb68",
+          "cbc:DocumentTypeCode": {
+            "#text": 12,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2026-8a1cba3c-ec42-4396-95c3-f2393cb7bb68",
+              "cbc:FileName": "Acta del órgano de asistencia"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2026-0b76a7f5-8836-49f6-9fce-c50832c7c9fd",
+          "cbc:DocumentTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+          },
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2026-0b76a7f5-8836-49f6-9fce-c50832c7c9fd",
+              "cbc:FileName": "Composición de la mesa de contratación"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

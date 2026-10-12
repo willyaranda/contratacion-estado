@@ -1,0 +1,133 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/datosAbiertosMenores/3083987",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=r7ib5PzJ6dBvYnTkQN0%2FZA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 683/18; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 8500 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "Contratación de la verbena del sábado 15 de septiembre para Fiestas Patronales 2018",
+  "updated": "2018-07-02T13:35:23.226+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "683/18",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cac:Party": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "L01090183",
+            "@_schemeName": "DIR3"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Contratación de la verbena del sábado 15 de septiembre para Fiestas Patronales 2018",
+      "cbc:TypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 26,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ServiceContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 8500,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 10285,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 8500,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 1,
+          "@_unitCode": "DAY"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+      },
+      "cbc:AwardDate": "2018-05-31",
+      "cbc:ReceivedTenderQuantity": 3,
+      "cac:WinningParty": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "B09410176",
+            "@_schemeName": "NIF"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "REPRESENTACIONES MEDEM, S.L."
+        }
+      },
+      "cac:AwardedTenderedProject": {
+        "cac:LegalMonetaryTotal": {
+          "cbc:TaxExclusiveAmount": {
+            "#text": 8500,
+            "@_currencyID": "EUR"
+          },
+          "cbc:PayableAmount": {
+            "#text": 10285,
+            "@_currencyID": "EUR"
+          }
+        }
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 6,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      }
+    },
+    "cac-place-ext:ValidNoticeInfo": {
+      "cbc-place-ext:NoticeTypeCode": {
+        "#text": "DOC_CAN_ADJ",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+      },
+      "cac-place-ext:AdditionalPublicationStatus": {
+        "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+        "cac-place-ext:AdditionalPublicationDocumentReference": {
+          "cbc:IssueDate": "2018-07-02"
+        }
+      }
+    }
+  }
+}

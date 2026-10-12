@@ -1,0 +1,846 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/8340822",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=m%2BeAf5vvoZ2XQV0WE7lYPw%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación:  2021/00005111c; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 71077.97 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "contrato privado de servicios relativo a selección de varias entidades financieras que presten servicios vinculados a la gestión recaudatoria llevada a cabo por el ayuntamiento de aranda de duero",
+  "updated": "2022-01-14T12:56:17.142+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "2021/00005111c",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 22,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.05/ContractingAuthorityActivityCode-2.05.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "contrato privado de servicios relativo a selección de varias entidades financieras que presten servicios vinculados a la gestión recaudatoria llevada a cabo por el ayuntamiento de aranda de duero",
+      "cbc:TypeCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 213233.91,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 74815.91,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 71077.97,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 66110000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 24,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:ProcurementProjectLot": [
+      {
+        "cbc:ID": {
+          "#text": 1,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "lote 1  - servicios vinculados a la colaboración en la gestión recaudatoria",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 12922.59,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 10679.83,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 66110000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 3,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "lote 2 - gestión recaudatoria y cobros en cuentas operativas",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 8615.07,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 7119.89,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 66110000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 4,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "lote 3 - servicios de cobros mediante tarjetas financieras de crédito y débito",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 4528.25,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 4528.25,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 66110000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 5,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "lote 4 - servicios de pagos y depósito de fondos",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 48750,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 48750,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 66110000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderResult": [
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "La adjudicación se efectúa a los cuatro licitadores para este lote, que ofertan el servicio y por precios unitarios.",
+        "cbc:AwardDate": "2021-12-02",
+        "cbc:ReceivedTenderQuantity": 4,
+        "cbc:SMEAwardedIndicator": false,
+        "cbc:AbnormallyLowTendersIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00005111C-LOTE1-03",
+          "cbc:IssueDate": "2022-01-11"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "A48265169",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "BANCO BILBAO VIZCAYA ARGENTARIA, S.A. (BBVA)"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 1,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 0,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 0,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "La adjudicación se efectúa a los cuatro licitadores para este lote, que ofertan el servicio y por precios unitarios.",
+        "cbc:AwardDate": "2021-12-02",
+        "cbc:ReceivedTenderQuantity": 4,
+        "cbc:SMEAwardedIndicator": false,
+        "cbc:AbnormallyLowTendersIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00005111C-LOTE1-01",
+          "cbc:IssueDate": "2022-01-11"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "A08663619",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "CAIXABANK, S.A."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 1,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 0.9,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 0.9,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "La adjudicación se efectúa a los cuatro licitadores para este lote, que ofertan el servicio y por precios unitarios.",
+        "cbc:AwardDate": "2021-12-02",
+        "cbc:ReceivedTenderQuantity": 4,
+        "cbc:SMEAwardedIndicator": false,
+        "cbc:AbnormallyLowTendersIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00005111C-LOTE1-04",
+          "cbc:IssueDate": "2022-01-14"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "A39000013",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "BANCO SANTANDER SA"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 1,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 0.59,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 0.59,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "La adjudicación se efectúa a los cuatro licitadores para este lote, que ofertan el servicio y por precios unitarios.",
+        "cbc:AwardDate": "2021-12-02",
+        "cbc:ReceivedTenderQuantity": 4,
+        "cbc:SMEAwardedIndicator": false,
+        "cbc:AbnormallyLowTendersIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00005111C-LOTE1-02",
+          "cbc:IssueDate": "2022-01-11"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "F40248791",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "CAJA RURAL DE BURGOS, FUENTEPELAYO, SEGOVIA Y CASTELLDANS, S.C."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 1,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 0.9,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 0.9,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Banco Santander Sa:",
+        "cbc:AwardDate": "2021-12-02",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00005111C-LOTE 2",
+          "cbc:IssueDate": "2022-01-14"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "A39000013",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "BANCO SANTANDER SA"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 3,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 0.6,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 0.6,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Banco Santander Sa:",
+        "cbc:AwardDate": "2021-12-02",
+        "cbc:ReceivedTenderQuantity": 2,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00005111C-LOTE 3",
+          "cbc:IssueDate": "2022-01-14"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "A39000013",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "BANCO SANTANDER SA"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 4,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 0.34,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 0.34,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Banco Santander Sa:",
+        "cbc:AwardDate": "2021-12-02",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cbc:SMEAwardedIndicator": false,
+        "cac:Contract": {
+          "cbc:ID": "2021/00005111C-LOTE 4",
+          "cbc:IssueDate": "2022-01-14"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "A39000013",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "BANCO SANTANDER SA"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 5,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 200000,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 200000,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+        "@_name": "No hay financiación con fondos de la UE"
+      },
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "N/A"
+      },
+      "cac:TendererQualificationRequest": {
+        "cbc:Description": "Conforme Anexo V del PCAP",
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme Anexo V del PCAP"
+        },
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme Anexo V del PCAP"
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:PartPresentationCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderPresentationCode-1.04.gc",
+        "@_name": "A todos los lotes"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2021-10-11",
+        "cbc:EndTime": "16:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "2021-5111C PCAP Servicios Bancarios.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=d51116ed-fb11-447b-8209-4104b3d17426",
+          "cbc:DocumentHash": "AkXJ7ME5kZmr4eYPVB7hMmtxjQo="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "2021-5111C PPTP Servicios Bancarios.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=ed8c80a2-f5f8-4df2-8d61-9d3cdca7d5bd",
+          "cbc:DocumentHash": "lPwtfMfj8+byzstgB1IVXRqc8B4="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "2021-5111C Anexo IV DeclaracionGrupoEmpresarial.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=685ad920-1d12-4508-a6ca-ec673ade627d",
+            "cbc:DocumentHash": "igLuiaC4+Fbdna1UdqRZUhXMJgo="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-5111C Modelo Datos Empresa Efeccto Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=1e28ebf6-af98-4c7a-8362-d33ae0290eaf",
+            "cbc:DocumentHash": "pdpiMaBTTuv1QOAAvmjLbjkeC7k="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-5111C Anexo VI AdscripcionObligatoriaMedios.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=f1fb4fe3-2f65-4192-b87c-242977e29922",
+            "cbc:DocumentHash": "+Ys7A7Tyu1J0gg/EECPNbAnRjKQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-5111C Anexo VII Subcontratacion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=a323ebb6-8fc8-4469-a251-88127b83d54d",
+            "cbc:DocumentHash": "v8g+ymp/F04cpD5/pODGjbTuHuE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-5111C Anexo III Instrucciones DEUC.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=90770053-1d27-4d9d-9cc4-30c44537df3f",
+            "cbc:DocumentHash": "NOHFz836c1zJhzUqVDQ+63pWoCM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-5111C Anexo VIII ModeloOfertaEconomica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=6ae92997-8e1b-466f-b520-fc751c58f416",
+            "cbc:DocumentHash": "D4g1S0U5tYGkBVNHwfH7eksmY9k="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-5111C MemoriaJustificativa Servicios Bancarios.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=9b1cfb19-e4c7-4491-8f91-abf780a70f00",
+            "cbc:DocumentHash": "u5dsrLGhsv2f5Ukzzp/gsaqp9Hs="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2022-01-14"
+            },
+            {
+              "cbc:IssueDate": "2022-01-14"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.07/TenderingDocumentTypeCode-2.07.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=a6515c2b-953a-4ca2-b3d4-416e65b8fd75",
+                  "cbc:FileName": "2021-5111C   Resolucion Adjudicacion Servicios bancarios.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2021-09-23"
+            },
+            {
+              "cbc:IssueDate": "2021-10-08"
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2021-09-23"
+            },
+            {
+              "cbc:IssueDate": "2021-10-08"
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-01-14"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "a4d977f4-df2a-468d-841a-16532607f86f",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=a4d977f4-df2a-468d-841a-16532607f86f",
+              "cbc:FileName": "Respuesta preguntas planteadas"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "2f12b090-b9b6-4b4a-95ee-e54b9dad4c8d",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2f12b090-b9b6-4b4a-95ee-e54b9dad4c8d",
+              "cbc:FileName": "2021-5111C Respuesta cuestiones planteadas.pdf"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

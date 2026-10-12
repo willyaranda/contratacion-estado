@@ -1,0 +1,835 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/13175122",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=U09ElmbxVSV9Zh%2FyRJgM8w%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR/SUMIN/2023000063; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 208345.44 EUR; Estado: PUB",
+    "@_type": "text"
+  },
+  "title": "Contrato de suministro de material de rescate en accidentes de tráfico para el SPEIS - Bomberos",
+  "updated": "2023-08-09T14:10:09.169+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR/SUMIN/2023000063",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "PUB",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc",
+      "@_languageID": "es"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityCode-2.10.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityActivityCode-2.10.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500104,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      },
+      "cac-place-ext:ParentLocatedParty": {
+        "cac:PartyName": {
+          "cbc:Name": "Aranda de Duero"
+        },
+        "cac-place-ext:ParentLocatedParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "L04090313",
+              "@_schemeName": "DIR3"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Ayuntamientos"
+          },
+          "cac-place-ext:ParentLocatedParty": {
+            "cac:PartyName": {
+              "cbc:Name": "Burgos"
+            },
+            "cac-place-ext:ParentLocatedParty": {
+              "cac:PartyName": {
+                "cbc:Name": "Castilla y León"
+              },
+              "cac-place-ext:ParentLocatedParty": {
+                "cac:PartyName": {
+                  "cbc:Name": "ENTIDADES LOCALES"
+                },
+                "cac-place-ext:ParentLocatedParty": {
+                  "cac:PartyName": {
+                    "cbc:Name": "Sector Público"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Contrato de suministro de material de rescate en accidentes de tráfico para el SPEIS - Bomberos",
+      "cbc:TypeCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GoodsContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 208345.44,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 252097.98,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 208345.44,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": [
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 35000000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 31000000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 31158100,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 31440000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 34144900,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 42121100,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 43328100,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 31527000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        }
+      ],
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 2,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:ProcurementProjectLot": [
+      {
+        "cbc:ID": {
+          "#text": 1,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:TendererQualificationRequest": {
+            "cac:TechnicalEvaluationCriteria": {
+              "cbc:EvaluationCriteriaTypeCode": {
+                "#text": "OSR-COMPTASK",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+              },
+              "cbc:Description": "Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios. Conforme Anexo V del PCAP"
+            },
+            "cac:FinancialEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 5,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos. Conforme Anexo V del PCAP"
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 3,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita. Conforme Anexo V del PCAP"
+              }
+            ]
+          },
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "La adjudicación recaerá en el licitador que presente la proposición más económica. Valoración de 0 a 100 puntos.  Conforme Anexo X del PCAP",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "LOTE 1: Equipo de excarcelación",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 214244.33,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 177061.43,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": [
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 35000000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 42121100,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 43328100,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 31440000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 31158100,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            }
+          ],
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 2,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:TendererQualificationRequest": {
+            "cac:TechnicalEvaluationCriteria": {
+              "cbc:EvaluationCriteriaTypeCode": {
+                "#text": "OSR-COMPTASK",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+              },
+              "cbc:Description": "¿ Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios. Conforme Anexo V del PCAP"
+            },
+            "cac:FinancialEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 3,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita. Conforme Anexo V del PCAP"
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 5,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos. Conforme Anexo V del PCAP"
+              }
+            ]
+          },
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "La adjudicación recaerá en el licitador que presente la proposición más económica. Valoración de 0 a 100 puntos. Conforme Anexo X del PCAP",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "LOTE 2: Equipo Auxiliar de excarcelación",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 20441.87,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 16894.11,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 35000000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 3,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:TendererQualificationRequest": {
+            "cac:TechnicalEvaluationCriteria": {
+              "cbc:EvaluationCriteriaTypeCode": {
+                "#text": "OSR-COMPTASK",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+              },
+              "cbc:Description": "Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios.  Conforme Anexo V del PCAP"
+            },
+            "cac:FinancialEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 3,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita.  Conforme Anexo V del PCAP"
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 5,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos. Conforme Anexo V del PCAP"
+              }
+            ]
+          },
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "La adjudicación recaerá en el licitador que presente la proposición más económica. Valoración de 0 a 100 puntos.  Conforme Anexo X del PCAP",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "LOTE 3: Iluminación rescate",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 3288.48,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2717.75,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": [
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 31000000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 31527000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            }
+          ],
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 4,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:TendererQualificationRequest": {
+            "cac:TechnicalEvaluationCriteria": {
+              "cbc:EvaluationCriteriaTypeCode": {
+                "#text": "OSR-COMPTASK",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+              },
+              "cbc:Description": "¿ Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios.  Conforme Anexo V del PCAP"
+            },
+            "cac:FinancialEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 3,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita.  Conforme Anexo V del PCAP"
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 5,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos.  Conforme Anexo V del PCAP"
+              }
+            ]
+          },
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "La adjudicación recaerá en el licitador que presente la proposición más económica. Valoración de 0 a 100 puntos.  Conforme Anexo X del PCAP",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "LOTE 4: Equipo de rescate víctimas",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 9851.32,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 8141.59,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 35000000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 5,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:TendererQualificationRequest": {
+            "cac:TechnicalEvaluationCriteria": {
+              "cbc:EvaluationCriteriaTypeCode": {
+                "#text": "OSR-COMPTASK",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+              },
+              "cbc:Description": "¿ Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios.  Conforme Anexo V del PCAP"
+            },
+            "cac:FinancialEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 5,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos.  Conforme Anexo V del PCAP"
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 3,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita.  Conforme Anexo V del PCAP"
+              }
+            ]
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "LOTE 5: Enchufe inhibidor de coches eléctricos",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 4271.98,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 3530.56,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 34144900,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": [
+        {
+          "#text": "EU",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+          "@_name": "Financiación con fondos de la UE"
+        },
+        {
+          "#text": "FEDER",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+          "@_name": "Fondo Europeo de Desarrollo Regional"
+        }
+      ],
+      "cbc:FundingProgram": "FEDER",
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:SpecificTendererRequirement": {
+          "cbc:RequirementTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+          },
+          "cbc:Description": "Capacidad de obrar"
+        }
+      },
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 1,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:PartPresentationCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderPresentationCode-1.04.gc",
+        "@_name": "A uno o varios lotes"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:MaximumLotPresentationQuantity": 5,
+      "cbc:MaximumTendererAwardedLotsQuantity": 5,
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2023-08-17",
+        "cbc:EndTime": "23:59:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP  Suministros Lotes.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=76e0433b-204c-485d-b352-7b92c015db76",
+          "cbc:DocumentHash": "DrfZyMas6VN1T7vXHao/DnXHF8Y="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "Pptp.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=8abcdf78-0286-426c-b499-3a212e8c6bee",
+          "cbc:DocumentHash": "NzY+L1+kw3GsZvkZMC/X077aKJo="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "Pliego Tipo Suministros.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0405cd11-5116-4ab9-b668-8b5c6cfe6c97",
+            "cbc:DocumentHash": "aCAmFS67vSm8Z85Rp7mLj2GbOFQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo IV Oferta economica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=dc58108c-9b11-4be4-8c3b-64ae748a39b3",
+            "cbc:DocumentHash": "opxE7NdFa6EkATQuKoWuzOYJB88="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion logos.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=bb631660-2c31-40da-820a-d5c185ecd267",
+            "cbc:DocumentHash": "7hfeCs9mWgPf4+IOsRRfwbNBWv0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO I Instrucciones DEUC.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2a736d5e-5990-4223-9bbd-40347d8dfafc",
+            "cbc:DocumentHash": "hBnrBhbXLlbiwiYtgt6ucDv29wY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "A0 Modelo Datos Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=43033bf4-86ef-43af-a2a9-c7d2b1b34bb5",
+            "cbc:DocumentHash": "hAZedRUuSHmCHBH3b4AKPaoXgFk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo VIII Subcontratacion cesion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=e5c83d4b-b5b5-422f-b176-9e775a5c82e1",
+            "cbc:DocumentHash": "K2kmHVWRjBqhfwsyw1N715nJcP4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria justificativa.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=51a10cda-32a1-4288-91ee-7f3e606c39a1",
+            "cbc:DocumentHash": "iEvzfPrw4QLgLv3yLXNzm5OhIKs="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Anexo IIA y IIB Declaracion responsale.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=c9b81f4c-ee75-4fa4-b9ed-75d738e87b28",
+            "cbc:DocumentHash": "WtqptgH/VDT2ifi+4HwnVGmVkcI="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/TenderingNoticeTypeCode-2.08.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2023-08-02"
+            },
+            {
+              "cbc:IssueDate": "2023-08-09"
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/TenderingNoticeTypeCode-2.08.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2023-08-02"
+            },
+            {
+              "cbc:IssueDate": "2023-08-09"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

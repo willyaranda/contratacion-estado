@@ -1,0 +1,429 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/3612572",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=pEj2e294RjUBPRBxZ4nJ%2Fg%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: 118/2019; Órgano de Contratación: Junta de Gobierno del Ayuntamiento de Aranda de Duero; Importe: 57850 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "alquiler de equipos de luz y sonido para concejalías de juventud y festejos 2019",
+  "updated": "2019-08-08T10:55:23.758+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "118/2019",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Junta de Gobierno del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "alquiler de equipos de luz y sonido para concejalías de juventud y festejos 2019",
+      "cbc:TypeCode": {
+        "#text": 7,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 57850,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 69998.5,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 57850,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 51313000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/NUTS-2016.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 2,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": [
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Conforme a los criterios establecidos en el Pliego de Cláusulas Administrativas",
+        "cbc:AwardDate": "2019-08-02",
+        "cbc:ReceivedTenderQuantity": 2,
+        "cac:Contract": {
+          "cbc:ID": "118/2019",
+          "cbc:IssueDate": "2019-07-16"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B09348772",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Producciones Salas , S.L"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 31950,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 38659.5,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Conforme a los criterios establecidos en el Pliego de Cláusulas Administrativas",
+        "cbc:AwardDate": "2019-08-02",
+        "cbc:ReceivedTenderQuantity": 2,
+        "cac:Contract": {
+          "cbc:ID": "118/2019",
+          "cbc:IssueDate": "2019-06-13"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B09498189",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Carson Audio, S.L.U"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 20035,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 24242.35,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cac:RequiredFinancialGuarantee": [
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 0
+        },
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 3,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        }
+      ],
+      "cac:TendererQualificationRequest": {
+        "cbc:PersonalSituation": "Conforme a solvencia técnica Anexo V",
+        "cbc:Description": "Conforme Anexo V del Pliego de Cláusulas Administrativas",
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/DeclarationTypeCode-2.0.gc"
+            }
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2019-06-04",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "118-2019 PCAP LuzySonidoJuventudyFestejos2019.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=00298384-f947-44d2-9d2f-ee3dabd007e0",
+          "cbc:DocumentHash": "Kxe3f3rYB7b2s40LY+a7RHTj0fM="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "118-2019 PPT LuzySonidoJuventudyFestejos2019.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=e06023b8-19a5-4b92-9ff1-99843c99bb19",
+          "cbc:DocumentHash": "aOF8Voa6CMId2mHQHv6tFNB9Wac="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "118-2019 MEMORIA LuzySonidoJuventudyFestejos2019.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=0d8817cf-04da-4c63-bee2-03ecd5fc66d2",
+            "cbc:DocumentHash": "8/x9ay5yvd1Sc8hlIoOGdk2rxM8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "118-2019 Anexo IV LuzSonidoJuventudyFestejos.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=1907b949-5417-4357-827c-3bc71d9db2d6",
+            "cbc:DocumentHash": "fTCwzWjhg5bYwYaGD2k3j26uMwQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "118-2019 Anexo VIII LuzSonidoJuventudyFestejos.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=5c3258a7-571c-45b0-8fc6-21f774380cad",
+            "cbc:DocumentHash": "NPdADZ9Jmi2a3ajflnR6BQPVX7c="
+          }
+        }
+      },
+      {
+        "cbc:ID": "118-2019 Anexo VI LuzSonidoJuventudyFestejos.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=ac0a5687-6136-40fe-b799-75f4d4c3b3be",
+            "cbc:DocumentHash": "g+EaKD36dcyRIQWmunUxyr3jS14="
+          }
+        }
+      },
+      {
+        "cbc:ID": "118-2019 Anexo III LuzSonidoJuventudyFestejos.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=80b75244-309f-4059-8533-5d8d99911311",
+            "cbc:DocumentHash": "FunthhSOwKxj1YNin8p6yIKssLc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "118-2019 Anexo X LuzSonidoJuventudyFestejos.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=93dba45f-ca0b-47e5-8a40-48d66d4bdfc7",
+            "cbc:DocumentHash": "Z5Ax/AM8NkNF4r0Qmzpkml4qNgY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "118-2019 INICIO LuzySonidoJuventudyFestejos2019.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=18b9b4eb-c42b-4df0-a8a8-ce4c316d30c4",
+            "cbc:DocumentHash": "n8EcaW8e90PP2iTzMZxuDTgevL8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "118-2019 JGL PliegoGasto LuzySonidoJuventudyFestejos2019.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=ade40201-35d1-4ba7-97b2-199a10ed34ab",
+            "cbc:DocumentHash": "u1gofS+9XqTAf1Hys2n75xnW8jA="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2019-08-08"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.06/TenderingDocumentTypeCode-2.06.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=a7b02cd4-892a-4678-bc9e-8cf08c2162c3",
+                  "cbc:FileName": "118-2019 Adjudicaciones por lotes 1 2 3 4 jgl 5 decreto.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2019-05-21"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2019-05-21"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2019-08-29"
+          }
+        }
+      }
+    ]
+  }
+}

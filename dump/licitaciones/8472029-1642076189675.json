@@ -1,0 +1,1247 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/8472029",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=A8gwc1pw5FWiEJrVRqloyA%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación:  2021/00006998k; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 28760.31 EUR; Estado: RES",
+    "@_type": "text"
+  },
+  "title": "suministro de material para mantenimiento de la vía pública así como de los edificios municipales, colegios, instalaciones provisionales, etc, del municipio de aranda de duero.",
+  "updated": "2022-01-13T13:16:29.675+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "2021/00006998k",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "RES",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 22,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.05/ContractingAuthorityActivityCode-2.05.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "suministro de material para mantenimiento de la vía pública así como de los edificios municipales, colegios, instalaciones provisionales, etc, del municipio de aranda de duero.",
+      "cbc:TypeCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GoodsContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 57520.66,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 34800,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 28760.31,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 44100000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 12,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:ProcurementProjectLot": [
+      {
+        "cbc:ID": {
+          "#text": 1,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 1 - cerrajería",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 1259.94,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 1041.27,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 10,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 10 - suministros industriales",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 4275.63,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 3533.58,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 11,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 11 - epi´s",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 2102.77,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 1737.83,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 12,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 12 - herramienta",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 1784.78,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 1475.02,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 2,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica -lote 2 - alquiler de maquinaria",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 1095.67,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 905.51,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 3,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica -  lote 3 - fundición",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 717.82,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 593.24,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 4,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 4 - materiales de construcción",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 7571.02,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 6257.04,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 5,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 5 - carpintería y falsos techos",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 4382.41,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 3621.82,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 6,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 6 - áridos y hormigones",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 2035.16,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 1681.95,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 7,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 7 - metal",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 3303.42,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2730.1,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 8,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica - lote 8 - pinturas",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 3446.16,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2848.06,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 9,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "oferta económica -lote 9 - señalización",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 2825.22,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2334.89,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 44100000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderResult": [
+      {
+        "cbc:ResultCode": {
+          "#text": 3,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "No se han presentado ofertas.",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 0,
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 1
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Técnicas De Perforación Y Fijación S.L: Única oferta presentada y cumplir con las condiciones establecidas en los pliegos",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cbc:SMEAwardedIndicator": true,
+        "cac:Contract": {
+          "cbc:ID": "2021/00006998K - LOTE 10",
+          "cbc:IssueDate": "2021-12-03"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B09298209",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "TÉCNICAS DE PERFORACIÓN Y FIJACIÓN S.L"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 10,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2772,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 3354.12,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Técnicas De Perforación Y Fijación S.L: Única oferta presentada y cumplir con las condiciones establecidas en los pliegos",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cbc:SMEAwardedIndicator": true,
+        "cac:Contract": {
+          "cbc:ID": "2021/00006998K - LOTE 11",
+          "cbc:IssueDate": "2021-12-03"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B09298209",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "TÉCNICAS DE PERFORACIÓN Y FIJACIÓN S.L"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 11,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 1461.29,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 1768.16,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Técnicas De Perforación Y Fijación S.L: Única oferta presentada y cumplir con las condiciones establecidas en los pliegos",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cbc:SMEAwardedIndicator": true,
+        "cac:Contract": {
+          "cbc:ID": "2021/00006998K - LOTE 12",
+          "cbc:IssueDate": "2021-12-03"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B09298209",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "TÉCNICAS DE PERFORACIÓN Y FIJACIÓN S.L"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 12,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 1104.71,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 1336.7,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 3,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "No se han presentado ofertas.",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 0,
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 2
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Urbyseg Palma, S.L.: Única oferta presentada y cumplir con las condiciones establecidas en los pliegos",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cbc:SMEAwardedIndicator": true,
+        "cac:Contract": {
+          "cbc:ID": "2021/00006998K - LOTE3",
+          "cbc:IssueDate": "2021-12-13"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B14998330",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "URBYSEG PALMA, S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 3,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 474.59,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 580.3,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 3,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "No se han presentado ofertas.",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 0,
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 4
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 3,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "No se han presentado ofertas.",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 0,
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 5
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Arpape, S.L.: Única oferta presentada y cumplir con las condiciones establecidas en los pliegos",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cbc:SMEAwardedIndicator": true,
+        "cac:Contract": {
+          "cbc:ID": "2021/00006998K - LOTE 6",
+          "cbc:IssueDate": "2022-01-13"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B09013335",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "ARPAPE, S.L."
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 6,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 1530.38,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 1851.76,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 3,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "No se han presentado ofertas.",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 0,
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 7
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Técnicas De Perforación Y Fijación S.L: Única oferta presentada y cumplir con las condiciones establecidas en los pliegos",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 1,
+        "cbc:SMEAwardedIndicator": true,
+        "cac:Contract": {
+          "cbc:ID": "2021/00006998K - LOTE 8",
+          "cbc:IssueDate": "2021-12-03"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B09298209",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "TÉCNICAS DE PERFORACIÓN Y FIJACIÓN S.L"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 8,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 2278.45,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 2756.92,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      },
+      {
+        "cbc:ResultCode": {
+          "#text": 8,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.02/TenderResultCode-2.02.gc"
+        },
+        "cbc:Description": "Motivación para adjudicar a Señales Girod, S.L: Oferta más ventajosa de acuerdo con los criterios establecidos",
+        "cbc:AwardDate": "2021-11-22",
+        "cbc:ReceivedTenderQuantity": 2,
+        "cbc:SMEAwardedIndicator": true,
+        "cac:Contract": {
+          "cbc:ID": "2021/00006998K - LOTE 9",
+          "cbc:IssueDate": "2022-01-13"
+        },
+        "cac:WinningParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "B60070505",
+              "@_schemeName": "NIF"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "SEÑALES GIROD, S.L"
+          }
+        },
+        "cac:AwardedTenderedProject": {
+          "cbc:ProcurementProjectLotID": 9,
+          "cac:LegalMonetaryTotal": {
+            "cbc:TaxExclusiveAmount": {
+              "#text": 1813,
+              "@_currencyID": "EUR"
+            },
+            "cbc:PayableAmount": {
+              "#text": 2193.73,
+              "@_currencyID": "EUR"
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+        "@_name": "No hay financiación con fondos de la UE"
+      },
+      "cac:RequiredFinancialGuarantee": [
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        },
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 3,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        }
+      ],
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "N/A"
+      },
+      "cac:TendererQualificationRequest": {
+        "cbc:Description": "Conforme Anexo V del PCAP",
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme Anexo V del PCAP"
+        },
+        "cac:FinancialEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "ZZZ",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Conforme Anexo V del PCAP"
+        },
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 8,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            }
+          }
+        ]
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:PartPresentationCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderPresentationCode-1.04.gc",
+        "@_name": "A uno o varios lotes"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:MaximumLotPresentationQuantity": 12,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2021-10-28",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "2021-6998K PCAP SuministroBrigadaObras.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=1df86918-ee97-41a5-ab53-7ba9e69bdf6d",
+          "cbc:DocumentHash": "sRv74j+WB3W8Ici4ILe5bpNTriA="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "2021-6998K PPTP SuministroBrigadaObras.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=00b27d4f-33e3-45c0-93e7-74b7a6c4a7a2",
+          "cbc:DocumentHash": "XHLM85JcpQgCLU0k70mIB4RxuoE="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "2021-6998K ANEXO VIII y IX  Modelo Oferta Economica y Precios Unitarios.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=c12bdf76-5c60-40a2-9281-c953cf740803",
+            "cbc:DocumentHash": "tvtVkIgbI+eLXU9cc0UsbSNr2OM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-6998K Memoria Justificativa SuministroBrigadaObras.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=24477616-884b-45f2-ad2d-d4c31af8960f",
+            "cbc:DocumentHash": "XHLM85JcpQgCLU0k70mIB4RxuoE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-6998K ANEXO III Declaracion Responsable Empresa.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2c81548c-ef5e-4770-8de7-6acadc755eda",
+            "cbc:DocumentHash": "+kYllLulnp+a413rAGRuMmxxtOM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-6998K ANEXO VII Declaracion Subcontratacion Cesion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=6700432b-61eb-44e0-8e70-1f96a17b765d",
+            "cbc:DocumentHash": "+Li6lPBD3vNkkxVMefe4c9n9oh4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Datos Empresa a efecto de Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=5803235d-f87d-45c8-ad56-56dd9be04d57",
+            "cbc:DocumentHash": "5xCjQmTIpPYsWRS7xhZYJQlw8Bo="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-6998K ANEXO IV Declaracion Grupo Empresarial.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=84b53501-2260-4793-8250-49966bf485ef",
+            "cbc:DocumentHash": "YKWnanIyvTLkJf7V0Vhymoh7xIk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "2021-6998K Resolucion Aprobar Pliego y GastoSuministroBrigadaObras.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=23aa72a9-06f8-46a4-a18a-5c823bf7e3de",
+            "cbc:DocumentHash": "TMDF2Y66gsHkjvLhlHQyBfBMTv8="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CAN_ADJ",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": [
+            {
+              "cbc:IssueDate": "2022-01-03"
+            },
+            {
+              "cbc:IssueDate": "2022-01-03"
+            },
+            {
+              "cbc:DocumentTypeCode": {
+                "#text": "ACTA_ADJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.07/TenderingDocumentTypeCode-2.07.gc",
+                "@_name": "Documento de Acta de Adjudicación"
+              },
+              "cac:Attachment": {
+                "cac:ExternalReference": {
+                  "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=f498e5f1-7db4-4075-8814-8e37eea7dca2",
+                  "cbc:FileName": "2021-6998K Resolucion Adjudicacion ARPAPE LOTE 6.pdf"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2021-10-13"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2021-10-13"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_FORM",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-01-13"
+          }
+        }
+      }
+    ],
+    "cac-place-ext:GeneralDocument": [
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "636c9c00-0976-4122-b65d-2e6e0d026b15",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=636c9c00-0976-4122-b65d-2e6e0d026b15",
+              "cbc:FileName": "Actos públicos informativos ó de apertura de ofertas"
+            }
+          }
+        }
+      },
+      {
+        "cac-place-ext:GeneralDocumentDocumentReference": {
+          "cbc:ID": "3d029c7f-cc88-460d-9abd-21c5d6948a63",
+          "cac:Attachment": {
+            "cac:ExternalReference": {
+              "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=3d029c7f-cc88-460d-9abd-21c5d6948a63",
+              "cbc:FileName": "2021-6998K Anexo Precios Unitarios.docx"
+            }
+          }
+        }
+      }
+    ]
+  }
+}

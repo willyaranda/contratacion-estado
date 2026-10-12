@@ -1,0 +1,737 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contratos de Aranda de Duero</title>
+<meta name="description" content="Explorador de transparencia de los contratos del Ayuntamiento de Aranda de Duero publicados en la Plataforma de Contratación del Sector Público.">
+<style>
+/*FONTFACE*/
+:root{
+  --bg:#f6f7f9;--surface:#fff;--ink:#17202a;--muted:#5f6b7a;--line:#dfe3e8;
+  --accent:#9b1c31;--accent-ink:#fff;--bar:#9b1c31;--chip:#f0e6e8;--focus:#1d5fd1;
+  --c1:#9b1c31;--c2:#1f6f8b;--c3:#b87d12;--c4:#4f7a3a;--c5:#7b8794;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12151a;--surface:#1b2027;--ink:#e8ebef;--muted:#9aa5b3;--line:#2c333c;
+    --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
+    --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12151a;--surface:#1b2027;--ink:#e8ebef;--muted:#9aa5b3;--line:#2c333c;
+  --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
+  --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+[hidden]{display:none!important}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+header.top{background:var(--surface);border-bottom:1px solid var(--line);padding:20px 0 0}
+header.top h1{margin:0 0 4px;font-size:1.5rem}
+header.top p{margin:0 0 14px;color:var(--muted);max-width:75ch}
+.tabs{display:flex;gap:2px;overflow-x:auto}
+.tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:10px 14px;white-space:nowrap;color:var(--muted)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:16px 0}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.kpi .v{font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums}
+.kpi .l{color:var(--muted);font-size:.85rem}
+.kpi .s{margin-top:6px;padding-top:6px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+.panel h2{margin:0 0 12px;font-size:1.05rem}
+.filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.filters .search{grid-column:1/-1}
+label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:3px}
+input,select,button,textarea{font:inherit;color:inherit}
+input[type=search],input[type=number],input[type=date],select{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg)}
+.row{display:flex;gap:8px;align-items:end;flex-wrap:wrap}
+.between{justify-content:space-between;align-items:center}
+button{cursor:pointer;border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 12px}
+button:disabled{opacity:.5;cursor:default}
+button.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.chip{background:var(--chip);border-radius:999px;padding:3px 10px;font-size:.82rem}
+.chip button{border:0;background:none;padding:0 0 0 6px;font-weight:700}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:16px}
+.bars{display:grid;gap:5px}
+.bar{display:grid;grid-template-columns:minmax(90px,170px) 1fr auto;gap:8px;align-items:center;font-size:.85rem;background:none;border:0;padding:2px 0;text-align:left;width:100%}
+.bar .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bar .track{background:var(--line);border-radius:4px;height:14px;overflow:hidden}
+.bar .fill{background:var(--bar);height:100%;display:block}
+.bar .val{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
+.bar:hover .name{text-decoration:underline}
+.bar.on .name{font-weight:700}
+.cols{display:flex;align-items:flex-end;gap:4px;height:170px;padding-top:8px}
+.col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;background:none;border:0;padding:0;min-width:0}
+.col .fill{width:100%;background:var(--bar);border-radius:3px 3px 0 0;min-height:1px;display:block}
+.col.on .fill{outline:2px solid var(--ink)}
+.col .tick{font-size:.7rem;color:var(--muted);margin-top:4px}
+.col:hover .fill{opacity:.8}
+.pair{display:flex;align-items:flex-end;gap:2px;width:100%;height:100%}
+.pair .fill{flex:1}
+.pair .fill.b{background:var(--c2)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.82rem;color:var(--muted);margin-bottom:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.srow{display:grid;grid-template-columns:44px 1fr 74px;gap:8px;align-items:center;margin:5px 0;font-size:.85rem}
+.stk{display:flex;height:20px;border-radius:4px;overflow:hidden;background:var(--line)}
+.seg{display:block;height:100%}
+.sv{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.c1{background:var(--c1)}.c2{background:var(--c2)}.c3{background:var(--c3)}.c4{background:var(--c4)}.c5{background:var(--c5)}
+.bubbles{width:100%;height:auto;display:block}
+.bubbles text{fill:var(--muted);font-size:11px;font-family:inherit}
+.bubbles line{stroke:var(--line)}
+.bubbles circle{fill:var(--bar);fill-opacity:.5;stroke:var(--bar);stroke-width:.6}
+.tablewrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{white-space:nowrap}
+th button{border:0;background:none;padding:0;font-weight:700}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.obj{min-width:260px;max-width:520px}
+td .sub{color:var(--muted);font-size:.78rem}
+.tag{display:inline-block;background:var(--chip);border-radius:6px;padding:0 6px;font-size:.75rem;white-space:nowrap}
+.est{color:var(--muted);font-style:italic}
+.pager{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
+.muted{color:var(--muted)}
+.note{font-size:.82rem;color:var(--muted)}
+.cmpsel{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:12px}
+.cmp{width:100%}
+.cmp td:first-child{color:var(--muted)}
+details.picker{margin:0 0 12px}
+details.picker summary{cursor:pointer;color:var(--muted)}
+details.picker .opts{display:flex;gap:6px 16px;flex-wrap:wrap;margin-top:8px}
+details.picker label{display:inline-flex;gap:6px;align-items:center;color:var(--ink);font-size:.85rem;margin:0}
+footer{padding:24px 0 40px}
+.empty{padding:24px;text-align:center;color:var(--muted)}
+@media (max-width:600px){.bar{grid-template-columns:100px 1fr auto}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <h1>Contratación del Ayuntamiento de Aranda de Duero</h1>
+  <p>Explorador ciudadano y no oficial de los contratos del Ayuntamiento (Alcaldía, Junta de Gobierno y Pleno) publicados en la
+  Plataforma de Contratación del Sector Público
+  (<a href="https://contrataciondelestado.es" rel="noopener">contrataciondelestado.es</a>): licitaciones y contratos menores.</p>
+  <div class="tabs" role="tablist" aria-label="Secciones" id="tabs"></div>
+</div></header>
+
+<main class="wrap">
+  <section class="panel" aria-labelledby="h-filtros" style="margin-top:16px">
+    <h2 id="h-filtros">Buscar y filtrar</h2>
+    <div class="filters">
+      <div class="search">
+        <label for="q">Texto libre: objeto del contrato, contratista, NIF o nº de expediente</label>
+        <input id="q" type="search" placeholder="Ej.: limpieza viaria, ARPAPE, B09013335, 322/15…" autocomplete="off">
+      </div>
+      <div><label for="f-year">Año</label><select id="f-year"></select></div>
+      <div><label for="f-month">Mes</label><select id="f-month"></select></div>
+      <div><label for="f-body">Órgano de contratación</label><select id="f-body"></select></div>
+      <div><label for="f-kind">Clase</label><select id="f-kind"></select></div>
+      <div><label for="f-type">Tipo de contrato</label><select id="f-type"></select></div>
+      <div><label for="f-proc">Procedimiento</label><select id="f-proc"></select></div>
+      <div><label for="f-status">Estado</label><select id="f-status"></select></div>
+      <div><label for="f-min">Importe mínimo (€)</label><input id="f-min" type="number" min="0" step="any" inputmode="decimal"></div>
+      <div><label for="f-max">Importe máximo (€)</label><input id="f-max" type="number" min="0" step="any" inputmode="decimal"></div>
+      <div><label for="f-from">Desde</label><input id="f-from" type="date"></div>
+      <div><label for="f-to">Hasta</label><input id="f-to" type="date"></div>
+      <div class="row"><button id="reset" class="primary" type="button">Limpiar filtros</button></div>
+    </div>
+    <div class="chips" id="chips"></div>
+  </section>
+
+  <!-- ============ RESUMEN ============ -->
+  <div data-tab="resumen">
+    <section class="kpis" id="kpis" aria-live="polite"></section>
+    <section class="kpis" id="kpis2"></section>
+    <section class="grid2">
+      <div class="panel"><h2>Importe adjudicado por año <span class="note">(clic para filtrar)</span></h2><div id="c-year"></div></div>
+      <div class="panel"><h2>Nº de contratos por mes <span class="note">(clic para filtrar)</span></h2><div id="c-month"></div></div>
+      <div class="panel"><h2>Por tipo de contrato</h2><div id="c-type" class="bars"></div></div>
+      <div class="panel"><h2>Por procedimiento</h2><div id="c-proc" class="bars"></div></div>
+      <div class="panel">
+        <h2>Por tramo de importe adjudicado <span class="note">(clic para filtrar)</span></h2>
+        <div id="c-range" class="bars"></div>
+        <p class="note">Referencia: el contrato menor tiene un límite de 15.000 € en servicios y suministros y de 40.000 € en obras (art. 118 LCSP).</p>
+      </div>
+      <div class="panel">
+        <h2>Contratos de mayor importe</h2>
+        <div id="c-top"></div>
+      </div>
+    </section>
+    <section class="panel">
+      <h2>Contratos por tipo, fecha e importe adjudicado</h2>
+      <div id="c-bubbles"></div>
+      <p class="note">Cada círculo es un contrato; su área es proporcional al importe adjudicado. Pasa el cursor por encima para ver el detalle.</p>
+    </section>
+  </div>
+
+  <!-- ============ EVOLUCIÓN ============ -->
+  <div data-tab="evolucion" hidden>
+    <section class="panel">
+      <h2>Comparar dos años</h2>
+      <div class="cmpsel">
+        <div><label for="cmp-a">Año</label><select id="cmp-a"></select></div>
+        <div><label for="cmp-b">Comparar con</label><select id="cmp-b"></select></div>
+        <div><label for="cmp-m">Mostrar por mes</label><select id="cmp-m"><option value="sum">Importe adjudicado</option><option value="n">Nº de contratos</option></select></div>
+      </div>
+      <div class="legend"><span><i class="c1"></i><span id="lg-a"></span></span><span><i class="c2"></i><span id="lg-b"></span></span></div>
+      <div id="c-cmp"></div>
+      <div class="tablewrap" style="margin-top:12px"><table class="cmp"><thead><tr><th></th><th class="num" id="th-a"></th><th class="num" id="th-b"></th><th class="num">Variación</th></tr></thead><tbody id="cmp-rows"></tbody></table></div>
+      <p class="note" id="cmp-note"></p>
+    </section>
+    <section class="grid2">
+      <div class="panel"><h2>Tipo de contrato por año <span class="note">(% sobre importe adjudicado)</span></h2><div id="s-type"></div></div>
+      <div class="panel"><h2>Procedimiento por año <span class="note">(% sobre importe adjudicado)</span></h2><div id="s-proc"></div></div>
+    </section>
+  </div>
+
+  <!-- ============ ADJUDICATARIOS ============ -->
+  <div data-tab="adjudicatarios" hidden>
+    <section class="kpis" id="kpis3"></section>
+    <section class="grid2">
+      <div class="panel"><h2>Top 5 adjudicatarios por importe</h2><div id="top-sum" class="bars"></div></div>
+      <div class="panel"><h2>Top 5 adjudicatarios por nº de contratos</h2><div id="top-n" class="bars"></div></div>
+    </section>
+    <section class="panel">
+      <div class="row between" style="margin-bottom:8px">
+        <h2 style="margin:0">Adjudicatarios <span class="note" id="adj-count"></span></h2>
+        <span><span class="note" id="adj-msg" role="status"></span> <button id="adj-copy" type="button">Copiar tabla</button></span>
+      </div>
+      <label for="adj-q">Buscar por nombre o NIF del adjudicatario</label>
+      <input id="adj-q" type="search" autocomplete="off" style="margin-bottom:12px">
+      <div id="t-adj"></div>
+    </section>
+  </div>
+
+  <!-- ============ LICITACIONES ABIERTAS ============ -->
+  <div data-tab="abiertas" hidden>
+    <section class="kpis" id="kpis4"></section>
+    <section class="panel">
+      <h2>Licitaciones con plazo de presentación abierto</h2>
+      <div id="t-open"></div>
+      <p class="note" id="open-note"></p>
+    </section>
+  </div>
+
+  <!-- ============ LISTADO ============ -->
+  <div data-tab="listado" hidden>
+    <section class="panel" aria-labelledby="h-lista">
+      <div class="row between" style="margin-bottom:8px">
+        <h2 id="h-lista" style="margin:0">Contratos <span class="note" id="count-note"></span></h2>
+        <span><span class="note" id="csv-msg" role="status"></span> <button id="csv" type="button">Copiar tabla (CSV)</button></span>
+      </div>
+      <div id="csv-fallback" hidden>
+        <label for="csv-box">Selecciona todo el texto y cópialo (Ctrl/Cmd + C) para pegarlo en una hoja de cálculo.</label>
+        <textarea id="csv-box" rows="6" readonly style="width:100%;font:12px/1.4 ui-monospace,monospace;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px;margin-bottom:12px"></textarea>
+      </div>
+      <details class="picker"><summary>Columnas visibles</summary><div class="opts" id="col-picker"></div></details>
+      <div id="t-list"></div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap note" id="foot"></div></footer>
+
+<script type="application/json" id="data">/*DATA*/</script>
+<script>
+"use strict";
+const DATA = JSON.parse(document.getElementById("data").textContent);
+const TYPE = {1:"Suministros",2:"Servicios",3:"Obras",7:"Administrativo especial",8:"Privado",21:"Gestión de servicios públicos",22:"Concesión de servicios",31:"Concesión de obras públicas",32:"Concesión de obras",40:"Colaboración público-privada",50:"Patrimonial",999:"Otros"};
+const PROC = {1:"Abierto",2:"Restringido",3:"Negociado sin publicidad",4:"Negociado con publicidad",5:"Diálogo competitivo",6:"Contrato menor",7:"Derivado de acuerdo marco",8:"Concurso de proyectos",9:"Abierto simplificado",10:"Asociación para la innovación",11:"Derivado de asociación para la innovación",12:"Sistema dinámico de adquisición",13:"Licitación con negociación",100:"Normas internas",999:"Otros"};
+const STATUS = {PUB:"Publicada",EV:"En evaluación",ADJ:"Adjudicada",RES:"Resuelta",ANUL:"Anulada",PRE:"Anuncio previo"};
+const KIND = {licitacion:"Licitación",menor:"Contrato menor"};
+const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
+const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
+const RANGES = [["Hasta 2.000 €",0,2000],["2.000 – 15.000 €",2000,15000],["15.000 – 40.000 €",15000,40000],["Más de 40.000 €",40000,Infinity]];
+const TYPE_GROUPS = ["Servicios","Suministros","Obras","Otros"];
+const typeGroup = (t) => ({1:"Suministros",2:"Servicios",3:"Obras"}[t] || "Otros");
+const PROC_GROUPS = ["Abierto","Abierto simplificado","Contrato menor","Negociado sin publicidad","Otros"];
+const procGroup = (p) => ({1:"Abierto",9:"Abierto simplificado",6:"Contrato menor",3:"Negociado sin publicidad"}[p] || "Otros");
+
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const G = "always";
+const eur = new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",maximumFractionDigits:0,useGrouping:G});
+const eur2 = new Intl.NumberFormat("es-ES",{style:"currency",currency:"EUR",minimumFractionDigits:2,maximumFractionDigits:2,useGrouping:G});
+const nf = new Intl.NumberFormat("es-ES",{useGrouping:G});
+const pct = (x) => Math.round(x) + " %";
+const compact = (n) => n >= 1e6 ? (n/1e6).toFixed(1).replace(".",",")+" M€" : n >= 1e3 ? Math.round(n/1e3)+" k€" : Math.round(n)+" €";
+const norm = (s) => String(s ?? "").normalize("NFD").replace(/[̀-ͯ]/g,"").toLowerCase();
+const fmtDate = (d) => d ? d.slice(8,10)+"/"+d.slice(5,7)+"/"+d.slice(0,4) : "—";
+const days = (a, b) => Math.round((Date.parse(b) - Date.parse(a)) / 864e5);
+const addDays = (d, n) => new Date(Date.parse(d) + n * 864e5).toISOString().slice(0,10);
+const cmp = (a, b) => typeof a === "number" && typeof b === "number" ? a - b : String(a ?? "").localeCompare(String(b ?? ""), "es");
+const REF = DATA.generated.slice(0,10);   // fecha de los datos
+const TODAY = new Date().toISOString().slice(0,10);
+const shortBody = (b) => (b || "—").replace(/\s+del Ayuntamiento de Aranda de Duero/i, "");
+
+// ---------- preparar registros ----------
+const winnerNames = new Map();
+const R = DATA.records.map((r) => {
+  const date = r.awardDate || r.updated.slice(0,10);
+  const hasAward = r.awarded != null && r.awarded > 0;
+  const winners = r.winners.map((w) => {
+    const key = w.nif || norm(w.name).toUpperCase();
+    const m = winnerNames.get(key) || new Map();
+    m.set(w.name, (m.get(w.name) || 0) + 1);
+    winnerNames.set(key, m);
+    return { key, nif: w.nif, name: w.name };
+  });
+  const uniq = [...new Map(winners.map((w) => [w.key, w])).values()];
+  const amount = hasAward ? r.awarded : (r.budgetTotal ?? r.budgetNet ?? 0);
+  const hay = norm([r.title, r.folder, uniq.map((w) => w.name + " " + (w.nif || "")).join(" ")].join(" "));
+  const toAward = r.kind === "licitacion" && r.deadline && r.awardDate ? days(r.deadline, r.awardDate) : null;
+  return { ...r, date, year: +date.slice(0,4), month: +date.slice(5,7), winners: uniq, amount, hasAward, hay,
+           bodyShort: shortBody(r.buyer), toAward: toAward != null && toAward >= 0 && toAward <= 730 ? toAward : null };
+});
+const winnerLabel = (key) => {
+  const m = winnerNames.get(key);
+  return m ? [...m.entries()].sort((a,b) => b[1]-a[1])[0][0] : key;
+};
+
+// ---------- estado ----------
+const state = { q:"", year:"", month:"", body:"", kind:"", type:"", proc:"", status:"", min:"", max:"", from:"", to:"", winner:"",
+  tab:"resumen", rank:"amount", cmpA:"", cmpB:"", cmpM:"sum", adjQ:"" };
+const tbl = {
+  adj:  { sort:"sum", dir:-1, page:0 },
+  open: { sort:"deadline", dir:1, page:0 },
+  list: { sort:"date", dir:-1, page:0 },
+};
+const OPT_COLS = [["body","Órgano"],["procedure","Procedimiento"],["status","Estado"],["published","Publicación"],["deadline","Fecha límite"],["offers","Ofertas"],["budget","Presupuesto"],["duration","Duración"]];
+const optCols = new Set(["procedure","status"]);
+
+function fillSelect(el, opts, allLabel) {
+  el.innerHTML = (allLabel ? `<option value="">${esc(allLabel)}</option>` : "") + opts.map(([v,l]) => `<option value="${esc(v)}">${esc(l)}</option>`).join("");
+}
+const uniqSorted = (fn) => [...new Set(R.map(fn).filter((x) => x != null))];
+const YEARS = uniqSorted((r) => r.year).sort((a,b) => a-b);
+fillSelect($("f-year"), [...YEARS].reverse().map((y) => [y,y]), "Todos");
+fillSelect($("f-month"), MONTHS_LONG.map((m,i) => [i+1, m[0].toUpperCase()+m.slice(1)]), "Todos");
+fillSelect($("f-body"), uniqSorted((r) => r.buyer).sort().map((b) => [b, shortBody(b)]), "Todos");
+fillSelect($("f-kind"), Object.entries(KIND), "Todas");
+fillSelect($("f-type"), uniqSorted((r) => r.type).sort((a,b) => a-b).map((t) => [t, TYPE[t] || "Código "+t]), "Todos");
+fillSelect($("f-proc"), uniqSorted((r) => r.procedure).sort((a,b) => a-b).map((p) => [p, PROC[p] || "Código "+p]), "Todos");
+fillSelect($("f-status"), uniqSorted((r) => r.status).map((s) => [s, STATUS[s] || s]), "Todos");
+fillSelect($("cmp-a"), [...YEARS].reverse().map((y) => [y,y]));
+fillSelect($("cmp-b"), [["","Sin comparar"], ...[...YEARS].reverse().map((y) => [y,y])]);
+const lastYear = YEARS[YEARS.length - 1];
+state.cmpA = String(lastYear); state.cmpB = String(lastYear - 1);
+$("cmp-a").value = state.cmpA; $("cmp-b").value = state.cmpB;
+
+let timer;
+const bind = [["q","q",150],["f-year","year",0],["f-month","month",0],["f-body","body",0],["f-kind","kind",0],["f-type","type",0],["f-proc","proc",0],["f-status","status",0],["f-min","min",250],["f-max","max",250],["f-from","from",0],["f-to","to",0],["cmp-a","cmpA",0],["cmp-b","cmpB",0],["cmp-m","cmpM",0],["adj-q","adjQ",150]];
+for (const [id,key,delay] of bind) {
+  $(id).addEventListener(delay ? "input" : "change", (e) => {
+    state[key] = e.target.value; for (const t of Object.values(tbl)) t.page = 0;
+    clearTimeout(timer); timer = setTimeout(render, delay);
+  });
+}
+$("reset").addEventListener("click", () => {
+  Object.assign(state, { q:"",year:"",month:"",body:"",kind:"",type:"",proc:"",status:"",min:"",max:"",from:"",to:"",winner:"" });
+  for (const [id,key] of bind) if (!key.startsWith("cmp") && key !== "adjQ") $(id).value = "";
+  for (const t of Object.values(tbl)) t.page = 0;
+  render();
+});
+function toggleFilter(key, val, selectId) {
+  state[key] = String(state[key]) === String(val) ? "" : String(val);
+  if (selectId) $(selectId).value = state[key];
+  for (const t of Object.values(tbl)) t.page = 0;
+  render();
+}
+function goTab(t) { if (location.hash.slice(1) !== t) location.hash = t; else setTab(t); }
+function setTab(t) {
+  if (!TABS.some(([k]) => k === t)) t = "resumen";
+  state.tab = t; render();
+}
+window.addEventListener("hashchange", () => setTab(location.hash.slice(1)));
+document.addEventListener("click", (e) => {
+  const a = e.target.closest("a[data-w]");
+  if (!a) return;
+  e.preventDefault(); state.winner = a.dataset.w; for (const t of Object.values(tbl)) t.page = 0;
+  goTab("listado"); window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// ---------- filtrado ----------
+// `skip` lista filtros a ignorar (los gráficos de año/mes/comparación siguen mostrando la comparación completa)
+function passes(r, skip = []) {
+  const s = (k) => skip.includes(k);
+  if (!s("year") && state.year && r.year !== +state.year) return false;
+  if (!s("month") && state.month && r.month !== +state.month) return false;
+  if (!s("date") && state.from && r.date < state.from) return false;
+  if (!s("date") && state.to && r.date > state.to) return false;
+  if (!s("status") && state.status && r.status !== state.status) return false;
+  if (state.body && r.buyer !== state.body) return false;
+  if (state.kind && r.kind !== state.kind) return false;
+  if (state.type && String(r.type) !== state.type) return false;
+  if (state.proc && String(r.procedure) !== state.proc) return false;
+  if (state.min !== "" && r.amount < +state.min) return false;
+  if (state.max !== "" && r.amount > +state.max) return false;
+  if (state.winner && !r.winners.some((w) => w.key === state.winner)) return false;
+  if (state.q) for (const t of norm(state.q).split(/\s+/).filter(Boolean)) if (!r.hay.includes(t)) return false;
+  return true;
+}
+
+// ---------- utilidades de agregación y dibujo ----------
+function agg(list, keyFn) {
+  const m = new Map();
+  for (const r of list) {
+    const k = keyFn(r), e = m.get(k) || { key:k, n:0, sum:0 };
+    e.n++; if (r.hasAward) e.sum += r.amount;
+    m.set(k, e);
+  }
+  return [...m.values()];
+}
+function contractors(list) {
+  const m = new Map();
+  for (const r of list) for (const w of r.winners) {
+    const e = m.get(w.key) || { key:w.key, nif:w.nif, n:0, sum:0, last:"" };
+    e.n++; if (r.hasAward) e.sum += r.amount / r.winners.length;
+    if (r.date > e.last) e.last = r.date;
+    m.set(w.key, e);
+  }
+  return [...m.values()];
+}
+function metrics(list) {
+  const aw = list.filter((r) => r.hasAward);
+  const sum = aw.reduce((s, r) => s + r.amount, 0);
+  return { n:list.length, nAw:aw.length, sum, avg: aw.length ? sum / aw.length : 0, contractors: new Set(list.flatMap((r) => r.winners.map((w) => w.key))).size };
+}
+function delta(cur, base) {
+  if (!base) return "";
+  const d = (cur - base) / base * 100;
+  return `${d >= 0 ? "▲" : "▼"} ${Math.abs(Math.round(d))} %`;
+}
+const kpi = (v, l, s) => `<div class="kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div>${s ? `<div class="s">${esc(s)}</div>` : ""}</div>`;
+
+function barList(el, items, { label, value, onclick, active, disp }) {
+  if (!items.length) { el.innerHTML = '<div class="empty">Sin datos</div>'; return; }
+  const top = Math.max(...items.map(value), 1);
+  el.innerHTML = items.map((it, i) => `<button class="bar ${active && active(it) ? "on" : ""}" data-i="${i}" title="${esc(label(it))}">
+      <span class="name">${esc(label(it))}</span>
+      <span class="track"><span class="fill" style="width:${Math.max(1, value(it)/top*100)}%"></span></span>
+      <span class="val">${esc(disp ? disp(it) : `${compact(it.sum)} · ${it.n}`)}</span></button>`).join("");
+  if (onclick) el.querySelectorAll(".bar").forEach((b) => b.addEventListener("click", () => onclick(items[+b.dataset.i])));
+}
+function colChart(el, items, { label, value, onclick, active, title }) {
+  const top = Math.max(...items.map(value), 1);
+  el.innerHTML = `<div class="cols">` + items.map((it, i) =>
+    `<button class="col ${active(it) ? "on" : ""}" data-i="${i}" title="${esc(title(it))}" aria-label="${esc(title(it))}">
+      <span class="fill" style="height:${value(it)/top*100}%"></span><span class="tick">${esc(label(it))}</span></button>`).join("") + `</div>`;
+  el.querySelectorAll(".col").forEach((b) => b.addEventListener("click", () => onclick(items[+b.dataset.i])));
+}
+function stackedYears(el, list, catFn, order) {
+  const years = [...new Set(list.map((r) => r.year))].sort((a,b) => a-b);
+  if (!years.length) { el.innerHTML = '<div class="empty">Sin datos</div>'; return; }
+  const rows = years.map((y) => {
+    const by = Object.fromEntries(order.map((o) => [o, 0]));
+    let tot = 0;
+    for (const r of list) if (r.year === y && r.hasAward) { by[catFn(r)] += r.amount; tot += r.amount; }
+    return { y, by, tot };
+  });
+  el.innerHTML = `<div class="legend">${order.map((o, i) => `<span><i class="c${i+1}"></i>${esc(o)}</span>`).join("")}</div>` +
+    rows.map(({ y, by, tot }) => `<div class="srow"><span>${y}</span><div class="stk" role="img" aria-label="${esc(y + ": " + order.map((o) => o + " " + pct(tot ? by[o]/tot*100 : 0)).join(", "))}">${
+      order.map((o, i) => by[o] ? `<span class="seg c${i+1}" style="width:${by[o]/tot*100}%" title="${esc(o)}: ${eur.format(by[o])} (${pct(by[o]/tot*100)})"></span>` : "").join("")
+    }</div><span class="sv">${compact(tot)}</span></div>`).join("");
+}
+function bubbles(el, list) {
+  const pts = list.filter((r) => r.hasAward);
+  if (!pts.length) { el.innerHTML = '<div class="empty">Sin datos</div>'; return; }
+  const groups = TYPE_GROUPS.filter((g) => pts.some((r) => typeGroup(r.type) === g));
+  const ts = pts.map((r) => Date.parse(r.date));
+  const t0 = Math.min(...ts), t1 = Math.max(...ts), span = Math.max(t1 - t0, 1);
+  const W = 1000, L = 92, Rr = 18, rowH = 64, T = 8, B = 26, H = T + groups.length * rowH + B;
+  const maxA = Math.max(...pts.map((r) => r.amount));
+  const x = (d) => L + (Date.parse(d) - t0) / span * (W - L - Rr);
+  const rad = (a) => 2.5 + Math.sqrt(a / maxA) * 22;
+  const y0 = new Date(t0).getUTCFullYear(), y1 = new Date(t1).getUTCFullYear();
+  const step = Math.max(1, Math.ceil((y1 - y0 + 1) / 10));
+  let svg = `<svg class="bubbles" viewBox="0 0 ${W} ${H}" role="img" aria-label="Contratos por tipo, fecha e importe adjudicado">`;
+  groups.forEach((g, i) => {
+    const cy = T + i * rowH + rowH / 2;
+    svg += `<line x1="${L}" x2="${W - Rr}" y1="${cy}" y2="${cy}" stroke-dasharray="3 4"></line><text x="${L - 10}" y="${cy + 4}" text-anchor="end">${esc(g)}</text>`;
+  });
+  for (let y = y0; y <= y1 + 1; y += step) {
+    const tx = L + (Date.UTC(y, 0, 1) - t0) / span * (W - L - Rr);
+    if (tx >= L - 1 && tx <= W - Rr + 1) svg += `<text x="${tx}" y="${H - 8}" text-anchor="middle">${y}</text>`;
+  }
+  [...pts].sort((a, b) => b.amount - a.amount).forEach((r) => {
+    const cy = T + groups.indexOf(typeGroup(r.type)) * rowH + rowH / 2;
+    svg += `<circle cx="${x(r.date).toFixed(1)}" cy="${cy}" r="${rad(r.amount).toFixed(1)}"><title>${esc(r.title.slice(0, 110))} · ${fmtDate(r.date)} · ${eur.format(r.amount)}</title></circle>`;
+  });
+  el.innerHTML = svg + "</svg>";
+}
+
+// ---------- tablas ordenables y paginadas ----------
+function mountTable(id) {
+  $(id).innerHTML = `<div class="tablewrap"><table><thead><tr id="${id}-head"></tr></thead><tbody id="${id}-rows"></tbody></table></div>
+    <div class="pager"><span class="note" id="${id}-info"></span><span><button id="${id}-prev" type="button">← Anterior</button> <button id="${id}-next" type="button">Siguiente →</button></span></div>`;
+}
+function drawTable(id, cols, rows, st, size = 25, emptyMsg = "Ningún resultado con los filtros actuales.") {
+  const col = cols.find((c) => c.key === st.sort) || cols[0];
+  const sorted = [...rows].sort((a, b) => cmp(col.sort(a), col.sort(b)) * st.dir);
+  const pages = Math.max(1, Math.ceil(sorted.length / size));
+  st.page = Math.min(st.page, pages - 1);
+  const slice = sorted.slice(st.page * size, st.page * size + size);
+  $(id + "-head").innerHTML = cols.map((c) =>
+    `<th class="${c.num ? "num" : ""}" aria-sort="${st.sort === c.key ? (st.dir > 0 ? "ascending" : "descending") : "none"}"><button data-k="${c.key}">${esc(c.label)}${st.sort === c.key ? (st.dir > 0 ? " ▲" : " ▼") : ""}</button></th>`).join("");
+  $(id + "-head").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => {
+    const k = b.dataset.k, c = cols.find((x) => x.key === k);
+    if (st.sort === k) st.dir *= -1; else { st.sort = k; st.dir = c.num || c.desc ? -1 : 1; }
+    render();
+  }));
+  $(id + "-rows").innerHTML = slice.length
+    ? slice.map((r) => `<tr>${cols.map((c) => `<td class="${(c.num ? "num " : "") + (c.cls || "")}">${c.html(r)}</td>`).join("")}</tr>`).join("")
+    : `<tr><td colspan="${cols.length}" class="empty">${esc(emptyMsg)}</td></tr>`;
+  $(id + "-info").textContent = sorted.length ? `Mostrando ${st.page * size + 1}–${st.page * size + slice.length} de ${nf.format(sorted.length)}` : "";
+  $(id + "-prev").disabled = st.page === 0;
+  $(id + "-next").disabled = st.page >= pages - 1;
+  $(id + "-prev").onclick = () => { st.page--; render(); };
+  $(id + "-next").onclick = () => { st.page++; render(); };
+  return sorted;
+}
+async function copyTSV(rows, msgEl, boxId) {
+  const text = rows.map((r) => r.map((v) => String(v ?? "").replace(/[\t\r\n]+/g, " ").trim()).join("\t")).join("\n");
+  try {
+    await navigator.clipboard.writeText(text);
+    if (boxId) $("csv-fallback").hidden = true;
+    msgEl.textContent = `Copiadas ${nf.format(rows.length - 1)} filas. Pégalas en una hoja de cálculo.`;
+  } catch {
+    if (boxId) { $("csv-box").value = text; $("csv-fallback").hidden = false; $("csv-box").focus(); $("csv-box").select(); }
+    msgEl.textContent = boxId ? "El navegador no permite copiar automáticamente." : "El navegador no permite copiar.";
+  }
+}
+const dec = (n) => n == null ? "" : String(n).replace(".", ",");
+const winnerLinks = (r) => r.winners.length
+  ? r.winners.map((w) => `<div><a href="#" data-w="${esc(w.key)}">${esc(winnerLabel(w.key))}</a>${w.nif ? `<div class="sub">${esc(w.nif)}</div>` : ""}</div>`).join("")
+  : '<span class="muted">—</span>';
+const amountCell = (r) => r.hasAward ? eur2.format(r.amount)
+  : `<span class="est" title="Sin importe adjudicado: se muestra el presupuesto">${eur2.format(r.amount)}</span><div class="sub">presupuesto</div>`;
+const titleCell = (r) => `${esc(r.title)}<div class="sub"><span class="tag">${esc(KIND[r.kind])}</span></div>`;
+const linkCell = (r) => r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">Ver</a>` : "";
+
+// ---------- render ----------
+let filtered = [], listRows = [], adjRows = [];
+function render() {
+  // pestañas
+  $("tabs").innerHTML = TABS.map(([k, l]) => `<button role="tab" id="tab-${k}" aria-selected="${state.tab === k}" data-t="${k}">${esc(l)}</button>`).join("");
+  $("tabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => goTab(b.dataset.t)));
+  document.querySelectorAll("[data-tab]").forEach((s) => { s.hidden = s.dataset.tab !== state.tab; });
+
+  filtered = R.filter((r) => passes(r));
+  const chips = [];
+  if (state.winner) chips.push(["winner", "Contratista: " + winnerLabel(state.winner)]);
+  $("chips").innerHTML = chips.map(([k,t]) => `<span class="chip">${esc(t)}<button data-k="${k}" aria-label="Quitar filtro: ${esc(t)}">×</button></span>`).join("");
+  $("chips").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { state[b.dataset.k] = ""; for (const t of Object.values(tbl)) t.page = 0; render(); }));
+
+  ({ resumen: renderResumen, evolucion: renderEvolucion, adjudicatarios: renderAdj, abiertas: renderOpen, listado: renderList })[state.tab]();
+}
+
+function renderResumen() {
+  const m = metrics(filtered);
+  const menores = filtered.filter((r) => r.kind === "menor").length;
+  $("kpis").innerHTML =
+    kpi(nf.format(m.n), "contratos") + kpi(eur.format(m.sum), "importe adjudicado (IVA incl.)") +
+    kpi(m.nAw ? eur.format(m.avg) : "—", "importe medio") + kpi(nf.format(m.contractors), "contratistas distintos") +
+    kpi(m.n ? pct(menores / m.n * 100) : "—", "contratos menores");
+
+  // pulso anual: media por año frente a los últimos 12 meses
+  const years = new Set(filtered.map((r) => r.year)).size || 1;
+  const from12 = addDays(REF, -365);
+  const l12 = filtered.filter((r) => r.date > from12 && r.date <= REF), m12 = metrics(l12);
+  const perYear = m.n / years, sumYear = m.sum / years;
+  const tt = filtered.map((r) => r.toAward).filter((x) => x != null).sort((a, b) => a - b);
+  const cs = contractors(filtered).sort((a, b) => b.sum - a.sum);
+  let acc = 0, k = 0;
+  for (const c of cs) { acc += c.sum; k++; if (acc >= m.sum / 2) break; }
+  $("kpis2").innerHTML =
+    kpi(nf.format(Math.round(perYear)), "contratos al año (media)", `Últimos 12 meses: ${nf.format(m12.n)} ${delta(m12.n, perYear)}`) +
+    kpi(compact(sumYear), "importe adjudicado al año (media)", `Últimos 12 meses: ${compact(m12.sum)} ${delta(m12.sum, sumYear)}`) +
+    kpi(m.nAw ? eur.format(m.avg) : "—", "importe medio por contrato", `Últimos 12 meses: ${m12.nAw ? eur.format(m12.avg) : "—"} ${delta(m12.avg, m.avg)}`) +
+    kpi(tt.length ? Math.round(tt.reduce((a, b) => a + b, 0) / tt.length) + " días" : "—", "del cierre de ofertas a la adjudicación",
+        tt.length ? `Mediana ${tt[tt.length >> 1]} · mínimo ${tt[0]} · ${nf.format(tt.length)} licitaciones` : "Sin datos suficientes") +
+    kpi(m.sum && cs.length ? `${nf.format(k)} de ${nf.format(cs.length)}` : "—", "adjudicatarios suman la mitad del importe",
+        cs.length ? `El mayor adjudicatario concentra el ${pct(cs[0].sum / m.sum * 100)}` : "");
+
+  const forYear = R.filter((r) => passes(r, ["year"]));
+  const yAgg = new Map(agg(forYear, (r) => r.year).map((e) => [e.key, e]));
+  colChart($("c-year"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, sum:0 }) })), {
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum,
+    title: (e) => `${e.y}: ${eur.format(e.sum)} en ${e.n} contratos`,
+    active: (e) => String(e.y) === String(state.year), onclick: (e) => toggleFilter("year", e.y, "f-year"),
+  });
+  const forMonth = R.filter((r) => passes(r, ["month"]));
+  const mAgg = new Map(agg(forMonth, (r) => r.month).map((e) => [e.key, e]));
+  colChart($("c-month"), MONTHS.map((mm, i) => ({ m: mm, i: i+1, ...(mAgg.get(i+1) || { n:0, sum:0 }) })), {
+    label: (e) => e.m, value: (e) => e.n,
+    title: (e) => `${MONTHS_LONG[e.i-1]}: ${e.n} contratos, ${eur.format(e.sum)}`,
+    active: (e) => String(e.i) === String(state.month), onclick: (e) => toggleFilter("month", e.i, "f-month"),
+  });
+  barList($("c-type"), agg(filtered, (r) => r.type).sort((a, b) => b.sum - a.sum), {
+    label: (e) => TYPE[e.key] || "Código " + e.key, value: (e) => e.sum,
+    active: (e) => String(e.key) === state.type, onclick: (e) => toggleFilter("type", e.key, "f-type"),
+  });
+  barList($("c-proc"), agg(filtered, (r) => r.procedure).sort((a, b) => b.sum - a.sum), {
+    label: (e) => PROC[e.key] || "Código " + e.key, value: (e) => e.sum,
+    active: (e) => String(e.key) === state.proc, onclick: (e) => toggleFilter("proc", e.key, "f-proc"),
+  });
+  // tramos: ignoran el filtro de importe para poder compararse entre sí
+  const byRange = RANGES.map(([label, lo, hi]) => {
+    const rs = R.filter((r) => r.hasAward && r.amount >= lo && r.amount < hi && passesNoAmount(r));
+    return { label, lo, hi, n: rs.length, sum: rs.reduce((s, r) => s + r.amount, 0) };
+  });
+  barList($("c-range"), byRange, {
+    label: (e) => e.label, value: (e) => e.n, disp: (e) => `${e.n} · ${compact(e.sum)}`,
+    active: (e) => state.min !== "" && +state.min === e.lo && (e.hi === Infinity ? state.max === "" : +state.max === e.hi - 0.01),
+    onclick: (e) => {
+      const on = state.min !== "" && +state.min === e.lo;
+      state.min = on ? "" : String(e.lo); state.max = on || e.hi === Infinity ? "" : String(e.hi - 0.01);
+      $("f-min").value = state.min; $("f-max").value = state.max; render();
+    },
+  });
+  const topC = filtered.filter((r) => r.hasAward).sort((a, b) => b.amount - a.amount).slice(0, 8);
+  $("c-top").innerHTML = topC.length ? `<table><tbody>` + topC.map((r) =>
+    `<tr><td>${esc(r.title.length > 90 ? r.title.slice(0, 90) + "…" : r.title)}<div class="sub">${esc(r.winners.map((w) => winnerLabel(w.key)).join(", ") || "—")} · ${fmtDate(r.date)}</div></td>
+     <td class="num"><strong>${eur.format(r.amount)}</strong></td></tr>`).join("") + `</tbody></table>` : '<div class="empty">Sin datos</div>';
+  bubbles($("c-bubbles"), filtered);
+}
+// igual que passes() pero sin el filtro de importe (para los tramos)
+function passesNoAmount(r) {
+  const min = state.min, max = state.max; state.min = ""; state.max = "";
+  const ok = passes(r); state.min = min; state.max = max; return ok;
+}
+
+function renderEvolucion() {
+  const base = R.filter((r) => passes(r, ["year", "month"]));
+  const A = base.filter((r) => String(r.year) === state.cmpA), B = state.cmpB ? base.filter((r) => String(r.year) === state.cmpB) : [];
+  const metric = state.cmpM;
+  const monthly = (list) => MONTHS.map((_, i) => { const e = list.filter((r) => r.month === i + 1); const mm = metrics(e); return metric === "n" ? mm.n : mm.sum; });
+  const a = monthly(A), b = monthly(B);
+  const top = Math.max(...a, ...b, 1);
+  const fmt = (v) => metric === "n" ? nf.format(v) + " contratos" : eur.format(v);
+  $("lg-a").textContent = state.cmpA; $("lg-b").textContent = state.cmpB || "—";
+  $("lg-b").parentElement.hidden = !state.cmpB;
+  $("c-cmp").innerHTML = `<div class="cols">` + MONTHS.map((mn, i) =>
+    `<div class="col" title="${esc(`${MONTHS_LONG[i]}: ${state.cmpA} ${fmt(a[i])}${state.cmpB ? " · " + state.cmpB + " " + fmt(b[i]) : ""}`)}">
+      <div class="pair"><span class="fill c1" style="height:${a[i]/top*100}%"></span>${state.cmpB ? `<span class="fill b" style="height:${b[i]/top*100}%"></span>` : ""}</div>
+      <span class="tick">${mn}</span></div>`).join("") + `</div>`;
+  const mA = metrics(A), mB = metrics(B);
+  $("th-a").textContent = state.cmpA; $("th-b").textContent = state.cmpB || "—";
+  const rowsC = [["Contratos", mA.n, mB.n, nf.format], ["Importe adjudicado", mA.sum, mB.sum, eur.format.bind(eur)],
+                 ["Importe medio", mA.avg, mB.avg, eur.format.bind(eur)], ["Contratistas distintos", mA.contractors, mB.contractors, nf.format]];
+  $("cmp-rows").innerHTML = rowsC.map(([l, x, y, f]) =>
+    `<tr><td>${l}</td><td class="num">${f(x)}</td><td class="num">${state.cmpB ? f(y) : "—"}</td><td class="num">${state.cmpB ? (delta(x, y) || "—") : "—"}</td></tr>`).join("");
+  const curYear = String(REF.slice(0, 4));
+  $("cmp-note").textContent = "Respeta los filtros de arriba (menos año y mes)." +
+    ([state.cmpA, state.cmpB].includes(curYear) ? ` ${curYear} está incompleto: los datos llegan hasta el ${fmtDate(REF)}, así que la variación no es entre años completos.` : "");
+  stackedYears($("s-type"), base, (r) => typeGroup(r.type), TYPE_GROUPS);
+  stackedYears($("s-proc"), base, (r) => procGroup(r.procedure), PROC_GROUPS);
+}
+
+function renderAdj() {
+  const all = contractors(filtered);
+  const total = all.reduce((s, c) => s + c.sum, 0);
+  const sortedSum = [...all].sort((a, b) => b.sum - a.sum);
+  const totalN = all.reduce((s, c) => s + c.n, 0);
+  let acc = 0, kN = 0;
+  for (const c of [...all].sort((a, b) => b.n - a.n)) { acc += c.n; kN++; if (acc >= totalN / 2) break; }
+  $("kpis3").innerHTML =
+    kpi(nf.format(all.length), "adjudicatarios") +
+    kpi(all.length ? eur.format(total / all.length) : "—", "importe medio por adjudicatario") +
+    kpi(all.length ? nf.format(kN) : "—", "adjudicatarios reúnen la mitad de las adjudicaciones", all.length ? `de ${nf.format(all.length)} en total` : "") +
+    kpi(nf.format(all.filter((c) => c.n === 1).length), "adjudicatarios con un solo contrato");
+  const click = (e) => { state.winner = e.key; for (const t of Object.values(tbl)) t.page = 0; goTab("listado"); };
+  barList($("top-sum"), sortedSum.slice(0, 5), { label: (e) => winnerLabel(e.key), value: (e) => e.sum, disp: (e) => compact(e.sum), onclick: click });
+  barList($("top-n"), [...all].sort((a, b) => b.n - a.n || b.sum - a.sum).slice(0, 5), { label: (e) => winnerLabel(e.key), value: (e) => e.n, disp: (e) => String(e.n), onclick: click });
+  const q = norm(state.adjQ).split(/\s+/).filter(Boolean);
+  adjRows = all.filter((c) => !q.length || q.every((t) => norm(winnerLabel(c.key) + " " + (c.nif || "")).includes(t)));
+  if (!$("t-adj").firstChild) mountTable("t-adj");
+  $("adj-count").textContent = `(${nf.format(adjRows.length)})`;
+  drawTable("t-adj", [
+    { key:"name", label:"Adjudicatario", sort: (c) => winnerLabel(c.key), html: (c) => `<a href="#" data-w="${esc(c.key)}">${esc(winnerLabel(c.key))}</a>${c.nif ? `<div class="sub">${esc(c.nif)}</div>` : ""}` },
+    { key:"n", label:"Nº contratos", num:true, sort: (c) => c.n, html: (c) => nf.format(c.n) },
+    { key:"sum", label:"Importe total (IVA incl.)", num:true, sort: (c) => c.sum, html: (c) => eur2.format(c.sum) },
+    { key:"last", label:"Último contrato", desc:true, sort: (c) => c.last, html: (c) => fmtDate(c.last) },
+  ], adjRows, tbl.adj);
+}
+$("adj-copy").addEventListener("click", () => copyTSV(
+  [["adjudicatario","nif","contratos","importe_total_iva","ultimo_contrato"],
+   ...[...adjRows].sort((a, b) => b.sum - a.sum).map((c) => [winnerLabel(c.key), c.nif || "", c.n, dec(Math.round(c.sum * 100) / 100), c.last])],
+  $("adj-msg"), null));
+
+function renderOpen() {
+  const open = R.filter((r) => passes(r, ["year", "month", "date", "status"]) && r.deadline && r.deadline >= TODAY && (r.status === "PUB" || r.status === "EV"));
+  const budget = (r) => r.budgetNet ?? r.estimated ?? r.budgetTotal ?? 0;
+  const total = open.reduce((s, r) => s + budget(r), 0);
+  const next = [...open].sort((a, b) => a.deadline.localeCompare(b.deadline))[0];
+  $("kpis4").innerHTML =
+    kpi(nf.format(open.length), "licitaciones abiertas") +
+    kpi(eur.format(total), "presupuesto total (sin IVA)") +
+    kpi(open.length ? eur.format(total / open.length) : "—", "presupuesto medio") +
+    kpi(next ? fmtDate(next.deadline) : "—", "próximo cierre", next ? `en ${days(TODAY, next.deadline)} días` : "");
+  if (!$("t-open").firstChild) mountTable("t-open");
+  drawTable("t-open", [
+    { key:"title", label:"Licitación", cls:"obj", sort: (r) => r.title, html: (r) => `${titleCell(r)}` },
+    { key:"body", label:"Órgano", sort: (r) => r.bodyShort, html: (r) => esc(r.bodyShort) },
+    { key:"type", label:"Categoría", sort: (r) => TYPE[r.type] || "", html: (r) => esc(TYPE[r.type] || "—") },
+    { key:"budget", label:"Presupuesto sin IVA", num:true, sort: budget, html: (r) => eur2.format(budget(r)) },
+    { key:"deadline", label:"Fecha límite", sort: (r) => r.deadline, html: (r) => `${fmtDate(r.deadline)}<div class="sub">en ${days(TODAY, r.deadline)} días</div>` },
+    { key:"link", label:"Anuncio", sort: () => "", html: linkCell },
+  ], open, tbl.open, 25, "No hay licitaciones con plazo abierto en los datos.");
+  $("open-note").textContent = `Se consideran abiertas las licitaciones publicadas o en evaluación con fecha límite igual o posterior a hoy (${fmtDate(TODAY)}). Los datos son del ${fmtDate(REF)}: confirma siempre el estado en el anuncio original.`;
+}
+
+function renderList() {
+  const cols = [
+    { key:"date", label:"Fecha", desc:true, sort: (r) => r.date, html: (r) => fmtDate(r.date) },
+    { key:"folder", label:"Expediente", sort: (r) => r.folder || "", html: (r) => esc(r.folder || "—") },
+    { key:"title", label:"Objeto", cls:"obj", sort: (r) => r.title, html: titleCell },
+    { key:"type", label:"Tipo", sort: (r) => TYPE[r.type] || "", html: (r) => esc(TYPE[r.type] || "—") },
+    ...(optCols.has("body") ? [{ key:"body", label:"Órgano", sort: (r) => r.bodyShort, html: (r) => esc(r.bodyShort) }] : []),
+    ...(optCols.has("procedure") ? [{ key:"procedure", label:"Procedimiento", sort: (r) => PROC[r.procedure] || "", html: (r) => esc(PROC[r.procedure] || "—") }] : []),
+    ...(optCols.has("status") ? [{ key:"status", label:"Estado", sort: (r) => r.status || "", html: (r) => esc(STATUS[r.status] || r.status || "—") }] : []),
+    ...(optCols.has("published") ? [{ key:"published", label:"Publicación", desc:true, sort: (r) => r.published || "", html: (r) => fmtDate(r.published) }] : []),
+    ...(optCols.has("deadline") ? [{ key:"deadline", label:"Fecha límite", desc:true, sort: (r) => r.deadline || "", html: (r) => fmtDate(r.deadline) }] : []),
+    ...(optCols.has("offers") ? [{ key:"offers", label:"Ofertas", num:true, sort: (r) => r.offers ?? -1, html: (r) => r.offers ?? "—" }] : []),
+    ...(optCols.has("budget") ? [{ key:"budget", label:"Presupuesto sin IVA", num:true, sort: (r) => r.budgetNet ?? -1, html: (r) => r.budgetNet != null ? eur2.format(r.budgetNet) : "—" }] : []),
+    ...(optCols.has("duration") ? [{ key:"duration", label:"Duración (meses)", num:true, sort: (r) => r.durationMonths ?? -1, html: (r) => r.durationMonths ?? "—" }] : []),
+    { key:"winner", label:"Contratista", sort: (r) => winnerLabel(r.winners[0]?.key || ""), html: winnerLinks },
+    { key:"amount", label:"Importe", num:true, sort: (r) => r.amount, html: amountCell },
+    { key:"link", label:"Anuncio", sort: () => "", html: linkCell },
+  ];
+  if (!cols.some((c) => c.key === tbl.list.sort)) tbl.list.sort = "date";
+  if (!$("t-list").firstChild) mountTable("t-list");
+  $("col-picker").innerHTML = OPT_COLS.map(([k, l]) => `<label><input type="checkbox" data-c="${k}" ${optCols.has(k) ? "checked" : ""}> ${esc(l)}</label>`).join("");
+  $("col-picker").querySelectorAll("input").forEach((i) => i.addEventListener("change", () => {
+    i.checked ? optCols.add(i.dataset.c) : optCols.delete(i.dataset.c); render();
+  }));
+  const noAward = filtered.filter((r) => !r.hasAward).length;
+  $("count-note").textContent = `(${nf.format(filtered.length)}${noAward ? `; ${noAward} sin importe adjudicado` : ""})`;
+  listRows = drawTable("t-list", cols, filtered, tbl.list);
+}
+$("csv").addEventListener("click", () => {
+  // Los visores de artefactos bloquean las descargas: se copia al portapapeles (separado por tabuladores, que las
+  // hojas de cálculo reparten en columnas al pegar) y, si el navegador lo rechaza, se muestra el texto.
+  const head = ["fecha","expediente","objeto","clase","tipo","procedimiento","estado","organo","contratistas","nif","importe_adjudicado_iva","presupuesto_iva","fecha_limite","url"];
+  copyTSV([head, ...filtered.map((r) => [
+    r.date, r.folder, r.title, KIND[r.kind], TYPE[r.type] || r.type, PROC[r.procedure] || r.procedure, STATUS[r.status] || r.status, r.bodyShort,
+    r.winners.map((w) => winnerLabel(w.key)).join(" | "), r.winners.map((w) => w.nif || "").join(" | "),
+    r.hasAward ? dec(r.amount) : "", dec(r.budgetTotal), r.deadline || "", r.url,
+  ])], $("csv-msg"), "csv-box");
+});
+
+$("foot").innerHTML = `Fuente: Plataforma de Contratación del Sector Público (feeds de sindicación). Datos hasta el ${esc(fmtDate(REF))} (último anuncio recibido).
+  «Fecha» es la de adjudicación o, si no consta, la de última actualización del anuncio. «Importe» es el adjudicado con IVA; si el contrato aún no
+  tiene importe adjudicado se muestra el presupuesto y no se suma en los totales. Si un contrato tiene varias versiones publicadas se usa la más reciente.
+  El tiempo hasta la adjudicación se mide desde el cierre del plazo de ofertas y solo en licitaciones con ambas fechas.
+  Las medias anuales incluyen años con menos datos (los contratos menores constan desde 2018), por lo que la comparación con los últimos 12 meses tiende a salir al alza.
+  Herramienta de consulta no oficial: la referencia es siempre el anuncio original (enlace «Ver»).`;
+setTab(location.hash.slice(1) || "resumen");
+</script>
+</body>
+</html>

@@ -1,0 +1,570 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/11238873",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=%2Fn1G5rayYE4uf4aBO%2BvQlQ%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR/SERV/2022000012; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 35047.6 EUR; Estado: PUB",
+    "@_type": "text"
+  },
+  "title": "Contratación del servicio de mantenimiento e inspección periódica de las botellas de aire comprimido, el centro de carga de botellas y los equipos de respiración autónoma del SPEIS (Bomberos)",
+  "updated": "2022-09-26T13:44:25.821+02:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR/SERV/2022000012",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "PUB",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ContractingAuthorityCode-1.04.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 22,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.05/ContractingAuthorityActivityCode-2.05.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500100,
+          "cbc:Telefax": 947515935,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Contratación del servicio de mantenimiento e inspección periódica de las botellas de aire comprimido, el centro de carga de botellas y los equipos de respiración autónoma del SPEIS (Bomberos)",
+      "cbc:TypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ServiceContractCode-1.04.gc"
+      },
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 35047.6,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 42407.6,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 35047.6,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": {
+        "cbc:ItemClassificationCode": {
+          "#text": 50000000,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+        }
+      },
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 1460,
+          "@_unitCode": "DAY"
+        }
+      }
+    },
+    "cac:ProcurementProjectLot": [
+      {
+        "cbc:ID": {
+          "#text": 1,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:TendererQualificationRequest": {
+            "cac:TechnicalEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": "OSR-COMPTASK",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios, acompañadas de certificados o informes de buena ejecución de al menos DOS de ellos. Se entenderá por ¿contratos similares¿ aquellos que sean del mismo grupo y subgrupo de clasificación al que corresponda el lote/lotes o contrato en cuestión, o del grupo y subgrupo más relevante para el contrato si este incluye trabajos correspondientes a diferentes subgrupos, o cuyas prestaciones sean coincidentes al menos en un 50% a las que son objeto del lote/lotes o contrato al que se concurre y su importe alcance también ese porcentaje, circunstancia esta que tendrá que acreditar el interesado. También se considerarán similares aquellos contratos cuyos tres primeros dígitos del CPV coincidan con los del contrato que se licita"
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": "OXR-MEDIOS",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Declaración indicando la maquinaria, material y equipo técnico del que se dispondrá para la ejecución de los trabajos o prestaciones, a la que se adjuntará la documentación acreditativa pertinente cuando le sea requerido por los servicios dependientes del órgano de contratación."
+              }
+            ],
+            "cac:FinancialEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 5,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos (o desde la fecha de inicio de actividad de la empresa si es menor) por importe igual o superior al valor estimado del lote o lotes a los que se licita - o del total contrato si excepcionalmente no se ha dividido en lotes. En los contratos de duración superior a un año, se calculará en función del valor anual medio, prórrogas excluidas.\n\nLa acreditación de este requisito se realizará como regla general mediante la aportación del resumen de la declaración del IVA presentada a Hacienda (modelo 390). Cuando el licitador sea una entidad que no esté obligada a realizar declaración de IVA, ese porcentaje deberá reflejarse en las cuentas anuales de la entidad de los tres últimos ejercicios, aprobadas por el órgano competente, e inscritas, en su caso, en el Registro público correspondiente.",
+                "cbc:ThresholdQuantity": 12591.8
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 3,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita; la póliza deberá estar vigente hasta el final del plazo para presentar ofertas y deberá aportar, además, el compromiso de su renovación o prórroga  que garantice el mantenimiento de su cobertura durante toda la ejecución del contrato y su plazo de garantía, en caso de resultar\nadjudicatario.",
+                "cbc:ThresholdQuantity": 12591.8
+              }
+            ]
+          },
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "Oferta económica de acuerdo con lo establecido en el Anexo X del CCP PCAP",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.08.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "LOTE 1: Botellas de aire comprimido",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 15236.08,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 12591.8,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 50000000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 2,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:TendererQualificationRequest": {
+            "cac:TechnicalEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": "OXR-MEDIOS",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Declaración indicando la maquinaria, material y equipo técnico del que se dispondrá para la ejecución de los trabajos o prestaciones, a la que se adjuntará la documentación acreditativa pertinente cuando le sea requerido por los servicios dependientes del órgano de contratación."
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": "OSR-COMPTASK",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios, acompañadas de certificados o informes de buena ejecución de al menos DOS de ellos. Se entenderá por ¿contratos similares¿ aquellos que sean del mismo grupo y subgrupo de clasificación al que corresponda el lote/lotes o contrato en cuestión, o del grupo y subgrupo más relevante para el contrato si este incluye trabajos correspondientes a diferentes subgrupos, o cuyas prestaciones sean coincidentes al menos en un 50% a las que son objeto del lote/lotes o contrato al que se concurre y su importe alcance también ese porcentaje, circunstancia esta que tendrá que acreditar el interesado. También se considerarán similares aquellos contratos cuyos tres primeros dígitos del CPV coincidan con los del contrato que se licita"
+              }
+            ],
+            "cac:FinancialEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 5,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos (o desde la fecha de inicio de actividad de la empresa si es menor) por importe igual o superior al valor estimado del lote o lotes a los que se licita - o del total contrato si excepcionalmente no se ha dividido en lotes. En los contratos de duración superior a un año, se calculará en función del valor anual medio, prórrogas excluidas.\n\nLa acreditación de este requisito se realizará como regla general mediante la aportación del resumen de la declaración del IVA presentada a Hacienda (modelo 390). Cuando el licitador sea una entidad que no esté obligada a realizar declaración de IVA, ese porcentaje deberá reflejarse en las cuentas anuales de la entidad de los tres últimos ejercicios, aprobadas por el órgano competente, e inscritas, en su caso, en el Registro público correspondiente.",
+                "cbc:ThresholdQuantity": 12591.8
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 3,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita; la póliza deberá estar vigente hasta el final del plazo para presentar ofertas y deberá aportar, además, el compromiso de su renovación o prórroga  que garantice el mantenimiento de su cobertura durante toda la ejecución del contrato y su plazo de garantía, en caso de resultar\nadjudicatario.",
+                "cbc:ThresholdQuantity": 12591.8
+              }
+            ]
+          },
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "Oferta económica de acuerdo con lo establecido en el Anexo X del CCP PCAP",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.08.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "LOTE 2: Centro de carga de botellas",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 4070.2,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 3363.8,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 50000000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 3,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:TendererQualificationRequest": {
+            "cac:TechnicalEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": "OSR-COMPTASK",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios, acompañadas de certificados o informes de buena ejecución de al menos DOS de ellos. Se entenderá por ¿contratos similares¿ aquellos que sean del mismo grupo y subgrupo de clasificación al que corresponda el lote/lotes o contrato en cuestión, o del grupo y subgrupo más relevante para el contrato si este incluye trabajos correspondientes a diferentes subgrupos, o cuyas prestaciones sean coincidentes al menos en un 50% a las que son objeto del lote/lotes o contrato al que se concurre y su importe alcance también ese porcentaje, circunstancia esta que tendrá que acreditar el interesado. También se considerarán similares aquellos contratos cuyos tres primeros dígitos del CPV coincidan con los del contrato que se licita"
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": "OXR-MEDIOS",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Declaración indicando la maquinaria, material y equipo técnico del que se dispondrá para la ejecución de los trabajos o prestaciones, a la que se adjuntará la documentación acreditativa pertinente cuando le sea requerido por los servicios dependientes del órgano de contratación."
+              }
+            ],
+            "cac:FinancialEvaluationCriteria": [
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 3,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita; la póliza deberá estar vigente hasta el final del plazo para presentar ofertas y deberá aportar, además, el compromiso de su renovación o prórroga  que garantice el mantenimiento de su cobertura durante toda la ejecución del contrato y su plazo de garantía, en caso de resultar\nadjudicatario.",
+                "cbc:ThresholdQuantity": 12591.8
+              },
+              {
+                "cbc:EvaluationCriteriaTypeCode": {
+                  "#text": 5,
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+                },
+                "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos (o desde la fecha de inicio de actividad de la empresa si es menor) por importe igual o superior al valor estimado del lote o lotes a los que se licita - o del total contrato si excepcionalmente no se ha dividido en lotes. En los contratos de duración superior a un año, se calculará en función del valor anual medio, prórrogas excluidas.\n\nLa acreditación de este requisito se realizará como regla general mediante la aportación del resumen de la declaración del IVA presentada a Hacienda (modelo 390). Cuando el licitador sea una entidad que no esté obligada a realizar declaración de IVA, ese porcentaje deberá reflejarse en las cuentas anuales de la entidad de los tres últimos ejercicios, aprobadas por el órgano competente, e inscritas, en su caso, en el Registro público correspondiente.",
+                "cbc:ThresholdQuantity": 12591.8
+              }
+            ]
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "LOTE 3: Equipos de respiración autónoma",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 23101.32,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 19092,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": {
+            "cbc:ItemClassificationCode": {
+              "#text": 50000000,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/CPV2007-1.04.gc"
+            }
+          },
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc",
+        "@_name": "No hay financiación con fondos de la UE"
+      },
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:SpecificTendererRequirement": [
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "Cumplimiento con las obligaciones con la Seguridad Social"
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "No prohibición para contratar"
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 9,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "Para las empresas extranjeras, declaración de sometimiento a la legislación española."
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "Cumplimiento con las obligaciones tributarias"
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "Capacidad de obrar"
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "No estar incurso en incompatibilidades"
+          },
+          {
+            "cbc:RequirementTypeCode": {
+              "#text": 8,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+            },
+            "cbc:Description": "Estar prerregistrado en el ROLECE, y declarar que no ha habido modificaciones en los datos registrados"
+          }
+        ]
+      },
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:PartPresentationCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderPresentationCode-1.04.gc",
+        "@_name": "A uno o varios lotes"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2022-10-10",
+        "cbc:EndTime": "14:00:00"
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP  SERVICIOS LOTES.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=badbe8a6-afdf-4e6e-b206-51bfd6ebf3d6",
+          "cbc:DocumentHash": "YRbPrHEgbQybY48QC+zO386Lxck="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "Pliego de prescripciones tecnicas 1F.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=699c6c0e-a4c5-4d92-9d0c-cd0bfe779bc2",
+          "cbc:DocumentHash": "ef55/6K/D+kB9qQNIYdjgQQoLzA="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "Resolucion.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=82191693-a82f-455e-ad28-2cbae061c1a0",
+            "cbc:DocumentHash": "SsedLWj3okb9ZeIjfjmp6YVxRZ8="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Pliego Tipo Servicios.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=bfa4b2c2-4a6a-4da7-a0ef-985cbf76abb6",
+            "cbc:DocumentHash": "o5hsqdImr0JuTsQ5vFnk7WYhnYs="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria Justificativa 2F.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=5e14987b-b880-448d-96f0-1eeecae975cc",
+            "cbc:DocumentHash": "/mdxt91VLoT3CP6xUqVeEzH8THA="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-09-26"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/TenderingNoticeTypeCode-2.04.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del Contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2022-09-26"
+          }
+        }
+      }
+    ]
+  }
+}

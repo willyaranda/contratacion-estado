@@ -1,0 +1,732 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/18834262",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ta5rt9KXjteopEMYCmrbmw%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: NEG_SINP/OBR/2025000069; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 1711215.24 EUR; Estado: ADJ",
+    "@_type": "text"
+  },
+  "title": "PRTR-Contratación de las Obras de Rehabilitación de 60 viviendas ubicadas en los portales calle Santiago 30,Belorado 1,3,5 y Briviesca 1,3 situadas en la UR 5 del ERRP de Santa Catalina. Plan de Recuperación, Transformación y Resilencia, Financiado Por la Unión Europea - NEXTGENERATION EU",
+  "updated": "2026-01-14T13:56:35.675+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "NEG_SINP/OBR/2025000069",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "ADJ",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityCode-2.10.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityActivityCode-2.10.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500104,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      },
+      "cac-place-ext:ParentLocatedParty": {
+        "cac:PartyName": {
+          "cbc:Name": "Aranda de Duero"
+        },
+        "cac-place-ext:ParentLocatedParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "L04090313",
+              "@_schemeName": "DIR3"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Ayuntamientos"
+          },
+          "cac-place-ext:ParentLocatedParty": {
+            "cac:PartyName": {
+              "cbc:Name": "Burgos"
+            },
+            "cac-place-ext:ParentLocatedParty": {
+              "cac:PartyName": {
+                "cbc:Name": "Castilla y León"
+              },
+              "cac-place-ext:ParentLocatedParty": {
+                "cac:PartyName": {
+                  "cbc:Name": "ENTIDADES LOCALES"
+                },
+                "cac-place-ext:ParentLocatedParty": {
+                  "cac:PartyName": {
+                    "cbc:Name": "Sector Público"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "PRTR-Contratación de las Obras de Rehabilitación de 60 viviendas ubicadas en los portales calle Santiago 30,Belorado 1,3,5 y Briviesca 1,3 situadas en la UR 5 del ERRP de Santa Catalina. Plan de Recuperación, Transformación y Resilencia, Financiado Por la Unión Europea - NEXTGENERATION EU",
+      "cbc:TypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 4525,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/WorksContractCode-1.04.gc"
+      },
+      "cbc:MixContractIndicator": false,
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 1865874.02,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 1882336.77,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 1711215.24,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": [
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45000000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45330000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45340000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45316000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45300000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45110000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45213316,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45320000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 45310000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        }
+      ],
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 6,
+          "@_unitCode": "MON"
+        }
+      }
+    },
+    "cac:TenderResult": {
+      "cbc:ResultCode": {
+        "#text": 8,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/TenderResultCode-2.09.gc"
+      },
+      "cbc:Description": "oferta mejor valorada de acuerdo a las condiciones establecidas.",
+      "cbc:AwardDate": "2026-01-14",
+      "cbc:ReceivedTenderQuantity": 2,
+      "cbc:SMEsReceivedTenderQuantity": 2,
+      "cbc:SMEAwardedIndicator": true,
+      "cbc:AwardedOwnerNationalityCode": {
+        "#text": "ES",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+      },
+      "cac:WinningParty": {
+        "cac:PartyIdentification": {
+          "cbc:ID": {
+            "#text": "B09588740",
+            "@_schemeName": "NIF"
+          }
+        },
+        "cac:PartyName": {
+          "cbc:Name": "CONSTRUCCIONES APLIBUR, S.LU"
+        },
+        "cac:PhysicalLocation": {
+          "cbc:CountrySubentityCode": {
+            "#text": "ES412",
+            "@_name": "España",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+          },
+          "cac:Address": {
+            "cbc:CityName": "BURGOS",
+            "cbc:PostalZone": 9006,
+            "cac:Country": {
+              "cbc:IdentificationCode": {
+                "#text": "ES",
+                "@_name": "España",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+              }
+            }
+          }
+        }
+      },
+      "cac:AwardedTenderedProject": {
+        "cac:LegalMonetaryTotal": {
+          "cbc:TaxExclusiveAmount": {
+            "#text": 1706215.24,
+            "@_currencyID": "EUR"
+          },
+          "cbc:PayableAmount": {
+            "#text": 1876836.76,
+            "@_currencyID": "EUR"
+          }
+        }
+      }
+    },
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": [
+        {
+          "#text": "EU",
+          "@_name": "Financiación con fondos de la UE",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc"
+        },
+        {
+          "#text": "PRTR",
+          "@_name": "Asociado al Plan de Recuperación, Transformación y Resiliencia",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc"
+        }
+      ],
+      "cbc:FundingProgram": "PRTR - ERRP Santa Catalina",
+      "cbc:ProcurementNationalLegislationCode": {
+        "#text": 3,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ProcurementNationalLegislationCode-2.08.gc"
+      },
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:RequiredFinancialGuarantee": [
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 2,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        },
+        {
+          "cbc:GuaranteeTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+          },
+          "cbc:AmountRate": 5
+        }
+      ],
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "OSR-COMPTASK",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Relación  de  los  principales  contratos  de  características  similares  al  que  es objeto de la licitación, ejecutados por el licitador en los CINCO últimos ejercicios, conforme Anexo  V del PCAP_CCP."
+        },
+        "cac:FinancialEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Acreditar una cifra anual de negocios en la actividad de ejecución de obras, referido al mejor ejercicio dentro de los TRES últimos , conforme Anexo V del PCAP_CCP."
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del contrato, conforme Anexo V del PCAP_CCP."
+          }
+        ],
+        "cac:SpecificTendererRequirement": {
+          "cbc:RequirementTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+          },
+          "cbc:Description": "Capacidad de obrar"
+        }
+      },
+      "cac:ContractExecutionRequirement": [
+        {
+          "cbc:Name": "Consideraciones de tipo medioambiental",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 1,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "La empresa adjudicataria del contrato deberá cumplir las condiciones especiales de ejecución de carácter medioambiental, conforme Anexo XI del PCAP_CCP"
+        },
+        {
+          "cbc:Name": "Consideraciones de tipo social",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 2,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "La empresa adjudicataria del contrato deberá cumplir las condiciones especiales de ejecución de carácter social,  conforme Anexo XI del PCAP_CCP"
+        }
+      ],
+      "cac:AwardingTerms": {
+        "cac:AwardingCriteria": [
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "MEJORA DE LA GARANTÍA: hasta 30 puntos,  conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 2,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 30
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "OFERTA ECONÓMICA: hasta 50 puntos, conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 1,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 50
+          },
+          {
+            "cbc:AwardingCriteriaTypeCode": {
+              "#text": "OBJ",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+            },
+            "cbc:Description": "CONTRATACIÓN DE DESEMPLEADOS (Servicio Público de Empleo): hasta 20 puntos, conforme Anexo X del PCAP_CCP.",
+            "cbc:AwardingCriteriaSubTypeCode": {
+              "#text": 4,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+            },
+            "cbc:WeightNumeric": 20
+          }
+        ]
+      },
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 3,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2025-12-19",
+        "cbc:EndTime": "12:30:00",
+        "cbc:Description": "CINCO (5) DÍAS NATURALES PARA PRESENTACIÓN DE LAS OFERTAS."
+      },
+      "cac:AuctionTerms": {
+        "cbc:AuctionConstraintIndicator": false
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP OBRA.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=%2Bt0/xYD4jS54Avjb3h2Yjz5aSl6YrxbxHNj1yYvZfauS559RphyaD78gGvrTbZU3umV9iurKaZj7y8pqhOrk8qfwJxy/1AXINs%2BxfynqKb4ZyAJWGsSt0OzTSTyw9JAs",
+          "cbc:DocumentHash": "qdOp2yyYIwTnXaJ9JjUFNY/fw0U="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "12-Proy Basico y Ejecucion_SANTIAGO 30-32 - Pliego de Condiciones.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=wxSXAa7zxKEPjrvZMsAVQyAa7RvS/CpRtNtTq33xn%2Br/wqtC4ztdkJeGvNLCBorPIfoh80keV7PmEmdm592Xfhv3qofyMmBd7KYU2hARrdpt/o8fNevwsujgRzaBbugn",
+          "cbc:DocumentHash": "yfiWaUma1Ngc5H5VX1x2yrijugA="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "Memoria Justificativa 60 viviendas.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=LNWhqfF06bGTqI3L81md2M2FpxNoK6sveSMvVFPlNckseJ5XU%2BcIqNEyZlqY6M3Tc1UZE/UvwwnuLWm3AcqQ6GTo1srfqdyxi9bljWVscBvVTD3T98KC0nSgQFM0q%2B5s",
+            "cbc:DocumentHash": "07SuIkY0Xo+q8YnZosnokrD9S5k="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Pliego tipo de Obras.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=3DsxFOWzPLwJckWglLF/0abZXyBKOcDbLLOuXzylc9uX%2BN4sGXkIVaMXG8TBQYIkRPDBJlEkWmxkBHI4R/PuodPAFSvsAjOmADd5/lmpjAp45ClyWkoJ44mKM70IFcOu",
+            "cbc:DocumentHash": "ehU9q3etexP8QJH62mWkrL5B5kY="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Acta replanteo proyectos 60 viviendas.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=gc6NrzPdzHLq2NmgsaU/IymiQ2m9AHvDLASdFU6rGj817M3DuVXgnubIDFXjhBhNR5fPWBfTd9FuRc68BK85qMrRvPGhJLDveHLVRxnH/Ru1aXEvq3KHa/AEHgtDrQw0",
+            "cbc:DocumentHash": "z5O4/fSXnpuBLiV5PxKSqgKlErc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Informe de supervision BRIVIESCA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=592RsmJURJ%2BRtCmjDG05BpyfqFojuFFlYSxdNYbo2E2PEjt5eqaIdcmF%2Bs%2BcLVxBJnAHWtB1K0x3WQoKfvQu6a2DTyKumd0fD1mW5COwchA//q7NB2iMZvNyf0xrJmjt",
+            "cbc:DocumentHash": "1ePJ/lyN55u7ksLn8GOa2uWp5sM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Informe de supervision SANTIAGO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=2yiwym5VLulFALoC%2BoTV6E8lLj5Dtzrbs6kK/dbtnqfVgKQsmhE/%2Bj4OHGl5vcSXe0tbjfbdkBCNLaTfT2CLtpDSJXOpo5JXYdjvGwH1wVKCx2e6p7hqtlp2aFupgHMr",
+            "cbc:DocumentHash": "GnGjaUNIfknzLQsgTZvrkmhdo2A="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Informe de supervision BELORADO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=aFvAs7wcC2wUitFYR1oHWuh2J4Ox/OygAazPbslHa2rkz1l87mE9HJI%2B6L9DybcZE%2B5wAGasseMpcU0tURn25fovvTuSsakOovPVVBs9meL3GVhXrFFqN7yFncy7YfRK",
+            "cbc:DocumentHash": "ZKFbwKn7DCeEMTNmCK9YYbW+aJE="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion aprobacion proyectoSANTIAGO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=1r1%2Bc15r7B55yIMEsvmZII4lurYQ5uRf4QWgdy1ltfx7hELkuaqzL2vOtOL2RBg3JvGdXVziQTEsujAEUk3H0G7UIBXaTyqh0niYPny1uvAC1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "R1Gd36pIn3B/iuuYH6PWkEjCl8s="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO Memoria Justificativa 60 viviendas.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=zF5hMLAX6dsEPdIuZkhb9vNCA8O3NIuWj3hgsjis4csQeSW2yp6iOLzKAGfTwF207SPHrXkvGaU56EV12pg9ZLzNarT0kq%2B%2B7bS/aPyt3CmCx2e6p7hqtlp2aFupgHMr",
+            "cbc:DocumentHash": "aERqOFer55C2oo8Jr0cJ5C4xO8Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO VIII.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=eM48N2TM7qKnxAvVbgxIhnqCxMGjLLk0asB3UBryUDlEmE9Gni6UnlJ0oJWc88ThJPJNI50/fnFI3wBU2hHNo7nhcRD3s9lkX2qUdOI4xAxJOVDbGCDM%2BMigrvuVS7Rv",
+            "cbc:DocumentHash": "TnaoIMA3HVntT8LIUoWwbwZ8W6k="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion aprobacion proyecto BELORADO.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=dl3OXicbNfoEQFO9iKYCfQCVAVra1wqNFuDamkVX7BbcZSPWpAawHAo3gKDU9nEQ73R4jq0S6BPFxOA6bKh%2Boy7D5K3ORiSu%2B9ciLnkkp2sZyAJWGsSt0OzTSTyw9JAs",
+            "cbc:DocumentHash": "jhllxiFGibRyhZ2/kd1JRPXcA8E="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion aprobacion proyecto BRIVIESCA.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=wTbyMrl7M6KARGr5c%2B/i2gmJXhBoAD5139bYBA8ikI5FPva5k129fqFL56aMxTZhSclafgXkm8NU%2BnO92jtFIoBijT29FnZ7q1bi/0ZeD9Bt/o8fNevwsujgRzaBbugn",
+            "cbc:DocumentHash": "3IboJfAhnCA5LpeavnW0j3dpWbs="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO II.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=Nb1se1G0VL6pQIZI06/h7nwpb7rlp23wZouy//59Wl8xYKk3zhs/AwXD7OjMlpmawhhwbviRVEPiR6DWb1WwuxGwMdwaFdxsDkvtrEWpJ9/DdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "2QuUMW9nQBgLofbNLvzjXJ1t2SA="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO I Instrucciones Deuc.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=3B1BxViaKPlt%2BCm1FjrytS605ScVSpqE0UPPV04BNHhDvC2dFNKyW%2BUwW%2BKmujhFUO/9PYPptipK6EuhaAWVePWQNTglZhWAuuXh6PuLMUB45ClyWkoJ44mKM70IFcOu",
+            "cbc:DocumentHash": "5IlQV02R/gBkrGRMOcrYME0qhkk="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IV.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=F6b5bG6obdyTre2A3YyjdSXCdzIoPmhB1jPHXvgOBrgPpnhEVlzCkD%2BYRVet8HAaivpJNwZi2rkCsus9F7dNunBXWGk720bzi9HTCAWEGxbfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "zEyV00MMneraWCSQwu66A3+WClg="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO XV declaracion y compromiso.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=0A6t8J/QgFcrkWUMMn339F4QUECrEj8HsEAp50cqStApduIMca3wpnssN4dc9NZcqcttuP1qJXTtBfmZaEtjtyJ8b6COuJJeortH3n/XHq%2BHAj0WEJrB5sP7amrh2jBD",
+            "cbc:DocumentHash": "Rfk0kKQIci+N9Nkeqqwq1Hu4TBQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO XV declaracion cesion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=Nb1se1G0VL6pQIZI06/h7uKEmxTKDCWM80GYDcvGKS2Znfzggv5mVjDk3ZvaQN/Vm2nEi80SDpDJq%2BRAqnK9pUHOP8TPxGmGu8YaWTm9hB9t/o8fNevwsujgRzaBbugn",
+            "cbc:DocumentHash": "/tNqvxoklWP1eWM9q9EVrRNGv0Q="
+          }
+        }
+      },
+      {
+        "cbc:ID": "A0 Modelo Datos Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=JBRGY7Uw9cQAGfokwz%2BQ6tQV0uGbvss/9KfVHBC65E9Nz6gzQjYKQ1ihkedUytN5Fq1ynTpM0oWq6ng2ilT5nuyLKz9U/Y%2B8HUPnUNgZ7evfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "jgc8RNLC2YqdCbvctpolGz9cDm4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "02_BELORADO 1-3-5.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=ObDeVEw%2BNIsxw%2B/koKAk0scnKNED5uK7GCz%2B25P2JB1P7iHm9smyCqheYGobwFyD4KpHl7JMZHLE51Mom3cNdUCiZgqbV0pvs8K%2BBFJegbFJOVDbGCDM%2BMigrvuVS7Rv",
+            "cbc:DocumentHash": "KBfmpzIoLY6S/EH9hJNIR5rba50="
+          }
+        }
+      },
+      {
+        "cbc:ID": "01_SANTIAGO 30-32.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=FDXjHgeAwzW/UsHGq1X0iPAlAWkcz8/W71tfU2EQNxPLQjbQOU2LeCjN5zJjSJ4%2BKUW%2BTUO/byNhLI3h30QYnmmIKU3CcA/zspZ8LD%2Bc7kWHAj0WEJrB5sP7amrh2jBD",
+            "cbc:DocumentHash": "Dt036HoJs53s9TLcJqaTpvqigus="
+          }
+        }
+      },
+      {
+        "cbc:ID": "03_BRIVIESCA 1-3-5.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=BMMVFtD3n2dHjbvVRgav0H6sQFtNe%2B2jIgUqNyzO1dmaBTGJIEGv3Wu4CgxupW2XCSqSYtFSe81u3gTzt1gxFbOW8IgR85eJHIGQaxFs8KiB0nvVKRzfe4rpHcnlPhSZ",
+            "cbc:DocumentHash": "LGol/dnc/dy6TE/FJGueOB6M4mc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "BELORADO-3_bc3.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=b/HfjAqGz9HuLGAQIoc9OiWZb8PS4N2wJcj9MhHdavR4aT/DLCPTmamMrDd8nQnE6uIc1%2Bj8risbUCwD6wrG4GH2T7CtSoEFlBrs3IXWyB8C1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "CK9dz45ZyEjQEyNi++ooatKLmVg="
+          }
+        }
+      },
+      {
+        "cbc:ID": "BELORADO-5_bc3.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=l30MX9WI2GmAsDdOQrXAsQrEU1KB/L%2B/6pzX3D2x9iWPdybA0F/ywxNt%2BgF5I/clEaAd9tVj4W5ZQNxe4fCV%2BplRfAV8qdTmM7Cewtd7RGx7QB3HKyQaFUExmUVQCerk",
+            "cbc:DocumentHash": "FE3ISfTKTZ/JUchD4nJUAPo2ZT0="
+          }
+        }
+      },
+      {
+        "cbc:ID": "SANTIAGO-30_bc3.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=SZ9LyuXKbh6aC7VELKKTwsVTMi6C2hjufUM2fC/CrqSXs8/bxpBi8DjFVbUfdStYVaBkjssiul1mCvMawolUho3mW97Ivy7j8AC5p5e68TbVTD3T98KC0nSgQFM0q%2B5s",
+            "cbc:DocumentHash": "pexIqbj4R4nkQjK3K8CoJQ8PLoQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "BRIVIESCA-3_bc3.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=ki5bNeah9dbdaeQNrHN8h1Sb61hzDbmwiyI3IHvpzN4C55bpWyJVClmMKO12cZqMdTtEMWgU4aEJpWfAldtUXaYpl7ug8FX/eLe4C0pfEb0C1/zDIE0Kw/PWNnLS0Z0z",
+            "cbc:DocumentHash": "CSow6RIoCr9NXBZGkEkxv7yTK4A="
+          }
+        }
+      },
+      {
+        "cbc:ID": "BRIVIESCA-1_bc3.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=yNswV97KHVilWl1fcNYuAPb3asikRhjFQ1z%2BBY/voyVlnL57Z1m7tUhwehgM8JfViIR5qQRVgzrz5KP6G4D71uX0sO7FTOo2WRegqfqhUWDfdyQgZAdTm3EfcUAC7CJ6",
+            "cbc:DocumentHash": "4I++BZqkcRI2soRmJIZqMbmSPZM="
+          }
+        }
+      },
+      {
+        "cbc:ID": "BELORADO-1_bc3.zip",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=g8k9IqJyPnulTdpDRofkeCD0cZakVpMGaCOc4byK/mdjwezYztvhm5UF%2B0q%2BHc/izG34px4F5BoQJAd4pbuVJCuQqsUz2V1xBREU/jZNm3l45ClyWkoJ44mKM70IFcOu",
+            "cbc:DocumentHash": "BiSmhU2V2kWZ+YK0hEBu8FhvxCg="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": {
+      "cbc-place-ext:NoticeTypeCode": {
+        "#text": "DOC_CAN_ADJ",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+      },
+      "cac-place-ext:AdditionalPublicationStatus": {
+        "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+        "cac-place-ext:AdditionalPublicationDocumentReference": [
+          {
+            "cbc:IssueDate": "2026-01-14"
+          },
+          {
+            "cbc:DocumentTypeCode": {
+              "#text": "ACTA_ADJ",
+              "@_name": "Documento de Acta de Adjudicación",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingDocumentTypeCode-2.11.gc"
+            },
+            "cac:Attachment": {
+              "cac:ExternalReference": {
+                "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=jscy/i9u6v5HcfQIinvy5qYpLSsa0lZyquXBXn4rfdKxuhYL2Ve9FR9Gi6rWbXLJ6xWtuuCES01IIJRwaIPhmIodNj/sXzO6Ha0IC3VUk1LfdyQgZAdTm3EfcUAC7CJ6",
+                "cbc:FileName": "Resolucion adjudicacion.pdf"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "cac-place-ext:GeneralDocument": {
+      "cac-place-ext:GeneralDocumentDocumentReference": {
+        "cbc:ID": "2025-cc3cebee-5c52-4099-849e-b3b51cf7984e",
+        "cbc:DocumentTypeCode": {
+          "#text": 12,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/GeneralContractDocuments-2.08.gc"
+        },
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/wps/wcm/connect/PLACE_es/Site/area/docAccCmpnt?srv=cmpnt&cmpntname=GetDocumentsById&source=library&DocumentIdParam=2025-cc3cebee-5c52-4099-849e-b3b51cf7984e",
+            "cbc:FileName": "Acta del órgano de asistencia"
+          }
+        }
+      }
+    }
+  }
+}

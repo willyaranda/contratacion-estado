@@ -1,5 +1,10 @@
 start.sh
 node_modules/
-dump/*
 jupyter_environment/
 .ipynb_checkpoints/
+.DS_Store
+coverage/
+# generados por transparencia/build-data.cjs (se construyen en CI y se publican, no se versionan)
+transparencia/data.json
+transparencia/index.html
+transparencia/artifact.html

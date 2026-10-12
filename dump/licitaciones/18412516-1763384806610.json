@@ -1,0 +1,1016 @@
+{
+  "id": "https://contrataciondelestado.es/sindicacion/licitacionesPerfilContratante/18412516",
+  "link": {
+    "@_href": "https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=dQZOh3BYki%2F%2B3JAijKO%2Bkg%3D%3D"
+  },
+  "summary": {
+    "#text": "Id licitación: ABR_SMPL/SERV/2025000061; Órgano de Contratación: Alcaldía del Ayuntamiento de Aranda de Duero; Importe: 82644.63 EUR; Estado: PUB",
+    "@_type": "text"
+  },
+  "title": "Gestión de Residuos para el Servicio Municipal de Aguas del Ayuntamiento de Aranda de Duero",
+  "updated": "2025-11-17T14:06:46.610+01:00",
+  "cac-place-ext:ContractFolderStatus": {
+    "cbc:ContractFolderID": "ABR_SMPL/SERV/2025000061",
+    "cbc-place-ext:ContractFolderStatusCode": {
+      "#text": "PUB",
+      "@_languageID": "es",
+      "@_listURI": "https://contrataciondelestado.es/codice/cl/2.04/SyndicationContractFolderStatusCode-2.04.gc"
+    },
+    "cac-place-ext:LocatedContractingParty": {
+      "cbc:ContractingPartyTypeCode": {
+        "#text": 3,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityCode-2.10.gc"
+      },
+      "cbc:ActivityCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.10/ContractingAuthorityActivityCode-2.10.gc"
+      },
+      "cbc:BuyerProfileURIID": "https://contrataciondelestado.es/wps/poc?uri=deeplink:perfilContratante&idBp=d9hKqzSze9gQK2TEfXGy%2BA%3D%3D",
+      "cac:Party": {
+        "cbc:WebsiteURI": "http://www.arandadeduero.es",
+        "cac:PartyIdentification": [
+          {
+            "cbc:ID": {
+              "#text": "L01090183",
+              "@_schemeName": "DIR3"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": "P0901800C",
+              "@_schemeName": "NIF"
+            }
+          },
+          {
+            "cbc:ID": {
+              "#text": 30280410048681,
+              "@_schemeName": "ID_PLATAFORMA"
+            }
+          }
+        ],
+        "cac:PartyName": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero"
+        },
+        "cac:PostalAddress": {
+          "cbc:CityName": "Aranda de Duero (Burgos)",
+          "cbc:PostalZone": 9400,
+          "cac:AddressLine": {
+            "cbc:Line": "Plaza Mayor, 1"
+          },
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        },
+        "cac:Contact": {
+          "cbc:Name": "Alcaldía del Ayuntamiento de Aranda de Duero",
+          "cbc:Telephone": 947500104,
+          "cbc:ElectronicMail": "contratacion@arandadeduero.es"
+        }
+      },
+      "cac-place-ext:ParentLocatedParty": {
+        "cac:PartyName": {
+          "cbc:Name": "Aranda de Duero"
+        },
+        "cac-place-ext:ParentLocatedParty": {
+          "cac:PartyIdentification": {
+            "cbc:ID": {
+              "#text": "L04090313",
+              "@_schemeName": "DIR3"
+            }
+          },
+          "cac:PartyName": {
+            "cbc:Name": "Ayuntamientos"
+          },
+          "cac-place-ext:ParentLocatedParty": {
+            "cac:PartyName": {
+              "cbc:Name": "Burgos"
+            },
+            "cac-place-ext:ParentLocatedParty": {
+              "cac:PartyName": {
+                "cbc:Name": "Castilla y León"
+              },
+              "cac-place-ext:ParentLocatedParty": {
+                "cac:PartyName": {
+                  "cbc:Name": "ENTIDADES LOCALES"
+                },
+                "cac-place-ext:ParentLocatedParty": {
+                  "cac:PartyName": {
+                    "cbc:Name": "Sector Público"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "cac:ProcurementProject": {
+      "cbc:Name": "Gestión de Residuos para el Servicio Municipal de Aguas del Ayuntamiento de Aranda de Duero",
+      "cbc:TypeCode": {
+        "#text": 2,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractCode-2.08.gc"
+      },
+      "cbc:SubTypeCode": {
+        "#text": 27,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/ServiceContractCode-1.04.gc"
+      },
+      "cbc:MixContractIndicator": false,
+      "cac:BudgetAmount": {
+        "cbc:EstimatedOverallContractAmount": {
+          "#text": 82644.63,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TotalAmount": {
+          "#text": 99999.99,
+          "@_currencyID": "EUR"
+        },
+        "cbc:TaxExclusiveAmount": {
+          "#text": 82644.63,
+          "@_currencyID": "EUR"
+        }
+      },
+      "cac:RequiredCommodityClassification": [
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90500000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90513600,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90511000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90650000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90513700,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90710000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90513800,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90514000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90513000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90513900,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90520000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 79723000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90510000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        },
+        {
+          "cbc:ItemClassificationCode": {
+            "#text": 90512000,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+          }
+        }
+      ],
+      "cac:RealizedLocation": {
+        "cbc:CountrySubentity": "Burgos",
+        "cbc:CountrySubentityCode": {
+          "#text": "ES412",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+        },
+        "cac:Address": {
+          "cac:Country": {
+            "cbc:IdentificationCode": {
+              "#text": "ES",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+            },
+            "cbc:Name": "España"
+          }
+        }
+      },
+      "cac:PlannedPeriod": {
+        "cbc:DurationMeasure": {
+          "#text": 1,
+          "@_unitCode": "ANN"
+        }
+      }
+    },
+    "cac:ProcurementProjectLot": [
+      {
+        "cbc:ID": {
+          "#text": 1,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "Igual para todos los lotes -CRITERIO ECONÓMICO (hasta 100 PUNTOS).Los licitadores presentarán oferta mediante un PORCENTAJE a la baja único aplicable a todos los precios y de forma uniforme, conforme Anexo X del PCAP_CCP.",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "Lote 1: Retirada de residuos no peligrosos de las actividades propias del Servicio Municipal de Aguas (RCDs)",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 9349.17,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 7726.59,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": [
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90500000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90710000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90512000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 79723000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90514000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513900,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513700,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90510000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513800,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90520000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90650000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90511000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513600,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            }
+          ],
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 2,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "Igual para todos los lotes -CRITERIO ECONÓMICO (hasta 100 PUNTOS).Los licitadores presentarán oferta mediante un PORCENTAJE a la baja único aplicable a todos los precios y de forma uniforme, conforme Anexo X del PCAP_CCP.",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "Lote 2: Retirada de residuos peligrosos de las actividades propias del Servicio Municipal de Aguas.",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 69938.08,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 57800.07,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": [
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90500000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90650000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513800,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90511000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513900,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90514000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513700,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90510000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513600,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90520000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90512000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90710000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 79723000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            }
+          ],
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 3,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "Igual para todos los lotes -CRITERIO ECONÓMICO (hasta 100 PUNTOS).Los licitadores presentarán oferta mediante un PORCENTAJE a la baja único aplicable a todos los precios y de forma uniforme, conforme Anexo X del PCAP_CCP.",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "Lote 3:Retirada y gestión de residuos de cribado, desarenado y desengrasado de las EDARs de Aranda de Duero",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 19999.97,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 16528.9,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": [
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90500000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90650000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513700,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90511000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90512000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90520000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 79723000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513900,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90710000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90514000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90510000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513600,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513800,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            }
+          ],
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      },
+      {
+        "cbc:ID": {
+          "#text": 4,
+          "@_schemeName": "ID_LOTE"
+        },
+        "cac:TenderingTerms": {
+          "cac:AwardingTerms": {
+            "cac:AwardingCriteria": {
+              "cbc:AwardingCriteriaTypeCode": {
+                "#text": "OBJ",
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/AwardingCriteriaCode-2.0.gc"
+              },
+              "cbc:Description": "Igual para todos los lotes -CRITERIO ECONÓMICO (hasta 100 PUNTOS).Los licitadores presentarán oferta mediante un PORCENTAJE a la baja único aplicable a todos los precios y de forma uniforme, conforme Anexo X del PCAP_CCP.",
+              "cbc:AwardingCriteriaSubTypeCode": {
+                "#text": 1,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.09/AwardingCriteriaAutomaticallyEvaluatedSubTypeCode-2.09.gc"
+              },
+              "cbc:WeightNumeric": 100
+            }
+          }
+        },
+        "cac:ProcurementProject": {
+          "cbc:Name": "Lote 4: Retirada de residuos compostables del Servicio Municipal de Aguas.",
+          "cac:BudgetAmount": {
+            "cbc:TotalAmount": {
+              "#text": 712.77,
+              "@_currencyID": "EUR"
+            },
+            "cbc:TaxExclusiveAmount": {
+              "#text": 589.07,
+              "@_currencyID": "EUR"
+            }
+          },
+          "cac:RequiredCommodityClassification": [
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90500000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 79723000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90511000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90510000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513900,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513700,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90514000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90512000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90710000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513800,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90513600,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            },
+            {
+              "cbc:ItemClassificationCode": {
+                "#text": 90520000,
+                "@_listURI": "http://contrataciondelestado.es/codice/cl/2.04/CPV2008-2.04.gc"
+              }
+            }
+          ],
+          "cac:RealizedLocation": {
+            "cbc:CountrySubentity": "Burgos",
+            "cbc:CountrySubentityCode": {
+              "#text": "ES412",
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/NUTS-2021.gc"
+            },
+            "cac:Address": {
+              "cac:Country": {
+                "cbc:IdentificationCode": {
+                  "#text": "ES",
+                  "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/CountryIdentificationCode-2.08.gc"
+                },
+                "cbc:Name": "España"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "cac:TenderingTerms": {
+      "cbc:RequiredCurriculaIndicator": false,
+      "cbc:VariantConstraintIndicator": false,
+      "cbc:FundingProgramCode": {
+        "#text": "NO-EU",
+        "@_name": "No hay financiación con fondos de la UE",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/FundingProgramCode-2.08.gc"
+      },
+      "cbc:ProcurementNationalLegislationCode": {
+        "#text": 3,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ProcurementNationalLegislationCode-2.08.gc"
+      },
+      "cbc:ReceivedAppealQuantity": 0,
+      "cac:RequiredFinancialGuarantee": {
+        "cbc:GuaranteeTypeCode": {
+          "#text": 2,
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/GuaranteeTypeCode-1.04.gc"
+        },
+        "cbc:AmountRate": 5
+      },
+      "cac:ProcurementLegislationDocumentReference": {
+        "cbc:ID": "2014/24/EU"
+      },
+      "cac:TendererQualificationRequest": {
+        "cac:TechnicalEvaluationCriteria": {
+          "cbc:EvaluationCriteriaTypeCode": {
+            "#text": "OSR-COMPTASK",
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/TechnicalCapabilityTypeCode-2.0.gc"
+          },
+          "cbc:Description": "Relación de los principales contratos de características similares al que es objeto de la licitación, ejecutados por el licitador en los TRES últimos ejercicios, conforme Anexo V del PCAP_CCP."
+        },
+        "cac:FinancialEvaluationCriteria": [
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 5,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Acreditar una cifra anual de negocios en el ámbito de actividad a que se refiere el contrato de que se trate, en el mejor ejercicio dentro de los TRES últimos, conforme Anexo V del PCAP_CCP."
+          },
+          {
+            "cbc:EvaluationCriteriaTypeCode": {
+              "#text": 3,
+              "@_listURI": "http://contrataciondelestado.es/codice/cl/2.0/FinancialCapabilityTypeCode-2.0.gc"
+            },
+            "cbc:Description": "Tener un seguro de responsabilidad civil por riesgos profesionales con una cobertura igual o superior a una vez y media el importe del lote o lotes a los que se licita, conforme Anexo V del PCAP_CCP."
+          }
+        ],
+        "cac:SpecificTendererRequirement": {
+          "cbc:RequirementTypeCode": {
+            "#text": 1,
+            "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/DeclarationTypeCode-2.08.gc"
+          },
+          "cbc:Description": "Capacidad de obrar"
+        }
+      },
+      "cac:ContractExecutionRequirement": [
+        {
+          "cbc:Name": "Consideraciones de tipo social",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 2,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "De conformidad con lo dispuesto en el art. 1.3 de la Ley de Contratos del Sector Público esta contratación introduce condiciones especiales de ejecución del contrato para el contratista de carácter social y medioambiental, conforme Anexo X del PCAP_CCP."
+        },
+        {
+          "cbc:Name": "Consideraciones de tipo medioambiental",
+          "cbc:ExecutionRequirementCode": {
+            "#text": 1,
+            "@_listURI": "https://contrataciondelestado.es/codice/cl/2.08/ExecutionRequirementCode-2.08.gc"
+          },
+          "cbc:Description": "De conformidad con lo dispuesto en el art. 1.3 de la Ley de Contratos del Sector Público esta contratación introduce condiciones especiales de ejecución del contrato para el contratista de carácter social y medioambiental, conforme Anexo X del PCAP_CCP."
+        }
+      ],
+      "cac:TenderRecipientParty": {
+        "cbc:EndpointID": "https://contrataciondelestado.es"
+      },
+      "cac:Language": {
+        "cbc:ID": "es"
+      }
+    },
+    "cac:TenderingProcess": {
+      "cbc:ProcedureCode": {
+        "#text": 9,
+        "@_listURI": "https://contrataciondelestado.es/codice/cl/2.07/SyndicationTenderingProcessCode-2.07.gc"
+      },
+      "cbc:UrgencyCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/DiligenceTypeCode-1.04.gc"
+      },
+      "cbc:PartPresentationCode": {
+        "#text": 3,
+        "@_name": "A uno o varios lotes",
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderPresentationCode-1.04.gc"
+      },
+      "cbc:ContractingSystemCode": {
+        "#text": 0,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/2.08/ContractingSystemTypeCode-2.08.gc"
+      },
+      "cbc:SubmissionMethodCode": {
+        "#text": 1,
+        "@_listURI": "http://contrataciondelestado.es/codice/cl/1.04/TenderDeliveryCode-1.04.gc"
+      },
+      "cbc:MaximumLotPresentationQuantity": 4,
+      "cbc:MaximumTendererAwardedLotsQuantity": 4,
+      "cbc:OverThresholdIndicator": false,
+      "cac:TenderSubmissionDeadlinePeriod": {
+        "cbc:EndDate": "2025-12-02",
+        "cbc:EndTime": "23:59:00",
+        "cbc:Description": "Plazo de presentación: 15 días naturales"
+      },
+      "cac:AuctionTerms": {
+        "cbc:AuctionConstraintIndicator": false
+      }
+    },
+    "cac:LegalDocumentReference": {
+      "cbc:ID": "PCAP CCP  SERVICIOS LOTES.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=N71SBrsJdI13a1ozD6GN9oqSEafVby1VHSzxsrpN17KZXHpo6dV5QpntMk1EFYBbAQb7F68RRJwCalo3s87ENz5yh1jSBlsnuiZetpBY0ilJOVDbGCDM%2BMigrvuVS7Rv",
+          "cbc:DocumentHash": "PAJk47xhVFTvj/hu3BxQO+P03AE="
+        }
+      }
+    },
+    "cac:TechnicalDocumentReference": {
+      "cbc:ID": "Pliego de prescripciones tecnicas 1F.pdf",
+      "cac:Attachment": {
+        "cac:ExternalReference": {
+          "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=9lDi99z0E3GbXCtNAMccK/k9vfEi8JUfmxuFavbZEZOBabCTFYTc88UpEvJ7WHf8pxG293S3kZDoIQ0BXT5k3SzkzCxUtVpc58RonNPCrMUZyAJWGsSt0OzTSTyw9JAs",
+          "cbc:DocumentHash": "3V03+r7RgVTSkMRFd4T+UZCVzeI="
+        }
+      }
+    },
+    "cac:AdditionalDocumentReference": [
+      {
+        "cbc:ID": "Pliego tipo de servicios.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=GHgQsM39M28YalstEaaJZtZVC2vvfoK0aqolls32CPmlMHvAj4G/gxG%2BzPptx67CywCnTMMvaWu1Pp6w22Mo/ucVqOzd1Xk%2BmE6OqHDYU4e1aXEvq3KHa/AEHgtDrQw0",
+            "cbc:DocumentHash": "PvJYgvYzkT9GJqPlXUraST32Qtc="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Memoria Justificativa 1F.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=afmUsXeUhzosT0Le4GojswD1wWFypUn7xYy4p3/2hS5g4CfFOBtuyDGEa4piYZAJWD1h/pPz/kk8Tknn33wYcapoQVDsxa9TO9C7Er9tjjbDdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "qhDvGDfzy0Amc/chaF7nY2ERZX4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO I Instrucciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=ES%2B0UGbChNIdJMQymPHWCFKazoaXEFV8/bzewMYNxX6c2bb9nIvtNQhhSdZmKL5BsoFo36pThbZrcETxNdARghfTmEFVzB/xforuTX6IKsrDdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "4RdTM5yKDvVIk//oii5MkrU+A+E="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO IV Oferta Economica.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=4tIt5Sg/iQR5hw0fokqBQEzQ1/lPMLZv0LzCNVNRStU3s/rXmBzV01fuo3eJut8XbFJnL8el2AzQ0ovgj//Su0a5LQsYsyCYUFS%2BM6avR5fDdQD9RyhUmzT4jZ2In4zL",
+            "cbc:DocumentHash": "q3NoMCE+3geIGjAAQ4dko73dK24="
+          }
+        }
+      },
+      {
+        "cbc:ID": "A0 Modelo Datos Empresa Notificaciones.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=8J8iWHLTD1jegvqzYY5oodqD8cnCxowieuTDVrTs124EQbTE3L5T06XomkUWub/KKSuJpXByHLZlJ%2BTXrt5eh17t4dV5B0yApJoQT4QaHGC1aXEvq3KHa/AEHgtDrQw0",
+            "cbc:DocumentHash": "zfFmwN+m62FyrYFfIuAumjIzaP4="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO VIII Subcontratacion.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=uildFM2%2BZx24vl0leWdvyIZfu//x0KtQwogrPj0MZqsx4knnT5I3z2hMcaltXHvePLS0KGncj/pjEd7T8P0qd73JQ0E%2BcMyQkNWzNJnwfQKB0nvVKRzfe4rpHcnlPhSZ",
+            "cbc:DocumentHash": "V19GqcF8Il7PadvkKm2YleqhfHQ="
+          }
+        }
+      },
+      {
+        "cbc:ID": "ANEXO II Declaracion responsable.docx",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=DofvOYETqmS2XYVOPtP6eP/%2BlhKlWYAvbYVDPiI%2B/l7MgZ%2BdRiWJrvqOgHrDaxK/aXei1ZfpyIw9jthzwLzofiwoxmdsIVr%2BJEJlYxAl6gK1aXEvq3KHa/AEHgtDrQw0",
+            "cbc:DocumentHash": "hRrbgzhIFF5/TwEHA+ThdkmES9k="
+          }
+        }
+      },
+      {
+        "cbc:ID": "Resolucion.pdf",
+        "cac:Attachment": {
+          "cac:ExternalReference": {
+            "cbc:URI": "https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=QUC1GjXXSiLkydRHJBmbpw%3D%3D&DocumentIdParam=vC03n467UCVv8qTLTf2RAL/ZlskWL5G2ulFUlHQx5YZ4BhjTM7vD7%2BuXa7jS9Th8249FQAUlVUK0gavqSLdFtEl2qf5vg20A4SK4PZq2rAR45ClyWkoJ44mKM70IFcOu",
+            "cbc:DocumentHash": "NkD4MkYdVakVtRgNnn7uxmRiVu8="
+          }
+        }
+      }
+    ],
+    "cac-place-ext:ValidNoticeInfo": [
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CD",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2025-11-17"
+          }
+        }
+      },
+      {
+        "cbc-place-ext:NoticeTypeCode": {
+          "#text": "DOC_CN",
+          "@_listURI": "http://contrataciondelestado.es/codice/cl/2.11/TenderingNoticeTypeCode-2.11.gc"
+        },
+        "cac-place-ext:AdditionalPublicationStatus": {
+          "cbc-place-ext:PublicationMediaName": "Perfil del contratante",
+          "cac-place-ext:AdditionalPublicationDocumentReference": {
+            "cbc:IssueDate": "2025-11-17"
+          }
+        }
+      }
+    ]
+  }
+}
