@@ -13,6 +13,7 @@
   --c1:#9b1c31;--c2:#1f6f8b;--c3:#b87d12;--c4:#4f7a3a;--c5:#7b8794;
   /* corporaciones: p0 = hasta el 16/06/2023 (azul), p1 = desde el 17/06/2023 (amarillo-naranja) */
   --p0:#1565c0;--p1:#dd8500;
+  --good:#1b7f3b;--bad:#b3261e;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
@@ -20,6 +21,7 @@
     --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
     --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
     --p0:#5aa9f5;--p1:#ffb02e;
+    --good:#5fcf80;--bad:#ff8a80;
   }
 }
 :root[data-theme="dark"]{
@@ -27,6 +29,7 @@
   --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
   --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
   --p0:#5aa9f5;--p1:#ffb02e;
+  --good:#5fcf80;--bad:#ff8a80;
 }
 *{box-sizing:border-box}
 html{color-scheme:light dark}
@@ -100,6 +103,21 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .col .fill .seg{width:100%}
 .col .fill .seg:first-child{border-radius:0}
 .periods{margin:0 0 12px}
+/* comparativa de mandatos */
+.verdict{display:inline-block;border-radius:999px;padding:1px 10px;font-size:.78rem;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
+.verdict.up{color:var(--good);border-color:var(--good)}
+.verdict.down{color:var(--bad);border-color:var(--bad)}
+.mand tr.sec td{font-weight:700;background:var(--bg);padding-top:14px}
+.mand td .what{color:var(--muted);font-size:.78rem;font-weight:400}
+.mand td.num .what{text-align:right}
+.mand .head-p0::before,.mand .head-p1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px}
+.mand .head-p0::before{background:var(--p0)}
+.mand .head-p1::before{background:var(--p1)}
+.guide h3{margin:16px 0 6px;font-size:.95rem}
+.guide dl{margin:0;display:grid;gap:10px}
+.guide dt{font-weight:700}
+.guide dd{margin:2px 0 0;color:var(--muted)}
+.guide dd strong{color:var(--ink);font-weight:500}
 .bubbles circle:hover{fill-opacity:.95;stroke:var(--ink);stroke-width:1.5}
 .tip{position:fixed;z-index:20;max-width:min(340px,calc(100vw - 16px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:.82rem;line-height:1.35;box-shadow:0 4px 14px rgba(0,0,0,.18);pointer-events:none}
 .tip .muted{margin-top:2px}
@@ -197,6 +215,30 @@ footer{padding:24px 0 40px}
 
   <!-- ============ EVOLUCIÓN ============ -->
   <div data-tab="evolucion" hidden>
+    <section class="panel" id="mandates" aria-labelledby="h-mand">
+      <h2 id="h-mand">Comparar mandatos</h2>
+      <p class="note" style="margin-top:-6px">Compara dos periodos de gestión con los mismos indicadores. Por defecto: la corporación constituida el 15/06/2019 frente a la constituida el 17/06/2023.
+        Los indicadores en los que mejora el mandato actual van primero. Las fechas se pueden cambiar.</p>
+      <div class="cmpsel">
+        <div><label for="m-a0">Mandato anterior: desde</label><input id="m-a0" type="date"></div>
+        <div><label for="m-a1">Mandato anterior: hasta</label><input id="m-a1" type="date"></div>
+        <div><label for="m-b0">Mandato actual: desde</label><input id="m-b0" type="date"></div>
+        <div><label for="m-b1">Mandato actual: hasta</label><input id="m-b1" type="date"></div>
+      </div>
+      <label style="display:flex;gap:8px;align-items:center;color:var(--ink);margin-bottom:10px">
+        <input id="m-eq" type="checkbox" checked> Comparar en igualdad de duración (los mismos días desde el inicio del mandato anterior)
+      </label>
+      <p class="note" id="mand-windows"></p>
+      <div class="tablewrap"><table class="cmp mand">
+        <thead><tr><th>Indicador</th><th class="num head-p0">Mandato anterior</th><th class="num head-p1">Mandato actual</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
+        <tbody id="mand-rows"></tbody>
+      </table></div>
+      <p class="note" id="mand-notes"></p>
+      <details class="guide picker" open>
+        <summary>Guía de indicadores: qué mide cada uno y por qué importa para la gestión municipal</summary>
+        <div id="mand-guide"></div>
+      </details>
+    </section>
     <section class="panel">
       <h2>Comparar dos años</h2>
       <div class="cmpsel">
@@ -325,7 +367,7 @@ const R = DATA.records.map((r) => {
   const hay = norm([r.title, r.folder, uniq.map((w) => w.name + " " + (w.nif || "")).join(" ")].join(" "));
   const toAward = r.kind === "licitacion" && r.deadline && r.awardDate ? days(r.deadline, r.awardDate) : null;
   const issued = r.kind === "licitacion" ? (r.published || date) : date;
-  return { ...r, date, period: issued < PERIOD_START ? 0 : 1, year: +date.slice(0,4), month: +date.slice(5,7), winners: uniq, amount, hasAward, hay,
+  return { ...r, date, issued, period: issued < PERIOD_START ? 0 : 1, year: +date.slice(0,4), month: +date.slice(5,7), winners: uniq, amount, hasAward, hay,
            bodyShort: shortBody(r.buyer), toAward: toAward != null && toAward >= 0 && toAward <= 730 ? toAward : null };
 });
 const winnerLabel = (key) => {
@@ -363,6 +405,9 @@ fillSelect($("cmp-b"), [["","Sin comparar"], ...[...YEARS].reverse().map((y) => 
 const lastYear = YEARS[YEARS.length - 1];
 state.cmpA = String(lastYear); state.cmpB = String(lastYear - 1);
 $("cmp-a").value = state.cmpA; $("cmp-b").value = state.cmpB;
+// Mandatos: constitución de las corporaciones municipales (15/06/2019 y 17/06/2023); el actual llega hasta el último dato
+$("m-a0").value = "2019-06-15"; $("m-a1").value = "2023-06-16"; $("m-b0").value = PERIOD_START; $("m-b1").value = REF;
+for (const id of ["m-a0", "m-a1", "m-b0", "m-b1", "m-eq"]) $(id).addEventListener("change", render);
 
 let timer;
 const bind = [["q","q",150],["f-year","year",0],["f-month","month",0],["f-body","body",0],["f-kind","kind",0],["f-type","type",0],["f-proc","proc",0],["f-status","status",0],["f-result","result",0],["f-period","period",0],["f-min","min",250],["f-max","max",250],["f-from","from",0],["f-to","to",0],["cmp-a","cmpA",0],["cmp-b","cmpB",0],["cmp-m","cmpM",0],["adj-q","adjQ",150]];
@@ -401,12 +446,12 @@ document.addEventListener("click", (e) => {
 // `skip` lista filtros a ignorar (los gráficos de año/mes/comparación siguen mostrando la comparación completa)
 function passes(r, skip = []) {
   const s = (k) => skip.includes(k);
+  if (!s("period") && state.period !== "" && String(r.period) !== state.period) return false;
   if (!s("year") && state.year && r.year !== +state.year) return false;
   if (!s("month") && state.month && r.month !== +state.month) return false;
   if (!s("date") && state.from && r.date < state.from) return false;
   if (!s("date") && state.to && r.date > state.to) return false;
   if (!s("status") && state.status && r.status !== state.status) return false;
-  if (state.period !== "" && String(r.period) !== state.period) return false;
   if (state.result && (state.result === "none" ? r.outcome !== null : r.outcome !== state.result)) return false;
   if (state.body && r.buyer !== state.body) return false;
   if (state.kind && r.kind !== state.kind) return false;
@@ -728,7 +773,186 @@ function passesNoAmount(r) {
   const ok = passes(r); state.min = min; state.max = max; return ok;
 }
 
+// ---------- comparar mandatos ----------
+const nfix = (v, d) => new Intl.NumberFormat("es-ES", { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: "always" }).format(v);
+const FMT = {
+  count: (v) => nfix(v, 0), eur: (v) => eur.format(v), eurM: (v) => compact(v),
+  pct: (v) => nfix(v, 1) + " %", days: (v) => nfix(v, 0) + " días", num: (v) => nfix(v, 1),
+};
+// better: "higher" (más es mejor), "lower" (menos es mejor) o null (informativo: ni bueno ni malo por sí mismo)
+const INDICATORS = [
+  { key: "contractsPerYear", group: "Actividad", label: "Contratos al año", kind: "count", better: null,
+    what: "Contratos (licitaciones y contratos menores) que el Ayuntamiento saca cada año.",
+    why: "Un ritmo sostenido de contratación indica capacidad de ejecución: el presupuesto se convierte en obras, servicios y suministros para los vecinos. Planificarlo bien evita atascos y compras de última hora." },
+  { key: "eurPerYear", group: "Actividad", label: "Importe adjudicado al año", kind: "eurM", better: null,
+    what: "Euros adjudicados (IVA incluido) por año.",
+    why: "Mide cuánta inversión y servicio público se pone en marcha cada año. Depende de la financiación disponible (por ejemplo, fondos europeos), por eso se lee como contexto y no como mérito o demérito por sí solo." },
+  { key: "avgAmount", group: "Actividad", label: "Importe medio por contrato", kind: "eur", better: null,
+    what: "Importe adjudicado dividido entre el número de contratos con importe.",
+    why: "Si sube, el Ayuntamiento aborda proyectos más grandes y menos compras sueltas, lo que facilita planificar y licitar mejor. Un contrato muy grande puede moverlo mucho: conviene mirarlo junto a la mediana." },
+  { key: "medAmount", group: "Actividad", label: "Importe mediano por contrato", kind: "eur", better: null,
+    what: "El contrato «típico»: la mitad cuesta menos y la otra mitad más.",
+    why: "No se ve distorsionado por un contrato excepcional, así que describe mejor la contratación del día a día." },
+  { key: "offersAvg", group: "Competencia y concurrencia", label: "Ofertas por licitación (media)", kind: "num", better: "higher", nKey: "offers",
+    what: "Empresas que presentan oferta en cada licitación (solo licitaciones con alguna oferta).",
+    why: "Más ofertas significan más competencia, y la competencia consigue mejores precios y mejor calidad con el mismo dinero. Es uno de los mejores termómetros de la salud de una licitación." },
+  { key: "singleBid", group: "Competencia y concurrencia", label: "Licitaciones con una sola oferta", kind: "pct", better: "lower", nKey: "offers",
+    what: "Porcentaje de licitaciones en las que solo se presentó una empresa.",
+    why: "Con una única oferta no hay con qué comparar. Cuanto menos frecuente, más abiertos y accesibles son los pliegos y mayor es el interés del mercado." },
+  { key: "openShare", group: "Competencia y concurrencia", label: "Importe por procedimiento abierto o simplificado", kind: "pct", better: "higher",
+    what: "Parte del importe adjudicado que pasa por procedimientos abiertos o abiertos simplificados.",
+    why: "Son los procedimientos con más publicidad: cualquier empresa interesada puede presentarse. Más importe por esta vía es más transparencia y más igualdad de oportunidades." },
+  { key: "negShare", group: "Competencia y concurrencia", label: "Importe por negociado sin publicidad", kind: "pct", better: "lower",
+    what: "Parte del importe adjudicado sin anuncio previo (supuestos tasados por la ley).",
+    why: "Es un procedimiento legítimo en casos concretos, pero reducirlo abre la puerta a todas las empresas y refuerza la confianza en las adjudicaciones." },
+  { key: "minorShare", group: "Competencia y concurrencia", label: "Importe en contratos menores", kind: "pct", better: "lower",
+    what: "Parte del importe adjudicado que va por contrato menor (los de menor cuantía y tramitación simplificada).",
+    why: "Los menores dan agilidad para compras pequeñas. Que su peso en el importe sea bajo indica que lo importante pasa por licitaciones con más garantías." },
+  { key: "winnersPerYear", group: "Competencia y concurrencia", label: "Adjudicatarios distintos al año", kind: "count", better: "higher",
+    what: "Empresas y personas distintas que reciben algún contrato cada año.",
+    why: "Un abanico amplio de proveedores reparte las oportunidades, reduce dependencias y suele reflejar un mercado local más dinámico." },
+  { key: "topShare", group: "Competencia y concurrencia", label: "Importe en el mayor adjudicatario", kind: "pct", better: "lower",
+    what: "Porcentaje del importe adjudicado que acumula la empresa que más recibe.",
+    why: "Repartir el gasto entre más empresas reduce el riesgo de depender de una sola y mantiene viva la competencia en el futuro. Un contrato grande lo puede mover mucho." },
+  { key: "top10Share", group: "Competencia y concurrencia", label: "Importe en los 10 mayores adjudicatarios", kind: "pct", better: "lower",
+    what: "Porcentaje del importe adjudicado que acumulan las diez empresas que más reciben.",
+    why: "Complementa al anterior: mide la concentración del gasto en un grupo reducido de proveedores." },
+  { key: "savings", group: "Eficiencia", label: "Baja media sobre el presupuesto de licitación", kind: "pct", better: "higher", nKey: "savings",
+    what: "Diferencia entre el presupuesto base y lo adjudicado (ambos sin IVA) en las licitaciones, ponderada por importe.",
+    why: "Es dinero público que no se gasta: el mismo servicio u obra por menos. Una baja mayor suele ser fruto de una buena competencia y de presupuestos bien ajustados." },
+  { key: "daysToAward", group: "Eficiencia", label: "Días del cierre de ofertas a la adjudicación", kind: "days", better: "lower", nKey: "days",
+    what: "Tiempo medio que pasa entre el fin del plazo de ofertas y la adjudicación (solo licitaciones con ambas fechas).",
+    why: "Adjudicar con rapidez acorta la espera de vecinos y empresas, evita retrasos en obras y servicios y reduce el riesgo de que las ofertas caduquen." },
+  { key: "unawarded", group: "Eficiencia", label: "Licitaciones que terminan sin adjudicar", kind: "pct", better: "lower", nKey: "unawarded",
+    what: "Desiertas, desistidas o con renuncia, sobre las licitaciones que ya tienen resultado.",
+    why: "Cada licitación que no se adjudica obliga a repetir el trámite y retrasa el servicio. Menos casos indican pliegos bien dimensionados y proyectos mejor preparados." },
+  { key: "nearLimit", group: "Eficiencia", label: "Menores de servicios y suministros justo bajo el límite (13.500–15.000 €, sin IVA)", kind: "pct", better: "lower", nKey: "near",
+    what: "Sobre los contratos menores de servicios y suministros, los que quedan justo por debajo del límite legal de 15.000 €.",
+    why: "Quedarse cerca del umbral puede indicar necesidades recurrentes que convendría agrupar y licitar. Menos casos significan mejor planificación y más concurrencia." },
+  { key: "obras", group: "Composición del gasto", label: "Importe en obras", kind: "pct", better: null,
+    what: "Parte del importe adjudicado que corresponde a contratos de obras.", why: "Describe en qué se gasta: más obras suele significar más inversión en infraestructuras y equipamientos." },
+  { key: "servicios", group: "Composición del gasto", label: "Importe en servicios", kind: "pct", better: null,
+    what: "Parte del importe adjudicado que corresponde a contratos de servicios.", why: "Refleja el peso de los servicios municipales contratados (limpieza, transporte, asistencia…)." },
+  { key: "suministros", group: "Composición del gasto", label: "Importe en suministros", kind: "pct", better: null,
+    what: "Parte del importe adjudicado que corresponde a suministros.", why: "Refleja las compras de bienes: material, vestuario, energía, equipos." },
+];
+
+const medianOf = (arr) => {
+  const s = [...arr].sort((a, b) => a - b);
+  if (!s.length) return null;
+  return s.length % 2 ? s[s.length >> 1] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2;
+};
+
+// Indicadores de una ventana [from, to] (fechas inclusivas, según la fecha en que se sacó cada contrato)
+function mandateStats(list, from, to) {
+  const rs = list.filter((r) => r.issued >= from && r.issued <= to);
+  const years = (days(from, to) + 1) / 365.25;
+  const aw = rs.filter((r) => r.hasAward);
+  const total = aw.reduce((s, r) => s + r.amount, 0);
+  const lic = rs.filter((r) => r.kind === "licitacion");
+  const offers = lic.map((r) => r.offers).filter((o) => o > 0);
+  const share = (pred) => (total > 0 ? aw.filter(pred).reduce((s, r) => s + r.amount, 0) / total * 100 : null);
+  const byWinner = new Map();
+  for (const r of aw) for (const w of r.winners) byWinner.set(w.key, (byWinner.get(w.key) || 0) + r.amount / r.winners.length);
+  const ranked = [...byWinner.values()].sort((a, b) => b - a);
+  const awLic = lic.filter((r) => r.awardedNet > 0 && r.budgetNet > 0);
+  const budget = awLic.reduce((s, r) => s + r.budgetNet, 0);
+  const tt = lic.map((r) => r.toAward).filter((x) => x != null);
+  const resolved = lic.filter((r) => r.outcome !== null);
+  const minors = aw.filter((r) => r.kind === "menor" && (r.type === 1 || r.type === 2) && r.awardedNet > 0);
+  const avg = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : null);
+  return {
+    contracts: rs.length, years,
+    v: {
+      contractsPerYear: rs.length / years,
+      eurPerYear: total / years,
+      avgAmount: aw.length ? total / aw.length : null,
+      medAmount: medianOf(aw.map((r) => r.amount)),
+      offersAvg: avg(offers),
+      singleBid: offers.length ? offers.filter((o) => o === 1).length / offers.length * 100 : null,
+      openShare: share((r) => r.procedure === 1 || r.procedure === 9),
+      negShare: share((r) => r.procedure === 3),
+      minorShare: share((r) => r.kind === "menor"),
+      winnersPerYear: byWinner.size / years,
+      topShare: total > 0 && ranked.length ? ranked[0] / total * 100 : null,
+      top10Share: total > 0 && ranked.length ? ranked.slice(0, 10).reduce((s, x) => s + x, 0) / total * 100 : null,
+      savings: budget > 0 ? (1 - awLic.reduce((s, r) => s + r.awardedNet, 0) / budget) * 100 : null,
+      daysToAward: avg(tt),
+      unawarded: resolved.length ? resolved.filter((r) => VOID_OUTCOMES.includes(r.outcome)).length / resolved.length * 100 : null,
+      nearLimit: minors.length ? minors.filter((r) => r.awardedNet >= 13500 && r.awardedNet <= 15000).length / minors.length * 100 : null,
+      obras: share((r) => r.type === 3), servicios: share((r) => r.type === 2), suministros: share((r) => r.type === 1),
+    },
+    n: { offers: offers.length, savings: awLic.length, days: tt.length, unawarded: resolved.length, near: minors.length },
+  };
+}
+
+// Valoración honesta de B frente a A: mejora, peor o sin diferencia relevante / informativo
+function verdictOf(ind, a, b) {
+  if (a == null || b == null) return { cls: "eq", text: "Sin datos suficientes", sec: 1 };
+  if (!ind.better) return { cls: "eq", text: "Informativo", sec: 1 };
+  const close = ind.kind === "pct" ? Math.abs(b - a) < 1 : (a !== 0 && Math.abs(b - a) / Math.abs(a) < 0.03);
+  if (close) return { cls: "eq", text: "Sin diferencia relevante", sec: 1 };
+  const improved = ind.better === "higher" ? b > a : b < a;
+  return improved ? { cls: "up", text: "Mejora en el mandato actual", sec: 0 } : { cls: "down", text: "Mejor en el mandato anterior", sec: 2 };
+}
+
+function changeText(ind, a, b) {
+  if (a == null || b == null) return "—";
+  const d = b - a, sign = d >= 0 ? "+" : "−";
+  if (ind.kind === "pct") return `${sign}${nfix(Math.abs(d), 1)} pp`;
+  return a === 0 ? "—" : `${sign}${nfix(Math.abs(d / a * 100), 0)} %`;
+}
+
+const MAND_SECTIONS = ["Indicadores en los que mejora el mandato actual", "Indicadores informativos o sin diferencia relevante", "Indicadores en los que el mandato anterior tiene mejor dato"];
+
+function renderMandates() {
+  const a0 = $("m-a0").value, a1req = $("m-a1").value, b0 = $("m-b0").value, b1 = $("m-b1").value;
+  const rows = $("mand-rows");
+  if (!a0 || !a1req || !b0 || !b1 || a0 > a1req || b0 > b1) {
+    rows.innerHTML = '<tr><td colspan="5" class="empty">Indica las fechas de ambos mandatos (desde no puede ser posterior a hasta).</td></tr>';
+    $("mand-windows").textContent = ""; $("mand-notes").textContent = "";
+    return;
+  }
+  const lenB = days(b0, b1) + 1;
+  const a1 = $("m-eq").checked && days(a0, a1req) + 1 > lenB ? addDays(a0, lenB - 1) : a1req;
+  const list = R.filter((r) => passes(r, ["year", "month", "date", "period"]));
+  const A = mandateStats(list, a0, a1), B = mandateStats(list, b0, b1);
+  $("mand-windows").textContent =
+    `Mandato anterior: ${fmtDate(a0)} – ${fmtDate(a1)} (${nf.format(days(a0, a1) + 1)} días, ${nf.format(A.contracts)} contratos) · ` +
+    `Mandato actual: ${fmtDate(b0)} – ${fmtDate(b1)} (${nf.format(lenB)} días, ${nf.format(B.contracts)} contratos)`;
+
+  const items = INDICATORS.map((ind) => {
+    const a = A.v[ind.key], b = B.v[ind.key], v = verdictOf(ind, a, b);
+    return { ind, a, b, v };
+  });
+  let html = "";
+  for (let sec = 0; sec < 3; sec++) {
+    const part = items.filter((x) => x.v.sec === sec);
+    if (!part.length) continue;
+    html += `<tr class="sec"><td colspan="5">${esc(MAND_SECTIONS[sec])} (${part.length})</td></tr>`;
+    html += part.map(({ ind, a, b, v }) => {
+      const sample = ind.nKey ? `<div class="what">n = ${nf.format(A.n[ind.nKey])} / ${nf.format(B.n[ind.nKey])}</div>` : "";
+      const f = (x) => (x == null ? "—" : FMT[ind.kind](x));
+      return `<tr><td>${esc(ind.label)}<div class="what">${esc(ind.what)}</div></td>
+        <td class="num">${esc(f(a))}${sample}</td><td class="num">${esc(f(b))}</td>
+        <td class="num">${esc(changeText(ind, a, b))}</td><td><span class="verdict ${v.cls}">${esc(v.text)}</span></td></tr>`;
+    }).join("");
+  }
+  rows.innerHTML = html;
+  $("mand-notes").textContent =
+    "Cómo leerlo: un buen dato en un indicador no compensa uno peor en otro; léelos juntos. Los importes son lo adjudicado (con IVA) y los porcentajes de " +
+    "licitaciones o menores usan n = casos de cada mandato. El contexto cambia entre periodos (por ejemplo, fondos europeos en el actual y la pandemia en el anterior) " +
+    "y un contrato muy grande mueve mucho las cifras. Es una comparación de lo publicado en la Plataforma, no una valoración de causas.";
+
+  const groups = [...new Set(INDICATORS.map((i) => i.group))];
+  $("mand-guide").innerHTML = `<p class="note">Cada indicador responde a una pregunta sencilla. Aquí se explica qué mide y por qué, cuando mejora, la gestión municipal gana: más competencia, más rapidez, menos concentración o más ahorro.</p>` +
+    groups.map((g) => `<h3>${esc(g)}</h3><dl>${INDICATORS.filter((i) => i.group === g).map((i) =>
+      `<div><dt>${esc(i.label)}</dt><dd>${esc(i.what)} <strong>Por qué importa:</strong> ${esc(i.why)}${
+        i.better ? ` <em>Mejor cuanto ${i.better === "higher" ? "más alto" : "más bajo"}.</em>` : " <em>Es un dato de contexto: ni bueno ni malo por sí mismo.</em>"}</dd></div>`).join("")}</dl>`).join("");
+}
+
 function renderEvolucion() {
+  renderMandates();
   const base = R.filter((r) => passes(r, ["year", "month"]));
   const A = base.filter((r) => String(r.year) === state.cmpA), B = state.cmpB ? base.filter((r) => String(r.year) === state.cmpB) : [];
   const metric = state.cmpM;
