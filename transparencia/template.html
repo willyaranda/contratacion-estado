@@ -86,6 +86,9 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .bubbles text{fill:var(--muted);font-size:11px;font-family:inherit}
 .bubbles line{stroke:var(--line)}
 .bubbles circle{fill:var(--bar);fill-opacity:.5;stroke:var(--bar);stroke-width:.6}
+.bubbles circle:hover{fill-opacity:.95;stroke:var(--ink);stroke-width:1.5}
+.tip{position:fixed;z-index:20;max-width:min(340px,calc(100vw - 16px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:.82rem;line-height:1.35;box-shadow:0 4px 14px rgba(0,0,0,.18);pointer-events:none}
+.tip .muted{margin-top:2px}
 .tablewrap{overflow-x:auto}
 table{border-collapse:collapse;width:100%;font-size:.88rem}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -172,7 +175,7 @@ footer{padding:24px 0 40px}
     <section class="panel">
       <h2>Contratos por tipo, fecha e importe adjudicado</h2>
       <div id="c-bubbles"></div>
-      <p class="note">Cada círculo es un contrato; su área es proporcional al importe adjudicado. Pasa el cursor por encima para ver el detalle.</p>
+      <p class="note">Cada círculo es un contrato; su área es proporcional al importe adjudicado. Pasa el cursor por encima (o toca un círculo) para ver el detalle.</p>
     </section>
   </div>
 
@@ -240,6 +243,8 @@ footer{padding:24px 0 40px}
     </section>
   </div>
 </main>
+
+<div id="tip" class="tip" role="tooltip" hidden></div>
 
 <footer><div class="wrap note" id="foot"></div></footer>
 
@@ -472,12 +477,40 @@ function bubbles(el, list) {
     const tx = L + (Date.UTC(y, 0, 1) - t0) / span * (W - L - Rr);
     if (tx >= L - 1 && tx <= W - Rr + 1) svg += `<text x="${tx}" y="${H - 8}" text-anchor="middle">${y}</text>`;
   }
-  [...pts].sort((a, b) => b.amount - a.amount).forEach((r) => {
+  // los grandes primero, para que los pequeños queden encima y se puedan señalar
+  bubblePoints = [...pts].sort((a, b) => b.amount - a.amount);
+  bubblePoints.forEach((r, i) => {
     const cy = T + groups.indexOf(typeGroup(r.type)) * rowH + rowH / 2;
-    svg += `<circle cx="${x(r.date).toFixed(1)}" cy="${cy}" r="${rad(r.amount).toFixed(1)}"><title>${esc(r.title.slice(0, 110))} · ${fmtDate(r.date)} · ${eur.format(r.amount)}</title></circle>`;
+    svg += `<circle data-i="${i}" cx="${x(r.date).toFixed(1)}" cy="${cy}" r="${rad(r.amount).toFixed(1)}"></circle>`;
   });
   el.innerHTML = svg + "</svg>";
 }
+
+// Tooltip propio (el <title> nativo de SVG sale con retraso, no funciona en táctil y no es fiable con círculos solapados)
+let bubblePoints = [];
+const tip = $("tip");
+function moveTip(e) {
+  const pad = 14, w = tip.offsetWidth, h = tip.offsetHeight;
+  let left = e.clientX + pad, top = e.clientY + pad;
+  if (left + w > window.innerWidth - 8) left = e.clientX - w - pad;
+  if (top + h > window.innerHeight - 8) top = e.clientY - h - pad;
+  tip.style.left = Math.max(8, left) + "px";
+  tip.style.top = Math.max(8, top) + "px";
+}
+function showTip(e) {
+  const circle = e.target.closest ? e.target.closest("circle[data-i]") : null;
+  const r = circle ? bubblePoints[+circle.dataset.i] : null;
+  if (!r) { tip.hidden = true; return; }
+  const who = r.winners.map((w) => winnerLabel(w.key)).join(", ");
+  tip.innerHTML = `<strong>${esc(r.title.length > 140 ? r.title.slice(0, 140) + "…" : r.title)}</strong>
+    <div>${eur2.format(r.amount)} · ${fmtDate(r.date)}</div>
+    <div class="muted">${esc(TYPE[r.type] || "—")} · ${esc(r.bodyShort)}${who ? " · " + esc(who) : ""}</div>`;
+  tip.hidden = false;
+  moveTip(e);
+}
+const bubbleBox = $("c-bubbles");
+for (const type of ["pointerover", "pointermove", "pointerdown"]) bubbleBox.addEventListener(type, showTip);
+bubbleBox.addEventListener("pointerleave", () => { tip.hidden = true; });
 
 // ---------- tablas ordenables y paginadas ----------
 function mountTable(id) {
@@ -531,6 +564,7 @@ const linkCell = (r) => r.url ? `<a href="${esc(r.url)}" target="_blank" rel="no
 // ---------- render ----------
 let filtered = [], listRows = [], adjRows = [];
 function render() {
+  tip.hidden = true;
   // pestañas
   $("tabs").innerHTML = TABS.map(([k, l]) => `<button role="tab" id="tab-${k}" aria-selected="${state.tab === k}" data-t="${k}">${esc(l)}</button>`).join("");
   $("tabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => goTab(b.dataset.t)));
