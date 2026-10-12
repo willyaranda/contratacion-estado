@@ -105,6 +105,11 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .col .fill .seg{width:100%}
 .col .fill .seg:first-child{border-radius:0}
 .periods{margin:0 0 12px}
+.logos{display:flex;flex-wrap:wrap;gap:18px 28px;align-items:center;margin:4px 0 16px}
+.logos img{display:block;height:56px;width:auto;max-width:100%}
+.ngtext{max-width:78ch}
+.ngtext h3{margin:18px 0 4px;font-size:.98rem}
+.ngtext p{margin:0 0 8px}
 .legend-dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px}
 /* comparativa de mandatos */
 .verdict{display:inline-block;border-radius:999px;padding:1px 10px;font-size:.78rem;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
@@ -268,6 +273,64 @@ footer{padding:24px 0 40px}
     </section>
   </div>
 
+  <!-- ============ NEXTGENERATIONEU (informativa: sin filtros) ============ -->
+  <div data-tab="nextgen" hidden>
+    <section class="panel" aria-labelledby="h-ng">
+      <h2 id="h-ng">Contratos con fondos NextGenerationEU</h2>
+      <div class="logos">
+        <img src="__LOGO_EU__" alt="Bandera de la Unión Europea">
+        <img src="__LOGO_NGEU__" alt="Financiado por la Unión Europea · NextGenerationEU">
+        <img src="__LOGO_PRTR__" alt="Plan de Recuperación, Transformación y Resiliencia">
+      </div>
+      <p class="note" style="margin-top:0">Contratos del Ayuntamiento asociados al Plan de Recuperación, Transformación y Resiliencia (PRTR),
+        a REACT-EU o a NextGenerationEU: los que lo indican en el campo de financiación del anuncio o lo mencionan en su título o documentación.</p>
+      <div class="kpis" id="ng-kpis"></div>
+    </section>
+    <section class="grid-pair">
+      <div class="panel"><h2>Contratos NextGenerationEU por año</h2><div id="ng-year-n"></div></div>
+      <div class="panel"><h2>Importe adjudicado por año</h2><div id="ng-year-eur"></div></div>
+    </section>
+    <section class="grid2">
+      <div class="panel"><h2>Por tipo de contrato</h2><div id="ng-type" class="bars"></div></div>
+      <div class="panel"><h2>Por programa</h2><div id="ng-prog" class="bars"></div></div>
+      <div class="panel"><h2>Cómo consta en el anuncio</h2><div id="ng-source" class="bars"></div>
+        <p class="note">«En el campo de financiación» es el dato estructurado del anuncio. «Solo en el texto» son contratos que mencionan estos fondos en el título o la documentación pero cuyo campo de financiación dice otra cosa.</p></div>
+    </section>
+    <section class="panel">
+      <h2>Qué son estos fondos</h2>
+      <div class="ngtext">
+        <h3>NextGenerationEU</h3>
+        <p>Es el instrumento de recuperación que la Unión Europea aprobó en 2020 para responder a la crisis de la COVID-19: más de 750.000 millones de euros (a precios de 2018)
+          para reparar los daños económicos y sociales de la pandemia y hacer las economías europeas más verdes, más digitales y más resilientes. Su pieza central es el
+          Mecanismo de Recuperación y Resiliencia, que financia reformas e inversiones de los Estados miembros.</p>
+        <h3>PRTR: Plan de Recuperación, Transformación y Resiliencia</h3>
+        <p>Es el plan con el que España recibe y gestiona esos fondos. Se aprobó en 2021 y se organiza en cuatro ejes (transición ecológica, transformación digital,
+          cohesión social y territorial, e igualdad de género), diez políticas palanca y treinta componentes. Tras la adenda de 2023 suma, entre ayudas no reembolsables y
+          préstamos, del orden de 160.000 millones de euros.</p>
+        <h3>REACT-EU</h3>
+        <p>Es la parte de NextGenerationEU que refuerza los fondos de cohesión (FEDER y FSE) para la recuperación de las regiones. Por eso los contratos con «REACT-EU» se cuentan aquí.</p>
+        <h3>Cómo llegan a un ayuntamiento</h3>
+        <p>A través de convocatorias, subvenciones y programas de ministerios y de la comunidad autónoma. El Ayuntamiento los ejecuta contratando obras, servicios y suministros:
+          por ejemplo, la rehabilitación de edificios y viviendas, la digitalización o la asistencia técnica para redactar y dirigir los proyectos.</p>
+        <h3>Qué cambia en un contrato con estos fondos</h3>
+        <p>El contrato asume las obligaciones del plan: cumplir hitos y plazos, no causar un perjuicio significativo al medio ambiente (principio DNSH), prevenir conflictos de
+          interés y fraude, y dar publicidad a la financiación con el emblema «Financiado por la Unión Europea · NextGenerationEU». El calendario del plan termina en 2026.</p>
+        <h3>Por qué importa para la gestión municipal</h3>
+        <p>Permite acometer inversiones y servicios sin cargarlos por completo al presupuesto propio, a cambio de gestionar con plazos y trazabilidad estrictos. Contarlos
+          sirve para ver cuánta actividad contractual depende de estos fondos y para comparar la contratación propia entre periodos con más justicia.</p>
+        <h3>Cómo se han detectado</h3>
+        <p class="note">Un contrato cuenta si el anuncio lo asocia al PRTR, a REACT-EU o a NextGenerationEU en el campo de financiación, o lo menciona en su título o documentación.
+          Puede haber contratos financiados con estos fondos que no lo indiquen, y alguno que lo menciona sin estar financiado por ellos (por ejemplo, el servicio para redactar la
+          solicitud de una ayuda). Logotipos: bandera de la UE (dominio público), emblema «Financiado por la Unión Europea · NextGenerationEU» (Comisión Europea, CC0) y logotipo
+          del PRTR (Gobierno de España).</p>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="h-ng-list">
+      <h2 id="h-ng-list">Listado de contratos <span class="note" id="ng-count"></span></h2>
+      <div id="t-ng"></div>
+    </section>
+  </div>
+
   <!-- ============ ADJUDICATARIOS ============ -->
   <div data-tab="adjudicatarios" hidden>
     <p class="legend periods" id="period-legend2"></p>
@@ -336,7 +399,7 @@ const PERIODS = [{ label: "Partido Popular (hasta el 16/06/2023)" }, { label: "S
 const emptyP = () => [{ n: 0, nAw: 0, sum: 0 }, { n: 0, nAw: 0, sum: 0 }];
 const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["sentiraranda","Sentir Aranda vs Partido Popular"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
+const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["sentiraranda","Sentir Aranda vs Partido Popular"],["nextgen","NextGenerationEU"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
 // Tramos (desde, hasta]: cada uno incluye su importe superior ("hasta 3.000" incluye 3.000,00 €)
 const RANGES = [["Hasta 3.000 €",-Infinity,3000],["3.000 – 5.000 €",3000,5000],["5.000 – 15.000 €",5000,15000],["15.000 – 40.000 €",15000,40000],["Más de 40.000 €",40000,Infinity]];
 const TYPE_GROUPS = ["Servicios","Suministros","Obras","Otros"];
@@ -393,6 +456,7 @@ const tbl = {
   adj:  { sort:"sum", dir:-1, page:0 },
   open: { sort:"deadline", dir:1, page:0 },
   list: { sort:"date", dir:-1, page:0 },
+  ng:   { sort:"date", dir:-1, page:0 },
 };
 const OPT_COLS = [["body","Órgano"],["procedure","Procedimiento"],["status","Estado"],["outcome","Resultado"],["period","Corporación"],["published","Publicación"],["deadline","Fecha límite"],["offers","Ofertas"],["budget","Presupuesto"],["duration","Duración"]];
 const optCols = new Set(["procedure","status","outcome"]);
@@ -647,14 +711,14 @@ const winnerLinks = (r) => r.winners.length
 const amountCell = (r) => r.hasAward ? eur2.format(r.amount)
   : `<span class="est" title="Sin importe adjudicado: se muestra el presupuesto">${eur2.format(r.amount)}</span><div class="sub">${
     VOID_OUTCOMES.includes(r.outcome) ? `${OUTCOME[r.outcome].toLowerCase()} · presupuesto` : "presupuesto"}</div>`;
-const titleCell = (r) => `${esc(r.title)}<div class="sub"><span class="tag">${esc(KIND[r.kind])}</span></div>`;
+const titleCell = (r) => `${esc(r.title)}<div class="sub"><span class="tag">${esc(KIND[r.kind])}</span>${r.nextgen ? ' <span class="tag">NextGenerationEU</span>' : ""}</div>`;
 const linkCell = (r) => r.url ? `<a href="${esc(r.url)}" target="_blank" rel="noopener">Ver</a>` : "";
 
 // ---------- render ----------
 let filtered = [], listRows = [], adjRows = [];
 function render() {
   tip.hidden = true;
-  $("filters").hidden = state.tab === "sentiraranda"; // la comparativa es solo informativa: sin filtros
+  $("filters").hidden = state.tab === "sentiraranda" || state.tab === "nextgen"; // pestañas solo informativas: sin filtros
   // pestañas
   $("tabs").innerHTML = TABS.map(([k, l]) => `<button role="tab" id="tab-${k}" aria-selected="${state.tab === k}" data-t="${k}">${esc(l)}</button>`).join("");
   $("tabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => goTab(b.dataset.t)));
@@ -666,7 +730,7 @@ function render() {
   $("chips").innerHTML = chips.map(([k,t]) => `<span class="chip">${esc(t)}<button data-k="${k}" aria-label="Quitar filtro: ${esc(t)}">×</button></span>`).join("");
   $("chips").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { state[b.dataset.k] = ""; for (const t of Object.values(tbl)) t.page = 0; render(); }));
 
-  ({ resumen: renderResumen, evolucion: renderEvolucion, sentiraranda: renderVersus, adjudicatarios: renderAdj, abiertas: renderOpen, listado: renderList })[state.tab]();
+  ({ resumen: renderResumen, evolucion: renderEvolucion, sentiraranda: renderVersus, nextgen: renderNextGen, adjudicatarios: renderAdj, abiertas: renderOpen, listado: renderList })[state.tab]();
 }
 
 // Leyenda de colores con el recuento de cada corporación sobre lo que se está viendo
@@ -1055,6 +1119,60 @@ function renderVersus() {
         i.better ? ` <em>Mejor cuanto ${i.better === "higher" ? "más alto" : "más bajo"}.</em>` : " <em>Es un dato de contexto: ni bueno ni malo por sí mismo.</em>"}</dd></div>`).join("")}</dl>`).join("");
 }
 
+// Pestaña NextGenerationEU: solo informativa. Usa todos los contratos y no depende de los filtros de otras pestañas.
+function renderNextGen() {
+  const list = R.filter((r) => r.nextgen);
+  const all = metrics(R), m = metrics(list);
+  const n = list.length;
+  const byPeriod = [0, 1].map((p) => list.filter((r) => r.period === p).length);
+  const lic = list.filter((r) => r.kind === "licitacion").length;
+  const biggest = [...list].filter((r) => r.hasAward).sort((a, b) => b.amount - a.amount)[0];
+  $("ng-kpis").innerHTML =
+    kpi(nf.format(n), "contratos con fondos NextGenerationEU", `${pct(n / (R.length || 1) * 100)} de todos los contratos`) +
+    kpi(eur.format(m.sum), "importe adjudicado (IVA incl.)", `${pct(m.sum / (all.sum || 1) * 100)} del importe total · ${nf.format(m.nAw)} con importe`) +
+    kpi(`${nf.format(byPeriod[0])} / ${nf.format(byPeriod[1])}`, "contratos por corporación", `${PERIODS[0].label} / ${PERIODS[1].label}`) +
+    kpi(`${nf.format(lic)} / ${nf.format(n - lic)}`, "licitaciones / contratos menores", `${nf.format(m.contractors)} adjudicatarios distintos`) +
+    kpi(biggest ? eur.format(biggest.amount) : "—", "el contrato mayor", biggest ? biggest.title.slice(0, 70) : "");
+
+  const minYear = list.length ? Math.min(...list.map((r) => r.year)) : YEARS[0];
+  const years = YEARS.filter((y) => y >= minYear);
+  const yAgg = new Map(agg(list, (r) => r.year).map((e) => [e.key, e]));
+  const items = years.map((y) => ({ y, ...(yAgg.get(y) || { n: 0, nAw: 0, sum: 0, byP: emptyP() }) }));
+  const noop = () => {};
+  colChart($("ng-year-n"), items, {
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.n, parts: (e) => [e.byP[0].n, e.byP[1].n],
+    title: (e) => `${e.y}: ${nf.format(e.n)} contratos`, active: () => false, onclick: noop,
+  });
+  colChart($("ng-year-eur"), items, {
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: (e) => [e.byP[0].sum, e.byP[1].sum],
+    title: (e) => `${e.y}: ${eur.format(e.sum)} en ${nf.format(e.n)} contratos`, active: () => false, onclick: noop,
+  });
+  const cntP = (e) => [e.byP[0].n, e.byP[1].n];
+  barList($("ng-type"), agg(list, (r) => r.type).sort((a, b) => b.n - a.n), {
+    label: (e) => TYPE[e.key] || "Código " + e.key, value: (e) => e.n, parts: cntP, disp: (e) => `${e.n} · ${compact(e.sum)}`,
+  });
+  barList($("ng-prog"), agg(list, (r) => r.nextgenProgram).sort((a, b) => b.n - a.n), {
+    label: (e) => e.key, value: (e) => e.n, parts: cntP, disp: (e) => `${e.n} · ${compact(e.sum)}`,
+  });
+  barList($("ng-source"), agg(list, (r) => r.nextgenBy).sort((a, b) => b.n - a.n), {
+    label: (e) => (e.key === "financiacion" ? "En el campo de financiación" : "Solo en el texto"), value: (e) => e.n, parts: cntP, disp: (e) => String(e.n),
+  });
+
+  if (!$("t-ng").firstChild) mountTable("t-ng");
+  $("ng-count").textContent = `(${nf.format(n)})`;
+  drawTable("t-ng", [
+    { key: "date", label: "Fecha", desc: true, sort: (r) => r.date, html: (r) => fmtDate(r.date) },
+    { key: "folder", label: "Expediente", sort: (r) => r.folder || "", html: (r) => esc(r.folder || "—") },
+    { key: "title", label: "Objeto", cls: "obj", sort: (r) => r.title, html: titleCell },
+    { key: "type", label: "Tipo", sort: (r) => TYPE[r.type] || "", html: (r) => esc(TYPE[r.type] || "—") },
+    { key: "program", label: "Programa", sort: (r) => r.fundingProgram || r.nextgenProgram || "",
+      html: (r) => `${esc(r.fundingProgram || r.nextgenProgram)}${r.nextgenBy === "texto" ? '<div class="sub">solo en el texto</div>' : ""}` },
+    { key: "winner", label: "Contratista", sort: (r) => winnerLabel(r.winners[0]?.key || ""), html: winnerLinks },
+    { key: "amount", label: "Importe", num: true, sort: (r) => r.amount, html: amountCell },
+    { key: "link", label: "Anuncio", sort: () => "", html: linkCell },
+  ], list, tbl.ng);
+}
+
 function renderEvolucion() {
   const base = R.filter((r) => passes(r, ["year", "month"]));
   const A = base.filter((r) => String(r.year) === state.cmpA), B = state.cmpB ? base.filter((r) => String(r.year) === state.cmpB) : [];
@@ -1175,9 +1293,9 @@ function renderList() {
 $("csv").addEventListener("click", () => {
   // Los visores de artefactos bloquean las descargas: se copia al portapapeles (separado por tabuladores, que las
   // hojas de cálculo reparten en columnas al pegar) y, si el navegador lo rechaza, se muestra el texto.
-  const head = ["fecha","expediente","objeto","clase","tipo","procedimiento","estado","resultado","corporacion","organo","contratistas","nif","importe_adjudicado_iva","presupuesto_iva","fecha_limite","url"];
+  const head = ["fecha","expediente","objeto","clase","tipo","procedimiento","estado","resultado","corporacion","nextgenerationeu","organo","contratistas","nif","importe_adjudicado_iva","presupuesto_iva","fecha_limite","url"];
   copyTSV([head, ...filtered.map((r) => [
-    r.date, r.folder, r.title, KIND[r.kind], TYPE[r.type] || r.type, PROC[r.procedure] || r.procedure, STATUS[r.status] || r.status, r.outcome ? OUTCOME[r.outcome] : "", PERIODS[r.period].label, r.bodyShort,
+    r.date, r.folder, r.title, KIND[r.kind], TYPE[r.type] || r.type, PROC[r.procedure] || r.procedure, STATUS[r.status] || r.status, r.outcome ? OUTCOME[r.outcome] : "", PERIODS[r.period].label, r.nextgenProgram || "", r.bodyShort,
     r.winners.map((w) => winnerLabel(w.key)).join(" | "), r.winners.map((w) => w.nif || "").join(" | "),
     r.hasAward ? dec(r.amount) : "", dec(r.budgetTotal), r.deadline || "", r.url,
   ])], $("csv-msg"), "csv-box");

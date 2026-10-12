@@ -33,6 +33,33 @@ export const outcomeOf = (codes) => {
   return outcomes.size === 1 ? [...outcomes][0] : 'mixto';
 };
 
+// Contratos financiados con NextGenerationEU. Los anuncios traen un campo estructurado de financiación
+// (cac:TenderingTerms/cbc:FundingProgramCode: PRTR, EU, FEDER, NO-EU…) y un texto de programa (cbc:FundingProgram:
+// «PRTR», «PRTR - PSTD», «REACT-EU», «NextGenerationEU»…). Se usan primero; el texto libre del anuncio es respaldo.
+// REACT-EU se financia con NextGenerationEU, por eso cuenta.
+export const NEXTGEN_RE = /PRTR|Next\s*-?\s*Gen(?:eration)?(?:\s*EU)?|REACT[\s-]?EU|Plan\s+de\s+Recuperaci[oó]n,?\s+Transformaci[oó]n\s+y\s+Resiliencia|Mecanismo\s+de\s+Recuperaci[oó]n\s+y\s+Resiliencia/i;
+
+// Programa europeo al que se asocia el contrato, o null si no consta ninguno de NextGenerationEU.
+export const nextGenProgram = (entry) => {
+  const terms = entry['cac-place-ext:ContractFolderStatus']?.['cac:TenderingTerms'] || {};
+  const codes = asArray(terms['cbc:FundingProgramCode']).map((x) => `${text(x) ?? ''}`);
+  const program = asArray(terms['cbc:FundingProgram']).map((x) => `${text(x) ?? ''}`).join(' ');
+  const structured = `${codes.join(' ')} ${program}`;
+  if (!codes.includes('PRTR') && !NEXTGEN_RE.test(program) && !NEXTGEN_RE.test(JSON.stringify(entry))) return null;
+  if (/PRTR/i.test(structured) || /PRTR|Recuperaci[oó]n,?\s+Transformaci/i.test(JSON.stringify(entry))) return 'PRTR';
+  if (/REACT/i.test(structured)) return 'REACT-EU';
+  return 'NextGenerationEU';
+};
+
+// ¿Consta en el campo de financiación del anuncio ('financiacion') o solo se menciona en algún texto ('texto')?
+// Hay anuncios con el campo mal rellenado (p. ej. NO-EU) pese a llamarse «PRTR - …».
+export const nextGenSource = (entry) => {
+  const terms = entry['cac-place-ext:ContractFolderStatus']?.['cac:TenderingTerms'] || {};
+  const codes = asArray(terms['cbc:FundingProgramCode']).map((x) => `${text(x) ?? ''}`);
+  const program = asArray(terms['cbc:FundingProgram']).map((x) => `${text(x) ?? ''}`).join(' ');
+  return codes.includes('PRTR') || NEXTGEN_RE.test(program) ? 'financiacion' : 'texto';
+};
+
 const num = (x) => {
   const v = text(x);
   return !isPresent(v) || v === '' ? null : Number(v);
@@ -78,6 +105,9 @@ export const recordFromEntry = (entry, dir) => {
   }
 
   const duration = pp['cac:PlannedPeriod']?.['cbc:DurationMeasure'];
+  const terms = cf['cac:TenderingTerms'] || {};
+  const fundingProgram = asArray(terms['cbc:FundingProgram']).map((x) => `${text(x) ?? ''}`.trim()).filter(Boolean).join(' · ');
+  const nextgenProgramValue = nextGenProgram(entry);
   return {
     id: `${dir === 'menores' ? 'm' : 'l'}-${entryId}`,
     entry: entryId,
@@ -102,6 +132,11 @@ export const recordFromEntry = (entry, dir) => {
     awardDate,
     published: noticeDates(cf, ['DOC_CN'])[0] ?? noticeDates(cf)[0] ?? null,
     deadline: asArray(proc['cac:TenderSubmissionDeadlinePeriod'])[0]?.['cbc:EndDate'] ?? null,
+    fundingCodes: asArray(terms['cbc:FundingProgramCode']).map((x) => text(x)).filter(Boolean),
+    fundingProgram: fundingProgram || null,
+    nextgen: nextgenProgramValue !== null,
+    nextgenProgram: nextgenProgramValue,
+    nextgenBy: nextgenProgramValue === null ? null : nextGenSource(entry),
     updated: entry.updated,
     durationMonths: duration && duration['@_unitCode'] === 'MON' ? Number(text(duration)) : null,
     url: entry.link?.['@_href'] || null,

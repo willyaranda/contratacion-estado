@@ -3,7 +3,9 @@ import { spawnSync } from 'child_process';
 import { existsSync, readFileSync } from 'fs';
 import { join } from 'path';
 
-import { fontCss, renderPage, toArtifact } from '../transparencia/build.js';
+import {
+  assetUris, fontCss, renderPage, toArtifact,
+} from '../transparencia/build.js';
 import { FIXTURES_DUMP, ROOT, tmpDir } from './helpers.js';
 
 const TEMPLATE = readFileSync(join(ROOT, 'transparencia', 'template.html'), 'utf8');
@@ -67,9 +69,24 @@ test('el build desde la línea de comandos genera data.json, index.html y artifa
   }
 
   const data = JSON.parse(readFileSync(join(out, 'data.json'), 'utf8'));
-  t.is(data.records.length, 8);
+  t.is(data.records.length, 13);
   t.deepEqual(embeddedData(readFileSync(join(out, 'index.html'), 'utf8')), data);
   t.deepEqual(embeddedData(readFileSync(join(out, 'artifact.html'), 'utf8')), data);
+});
+
+test('los logotipos de NextGenerationEU se incrustan y no queda ningún marcador', (t) => {
+  const uris = assetUris();
+  t.deepEqual(Object.keys(uris).sort(), ['__LOGO_EU__', '__LOGO_NGEU__', '__LOGO_PRTR__']);
+  for (const uri of Object.values(uris)) t.regex(uri, /^data:image\/(svg\+xml|webp);base64,[A-Za-z0-9+/=]+$/);
+
+  const html = renderPage(TEMPLATE, { generated: 'x', records: [] }, '', uris);
+  t.notRegex(html, /__LOGO_[A-Z]+__/);
+  t.is((html.match(/src="data:image\//g) || []).length, 3);
+  // el contenido de los SVG no debe poder ejecutar nada
+  for (const uri of [uris.__LOGO_EU__, uris.__LOGO_PRTR__]) {
+    const svg = Buffer.from(uri.split(',')[1], 'base64').toString('utf8');
+    t.notRegex(svg, /<script|onload=|javascript:/i);
+  }
 });
 
 test('el build es determinista: dos ejecuciones dan exactamente el mismo HTML', (t) => {

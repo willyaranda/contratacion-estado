@@ -130,6 +130,21 @@ test('el resultado es coherente con los códigos, los ganadores y los importes',
   t.is(awardedWithoutWinner.length, 0, `Adjudicado sin ganador: ${where(awardedWithoutWinner)}`);
 });
 
+test('NextGenerationEU: la detección es coherente con los campos de financiación', (t) => {
+  // todo contrato con código PRTR está marcado
+  const missed = records.filter((r) => r.fundingCodes.includes('PRTR') && !r.nextgen);
+  t.is(missed.length, 0, `Con código PRTR sin marcar: ${where(missed)}`);
+  // lo marcado tiene programa y origen
+  const incomplete = records.filter((r) => r.nextgen && (!r.nextgenProgram || !['financiacion', 'texto'].includes(r.nextgenBy)));
+  t.is(incomplete.length, 0, `Marcados sin programa u origen: ${where(incomplete)}`);
+  // lo no marcado no lo tiene
+  const stray = records.filter((r) => !r.nextgen && (r.nextgenProgram || r.nextgenBy));
+  t.is(stray.length, 0);
+  // un contrato por el campo de financiación nunca es "texto"
+  const wrong = records.filter((r) => r.fundingCodes.includes('PRTR') && r.nextgenBy !== 'financiacion');
+  t.is(wrong.length, 0, `PRTR con origen incorrecto: ${where(wrong)}`);
+});
+
 test('los contratos menores son procedimiento 6 y las licitaciones no', (t) => {
   const wrongMenor = records.filter((r) => r.kind === 'menor' && r.procedure !== 6);
   t.is(wrongMenor.length, 0, `Menores con otro procedimiento: ${where(wrongMenor)}`);

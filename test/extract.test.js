@@ -3,7 +3,7 @@ import { mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 import {
-  SOURCES, buildRecords, outcomeOf, recordFromEntry,
+  SOURCES, buildRecords, nextGenProgram, nextGenSource, outcomeOf, recordFromEntry,
 } from '../transparencia/extract.js';
 import {
   FIXTURES_DUMP, entryFor, loadFixture, tmpDir,
@@ -96,13 +96,14 @@ test('recordFromEntry tolera un anuncio casi vacío', (t) => {
 
 test('buildRecords usa la última versión de cada anuncio y ordena por fecha descendente', (t) => {
   const { files, records, generated } = buildRecords(FIXTURES_DUMP);
-  t.is(files, 10);
+  t.is(files, 15);
   // 1007341 tiene 3 versiones en los fixtures (PUB, ANUL, RES): queda una
   t.deepEqual(records.map((r) => r.id), [
-    'l-12062354', 'l-11626687', 'l-10344985', 'l-10196911', 'm-10094109', 'l-8386676', 'l-1007341', 'l-1007343',
+    'l-18074070', 'l-12305268', 'l-12581278', 'l-12062354', 'l-11626687', 'l-11055187', 'm-11997705',
+    'l-10344985', 'l-10196911', 'm-10094109', 'l-8386676', 'l-1007341', 'l-1007343',
   ]);
   t.is(records.find((r) => r.id === 'l-1007341').status, 'RES');
-  t.is(generated, '2023-03-14T13:17:47.953+01:00');
+  t.is(generated, '2026-01-30T14:29:10.555+01:00');
 });
 
 test('buildRecords tolera carpetas inexistentes', (t) => {
@@ -182,6 +183,66 @@ test('desierto, desistimiento y renuncia no tienen ganadores ni importe', (t) =>
     t.is(r.awarded, 0, name);
     t.deepEqual(r.winners, [], name);
   }
+});
+
+test('NextGenerationEU: PRTR consta en el campo de financiación (que puede traer varios códigos)', (t) => {
+  const r = record('licitaciones', '11055187-1702891820880');
+  t.deepEqual(r.fundingCodes, ['EU', 'PRTR']);
+  t.true(r.nextgen);
+  t.is(r.nextgenProgram, 'PRTR');
+  t.is(r.nextgenBy, 'financiacion');
+});
+
+test('NextGenerationEU: REACT-EU cuenta, aunque el código sea EU + FEDER', (t) => {
+  const r = record('licitaciones', '12305268-1686900863185');
+  t.deepEqual(r.fundingCodes, ['EU', 'FEDER']);
+  t.is(r.fundingProgram, 'REACT-EU');
+  t.is(r.nextgenProgram, 'REACT-EU');
+  t.is(r.nextgenBy, 'financiacion');
+});
+
+test('NextGenerationEU: contratos que lo mencionan pero declaran NO-EU se señalan como "texto"', (t) => {
+  const prtr = record('licitaciones', '18074070-1769779750555');
+  t.deepEqual(prtr.fundingCodes, ['NO-EU']);
+  t.true(prtr.nextgen);
+  t.is(prtr.nextgenProgram, 'PRTR');
+  t.is(prtr.nextgenBy, 'texto');
+  const menor = record('menores', '11997705-1675620018843');
+  t.true(menor.nextgen);
+  t.is(menor.nextgenBy, 'texto');
+});
+
+test('otros fondos europeos (FEDER) no se cuentan como NextGenerationEU', (t) => {
+  const r = record('licitaciones', '12581278-1683900221244');
+  t.deepEqual(r.fundingCodes, ['EU', 'FEDER']);
+  t.false(r.nextgen);
+  t.is(r.nextgenProgram, null);
+  t.is(r.nextgenBy, null);
+});
+
+test('un contrato sin financiación europea no es NextGenerationEU', (t) => {
+  const r = record('licitaciones', '1007341-1481547245528');
+  t.false(r.nextgen);
+  t.deepEqual(r.fundingCodes, []);
+});
+
+test('nextGenProgram reconoce el campo, el texto del programa y la mención en el anuncio', (t) => {
+  const withTerms = (terms, extra = {}) => ({
+    ...entryFor('Alcaldía del Ayuntamiento de Aranda de Duero', extra),
+    'cac-place-ext:ContractFolderStatus': {
+      'cac-place-ext:LocatedContractingParty': { 'cac:Party': { 'cac:PartyName': { 'cbc:Name': 'Alcaldía del Ayuntamiento de Aranda de Duero' } } },
+      'cac:TenderingTerms': terms,
+    },
+  });
+  t.is(nextGenProgram(withTerms({ 'cbc:FundingProgramCode': [{ '#text': 'EU' }, { '#text': 'PRTR' }] })), 'PRTR');
+  t.is(nextGenProgram(withTerms({ 'cbc:FundingProgramCode': 'EU', 'cbc:FundingProgram': 'REACT-EU' })), 'REACT-EU');
+  t.is(nextGenProgram(withTerms({ 'cbc:FundingProgramCode': 'EU', 'cbc:FundingProgram': 'NextGenerationEU' })), 'NextGenerationEU');
+  t.is(nextGenProgram(withTerms({ 'cbc:FundingProgramCode': 'NO-EU' }, { title: 'Obras PRTR - rehabilitación' })), 'PRTR');
+  t.is(nextGenProgram(withTerms({ 'cbc:FundingProgramCode': 'NO-EU' })), null);
+  t.is(nextGenProgram(withTerms({})), null);
+  t.is(nextGenProgram({}), null);
+  t.is(nextGenSource(withTerms({ 'cbc:FundingProgramCode': 'PRTR' })), 'financiacion');
+  t.is(nextGenSource(withTerms({ 'cbc:FundingProgramCode': 'NO-EU' }, { title: 'PRTR' })), 'texto');
 });
 
 test('SOURCES incluye las carpetas que genera la descarga', (t) => {

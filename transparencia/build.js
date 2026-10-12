@@ -19,11 +19,25 @@ export const fontCss = (fontsDir = join(HERE, 'fonts')) => FONT_FACES.map(([file
   return `@font-face{font-family:"Outfit";font-style:normal;font-weight:400 700;font-display:swap;src:url(data:font/woff2;base64,${base64}) format("woff2");unicode-range:${range}}`;
 }).join('\n');
 
-// Plantilla + datos + fuente -> HTML autocontenido.
-export const renderPage = (template, data, fonts) => {
+// Logotipos de la pestaña NextGenerationEU: marcador de la plantilla -> fichero de transparencia/assets/
+const ASSETS = {
+  __LOGO_EU__: ['bandera-ue.svg', 'image/svg+xml'],
+  __LOGO_NGEU__: ['financiado-ue-nextgenerationeu.webp', 'image/webp'],
+  __LOGO_PRTR__: ['prtr.svg', 'image/svg+xml'],
+};
+
+// Imágenes incrustadas como data: URI (la página no carga nada externo).
+export const assetUris = (assetsDir = join(HERE, 'assets')) => Object.fromEntries(Object.entries(ASSETS).map(
+  ([marker, [file, mime]]) => [marker, `data:${mime};base64,${readFileSync(join(assetsDir, file)).toString('base64')}`],
+));
+
+// Plantilla + datos + fuente + imágenes -> HTML autocontenido.
+export const renderPage = (template, data, fonts, assets = {}) => {
   // "<" escapado para que los datos no puedan cerrar el <script> por accidente
   const json = JSON.stringify(data).replace(/</g, '\\u003c');
-  return template.replace('/*FONTFACE*/', () => fonts).replace('/*DATA*/', () => json);
+  let html = template.replace('/*FONTFACE*/', () => fonts).replace('/*DATA*/', () => json);
+  for (const [marker, uri] of Object.entries(assets)) html = html.replaceAll(marker, () => uri);
+  return html;
 };
 
 // Versión para publicar como artefacto: el visor añade su propio doctype/html/head/body,
@@ -48,7 +62,7 @@ const main = () => {
 
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, 'data.json'), JSON.stringify(data));
-  const html = renderPage(readFileSync(join(HERE, 'template.html'), 'utf8'), data, fontCss());
+  const html = renderPage(readFileSync(join(HERE, 'template.html'), 'utf8'), data, fontCss(), assetUris());
   writeFileSync(join(outDir, 'index.html'), html);
   writeFileSync(join(outDir, 'artifact.html'), toArtifact(html));
 
