@@ -1,0 +1,33 @@
+.gitignore
+  s_3e20ed0ad9d3d2::t_39d2281042f1d8 9
+docs/index.html
+  s_3e20ed0ad9d3d2::t_3a0c64b5e34cbd 109-139,417-424,551-552,555,702-703,710-713,762-937,1066,1141,1178,1186,1205
+test/build.test.js
+  s_3e20ed0ad9d3d2::t_fec7559ef14467 15,68,76-88
+test/dump.test.js
+  s_3e20ed0ad9d3d2::t_1f09ca0236edb4 27-29,150-168
+test/extract.test.js
+  s_3e20ed0ad9d3d2::t_b907db6520c5e5 6,248-338
+transparencia/build.js
+  s_3e20ed0ad9d3d2::t_ff98a5df8c8720 35,37-41,63,68-69
+transparencia/extract.js
+  s_3e20ed0ad9d3d2::t_37ac5ede8ed257 77-233,310,320-322,333-347,354
+transparencia/template.html
+  s_3e20ed0ad9d3d2::t_f0c813cf8cd91c 108-138,416-423,550-551,554,701-702,709-712,761-936,1065,1140,1177,1185,1204
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b3ed0a307fff20f1dccb1e52b076ebc4e17d92ae",
+  "prompts": {},
+  "sessions": {
+    "s_3e20ed0ad9d3d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c192d70d-4c3e-4c50-8895-b3f641832bed",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
