@@ -111,6 +111,7 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .verdict.down{color:var(--bad);border-color:var(--bad)}
 .mand tr.sec td{font-weight:700;background:var(--bg);padding-top:14px}
 .mand td .what{color:var(--muted);font-size:.78rem;font-weight:400}
+.mand td .ctx{font-size:.78rem;font-weight:400;margin-top:4px;padding:4px 8px;border-left:3px solid var(--line)}
 .mand td.num .what{text-align:right}
 .mand .head-p0::before,.mand .head-p1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px}
 .mand .head-p0::before{background:var(--p0)}
@@ -247,6 +248,13 @@ footer{padding:24px 0 40px}
       <div class="tablewrap"><table class="cmp mand">
         <thead><tr><th>Indicador</th><th class="num head-p0">Partido Popular</th><th class="num head-p1">Sentir Aranda</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
         <tbody id="mand-rows"></tbody>
+      </table></div>
+      <h3 style="margin:22px 0 6px;font-size:1rem">Perfil por tipo de contrato</h3>
+      <p class="note" style="margin-top:0">Qué se contrata y cómo, separado en obras, servicios y suministros. Ayuda a leer los indicadores de arriba: cada tipo de contrato tiene su propia competencia y sus propios precios.</p>
+      <div id="types-summary" style="margin-bottom:10px"></div>
+      <div class="tablewrap"><table class="cmp mand">
+        <thead><tr><th>Indicador por tipo</th><th class="num head-p0">Partido Popular</th><th class="num head-p1">Sentir Aranda</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
+        <tbody id="types-rows"></tbody>
       </table></div>
       <p class="note" id="mand-notes"></p>
       <details class="guide picker" open>
@@ -776,6 +784,26 @@ const FMT = {
   count: (v) => nfix(v, 0), eur: (v) => eur.format(v), eurM: (v) => compact(v),
   pct: (v) => nfix(v, 1) + " %", days: (v) => nfix(v, 0) + " días", num: (v) => nfix(v, 1),
 };
+// Contexto por indicador: datos verificables que ayudan a leer el número (por tipo de contrato, fondos europeos…)
+const TYPE_NAME = { 3: "obras", 2: "servicios", 1: "suministros" };
+const byTypeText = (A, B, key, kind) => [3, 2, 1].map((t) => {
+  const a = A.types[t].v[key], b = B.types[t].v[key];
+  return a == null || b == null ? null : `${TYPE_NAME[t]} ${FMT[kind](a)} → ${FMT[kind](b)}`;
+}).filter(Boolean).join(", ");
+const typeEurCtx = (t) => (A, B) => `En euros al año: ${FMT.eurM(A.types[t].v.eurPerYear)} → ${FMT.eurM(B.types[t].v.eurPerYear)}; contratos al año: ${FMT.count(A.types[t].v.perYear)} → ${FMT.count(B.types[t].v.perYear)}.`;
+const CTX = {
+  savings: (A, B) => `Por tipo (Partido Popular → Sentir Aranda): ${byTypeText(A, B, "savings", "pct")}.` +
+    (B.extras.prtr.n ? ` En el periodo de Sentir Aranda hay ${B.extras.prtr.n} licitaciones del PRTR (fondos europeos, ${compact(B.extras.prtr.eur)})` +
+      (B.extras.prtr.savings != null ? ` con una baja del ${FMT.pct(B.extras.prtr.savings)}; sin ellas, la baja es del ${FMT.pct(B.extras.prtr.savingsWithout)}.` : ".") : ""),
+  singleBid: (A, B) => `Por tipo (Partido Popular → Sentir Aranda): ${byTypeText(A, B, "singleBid", "pct")}.`,
+  offersAvg: (A, B) => `Por tipo (Partido Popular → Sentir Aranda): ${byTypeText(A, B, "offersAvg", "num")}.`,
+  negShare: (A, B) => `Contratos por negociado sin publicidad: ${A.extras.neg.n} (${compact(A.extras.neg.eur)}) → ${B.extras.neg.n} (${compact(B.extras.neg.eur)}).` +
+    (B.extras.neg.prtrN ? ` De los de Sentir Aranda, ${B.extras.neg.prtrN} ${B.extras.neg.prtrN === 1 ? "es" : "son"} del PRTR (${compact(B.extras.neg.prtrEur)}).` : ""),
+  unawarded: (A, B) => `Desiertas / desistidas / con renuncia: ${A.extras.voids.desierto} / ${A.extras.voids.desistimiento} / ${A.extras.voids.renuncia} → ${B.extras.voids.desierto} / ${B.extras.voids.desistimiento} / ${B.extras.voids.renuncia}.`,
+  nearLimit: (A, B) => `Servicios: ${A.extras.near.serv.n} de ${A.extras.near.serv.total} → ${B.extras.near.serv.n} de ${B.extras.near.serv.total}; suministros: ${A.extras.near.sumin.n} de ${A.extras.near.sumin.total} → ${B.extras.near.sumin.n} de ${B.extras.near.sumin.total}.`,
+  obras: typeEurCtx(3), servicios: typeEurCtx(2), suministros: typeEurCtx(1),
+};
+
 // better: "higher" (más es mejor), "lower" (menos es mejor) o null (informativo: ni bueno ni malo por sí mismo)
 const INDICATORS = [
   { key: "contractsPerYear", group: "Actividad", label: "Contratos al año", kind: "count", better: "higher",
@@ -790,16 +818,16 @@ const INDICATORS = [
   { key: "medAmount", group: "Actividad", label: "Importe mediano por contrato", kind: "eur", better: "higher",
     what: "El contrato «típico»: la mitad cuesta menos y la otra mitad más.",
     why: "Sube cuando la contratación del día a día es de mayor entidad, sin que un contrato excepcional distorsione el dato." },
-  { key: "offersAvg", group: "Competencia y concurrencia", label: "Ofertas por licitación (media)", kind: "num", better: "higher", nKey: "offers",
+  { key: "offersAvg", ctx: CTX.offersAvg, group: "Competencia y concurrencia", label: "Ofertas por licitación (media)", kind: "num", better: "higher", nKey: "offers",
     what: "Empresas que presentan oferta en cada licitación (solo licitaciones con alguna oferta).",
     why: "Más ofertas significan más competencia, y la competencia consigue mejores precios y mejor calidad con el mismo dinero. Es uno de los mejores termómetros de la salud de una licitación." },
-  { key: "singleBid", group: "Competencia y concurrencia", label: "Licitaciones con una sola oferta", kind: "pct", better: "lower", nKey: "offers",
+  { key: "singleBid", ctx: CTX.singleBid, group: "Competencia y concurrencia", label: "Licitaciones con una sola oferta", kind: "pct", better: "lower", nKey: "offers",
     what: "Porcentaje de licitaciones en las que solo se presentó una empresa.",
     why: "Con una única oferta no hay con qué comparar. Cuanto menos frecuente, más abiertos y accesibles son los pliegos y mayor es el interés del mercado." },
   { key: "openShare", group: "Competencia y concurrencia", label: "Importe por procedimiento abierto o simplificado", kind: "pct", better: "higher",
     what: "Parte del importe adjudicado que pasa por procedimientos abiertos o abiertos simplificados.",
     why: "Son los procedimientos con más publicidad: cualquier empresa interesada puede presentarse. Más importe por esta vía es más transparencia y más igualdad de oportunidades." },
-  { key: "negShare", group: "Competencia y concurrencia", label: "Importe por negociado sin publicidad", kind: "pct", better: "lower",
+  { key: "negShare", ctx: CTX.negShare, group: "Competencia y concurrencia", label: "Importe por negociado sin publicidad", kind: "pct", better: "lower",
     what: "Parte del importe adjudicado sin anuncio previo (supuestos tasados por la ley).",
     why: "Es un procedimiento legítimo en casos concretos, pero reducirlo abre la puerta a todas las empresas y refuerza la confianza en las adjudicaciones." },
   { key: "minorShare", group: "Competencia y concurrencia", label: "Importe en contratos menores", kind: "pct", better: "lower",
@@ -814,23 +842,23 @@ const INDICATORS = [
   { key: "top10Share", group: "Competencia y concurrencia", label: "Importe en los 10 mayores adjudicatarios", kind: "pct", better: "lower",
     what: "Porcentaje del importe adjudicado que acumulan las diez empresas que más reciben.",
     why: "Complementa al anterior: mide la concentración del gasto en un grupo reducido de proveedores." },
-  { key: "savings", group: "Eficiencia", label: "Baja media sobre el presupuesto de licitación", kind: "pct", better: "higher", nKey: "savings",
+  { key: "savings", ctx: CTX.savings, group: "Eficiencia", label: "Baja media sobre el presupuesto de licitación", kind: "pct", better: "higher", nKey: "savings",
     what: "Diferencia entre el presupuesto base y lo adjudicado (ambos sin IVA) en las licitaciones, ponderada por importe.",
     why: "Es dinero público que no se gasta: el mismo servicio u obra por menos. Una baja mayor suele ser fruto de una buena competencia y de presupuestos bien ajustados." },
   { key: "daysToAward", group: "Eficiencia", label: "Días del cierre de ofertas a la adjudicación", kind: "days", better: "lower", nKey: "days",
     what: "Tiempo medio que pasa entre el fin del plazo de ofertas y la adjudicación (solo licitaciones con ambas fechas).",
     why: "Adjudicar con rapidez acorta la espera de vecinos y empresas, evita retrasos en obras y servicios y reduce el riesgo de que las ofertas caduquen." },
-  { key: "unawarded", group: "Eficiencia", label: "Licitaciones que terminan sin adjudicar", kind: "pct", better: "lower", nKey: "unawarded",
+  { key: "unawarded", ctx: CTX.unawarded, group: "Eficiencia", label: "Licitaciones que terminan sin adjudicar", kind: "pct", better: "lower", nKey: "unawarded",
     what: "Desiertas, desistidas o con renuncia, sobre las licitaciones que ya tienen resultado.",
     why: "Cada licitación que no se adjudica obliga a repetir el trámite y retrasa el servicio. Menos casos indican pliegos bien dimensionados y proyectos mejor preparados." },
-  { key: "nearLimit", group: "Eficiencia", label: "Menores de servicios y suministros justo bajo el límite (13.500–15.000 €, sin IVA)", kind: "pct", better: "lower", nKey: "near",
+  { key: "nearLimit", ctx: CTX.nearLimit, group: "Eficiencia", label: "Menores de servicios y suministros justo bajo el límite (13.500–15.000 €, sin IVA)", kind: "pct", better: "lower", nKey: "near",
     what: "Sobre los contratos menores de servicios y suministros, los que quedan justo por debajo del límite legal de 15.000 €.",
     why: "Quedarse cerca del umbral puede indicar necesidades recurrentes que convendría agrupar y licitar. Menos casos significan mejor planificación y más concurrencia." },
-  { key: "obras", group: "Composición del gasto", label: "Importe en obras", kind: "pct", better: null,
+  { key: "obras", ctx: CTX.obras, group: "Composición del gasto", label: "Importe en obras", kind: "pct", better: null,
     what: "Parte del importe adjudicado que corresponde a contratos de obras.", why: "Describe en qué se gasta: más obras suele significar más inversión en infraestructuras y equipamientos." },
-  { key: "servicios", group: "Composición del gasto", label: "Importe en servicios", kind: "pct", better: null,
+  { key: "servicios", ctx: CTX.servicios, group: "Composición del gasto", label: "Importe en servicios", kind: "pct", better: null,
     what: "Parte del importe adjudicado que corresponde a contratos de servicios.", why: "Refleja el peso de los servicios municipales contratados (limpieza, transporte, asistencia…)." },
-  { key: "suministros", group: "Composición del gasto", label: "Importe en suministros", kind: "pct", better: null,
+  { key: "suministros", ctx: CTX.suministros, group: "Composición del gasto", label: "Importe en suministros", kind: "pct", better: null,
     what: "Parte del importe adjudicado que corresponde a suministros.", why: "Refleja las compras de bienes: material, vestuario, energía, equipos." },
 ];
 
@@ -858,8 +886,41 @@ function mandateStats(list, from, to) {
   const resolved = lic.filter((r) => r.outcome !== null);
   const minors = aw.filter((r) => r.kind === "menor" && (r.type === 1 || r.type === 2) && r.awardedNet > 0);
   const avg = (a) => (a.length ? a.reduce((s, x) => s + x, 0) / a.length : null);
+  const prtrRe = /PRTR|Recuperaci[oó]n,? Transformaci/i;
+  const bajaOf = (list) => {
+    const a = list.filter((r) => r.awardedNet > 0 && r.budgetNet > 0);
+    const b = a.reduce((s, r) => s + r.budgetNet, 0);
+    return b > 0 ? (1 - a.reduce((s, r) => s + r.awardedNet, 0) / b) * 100 : null;
+  };
+  const sumAmt = (l) => l.reduce((s, r) => s + r.amount, 0);
+  const types = {};
+  for (const t of [3, 2, 1]) {
+    const awT = aw.filter((r) => r.type === t), licT = lic.filter((r) => r.type === t);
+    const offT = licT.map((r) => r.offers).filter((o) => o > 0);
+    const eurT = sumAmt(awT);
+    types[t] = {
+      v: {
+        perYear: rs.filter((r) => r.type === t).length / years, eurPerYear: eurT / years,
+        shareEur: total > 0 ? eurT / total * 100 : null,
+        avg: awT.length ? eurT / awT.length : null, med: medianOf(awT.map((r) => r.amount)),
+        offersAvg: avg(offT),
+        singleBid: offT.length ? offT.filter((o) => o === 1).length / offT.length * 100 : null,
+        savings: bajaOf(licT),
+      },
+      n: { offers: offT.length, savings: licT.filter((r) => r.awardedNet > 0 && r.budgetNet > 0).length },
+    };
+  }
+  const prtrLic = lic.filter((r) => prtrRe.test(r.title));
+  const neg = aw.filter((r) => r.procedure === 3), negPrtr = neg.filter((r) => prtrRe.test(r.title));
+  const near = (l) => ({ n: l.filter((r) => r.awardedNet >= 13500 && r.awardedNet <= 15000).length, total: l.length });
+  const extras = {
+    prtr: { n: prtrLic.length, eur: sumAmt(prtrLic.filter((r) => r.hasAward)), savings: bajaOf(prtrLic), savingsWithout: bajaOf(lic.filter((r) => !prtrRe.test(r.title))) },
+    neg: { n: neg.length, eur: sumAmt(neg), prtrN: negPrtr.length, prtrEur: sumAmt(negPrtr) },
+    voids: ["desierto", "desistimiento", "renuncia"].reduce((o, k) => ({ ...o, [k]: resolved.filter((r) => r.outcome === k).length }), {}),
+    near: { serv: near(minors.filter((r) => r.type === 2)), sumin: near(minors.filter((r) => r.type === 1)) },
+  };
   return {
-    contracts: rs.length, years,
+    contracts: rs.length, years, types, extras,
     v: {
       contractsPerYear: rs.length / years,
       eurPerYear: total / years,
@@ -900,6 +961,16 @@ function changeText(ind, a, b) {
   return a === 0 ? "—" : `${sign}${nfix(Math.abs(d / a * 100), 0)} %`;
 }
 
+const TYPE_ROWS = [
+  { key: "perYear", label: "Contratos al año", kind: "count", better: null },
+  { key: "eurPerYear", label: "Importe adjudicado al año", kind: "eurM", better: null },
+  { key: "shareEur", label: "Peso en el importe adjudicado", kind: "pct", better: null },
+  { key: "avg", label: "Importe medio por contrato", kind: "eur", better: null },
+  { key: "med", label: "Importe mediano por contrato", kind: "eur", better: null },
+  { key: "offersAvg", label: "Ofertas por licitación (media)", kind: "num", better: "higher", nKey: "offers" },
+  { key: "singleBid", label: "Licitaciones con una sola oferta", kind: "pct", better: "lower", nKey: "offers" },
+  { key: "savings", label: "Baja media sobre el presupuesto", kind: "pct", better: "higher", nKey: "savings" },
+];
 const MAND_SECTIONS = ["Indicadores en los que mejora Sentir Aranda", "Indicadores informativos o sin diferencia relevante", "Indicadores en los que el Partido Popular tiene mejor dato"];
 
 // Pestaña "Sentir Aranda vs Partido Popular": solo informativa. Las ventanas son fijas y no dependen de los
@@ -932,12 +1003,35 @@ function renderVersus() {
     html += part.map(({ ind, a, b, v }) => {
       const sample = ind.nKey ? `<div class="what">n = ${nf.format(A.n[ind.nKey])} / ${nf.format(B.n[ind.nKey])}</div>` : "";
       const f = (x) => (x == null ? "—" : FMT[ind.kind](x));
-      return `<tr><td>${esc(ind.label)}<div class="what">${esc(ind.what)}</div></td>
+      const ctx = ind.ctx ? ind.ctx(A, B) : "";
+      return `<tr><td>${esc(ind.label)}<div class="what">${esc(ind.what)}</div>${ctx ? `<div class="ctx"><strong>Contexto:</strong> ${esc(ctx)}</div>` : ""}</td>
         <td class="num">${esc(f(a))}${sample}</td><td class="num">${esc(f(b))}</td>
         <td class="num">${esc(changeText(ind, a, b))}</td><td><span class="verdict ${v.cls}">${esc(v.text)}</span></td></tr>`;
     }).join("");
   }
   $("mand-rows").innerHTML = html;
+
+  // Perfil por tipo de contrato: qué se contrata y cómo (obras, servicios, suministros)
+  const part = (key, kind) => [3, 2, 1].map((t) => {
+    const a = A.types[t].v[key], b = B.types[t].v[key];
+    return `${TYPE_NAME[t]} ${FMT[kind](a)} → ${FMT[kind](b)} (${changeText({ kind }, a, b)})`;
+  }).join(" · ");
+  $("types-summary").innerHTML =
+    `<div><strong>Contratos al año</strong> (PP → Sentir Aranda): ${esc(part("perYear", "count"))}</div>` +
+    `<div><strong>Importe adjudicado al año:</strong> ${esc(part("eurPerYear", "eurM"))}</div>` +
+    `<div><strong>Peso en el importe adjudicado:</strong> ${esc(part("shareEur", "pct"))}</div>`;
+  let trows = "";
+  for (const t of [3, 2, 1]) {
+    trows += `<tr class="sec"><td colspan="5">${esc(TYPE_NAME[t][0].toUpperCase() + TYPE_NAME[t].slice(1))}</td></tr>`;
+    trows += TYPE_ROWS.map((ind) => {
+      const a = A.types[t].v[ind.key], b = B.types[t].v[ind.key], v = verdictOf(ind, a, b);
+      const f = (x) => (x == null ? "—" : FMT[ind.kind](x));
+      const sample = ind.nKey ? `<div class="what">n = ${nf.format(A.types[t].n[ind.nKey])} / ${nf.format(B.types[t].n[ind.nKey])}</div>` : "";
+      return `<tr><td>${esc(ind.label)}</td><td class="num">${esc(f(a))}${sample}</td><td class="num">${esc(f(b))}</td>
+        <td class="num">${esc(changeText(ind, a, b))}</td><td>${ind.better ? `<span class="verdict ${v.cls}">${esc(v.text)}</span>` : ""}</td></tr>`;
+    }).join("");
+  }
+  $("types-rows").innerHTML = trows;
   $("mand-notes").textContent =
     "Cómo leerlo: un buen dato en un indicador no compensa uno peor en otro; léelos juntos. Los importes son lo adjudicado (con IVA) y n = casos de cada " +
     `periodo (Partido Popular / Sentir Aranda). Los periodos duran ${nfix(dA / 365.25, 1)} y ${nfix(dB / 365.25, 1)} años: los indicadores se expresan por año o ` +
