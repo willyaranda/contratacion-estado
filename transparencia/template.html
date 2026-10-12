@@ -11,18 +11,22 @@
   --bg:#f6f7f9;--surface:#fff;--ink:#17202a;--muted:#5f6b7a;--line:#dfe3e8;
   --accent:#9b1c31;--accent-ink:#fff;--bar:#9b1c31;--chip:#f0e6e8;--focus:#1d5fd1;
   --c1:#9b1c31;--c2:#1f6f8b;--c3:#b87d12;--c4:#4f7a3a;--c5:#7b8794;
+  /* corporaciones: p0 = hasta el 16/06/2023 (azul), p1 = desde el 17/06/2023 (amarillo-naranja) */
+  --p0:#1565c0;--p1:#dd8500;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
     --bg:#12151a;--surface:#1b2027;--ink:#e8ebef;--muted:#9aa5b3;--line:#2c333c;
     --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
     --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
+    --p0:#5aa9f5;--p1:#ffb02e;
   }
 }
 :root[data-theme="dark"]{
   --bg:#12151a;--surface:#1b2027;--ink:#e8ebef;--muted:#9aa5b3;--line:#2c333c;
   --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
   --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
+  --p0:#5aa9f5;--p1:#ffb02e;
 }
 *{box-sizing:border-box}
 html{color-scheme:light dark}
@@ -86,6 +90,16 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .bubbles text{fill:var(--muted);font-size:11px;font-family:inherit}
 .bubbles line{stroke:var(--line)}
 .bubbles circle{fill:var(--bar);fill-opacity:.5;stroke:var(--bar);stroke-width:.6}
+.bubbles circle.p0{fill:var(--p0);stroke:var(--p0)}
+.bubbles circle.p1{fill:var(--p1);stroke:var(--p1)}
+/* barras y columnas partidas por corporación */
+.p0{background:var(--p0)}.p1{background:var(--p1)}
+.bar .fill{display:flex}
+.bar .fill .seg{height:100%}
+.col .fill{display:flex;flex-direction:column-reverse}
+.col .fill .seg{width:100%}
+.col .fill .seg:first-child{border-radius:0}
+.periods{margin:0 0 12px}
 .bubbles circle:hover{fill-opacity:.95;stroke:var(--ink);stroke-width:1.5}
 .tip{position:fixed;z-index:20;max-width:min(340px,calc(100vw - 16px));background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:.82rem;line-height:1.35;box-shadow:0 4px 14px rgba(0,0,0,.18);pointer-events:none}
 .tip .muted{margin-top:2px}
@@ -139,6 +153,7 @@ footer{padding:24px 0 40px}
       <div><label for="f-proc">Procedimiento</label><select id="f-proc"></select></div>
       <div><label for="f-status">Estado</label><select id="f-status"></select></div>
       <div><label for="f-result">Resultado</label><select id="f-result"></select></div>
+      <div><label for="f-period">Corporación (quién lo sacó)</label><select id="f-period"></select></div>
       <div><label for="f-min">Importe mínimo (€)</label><input id="f-min" type="number" min="0" step="any" inputmode="decimal"></div>
       <div><label for="f-max">Importe máximo (€)</label><input id="f-max" type="number" min="0" step="any" inputmode="decimal"></div>
       <div><label for="f-from">Desde</label><input id="f-from" type="date"></div>
@@ -150,6 +165,7 @@ footer{padding:24px 0 40px}
 
   <!-- ============ RESUMEN ============ -->
   <div data-tab="resumen">
+    <p class="legend periods" id="period-legend" aria-live="polite"></p>
     <section class="kpis" id="kpis" aria-live="polite"></section>
     <section class="kpis" id="kpis2"></section>
     <section class="grid2">
@@ -201,6 +217,7 @@ footer{padding:24px 0 40px}
 
   <!-- ============ ADJUDICATARIOS ============ -->
   <div data-tab="adjudicatarios" hidden>
+    <p class="legend periods" id="period-legend2"></p>
     <section class="kpis" id="kpis3"></section>
     <section class="grid2">
       <div class="panel"><h2>Top 5 adjudicatarios por importe</h2><div id="top-sum" class="bars"></div></div>
@@ -259,6 +276,11 @@ const KIND = {licitacion:"Licitación",menor:"Contrato menor"};
 // Resultado del procedimiento (calculado en transparencia/extract.js a partir del código de resultado de cada lote)
 const OUTCOME = {adjudicado:"Adjudicado",desierto:"Desierto",desistimiento:"Desistimiento",renuncia:"Renuncia",mixto:"Parcialmente adjudicado",otro:"Otro resultado"};
 const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin adjudicar
+// Corporaciones municipales: la actual se constituyó el 17/06/2023. El color de cada contrato indica cuál lo sacó:
+// licitaciones por la fecha de publicación del anuncio; contratos menores (sin licitación) por la de adjudicación.
+const PERIOD_START = "2023-06-17";
+const PERIODS = [{ label: "Hasta el 16/06/2023" }, { label: "Desde el 17/06/2023" }];
+const emptyP = () => [{ n: 0, sum: 0 }, { n: 0, sum: 0 }];
 const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
@@ -302,7 +324,8 @@ const R = DATA.records.map((r) => {
   const amount = hasAward ? r.awarded : (r.budgetTotal ?? r.budgetNet ?? 0);
   const hay = norm([r.title, r.folder, uniq.map((w) => w.name + " " + (w.nif || "")).join(" ")].join(" "));
   const toAward = r.kind === "licitacion" && r.deadline && r.awardDate ? days(r.deadline, r.awardDate) : null;
-  return { ...r, date, year: +date.slice(0,4), month: +date.slice(5,7), winners: uniq, amount, hasAward, hay,
+  const issued = r.kind === "licitacion" ? (r.published || date) : date;
+  return { ...r, date, period: issued < PERIOD_START ? 0 : 1, year: +date.slice(0,4), month: +date.slice(5,7), winners: uniq, amount, hasAward, hay,
            bodyShort: shortBody(r.buyer), toAward: toAward != null && toAward >= 0 && toAward <= 730 ? toAward : null };
 });
 const winnerLabel = (key) => {
@@ -311,14 +334,14 @@ const winnerLabel = (key) => {
 };
 
 // ---------- estado ----------
-const state = { q:"", year:"", month:"", body:"", kind:"", type:"", proc:"", status:"", result:"", min:"", max:"", from:"", to:"", winner:"",
+const state = { q:"", year:"", month:"", body:"", kind:"", type:"", proc:"", status:"", result:"", period:"", min:"", max:"", from:"", to:"", winner:"",
   tab:"resumen", rank:"amount", cmpA:"", cmpB:"", cmpM:"sum", adjQ:"" };
 const tbl = {
   adj:  { sort:"sum", dir:-1, page:0 },
   open: { sort:"deadline", dir:1, page:0 },
   list: { sort:"date", dir:-1, page:0 },
 };
-const OPT_COLS = [["body","Órgano"],["procedure","Procedimiento"],["status","Estado"],["outcome","Resultado"],["published","Publicación"],["deadline","Fecha límite"],["offers","Ofertas"],["budget","Presupuesto"],["duration","Duración"]];
+const OPT_COLS = [["body","Órgano"],["procedure","Procedimiento"],["status","Estado"],["outcome","Resultado"],["period","Corporación"],["published","Publicación"],["deadline","Fecha límite"],["offers","Ofertas"],["budget","Presupuesto"],["duration","Duración"]];
 const optCols = new Set(["procedure","status","outcome"]);
 
 function fillSelect(el, opts, allLabel) {
@@ -333,6 +356,7 @@ fillSelect($("f-kind"), Object.entries(KIND), "Todas");
 fillSelect($("f-type"), uniqSorted((r) => r.type).sort((a,b) => a-b).map((t) => [t, TYPE[t] || "Código "+t]), "Todos");
 fillSelect($("f-proc"), uniqSorted((r) => r.procedure).sort((a,b) => a-b).map((p) => [p, PROC[p] || "Código "+p]), "Todos");
 fillSelect($("f-status"), uniqSorted((r) => r.status).map((s) => [s, STATUS[s] || s]), "Todos");
+fillSelect($("f-period"), PERIODS.map((p, i) => [i, p.label]), "Todas");
 fillSelect($("f-result"), [...Object.entries(OUTCOME).filter(([k]) => R.some((r) => r.outcome === k)), ["none", "Sin resultado todavía"]], "Todos");
 fillSelect($("cmp-a"), [...YEARS].reverse().map((y) => [y,y]));
 fillSelect($("cmp-b"), [["","Sin comparar"], ...[...YEARS].reverse().map((y) => [y,y])]);
@@ -341,7 +365,7 @@ state.cmpA = String(lastYear); state.cmpB = String(lastYear - 1);
 $("cmp-a").value = state.cmpA; $("cmp-b").value = state.cmpB;
 
 let timer;
-const bind = [["q","q",150],["f-year","year",0],["f-month","month",0],["f-body","body",0],["f-kind","kind",0],["f-type","type",0],["f-proc","proc",0],["f-status","status",0],["f-result","result",0],["f-min","min",250],["f-max","max",250],["f-from","from",0],["f-to","to",0],["cmp-a","cmpA",0],["cmp-b","cmpB",0],["cmp-m","cmpM",0],["adj-q","adjQ",150]];
+const bind = [["q","q",150],["f-year","year",0],["f-month","month",0],["f-body","body",0],["f-kind","kind",0],["f-type","type",0],["f-proc","proc",0],["f-status","status",0],["f-result","result",0],["f-period","period",0],["f-min","min",250],["f-max","max",250],["f-from","from",0],["f-to","to",0],["cmp-a","cmpA",0],["cmp-b","cmpB",0],["cmp-m","cmpM",0],["adj-q","adjQ",150]];
 for (const [id,key,delay] of bind) {
   $(id).addEventListener(delay ? "input" : "change", (e) => {
     state[key] = e.target.value; for (const t of Object.values(tbl)) t.page = 0;
@@ -349,7 +373,7 @@ for (const [id,key,delay] of bind) {
   });
 }
 $("reset").addEventListener("click", () => {
-  Object.assign(state, { q:"",year:"",month:"",body:"",kind:"",type:"",proc:"",status:"",result:"",min:"",max:"",from:"",to:"",winner:"" });
+  Object.assign(state, { q:"",year:"",month:"",body:"",kind:"",type:"",proc:"",status:"",result:"",period:"",min:"",max:"",from:"",to:"",winner:"" });
   for (const [id,key] of bind) if (!key.startsWith("cmp") && key !== "adjQ") $(id).value = "";
   for (const t of Object.values(tbl)) t.page = 0;
   render();
@@ -382,6 +406,7 @@ function passes(r, skip = []) {
   if (!s("date") && state.from && r.date < state.from) return false;
   if (!s("date") && state.to && r.date > state.to) return false;
   if (!s("status") && state.status && r.status !== state.status) return false;
+  if (state.period !== "" && String(r.period) !== state.period) return false;
   if (state.result && (state.result === "none" ? r.outcome !== null : r.outcome !== state.result)) return false;
   if (state.body && r.buyer !== state.body) return false;
   if (state.kind && r.kind !== state.kind) return false;
@@ -398,8 +423,9 @@ function passes(r, skip = []) {
 function agg(list, keyFn) {
   const m = new Map();
   for (const r of list) {
-    const k = keyFn(r), e = m.get(k) || { key:k, n:0, sum:0 };
-    e.n++; if (r.hasAward) e.sum += r.amount;
+    const k = keyFn(r), e = m.get(k) || { key:k, n:0, sum:0, byP: emptyP() };
+    e.n++; e.byP[r.period].n++;
+    if (r.hasAward) { e.sum += r.amount; e.byP[r.period].sum += r.amount; }
     m.set(k, e);
   }
   return [...m.values()];
@@ -407,8 +433,9 @@ function agg(list, keyFn) {
 function contractors(list) {
   const m = new Map();
   for (const r of list) for (const w of r.winners) {
-    const e = m.get(w.key) || { key:w.key, nif:w.nif, n:0, sum:0, last:"" };
-    e.n++; if (r.hasAward) e.sum += r.amount / r.winners.length;
+    const e = m.get(w.key) || { key:w.key, nif:w.nif, n:0, sum:0, last:"", byP: emptyP() };
+    e.n++; e.byP[r.period].n++;
+    if (r.hasAward) { e.sum += r.amount / r.winners.length; e.byP[r.period].sum += r.amount / r.winners.length; }
     if (r.date > e.last) e.last = r.date;
     m.set(w.key, e);
   }
@@ -426,20 +453,28 @@ function delta(cur, base) {
 }
 const kpi = (v, l, s) => `<div class="kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div>${s ? `<div class="s">${esc(s)}</div>` : ""}</div>`;
 
-function barList(el, items, { label, value, onclick, active, disp }) {
+// Reparto de un valor entre las dos corporaciones: `parts(item)` devuelve [valor hasta 16/06/2023, valor desde 17/06/2023]
+const periodSegments = (parts, item, dim) => {
+  const p = parts ? parts(item) : null;
+  const total = p ? p[0] + p[1] : 0;
+  if (!(total > 0)) return "";
+  return p.map((v, i) => (v > 0 ? `<span class="seg p${i}" style="${dim}:${v / total * 100}%"></span>` : "")).join("");
+};
+
+function barList(el, items, { label, value, onclick, active, disp, parts }) {
   if (!items.length) { el.innerHTML = '<div class="empty">Sin datos</div>'; return; }
   const top = Math.max(...items.map(value), 1);
   el.innerHTML = items.map((it, i) => `<button class="bar ${active && active(it) ? "on" : ""}" data-i="${i}" title="${esc(label(it))}">
       <span class="name">${esc(label(it))}</span>
-      <span class="track"><span class="fill" style="width:${Math.max(1, value(it)/top*100)}%"></span></span>
+      <span class="track"><span class="fill" style="width:${Math.max(1, value(it)/top*100)}%">${periodSegments(parts, it, "width")}</span></span>
       <span class="val">${esc(disp ? disp(it) : `${compact(it.sum)} · ${it.n}`)}</span></button>`).join("");
   if (onclick) el.querySelectorAll(".bar").forEach((b) => b.addEventListener("click", () => onclick(items[+b.dataset.i])));
 }
-function colChart(el, items, { label, value, onclick, active, title }) {
+function colChart(el, items, { label, value, onclick, active, title, parts }) {
   const top = Math.max(...items.map(value), 1);
   el.innerHTML = `<div class="cols">` + items.map((it, i) =>
     `<button class="col ${active(it) ? "on" : ""}" data-i="${i}" title="${esc(title(it))}" aria-label="${esc(title(it))}">
-      <span class="fill" style="height:${value(it)/top*100}%"></span><span class="tick">${esc(label(it))}</span></button>`).join("") + `</div>`;
+      <span class="fill" style="height:${value(it)/top*100}%">${periodSegments(parts, it, "height")}</span><span class="tick">${esc(label(it))}</span></button>`).join("") + `</div>`;
   el.querySelectorAll(".col").forEach((b) => b.addEventListener("click", () => onclick(items[+b.dataset.i])));
 }
 function stackedYears(el, list, catFn, order) {
@@ -481,7 +516,7 @@ function bubbles(el, list) {
   bubblePoints = [...pts].sort((a, b) => b.amount - a.amount);
   bubblePoints.forEach((r, i) => {
     const cy = T + groups.indexOf(typeGroup(r.type)) * rowH + rowH / 2;
-    svg += `<circle data-i="${i}" cx="${x(r.date).toFixed(1)}" cy="${cy}" r="${rad(r.amount).toFixed(1)}"></circle>`;
+    svg += `<circle class="p${r.period}" data-i="${i}" cx="${x(r.date).toFixed(1)}" cy="${cy}" r="${rad(r.amount).toFixed(1)}"></circle>`;
   });
   el.innerHTML = svg + "</svg>";
 }
@@ -504,7 +539,8 @@ function showTip(e) {
   const who = r.winners.map((w) => winnerLabel(w.key)).join(", ");
   tip.innerHTML = `<strong>${esc(r.title.length > 140 ? r.title.slice(0, 140) + "…" : r.title)}</strong>
     <div>${eur2.format(r.amount)} · ${fmtDate(r.date)}</div>
-    <div class="muted">${esc(TYPE[r.type] || "—")} · ${esc(r.bodyShort)}${who ? " · " + esc(who) : ""}</div>`;
+    <div class="muted">${esc(TYPE[r.type] || "—")} · ${esc(r.bodyShort)}${who ? " · " + esc(who) : ""}</div>
+    <div class="muted"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>Sacado ${esc(PERIODS[r.period].label.toLowerCase())}</div>`;
   tip.hidden = false;
   moveTip(e);
 }
@@ -579,6 +615,14 @@ function render() {
   ({ resumen: renderResumen, evolucion: renderEvolucion, adjudicatarios: renderAdj, abiertas: renderOpen, listado: renderList })[state.tab]();
 }
 
+// Leyenda de colores con el recuento de cada corporación sobre lo que se está viendo
+function renderPeriodLegend(id, list) {
+  $(id).innerHTML = [0, 1].map((p) => {
+    const m = metrics(list.filter((r) => r.period === p));
+    return `<span><i class="p${p}"></i>${esc(PERIODS[p].label)} · ${nf.format(m.n)} contratos · ${compact(m.sum)}</span>`;
+  }).join("") + `<span class="note">Color según quién sacó el contrato: la licitación, por la fecha de publicación del anuncio; el contrato menor, por la de adjudicación.</span>`;
+}
+
 // Contratos que terminaron sin adjudicar (desiertos, desistidos o con renuncia) sobre los que ya tienen resultado
 function unawardedKpi(list) {
   const withResult = list.filter((r) => r.outcome !== null).length;
@@ -593,6 +637,7 @@ function unawardedKpi(list) {
 }
 
 function renderResumen() {
+  renderPeriodLegend("period-legend", filtered);
   const m = metrics(filtered);
   const menores = filtered.filter((r) => r.kind === "menor").length;
   $("kpis").innerHTML =
@@ -621,28 +666,30 @@ function renderResumen() {
 
   const forYear = R.filter((r) => passes(r, ["year"]));
   const yAgg = new Map(agg(forYear, (r) => r.year).map((e) => [e.key, e]));
-  colChart($("c-year"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, sum:0 }) })), {
-    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum,
+  const sumParts = (e) => [e.byP[0].sum, e.byP[1].sum];
+  const countParts = (e) => [e.byP[0].n, e.byP[1].n];
+  colChart($("c-year"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, sum:0, byP: emptyP() }) })), {
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: sumParts,
     title: (e) => `${e.y}: ${eur.format(e.sum)} en ${e.n} contratos`,
     active: (e) => String(e.y) === String(state.year), onclick: (e) => toggleFilter("year", e.y, "f-year"),
   });
   const forMonth = R.filter((r) => passes(r, ["month"]));
   const mAgg = new Map(agg(forMonth, (r) => r.month).map((e) => [e.key, e]));
-  colChart($("c-month"), MONTHS.map((mm, i) => ({ m: mm, i: i+1, ...(mAgg.get(i+1) || { n:0, sum:0 }) })), {
-    label: (e) => e.m, value: (e) => e.n,
+  colChart($("c-month"), MONTHS.map((mm, i) => ({ m: mm, i: i+1, ...(mAgg.get(i+1) || { n:0, sum:0, byP: emptyP() }) })), {
+    label: (e) => e.m, value: (e) => e.n, parts: countParts,
     title: (e) => `${MONTHS_LONG[e.i-1]}: ${e.n} contratos, ${eur.format(e.sum)}`,
     active: (e) => String(e.i) === String(state.month), onclick: (e) => toggleFilter("month", e.i, "f-month"),
   });
   barList($("c-type"), agg(filtered, (r) => r.type).sort((a, b) => b.sum - a.sum), {
-    label: (e) => TYPE[e.key] || "Código " + e.key, value: (e) => e.sum,
+    label: (e) => TYPE[e.key] || "Código " + e.key, value: (e) => e.sum, parts: sumParts,
     active: (e) => String(e.key) === state.type, onclick: (e) => toggleFilter("type", e.key, "f-type"),
   });
   barList($("c-proc"), agg(filtered, (r) => r.procedure).sort((a, b) => b.sum - a.sum), {
-    label: (e) => PROC[e.key] || "Código " + e.key, value: (e) => e.sum,
+    label: (e) => PROC[e.key] || "Código " + e.key, value: (e) => e.sum, parts: sumParts,
     active: (e) => String(e.key) === state.proc, onclick: (e) => toggleFilter("proc", e.key, "f-proc"),
   });
   barList($("c-outcome"), agg(filtered, (r) => r.outcome ?? "none").sort((a, b) => b.n - a.n), {
-    label: (e) => (e.key === "none" ? "Sin resultado todavía" : OUTCOME[e.key] || e.key), value: (e) => e.n,
+    label: (e) => (e.key === "none" ? "Sin resultado todavía" : OUTCOME[e.key] || e.key), value: (e) => e.n, parts: countParts,
     disp: (e) => (e.sum ? `${e.n} · ${compact(e.sum)}` : String(e.n)),
     active: (e) => e.key === state.result, onclick: (e) => toggleFilter("result", e.key, "f-result"),
   });
@@ -651,14 +698,17 @@ function renderResumen() {
     // Mismo criterio que el filtro de importe: sin importe adjudicado cuenta el presupuesto (r.amount).
     // El número de contratos coincide así con el que queda al hacer clic; la suma solo incluye adjudicados.
     const rs = R.filter((r) => r.amount > lo && r.amount <= hi && passesNoAmount(r));
-    return { label, lo, hi, n: rs.length, sum: rs.filter((r) => r.hasAward).reduce((s, r) => s + r.amount, 0) };
+    return {
+      label, lo, hi, n: rs.length, sum: rs.filter((r) => r.hasAward).reduce((s, r) => s + r.amount, 0),
+      byP: [0, 1].map((p) => ({ n: rs.filter((r) => r.period === p).length, sum: 0 })),
+    };
   });
   // Los filtros de importe mínimo/máximo son inclusivos: "más de lo" equivale a mínimo lo + 1 céntimo
   const rangeBounds = (e) => ({ min: e.lo > 0 ? (e.lo + 0.01).toFixed(2) : "", max: e.hi === Infinity ? "" : String(e.hi) });
   const same = (a, b) => (a === "" || b === "" ? a === b : +a === +b);
   const rangeActive = (e) => { const b = rangeBounds(e); return same(state.min, b.min) && same(state.max, b.max); };
   barList($("c-range"), byRange, {
-    label: (e) => e.label, value: (e) => e.n, disp: (e) => `${e.n} · ${compact(e.sum)}`,
+    label: (e) => e.label, value: (e) => e.n, parts: countParts, disp: (e) => `${e.n} · ${compact(e.sum)}`,
     active: rangeActive,
     onclick: (e) => {
       const b = rangeBounds(e), on = rangeActive(e);
@@ -706,6 +756,7 @@ function renderEvolucion() {
 }
 
 function renderAdj() {
+  renderPeriodLegend("period-legend2", filtered);
   const all = contractors(filtered);
   const total = all.reduce((s, c) => s + c.sum, 0);
   const sortedSum = [...all].sort((a, b) => b.sum - a.sum);
@@ -718,8 +769,12 @@ function renderAdj() {
     kpi(all.length ? nf.format(kN) : "—", "adjudicatarios reúnen la mitad de las adjudicaciones", all.length ? `de ${nf.format(all.length)} en total` : "") +
     kpi(nf.format(all.filter((c) => c.n === 1).length), "adjudicatarios con un solo contrato");
   const click = (e) => { state.winner = e.key; for (const t of Object.values(tbl)) t.page = 0; goTab("listado"); };
-  barList($("top-sum"), sortedSum.slice(0, 5), { label: (e) => winnerLabel(e.key), value: (e) => e.sum, disp: (e) => compact(e.sum), onclick: click });
-  barList($("top-n"), [...all].sort((a, b) => b.n - a.n || b.sum - a.sum).slice(0, 5), { label: (e) => winnerLabel(e.key), value: (e) => e.n, disp: (e) => String(e.n), onclick: click });
+  barList($("top-sum"), sortedSum.slice(0, 5), {
+    label: (e) => winnerLabel(e.key), value: (e) => e.sum, parts: (e) => [e.byP[0].sum, e.byP[1].sum], disp: (e) => compact(e.sum), onclick: click,
+  });
+  barList($("top-n"), [...all].sort((a, b) => b.n - a.n || b.sum - a.sum).slice(0, 5), {
+    label: (e) => winnerLabel(e.key), value: (e) => e.n, parts: (e) => [e.byP[0].n, e.byP[1].n], disp: (e) => String(e.n), onclick: click,
+  });
   const q = norm(state.adjQ).split(/\s+/).filter(Boolean);
   adjRows = all.filter((c) => !q.length || q.every((t) => norm(winnerLabel(c.key) + " " + (c.nif || "")).includes(t)));
   if (!$("t-adj").firstChild) mountTable("t-adj");
@@ -768,6 +823,7 @@ function renderList() {
     ...(optCols.has("procedure") ? [{ key:"procedure", label:"Procedimiento", sort: (r) => PROC[r.procedure] || "", html: (r) => esc(PROC[r.procedure] || "—") }] : []),
     ...(optCols.has("status") ? [{ key:"status", label:"Estado", sort: (r) => r.status || "", html: (r) => esc(STATUS[r.status] || r.status || "—") }] : []),
     ...(optCols.has("outcome") ? [{ key:"outcome", label:"Resultado", sort: (r) => r.outcome || "", html: (r) => (r.outcome ? `<span class="tag">${esc(OUTCOME[r.outcome] || r.outcome)}</span>` : '<span class="muted">—</span>') }] : []),
+    ...(optCols.has("period") ? [{ key:"period", label:"Corporación", sort: (r) => r.period, html: (r) => `<span class="tag"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>${esc(PERIODS[r.period].label)}</span>` }] : []),
     ...(optCols.has("published") ? [{ key:"published", label:"Publicación", desc:true, sort: (r) => r.published || "", html: (r) => fmtDate(r.published) }] : []),
     ...(optCols.has("deadline") ? [{ key:"deadline", label:"Fecha límite", desc:true, sort: (r) => r.deadline || "", html: (r) => fmtDate(r.deadline) }] : []),
     ...(optCols.has("offers") ? [{ key:"offers", label:"Ofertas", num:true, sort: (r) => r.offers ?? -1, html: (r) => r.offers ?? "—" }] : []),
@@ -792,9 +848,9 @@ function renderList() {
 $("csv").addEventListener("click", () => {
   // Los visores de artefactos bloquean las descargas: se copia al portapapeles (separado por tabuladores, que las
   // hojas de cálculo reparten en columnas al pegar) y, si el navegador lo rechaza, se muestra el texto.
-  const head = ["fecha","expediente","objeto","clase","tipo","procedimiento","estado","resultado","organo","contratistas","nif","importe_adjudicado_iva","presupuesto_iva","fecha_limite","url"];
+  const head = ["fecha","expediente","objeto","clase","tipo","procedimiento","estado","resultado","corporacion","organo","contratistas","nif","importe_adjudicado_iva","presupuesto_iva","fecha_limite","url"];
   copyTSV([head, ...filtered.map((r) => [
-    r.date, r.folder, r.title, KIND[r.kind], TYPE[r.type] || r.type, PROC[r.procedure] || r.procedure, STATUS[r.status] || r.status, r.outcome ? OUTCOME[r.outcome] : "", r.bodyShort,
+    r.date, r.folder, r.title, KIND[r.kind], TYPE[r.type] || r.type, PROC[r.procedure] || r.procedure, STATUS[r.status] || r.status, r.outcome ? OUTCOME[r.outcome] : "", PERIODS[r.period].label, r.bodyShort,
     r.winners.map((w) => winnerLabel(w.key)).join(" | "), r.winners.map((w) => w.nif || "").join(" | "),
     r.hasAward ? dec(r.amount) : "", dec(r.budgetTotal), r.deadline || "", r.url,
   ])], $("csv-msg"), "csv-box");
