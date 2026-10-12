@@ -103,6 +103,7 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .col .fill .seg{width:100%}
 .col .fill .seg:first-child{border-radius:0}
 .periods{margin:0 0 12px}
+.legend-dot{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px}
 /* comparativa de mandatos */
 .verdict{display:inline-block;border-radius:999px;padding:1px 10px;font-size:.78rem;white-space:nowrap;border:1px solid var(--line);color:var(--muted)}
 .verdict.up{color:var(--good);border-color:var(--good)}
@@ -156,7 +157,7 @@ footer{padding:24px 0 40px}
 </div></header>
 
 <main class="wrap">
-  <section class="panel" aria-labelledby="h-filtros" style="margin-top:16px">
+  <section class="panel" id="filters" aria-labelledby="h-filtros" style="margin-top:16px">
     <h2 id="h-filtros">Buscar y filtrar</h2>
     <div class="filters">
       <div class="search">
@@ -215,30 +216,6 @@ footer{padding:24px 0 40px}
 
   <!-- ============ EVOLUCIÓN ============ -->
   <div data-tab="evolucion" hidden>
-    <section class="panel" id="mandates" aria-labelledby="h-mand">
-      <h2 id="h-mand">Comparar mandatos</h2>
-      <p class="note" style="margin-top:-6px">Compara dos periodos de gestión con los mismos indicadores. Por defecto: la corporación constituida el 15/06/2019 frente a la constituida el 17/06/2023.
-        Los indicadores en los que mejora el mandato actual van primero. Las fechas se pueden cambiar.</p>
-      <div class="cmpsel">
-        <div><label for="m-a0">Mandato anterior: desde</label><input id="m-a0" type="date"></div>
-        <div><label for="m-a1">Mandato anterior: hasta</label><input id="m-a1" type="date"></div>
-        <div><label for="m-b0">Mandato actual: desde</label><input id="m-b0" type="date"></div>
-        <div><label for="m-b1">Mandato actual: hasta</label><input id="m-b1" type="date"></div>
-      </div>
-      <label style="display:flex;gap:8px;align-items:center;color:var(--ink);margin-bottom:10px">
-        <input id="m-eq" type="checkbox" checked> Comparar en igualdad de duración (los mismos días desde el inicio del mandato anterior)
-      </label>
-      <p class="note" id="mand-windows"></p>
-      <div class="tablewrap"><table class="cmp mand">
-        <thead><tr><th>Indicador</th><th class="num head-p0">Mandato anterior</th><th class="num head-p1">Mandato actual</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
-        <tbody id="mand-rows"></tbody>
-      </table></div>
-      <p class="note" id="mand-notes"></p>
-      <details class="guide picker" open>
-        <summary>Guía de indicadores: qué mide cada uno y por qué importa para la gestión municipal</summary>
-        <div id="mand-guide"></div>
-      </details>
-    </section>
     <section class="panel">
       <h2>Comparar dos años</h2>
       <div class="cmpsel">
@@ -254,6 +231,27 @@ footer{padding:24px 0 40px}
     <section class="grid2">
       <div class="panel"><h2>Tipo de contrato por año <span class="note">(% sobre importe adjudicado)</span></h2><div id="s-type"></div></div>
       <div class="panel"><h2>Procedimiento por año <span class="note">(% sobre importe adjudicado)</span></h2><div id="s-proc"></div></div>
+    </section>
+  </div>
+
+  <!-- ============ SENTIR ARANDA VS PARTIDO POPULAR (solo informativa: sin filtros ni fechas editables) ============ -->
+  <div data-tab="sentiraranda" hidden>
+    <section class="panel" id="versus" aria-labelledby="h-versus">
+      <h2 id="h-versus">Sentir Aranda frente al Partido Popular</h2>
+      <p class="note" style="margin-top:-6px">Los mismos indicadores de contratación para los dos últimos periodos de gobierno municipal: los
+        cuatro años del Partido Popular (corporación constituida el 15/06/2019) y el mandato actual de Sentir Aranda (constituida el 17/06/2023).
+        Los indicadores en los que mejora Sentir Aranda van primero.</p>
+      <div class="kpis" id="versus-cards"></div>
+      <p id="versus-summary" style="font-weight:700"></p>
+      <div class="tablewrap"><table class="cmp mand">
+        <thead><tr><th>Indicador</th><th class="num head-p0">Partido Popular</th><th class="num head-p1">Sentir Aranda</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
+        <tbody id="mand-rows"></tbody>
+      </table></div>
+      <p class="note" id="mand-notes"></p>
+      <details class="guide picker" open>
+        <summary>Guía de indicadores: qué mide cada uno y por qué importa para la gestión municipal</summary>
+        <div id="mand-guide"></div>
+      </details>
     </section>
   </div>
 
@@ -321,11 +319,11 @@ const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin a
 // Corporaciones municipales: la actual se constituyó el 17/06/2023. El color de cada contrato indica cuál lo sacó:
 // licitaciones por la fecha de publicación del anuncio; contratos menores (sin licitación) por la de adjudicación.
 const PERIOD_START = "2023-06-17";
-const PERIODS = [{ label: "Hasta el 16/06/2023" }, { label: "Desde el 17/06/2023" }];
+const PERIODS = [{ label: "Partido Popular (hasta el 16/06/2023)" }, { label: "Sentir Aranda (desde el 17/06/2023)" }];
 const emptyP = () => [{ n: 0, sum: 0 }, { n: 0, sum: 0 }];
 const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
+const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["sentiraranda","Sentir Aranda vs Partido Popular"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
 // Tramos (desde, hasta]: cada uno incluye su importe superior ("hasta 3.000" incluye 3.000,00 €)
 const RANGES = [["Hasta 3.000 €",-Infinity,3000],["3.000 – 5.000 €",3000,5000],["5.000 – 15.000 €",5000,15000],["15.000 – 40.000 €",15000,40000],["Más de 40.000 €",40000,Infinity]];
 const TYPE_GROUPS = ["Servicios","Suministros","Obras","Otros"];
@@ -405,9 +403,6 @@ fillSelect($("cmp-b"), [["","Sin comparar"], ...[...YEARS].reverse().map((y) => 
 const lastYear = YEARS[YEARS.length - 1];
 state.cmpA = String(lastYear); state.cmpB = String(lastYear - 1);
 $("cmp-a").value = state.cmpA; $("cmp-b").value = state.cmpB;
-// Mandatos: constitución de las corporaciones municipales (15/06/2019 y 17/06/2023); el actual llega hasta el último dato
-$("m-a0").value = "2019-06-15"; $("m-a1").value = "2023-06-16"; $("m-b0").value = PERIOD_START; $("m-b1").value = REF;
-for (const id of ["m-a0", "m-a1", "m-b0", "m-b1", "m-eq"]) $(id).addEventListener("change", render);
 
 let timer;
 const bind = [["q","q",150],["f-year","year",0],["f-month","month",0],["f-body","body",0],["f-kind","kind",0],["f-type","type",0],["f-proc","proc",0],["f-status","status",0],["f-result","result",0],["f-period","period",0],["f-min","min",250],["f-max","max",250],["f-from","from",0],["f-to","to",0],["cmp-a","cmpA",0],["cmp-b","cmpB",0],["cmp-m","cmpM",0],["adj-q","adjQ",150]];
@@ -585,7 +580,7 @@ function showTip(e) {
   tip.innerHTML = `<strong>${esc(r.title.length > 140 ? r.title.slice(0, 140) + "…" : r.title)}</strong>
     <div>${eur2.format(r.amount)} · ${fmtDate(r.date)}</div>
     <div class="muted">${esc(TYPE[r.type] || "—")} · ${esc(r.bodyShort)}${who ? " · " + esc(who) : ""}</div>
-    <div class="muted"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>Sacado ${esc(PERIODS[r.period].label.toLowerCase())}</div>`;
+    <div class="muted"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>Sacado por: ${esc(PERIODS[r.period].label)}</div>`;
   tip.hidden = false;
   moveTip(e);
 }
@@ -646,6 +641,7 @@ const linkCell = (r) => r.url ? `<a href="${esc(r.url)}" target="_blank" rel="no
 let filtered = [], listRows = [], adjRows = [];
 function render() {
   tip.hidden = true;
+  $("filters").hidden = state.tab === "sentiraranda"; // la comparativa es solo informativa: sin filtros
   // pestañas
   $("tabs").innerHTML = TABS.map(([k, l]) => `<button role="tab" id="tab-${k}" aria-selected="${state.tab === k}" data-t="${k}">${esc(l)}</button>`).join("");
   $("tabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => goTab(b.dataset.t)));
@@ -657,7 +653,7 @@ function render() {
   $("chips").innerHTML = chips.map(([k,t]) => `<span class="chip">${esc(t)}<button data-k="${k}" aria-label="Quitar filtro: ${esc(t)}">×</button></span>`).join("");
   $("chips").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { state[b.dataset.k] = ""; for (const t of Object.values(tbl)) t.page = 0; render(); }));
 
-  ({ resumen: renderResumen, evolucion: renderEvolucion, adjudicatarios: renderAdj, abiertas: renderOpen, listado: renderList })[state.tab]();
+  ({ resumen: renderResumen, evolucion: renderEvolucion, sentiraranda: renderVersus, adjudicatarios: renderAdj, abiertas: renderOpen, listado: renderList })[state.tab]();
 }
 
 // Leyenda de colores con el recuento de cada corporación sobre lo que se está viendo
@@ -893,7 +889,7 @@ function verdictOf(ind, a, b) {
   const close = ind.kind === "pct" ? Math.abs(b - a) < 1 : (a !== 0 && Math.abs(b - a) / Math.abs(a) < 0.03);
   if (close) return { cls: "eq", text: "Sin diferencia relevante", sec: 1 };
   const improved = ind.better === "higher" ? b > a : b < a;
-  return improved ? { cls: "up", text: "Mejora en el mandato actual", sec: 0 } : { cls: "down", text: "Mejor en el mandato anterior", sec: 2 };
+  return improved ? { cls: "up", text: "Mejora en Sentir Aranda", sec: 0 } : { cls: "down", text: "Mejor en el Partido Popular", sec: 2 };
 }
 
 function changeText(ind, a, b) {
@@ -903,28 +899,30 @@ function changeText(ind, a, b) {
   return a === 0 ? "—" : `${sign}${nfix(Math.abs(d / a * 100), 0)} %`;
 }
 
-const MAND_SECTIONS = ["Indicadores en los que mejora el mandato actual", "Indicadores informativos o sin diferencia relevante", "Indicadores en los que el mandato anterior tiene mejor dato"];
+const MAND_SECTIONS = ["Indicadores en los que mejora Sentir Aranda", "Indicadores informativos o sin diferencia relevante", "Indicadores en los que el Partido Popular tiene mejor dato"];
 
-function renderMandates() {
-  const a0 = $("m-a0").value, a1req = $("m-a1").value, b0 = $("m-b0").value, b1 = $("m-b1").value;
-  const rows = $("mand-rows");
-  if (!a0 || !a1req || !b0 || !b1 || a0 > a1req || b0 > b1) {
-    rows.innerHTML = '<tr><td colspan="5" class="empty">Indica las fechas de ambos mandatos (desde no puede ser posterior a hasta).</td></tr>';
-    $("mand-windows").textContent = ""; $("mand-notes").textContent = "";
-    return;
-  }
-  const lenB = days(b0, b1) + 1;
-  const a1 = $("m-eq").checked && days(a0, a1req) + 1 > lenB ? addDays(a0, lenB - 1) : a1req;
-  const list = R.filter((r) => passes(r, ["year", "month", "date", "period"]));
-  const A = mandateStats(list, a0, a1), B = mandateStats(list, b0, b1);
-  $("mand-windows").textContent =
-    `Mandato anterior: ${fmtDate(a0)} – ${fmtDate(a1)} (${nf.format(days(a0, a1) + 1)} días, ${nf.format(A.contracts)} contratos) · ` +
-    `Mandato actual: ${fmtDate(b0)} – ${fmtDate(b1)} (${nf.format(lenB)} días, ${nf.format(B.contracts)} contratos)`;
+// Pestaña "Sentir Aranda vs Partido Popular": solo informativa. Las ventanas son fijas y no dependen de los
+// filtros de las demás pestañas (se usan todos los contratos).
+const VERSUS_PP = ["2019-06-15", "2023-06-16"]; // corporación constituida el 15/06/2019 hasta el día anterior a la actual
+function renderVersus() {
+  const [a0, a1] = VERSUS_PP, b0 = PERIOD_START, b1 = REF;
+  const A = mandateStats(R, a0, a1), B = mandateStats(R, b0, b1);
+  const dA = days(a0, a1) + 1, dB = days(b0, b1) + 1;
+
+  const card = (cls, name, from, to, d, S) => `<div class="kpi"><div class="l"><i class="legend-dot ${cls}"></i><strong>${esc(name)}</strong></div>
+    <div class="v">${nf.format(S.contracts)} <span class="note">contratos</span></div>
+    <div class="s">${esc(fmtDate(from))} – ${esc(fmtDate(to))} · ${nf.format(d)} días (${nfix(d / 365.25, 1)} años)</div>
+    <div class="s">${esc(compact(S.v.eurPerYear * S.years))} adjudicados · ${esc(nf.format(Math.round(S.v.contractsPerYear)))} contratos al año</div></div>`;
+  $("versus-cards").innerHTML = card("p0", "Partido Popular", a0, a1, dA, A) + card("p1", "Sentir Aranda", b0, b1, dB, B);
 
   const items = INDICATORS.map((ind) => {
     const a = A.v[ind.key], b = B.v[ind.key], v = verdictOf(ind, a, b);
     return { ind, a, b, v };
   });
+  const count = (sec) => items.filter((x) => x.v.sec === sec).length;
+  $("versus-summary").textContent =
+    `Sentir Aranda mejora en ${count(0)} indicadores · el Partido Popular tiene mejor dato en ${count(2)} · ${count(1)} sin diferencia relevante o informativos`;
+
   let html = "";
   for (let sec = 0; sec < 3; sec++) {
     const part = items.filter((x) => x.v.sec === sec);
@@ -938,11 +936,13 @@ function renderMandates() {
         <td class="num">${esc(changeText(ind, a, b))}</td><td><span class="verdict ${v.cls}">${esc(v.text)}</span></td></tr>`;
     }).join("");
   }
-  rows.innerHTML = html;
+  $("mand-rows").innerHTML = html;
   $("mand-notes").textContent =
-    "Cómo leerlo: un buen dato en un indicador no compensa uno peor en otro; léelos juntos. Los importes son lo adjudicado (con IVA) y los porcentajes de " +
-    "licitaciones o menores usan n = casos de cada mandato. El contexto cambia entre periodos (por ejemplo, fondos europeos en el actual y la pandemia en el anterior) " +
-    "y un contrato muy grande mueve mucho las cifras. Es una comparación de lo publicado en la Plataforma, no una valoración de causas.";
+    "Cómo leerlo: un buen dato en un indicador no compensa uno peor en otro; léelos juntos. Los importes son lo adjudicado (con IVA) y n = casos de cada " +
+    `periodo (Partido Popular / Sentir Aranda). Los periodos duran ${nfix(dA / 365.25, 1)} y ${nfix(dB / 365.25, 1)} años: los indicadores se expresan por año o ` +
+    "en porcentaje, aunque los de concentración pueden verse algo afectados por la duración. El contexto cambia entre periodos (por ejemplo, la pandemia en 2020 " +
+    "y los fondos europeos en los últimos años) y un contrato muy grande mueve mucho las cifras. Se asigna cada contrato al periodo en que se sacó: la licitación " +
+    "por la fecha de publicación del anuncio y el contrato menor por la de adjudicación. Es una comparación de lo publicado en la Plataforma, no una valoración de causas.";
 
   const groups = [...new Set(INDICATORS.map((i) => i.group))];
   $("mand-guide").innerHTML = `<p class="note">Cada indicador responde a una pregunta sencilla. Aquí se explica qué mide y por qué, cuando mejora, la gestión municipal gana: más competencia, más rapidez, menos concentración o más ahorro.</p>` +
@@ -952,7 +952,6 @@ function renderMandates() {
 }
 
 function renderEvolucion() {
-  renderMandates();
   const base = R.filter((r) => passes(r, ["year", "month"]));
   const A = base.filter((r) => String(r.year) === state.cmpA), B = state.cmpB ? base.filter((r) => String(r.year) === state.cmpB) : [];
   const metric = state.cmpM;
