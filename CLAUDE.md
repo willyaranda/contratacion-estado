@@ -1,0 +1,46 @@
+# contratacion-estado
+
+Descarga los anuncios de contratación del Ayuntamiento de Aranda de Duero (Plataforma de Contratación del Sector
+Público), los guarda en `dump/` y publica una página de transparencia en GitHub Pages.
+
+## Comandos
+
+- `npm run fetch`: descarga los anuncios nuevos del Ayuntamiento a `dump/` (avisa por email si `SEND_EMAILS=1`).
+- `npm run build:site`: genera `transparencia/index.html` y `artifact.html` desde `dump/` y `template.html`.
+- `npm run lint` y `npm test` (ava + c8): deben pasar antes de commitear.
+
+## Convenciones
+
+- Se trabaja y se hace push directo a `main`, sin ramas de feature. Hacer `git fetch` antes de empujar y
+  `git rebase origin/main` si hay algo nuevo (el workflow nocturno también sube commits). Nunca `--force`.
+- Tras cambiar `transparencia/template.html` o `extract.js`, reconstruir y **commitear siempre `docs/index.html`**
+  (`npm run build:site` y copiar `transparencia/index.html` a `docs/index.html`).
+- Nunca imprimir ni escribir credenciales. El correo se configura con secrets de GitHub (`NOTIFY_TO`,
+  `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`); los destinatarios van siempre en CCO.
+- Los contratos se asignan a la corporación que los sacó: licitaciones por fecha de publicación del anuncio y
+  contratos menores por fecha de adjudicación.
+
+## Pipeline
+
+- `.github/workflows/nightly.yml` (02:17 UTC): descarga, build, commit de `dump/` y `docs/`, y despliegue de Pages.
+- `.github/workflows/pages.yml`: publica `docs/` en cada push a `main` que lo cambie, o cuando lo invoca el nocturno.
+- `.github/workflows/test.yml`: lint y tests en cada push y pull request.
+
+## Qué NO se actualiza solo (recordárselo al usuario)
+
+La página de GitHub Pages **sí** se actualiza sola (cada noche y en cada push que cambie `docs/`).
+**No** se actualizan solos:
+
+1. **El artefacto publicado en claude.ai**: es una copia aparte, publicada a mano. Su URL está en la memoria del
+   proyecto, no en este fichero.
+2. **Las cifras y análisis dados en una conversación** (comparativas entre mandatos, totales, rankings): son una
+   foto de la fecha en que se calcularon.
+3. **Los textos fijos de la página**: guía de indicadores, umbrales legales, fechas de constitución de las
+   corporaciones. Solo cambian si se editan en `template.html`.
+
+**Regla:** al terminar cualquier cambio en `transparencia/`, o al dar cifras o análisis, recuérdale al usuario en una
+línea que los puntos 1 y 2 son una foto y que puede pedirte actualizarlos con los últimos datos.
+
+Cuando lo pida: `git pull --rebase origin main` (trae los datos de la noche), `npm run build:site`, copiar a
+`docs/index.html`, volver a calcular el análisis y, solo si el usuario lo pide, republicar el artefacto de claude.ai
+sobre su URL existente. No republicar el artefacto por iniciativa propia.
