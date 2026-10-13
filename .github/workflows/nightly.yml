@@ -6,7 +6,10 @@ name: Actualización nocturna
 # También se puede lanzar a mano desde la pestaña Actions ("Run workflow").
 on:
   schedule:
+    # GitHub no garantiza los disparos programados (pueden retrasarse o saltarse): hay dos al día. El segundo es
+    # inocuo si el primero ya hizo su trabajo (sin novedades, no hay commit ni despliegue).
     - cron: '17 2 * * *' # 02:17 UTC (04:17 en horario de verano de España)
+    - cron: '43 5 * * *' # 05:43 UTC (07:43 en horario de verano de España)
   workflow_dispatch:
 
 concurrency:

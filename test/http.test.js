@@ -58,6 +58,23 @@ test('un error de red también se reintenta y se informa', async (t) => {
   t.is(calls.length, 3);
 });
 
+test('cada petición lleva un límite de tiempo y una petición colgada acaba por fallar', async (t) => {
+  const signals = [];
+  // fetch que no responde nunca, salvo que se aborte la señal
+  const hanging = (url, { signal }) => new Promise((resolve, reject) => {
+    signals.push(signal);
+    signal.addEventListener('abort', () => reject(signal.reason));
+  });
+  // AbortSignal.timeout no mantiene vivo el proceso (en producción lo hace el socket real): se simula aquí
+  const keepAlive = setInterval(() => {}, 10);
+  const error = await t.throwsAsync(fetchText('https://example.test/lento', {
+    fetchImpl: hanging, attempts: 2, timeoutMs: 30, sleep: async () => {},
+  }), { message: /tras 2 intentos/ }).finally(() => clearInterval(keepAlive));
+  t.is(signals.length, 2);
+  t.true(signals.every((s) => s.aborted));
+  t.regex(error.cause.message, /timeout|aborted|abort/i);
+});
+
 test('usa una espera real por defecto', async (t) => {
   const { fetchImpl } = sequence(fail(502), ok('bien'));
   t.is(await fetchText('https://example.test/d', { fetchImpl, attempts: 2, baseDelayMs: 1 }), 'bien');
