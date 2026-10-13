@@ -1,0 +1,23 @@
+docs/agents/issue-tracker.md
+  s_20c69f8dd61754::t_c817c33bfe42fb 1-45
+CLAUDE.md
+  s_20c69f8dd61754::t_f4b1fa6013e38f 49-58
+docs/agents/domain.md
+  s_20c69f8dd61754::t_2268497d65be9d 1-51
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "222dad2126ed6d37a2701f5178b228b683b6cf58",
+  "prompts": {},
+  "sessions": {
+    "s_20c69f8dd61754": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "583e4e16-965c-4fa1-9a80-da70c3f84ea4",
+        "model": "claude-opus-4-5-20251101"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
