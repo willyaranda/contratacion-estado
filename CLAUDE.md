@@ -46,3 +46,13 @@ que puede pedirte recalcularlos con los últimos datos.
 
 Cuando lo pida: `git pull --rebase origin main` (trae los datos de la noche), `npm run build:site`, copiar a
 `docs/index.html` y volver a calcular el análisis.
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues for this repo (uses `gh` CLI). See `docs/agents/issue-tracker.md`.
+
+### Domain docs
+
+Single-context layout (one `CONTEXT.md` + `docs/adr/` at repo root). See `docs/agents/domain.md`.
