@@ -41,7 +41,8 @@ try {
   const created = [];
   const state = await readState();
   const nextState = { ...state };
-  for (const { sfx, url } of FEEDS) {
+  // Los feeds son independientes: se descargan a la vez (cada petición tarda minutos con el servidor lento).
+  await Promise.all(FEEDS.map(async ({ sfx, url }) => {
     // Solo se guardan los anuncios cuyo contratante es el Ayuntamiento de Aranda de Duero
     // (Alcaldía, Junta de Gobierno o Pleno): el mismo criterio que usa transparencia/extract.js.
     // sin punto de control (primera vez), se usa la versión más reciente guardada
@@ -58,7 +59,7 @@ try {
       log: console.log,
     });
     if (stats.newestSeen !== null) nextState[sfx] = Math.max(stats.newestSeen, state[sfx] ?? 0);
-  }
+  }));
   // solo si todos los feeds se recorrieron sin error
   await writeFile(STATE_FILE, `${JSON.stringify(nextState, null, 2)}\n`);
   console.log(`Finished. New files written: ${created.length}`);
