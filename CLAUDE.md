@@ -22,7 +22,10 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
 
 ## Pipeline
 
-- `.github/workflows/nightly.yml` (02:17 UTC): descarga, build, commit de `dump/` y `docs/`, y despliegue de Pages.
+- `.github/workflows/nightly.yml` (02:17 y 05:43 UTC; GitHub no garantiza los disparos programados, por eso hay dos):
+  descarga, build, commit de `dump/` y `docs/`, y despliegue de Pages. La descarga guarda un punto de control en
+  `dump/.state.json` (hasta dónde llegó en el feed de toda España) para recorrer solo lo nuevo; el servidor de la
+  Plataforma es lento (minutos por página) y no hay que quitar el límite de tiempo por petición ni el punto de control.
 - `.github/workflows/pages.yml`: publica `docs/` en cada push a `main` que lo cambie, o cuando lo invoca el nocturno.
 - `.github/workflows/test.yml`: lint y tests en cada push y pull request.
 
