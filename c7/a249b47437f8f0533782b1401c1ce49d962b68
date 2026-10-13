@@ -1,0 +1,31 @@
+.github/workflows/nightly.yml
+  s_3e20ed0ad9d3d2::t_61104bc0766e9b 9-10,12
+dump/.state.json
+  s_3e20ed0ad9d3d2::t_ff31f180690126 1-4
+index.js
+  s_3e20ed0ad9d3d2::t_5c852582da216f 3,8,22-35,42-43,47-49,53,60,62-63
+lib/crawler.js
+  s_3e20ed0ad9d3d2::t_7c0e3298600805 2-4,18-28,32-36,49,53-55,63-66,87-91
+lib/http.js
+  s_3e20ed0ad9d3d2::t_8f4c0951937942 1-3,10,17-18
+test/crawler.test.js
+  s_3e20ed0ad9d3d2::t_2d02e1cc2729be 9,77-79,111-113,125-127,138-140,162,179-223
+test/http.test.js
+  s_3e20ed0ad9d3d2::t_e2ae53e49a570d 61-77
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c7a249b47437f8f0533782b1401c1ce49d962b68",
+  "prompts": {},
+  "sessions": {
+    "s_3e20ed0ad9d3d2": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "c192d70d-4c3e-4c50-8895-b3f641832bed",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
