@@ -37,14 +37,15 @@ jobs:
       - run: npm ci
 
       # Descarga y, si hay anuncios nuevos, manda UN correo resumen a NOTIFY_TO (en CCO).
-      # La configuración llega solo a este paso y desde secrets del repositorio (Settings > Secrets and variables
-      # > Actions): GitHub oculta sus valores en los logs y el código nunca los imprime.
+      # La configuración llega solo a este paso. Las credenciales de AWS vienen de secrets del repositorio
+      # (Settings > Secrets and variables > Actions): GitHub oculta sus valores en los logs y el código nunca los
+      # imprime. Los destinatarios (NOTIFY_TO) no son secretos: es una variable del repositorio.
       # Si NOTIFY_TO está vacía o mal formada, o faltan las credenciales, el job falla antes de descargar nada.
       - name: Descargar anuncios nuevos y avisar por email
         run: npm run fetch
         env:
           SEND_EMAILS: '1'
-          NOTIFY_TO: ${{ secrets.NOTIFY_TO }}
+          NOTIFY_TO: ${{ vars.NOTIFY_TO }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           # opcionales (Settings > Secrets and variables > Actions > Variables); sin ellas se usan los valores por defecto

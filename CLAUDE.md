@@ -15,8 +15,9 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
   `git rebase origin/main` si hay algo nuevo (el workflow nocturno también sube commits). Nunca `--force`.
 - Tras cambiar `transparencia/template.html` o `extract.js`, reconstruir y **commitear siempre `docs/index.html`**
   (`npm run build:site` y copiar `transparencia/index.html` a `docs/index.html`).
-- Nunca imprimir ni escribir credenciales. El correo se configura con secrets de GitHub (`NOTIFY_TO`,
-  `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`); los destinatarios van siempre en CCO.
+- Nunca imprimir ni escribir credenciales. Las credenciales de AWS son secrets de GitHub (`AWS_ACCESS_KEY_ID`,
+  `AWS_SECRET_ACCESS_KEY`); los destinatarios son la variable de repositorio `NOTIFY_TO` (no es un secreto) y van
+  siempre en CCO.
 - Los contratos se asignan a la corporación que los sacó: licitaciones por fecha de publicación del anuncio y
   contratos menores por fecha de adjudicación.
 
