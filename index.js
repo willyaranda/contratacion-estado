@@ -72,7 +72,11 @@ try {
   let openingChanges = new Map();
   try {
     const sync = await syncAperturas({
-      dumpDir: DUMP_DIR, store: aperturas, fetchText: (u) => fetchText(u, { log: console.log }), log: console.log,
+      dumpDir: DUMP_DIR,
+      store: aperturas,
+      fetchText: (u) => fetchText(u, { log: console.log }),
+      onUpdate: () => writeAperturas(DUMP_DIR, aperturas),
+      log: console.log,
     });
     openingChanges = sync.changes;
     await writeAperturas(DUMP_DIR, aperturas);

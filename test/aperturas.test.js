@@ -106,16 +106,20 @@ const fakeWeb = (xml) => {
   };
 };
 
-test('syncAperturas guarda las aperturas, y no repite fichas ya procesadas ni consulta estados cerrados', async (t) => {
+test('syncAperturas guarda las aperturas de cualquier estado, solo de la última versión y sin repetir fichas', async (t) => {
   const dump = dumpWith([
     { id: '10', ts: 1000, status: 'PUB' }, { id: '10', ts: 2000, status: 'EV' }, // solo cuenta la última versión
-    { id: '11', ts: 1000, status: 'RES' },
+    { id: '11', ts: 1000, status: 'RES' }, // también se consultan las ya resueltas
   ]);
   const web = fakeWeb(xmlOf(event('Apertura sobre oferta económica', 4, '2026-10-21', '11:45', 'Salón de Plenos')));
   const store = {};
-  const first = await syncAperturas({ dumpDir: dump, store, fetchText: web.fetchText });
-  t.is(first.checked, 1);
-  t.deepEqual(Object.keys(store), ['10']);
+  let saves = 0;
+  const first = await syncAperturas({
+    dumpDir: dump, store, fetchText: web.fetchText, onUpdate: async () => { saves += 1; },
+  });
+  t.is(saves, 2); // el progreso se guarda tras cada ficha
+  t.is(first.checked, 2);
+  t.deepEqual(Object.keys(store), ['10', '11']);
   t.is(store['10'].version, 2000);
   t.is(store['10'].events.length, 1);
   t.is(store['10'].source.name, 'Rectificación de Pliego'); // el anuncio no tenía aperturas: se pasa al siguiente
@@ -213,13 +217,12 @@ const store = {
     ],
   },
 };
-const NOW = Date.parse('2026-10-14T00:00:00Z');
 
-test('buildIcs genera un VEVENT por apertura futura, en UTC y con UID estable', (t) => {
-  const ics = buildIcs(store, { now: NOW });
+test('buildIcs genera un VEVENT por cada apertura, también las pasadas, en UTC y con UID estable', (t) => {
+  const ics = buildIcs(store);
   t.true(ics.startsWith('BEGIN:VCALENDAR\r\n'));
   t.true(ics.endsWith('END:VCALENDAR\r\n'));
-  t.is((ics.match(/BEGIN:VEVENT/g) ?? []).length, 3); // la de enero ya pasó
+  t.is((ics.match(/BEGIN:VEVENT/g) ?? []).length, 4); // sin límite en el pasado: también la de enero
   t.regex(ics, /DTSTART:20261014T093000Z\r\nDTEND:20261014T100000Z/);
   t.regex(ics, /UID:10-2-sobre-a@contratacion-estado/);
   // dos aperturas del mismo tipo y sobre: UID distinto
@@ -228,11 +231,11 @@ test('buildIcs genera un VEVENT por apertura futura, en UTC y con UID estable', 
   t.regex(ics, /LOCATION:Salón de Plenos · PZ MAYOR\\, 1/);
   t.regex(ics, /SEQUENCE:\d+/);
   // determinista: no depende de cuándo se genera
-  t.is(buildIcs(store, { now: NOW }), ics);
+  t.is(buildIcs(store), ics);
 });
 
 test('buildIcs escapa el texto y no pasa de 75 octetos por línea', (t) => {
-  const ics = buildIcs(store, { now: NOW });
+  const ics = buildIcs(store);
   for (const line of ics.split('\r\n')) t.true(Buffer.byteLength(line) <= 75, line);
   t.regex(ics.replace(/\r\n /g, ''), /Suministro de material\\; con "comas"\\, y una/);
   // el salto de línea de la descripción es un \n escapado
@@ -240,11 +243,11 @@ test('buildIcs escapa el texto y no pasa de 75 octetos por línea', (t) => {
 });
 
 test('buildIcs con el fichero vacío da un calendario válido sin eventos', (t) => {
-  const ics = buildIcs({}, { now: NOW });
+  const ics = buildIcs({});
   t.notRegex(ics, /VEVENT/);
   t.true(ics.endsWith('END:VCALENDAR\r\n'));
   // sin fecha de publicación del documento usa la versión del anuncio
-  t.regex(buildIcs({ 1: { version: 1760400000000, events: [store[10].events[0]] } }, { now: NOW }), /DTSTAMP:20251014T000000Z/);
+  t.regex(buildIcs({ 1: { version: 1760400000000, events: [store[10].events[0]] } }), /DTSTAMP:20251014T000000Z/);
 });
 
 test('shortType quita "Apertura sobre" y deja la primera letra en mayúscula', (t) => {
@@ -265,7 +268,7 @@ test('buildIcs: el título usa la etiqueta corta y los actos privados empiezan p
         { kind: 3, type: 'Apertura sobre oferta técnica', sobre: 'C', date: '2026-10-14', time: '11:45', public: null },
       ],
     },
-  }, { now: NOW });
+  });
   t.regex(ics, /SUMMARY:Oferta económica: Servicio de limpieza\r\n/);
   t.regex(ics, /SUMMARY:PRIV · Administrativo: Servicio de limpieza\r\n/);
   t.regex(ics, /SUMMARY:Oferta técnica: Servicio de limpieza\r\n/);
@@ -294,4 +297,15 @@ test('buildRecords añade las aperturas a la ficha de la licitación', (t) => {
   }]);
   t.is(items['l-1007343'].openings, undefined);
   t.is(items['l-999'], undefined);
+});
+
+test('syncAperturas con `accept` solo procesa la parte de anuncios indicada', async (t) => {
+  const dump = dumpWith([{ id: '10', ts: 1000, status: 'PUB' }, { id: '12', ts: 1000, status: 'RES' }]);
+  const web = fakeWeb(xmlOf(event('Apertura sobre oferta económica', 4, '2026-10-21', '11:45', 'Salón')));
+  const store = {};
+  const { checked } = await syncAperturas({
+    dumpDir: dump, store, fetchText: web.fetchText, accept: (id) => id === '12',
+  });
+  t.is(checked, 1);
+  t.deepEqual(Object.keys(store), ['12']);
 });
