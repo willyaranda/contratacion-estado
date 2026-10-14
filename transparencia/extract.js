@@ -344,6 +344,18 @@ export const buildRecords = (dumpDir) => {
     }
     items[key] = detail;
   }
+  // Aperturas de ofertas (dump/aperturas.json, lo escribe index.js): solo las licitaciones tienen
+  const aperturasFile = join(dumpDir, 'aperturas.json');
+  const aperturas = existsSync(aperturasFile) ? JSON.parse(readFileSync(aperturasFile, 'utf8')) : {};
+  for (const [id, record] of Object.entries(aperturas)) {
+    const item = items[`l-${id}`];
+    if (item && (record.events ?? []).length > 0) {
+      item.openings = record.events.map((e) => clean({
+        type: clip(e.type, 60), sobre: clip(e.sobre, 140), date: e.date, time: e.time,
+        place: clip(e.place, 80), address: clip(e.address, 100), public: e.public,
+      }));
+    }
+  }
   const details = { docPrefix: DOC_PREFIX, orgs, items };
   records.sort((a, b) => (b.awardDate || b.updated).localeCompare(a.awardDate || a.updated) || a.id.localeCompare(b.id));
 

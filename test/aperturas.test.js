@@ -1,14 +1,15 @@
 import test from 'ava';
-import { mkdirSync, writeFileSync } from 'fs';
+import { cpSync, mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 import {
   decodeEntities, eventStartMs, madridToUtcMs, parseDocuments, parseEvents, readAperturas, syncAperturas, writeAperturas,
 } from '../lib/aperturas.js';
 import { buildIcs } from '../lib/ics.js';
-import { openingsLines } from '../lib/aperturas-text.js';
+import { openingsLines, shortType } from '../lib/aperturas-text.js';
+import { buildRecords } from '../transparencia/extract.js';
 import { buildDigest } from '../lib/notify.js';
-import { entryFor, tmpDir } from './helpers.js';
+import { FIXTURES_DUMP, entryFor, tmpDir } from './helpers.js';
 
 const DOC = (id, fmt) => `https://contrataciondelestado.es/FileSystem/servlet/GetDocumentByIdServlet?cifrado=X&amp;DocumentIdParam=${id}${fmt}`;
 const row = (date, name, id) => `<tr><td>${date}</td><td>${name}</td>
@@ -244,4 +245,53 @@ test('buildIcs con el fichero vacío da un calendario válido sin eventos', (t) 
   t.true(ics.endsWith('END:VCALENDAR\r\n'));
   // sin fecha de publicación del documento usa la versión del anuncio
   t.regex(buildIcs({ 1: { version: 1760400000000, events: [store[10].events[0]] } }, { now: NOW }), /DTSTAMP:20251014T000000Z/);
+});
+
+test('shortType quita "Apertura sobre" y deja la primera letra en mayúscula', (t) => {
+  t.is(shortType('Apertura sobre oferta económica'), 'Oferta económica');
+  t.is(shortType('Apertura sobre administrativo'), 'Administrativo');
+  t.is(shortType('Apertura del sobre técnico'), 'Técnico');
+  t.is(shortType('Apertura'), 'Apertura');
+  t.is(shortType(undefined), 'Apertura');
+});
+
+test('buildIcs: el título usa la etiqueta corta y los actos privados empiezan por PRIV', (t) => {
+  const ics = buildIcs({
+    10: {
+      ref: 'X', title: 'Servicio de limpieza', version: 1000,
+      events: [
+        { kind: 4, type: 'Apertura sobre oferta económica', sobre: 'A', date: '2026-10-21', time: '11:30', public: true },
+        { kind: 2, type: 'Apertura sobre administrativo', sobre: 'B', date: '2026-10-14', time: '11:30', public: false },
+        { kind: 3, type: 'Apertura sobre oferta técnica', sobre: 'C', date: '2026-10-14', time: '11:45', public: null },
+      ],
+    },
+  }, { now: NOW });
+  t.regex(ics, /SUMMARY:Oferta económica: Servicio de limpieza\r\n/);
+  t.regex(ics, /SUMMARY:PRIV · Administrativo: Servicio de limpieza\r\n/);
+  t.regex(ics, /SUMMARY:Oferta técnica: Servicio de limpieza\r\n/);
+  t.notRegex(ics, /SUMMARY:Apertura/);
+});
+
+test('buildRecords añade las aperturas a la ficha de la licitación', (t) => {
+  const dump = tmpDir();
+  cpSync(join(FIXTURES_DUMP, 'licitaciones'), join(dump, 'licitaciones'), { recursive: true });
+  cpSync(join(FIXTURES_DUMP, 'menores'), join(dump, 'menores'), { recursive: true });
+  const base = buildRecords(dump).details;
+  t.is(base.items['l-1007341'].openings, undefined);
+
+  writeFileSync(join(dump, 'aperturas.json'), JSON.stringify({
+    1007341: {
+      events: [{
+        kind: 4, type: 'Apertura sobre oferta económica', sobre: 'Sobre Único', date: '2026-10-21', time: '11:45', place: 'Salón de Plenos', address: 'PZ MAYOR, 1', public: true,
+      }],
+    },
+    1007343: { events: [] },
+    999: { events: [{ type: 'x', date: '2026-01-01' }] }, // anuncio que ya no está en el dump
+  }));
+  const { items } = buildRecords(dump).details;
+  t.deepEqual(items['l-1007341'].openings, [{
+    type: 'Apertura sobre oferta económica', sobre: 'Sobre Único', date: '2026-10-21', time: '11:45', place: 'Salón de Plenos', address: 'PZ MAYOR, 1', public: true,
+  }]);
+  t.is(items['l-1007343'].openings, undefined);
+  t.is(items['l-999'], undefined);
 });

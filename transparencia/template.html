@@ -865,6 +865,14 @@ function renderDetail(id) {
   const toAward = r.toAward != null ? `${r.toAward} días entre el cierre de ofertas y la adjudicación` : "";
   out.push(dsec("Calendario", when.length ? `<ul class="dtl">${when.map(([x, l]) => `<li><span class="when">${esc(fmtDate(String(x).slice(0, 10)))}${String(x).length > 10 ? ` ${esc(String(x).slice(11))}` : ""}</span><span>${esc(l)}</span></li>`).join("")}</ul>${toAward ? `<p class="note" style="margin:6px 0 0">${esc(toAward)}</p>` : ""}` : ""));
 
+  // Aperturas de ofertas (sobres): fecha, hora, lugar y si el acto es público
+  const ops = d.openings || [];
+  const opLabel = (t) => { const s = String(t || "").replace(/^apertura\s+(?:del?\s+)?(?:sobre\s+)?/i, "").trim(); return s ? s[0].toUpperCase() + s.slice(1) : "Apertura"; };
+  out.push(dsec("Aperturas de ofertas", ops.length ? `<table class="dtable"><thead><tr><th>Sobre</th><th>Fecha y hora</th><th>Lugar</th><th>Acto</th></tr></thead><tbody>${ops.map((o) => `<tr${o.date < TODAY ? ' class="muted"' : ""}>
+    <td>${esc(opLabel(o.type))}</td><td>${esc(fmtDate(o.date))}${o.time ? ` ${esc(o.time)}` : ""}</td>
+    <td>${esc([o.place, o.address].filter(Boolean).join(" · ") || "—")}</td><td>${o.public === true ? "Público" : o.public === false ? "Privado" : "—"}</td></tr>`).join("")}</tbody></table>
+    <p class="note" style="margin:6px 0 0">Según el anuncio y el pliego publicados en la Plataforma. <a href="aperturas.ics">Calendario de aperturas (.ics)</a></p>` : ""));
+
   // Procedimiento y condiciones
   const pr = d.proc || {};
   const guarantees = (d.guarantees || []).map((x) => `${GUARANTEE[x.type] || "Garantía"}${x.pct != null ? ` ${nfix(x.pct, 0)} %` : ""}${x.amount != null ? ` (${eur2.format(x.amount)})` : ""}`);
