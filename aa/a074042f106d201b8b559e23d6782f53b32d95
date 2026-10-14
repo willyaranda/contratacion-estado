@@ -1,0 +1,25 @@
+index.js
+  s_3feb136e42c631::t_ee3f903fb60f52 8,59,71-76
+lib/notify.js
+  s_3feb136e42c631::t_ee3f903fb60f52 16,89-115,122,136-138,143
+lib/changes.js
+  s_3feb136e42c631::t_ec5b3ca9d7ab22 1-62
+test/changes.test.js
+  s_3feb136e42c631::t_a09bae8280c00d 1-64
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "aaa074042f106d201b8b559e23d6782f53b32d95",
+  "prompts": {},
+  "sessions": {
+    "s_3feb136e42c631": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "65e0673c-86d4-4ac4-82e5-14d86b6cf9c7",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}
