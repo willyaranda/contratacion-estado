@@ -1,0 +1,27 @@
+index.js
+  s_3feb136e42c631::t_b6b520aba2826d 5,8-11
+test/fixtures/aperturas/ficha-20416971.html
+  s_3feb136e42c631::t_c7fd7774d5d51a 1-26
+test/fixtures/aperturas/pliego-20416971.xml
+  s_3feb136e42c631::t_c7fd7774d5d51a 1-614
+lib/job.js
+  s_3feb136e42c631::t_b6b520aba2826d 1-121
+test/job.test.js
+  s_3feb136e42c631::t_f579acae5b6ff0 1-224
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "43c35c2deacc25413833385daf2536a0593313aa",
+  "prompts": {},
+  "sessions": {
+    "s_3feb136e42c631": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "65e0673c-86d4-4ac4-82e5-14d86b6cf9c7",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}
