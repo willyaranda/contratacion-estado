@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 import { isFromAyuntamiento } from './lib/ayuntamiento.js';
+import { previousVersion } from './lib/changes.js';
 import { crawl, newestTimestamp } from './lib/crawler.js';
 import { fetchText } from './lib/http.js';
 import { loadMailConfig, sendDigest } from './lib/notify.js';
@@ -55,7 +56,7 @@ try {
       fetchText: (u) => fetchText(u, { log: console.log }),
       parseXml: (xml) => parser.parse(xml),
       isWanted: isFromAyuntamiento,
-      onNew: async (entry) => { created.push(entry); },
+      onNew: async (entry) => { created.push({ entry, sfx }); },
       log: console.log,
     });
     if (stats.newestSeen !== null) nextState[sfx] = Math.max(stats.newestSeen, state[sfx] ?? 0);
@@ -67,7 +68,12 @@ try {
   if (mail.enabled && created.length > 0) {
     // Las credenciales las lee el SDK directamente de AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY
     const client = new SESClient({ region: mail.region });
-    const sent = await sendDigest({ config: mail, entries: created, client });
+    // Versión anterior de cada anuncio (ya con todo descargado), para indicar qué ha cambiado
+    const previous = new Map();
+    for (const { entry, sfx } of created) previous.set(entry, await previousVersion(DUMP_DIR, sfx, entry));
+    const sent = await sendDigest({
+      config: mail, entries: created.map((c) => c.entry), client, previousOf: (e) => previous.get(e),
+    });
     console.log(`Aviso por email enviado: ${sent} mensaje(s) a ${mail.recipients.length} destinatario(s) en CCO.`);
   } else if (mail.enabled) {
     console.log('Sin anuncios nuevos: no se envía aviso.');
