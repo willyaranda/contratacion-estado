@@ -1,0 +1,21 @@
+.github/workflows/nightly.yml
+  s_20c69f8dd61754::t_b7aeabb50c96a6 9-10,13-14
+CLAUDE.md
+  s_20c69f8dd61754::t_e5a4c697f4153f 26-27
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "2110f24cbfc9ec9fa8b7b879ff22a082904d6fd8",
+  "prompts": {},
+  "sessions": {
+    "s_20c69f8dd61754": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "583e4e16-965c-4fa1-9a80-da70c3f84ea4",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
