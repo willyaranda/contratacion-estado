@@ -194,6 +194,7 @@ test('buildDigest incluye las aperturas del anuncio', (t) => {
 
 // ---- calendario
 
+const NOW = Date.parse('2026-10-14T00:00:00Z');
 const store = {
   10: {
     ref: 'ABR/SUMIN/2026000001',
@@ -218,11 +219,11 @@ const store = {
   },
 };
 
-test('buildIcs genera un VEVENT por cada apertura, también las pasadas, en UTC y con UID estable', (t) => {
-  const ics = buildIcs(store);
+test('buildIcs genera un VEVENT por apertura de los últimos 60 días y futuras, en UTC y con UID estable', (t) => {
+  const ics = buildIcs(store, { now: NOW });
   t.true(ics.startsWith('BEGIN:VCALENDAR\r\n'));
   t.true(ics.endsWith('END:VCALENDAR\r\n'));
-  t.is((ics.match(/BEGIN:VEVENT/g) ?? []).length, 4); // sin límite en el pasado: también la de enero
+  t.is((ics.match(/BEGIN:VEVENT/g) ?? []).length, 3); // la de enero queda fuera de los 60 días
   t.regex(ics, /DTSTART:20261014T093000Z\r\nDTEND:20261014T100000Z/);
   t.regex(ics, /UID:10-2-sobre-a@contratacion-estado/);
   // dos aperturas del mismo tipo y sobre: UID distinto
@@ -231,11 +232,11 @@ test('buildIcs genera un VEVENT por cada apertura, también las pasadas, en UTC 
   t.regex(ics, /LOCATION:Salón de Plenos · PZ MAYOR\\, 1/);
   t.regex(ics, /SEQUENCE:\d+/);
   // determinista: no depende de cuándo se genera
-  t.is(buildIcs(store), ics);
+  t.is(buildIcs(store, { now: NOW }), ics);
 });
 
 test('buildIcs escapa el texto y no pasa de 75 octetos por línea', (t) => {
-  const ics = buildIcs(store);
+  const ics = buildIcs(store, { now: NOW });
   for (const line of ics.split('\r\n')) t.true(Buffer.byteLength(line) <= 75, line);
   t.regex(ics.replace(/\r\n /g, ''), /Suministro de material\\; con "comas"\\, y una/);
   // el salto de línea de la descripción es un \n escapado
@@ -243,11 +244,11 @@ test('buildIcs escapa el texto y no pasa de 75 octetos por línea', (t) => {
 });
 
 test('buildIcs con el fichero vacío da un calendario válido sin eventos', (t) => {
-  const ics = buildIcs({});
+  const ics = buildIcs({}, { now: NOW });
   t.notRegex(ics, /VEVENT/);
   t.true(ics.endsWith('END:VCALENDAR\r\n'));
   // sin fecha de publicación del documento usa la versión del anuncio
-  t.regex(buildIcs({ 1: { version: 1760400000000, events: [store[10].events[0]] } }), /DTSTAMP:20251014T000000Z/);
+  t.regex(buildIcs({ 1: { version: 1760400000000, events: [store[10].events[0]] } }, { now: NOW }), /DTSTAMP:20251014T000000Z/);
 });
 
 test('shortType quita "Apertura sobre" y deja la primera letra en mayúscula', (t) => {
@@ -268,7 +269,7 @@ test('buildIcs: el título usa la etiqueta corta y los actos privados empiezan p
         { kind: 3, type: 'Apertura sobre oferta técnica', sobre: 'C', date: '2026-10-14', time: '11:45', public: null },
       ],
     },
-  });
+  }, { now: NOW });
   t.regex(ics, /SUMMARY:Oferta económica: Servicio de limpieza\r\n/);
   t.regex(ics, /SUMMARY:PRIV · Administrativo: Servicio de limpieza\r\n/);
   t.regex(ics, /SUMMARY:Oferta técnica: Servicio de limpieza\r\n/);
@@ -308,4 +309,13 @@ test('syncAperturas con `accept` solo procesa la parte de anuncios indicada', as
   });
   t.is(checked, 1);
   t.deepEqual(Object.keys(store), ['12']);
+});
+
+test('buildIcs: ventana de 60 días respecto a la fecha de generación, sin tocar el histórico', (t) => {
+  const record = (date) => ({ version: 1, events: [{ kind: 4, type: 'Apertura sobre oferta económica', sobre: 'A', date, time: '11:30', public: true }] });
+  const input = { 1: record('2026-08-16'), 2: record('2026-08-14') }; // 59 y 61 días antes de NOW
+  const ics = buildIcs(input, { now: NOW });
+  t.regex(ics, /UID:1-4-a@/);
+  t.notRegex(ics, /UID:2-4-a@/);
+  t.is(Object.keys(input).length, 2);
 });
