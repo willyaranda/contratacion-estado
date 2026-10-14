@@ -7,6 +7,9 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
 
 - `npm run fetch`: descarga los anuncios nuevos del Ayuntamiento a `dump/` (avisa por email si `SEND_EMAILS=1`).
 - `npm run build:site`: genera `transparencia/index.html` y `artifact.html` desde `dump/` y `template.html`.
+- `dump/aperturas.json`: fechas de apertura de ofertas de las licitaciones en PUB/EV (las escribe `npm run fetch`
+  leyendo la ficha web: el feed no las trae). De él sale `docs/aperturas.ics` (calendario), que `build:site` genera en
+  `transparencia/aperturas.ics` y el nocturno copia a `docs/`.
 - `npm run lint` y `npm test` (ava + c8): deben pasar antes de commitear.
 
 ## Convenciones

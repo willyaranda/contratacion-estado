@@ -4,6 +4,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
+import { buildIcs } from '../lib/ics.js';
 import { buildRecords } from './extract.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -69,6 +70,13 @@ const main = () => {
   const html = renderPage(readFileSync(join(HERE, 'template.html'), 'utf8'), data, fontCss(), assetUris(), details);
   writeFileSync(join(outDir, 'index.html'), html);
   writeFileSync(join(outDir, 'artifact.html'), toArtifact(html));
+
+  // Calendario de aperturas de ofertas (lo escribe index.js en dump/aperturas.json)
+  let aperturas = {};
+  try {
+    aperturas = JSON.parse(readFileSync(join(dumpDir, 'aperturas.json'), 'utf8'));
+  } catch { /* sin aperturas todavía */ }
+  writeFileSync(join(outDir, 'aperturas.ics'), buildIcs(aperturas));
 
   console.log({
     files, contracts: records.length, withWinner: records.filter((r) => r.winners.length).length, generated,

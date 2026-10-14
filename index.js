@@ -5,6 +5,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
 import { isFromAyuntamiento } from './lib/ayuntamiento.js';
+import { readAperturas, syncAperturas, writeAperturas } from './lib/aperturas.js';
 import { previousVersion } from './lib/changes.js';
 import { crawl, newestTimestamp } from './lib/crawler.js';
 import { fetchText } from './lib/http.js';
@@ -65,6 +66,21 @@ try {
   await writeFile(STATE_FILE, `${JSON.stringify(nextState, null, 2)}\n`);
   console.log(`Finished. New files written: ${created.length}`);
 
+  // Aperturas de ofertas de las licitaciones en curso (ficha web). Es secundario: si la web falla, no se pierde el
+  // aviso de anuncios nuevos; las fichas pendientes se reintentan en la siguiente ejecución.
+  const aperturas = await readAperturas(DUMP_DIR);
+  let openingChanges = new Map();
+  try {
+    const sync = await syncAperturas({
+      dumpDir: DUMP_DIR, store: aperturas, fetchText: (u) => fetchText(u, { log: console.log }), log: console.log,
+    });
+    openingChanges = sync.changes;
+    await writeAperturas(DUMP_DIR, aperturas);
+    console.log(`Aperturas: ${sync.checked} licitación(es) consultada(s).`);
+  } catch (error) {
+    console.error('No se pudieron actualizar las aperturas:', error.message);
+  }
+
   if (mail.enabled && created.length > 0) {
     // Las credenciales las lee el SDK directamente de AWS_ACCESS_KEY_ID / AWS_SECRET_ACCESS_KEY
     const client = new SESClient({ region: mail.region });
@@ -73,6 +89,10 @@ try {
     for (const { entry, sfx } of created) previous.set(entry, await previousVersion(DUMP_DIR, sfx, entry));
     const sent = await sendDigest({
       config: mail, entries: created.map((c) => c.entry), client, previousOf: (e) => previous.get(e),
+      openingsOf: (e) => {
+        const id = `${e.id}`.split('/').pop();
+        return aperturas[id] ? { events: aperturas[id].events, previous: openingChanges.get(id)?.previous ?? null } : null;
+      },
     });
     console.log(`Aviso por email enviado: ${sent} mensaje(s) a ${mail.recipients.length} destinatario(s) en CCO.`);
   } else if (mail.enabled) {

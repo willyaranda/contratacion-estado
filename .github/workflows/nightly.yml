@@ -1,7 +1,7 @@
 name: Actualización nocturna
 
 # Cada noche: descarga los anuncios nuevos del Ayuntamiento de Aranda de Duero, reconstruye la página de
-# transparencia y sube todo en un único commit automático (dump/ + docs/index.html).
+# transparencia y sube todo en un único commit automático (dump/ + docs/).
 # Si la página ha cambiado, se publica en GitHub Pages llamando a pages.yml (ver ese fichero).
 # También se puede lanzar a mano desde la pestaña Actions ("Run workflow").
 on:
@@ -59,6 +59,7 @@ jobs:
           npm run build:site
           mkdir -p docs
           cp transparencia/index.html docs/index.html
+          cp transparencia/aperturas.ics docs/aperturas.ics
           touch docs/.nojekyll
 
       - name: Commit y push
