@@ -25,6 +25,18 @@ test('la plantilla tiene los marcadores que rellena el build', (t) => {
   t.true(TEMPLATE.includes('/*DATA*/'));
 });
 
+test('la cabecera enlaza al calendario de aperturas (.ics)', (t) => {
+  t.regex(TEMPLATE, /<header class="top">[\s\S]*<a href="aperturas\.ics"[^>]*>Enlace al calendario de mesas de contratación<\/a>[\s\S]*<\/header>/);
+});
+
+test('la pestaña de Sentir Aranda está oculta salvo que se abra #sentiraranda', (t) => {
+  t.regex(TEMPLATE, /const HIDDEN_TABS = new Set\(\["sentiraranda"\]\)/);
+  // la barra solo pinta las visibles, y abrir la dirección la revela
+  t.regex(TEMPLATE, /\$\("tabs"\)\.innerHTML = visibleTabs\(\)\.map\(/);
+  t.regex(TEMPLATE, /if \(HIDDEN_TABS\.has\(t\)\) revealedTabs\.add\(t\);/);
+  t.notRegex(TEMPLATE, /\$\("tabs"\)\.innerHTML = TABS\.map\(/);
+});
+
 test('fontCss incrusta la fuente Outfit sin referencias externas', (t) => {
   const css = fontCss();
   t.is((css.match(/@font-face/g) || []).length, 2);

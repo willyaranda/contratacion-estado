@@ -41,6 +41,7 @@ a{color:var(--accent)}
 header.top{background:var(--surface);border-bottom:1px solid var(--line);padding:20px 0 0}
 header.top h1{margin:0 0 4px;font-size:1.5rem}
 header.top p{margin:0 0 14px;color:var(--muted);max-width:75ch}
+header.top p.cal{margin:-6px 0 14px;font-size:.85rem}
 .tabs{display:flex;gap:2px;overflow-x:auto}
 .tabs button{border:0;border-bottom:3px solid transparent;border-radius:0;background:none;padding:10px 14px;white-space:nowrap;color:var(--muted)}
 .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:700}
@@ -192,6 +193,7 @@ footer{padding:24px 0 40px}
   <p>Explorador ciudadano y no oficial de los contratos del Ayuntamiento (Alcaldía, Junta de Gobierno y Pleno) publicados en la
   Plataforma de Contratación del Sector Público
   (<a href="https://contrataciondelestado.es" rel="noopener">contrataciondelestado.es</a>): licitaciones y contratos menores.</p>
+  <p class="cal"><a href="aperturas.ics" title="Fichero .ics: aperturas de ofertas de los últimos 60 días y las próximas">Enlace al calendario de mesas de contratación</a></p>
   <div class="tabs" role="tablist" aria-label="Secciones" id="tabs"></div>
 </div></header>
 
@@ -540,9 +542,15 @@ function toggleFilter(key, val, selectId) {
   for (const t of Object.values(tbl)) t.page = 0;
   render();
 }
+// Pestañas ocultas: no salen en la barra hasta que se abre su dirección (#sentiraranda) y, desde entonces, se
+// mantienen visibles mientras la página siga abierta para poder alternar con las demás.
+const HIDDEN_TABS = new Set(["sentiraranda"]);
+const revealedTabs = new Set();
+const visibleTabs = () => TABS.filter(([k]) => !HIDDEN_TABS.has(k) || revealedTabs.has(k));
 function goTab(t) { if (location.hash.slice(1) !== t) location.hash = t; else setTab(t); }
 function setTab(t) {
-  if (!TABS.some(([k]) => k === t)) t = "resumen";
+  if (HIDDEN_TABS.has(t)) revealedTabs.add(t);
+  if (!visibleTabs().some(([k]) => k === t)) t = "resumen";
   state.tab = t; render();
 }
 window.addEventListener("hashchange", () => setTab(location.hash.slice(1)));
@@ -949,7 +957,7 @@ function render() {
   tip.hidden = true;
   $("filters").hidden = state.tab === "sentiraranda" || state.tab === "nextgen"; // pestañas solo informativas: sin filtros
   // pestañas
-  $("tabs").innerHTML = TABS.map(([k, l]) => `<button role="tab" id="tab-${k}" aria-selected="${state.tab === k}" data-t="${k}">${esc(l)}</button>`).join("");
+  $("tabs").innerHTML = visibleTabs().map(([k, l]) => `<button role="tab" id="tab-${k}" aria-selected="${state.tab === k}" data-t="${k}">${esc(l)}</button>`).join("");
   $("tabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => goTab(b.dataset.t)));
   document.querySelectorAll("[data-tab]").forEach((s) => { s.hidden = s.dataset.tab !== state.tab; });
 
