@@ -1,0 +1,24 @@
+lib/ics.js
+  s_3feb136e42c631::t_fd9c719c9f8842 1-3,7-9,38-39,58
+test/aperturas.test.js
+  s_3feb136e42c631::t_fd9c719c9f8842 197,222-223,226,235,239,247,313-320
+  s_3feb136e42c631::t_37059bb876df87 272
+  s_3feb136e42c631::t_b37945163e8d3e 251
+  s_3feb136e42c631::t_8d6bcf3a7acdb4 321
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f100105bb254f77fc74d72fbb0cd3b621a48ffa3",
+  "prompts": {},
+  "sessions": {
+    "s_3feb136e42c631": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "65e0673c-86d4-4ac4-82e5-14d86b6cf9c7",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}
