@@ -175,7 +175,7 @@ test('openingsLines indica fecha, lugar y la fecha anterior si se ha movido', (t
   t.deepEqual(openingsLines({ events: [], previous: null }), []);
   t.deepEqual(
     openingsLines({ events: [base], previous: null }),
-    ['  Apertura sobre oferta económica: 29/10/2026 11:15 · Salón de Plenos · acto público'],
+    ['  Oferta económica: 29/10/2026 11:15 · Salón de Plenos · acto público'],
   );
   t.regex(openingsLines({ events: [base], previous: [{ ...base, date: '2026-10-21', time: '11:45' }] })[0], /\(antes: 21\/10\/2026 11:45\)$/);
   t.notRegex(openingsLines({ events: [base], previous: [base] })[0], /antes/);
@@ -185,7 +185,7 @@ test('openingsLines indica fecha, lugar y la fecha anterior si se ha movido', (t
 test('buildDigest incluye las aperturas del anuncio', (t) => {
   const e = entryFor('Pleno del Ayuntamiento de Aranda de Duero');
   const info = { events: [{ type: 'Apertura sobre administrativo', date: '2026-10-14', time: '11:30', place: 'Salón de Plenos', public: false }], previous: null };
-  t.regex(buildDigest([e], () => null, () => info).body, /Apertura sobre administrativo: 14\/10\/2026 11:30 · Salón de Plenos · acto no público/);
+  t.regex(buildDigest([e], () => null, () => info).body, /PRIV · Administrativo: 14\/10\/2026 11:30 · Salón de Plenos · acto no público/);
 });
 
 // ---- calendario
