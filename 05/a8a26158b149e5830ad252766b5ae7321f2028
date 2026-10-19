@@ -1,0 +1,38 @@
+lib/notify.js
+  s_9e2a1116b4316a::t_19abe55ff881c7 20,95,97,99-125,127-133,135-137,139,141,143,152-188,190-194,200-250,252-317,319-393,395-397,403,409,416
+  s_9e2a1116b4316a::t_0fa4c5ea3791ad 17-19,21
+  s_9e2a1116b4316a::t_ce12b5e4017e06 96,189,195-199
+  s_9e2a1116b4316a::t_1dd2ab5a2a636e 126,138,140,142,146-149
+  s_9e2a1116b4316a::t_c28cab7ac28fd9 318
+test/changes.test.js
+  s_9e2a1116b4316a::t_3d0359f42ddf1c 60
+  s_9e2a1116b4316a::t_e73f1a6958e804 63
+docs/images/README.md
+  s_9e2a1116b4316a::t_ef63b513b78533 14,23
+  s_9e2a1116b4316a::t_25350129ea85f6 24
+transparencia/extract.js
+  s_9e2a1116b4316a::t_1c5cbaf116c204 234-236,257-273
+lib/aperturas-text.js
+  s_9e2a1116b4316a::t_220468f82509ef 19-23,25,28-29,32-36
+test/job.test.js
+  s_9e2a1116b4316a::t_3d0359f42ddf1c 130,154
+test/notify.test.js
+  s_9e2a1116b4316a::t_e6c1f54ceaf2d0 8,96-142,145-146,150-151,155-156,159-185,189-255,257-263,266-290,292-357,360-366,387-392
+  s_9e2a1116b4316a::t_c28cab7ac28fd9 186-188,256,264-265,291
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "05a8a26158b149e5830ad252766b5ae7321f2028",
+  "prompts": {},
+  "sessions": {
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
