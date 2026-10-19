@@ -1,0 +1,44 @@
+.gitignore
+  s_9e2a1116b4316a::t_2fa779eb0e10cf 9
+docs/plazos.ics
+  s_9e2a1116b4316a::t_713a20fbf0d4bf 1-704
+docs/vencimientos.ics
+  s_9e2a1116b4316a::t_713a20fbf0d4bf 1-1693
+test/aperturas.test.js
+  s_9e2a1116b4316a::t_2fa779eb0e10cf 9,402-410,415-442
+  s_9e2a1116b4316a::t_d7f001a5eb9f1c 411-414
+  s_9e2a1116b4316a::t_890a7006d4c61d 443
+README.md
+  s_9e2a1116b4316a::t_713a20fbf0d4bf 10-22,37
+transparencia/build.js
+  s_9e2a1116b4316a::t_2fa779eb0e10cf 94
+  s_9e2a1116b4316a::t_58d8f75e804274 2,8,85-89
+.github/workflows/nightly.yml
+  s_9e2a1116b4316a::t_58d8f75e804274 62
+test/build.test.js
+  s_9e2a1116b4316a::t_2fa779eb0e10cf 371-389
+lib/ics.js
+  s_9e2a1116b4316a::t_4139eae383264c 53,56,59,63-77,165-168,170-171,174,209
+CLAUDE.md
+  s_9e2a1116b4316a::t_713a20fbf0d4bf 12-13
+docs/adjudicaciones.ics
+  s_9e2a1116b4316a::t_713a20fbf0d4bf 1-422
+docs/mesas.ics
+  s_9e2a1116b4316a::t_713a20fbf0d4bf 1-518
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "40322c621aa35a29be67ca15b679a1e99cb0a19c",
+  "prompts": {},
+  "sessions": {
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
