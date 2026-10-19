@@ -83,7 +83,9 @@ a{color:var(--accent)}
 .wrap{max-width:1240px;margin:0 auto;padding:0 16px}
 header.top{background:var(--surface);border-bottom:1px solid var(--line);padding:0}
 header.top .brand{background:var(--brand);padding:12px 0}
-header.top .brand img{display:block;height:52px;width:auto;max-width:100%}
+header.top .brand img{display:block;height:52px;width:auto;max-width:100%;aspect-ratio:720/183}
+/* hasta que el script pinta la pestaña inicial, el contenido (vacío) se oculta: evita que se desplace al rellenarse (CLS) */
+body:not(.ready)>main,body:not(.ready)>footer{visibility:hidden}
 header.top .wrap.head{padding-top:18px}
 header.top h1{margin:0 0 4px;font-size:1.5rem}
 header.top p{margin:0 0 14px;color:var(--muted);max-width:75ch}
@@ -303,6 +305,7 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
 </style>
 </head>
 <body>
+<noscript><style>body:not(.ready)>main,body:not(.ready)>footer{visibility:visible}</style></noscript>
 <header class="top">
 <div class="brand"><div class="wrap"><img src="__LOGO_AYTO_NEG__" width="720" height="183" alt="Ayuntamiento de Aranda de Duero"></div></div>
 <div class="wrap head">
@@ -1784,7 +1787,7 @@ $("foot").innerHTML = `Fuente: Plataforma de Contratación del Sector Público (
   Las medias anuales incluyen años con menos datos (los contratos menores constan desde 2018), por lo que la comparación con los últimos 12 meses tiende a salir al alza.
   Las cifras son orientativas y pueden tener retraso respecto a la Plataforma: la fuente oficial es siempre el anuncio original (enlace «Ver»), donde conviene confirmar el estado del contrato.`;
 $("foot-year").textContent = new Date().getFullYear();
-setTab(location.hash.slice(1) || "resumen");
+try { setTab(location.hash.slice(1) || "resumen"); } finally { document.body.classList.add("ready"); }
 </script>
 </body>
 </html>

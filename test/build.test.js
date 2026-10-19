@@ -567,3 +567,10 @@ test('todos los gráficos de columnas dibujan el eje Y y calculan la altura cont
   t.is((TEMPLATE.match(/<div class="cols">/g) || []).length, 1); // solo en chartHtml
   t.regex(TEMPLATE, /height:\$\{value\(it\)\/sc\.max\*100\}%/);
 });
+
+test('CLS: el contenido se oculta hasta que se pinta la pestaña inicial y el logotipo reserva su proporción', (t) => {
+  t.regex(TEMPLATE, /body:not\(\.ready\)>main,body:not\(\.ready\)>footer\{visibility:hidden\}/);
+  t.regex(TEMPLATE, /document\.body\.classList\.add\("ready"\)/);
+  t.regex(TEMPLATE, /<noscript><style>body:not\(\.ready\)>main/);
+  t.regex(TEMPLATE, /header\.top \.brand img\{[^}]*aspect-ratio:720\/183/);
+});
