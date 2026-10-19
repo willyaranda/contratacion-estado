@@ -166,7 +166,7 @@ test('las etiquetas de estado se colorean por código de la Plataforma', (t) => 
 test('la columna Resultado y las insignias del detalle usan outTag', (t) => {
   t.regex(TEMPLATE, /const outTag = \(o, text\) => `<span class="tag out-\$\{o \|\| "none"\}">/);
   t.regex(TEMPLATE, /label:"Resultado"[^\n]*outTag\(r\.outcome, r\.outcome \? OUTCOME\[r\.outcome\] \|\| r\.outcome : "Sin resultado todavía"\)/);
-  t.regex(TEMPLATE, /const badges = [^\n]*\n[^\n]*outTag\(o, b\)/);
+  t.regex(TEMPLATE, /const badges = [^\n]*outTag\(r\.outcome, OUTCOME\[r\.outcome\]\)/);
 });
 
 // La asignación de corporación vive en la plantilla (entre marcadores): se evalúa tal cual
