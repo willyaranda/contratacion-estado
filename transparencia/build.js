@@ -7,6 +7,7 @@ import { fileURLToPath } from 'url';
 
 import { CALENDARS, buildIcs, upcomingMesas } from '../lib/ics.js';
 import { buildRecords } from './extract.js';
+import { AYTO_URL, REPO_URL, SITE_URL } from './site.js';
 
 const MESAS_MARGIN_MS = 7 * 24 * 3600 * 1000;
 
@@ -48,6 +49,10 @@ export const renderPage = (template, data, fonts, assets = {}, details = {}) => 
     // fichas de contrato: la página las lee solo al abrir una
     .replace('/*DETAILS*/', () => escape(details));
   for (const [marker, uri] of Object.entries(assets)) html = html.replaceAll(marker, () => uri);
+  // URLs del sitio (transparencia/site.js) y año del build (contenido por defecto del © sin JS)
+  const year = String(data.generated || '').match(/^\d{4}/)?.[0] || '';
+  const site = { __SITE_URL__: SITE_URL, __REPO_URL__: REPO_URL, __AYTO_URL__: AYTO_URL, __BUILD_YEAR__: year };
+  for (const [marker, value] of Object.entries(site)) html = html.replaceAll(marker, () => value);
   return html;
 };
 

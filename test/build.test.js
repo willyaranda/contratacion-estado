@@ -6,6 +6,7 @@ import { join } from 'path';
 import {
   assetUris, fontCss, renderPage, toArtifact,
 } from '../transparencia/build.js';
+import { AYTO_URL, REPO_URL, SITE_URL } from '../transparencia/site.js';
 import { FIXTURES_DUMP, ROOT, tmpDir } from './helpers.js';
 
 const TEMPLATE = readFileSync(join(ROOT, 'transparencia', 'template.html'), 'utf8');
@@ -107,7 +108,7 @@ test('los logotipos de NextGenerationEU se incrustan y no queda ningún marcador
 
   const html = renderPage(TEMPLATE, { generated: 'x', records: [] }, '', uris);
   t.notRegex(html, /__(LOGO|ESCUDO)_[A-Z_]+__/);
-  t.is((html.match(/src="data:image\//g) || []).length, 4);
+  t.is((html.match(/src="data:image\//g) || []).length, 5);
   // el contenido de los SVG no debe poder ejecutar nada
   for (const uri of [uris.__LOGO_EU__, uris.__LOGO_PRTR__]) {
     const svg = Buffer.from(uri.split(',')[1], 'base64').toString('utf8');
@@ -140,6 +141,27 @@ test('los logotipos pesan poco y están registrados en el README de assets', (t)
     t.true(statSync(join(ROOT, 'transparencia', 'assets', f)).size < 60 * 1024, f);
   }
   t.regex(readme, /Imagen Institucional/);
+});
+
+test('el pie de página enlaza al Ayuntamiento, al repositorio y a la licencia, con © y año', (t) => {
+  t.regex(TEMPLATE, /<footer class="site-foot">[\s\S]*<\/footer>/);
+  const html = renderPage(TEMPLATE, { generated: '2026-10-16T12:45:17+02:00', records: [] }, '', assetUris());
+  const foot = html.match(/<footer class="site-foot">[\s\S]*?<\/footer>/)[0];
+  t.true(foot.includes('<a href="https://www.arandadeduero.es" rel="noopener">'));
+  t.true(foot.includes(`<a href="${REPO_URL}" rel="noopener">Código en GitHub</a>`));
+  t.true(foot.includes(`href="${REPO_URL}/blob/main/LICENSE"`));
+  t.regex(foot, /© <span id="foot-year">2026<\/span> Ayuntamiento de Aranda de Duero/);
+  t.regex(foot, /<img src="data:image\/webp;base64,/);
+  t.notRegex(html, /__(SITE_URL|REPO_URL|AYTO_URL|BUILD_YEAR)__/);
+  // el año se actualiza con el reloj del navegador
+  t.true(TEMPLATE.includes('$("foot-year").textContent = new Date().getFullYear();'));
+  t.true(html.includes(`<link rel="canonical" href="${SITE_URL}">`));
+});
+
+test('las URLs absolutas salen de transparencia/site.js', (t) => {
+  t.is(AYTO_URL, 'https://www.arandadeduero.es');
+  t.notRegex(TEMPLATE, /willyaranda/);
+  t.notRegex(readFileSync(join(ROOT, 'transparencia', 'build.js'), 'utf8'), /github\.com|github\.io/);
 });
 
 test('el build es determinista: dos ejecuciones dan exactamente el mismo HTML', (t) => {

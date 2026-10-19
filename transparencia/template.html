@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contratos de Aranda de Duero</title>
+<link rel="canonical" href="__SITE_URL__">
 <meta name="description" content="Explorador de transparencia de los contratos del Ayuntamiento de Aranda de Duero publicados en la Plataforma de Contratación del Sector Público.">
 <style>
 /*FONTFACE*/
@@ -217,6 +218,13 @@ td .sub{color:var(--muted);font-size:.78rem}
 .pager{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
 .muted{color:var(--muted)}
 .note{font-size:.82rem;color:var(--muted)}
+.site-foot{margin-top:32px;padding:20px 0 28px;border-top:1px solid var(--line);background:var(--surface)}
+.site-foot #foot{margin-bottom:18px}
+.foot-id{display:flex;gap:16px;align-items:flex-start;font-size:.85rem}
+.foot-id p{margin:0 0 4px}
+.foot-crest{flex:none;height:64px;width:auto;background:#fff;border-radius:8px;padding:4px}
+.foot-links{display:flex;gap:6px 18px;flex-wrap:wrap;margin-top:8px!important}
+.foot-links a:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
 .cmpsel{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:12px}
 .cmp{width:100%}
 .cmp td:first-child{color:var(--muted)}
@@ -493,7 +501,23 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
 
 <div id="tip" class="tip" role="tooltip" hidden></div>
 
-<footer><div class="wrap note" id="foot"></div></footer>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="note" id="foot"></div>
+    <div class="foot-id">
+      <img src="__ESCUDO_AYTO__" width="239" height="360" alt="" class="foot-crest">
+      <div>
+        <p>Página de transparencia en materia de contratación del Ayuntamiento de Aranda de Duero. Datos de la Plataforma de Contratación del Sector Público.</p>
+        <p>© <span id="foot-year">__BUILD_YEAR__</span> Ayuntamiento de Aranda de Duero</p>
+        <p class="foot-links">
+          <a href="__AYTO_URL__" rel="noopener">www.arandadeduero.es</a>
+          <a href="__REPO_URL__" rel="noopener">Código en GitHub</a>
+          <a href="__REPO_URL__/blob/main/LICENSE" rel="noopener">Licencia MIT</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
 
 <script type="application/json" id="data">/*DATA*/</script>
 <script type="application/json" id="details">/*DETAILS*/</script>
@@ -1704,6 +1728,7 @@ $("foot").innerHTML = `Fuente: Plataforma de Contratación del Sector Público (
   El «Resultado» (adjudicado, desierto, desistimiento, renuncia) sale del código de resultado de cada lote del anuncio.
   Las medias anuales incluyen años con menos datos (los contratos menores constan desde 2018), por lo que la comparación con los últimos 12 meses tiende a salir al alza.
   Herramienta de consulta no oficial: la referencia es siempre el anuncio original (enlace «Ver»).`;
+$("foot-year").textContent = new Date().getFullYear();
 setTab(location.hash.slice(1) || "resumen");
 </script>
 </body>
