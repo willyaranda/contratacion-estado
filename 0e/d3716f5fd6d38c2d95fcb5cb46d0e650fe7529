@@ -1,0 +1,23 @@
+test/build.test.js
+  s_9e2a1116b4316a::t_963f97e1025728 251-267
+transparencia/template.html
+  s_9e2a1116b4316a::t_963f97e1025728 270-271,282-285
+docs/index.html
+  s_9e2a1116b4316a::t_bccd73acc0c564 271-272,283-286
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "0ed3716f5fd6d38c2d95fcb5cb46d0e650fe7529",
+  "prompts": {},
+  "sessions": {
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
