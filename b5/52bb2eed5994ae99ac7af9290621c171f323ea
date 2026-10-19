@@ -1,0 +1,25 @@
+CLAUDE.md
+  s_9e2a1116b4316a::t_06a8231dcafa55 46-48
+test/job.test.js
+  s_9e2a1116b4316a::t_bc673d7a8c8f55 168-210
+lib/job.js
+  s_9e2a1116b4316a::t_bc673d7a8c8f55 4,36-40,104-107,123
+.github/workflows/nightly.yml
+  s_9e2a1116b4316a::t_4931c450ae0990 7-9,28-29,50-53,55-74,108-125
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "b552bb2eed5994ae99ac7af9290621c171f323ea",
+  "prompts": {},
+  "sessions": {
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
