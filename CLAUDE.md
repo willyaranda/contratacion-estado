@@ -34,6 +34,11 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
   Plataforma es lento (minutos por página) y no hay que quitar el límite de tiempo por petición ni el punto de control.
 - `.github/workflows/pages.yml`: publica `docs/` en cada push a `main` que lo cambie, o cuando lo invoca el nocturno.
 - `.github/workflows/test.yml`: lint y tests en cada push y pull request.
+- `.github/workflows/test-email.yml`: manual. Manda un correo de prueba por SES con los secrets del repositorio
+  (remitente por defecto `no-reply@arandadeduero.dev`). Los logs de Actions son públicos, así que el destinatario
+  no se escribe en el repo ni en el log: `gh variable set TEST_TO --body "<dirección>"`,
+  `gh workflow run test-email.yml` y después `gh variable delete TEST_TO`. Las credenciales de AWS solo existen
+  en GitHub, no en local.
 
 ## Qué NO se actualiza solo (recordárselo al usuario)
 
