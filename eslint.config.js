@@ -3,7 +3,7 @@ import globals from 'globals';
 
 export default [
   {
-    ignores: ['node_modules/**', 'dump/**', 'docs/**', 'coverage/**', 'python/**', 'transparencia/*.html', 'transparencia/data.json'],
+    ignores: ['node_modules/**', 'dump/**', 'docs/**', 'coverage/**', 'transparencia/*.html', 'transparencia/data.json'],
   },
   js.configs.recommended,
   {
