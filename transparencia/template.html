@@ -264,7 +264,8 @@ td .sub{color:var(--muted);font-size:.78rem}
 .foot-links a:focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:2px}
 .cmpsel{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:12px}
 .cmp{width:100%}
-.cmp td:first-child{color:var(--muted)}
+.cmp tbody th{font-weight:400;color:var(--muted)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 details.picker{margin:0 0 12px}
 details.picker summary{cursor:pointer;color:var(--muted)}
 details.picker .opts{display:flex;gap:6px 16px;flex-wrap:wrap;margin-top:8px}
@@ -395,7 +396,7 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
       </div>
       <div class="legend"><span><i class="c1"></i><span id="lg-a"></span></span><span><i class="c2"></i><span id="lg-b"></span></span></div>
       <div id="c-cmp"></div>
-      <div class="tablewrap" style="margin-top:12px"><table class="cmp"><thead><tr><th></th><th class="num" id="th-a"></th><th class="num" id="th-b"></th><th class="num">Variación</th></tr></thead><tbody id="cmp-rows"></tbody></table></div>
+      <div class="tablewrap" style="margin-top:12px"><table class="cmp"><thead><tr><th scope="col"><span class="vh">Indicador</span></th><th scope="col" class="num" id="th-a"></th><th scope="col" class="num" id="th-b"></th><th scope="col" class="num">Variación</th></tr></thead><tbody id="cmp-rows"></tbody></table></div>
       <p class="note" id="cmp-note"></p>
     </section>
     <section class="grid2">
@@ -1616,7 +1617,7 @@ function renderEvolucion() {
   const rowsC = [["Contratos", mA.n, mB.n, nf.format], ["Importe adjudicado", mA.sum, mB.sum, eur.format.bind(eur)],
                  ["Importe medio", mA.avg, mB.avg, eur.format.bind(eur)], ["Contratistas distintos", mA.contractors, mB.contractors, nf.format]];
   $("cmp-rows").innerHTML = rowsC.map(([l, x, y, f]) =>
-    `<tr><td>${l}</td><td class="num">${f(x)}</td><td class="num">${state.cmpB ? f(y) : "—"}</td><td class="num">${state.cmpB ? (delta(x, y) || "—") : "—"}</td></tr>`).join("");
+    `<tr><th scope="row">${l}</th><td class="num">${f(x)}</td><td class="num">${state.cmpB ? f(y) : "—"}</td><td class="num">${state.cmpB ? (delta(x, y) || "—") : "—"}</td></tr>`).join("");
   const curYear = String(REF.slice(0, 4));
   $("cmp-note").textContent = "Respeta los filtros de arriba (menos año y mes)." +
     ([state.cmpA, state.cmpB].includes(curYear) ? ` ${curYear} está incompleto: los datos llegan hasta el ${fmtDate(REF)}, así que la variación no es entre años completos.` : "");

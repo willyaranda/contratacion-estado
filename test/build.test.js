@@ -574,3 +574,11 @@ test('CLS: el contenido se oculta hasta que se pinta la pestaña inicial y el lo
   t.regex(TEMPLATE, /<noscript><style>body:not\(\.ready\)>main/);
   t.regex(TEMPLATE, /header\.top \.brand img\{[^}]*aspect-ratio:720\/183/);
 });
+
+test('Evolución anual: la tabla comparativa usa th scope="col" en cabeceras y th scope="row" en las etiquetas de fila', (t) => {
+  const table = TEMPLATE.match(/<table class="cmp">[\s\S]*?<\/table>/)[0];
+  t.is((table.match(/<th scope="col"/g) || []).length, 4);
+  t.notRegex(table, /<th(?=[ >])(?![^>]*scope="col")/);
+  t.regex(TEMPLATE, /<tr><th scope="row">\$\{l\}<\/th><td class="num">/);
+  t.regex(TEMPLATE, /\.cmp tbody th\{font-weight:400;color:var\(--muted\)\}/);
+});
