@@ -129,11 +129,20 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .bar .val{font-variant-numeric:tabular-nums;color:var(--muted);white-space:nowrap}
 .bar:hover .name{text-decoration:underline}
 .bar.on .name{font-weight:700}
-.cols{display:flex;align-items:flex-end;gap:4px;height:170px;padding-top:8px}
-.col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;background:none;border:0;padding:0;min-width:0}
+.chart{display:flex;gap:4px;--tickh:20px}
+.yaxis{position:relative;flex:none;width:46px;height:178px;font-size:.7rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.yaxis .yunit{position:absolute;left:0;top:0;white-space:nowrap;font-size:.66rem}
+.yaxis .ylab{position:absolute;left:0;right:0;top:18px;bottom:var(--tickh)}
+.yaxis .ylab span{position:absolute;right:0;transform:translateY(50%);line-height:1;white-space:nowrap}
+.cols{position:relative;flex:1;min-width:0;display:flex;align-items:flex-end;gap:4px;height:178px;padding-top:18px}
+.cols .grid{position:absolute;left:0;right:0;top:18px;bottom:var(--tickh);z-index:0;pointer-events:none}
+.cols .grid i{position:absolute;left:0;right:0;border-top:1px solid var(--line)}
+.cols .grid i:first-child{border-top-color:var(--muted);opacity:.6}
+.col{position:relative;z-index:1;flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;background:none;border:0;padding:0;min-width:0}
+.col .area{display:flex;flex-direction:column;justify-content:flex-end;width:100%;height:calc(100% - var(--tickh))}
 .col .fill{width:100%;background:var(--bar);border-radius:3px 3px 0 0;min-height:1px;display:block}
 .col.on .fill{outline:2px solid var(--ink)}
-.col .tick{font-size:.7rem;color:var(--muted);margin-top:4px}
+.col .tick{font-size:.7rem;color:var(--muted);height:var(--tickh);line-height:var(--tickh);overflow:visible;white-space:nowrap}
 .col:hover .fill{opacity:.8}
 .pair{display:flex;align-items:flex-end;gap:2px;width:100%;height:100%}
 .pair .fill{flex:1}
@@ -790,11 +799,30 @@ function barList(el, items, { label, value, onclick, active, disp, parts }) {
       <span class="val">${esc(disp ? disp(it) : `${compact(it.sum)} · ${it.n}`)}</span></button>`).join("");
   if (onclick) el.querySelectorAll(".bar").forEach((b) => b.addEventListener("click", () => onclick(items[+b.dataset.i])));
 }
-function colChart(el, items, { label, value, onclick, active, title, parts }) {
-  const top = Math.max(...items.map(value), 1);
-  el.innerHTML = `<div class="cols">` + items.map((it, i) =>
+// Escala "bonita" (pasos de 1, 2 o 5 por 10^n) con 4 tramos como mucho. `integer`: no baja de paso 1 (recuentos).
+// Con max <= 0 (o no finito) devuelve una escala por defecto en vez de dividir por cero.
+function niceScale(max, integer) {
+  if (!(max > 0) || !Number.isFinite(max)) max = integer ? 4 : 10;
+  const raw = max / 4, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  let step = [1, 2, 5, 10].map((k) => k * mag).find((v) => v >= raw * (1 - 1e-9));
+  if (integer && step < 1) step = 1;
+  const top = Math.ceil(max / step - 1e-9) * step;
+  const ticks = [];
+  for (let i = 0; i * step <= top + step * 1e-9; i++) ticks.push(Number((i * step).toPrecision(12)));
+  return { max: ticks[ticks.length - 1], step, ticks };
+}
+const axisNum = new Intl.NumberFormat("es-ES", { maximumFractionDigits: 2 });
+const axisEur = (v) => v >= 1e6 ? axisNum.format(v / 1e6) + " M€" : v >= 1e3 ? axisNum.format(v / 1e3) + " k€" : axisNum.format(v) + " €";
+// Eje Y (decorativo: cada columna lleva su aria-label con el valor) y rejilla horizontal; `kind` es "n" (contratos) o "eur"
+const yAxisHtml = (sc, kind) => `<div class="yaxis" aria-hidden="true"><span class="yunit">${kind === "eur" ? "€" : "Contratos"}</span><div class="ylab">${
+  sc.ticks.map((v) => `<span style="bottom:${v / sc.max * 100}%">${kind === "eur" ? axisEur(v) : nf.format(v)}</span>`).join("")}</div></div>`;
+const gridHtml = (sc) => `<div class="grid" aria-hidden="true">${sc.ticks.map((v) => `<i style="bottom:${v / sc.max * 100}%"></i>`).join("")}</div>`;
+const chartHtml = (sc, kind, cols) => `<div class="chart">${yAxisHtml(sc, kind)}<div class="cols">${gridHtml(sc)}${cols}</div></div>`;
+function colChart(el, items, { label, value, onclick, active, title, parts, axis }) {
+  const sc = niceScale(Math.max(...items.map(value), 0), axis !== "eur");
+  el.innerHTML = chartHtml(sc, axis, items.map((it, i) =>
     `<button class="col ${active(it) ? "on" : ""}" data-i="${i}" title="${esc(title(it))}" aria-label="${esc(title(it))}">
-      <span class="fill" style="height:${value(it)/top*100}%">${periodSegments(parts, it, "height")}</span><span class="tick">${esc(label(it))}</span></button>`).join("") + `</div>`;
+      <span class="area"><span class="fill" style="height:${value(it)/sc.max*100}%">${periodSegments(parts, it, "height")}</span></span><span class="tick">${esc(label(it))}</span></button>`).join(""));
   el.querySelectorAll(".col").forEach((b) => b.addEventListener("click", () => onclick(items[+b.dataset.i])));
 }
 function stackedYears(el, list, catFn, order) {
@@ -1181,19 +1209,19 @@ function renderResumen() {
   const forYear = R.filter((r) => passes(r, ["year"]));
   const yAgg = new Map(agg(forYear, (r) => r.year).map((e) => [e.key, e]));
   colChart($("c-year"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, sum:0, byP: emptyP() }) })), {
-    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: sumParts,
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: sumParts, axis: "eur",
     title: (e) => `${e.y}: ${eur.format(e.sum)} en ${e.n} contratos`,
     active: (e) => String(e.y) === String(state.year), onclick: (e) => toggleFilter("year", e.y, "f-year"),
   });
   colChart($("c-year-n"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, nAw:0, sum:0, byP: emptyP() }) })), {
-    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.nAw, parts: (e) => e.byP.map((x) => x.nAw),
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.nAw, axis: "n", parts: (e) => e.byP.map((x) => x.nAw),
     title: (e) => `${e.y}: ${nf.format(e.nAw)} contratos adjudicados` + (e.n !== e.nAw ? ` (${nf.format(e.n)} en total, con los no adjudicados)` : ""),
     active: (e) => String(e.y) === String(state.year), onclick: (e) => toggleFilter("year", e.y, "f-year"),
   });
   const forMonth = R.filter((r) => passes(r, ["month"]));
   const mAgg = new Map(agg(forMonth, (r) => r.month).map((e) => [e.key, e]));
   colChart($("c-month"), MONTHS.map((mm, i) => ({ m: mm, i: i+1, ...(mAgg.get(i+1) || { n:0, sum:0, byP: emptyP() }) })), {
-    label: (e) => e.m, value: (e) => e.n, parts: countParts,
+    label: (e) => e.m, value: (e) => e.n, axis: "n", parts: countParts,
     title: (e) => `${MONTHS_LONG[e.i-1]}: ${e.n} contratos, ${eur.format(e.sum)}`,
     active: (e) => String(e.i) === String(state.month), onclick: (e) => toggleFilter("month", e.i, "f-month"),
   });
@@ -1534,11 +1562,11 @@ function renderNextGen() {
   const items = years.map((y) => ({ y, ...(yAgg.get(y) || { n: 0, nAw: 0, sum: 0, byP: emptyP() }) }));
   const noop = () => {};
   colChart($("ng-year-n"), items, {
-    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.n, parts: countParts,
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.n, parts: countParts, axis: "n",
     title: (e) => `${e.y}: ${nf.format(e.n)} contratos`, active: () => false, onclick: noop,
   });
   colChart($("ng-year-eur"), items, {
-    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: sumParts,
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: sumParts, axis: "eur",
     title: (e) => `${e.y}: ${eur.format(e.sum)} en ${nf.format(e.n)} contratos`, active: () => false, onclick: noop,
   });
   barList($("ng-type"), agg(list, (r) => r.type).sort((a, b) => b.n - a.n), {
@@ -1572,14 +1600,14 @@ function renderEvolucion() {
   const metric = state.cmpM;
   const monthly = (list) => MONTHS.map((_, i) => { const e = list.filter((r) => r.month === i + 1); const mm = metrics(e); return metric === "n" ? mm.n : mm.sum; });
   const a = monthly(A), b = monthly(B);
-  const top = Math.max(...a, ...b, 1);
+  const sc = niceScale(Math.max(...a, ...b, 0), metric === "n");
   const fmt = (v) => metric === "n" ? nf.format(v) + " contratos" : eur.format(v);
   $("lg-a").textContent = state.cmpA; $("lg-b").textContent = state.cmpB || "—";
   $("lg-b").parentElement.hidden = !state.cmpB;
-  $("c-cmp").innerHTML = `<div class="cols">` + MONTHS.map((mn, i) =>
+  $("c-cmp").innerHTML = chartHtml(sc, metric === "n" ? "n" : "eur", MONTHS.map((mn, i) =>
     `<div class="col" title="${esc(`${MONTHS_LONG[i]}: ${state.cmpA} ${fmt(a[i])}${state.cmpB ? " · " + state.cmpB + " " + fmt(b[i]) : ""}`)}">
-      <div class="pair"><span class="fill c1" style="height:${a[i]/top*100}%"></span>${state.cmpB ? `<span class="fill b" style="height:${b[i]/top*100}%"></span>` : ""}</div>
-      <span class="tick">${mn}</span></div>`).join("") + `</div>`;
+      <div class="area"><div class="pair"><span class="fill c1" style="height:${a[i]/sc.max*100}%"></span>${state.cmpB ? `<span class="fill b" style="height:${b[i]/sc.max*100}%"></span>` : ""}</div></div>
+      <span class="tick">${mn}</span></div>`).join(""));
   const mA = metrics(A), mB = metrics(B);
   $("th-a").textContent = state.cmpA; $("th-b").textContent = state.cmpB || "—";
   const rowsC = [["Contratos", mA.n, mB.n, nf.format], ["Importe adjudicado", mA.sum, mB.sum, eur.format.bind(eur)],

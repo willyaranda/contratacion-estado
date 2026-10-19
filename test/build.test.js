@@ -526,3 +526,44 @@ test('la página enlaza a plazos.ics en Licitaciones abiertas y no a adjudicacio
   t.notRegex(TEMPLATE, /adjudicaciones\.ics|vencimientos\.ics/);
   t.regex(TEMPLATE, /<a href="aperturas\.ics" title="Calendario completo[^"]*">Calendario de Contratación<\/a>/);
 });
+
+// ---------- eje Y de los gráficos de columnas ----------
+const niceScaleFn = () => new Function(`${TEMPLATE.match(/function niceScale\([\s\S]*?\n}\n/)[0]}; return niceScale;`)();
+
+test('niceScale: escala con pasos 1/2/5·10^n y el máximo cubierto', (t) => {
+  const ns = niceScaleFn();
+  t.deepEqual(ns(7, true).ticks, [0, 2, 4, 6, 8]);
+  t.deepEqual(ns(12, true).ticks, [0, 5, 10, 15]);
+  t.deepEqual(ns(99, true).ticks, [0, 50, 100]);
+  t.deepEqual(ns(1234567).ticks, [0, 500000, 1000000, 1500000]);
+  t.deepEqual(ns(1234567).ticks.length, 4);
+  t.deepEqual(ns(0.3).ticks, [0, 0.1, 0.2, 0.3]);
+  for (const m of [1, 3, 7, 12, 99, 101, 1234567, 0.37, 48000000]) {
+    const s = ns(m);
+    t.true(s.max >= m, `cubre ${m}`);
+    t.true(s.ticks.length >= 3 && s.ticks.length <= 6, `marcas de ${m}`);
+    t.regex(String(s.step / 10 ** Math.floor(Math.log10(s.step))), /^(1|2|5)$/);
+  }
+});
+
+test('niceScale: en recuentos no baja de paso 1 y con max 0 usa una escala por defecto', (t) => {
+  const ns = niceScaleFn();
+  t.deepEqual(ns(1, true).ticks, [0, 1]);
+  t.deepEqual(ns(0, true).ticks, [0, 1, 2, 3, 4]);
+  t.deepEqual(ns(0).ticks, [0, 5, 10]);
+  for (const bad of [0, -3, NaN, undefined, Infinity]) {
+    const s = ns(bad);
+    t.true(Number.isFinite(s.max) && s.max > 0);
+  }
+});
+
+test('todos los gráficos de columnas dibujan el eje Y y calculan la altura contra la escala', (t) => {
+  t.is((TEMPLATE.match(/colChart\(\$\(/g) || []).length, 5);
+  t.is((TEMPLATE.match(/axis: "(n|eur)"/g) || []).length, 5);
+  t.regex(TEMPLATE, /const chartHtml = \(sc, kind, cols\) => `<div class="chart">\$\{yAxisHtml\(sc, kind\)\}/);
+  t.regex(TEMPLATE, /class="yaxis" aria-hidden="true"/);
+  t.regex(TEMPLATE, /\$\("c-cmp"\)\.innerHTML = chartHtml\(sc,/);
+  t.notRegex(TEMPLATE, /height:\$\{[^}]*\/top\*100\}%/);
+  t.notRegex(TEMPLATE, /<div class="cols">/);
+  t.regex(TEMPLATE, /height:\$\{value\(it\)\/sc\.max\*100\}%/);
+});
