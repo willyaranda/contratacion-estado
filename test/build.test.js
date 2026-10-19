@@ -158,6 +158,73 @@ test('el pie de página enlaza al Ayuntamiento, al repositorio y a la licencia, 
   t.true(html.includes(`<link rel="canonical" href="${SITE_URL}">`));
 });
 
+const metaOf = (html, attr, name) => html.match(new RegExp(`<meta ${attr}="${name}"[^>]*content="([^"]*)"`))?.[1];
+
+test('metas para redes y navegadores: todas presentes, con URLs absolutas del sitio y la imagen social válida', (t) => {
+  const html = renderPage(TEMPLATE, { generated: '2026-10-16T12:45:17+02:00', records: [] }, '', assetUris());
+  t.true(SITE_URL.endsWith('/'));
+  const image = `${SITE_URL}images/og-contratacion.png`;
+  const og = (name) => metaOf(html, 'property', `og:${name}`);
+  const tw = (name) => metaOf(html, 'name', `twitter:${name}`);
+  t.is(og('type'), 'website');
+  t.is(og('site_name'), 'Ayuntamiento de Aranda de Duero');
+  t.is(og('url'), SITE_URL);
+  t.is(og('locale'), 'es_ES');
+  t.is(og('image'), image);
+  t.is(og('image:secure_url'), image);
+  t.is(og('image:type'), 'image/png');
+  t.is(og('image:width'), '1200');
+  t.is(og('image:height'), '630');
+  t.truthy(og('image:alt'));
+  t.truthy(og('title'));
+  t.true(og('description').length <= 200, String(og('description').length));
+  t.is(og('description'), metaOf(html, 'name', 'description'));
+  t.is(tw('card'), 'summary_large_image');
+  t.is(tw('site'), '@aytoaranda');
+  t.is(tw('title'), og('title'));
+  t.is(tw('description'), og('description'));
+  t.is(tw('image'), image);
+  t.truthy(tw('image:alt'));
+  t.is(metaOf(html, 'name', 'robots'), 'index,follow');
+  t.regex(html, /<meta name="theme-color" content="#0083c1"/);
+  t.regex(html, /<meta name="theme-color" content="#[0-9a-f]{6}" media="\(prefers-color-scheme: dark\)"/);
+  t.regex(html, /<meta name="color-scheme" content="light dark">/);
+  for (const rel of ['icon" href="', 'icon" type="image/png" sizes="32x32" href="', 'apple-touch-icon" href="', 'manifest" href="']) {
+    const url = html.match(new RegExp(`<link rel="${rel}([^"]*)"`))[1];
+    t.true(url.startsWith(SITE_URL), url);
+    t.true(existsSync(join(ROOT, 'docs', url.slice(SITE_URL.length))), url);
+  }
+  // ninguna URL absoluta del <head> sale de otro sitio (salvo el Ayuntamiento)
+  const head = html.slice(0, html.indexOf('</head>')).replace(/<style>[\s\S]*<\/style>/, '');
+  for (const url of head.match(/https?:\/\/[^\s"'<>]+/g)) t.true(url.startsWith(SITE_URL) || url.startsWith(AYTO_URL), url);
+});
+
+test('imágenes sociales e iconos: existen, PNG con las dimensiones y el peso esperados', (t) => {
+  const png = (file) => {
+    const buf = readFileSync(join(ROOT, 'docs', 'images', file));
+    t.is(buf.subarray(1, 4).toString(), 'PNG', file);
+    return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20), size: buf.length };
+  };
+  const og = png('og-contratacion.png');
+  t.deepEqual([og.w, og.h], [1200, 630]);
+  t.true(og.size < 300 * 1024, String(og.size));
+  const square = png('og-contratacion-1x1.png');
+  t.deepEqual([square.w, square.h], [1080, 1080]);
+  t.true(square.size < 300 * 1024);
+  for (const [file, side] of [['favicon-32.png', 32], ['apple-touch-icon.png', 180], ['icon-192.png', 192], ['icon-512.png', 512]]) {
+    const { w, h } = png(file);
+    t.deepEqual([w, h], [side, side], file);
+  }
+  const ico = readFileSync(join(ROOT, 'docs', 'images', 'favicon.ico'));
+  t.deepEqual([...ico.subarray(0, 4)], [0, 0, 1, 0]);
+  t.is(ico.readUInt16LE(4), 3);
+  const manifest = JSON.parse(readFileSync(join(ROOT, 'docs', 'site.webmanifest'), 'utf8'));
+  t.is(manifest.lang, 'es');
+  t.is(manifest.theme_color, '#0083c1');
+  t.deepEqual(manifest.icons.map((i) => i.sizes), ['192x192', '512x512']);
+  for (const icon of manifest.icons) t.true(existsSync(join(ROOT, 'docs', icon.src)), icon.src);
+});
+
 test('las URLs absolutas salen de transparencia/site.js', (t) => {
   t.is(AYTO_URL, 'https://www.arandadeduero.es');
   t.notRegex(TEMPLATE, /willyaranda/);
