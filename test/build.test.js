@@ -564,6 +564,6 @@ test('todos los gráficos de columnas dibujan el eje Y y calculan la altura cont
   t.regex(TEMPLATE, /class="yaxis" aria-hidden="true"/);
   t.regex(TEMPLATE, /\$\("c-cmp"\)\.innerHTML = chartHtml\(sc,/);
   t.notRegex(TEMPLATE, /height:\$\{[^}]*\/top\*100\}%/);
-  t.notRegex(TEMPLATE, /<div class="cols">/);
+  t.is((TEMPLATE.match(/<div class="cols">/g) || []).length, 1); // solo en chartHtml
   t.regex(TEMPLATE, /height:\$\{value\(it\)\/sc\.max\*100\}%/);
 });
