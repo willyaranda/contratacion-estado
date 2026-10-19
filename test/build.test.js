@@ -124,3 +124,24 @@ test('el build es determinista: dos ejecuciones dan exactamente el mismo HTML', 
   };
   t.is(run(), run());
 });
+
+test('las etiquetas de resultado se colorean por resultado (verde, amarillo, diagonal, rojo)', (t) => {
+  const rule = (sel) => TEMPLATE.match(new RegExp(`\\.tag\\.${sel}[^{]*\\{([^}]*)\\}`))?.[1] ?? '';
+  t.regex(rule('out-adjudicado'), /--o-ok-bg/);
+  t.regex(rule('out-none'), /--o-ok-bg/); // sin resultado todavía: verde
+  t.regex(rule('out-desierto'), /--o-warn-bg/);
+  t.regex(rule('out-renuncia'), /--o-bad-bg/);
+  t.regex(rule('out-desistimiento'), /--o-bad-bg/);
+  // parcialmente adjudicado: amarillo / naranja con corte duro a 135deg
+  t.regex(rule('out-mixto'), /linear-gradient\(135deg,var\(--o-warn-bg\) 50%,var\(--o-mid-bg\) 50%\)/);
+  t.notRegex(TEMPLATE, /\.tag\.out-otro/); // 'otro' conserva el chip neutro
+  // variables definidas en claro y en las dos variantes oscuras
+  t.is(TEMPLATE.match(/--o-ok-bg:#/g).length, 3);
+  t.is(TEMPLATE.match(/--o-mid-bg:#/g).length, 3);
+});
+
+test('la columna Resultado y las insignias del detalle usan outTag', (t) => {
+  t.regex(TEMPLATE, /const outTag = \(o, text\) => `<span class="tag out-\$\{o \|\| "none"\}">/);
+  t.regex(TEMPLATE, /label:"Resultado"[^\n]*outTag\(r\.outcome, r\.outcome \? OUTCOME\[r\.outcome\] \|\| r\.outcome : "Sin resultado todavía"\)/);
+  t.regex(TEMPLATE, /const badges = [^\n]*\n[^\n]*outTag\(o, b\)/);
+});
