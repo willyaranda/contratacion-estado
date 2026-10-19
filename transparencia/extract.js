@@ -296,6 +296,8 @@ export const recordFromEntry = (entry, dir) => {
     nextgenProgram: nextgenProgramValue,
     nextgenBy: nextgenProgramValue === null ? null : nextGenSource(entry),
     updated: entry.updated,
+    plannedStart: pp['cac:PlannedPeriod']?.['cbc:StartDate'] ?? null,
+    plannedEnd: pp['cac:PlannedPeriod']?.['cbc:EndDate'] ?? null,
     durationMonths: duration && duration['@_unitCode'] === 'MON' ? Number(text(duration)) : null,
     url: entry.link?.['@_href'] || null,
   };

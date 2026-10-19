@@ -333,3 +333,22 @@ test('buildIcs añade PUB y ULT. DÍA de las licitaciones como eventos de día c
   t.regex(ics, /SUMMARY:ULT. DÍA: Obra A/);
   t.regex(ics, /SUMMARY:ULT. DÍA \(14:00\): Obra B/);
 });
+
+test('buildIcs añade ADJ, ADJ. MENOR y AVISO FIN, con alarma el día antes en plazos y fines', (t) => {
+  const tenders = [
+    { id: 'l-1', kind: 'licitacion', title: 'Obra A', outcome: 'adjudicado', awardDate: '2026-10-10', durationMonths: 3, winners: [{ name: 'ACME' }] },
+    { id: 'm-2', kind: 'menor', title: 'Servicio B', outcome: 'adjudicado', awardDate: '2026-10-12', plannedEnd: '2026-12-31', published: '2026-10-13' },
+    { id: 'l-3', kind: 'licitacion', title: 'Sin adjudicar', outcome: null, awardDate: '2026-10-10' },
+  ];
+  const ics = buildIcs({}, { now: NOW, tenders }).replace(/\r\n /g, '');
+  t.regex(ics, /SUMMARY:ADJ: Obra A/);
+  t.regex(ics, /SUMMARY:AVISO FIN: Obra A/);
+  t.regex(ics, /DTSTART;VALUE=DATE:20270110/); // adjudicación + 3 meses
+  t.regex(ics, /Adjudicada el 2026-10-10 a ACME/);
+  t.regex(ics, /SUMMARY:ADJ. MENOR: Servicio B/);
+  t.regex(ics, /DTSTART;VALUE=DATE:20261231/);
+  t.notRegex(ics, /PUB: Servicio B/); // los menores no tienen plazo ni PUB
+  t.notRegex(ics, /SUMMARY:ADJ: Sin adjudicar/);
+  t.is((ics.match(/BEGIN:VALARM/g) ?? []).length, 2);
+  t.regex(ics, /TRIGGER:-PT15H/);
+});

@@ -76,7 +76,7 @@ const main = () => {
   try {
     aperturas = JSON.parse(readFileSync(join(dumpDir, 'aperturas.json'), 'utf8'));
   } catch { /* sin aperturas todavía */ }
-  writeFileSync(join(outDir, 'aperturas.ics'), buildIcs(aperturas, { tenders: records.filter((r) => r.kind === 'licitacion') }));
+  writeFileSync(join(outDir, 'aperturas.ics'), buildIcs(aperturas, { tenders: records }));
 
   console.log({
     files, contracts: records.length, withWinner: records.filter((r) => r.winners.length).length, generated,
