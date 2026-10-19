@@ -463,11 +463,13 @@ const STATUS = {PUB:"Publicada",EV:"En evaluación",ADJ:"Adjudicada",RES:"Resuel
 const KIND = {licitacion:"Cont. mayor",menor:"Cont. menor"};
 // Resultado del procedimiento (calculado en transparencia/extract.js a partir del código de resultado de cada lote)
 const OUTCOME = {adjudicado:"Adjudicado",desierto:"Desierto",desistimiento:"Desistimiento",renuncia:"Renuncia",mixto:"Parcialmente adjudicado",otro:"Otro resultado"};
-const outTag = (o, text) => `<span class="tag out-${o || "none"}">${esc(text)}</span>`;
-const kindTag = (k) => `<span class="tag kind-${k}">${esc(KIND[k])}</span>`; // clase del contrato: morado (mayor) / pizarra (menor)
+// Valores que van dentro de un nombre de clase: solo letras, números y guiones (los códigos vienen del feed externo)
+const safeCls = (v) => String(v ?? "").replace(/[^a-zA-Z0-9-]/g, "");
+const outTag = (o, text) => `<span class="tag out-${safeCls(o) || "none"}">${esc(text)}</span>`;
+const kindTag = (k) => `<span class="tag kind-${safeCls(k)}">${esc(KIND[k])}</span>`; // clase del contrato: morado (mayor) / pizarra (menor)
 const NG_FLAG = "__LOGO_EU__"; // bandera de la UE incrustada (en Windows el emoji 🇪🇺 sale como "EU")
 const ngTag = () => `<span class="tag ng"><img src="${NG_FLAG}" alt="" width="14" height="9">NextGenerationEU</span>`;
-const statusTag = (s) => `<span class="tag st-${s}">${esc(STATUS[s] || s || "—")}</span>`; // estado en la Plataforma: PUB azul, EV naranja, ADJ amarillo, RES verde, ANUL rojo
+const statusTag = (s) => `<span class="tag st-${safeCls(s)}">${esc(STATUS[s] || s || "—")}</span>`; // estado en la Plataforma: PUB azul, EV naranja, ADJ amarillo, RES verde, ANUL rojo
 const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin adjudicar
 // Corporaciones municipales (la actual se constituyó el 17/06/2023). El color de cada contrato indica cuál lo sacó:
 // licitaciones por la fecha de publicación del anuncio; contratos menores (sin licitación) por la de adjudicación.

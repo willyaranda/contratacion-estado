@@ -464,11 +464,13 @@ const STATUS = {PUB:"Publicada",EV:"En evaluación",ADJ:"Adjudicada",RES:"Resuel
 const KIND = {licitacion:"Cont. mayor",menor:"Cont. menor"};
 // Resultado del procedimiento (calculado en transparencia/extract.js a partir del código de resultado de cada lote)
 const OUTCOME = {adjudicado:"Adjudicado",desierto:"Desierto",desistimiento:"Desistimiento",renuncia:"Renuncia",mixto:"Parcialmente adjudicado",otro:"Otro resultado"};
-const outTag = (o, text) => `<span class="tag out-${o || "none"}">${esc(text)}</span>`;
-const kindTag = (k) => `<span class="tag kind-${k}">${esc(KIND[k])}</span>`; // clase del contrato: morado (mayor) / pizarra (menor)
+// Valores que van dentro de un nombre de clase: solo letras, números y guiones (los códigos vienen del feed externo)
+const safeCls = (v) => String(v ?? "").replace(/[^a-zA-Z0-9-]/g, "");
+const outTag = (o, text) => `<span class="tag out-${safeCls(o) || "none"}">${esc(text)}</span>`;
+const kindTag = (k) => `<span class="tag kind-${safeCls(k)}">${esc(KIND[k])}</span>`; // clase del contrato: morado (mayor) / pizarra (menor)
 const NG_FLAG = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiPg0KPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMzkiLz4NCjxnIGZpbGw9IiNmYzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ1MCwzMDApIj4NCjxwYXRoIGlkPSJzIiBkPSJNMCwxNjIuNSAyMi4wNDE5NDcsMjMwLjMzODEzNyAtMzUuNjY0NjE5LDE4OC40MTE4NjNIMzUuNjY0NjE5TC0yMi4wNDE5NDcsMjMwLjMzODEzN3oiLz4NCjx1c2UgeGxpbms6aHJlZj0iI3MiIHk9Ii00MDAiLz4NCjxnIGlkPSJzNSI+DQo8dXNlIHhsaW5rOmhyZWY9IiNzIiB0cmFuc2Zvcm09InJvdGF0ZSgzMCkgcm90YXRlKC0zMCwwLDIwMCkiLz4NCjx1c2UgeGxpbms6aHJlZj0iI3MiIHRyYW5zZm9ybT0icm90YXRlKDYwKSByb3RhdGUoLTYwLDAsMjAwKSIvPg0KPHVzZSB4bGluazpocmVmPSIjcyIgdHJhbnNmb3JtPSJyb3RhdGUoOTApIHJvdGF0ZSgtOTAsMCwyMDApIi8+DQo8dXNlIHhsaW5rOmhyZWY9IiNzIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIHJvdGF0ZSgtMTIwLDAsMjAwKSIvPg0KPHVzZSB4bGluazpocmVmPSIjcyIgdHJhbnNmb3JtPSJyb3RhdGUoMTUwKSByb3RhdGUoLTE1MCwwLDIwMCkiLz4NCjwvZz4NCjx1c2UgeGxpbms6aHJlZj0iI3M1IiB0cmFuc2Zvcm09InNjYWxlKC0xLDEpIi8+DQo8L2c+DQo8L3N2Zz4="; // bandera de la UE incrustada (en Windows el emoji 🇪🇺 sale como "EU")
 const ngTag = () => `<span class="tag ng"><img src="${NG_FLAG}" alt="" width="14" height="9">NextGenerationEU</span>`;
-const statusTag = (s) => `<span class="tag st-${s}">${esc(STATUS[s] || s || "—")}</span>`; // estado en la Plataforma: PUB azul, EV naranja, ADJ amarillo, RES verde, ANUL rojo
+const statusTag = (s) => `<span class="tag st-${safeCls(s)}">${esc(STATUS[s] || s || "—")}</span>`; // estado en la Plataforma: PUB azul, EV naranja, ADJ amarillo, RES verde, ANUL rojo
 const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin adjudicar
 // Corporaciones municipales (la actual se constituyó el 17/06/2023). El color de cada contrato indica cuál lo sacó:
 // licitaciones por la fecha de publicación del anuncio; contratos menores (sin licitación) por la de adjudicación.

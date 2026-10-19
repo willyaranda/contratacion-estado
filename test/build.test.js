@@ -147,7 +147,7 @@ test('la clase del contrato es "Cont. mayor"/"Cont. menor" con color propio', (t
   const rule = (sel) => TEMPLATE.match(new RegExp(`\\.tag\\.${sel}[^{]*\\{([^}]*)\\}`))?.[1] ?? '';
   t.regex(rule('kind-licitacion'), /--k-maj-bg/);
   t.regex(rule('kind-menor'), /--k-min-bg/);
-  t.regex(TEMPLATE, /const kindTag = \(k\) => `<span class="tag kind-\$\{k\}">/);
+  t.regex(TEMPLATE, /const kindTag = \(k\) => `<span class="tag kind-\$\{safeCls\(k\)\}">/);
   t.regex(TEMPLATE, /const badges = \[kindTag\(r\.kind\)/); // detalle
   t.regex(TEMPLATE, /\$\{kindTag\(r\.kind\)\}/); // listado
 });
@@ -164,7 +164,7 @@ test('las etiquetas de estado se colorean por código de la Plataforma', (t) => 
 });
 
 test('la columna Resultado y las insignias del detalle usan outTag', (t) => {
-  t.regex(TEMPLATE, /const outTag = \(o, text\) => `<span class="tag out-\$\{o \|\| "none"\}">/);
+  t.regex(TEMPLATE, /const outTag = \(o, text\) => `<span class="tag out-\$\{safeCls\(o\) \|\| "none"\}">/);
   t.regex(TEMPLATE, /label:"Resultado"[^\n]*outTag\(r\.outcome, r\.outcome \? OUTCOME\[r\.outcome\] \|\| r\.outcome : "Sin resultado todavía"\)/);
   t.regex(TEMPLATE, /const badges = [^\n]*outTag\(r\.outcome, OUTCOME\[r\.outcome\]\)/);
 });
@@ -235,4 +235,16 @@ test('"Buscar y filtrar" carga colapsado: botón con aria-expanded="false", aria
   // los filtros activos se indican en el botón y las pestañas informativas siguen ocultando todo el panel
   t.true(TEMPLATE.includes('id="filters-count"'));
   t.true(TEMPLATE.includes('$("filters").hidden = state.tab === "sentiraranda"'));
+});
+
+test('los valores que van en nombres de clase pasan por safeCls (el estado viene del feed externo)', (t) => {
+  t.regex(TEMPLATE, /const safeCls = \(v\) => String\(v \?\? ""\)\.replace\(\/\[\^a-zA-Z0-9-\]\/g, ""\)/);
+  t.regex(TEMPLATE, /class="tag st-\$\{safeCls\(s\)\}"/);
+  t.regex(TEMPLATE, /class="tag kind-\$\{safeCls\(k\)\}"/);
+  t.regex(TEMPLATE, /class="tag out-\$\{safeCls\(o\) \|\| "none"\}"/);
+  // la función filtra de verdad
+  const safeCls = new Function(`${TEMPLATE.match(/const safeCls = [^\n]+/)[0]}; return safeCls;`)();
+  t.is(safeCls('PUB'), 'PUB');
+  t.is(safeCls('x" onmouseover="alert(1)'), 'xonmouseoveralert1');
+  t.is(safeCls(null), '');
 });
