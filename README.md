@@ -20,6 +20,17 @@ de evento, así que suscribirse a varios no duplica nada.
 | Adjudicaciones | <https://willyaranda.github.io/contratacion-estado/adjudicaciones.ics> | `ADJ` y `ADJ. MENOR`. |
 | Vencimientos de contratos | <https://willyaranda.github.io/contratacion-estado/vencimientos.ics> | `AVISO FIN`: contratos que caducan, con alarma el día antes. |
 
+## Feeds
+
+Alternativa abierta al aviso por correo: licitaciones nuevas, adjudicaciones y contratos menores adjudicados de los
+últimos 90 días (máximo 200 entradas), con el mismo contenido en dos formatos. Se suscriben desde cualquier lector de
+feeds, y la página los anuncia para el descubrimiento automático.
+
+- Atom 1.0: <https://willyaranda.github.io/contratacion-estado/feed.xml>
+- RSS 2.0: <https://willyaranda.github.io/contratacion-estado/rss.xml>
+
+Las entradas son una foto de los datos del último nocturno (las fechas son las de los anuncios, no la de la consulta).
+
 ## Qué incluye
 
 - Licitaciones y contratos menores del Ayuntamiento, con adjudicatarios, importes, ofertas y plazos.
@@ -34,7 +45,7 @@ de evento, así que suscribirse a varios no duplica nada.
 1. `npm run fetch` recorre el feed de la Plataforma y descarga a `dump/` los anuncios nuevos. Guarda un punto de
    control en `dump/.state.json` para recorrer solo lo nuevo, porque el servidor es lento. Si `SEND_EMAILS=1`, avisa
    por email (Amazon SES) de los anuncios nuevos.
-2. `npm run build:site` genera `transparencia/index.html` (página autocontenida) y los cinco calendarios `.ics` a partir de `dump/`
+2. `npm run build:site` genera `transparencia/index.html` (página autocontenida) los cinco calendarios `.ics` y los feeds `feed.xml` y `rss.xml` a partir de `dump/`
    y de `transparencia/template.html`.
 3. El workflow [`nightly.yml`](.github/workflows/nightly.yml) lo hace cada noche y a mediodía, sube los datos y
    despliega la página en GitHub Pages desde `docs/`.

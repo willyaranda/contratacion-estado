@@ -60,6 +60,7 @@ jobs:
           mkdir -p docs
           cp transparencia/index.html docs/index.html
           cp transparencia/*.ics docs/
+          cp transparencia/*.xml docs/
           touch docs/.nojekyll
 
       - name: Commit y push
