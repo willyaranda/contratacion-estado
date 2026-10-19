@@ -213,6 +213,31 @@ details.picker .opts{display:flex;gap:6px 16px;flex-wrap:wrap;margin-top:8px}
 details.picker label{display:inline-flex;gap:6px;align-items:center;color:var(--ink);font-size:.85rem;margin:0}
 footer{padding:24px 0 40px}
 .empty{padding:24px;text-align:center;color:var(--muted)}
+/* franja "Próximas mesas de contratación" (renderMesas): la misma en Resumen y en Licitaciones abiertas */
+.mesas{padding:10px 14px;margin-bottom:16px}
+.mesas h2{margin:0;font-size:.95rem;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
+.mesas h2 .note{font-weight:400}
+.mesas ul{list-style:none;margin:6px 0 0;padding:0}
+.mesas li{display:grid;grid-template-columns:minmax(120px,170px) minmax(100px,140px) minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:6px 0;border-top:1px solid var(--line)}
+.mesas .when{font-variant-numeric:tabular-nums;font-weight:600}
+.mesas .when small{display:block;font-weight:400;color:var(--muted);font-size:.78rem}
+.mesas .what{min-width:0}
+.mesas .what a,.mesas .what span.t{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mesas .what a{color:var(--ink);text-decoration:none}
+.mesas .what a:hover{text-decoration:underline;color:var(--accent)}
+.mesas .what .sub{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--muted);font-size:.78rem}
+.mesas .more{margin-top:4px}
+.mesas .more>summary{cursor:pointer;color:var(--accent);font-size:.85rem;padding:4px 0}
+.mesas .empty-line{margin:4px 0 0;color:var(--muted);font-size:.88rem}
+details.mesacal{position:relative}
+details.mesacal>summary{cursor:pointer;list-style:none;border:1px solid var(--line);border-radius:8px;padding:3px 10px;font-size:.8rem;white-space:nowrap;background:var(--surface);color:var(--ink)}
+details.mesacal>summary::-webkit-details-marker{display:none}
+details.mesacal[open]>summary{border-color:var(--accent)}
+details.mesacal .menu{position:absolute;right:0;top:calc(100% + 4px);z-index:20;min-width:190px;background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:4px;box-shadow:0 6px 18px rgba(0,0,0,.25);display:flex;flex-direction:column}
+details.mesacal .menu a{padding:7px 10px;border-radius:6px;color:var(--ink);text-decoration:none;font-size:.85rem}
+details.mesacal .menu a:hover{background:var(--chip)}
+details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mesas a:focus-visible,.mesas .more>summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+@media (max-width:700px){.mesas li{grid-template-columns:minmax(0,1fr) auto}.mesas .when{grid-row:1;grid-column:1}.mesas .act{grid-row:1;grid-column:2}.mesas .typ{grid-row:2;grid-column:1/-1}.mesas .what{grid-row:3;grid-column:1/-1}}
 @media (max-width:600px){.bar{grid-template-columns:100px 1fr auto}}
 </style>
 </head>
@@ -227,6 +252,7 @@ footer{padding:24px 0 40px}
 </div></header>
 
 <main class="wrap">
+  <section class="panel mesas" id="mesas-resumen" data-tab="resumen" style="margin-top:16px;margin-bottom:0" aria-labelledby="h-mesas-resumen"></section>
   <section class="panel" id="filters" aria-labelledby="h-filtros" style="margin-top:16px">
     <h2 id="h-filtros"><button type="button" id="filters-toggle" class="ftoggle" aria-expanded="false" aria-controls="filters-body"><svg class="chev" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Buscar y filtrar</span><span class="fcount" id="filters-count" hidden></span></button></h2>
     <div id="filters-body" hidden>
@@ -419,6 +445,7 @@ footer{padding:24px 0 40px}
   <!-- ============ LICITACIONES ABIERTAS ============ -->
   <div data-tab="abiertas" hidden>
     <section class="kpis" id="kpis4"></section>
+    <section class="panel mesas" id="mesas-abiertas" aria-labelledby="h-mesas-abiertas"></section>
     <section class="panel">
       <h2>Licitaciones con plazo de presentación abierto</h2>
       <div id="t-open"></div>
@@ -1049,6 +1076,7 @@ function unawardedKpi(list) {
 }
 
 function renderResumen() {
+  renderMesas($("mesas-resumen"));
   renderPeriodLegend("period-legend", filtered);
   const m = metrics(filtered);
   const menores = filtered.filter((r) => r.kind === "menor").length;
@@ -1527,6 +1555,56 @@ $("adj-copy").addEventListener("click", () => copyTSV(
    ...[...adjRows].sort((a, b) => b.sum - a.sum).map((c) => [winnerLabel(c.key), c.nif || "", c.n, dec(Math.round(c.sum * 100) / 100), c.last])],
   $("adj-msg"), null));
 
+// <mesas>
+// Franja "Próximas mesas de contratación". Los datos (summary, .ics de cada mesa…) los genera lib/ics.js, el mismo código que
+// el calendario aperturas.ics: aquí solo se pintan y se construyen los enlaces a Google Calendar y Outlook.
+const mesaUtc = (ms) => new Date(ms).toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "");
+const mesaIso = (ms) => new Date(ms).toISOString().replace(/\.\d{3}/, "");
+const mesaGoogleUrl = (m) => "https://calendar.google.com/calendar/render?action=TEMPLATE"
+  + "&text=" + encodeURIComponent(m.summary) + "&dates=" + mesaUtc(m.start) + "/" + mesaUtc(m.end)
+  + "&details=" + encodeURIComponent(m.description) + "&location=" + encodeURIComponent(m.location || "");
+const mesaOutlookUrl = (m) => "https://outlook.office.com/calendar/0/deeplink/compose?path=" + encodeURIComponent("/calendar/action/compose")
+  + "&rru=addevent&subject=" + encodeURIComponent(m.summary) + "&startdt=" + encodeURIComponent(mesaIso(m.start)) + "&enddt=" + encodeURIComponent(mesaIso(m.end))
+  + "&body=" + encodeURIComponent(m.description) + "&location=" + encodeURIComponent(m.location || "");
+const mesaIcsUri = (m) => "data:text/calendar;charset=utf-8," + encodeURIComponent(m.ics);
+const mesaFile = (m) => "mesa-" + String(m.uid).split("@")[0].replace(/[^a-zA-Z0-9-]+/g, "-").slice(0, 60) + ".ics";
+const MADRID_PARTS = new Intl.DateTimeFormat("es-ES", { timeZone: "Europe/Madrid", weekday: "short", day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit", year: "numeric", hourCycle: "h23" });
+const madridParts = (ms) => Object.fromEntries(MADRID_PARTS.formatToParts(ms).map((p) => [p.type, p.value]));
+const mesaWhen = (ms, now) => {
+  const p = madridParts(ms), q = madridParts(now);
+  const diff = Math.round((Date.UTC(+p.year, +p.month - 1, +p.day) - Date.UTC(+q.year, +q.month - 1, +q.day)) / 864e5);
+  return { label: `${p.weekday.replace(".", "")} ${p.day}/${p.month} · ${p.hour}:${p.minute}`, rel: diff <= 0 ? "hoy" : diff === 1 ? "mañana" : `en ${diff} días` };
+};
+const mesaRow = (m, now) => {
+  const w = mesaWhen(m.start, now);
+  const title = m.link ? `<a href="${esc(m.link)}" target="_blank" rel="noopener noreferrer" title="${esc(m.title)}">${esc(m.title)}</a>` : `<span class="t" title="${esc(m.title)}">${esc(m.title)}</span>`;
+  const ext = 'target="_blank" rel="noopener noreferrer"';
+  return `<li><div class="when">${esc(w.label)}<small>${esc(w.rel)}</small></div>`
+    + `<div class="typ"><span class="tag">${esc(m.type)}</span>${m.public === false ? ' <span class="tag">no público</span>' : ""}</div>`
+    + `<div class="what">${title}${m.location ? `<span class="sub">${esc(m.location)}</span>` : ""}</div>`
+    + `<div class="act"><details class="mesacal"><summary aria-label="Añadir al calendario: ${esc(m.type)}, ${esc(m.title)}, ${esc(w.label)}">Añadir al calendario</summary><div class="menu">`
+    + `<a href="${esc(mesaGoogleUrl(m))}" ${ext}>Google Calendar</a>`
+    + `<a href="${esc(mesaOutlookUrl(m))}" ${ext}>Outlook 365</a>`
+    + `<a href="${esc(mesaIcsUri(m))}" download="${esc(mesaFile(m))}">Apple Calendar (.ics)</a>`
+    + `<a href="${esc(mesaIcsUri(m))}" download="${esc(mesaFile(m))}">📅 ICS</a>`
+    + `</div></details></div></li>`;
+};
+const MESAS_VISIBLE = 4;
+// Pinta la franja en `container` (el mismo código en Resumen y en Licitaciones abiertas): solo mesas con inicio >= ahora.
+function renderMesas(container, now = Date.now()) {
+  const next = (DATA.mesas || []).filter((m) => m.start >= now);
+  const hid = container.getAttribute("aria-labelledby");
+  const head = `<h2 id="${esc(hid)}">Próximas mesas de contratación${next.length ? ` <span class="note">(${next.length})</span>` : ""}</h2>`;
+  if (!next.length) { container.innerHTML = head + '<p class="empty-line">No hay mesas de contratación pendientes</p>'; return; }
+  const rest = next.slice(MESAS_VISIBLE);
+  container.innerHTML = head + `<ul>${next.slice(0, MESAS_VISIBLE).map((m) => mesaRow(m, now)).join("")}</ul>`
+    + (rest.length ? `<details class="more"><summary>Ver todas (${next.length})</summary><ul>${rest.map((m) => mesaRow(m, now)).join("")}</ul></details>` : "");
+}
+// el menú se cierra al pulsar fuera o con Escape
+document.addEventListener("click", (e) => document.querySelectorAll("details.mesacal[open]").forEach((d) => { if (!d.contains(e.target)) d.open = false; }));
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") document.querySelectorAll("details.mesacal[open]").forEach((d) => { d.open = false; d.querySelector("summary").focus(); }); });
+// </mesas>
+
 function renderOpen() {
   const open = R.filter((r) => passes(r, ["year", "month", "date", "status"]) && r.deadline && r.deadline >= TODAY && (r.status === "PUB" || r.status === "EV"));
   const budget = (r) => r.budgetNet ?? r.estimated ?? r.budgetTotal ?? 0;
@@ -1537,6 +1615,7 @@ function renderOpen() {
     kpi(eur.format(total), "presupuesto total (sin IVA)") +
     kpi(open.length ? eur.format(total / open.length) : "—", "presupuesto medio") +
     kpi(next ? fmtDate(next.deadline) : "—", "próximo cierre", next ? `en ${days(TODAY, next.deadline)} días` : "");
+  renderMesas($("mesas-abiertas"));
   if (!$("t-open").firstChild) mountTable("t-open");
   drawTable("t-open", [
     { key:"title", label:"Licitación", cls:"obj", sort: (r) => r.title, html: (r) => `${titleCell(r)}` },

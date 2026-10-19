@@ -278,3 +278,80 @@ test('NextGenerationEU: el listado de contratos precede al bloque "Qué son esto
   // el bloque de texto conserva su contenido
   t.true(ng.includes('class="ngtext"') && ng.includes('Cómo se han detectado'));
 });
+
+// La franja de mesas vive en la plantilla (entre marcadores): se evalúa tal cual, con datos de prueba
+const NOW_MESAS = Date.parse('2026-10-19T08:00:00Z');
+const MESA = {
+  uid: '10-2-sobre-a@contratacion-estado', type: 'Oferta económica', title: 'Limpieza <b>"viaria"</b> & más', public: false,
+  summary: 'PRIV · Oferta económica: Limpieza <b>"viaria"</b> & más', description: 'Limpieza\nExpediente: X/1\nhttps://example.org/f?a=1&b=2',
+  location: 'Salón de Plenos · PZ MAYOR, 1', link: 'https://example.org/f?a=1&b=2', start: Date.parse('2026-10-21T09:30:00Z'), end: Date.parse('2026-10-21T10:00:00Z'),
+  ics: 'BEGIN:VCALENDAR\r\nBEGIN:VEVENT\r\nEND:VEVENT\r\nEND:VCALENDAR\r\n',
+};
+const mesasApi = (mesas) => {
+  const code = TEMPLATE.match(/\/\/ <mesas>\n([\s\S]*?)\/\/ <\/mesas>/)[1];
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;',
+  }[c]));
+  const doc = { addEventListener() {}, querySelectorAll: () => [] };
+  return new Function('DATA', 'esc', 'document', `${code}; return { renderMesas, mesaGoogleUrl, mesaOutlookUrl, mesaWhen };`)({ mesas }, esc, doc);
+};
+const fakeBox = () => ({ innerHTML: '', getAttribute: () => 'h-mesas' });
+
+test('renderMesas se usa en Resumen (antes de #filters) y en Licitaciones abiertas (entre kpis4 y la tabla)', (t) => {
+  t.regex(TEMPLATE, /<section class="panel mesas" id="mesas-resumen" data-tab="resumen"[^>]*><\/section>\s*<section class="panel" id="filters"/);
+  t.regex(TEMPLATE, /<section class="kpis" id="kpis4"><\/section>\s*<section class="panel mesas" id="mesas-abiertas"[^>]*><\/section>\s*<section class="panel"[^>]*>[\s\S]*?t-open/);
+  t.regex(TEMPLATE, /function renderResumen\(\) \{\n {2}renderMesas\(\$\("mesas-resumen"\)\);/);
+  t.regex(TEMPLATE, /renderMesas\(\$\("mesas-abiertas"\)\);/);
+  t.is((TEMPLATE.match(/function renderMesas/g) ?? []).length, 1);
+});
+
+test('renderMesas: solo mesas futuras, con las cuatro opciones de calendario y todo escapado', (t) => {
+  const past = { ...MESA, uid: 'p@x', start: NOW_MESAS - 1000, title: 'PASADA' };
+  const box = fakeBox();
+  mesasApi([past, MESA]).renderMesas(box, NOW_MESAS);
+  const html = box.innerHTML;
+  t.notRegex(html, /PASADA/);
+  t.regex(html, /Próximas mesas de contratación/);
+  t.regex(html, /Oferta económica/);
+  t.regex(html, /no público/);
+  t.regex(html, /en 2 días/);
+  t.regex(html, /11:30/); // hora de Madrid (CEST)
+  // sin HTML sin escapar del título
+  t.notRegex(html, /<b>/);
+  t.regex(html, /Limpieza &lt;b&gt;&quot;viaria&quot;&lt;\/b&gt; &amp; más/);
+  t.regex(html, /href="https:\/\/calendar\.google\.com\/calendar\/render\?action=TEMPLATE/);
+  t.regex(html, /href="https:\/\/outlook\.office\.com\/calendar\/0\/deeplink\/compose\?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent/);
+  t.is((html.match(/data:text\/calendar/g) ?? []).length, 2); // Apple e ICS
+  t.regex(html, /download="mesa-10-2-sobre-a\.ics"/);
+  t.regex(html, />📅 ICS</);
+  t.regex(html, /Apple Calendar/);
+  t.is((html.match(/target="_blank" rel="noopener noreferrer"/g) ?? []).length, 3); // ficha, Google y Outlook
+  t.regex(html, /aria-label="Añadir al calendario: /);
+});
+
+test('renderMesas: sin mesas futuras, una línea discreta; con más de cuatro, "Ver todas"', (t) => {
+  const none = fakeBox();
+  mesasApi([{ ...MESA, start: NOW_MESAS - 1 }]).renderMesas(none, NOW_MESAS);
+  t.regex(none.innerHTML, /No hay mesas de contratación pendientes/);
+  t.notRegex(none.innerHTML, /mesacal/);
+  const many = fakeBox();
+  mesasApi(Array.from({ length: 6 }, (_, i) => ({ ...MESA, uid: `m${i}@x`, start: MESA.start + i }))).renderMesas(many, NOW_MESAS);
+  t.regex(many.innerHTML, /Ver todas \(6\)/);
+  t.is((many.innerHTML.match(/<li>/g) ?? []).length, 6);
+});
+
+test('enlaces de Google y Outlook: fecha UTC y título codificados', (t) => {
+  const { mesaGoogleUrl, mesaOutlookUrl, mesaWhen } = mesasApi([]);
+  const g = mesaGoogleUrl(MESA);
+  t.true(g.includes('&dates=20261021T093000Z/20261021T100000Z'));
+  t.true(g.includes(`&text=${encodeURIComponent(MESA.summary)}`));
+  t.true(g.includes(`&location=${encodeURIComponent(MESA.location)}`));
+  t.notRegex(g, /[<>" ]/);
+  const o = mesaOutlookUrl(MESA);
+  t.true(o.includes('&startdt=2026-10-21T09%3A30%3A00Z&enddt=2026-10-21T10%3A00%3A00Z'));
+  t.true(o.includes(`&subject=${encodeURIComponent(MESA.summary)}`));
+  t.true(o.includes(`&body=${encodeURIComponent(MESA.description)}`));
+  t.deepEqual([mesaWhen(MESA.start, NOW_MESAS).label, mesaWhen(MESA.start, NOW_MESAS).rel], ['mié 21/10 · 11:30', 'en 2 días']);
+  t.is(mesaWhen(NOW_MESAS + 3600e3, NOW_MESAS).rel, 'hoy');
+  t.is(mesaWhen(NOW_MESAS + 86400e3, NOW_MESAS).rel, 'mañana');
+});
