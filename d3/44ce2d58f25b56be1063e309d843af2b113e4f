@@ -1,0 +1,33 @@
+test/build.test.js
+  s_9e2a1116b4316a::t_a7755d44650800 268-280
+transparencia/template.html
+  s_9e2a1116b4316a::t_a7755d44650800 365-368
+docs/index.html
+  s_9e2a1116b4316a::t_7bd621d216f3eb 366-369
+.playwright-mcp/page-2026-10-19T17-36-25-188Z.yml
+  s_72f494a4dd107e::t_cbf9feabe085c4 1-347
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d344ce2d58f25b56be1063e309d843af2b113e4f",
+  "prompts": {},
+  "sessions": {
+    "s_72f494a4dd107e": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "agent-af65d9c792c762732",
+        "model": "unknown"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    },
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
