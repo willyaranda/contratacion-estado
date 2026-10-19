@@ -1,0 +1,30 @@
+transparencia/assets/README.md
+  s_9e2a1116b4316a::t_be8b59ce78e011 10-14
+  s_9e2a1116b4316a::t_7e4982bfb97297 3
+transparencia/template.html
+  s_9e2a1116b4316a::t_fdf1df1029fc5a 12-14,16
+  s_9e2a1116b4316a::t_2078f599238ab4 11,15,17,30-32,41-43,57-60,263-265
+test/build.test.js
+  s_9e2a1116b4316a::t_0e8d2822c8a497 3,105,109-110,118-143
+  s_9e2a1116b4316a::t_8e8008d620ba15 144
+transparencia/build.js
+  s_9e2a1116b4316a::t_fdf1df1029fc5a 26,31-34
+docs/index.html
+  s_9e2a1116b4316a::t_338f0d3f8898af 12-18,31-33,42-44,58-61,264-266
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6cb03ae0a9bc4f4af3fa0cb0cc6fb073e3bd5194",
+  "prompts": {},
+  "sessions": {
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
