@@ -11,8 +11,8 @@
   --bg:#f6f7f9;--surface:#fff;--ink:#17202a;--muted:#5f6b7a;--line:#dfe3e8;
   --accent:#9b1c31;--accent-ink:#fff;--bar:#9b1c31;--chip:#f0e6e8;--focus:#1d5fd1;
   --c1:#9b1c31;--c2:#1f6f8b;--c3:#b87d12;--c4:#4f7a3a;--c5:#7b8794;
-  /* corporaciones: p0 = hasta el 16/06/2023 (azul), p1 = desde el 17/06/2023 (amarillo-naranja) */
-  --p0:#1565c0;--p1:#dd8500;
+  /* corporaciones: p0, p1 y p2 (mandatos 11-15, 15-19 y 19-23) comparten el azul; p3 (desde el 17/06/2023) es amarillo-naranja */
+  --p0:#1565c0;--p1:#1565c0;--p2:#1565c0;--p3:#dd8500;
   --good:#1b7f3b;--bad:#b3261e;
   /* resultado del contrato: fondo suave + borde; texto = --ink */
   --o-ok-bg:#d3f0de;--o-ok-bd:#1b7f3b;--o-warn-bg:#fdecab;--o-warn-bd:#9a7400;--o-mid-bg:#ffd3a3;--o-mid-bd:#b35400;--o-bad-bg:#ffd6d2;--o-bad-bd:#b3261e;
@@ -22,7 +22,7 @@
     --bg:#12151a;--surface:#1b2027;--ink:#e8ebef;--muted:#9aa5b3;--line:#2c333c;
     --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
     --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
-    --p0:#5aa9f5;--p1:#ffb02e;
+    --p0:#5aa9f5;--p1:#5aa9f5;--p2:#5aa9f5;--p3:#ffb02e;
     --good:#5fcf80;--bad:#ff8a80;
     --o-ok-bg:#1f4d2e;--o-ok-bd:#5fcf80;--o-warn-bg:#5a4708;--o-warn-bd:#e3b04b;--o-mid-bg:#6b3a0c;--o-mid-bd:#ff9d3d;--o-bad-bg:#5e1f1a;--o-bad-bd:#ff8a80;
   }
@@ -31,7 +31,7 @@
   --bg:#12151a;--surface:#1b2027;--ink:#e8ebef;--muted:#9aa5b3;--line:#2c333c;
   --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
   --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
-  --p0:#5aa9f5;--p1:#ffb02e;
+  --p0:#5aa9f5;--p1:#5aa9f5;--p2:#5aa9f5;--p3:#ffb02e;
   --good:#5fcf80;--bad:#ff8a80;
   --o-ok-bg:#1f4d2e;--o-ok-bd:#5fcf80;--o-warn-bg:#5a4708;--o-warn-bd:#e3b04b;--o-mid-bg:#6b3a0c;--o-mid-bd:#ff9d3d;--o-bad-bg:#5e1f1a;--o-bad-bd:#ff8a80;
 }
@@ -102,13 +102,18 @@ button.primary{background:var(--accent);color:var(--accent-ink);border-color:var
 .bubbles circle{fill:var(--bar);fill-opacity:.5;stroke:var(--bar);stroke-width:.6}
 .bubbles circle.p0{fill:var(--p0);stroke:var(--p0)}
 .bubbles circle.p1{fill:var(--p1);stroke:var(--p1)}
+.bubbles circle.p2{fill:var(--p2);stroke:var(--p2)}
+.bubbles circle.p3{fill:var(--p3);stroke:var(--p3)}
 /* barras y columnas partidas por corporación */
-.p0{background:var(--p0)}.p1{background:var(--p1)}
+.p0{background:var(--p0)}.p1{background:var(--p1)}.p2{background:var(--p2)}.p3{background:var(--p3)}
 .bar .fill{display:flex}
 .bar .fill .seg{height:100%}
 .col .fill{display:flex;flex-direction:column-reverse}
 .col .fill .seg{width:100%}
 .col .fill .seg:first-child{border-radius:0}
+/* los tres mandatos azules se apilan del mismo color: un filete del color de fondo los separa */
+.bar .fill .seg+.seg{border-left:1px solid var(--surface)}
+.col .fill .seg+.seg{border-top:1px solid var(--surface)}
 .periods{margin:0 0 12px}
 .linkbtn{border:0;background:none;padding:0;color:var(--accent);text-decoration:underline;cursor:pointer;font-size:inherit}
 .linkbtn:hover{text-decoration:none}
@@ -155,9 +160,9 @@ dialog#detail::backdrop{background:rgba(10,12,16,.55)}
 .mand td .what{color:var(--muted);font-size:.78rem;font-weight:400}
 .mand td .ctx{font-size:.78rem;font-weight:400;margin-top:4px;padding:4px 8px;border-left:3px solid var(--line)}
 .mand td.num .what{text-align:right}
-.mand .head-p0::before,.mand .head-p1::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px}
-.mand .head-p0::before{background:var(--p0)}
-.mand .head-p1::before{background:var(--p1)}
+.mand .head-p2::before,.mand .head-p3::before{content:"";display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:6px}
+.mand .head-p2::before{background:var(--p2)}
+.mand .head-p3::before{background:var(--p3)}
 .guide h3{margin:16px 0 6px;font-size:.95rem}
 .guide dl{margin:0;display:grid;gap:10px}
 .guide dt{font-weight:700}
@@ -296,14 +301,14 @@ footer{padding:24px 0 40px}
       <div class="kpis" id="versus-cards"></div>
       <p id="versus-summary" style="font-weight:700"></p>
       <div class="tablewrap"><table class="cmp mand">
-        <thead><tr><th>Indicador</th><th class="num head-p0">Partido Popular</th><th class="num head-p1">Sentir Aranda</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
+        <thead><tr><th>Indicador</th><th class="num head-p2">Partido Popular</th><th class="num head-p3">Sentir Aranda</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
         <tbody id="mand-rows"></tbody>
       </table></div>
       <h3 style="margin:22px 0 6px;font-size:1rem">Perfil por tipo de contrato</h3>
       <p class="note" style="margin-top:0">Qué se contrata y cómo, separado en obras, servicios y suministros. Ayuda a leer los indicadores de arriba: cada tipo de contrato tiene su propia competencia y sus propios precios.</p>
       <div id="types-summary" style="margin-bottom:10px"></div>
       <div class="tablewrap"><table class="cmp mand">
-        <thead><tr><th>Indicador por tipo</th><th class="num head-p0">Partido Popular</th><th class="num head-p1">Sentir Aranda</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
+        <thead><tr><th>Indicador por tipo</th><th class="num head-p2">Partido Popular</th><th class="num head-p3">Sentir Aranda</th><th class="num">Cambio</th><th>Valoración</th></tr></thead>
         <tbody id="types-rows"></tbody>
       </table></div>
       <p class="note" id="mand-notes"></p>
@@ -442,11 +447,20 @@ const KIND = {licitacion:"Licitación",menor:"Contrato menor"};
 const OUTCOME = {adjudicado:"Adjudicado",desierto:"Desierto",desistimiento:"Desistimiento",renuncia:"Renuncia",mixto:"Parcialmente adjudicado",otro:"Otro resultado"};
 const outTag = (o, text) => `<span class="tag out-${o || "none"}">${esc(text)}</span>`;
 const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin adjudicar
-// Corporaciones municipales: la actual se constituyó el 17/06/2023. El color de cada contrato indica cuál lo sacó:
+// Corporaciones municipales (la actual se constituyó el 17/06/2023). El color de cada contrato indica cuál lo sacó:
 // licitaciones por la fecha de publicación del anuncio; contratos menores (sin licitación) por la de adjudicación.
-const PERIOD_START = "2023-06-17";
-const PERIODS = [{ label: "Mandato 19-23" }, { label: "Mandato 23-27" }];
-const emptyP = () => [{ n: 0, nAw: 0, sum: 0 }, { n: 0, nAw: 0, sum: 0 }];
+// Cada mandato dura desde su constitución hasta el día anterior a la del siguiente; lo anterior al primero cuenta en el primero.
+// <periodos>
+const PERIODS = [
+  { label: "Mandato 11-15", start: "2011-06-11" }, { label: "Mandato 15-19", start: "2015-06-14" },
+  { label: "Mandato 19-23", start: "2019-06-15" }, { label: "Mandato 23-27", start: "2023-06-17" },
+];
+const periodOf = (issued) => Math.max(0, PERIODS.findLastIndex((p) => issued >= p.start));
+// </periodos>
+const PERIOD_START = PERIODS[PERIODS.length - 1].start;   // inicio del mandato actual
+const sumParts = (e) => e.byP.map((x) => x.sum);
+const countParts = (e) => e.byP.map((x) => x.n);
+const emptyP = () => PERIODS.map(() => ({ n: 0, nAw: 0, sum: 0 }));
 const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
 const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["sentiraranda","Sentir Aranda vs Partido Popular"],["nextgen","NextGenerationEU"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
@@ -491,7 +505,7 @@ const R = DATA.records.map((r) => {
   const hay = norm([r.title, r.folder, uniq.map((w) => w.name + " " + (w.nif || "")).join(" ")].join(" "));
   const toAward = r.kind === "licitacion" && r.deadline && r.awardDate ? days(r.deadline, r.awardDate) : null;
   const issued = r.kind === "licitacion" ? (r.published || date) : date;
-  return { ...r, date, issued, period: issued < PERIOD_START ? 0 : 1, year: +date.slice(0,4), month: +date.slice(5,7), winners: uniq, amount, hasAward, hay,
+  return { ...r, date, issued, period: periodOf(issued), year: +date.slice(0,4), month: +date.slice(5,7), winners: uniq, amount, hasAward, hay,
            bodyShort: shortBody(r.buyer), toAward: toAward != null && toAward >= 0 && toAward <= 730 ? toAward : null };
 });
 const winnerLabel = (key) => {
@@ -628,10 +642,10 @@ function delta(cur, base) {
 }
 const kpi = (v, l, s) => `<div class="kpi"><div class="v">${esc(v)}</div><div class="l">${esc(l)}</div>${s ? `<div class="s">${esc(s)}</div>` : ""}</div>`;
 
-// Reparto de un valor entre las dos corporaciones: `parts(item)` devuelve [valor hasta 16/06/2023, valor desde 17/06/2023]
+// Reparto de un valor entre las corporaciones: `parts(item)` devuelve un valor por cada una de PERIODS
 const periodSegments = (parts, item, dim) => {
   const p = parts ? parts(item) : null;
-  const total = p ? p[0] + p[1] : 0;
+  const total = p ? p.reduce((a, b) => a + b, 0) : 0;
   if (!(total > 0)) return "";
   return p.map((v, i) => (v > 0 ? `<span class="seg p${i}" style="${dim}:${v / total * 100}%"></span>` : "")).join("");
 };
@@ -981,7 +995,7 @@ function render() {
 
 // Leyenda de colores con el recuento de cada corporación sobre lo que se está viendo
 function renderPeriodLegend(id, list) {
-  $(id).innerHTML = [0, 1].map((p) => {
+  $(id).innerHTML = PERIODS.map((_, p) => {
     const m = metrics(list.filter((r) => r.period === p));
     return `<span><i class="p${p}"></i>${esc(PERIODS[p].label)} · ${nf.format(m.n)} contratos · ${compact(m.sum)}</span>`;
   }).join("") + `<span class="note">Color según quién sacó el contrato: la licitación, por la fecha de publicación del anuncio; el contrato menor, por la de adjudicación.</span>`;
@@ -1030,15 +1044,13 @@ function renderResumen() {
 
   const forYear = R.filter((r) => passes(r, ["year"]));
   const yAgg = new Map(agg(forYear, (r) => r.year).map((e) => [e.key, e]));
-  const sumParts = (e) => [e.byP[0].sum, e.byP[1].sum];
-  const countParts = (e) => [e.byP[0].n, e.byP[1].n];
   colChart($("c-year"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, sum:0, byP: emptyP() }) })), {
     label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: sumParts,
     title: (e) => `${e.y}: ${eur.format(e.sum)} en ${e.n} contratos`,
     active: (e) => String(e.y) === String(state.year), onclick: (e) => toggleFilter("year", e.y, "f-year"),
   });
   colChart($("c-year-n"), YEARS.map((y) => ({ y, ...(yAgg.get(y) || { n:0, nAw:0, sum:0, byP: emptyP() }) })), {
-    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.nAw, parts: (e) => [e.byP[0].nAw, e.byP[1].nAw],
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.nAw, parts: (e) => e.byP.map((x) => x.nAw),
     title: (e) => `${e.y}: ${nf.format(e.nAw)} contratos adjudicados` + (e.n !== e.nAw ? ` (${nf.format(e.n)} en total, con los no adjudicados)` : ""),
     active: (e) => String(e.y) === String(state.year), onclick: (e) => toggleFilter("year", e.y, "f-year"),
   });
@@ -1069,7 +1081,7 @@ function renderResumen() {
     const rs = R.filter((r) => r.amount > lo && r.amount <= hi && passesNoAmount(r));
     return {
       label, lo, hi, n: rs.length, sum: rs.filter((r) => r.hasAward).reduce((s, r) => s + r.amount, 0),
-      byP: [0, 1].map((p) => ({ n: rs.filter((r) => r.period === p).length, sum: 0 })),
+      byP: PERIODS.map((_, p) => ({ n: rs.filter((r) => r.period === p).length, sum: 0 })),
     };
   });
   // Los filtros de importe mínimo/máximo son inclusivos: "más de lo" equivale a mínimo lo + 1 céntimo
@@ -1304,7 +1316,7 @@ function renderVersus() {
     <div class="v">${nf.format(S.contracts)} <span class="note">contratos</span></div>
     <div class="s">${esc(fmtDate(from))} – ${esc(fmtDate(to))} · ${nf.format(d)} días (${nfix(d / 365.25, 1)} años)</div>
     <div class="s">${esc(compact(S.v.eurPerYear * S.years))} adjudicados · ${esc(nf.format(Math.round(S.v.contractsPerYear)))} contratos al año</div></div>`;
-  $("versus-cards").innerHTML = card("p0", "Partido Popular", a0, a1, dA, A) + card("p1", "Sentir Aranda", b0, b1, dB, B);
+  $("versus-cards").innerHTML = card("p2", "Partido Popular", a0, a1, dA, A) + card("p3", "Sentir Aranda", b0, b1, dB, B);
 
   const items = INDICATORS.map((ind) => {
     const a = A.v[ind.key], b = B.v[ind.key], v = verdictOf(ind, a, b);
@@ -1370,13 +1382,13 @@ function renderNextGen() {
   const list = R.filter((r) => r.nextgen);
   const all = metrics(R), m = metrics(list);
   const n = list.length;
-  const byPeriod = [0, 1].map((p) => list.filter((r) => r.period === p).length);
+  const byPeriod = PERIODS.map((_, p) => list.filter((r) => r.period === p).length);
   const lic = list.filter((r) => r.kind === "licitacion").length;
   const biggest = [...list].filter((r) => r.hasAward).sort((a, b) => b.amount - a.amount)[0];
   $("ng-kpis").innerHTML =
     kpi(nf.format(n), "contratos con fondos NextGenerationEU", `${pct(n / (R.length || 1) * 100)} de todos los contratos`) +
     kpi(eur.format(m.sum), "importe adjudicado (IVA incl.)", `${pct(m.sum / (all.sum || 1) * 100)} del importe total · ${nf.format(m.nAw)} con importe`) +
-    kpi(`${nf.format(byPeriod[0])} / ${nf.format(byPeriod[1])}`, "contratos por corporación", `${PERIODS[0].label} / ${PERIODS[1].label}`) +
+    kpi(byPeriod.map((v) => nf.format(v)).join(" / "), "contratos por corporación", PERIODS.map((p) => p.label.replace("Mandato ", "")).join(" / ")) +
     kpi(`${nf.format(lic)} / ${nf.format(n - lic)}`, "licitaciones / contratos menores", `${nf.format(m.contractors)} adjudicatarios distintos`) +
     kpi(biggest ? eur.format(biggest.amount) : "—", "el contrato mayor", biggest ? biggest.title.slice(0, 70) : "");
 
@@ -1386,22 +1398,21 @@ function renderNextGen() {
   const items = years.map((y) => ({ y, ...(yAgg.get(y) || { n: 0, nAw: 0, sum: 0, byP: emptyP() }) }));
   const noop = () => {};
   colChart($("ng-year-n"), items, {
-    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.n, parts: (e) => [e.byP[0].n, e.byP[1].n],
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.n, parts: countParts,
     title: (e) => `${e.y}: ${nf.format(e.n)} contratos`, active: () => false, onclick: noop,
   });
   colChart($("ng-year-eur"), items, {
-    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: (e) => [e.byP[0].sum, e.byP[1].sum],
+    label: (e) => "’" + String(e.y).slice(2), value: (e) => e.sum, parts: sumParts,
     title: (e) => `${e.y}: ${eur.format(e.sum)} en ${nf.format(e.n)} contratos`, active: () => false, onclick: noop,
   });
-  const cntP = (e) => [e.byP[0].n, e.byP[1].n];
   barList($("ng-type"), agg(list, (r) => r.type).sort((a, b) => b.n - a.n), {
-    label: (e) => TYPE[e.key] || "Código " + e.key, value: (e) => e.n, parts: cntP, disp: (e) => `${e.n} · ${compact(e.sum)}`,
+    label: (e) => TYPE[e.key] || "Código " + e.key, value: (e) => e.n, parts: countParts, disp: (e) => `${e.n} · ${compact(e.sum)}`,
   });
   barList($("ng-prog"), agg(list, (r) => r.nextgenProgram).sort((a, b) => b.n - a.n), {
-    label: (e) => e.key, value: (e) => e.n, parts: cntP, disp: (e) => `${e.n} · ${compact(e.sum)}`,
+    label: (e) => e.key, value: (e) => e.n, parts: countParts, disp: (e) => `${e.n} · ${compact(e.sum)}`,
   });
   barList($("ng-source"), agg(list, (r) => r.nextgenBy).sort((a, b) => b.n - a.n), {
-    label: (e) => (e.key === "financiacion" ? "En el campo de financiación" : "Solo en el texto"), value: (e) => e.n, parts: cntP, disp: (e) => String(e.n),
+    label: (e) => (e.key === "financiacion" ? "En el campo de financiación" : "Solo en el texto"), value: (e) => e.n, parts: countParts, disp: (e) => String(e.n),
   });
 
   if (!$("t-ng").firstChild) mountTable("t-ng");
@@ -1461,10 +1472,10 @@ function renderAdj() {
     kpi(nf.format(all.filter((c) => c.n === 1).length), "adjudicatarios con un solo contrato");
   const click = (e) => { state.winner = e.key; for (const t of Object.values(tbl)) t.page = 0; goTab("listado"); };
   barList($("top-sum"), sortedSum.slice(0, 5), {
-    label: (e) => winnerLabel(e.key), value: (e) => e.sum, parts: (e) => [e.byP[0].sum, e.byP[1].sum], disp: (e) => compact(e.sum), onclick: click,
+    label: (e) => winnerLabel(e.key), value: (e) => e.sum, parts: sumParts, disp: (e) => compact(e.sum), onclick: click,
   });
   barList($("top-n"), [...all].sort((a, b) => b.n - a.n || b.sum - a.sum).slice(0, 5), {
-    label: (e) => winnerLabel(e.key), value: (e) => e.n, parts: (e) => [e.byP[0].n, e.byP[1].n], disp: (e) => String(e.n), onclick: click,
+    label: (e) => winnerLabel(e.key), value: (e) => e.n, parts: countParts, disp: (e) => String(e.n), onclick: click,
   });
   const q = norm(state.adjQ).split(/\s+/).filter(Boolean);
   adjRows = all.filter((c) => !q.length || q.every((t) => norm(winnerLabel(c.key) + " " + (c.nif || "")).includes(t)));

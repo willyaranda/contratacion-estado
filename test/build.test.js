@@ -145,3 +145,52 @@ test('la columna Resultado y las insignias del detalle usan outTag', (t) => {
   t.regex(TEMPLATE, /label:"Resultado"[^\n]*outTag\(r\.outcome, r\.outcome \? OUTCOME\[r\.outcome\] \|\| r\.outcome : "Sin resultado todavía"\)/);
   t.regex(TEMPLATE, /const badges = [^\n]*\n[^\n]*outTag\(o, b\)/);
 });
+
+// La asignación de corporación vive en la plantilla (entre marcadores): se evalúa tal cual
+const periodsApi = () => {
+  const code = TEMPLATE.match(/\/\/ <periodos>\n([\s\S]*?)\/\/ <\/periodos>/)[1];
+  return new Function(`${code}; return { PERIODS, periodOf };`)();
+};
+
+test('la página distingue cuatro mandatos, de 11-15 a 23-27, con sus fechas de constitución', (t) => {
+  const { PERIODS } = periodsApi();
+  t.deepEqual(PERIODS.map((p) => p.label), ['Mandato 11-15', 'Mandato 15-19', 'Mandato 19-23', 'Mandato 23-27']);
+  t.deepEqual(PERIODS.map((p) => p.start), ['2011-06-11', '2015-06-14', '2019-06-15', '2023-06-17']);
+});
+
+test('periodOf asigna cada fecha al mandato en curso (fin = día antes del inicio del siguiente)', (t) => {
+  const { periodOf } = periodsApi();
+  const casos = [
+    ['2010-01-01', 0], ['2011-06-10', 0], ['2011-06-11', 0], ['2015-06-13', 0],
+    ['2015-06-14', 1], ['2019-06-14', 1],
+    ['2019-06-15', 2], ['2023-06-16', 2],
+    ['2023-06-17', 3], ['2026-10-19', 3],
+  ];
+  for (const [fecha, esperado] of casos) t.is(periodOf(fecha), esperado, fecha);
+});
+
+test('el selector, la leyenda y los gráficos salen de PERIODS.length, sin [0, 1] fijos', (t) => {
+  t.notRegex(TEMPLATE, /\[0, 1\]/);
+  t.notRegex(TEMPLATE, /byP\[1\]/);
+  t.regex(TEMPLATE, /const emptyP = \(\) => PERIODS\.map\(/);
+  t.regex(TEMPLATE, /PERIODS\.map\(\(p, i\) => \[i, p\.label\]\)/);
+});
+
+test('los tres primeros mandatos comparten el azul y el actual conserva el naranja', (t) => {
+  // tema claro, oscuro automático y oscuro forzado
+  const temas = [...TEMPLATE.matchAll(/--p0:(#\w+);--p1:(#\w+);--p2:(#\w+);--p3:(#\w+);/g)];
+  t.is(temas.length, 3);
+  const pares = temas.map((m) => m.slice(1));
+  t.deepEqual(pares[0], ['#1565c0', '#1565c0', '#1565c0', '#dd8500']);
+  t.deepEqual(pares[1], ['#5aa9f5', '#5aa9f5', '#5aa9f5', '#ffb02e']);
+  t.deepEqual(pares[2], pares[1]);
+});
+
+test('fuera de la pestaña oculta no se nombran partidos', (t) => {
+  const oculta = TEMPLATE.match(/<!-- =+ SENTIR ARANDA VS[\s\S]*?(?=<!-- =+ )/)[0];
+  const visible = TEMPLATE.replace(oculta, '');
+  t.regex(oculta, /Partido Popular/);
+  // el script sí contiene el cálculo de la pestaña oculta: se comprueba solo el HTML
+  const html = visible.slice(0, visible.indexOf('<script'));
+  t.notRegex(html, /Partido Popular|Sentir Aranda|\bPP\b/);
+});
