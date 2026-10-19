@@ -1,13 +1,22 @@
 // Envía un correo de prueba por SES con la misma configuración que el aviso real (para comprobar remitente,
-// región y credenciales). Lee TEST_TO (destinatarios) y las variables de notify.js; no imprime direcciones ni
+// región y credenciales). Con MUESTRA=true envía en su lugar la muestra del aviso con anuncios reales. Lee TEST_TO (destinatarios) y las variables de notify.js; no imprime direcciones ni
 // credenciales: los logs de Actions son públicos.
 import { SESClient, SendEmailCommand } from '@aws-sdk/client-ses';
 
-import { loadMailConfig } from '../lib/notify.js';
+import { loadMailConfig, sendDigest } from '../lib/notify.js';
+import { sampleDigestInputs } from '../lib/muestra.js';
 
 try {
   const config = loadMailConfig({ ...process.env, SEND_EMAILS: '1', NOTIFY_TO: process.env.TEST_TO });
   const client = new SESClient({ region: config.region });
+  if (process.env.MUESTRA === 'true') {
+    // Muestra del aviso real (HTML + texto) con los últimos anuncios del dump, solo a TEST_TO y en CCO
+    const inputs = await sampleDigestInputs(new URL('../dump', import.meta.url).pathname);
+    await sendDigest({
+      config, client, sample: true, ...inputs, onSent: (r) => console.log(`Muestra enviada (${inputs.entries.length} anuncios) a ${config.recipients.length} destinatario(s). MessageId: ${r.MessageId}`),
+    });
+    process.exit(0);
+  }
   const result = await client.send(new SendEmailCommand({
     Destination: { BccAddresses: config.recipients },
     Message: {

@@ -4,6 +4,11 @@ name: Probar envío de email
 # TEST_TO (no se imprimen: los logs son públicos). Créala antes de lanzarlo y bórrala después.
 on:
   workflow_dispatch:
+    inputs:
+      muestra:
+        description: 'Enviar la muestra del aviso (HTML + texto, anuncios reales del dump) en vez del correo de prueba simple'
+        type: boolean
+        default: false
 
 jobs:
   send:
@@ -21,6 +26,7 @@ jobs:
       - name: Enviar correo de prueba
         run: node scripts/test-email.js
         env:
+          MUESTRA: ${{ inputs.muestra }}
           TEST_TO: ${{ vars.TEST_TO }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

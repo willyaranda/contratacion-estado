@@ -51,8 +51,9 @@ La página `/datos` (datos abiertos) se genera con `transparencia/datos.html` y 
 - `.github/workflows/test-email.yml`: manual. Manda un correo de prueba por SES con los secrets del repositorio
   (remitente por defecto `no-reply@arandadeduero.dev`). Los logs de Actions son públicos, así que el destinatario
   no se escribe en el repo ni en el log: `gh variable set TEST_TO --body "<dirección>"`,
-  `gh workflow run test-email.yml` y después `gh variable delete TEST_TO`. Las credenciales de AWS solo existen
-  en GitHub, no en local.
+  `gh workflow run test-email.yml` y después `gh variable delete TEST_TO`. Con `-f muestra=true` envía en su lugar
+  la muestra del aviso real (asunto con `[MUESTRA]`, HTML + texto con los últimos anuncios reales del `dump/`,
+  `lib/muestra.js`) y el log solo muestra el `MessageId`. Las credenciales de AWS solo existen en GitHub, no en local.
 
 ## Qué NO se actualiza solo (recordárselo al usuario)
 

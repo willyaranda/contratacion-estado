@@ -1,12 +1,17 @@
 import test from 'ava';
 import { spawnSync } from 'child_process';
+import { mkdirSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
 import {
   MAX_ENTRIES_IN_BODY, MAX_RECIPIENTS_PER_MESSAGE, buildDigest, loadMailConfig, parseRecipients, sendDigest,
 } from '../lib/notify.js';
+import { statusOf } from '../lib/changes.js';
+import { sampleDigestInputs } from '../lib/muestra.js';
 import { PRIVACY_URL, SITE_URL } from '../transparencia/site.js';
-import { ROOT, entryFor, loadFixture } from './helpers.js';
+import {
+  FIXTURES_DUMP, ROOT, entryFor, loadFixture, tmpDir,
+} from './helpers.js';
 
 // Valores falsos reconocibles: sirven para comprobar que nunca aparecen en mensajes ni en la salida.
 const FAKE_KEY_ID = 'AKIAFAKEFAKEFAKE0000';
@@ -111,7 +116,7 @@ const mk = (n, {
   const cf = e[FOLDER];
   cf['cbc:ContractFolderID'] = folder;
   cf['cbc-place-ext:ContractFolderStatusCode'] = { '#text': status };
-  cf['cac:ProcurementProject'] = { 'cbc:Name': title, 'cac:BudgetAmount': { 'cbc:TotalAmount': budget ?? 31364.16 } };
+  cf['cac:ProcurementProject'] = { 'cbc:Name': title, 'cac:BudgetAmount': { 'cbc:TaxExclusiveAmount': budget ?? 31364.16 } };
   if (winners) {
     cf['cac:TenderResult'] = {
       'cbc:ResultCode': 8,
@@ -439,4 +444,49 @@ test('index.js falla antes de descargar si faltan las credenciales de AWS', (t) 
   t.is(result.status, 1);
   t.regex(result.stderr, /AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY/);
   t.notRegex(result.stdout, /Descargando/);
+});
+
+// ---- muestra (lib/muestra.js)
+
+test('sampleDigestInputs elige anuncios reales del dump y simula una nueva publicación y un cambio de estado', async (t) => {
+  const { entries, previousOf, openingsOf } = await sampleDigestInputs(FIXTURES_DUMP, { count: 4 });
+  t.true(entries.length > 1 && entries.length <= 4);
+  t.is(previousOf(entries[0]), null);
+  t.truthy(previousOf(entries[1]));
+  t.not(statusOf(previousOf(entries[1])), statusOf(entries[1]));
+  t.is(openingsOf(entries[0]), null); // los fixtures no traen aperturas
+  const { subject, html, body } = buildDigest(entries, previousOf, openingsOf, { sample: true });
+  t.regex(subject, /^\[MUESTRA\] Novedades de contratación: /);
+  t.regex(html, /Nueva publicación/);
+  t.regex(body, /Estado: .+ -> .+/);
+});
+
+test('sampleDigestInputs lee las aperturas reales y tolera un dump vacío', async (t) => {
+  const dir = tmpDir();
+  const empty = await sampleDigestInputs(dir);
+  t.deepEqual(empty.entries, []);
+  const dump = join(dir, 'dump');
+  mkdirSync(join(dump, 'licitaciones'), { recursive: true });
+  const entry = entryFor('Alcaldía del Ayuntamiento de Aranda de Duero', { id: 'https://x/licitacionesPerfilContratante/55' });
+  writeFileSync(join(dump, 'licitaciones', `55-${Date.parse(entry.updated)}.json`), JSON.stringify(entry));
+  writeFileSync(join(dump, 'aperturas.json'), JSON.stringify({ 55: { events: [{ date: '2026-10-20', time: '10:00', type: 'Apertura', public: true }] } }));
+  const { entries, openingsOf } = await sampleDigestInputs(dump);
+  t.is(entries.length, 1);
+  t.is(openingsOf(entries[0]).events.length, 1);
+  t.is(openingsOf({ id: 'https://x/9' }), null);
+});
+
+test('sendDigest con sample marca el asunto, avisa en el texto y devuelve cada MessageId a onSent', async (t) => {
+  const client = { sent: [], send: async (c) => { client.sent.push(c.input); return { MessageId: 'abc' }; } };
+  const ids = [];
+  await sendDigest({
+    config: loadMailConfig(goodEnv()),
+    entries: [entryFor('Alcaldía del Ayuntamiento de Aranda de Duero')],
+    client,
+    sample: true,
+    onSent: (r) => ids.push(r.MessageId),
+  });
+  t.deepEqual(ids, ['abc']);
+  t.regex(client.sent[0].Message.Subject.Data, /^\[MUESTRA\] /);
+  t.regex(client.sent[0].Message.Body.Html.Data, /Correo de muestra/);
 });
