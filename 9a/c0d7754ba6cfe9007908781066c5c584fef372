@@ -1,0 +1,34 @@
+.github/workflows/nightly.yml
+  s_9e2a1116b4316a::t_02b762cacb306a 64-65
+transparencia/build.js
+  s_9e2a1116b4316a::t_02b762cacb306a 2,8-10,108-114,118
+lib/datos.js
+  s_9e2a1116b4316a::t_02b762cacb306a 1-190
+.gitignore
+  s_9e2a1116b4316a::t_02b762cacb306a 11
+test/datos.test.js
+  s_9e2a1116b4316a::t_fc419edc29966a 1-92,94-179
+  s_9e2a1116b4316a::t_6ac0054d5485a6 93
+docs/datos/adjudicatarios.csv
+  s_9e2a1116b4316a::t_dd2c7f0f8fca15 1-750
+docs/datos/contratos.csv
+  s_9e2a1116b4316a::t_df46c6cd046142 1-1557
+docs/datos/contratos.json
+  s_9e2a1116b4316a::t_43eda716e9e8a2 1-43274
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9ac0d7754ba6cfe9007908781066c5c584fef372",
+  "prompts": {},
+  "sessions": {
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
