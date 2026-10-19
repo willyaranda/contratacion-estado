@@ -217,3 +217,12 @@ test('fuera de la pestaña oculta no se nombran partidos', (t) => {
   const html = visible.slice(0, visible.indexOf('<script'));
   t.notRegex(html, /Partido Popular|Sentir Aranda|\bPP\b/);
 });
+
+test('la etiqueta NextGenerationEU es azul, con la bandera de la UE incrustada (no emoji) y el texto', (t) => {
+  t.regex(TEMPLATE, /const ngTag = \(\) => `<span class="tag ng"><img src="\$\{NG_FLAG\}" alt=""[^>]*>NextGenerationEU<\/span>`/);
+  t.regex(TEMPLATE, /\.tag\.out-none,\.tag\.st-PUB,\.tag\.ng\{background:var\(--o-info-bg\)/);
+  t.false(TEMPLATE.includes('<span class="tag">NextGenerationEU</span>'));
+  t.false(TEMPLATE.includes('plain(r.nextgenProgram'));
+  const html = renderPage(TEMPLATE, { generated: 'x', records: [] }, '', assetUris());
+  t.regex(html, /const NG_FLAG = "data:image\/svg\+xml;base64,/);
+});

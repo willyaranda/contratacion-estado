@@ -186,7 +186,8 @@ td.obj{min-width:260px;max-width:520px}
 td .sub{color:var(--muted);font-size:.78rem}
 .tag{display:inline-block;background:var(--chip);border-radius:6px;padding:0 6px;font-size:.75rem;white-space:nowrap}
 .tag.out-adjudicado,.tag.st-RES{background:var(--o-ok-bg);border:1px solid var(--o-ok-bd);color:var(--ink)}
-.tag.out-none,.tag.st-PUB{background:var(--o-info-bg);border:1px solid var(--o-info-bd);color:var(--ink)}
+.tag.out-none,.tag.st-PUB,.tag.ng{background:var(--o-info-bg);border:1px solid var(--o-info-bd);color:var(--ink)}
+.tag.ng img{width:14px;height:auto;aspect-ratio:3/2;vertical-align:-2px;margin-right:4px;border-radius:1px}
 .tag.kind-licitacion{background:var(--k-maj-bg);border:1px solid var(--k-maj-bd);color:var(--ink)}
 .tag.kind-menor{background:var(--k-min-bg);border:1px solid var(--k-min-bd);color:var(--ink)}
 .tag.st-EV{background:var(--o-mid-bg);border:1px solid var(--o-mid-bd);color:var(--ink)}
@@ -456,6 +457,8 @@ const KIND = {licitacion:"Cont. mayor",menor:"Cont. menor"};
 const OUTCOME = {adjudicado:"Adjudicado",desierto:"Desierto",desistimiento:"Desistimiento",renuncia:"Renuncia",mixto:"Parcialmente adjudicado",otro:"Otro resultado"};
 const outTag = (o, text) => `<span class="tag out-${o || "none"}">${esc(text)}</span>`;
 const kindTag = (k) => `<span class="tag kind-${k}">${esc(KIND[k])}</span>`; // clase del contrato: morado (mayor) / pizarra (menor)
+const NG_FLAG = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiPg0KPHJlY3Qgd2lkdGg9IjkwMCIgaGVpZ2h0PSI2MDAiIGZpbGw9IiMwMzkiLz4NCjxnIGZpbGw9IiNmYzAiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ1MCwzMDApIj4NCjxwYXRoIGlkPSJzIiBkPSJNMCwxNjIuNSAyMi4wNDE5NDcsMjMwLjMzODEzNyAtMzUuNjY0NjE5LDE4OC40MTE4NjNIMzUuNjY0NjE5TC0yMi4wNDE5NDcsMjMwLjMzODEzN3oiLz4NCjx1c2UgeGxpbms6aHJlZj0iI3MiIHk9Ii00MDAiLz4NCjxnIGlkPSJzNSI+DQo8dXNlIHhsaW5rOmhyZWY9IiNzIiB0cmFuc2Zvcm09InJvdGF0ZSgzMCkgcm90YXRlKC0zMCwwLDIwMCkiLz4NCjx1c2UgeGxpbms6aHJlZj0iI3MiIHRyYW5zZm9ybT0icm90YXRlKDYwKSByb3RhdGUoLTYwLDAsMjAwKSIvPg0KPHVzZSB4bGluazpocmVmPSIjcyIgdHJhbnNmb3JtPSJyb3RhdGUoOTApIHJvdGF0ZSgtOTAsMCwyMDApIi8+DQo8dXNlIHhsaW5rOmhyZWY9IiNzIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIHJvdGF0ZSgtMTIwLDAsMjAwKSIvPg0KPHVzZSB4bGluazpocmVmPSIjcyIgdHJhbnNmb3JtPSJyb3RhdGUoMTUwKSByb3RhdGUoLTE1MCwwLDIwMCkiLz4NCjwvZz4NCjx1c2UgeGxpbms6aHJlZj0iI3M1IiB0cmFuc2Zvcm09InNjYWxlKC0xLDEpIi8+DQo8L2c+DQo8L3N2Zz4="; // bandera de la UE incrustada (en Windows el emoji 🇪🇺 sale como "EU")
+const ngTag = () => `<span class="tag ng"><img src="${NG_FLAG}" alt="" width="14" height="9">NextGenerationEU</span>`;
 const statusTag = (s) => `<span class="tag st-${s}">${esc(STATUS[s] || s || "—")}</span>`; // estado en la Plataforma: PUB azul, EV naranja, ADJ amarillo, RES verde, ANUL rojo
 const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin adjudicar
 // Corporaciones municipales (la actual se constituyó el 17/06/2023). El color de cada contrato indica cuál lo sacó:
@@ -799,7 +802,7 @@ const winnerLinks = (r) => r.winners.length
 const amountCell = (r) => r.hasAward ? eur2.format(r.amount)
   : `<span class="est" title="Sin importe adjudicado: se muestra el presupuesto">${eur2.format(r.amount)}</span><div class="sub">${
     VOID_OUTCOMES.includes(r.outcome) ? `${OUTCOME[r.outcome].toLowerCase()} · presupuesto` : "presupuesto"}</div>`;
-const titleCell = (r) => `${esc(r.title)}<div class="sub">${kindTag(r.kind)}${r.nextgen ? ' <span class="tag">NextGenerationEU</span>' : ""}</div>`;
+const titleCell = (r) => `${esc(r.title)}<div class="sub">${kindTag(r.kind)}${r.nextgen ? " " + ngTag() : ""}</div>`;
 const linkCell = (r) => `<button type="button" class="linkbtn" data-d="${esc(r.id)}">Ficha</button>${r.url ? ` · <a href="${esc(r.url)}" target="_blank" rel="noopener">Ver</a>` : ""}`;
 
 // ---------- ficha del contrato (ventana de detalle) ----------
@@ -839,7 +842,7 @@ function renderDetail(id) {
   // Cabecera
   const cpv = (r.cpv || []).map((c) => { const code = String(c).padStart(8, "0"); const div = CPV_DIV[code.slice(0, 2)]; return `${code}${div ? ` (${esc(div)})` : ""}`; });
   const plain = (b) => (b ? `<span class="tag">${esc(b)}</span>` : "");
-  const badges = [kindTag(r.kind), plain(TYPE[r.type]), plain(PROC[r.procedure]), r.outcome ? outTag(r.outcome, OUTCOME[r.outcome]) : r.status ? statusTag(r.status) : "", plain(PERIODS[r.period].label), plain(r.nextgenProgram ? "NextGenerationEU" : null)]
+  const badges = [kindTag(r.kind), plain(TYPE[r.type]), plain(PROC[r.procedure]), r.outcome ? outTag(r.outcome, OUTCOME[r.outcome]) : r.status ? statusTag(r.status) : "", plain(PERIODS[r.period].label), r.nextgenProgram ? ngTag() : ""]
     .filter(Boolean).join("");
   out.push(`<div class="dbadges">${badges}</div>`);
 
