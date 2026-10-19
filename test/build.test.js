@@ -265,3 +265,16 @@ test('Resumen: resultado y tramo de importe en una fila al 50 %, mayor importe a
   t.regex(TEMPLATE, /\.grid-pair\{display:grid;grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
   t.regex(TEMPLATE, /@media \(max-width:700px\)\{\.grid-pair\{grid-template-columns:minmax\(0,1fr\)\}\}/);
 });
+
+test('NextGenerationEU: el listado de contratos precede al bloque "Qué son estos fondos"', (t) => {
+  const ng = TEMPLATE.match(/<div data-tab="nextgen" hidden>([\s\S]*?)<!-- =+ ADJUDICATARIOS/)[1];
+  const lista = ng.indexOf('id="t-ng"');
+  const que = ng.indexOf('<h2>Qué son estos fondos</h2>');
+  t.true(lista > 0);
+  t.true(que > lista);
+  // KPIs y gráficos siguen arriba
+  t.true(ng.indexOf('id="ng-kpis"') < lista);
+  t.true(ng.indexOf('id="ng-prog"') < lista);
+  // el bloque de texto conserva su contenido
+  t.true(ng.includes('class="ngtext"') && ng.includes('Cómo se han detectado'));
+});

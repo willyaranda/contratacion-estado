@@ -1,0 +1,347 @@
+- generic [active] [ref=f11e1]:
+  - banner [ref=f11e2]:
+    - generic [ref=f11e3]:
+      - heading "Contratación del Ayuntamiento de Aranda de Duero" [level=1] [ref=f11e4]
+      - paragraph [ref=f11e5]:
+        - text: Explorador ciudadano y no oficial de los contratos del Ayuntamiento (Alcaldía, Junta de Gobierno y Pleno) publicados en la Plataforma de Contratación del Sector Público (
+        - link "contrataciondelestado.es" [ref=f11e6] [cursor=pointer]:
+          - /url: https://contrataciondelestado.es
+        - text: "): licitaciones y contratos menores."
+      - paragraph [ref=f11e7]:
+        - link "Calendario de Contratación" [ref=f11e8] [cursor=pointer]:
+          - /url: aperturas.ics
+      - tablist "Secciones" [ref=f11e9]:
+        - tab "Resumen" [selected] [ref=f11e10] [cursor=pointer]
+        - tab "Evolución anual" [ref=f11e11] [cursor=pointer]
+        - tab "NextGenerationEU" [ref=f11e12] [cursor=pointer]
+        - tab "Adjudicatarios" [ref=f11e13] [cursor=pointer]
+        - tab "Licitaciones abiertas" [ref=f11e14] [cursor=pointer]
+        - tab "Listado general" [ref=f11e15] [cursor=pointer]
+  - main [ref=f11e16]:
+    - region [ref=f11e17]:
+      - heading [level=2] [ref=f11e18]:
+        - button "Buscar y filtrar" [ref=f11e19] [cursor=pointer]
+    - generic [ref=f11e23]:
+      - paragraph [ref=f11e24]:
+        - generic [ref=f11e25]: Mandato 11-15 · 106 contratos · 12,7 M€
+        - generic [ref=f11e27]: Mandato 15-19 · 229 contratos · 21,9 M€
+        - generic [ref=f11e29]: Mandato 19-23 · 594 contratos · 32,1 M€
+        - generic [ref=f11e31]: Mandato 23-27 · 616 contratos · 46,6 M€
+        - generic [ref=f11e33]: "Color según quién sacó el contrato: la licitación, por la fecha de publicación del anuncio; el contrato menor, por la de adjudicación."
+      - generic [ref=f11e34]:
+        - generic [ref=f11e35]:
+          - generic [ref=f11e36]: "1.545"
+          - generic [ref=f11e37]: contratos
+        - generic [ref=f11e38]:
+          - generic [ref=f11e39]: 113.245.701 €
+          - generic [ref=f11e40]: importe adjudicado (IVA incl.)
+        - generic [ref=f11e41]:
+          - generic [ref=f11e42]: 78.972 €
+          - generic [ref=f11e43]: importe medio
+        - generic [ref=f11e44]:
+          - generic [ref=f11e45]: "749"
+          - generic [ref=f11e46]: contratistas distintos
+        - generic [ref=f11e47]:
+          - generic [ref=f11e48]: 51 %
+          - generic [ref=f11e49]: contratos menores
+      - generic [ref=f11e50]:
+        - generic [ref=f11e51]:
+          - generic [ref=f11e52]: "103"
+          - generic [ref=f11e53]: contratos al año (media)
+          - generic [ref=f11e54]: "Últimos 12 meses: 208 ▲ 102 %"
+        - generic [ref=f11e55]:
+          - generic [ref=f11e56]: 7,5 M€
+          - generic [ref=f11e57]: importe adjudicado al año (media)
+          - generic [ref=f11e58]: "Últimos 12 meses: 16,1 M€ ▲ 113 %"
+        - generic [ref=f11e59]:
+          - generic [ref=f11e60]: 78.972 €
+          - generic [ref=f11e61]: importe medio por contrato
+          - generic [ref=f11e62]: "Últimos 12 meses: 91.260 € ▲ 16 %"
+        - generic [ref=f11e63]:
+          - generic [ref=f11e64]: 43 días
+          - generic [ref=f11e65]: del cierre de ofertas a la adjudicación
+          - generic [ref=f11e66]: Mediana 30 · mínimo 0 · 526 licitaciones
+        - generic [ref=f11e67]:
+          - generic [ref=f11e68]: 15 de 749
+          - generic [ref=f11e69]: adjudicatarios suman la mitad del importe
+          - generic [ref=f11e70]: El mayor adjudicatario concentra el 14 %
+        - generic [ref=f11e71]:
+          - generic [ref=f11e72]: "70"
+          - generic [ref=f11e73]: contratos sin adjudicar (5 % de los que tienen resultado)
+          - generic [ref=f11e74]: 49 desiertos · 19 desistimientos · 2 renuncias · además 15 parcialmente adjudicados
+      - generic [ref=f11e75]:
+        - generic [ref=f11e76]:
+          - heading "Importe adjudicado por año (clic para filtrar)" [level=2] [ref=f11e77]
+          - generic [ref=f11e79]:
+            - 'button "2012: 1.094.741 € en 13 contratos" [ref=f11e80] [cursor=pointer]':
+              - generic [ref=f11e83]: ’12
+            - 'button "2013: 4.317.239 € en 36 contratos" [ref=f11e84] [cursor=pointer]':
+              - generic [ref=f11e87]: ’13
+            - 'button "2014: 3.819.445 € en 38 contratos" [ref=f11e88] [cursor=pointer]':
+              - generic [ref=f11e91]: ’14
+            - 'button "2015: 4.410.050 € en 33 contratos" [ref=f11e92] [cursor=pointer]':
+              - generic [ref=f11e96]: ’15
+            - 'button "2016: 3.776.088 € en 32 contratos" [ref=f11e97] [cursor=pointer]':
+              - generic [ref=f11e100]: ’16
+            - 'button "2017: 4.964.232 € en 65 contratos" [ref=f11e101] [cursor=pointer]':
+              - generic [ref=f11e104]: ’17
+            - 'button "2018: 9.475.134 € en 85 contratos" [ref=f11e105] [cursor=pointer]':
+              - generic [ref=f11e108]: ’18
+            - 'button "2019: 4.499.537 € en 106 contratos" [ref=f11e109] [cursor=pointer]':
+              - generic [ref=f11e113]: ’19
+            - 'button "2020: 2.977.855 € en 112 contratos" [ref=f11e114] [cursor=pointer]':
+              - generic [ref=f11e117]: ’20
+            - 'button "2021: 8.060.669 € en 142 contratos" [ref=f11e118] [cursor=pointer]':
+              - generic [ref=f11e121]: ’21
+            - 'button "2022: 16.327.778 € en 203 contratos" [ref=f11e122] [cursor=pointer]':
+              - generic [ref=f11e125]: ’22
+            - 'button "2023: 7.505.799 € en 146 contratos" [ref=f11e126] [cursor=pointer]':
+              - generic [ref=f11e130]: ’23
+            - 'button "2024: 9.847.438 € en 164 contratos" [ref=f11e131] [cursor=pointer]':
+              - generic [ref=f11e135]: ’24
+            - 'button "2025: 19.048.928 € en 225 contratos" [ref=f11e136] [cursor=pointer]':
+              - generic [ref=f11e139]: ’25
+            - 'button "2026: 13.120.767 € en 145 contratos" [ref=f11e140] [cursor=pointer]':
+              - generic [ref=f11e143]: ’26
+        - generic [ref=f11e144]:
+          - heading "Contratos adjudicados por año (clic para filtrar)" [level=2] [ref=f11e145]
+          - generic [ref=f11e147]:
+            - 'button "2012: 12 contratos adjudicados (13 en total, con los no adjudicados)" [ref=f11e148] [cursor=pointer]':
+              - generic [ref=f11e151]: ’12
+            - 'button "2013: 34 contratos adjudicados (36 en total, con los no adjudicados)" [ref=f11e152] [cursor=pointer]':
+              - generic [ref=f11e155]: ’13
+            - 'button "2014: 38 contratos adjudicados" [ref=f11e156] [cursor=pointer]':
+              - generic [ref=f11e159]: ’14
+            - 'button "2015: 30 contratos adjudicados (33 en total, con los no adjudicados)" [ref=f11e160] [cursor=pointer]':
+              - generic [ref=f11e164]: ’15
+            - 'button "2016: 29 contratos adjudicados (32 en total, con los no adjudicados)" [ref=f11e165] [cursor=pointer]':
+              - generic [ref=f11e168]: ’16
+            - 'button "2017: 63 contratos adjudicados (65 en total, con los no adjudicados)" [ref=f11e169] [cursor=pointer]':
+              - generic [ref=f11e172]: ’17
+            - 'button "2018: 82 contratos adjudicados (85 en total, con los no adjudicados)" [ref=f11e173] [cursor=pointer]':
+              - generic [ref=f11e176]: ’18
+            - 'button "2019: 100 contratos adjudicados (106 en total, con los no adjudicados)" [ref=f11e177] [cursor=pointer]':
+              - generic [ref=f11e181]: ’19
+            - 'button "2020: 103 contratos adjudicados (112 en total, con los no adjudicados)" [ref=f11e182] [cursor=pointer]':
+              - generic [ref=f11e185]: ’20
+            - 'button "2021: 132 contratos adjudicados (142 en total, con los no adjudicados)" [ref=f11e186] [cursor=pointer]':
+              - generic [ref=f11e189]: ’21
+            - 'button "2022: 197 contratos adjudicados (203 en total, con los no adjudicados)" [ref=f11e190] [cursor=pointer]':
+              - generic [ref=f11e193]: ’22
+            - 'button "2023: 137 contratos adjudicados (146 en total, con los no adjudicados)" [ref=f11e194] [cursor=pointer]':
+              - generic [ref=f11e198]: ’23
+            - 'button "2024: 152 contratos adjudicados (164 en total, con los no adjudicados)" [ref=f11e199] [cursor=pointer]':
+              - generic [ref=f11e203]: ’24
+            - 'button "2025: 206 contratos adjudicados (225 en total, con los no adjudicados)" [ref=f11e204] [cursor=pointer]':
+              - generic [ref=f11e207]: ’25
+            - 'button "2026: 119 contratos adjudicados (145 en total, con los no adjudicados)" [ref=f11e208] [cursor=pointer]':
+              - generic [ref=f11e211]: ’26
+      - generic [ref=f11e212]:
+        - generic [ref=f11e213]:
+          - heading "Nº de contratos por mes (clic para filtrar)" [level=2] [ref=f11e214]
+          - generic [ref=f11e216]:
+            - 'button "enero: 85 contratos, 8.887.035 €" [ref=f11e217] [cursor=pointer]':
+              - generic [ref=f11e223]: Ene
+            - 'button "febrero: 71 contratos, 1.538.049 €" [ref=f11e224] [cursor=pointer]':
+              - generic [ref=f11e230]: Feb
+            - 'button "marzo: 119 contratos, 2.309.027 €" [ref=f11e231] [cursor=pointer]':
+              - generic [ref=f11e237]: Mar
+            - 'button "abril: 83 contratos, 8.673.057 €" [ref=f11e238] [cursor=pointer]':
+              - generic [ref=f11e244]: Abr
+            - 'button "mayo: 115 contratos, 6.175.965 €" [ref=f11e245] [cursor=pointer]':
+              - generic [ref=f11e251]: May
+            - 'button "junio: 97 contratos, 3.870.108 €" [ref=f11e252] [cursor=pointer]':
+              - generic [ref=f11e258]: Jun
+            - 'button "julio: 112 contratos, 11.102.599 €" [ref=f11e259] [cursor=pointer]':
+              - generic [ref=f11e265]: Jul
+            - 'button "agosto: 175 contratos, 10.014.627 €" [ref=f11e266] [cursor=pointer]':
+              - generic [ref=f11e272]: Ago
+            - 'button "septiembre: 159 contratos, 19.352.766 €" [ref=f11e273] [cursor=pointer]':
+              - generic [ref=f11e279]: Sep
+            - 'button "octubre: 125 contratos, 11.289.394 €" [ref=f11e280] [cursor=pointer]':
+              - generic [ref=f11e286]: Oct
+            - 'button "noviembre: 153 contratos, 11.545.921 €" [ref=f11e287] [cursor=pointer]':
+              - generic [ref=f11e293]: Nov
+            - 'button "diciembre: 251 contratos, 18.487.152 €" [ref=f11e294] [cursor=pointer]':
+              - generic [ref=f11e300]: Dic
+        - generic [ref=f11e301]:
+          - heading "Por tipo de contrato" [level=2] [ref=f11e302]
+          - generic [ref=f11e303]:
+            - button "Obras 49,7 M€ · 196" [ref=f11e304] [cursor=pointer]:
+              - generic [ref=f11e305]: Obras
+              - generic [ref=f11e312]: 49,7 M€ · 196
+            - button "Servicios 36,2 M€ · 826" [ref=f11e313] [cursor=pointer]:
+              - generic [ref=f11e314]: Servicios
+              - generic [ref=f11e321]: 36,2 M€ · 826
+            - button "Suministros 20,0 M€ · 437" [ref=f11e322] [cursor=pointer]:
+              - generic [ref=f11e323]: Suministros
+              - generic [ref=f11e330]: 20,0 M€ · 437
+            - button "Privado 5,2 M€ · 33" [ref=f11e331] [cursor=pointer]:
+              - generic [ref=f11e332]: Privado
+              - generic [ref=f11e339]: 5,2 M€ · 33
+            - button "Gestión de servicios públicos 1,4 M€ · 12" [ref=f11e340] [cursor=pointer]:
+              - generic [ref=f11e341]: Gestión de servicios públicos
+              - generic [ref=f11e347]: 1,4 M€ · 12
+            - button "Patrimonial 376 k€ · 19" [ref=f11e348] [cursor=pointer]:
+              - generic [ref=f11e349]: Patrimonial
+              - generic [ref=f11e355]: 376 k€ · 19
+            - button "Concesión de servicios 335 k€ · 18" [ref=f11e356] [cursor=pointer]:
+              - generic [ref=f11e357]: Concesión de servicios
+              - generic [ref=f11e362]: 335 k€ · 18
+            - button "Administrativo especial 159 k€ · 4" [ref=f11e363] [cursor=pointer]:
+              - generic [ref=f11e364]: Administrativo especial
+              - generic [ref=f11e369]: 159 k€ · 4
+        - generic [ref=f11e370]:
+          - heading "Por procedimiento" [level=2] [ref=f11e371]
+          - generic [ref=f11e372]:
+            - button "Abierto 60,9 M€ · 210" [ref=f11e373] [cursor=pointer]:
+              - generic [ref=f11e374]: Abierto
+              - generic [ref=f11e381]: 60,9 M€ · 210
+            - button "Abierto simplificado 23,7 M€ · 296" [ref=f11e382] [cursor=pointer]:
+              - generic [ref=f11e383]: Abierto simplificado
+              - generic [ref=f11e389]: 23,7 M€ · 296
+            - button "Negociado sin publicidad 17,7 M€ · 212" [ref=f11e390] [cursor=pointer]:
+              - generic [ref=f11e391]: Negociado sin publicidad
+              - generic [ref=f11e398]: 17,7 M€ · 212
+            - button "Contrato menor 7,1 M€ · 788" [ref=f11e399] [cursor=pointer]:
+              - generic [ref=f11e400]: Contrato menor
+              - generic [ref=f11e406]: 7,1 M€ · 788
+            - button "Negociado con publicidad 2,1 M€ · 25" [ref=f11e407] [cursor=pointer]:
+              - generic [ref=f11e408]: Negociado con publicidad
+              - generic [ref=f11e413]: 2,1 M€ · 25
+            - button "Derivado de acuerdo marco 1,6 M€ · 7" [ref=f11e414] [cursor=pointer]:
+              - generic [ref=f11e415]: Derivado de acuerdo marco
+              - generic [ref=f11e421]: 1,6 M€ · 7
+            - button "Restringido 67 k€ · 3" [ref=f11e422] [cursor=pointer]:
+              - generic [ref=f11e423]: Restringido
+              - generic [ref=f11e428]: 67 k€ · 3
+            - button "Otros 2 k€ · 4" [ref=f11e429] [cursor=pointer]:
+              - generic [ref=f11e430]: Otros
+              - generic [ref=f11e434]: 2 k€ · 4
+      - generic [ref=f11e435]:
+        - generic [ref=f11e436]:
+          - heading "Por resultado del procedimiento (clic para filtrar)" [level=2] [ref=f11e437]
+          - generic [ref=f11e438]:
+            - button "Adjudicado 1430 · 112,3 M€" [ref=f11e439] [cursor=pointer]:
+              - generic [ref=f11e440]: Adjudicado
+              - generic [ref=f11e447]: 1430 · 112,3 M€
+            - button "Desierto 49" [ref=f11e448] [cursor=pointer]:
+              - generic [ref=f11e449]: Desierto
+              - generic [ref=f11e456]: "49"
+            - button "Sin resultado todavía 30" [ref=f11e457] [cursor=pointer]:
+              - generic [ref=f11e458]: Sin resultado todavía
+              - generic [ref=f11e465]: "30"
+            - button "Desistimiento 19" [ref=f11e466] [cursor=pointer]:
+              - generic [ref=f11e467]: Desistimiento
+              - generic [ref=f11e473]: "19"
+            - button "Parcialmente adjudicado 15 · 905 k€" [ref=f11e474] [cursor=pointer]:
+              - generic [ref=f11e475]: Parcialmente adjudicado
+              - generic [ref=f11e481]: 15 · 905 k€
+            - button "Renuncia 2" [ref=f11e482] [cursor=pointer]:
+              - generic [ref=f11e483]: Renuncia
+              - generic [ref=f11e487]: "2"
+          - paragraph [ref=f11e488]: Desierto, desistimiento y renuncia no tienen importe adjudicado. «Parcialmente adjudicado» son contratos con varios lotes en los que unos se adjudicaron y otros no.
+        - generic [ref=f11e489]:
+          - heading "Por tramo de importe adjudicado (clic para filtrar)" [level=2] [ref=f11e490]
+          - generic [ref=f11e491]:
+            - button "Hasta 3.000 € 239 · 334 k€" [ref=f11e492] [cursor=pointer]:
+              - generic [ref=f11e493]: Hasta 3.000 €
+              - generic [ref=f11e500]: 239 · 334 k€
+            - button "3.000 – 5.000 € 148 · 576 k€" [ref=f11e501] [cursor=pointer]:
+              - generic [ref=f11e502]: 3.000 – 5.000 €
+              - generic [ref=f11e509]: 148 · 576 k€
+            - button "5.000 – 15.000 € 444 · 4,1 M€" [ref=f11e510] [cursor=pointer]:
+              - generic [ref=f11e511]: 5.000 – 15.000 €
+              - generic [ref=f11e518]: 444 · 4,1 M€
+            - button "15.000 – 40.000 € 348 · 7,9 M€" [ref=f11e519] [cursor=pointer]:
+              - generic [ref=f11e520]: 15.000 – 40.000 €
+              - generic [ref=f11e527]: 348 · 7,9 M€
+            - button "Más de 40.000 € 366 · 100,3 M€" [ref=f11e528] [cursor=pointer]:
+              - generic [ref=f11e529]: Más de 40.000 €
+              - generic [ref=f11e536]: 366 · 100,3 M€
+          - paragraph [ref=f11e537]: "Cada tramo incluye su importe superior (en «Hasta 3.000 €» entra un contrato de 3.000,00 €). Referencia: el contrato menor tiene un límite de 15.000 € en servicios y suministros y de 40.000 € en obras (art. 118 LCSP)."
+      - generic [ref=f11e538]:
+        - heading "Contratos de mayor importe" [level=2] [ref=f11e539]
+        - table [ref=f11e541]:
+          - rowgroup [ref=f11e542]:
+            - row [ref=f11e543]:
+              - cell [ref=f11e544]:
+                - text: Contrato de obras para la rehabilitación del Centro Cívico Virgen Viñas
+                - generic [ref=f11e545]:
+                  - text: CONSTRUCTORA PEACHE, S.A. · 03/09/2025 ·
+                  - button "Ficha" [ref=f11e546] [cursor=pointer]
+              - cell [ref=f11e547]:
+                - strong [ref=f11e548]: 6.802.455 €
+            - row [ref=f11e549]:
+              - cell [ref=f11e550]:
+                - text: Contratación de Los Servicios de Limpieza Viaria y Recogida de Residuos Sólidos Urbanos de…
+                - generic [ref=f11e551]:
+                  - text: VALORIZA SERVICIOS MEDIOAMBIENTALES, S.A. · 31/07/2025 ·
+                  - button "Ficha" [ref=f11e552] [cursor=pointer]
+              - cell [ref=f11e553]:
+                - strong [ref=f11e554]: 3.904.487 €
+            - row [ref=f11e555]:
+              - cell [ref=f11e556]:
+                - text: PRTR_Contrato de obras de Rehabilitación integral de edificio para Centro de Recepción de …
+                - generic [ref=f11e557]:
+                  - text: CONSTRUCTORA PEACHE, S.A. · 06/12/2024 ·
+                  - button "Ficha" [ref=f11e558] [cursor=pointer]
+              - cell [ref=f11e559]:
+                - strong [ref=f11e560]: 3.482.711 €
+            - row [ref=f11e561]:
+              - cell [ref=f11e562]:
+                - text: Contrato de obras para la reforma de la Piscina Cubierta Municipal de Aranda de Duero
+                - generic [ref=f11e563]:
+                  - text: CONSTRUCTORA PEACHE, S.A. · 23/11/2022 ·
+                  - button "Ficha" [ref=f11e564] [cursor=pointer]
+              - cell [ref=f11e565]:
+                - strong [ref=f11e566]: 2.734.722 €
+            - row [ref=f11e567]:
+              - cell [ref=f11e568]:
+                - text: contratación del servicio de atención domiciliaria del ayuntamiento de aranda de duero, bu…
+                - generic [ref=f11e569]:
+                  - text: FUNDACION PARA EL ESTUDIO Y LA PROMOCION DE LA ACCION SOCIAL · 24/11/2022 ·
+                  - button "Ficha" [ref=f11e570] [cursor=pointer]
+              - cell [ref=f11e571]:
+                - strong [ref=f11e572]: 2.458.856 €
+            - row [ref=f11e573]:
+              - cell [ref=f11e574]:
+                - text: Contrato de obras reforma del entorno de Jardines de don Diego en Aranda de Duero (Burgos)
+                - generic [ref=f11e575]:
+                  - text: UTE ARPAPE, S.L. - CNES. BELTRÁN MÓÑUX, S.L.U. · 30/12/2022 ·
+                  - button "Ficha" [ref=f11e576] [cursor=pointer]
+              - cell [ref=f11e577]:
+                - strong [ref=f11e578]: 2.409.266 €
+            - row [ref=f11e579]:
+              - cell [ref=f11e580]:
+                - text: Constitución de un derecho de superficies sobre parcela destinada a puerto seco
+                - generic [ref=f11e581]:
+                  - text: ASERCOMEX LOGISTICS SL · 03/09/2026 ·
+                  - button "Ficha" [ref=f11e582] [cursor=pointer]
+              - cell [ref=f11e583]:
+                - strong [ref=f11e584]: 2.299.000 €
+            - row [ref=f11e585]:
+              - cell [ref=f11e586]:
+                - text: PRTR - Contratación de las Obras de Rehabilitación de 70 viviendas ubicadas en los portale…
+                - generic [ref=f11e587]:
+                  - text: CONSTRUCCIONES APLIBUR, S.LU · 08/01/2026 ·
+                  - button "Ficha" [ref=f11e588] [cursor=pointer]
+              - cell [ref=f11e589]:
+                - strong [ref=f11e590]: 2.193.165 €
+      - generic [ref=f11e591]:
+        - heading "Contratos por tipo, fecha e importe adjudicado" [level=2] [ref=f11e592]
+        - img "Contratos por tipo, fecha e importe adjudicado" [ref=f11e594]:
+          - generic [ref=f11e595]: Servicios
+          - generic [ref=f11e596]: Suministros
+          - generic [ref=f11e597]: Obras
+          - generic [ref=f11e598]: Otros
+          - generic [ref=f11e599]: "2014"
+          - generic [ref=f11e600]: "2016"
+          - generic [ref=f11e601]: "2018"
+          - generic [ref=f11e602]: "2020"
+          - generic [ref=f11e603]: "2022"
+          - generic [ref=f11e604]: "2024"
+          - generic [ref=f11e605]: "2026"
+        - paragraph [ref=f11e2040]: Cada círculo es un contrato; su área es proporcional al importe adjudicado. Pasa el cursor por encima (o toca un círculo) para ver el detalle.
+  - contentinfo [ref=f11e2041]:
+    - generic [ref=f11e2042]: "Fuente: Plataforma de Contratación del Sector Público (feeds de sindicación). Datos hasta el 16/10/2026 (último anuncio recibido). «Fecha» es la de adjudicación o, si no consta, la de última actualización del anuncio. «Importe» es el adjudicado con IVA; si el contrato aún no tiene importe adjudicado se muestra el presupuesto y no se suma en los totales. Si un contrato tiene varias versiones publicadas se usa la más reciente. El tiempo hasta la adjudicación se mide desde el cierre del plazo de ofertas y solo en licitaciones con ambas fechas. El «Resultado» (adjudicado, desierto, desistimiento, renuncia) sale del código de resultado de cada lote del anuncio. Las medias anuales incluyen años con menos datos (los contratos menores constan desde 2018), por lo que la comparación con los últimos 12 meses tiende a salir al alza. Herramienta de consulta no oficial: la referencia es siempre el anuncio original (enlace «Ver»)."
