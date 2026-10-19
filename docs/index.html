@@ -17,6 +17,8 @@
   --good:#1b7f3b;--bad:#b3261e;
   /* resultado del contrato: fondo suave + borde; texto = --ink */
   --o-ok-bg:#d3f0de;--o-ok-bd:#1b7f3b;--o-warn-bg:#fdecab;--o-warn-bd:#9a7400;--o-mid-bg:#ffd3a3;--o-mid-bd:#b35400;--o-bad-bg:#ffd6d2;--o-bad-bd:#b3261e;
+  /* sin resultado / estado Publicado (azul) y clase del contrato (morado = mayor, pizarra = menor) */
+  --o-info-bg:#d6e6fb;--o-info-bd:#1565c0;--k-maj-bg:#ead9f7;--k-maj-bd:#7b2fb0;--k-min-bg:#dde3ea;--k-min-bd:#52606f;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
@@ -26,6 +28,7 @@
     --p0:#5aa9f5;--p1:#5aa9f5;--p2:#5aa9f5;--p3:#ffb02e;
     --good:#5fcf80;--bad:#ff8a80;
     --o-ok-bg:#1f4d2e;--o-ok-bd:#5fcf80;--o-warn-bg:#5a4708;--o-warn-bd:#e3b04b;--o-mid-bg:#6b3a0c;--o-mid-bd:#ff9d3d;--o-bad-bg:#5e1f1a;--o-bad-bd:#ff8a80;
+--o-info-bg:#16365f;--o-info-bd:#6aa8ff;--k-maj-bg:#43265e;--k-maj-bd:#c79bf0;--k-min-bg:#2f3944;--k-min-bd:#9db0c2;
   }
 }
 :root[data-theme="dark"]{
@@ -35,6 +38,7 @@
   --p0:#5aa9f5;--p1:#5aa9f5;--p2:#5aa9f5;--p3:#ffb02e;
   --good:#5fcf80;--bad:#ff8a80;
   --o-ok-bg:#1f4d2e;--o-ok-bd:#5fcf80;--o-warn-bg:#5a4708;--o-warn-bd:#e3b04b;--o-mid-bg:#6b3a0c;--o-mid-bd:#ff9d3d;--o-bad-bg:#5e1f1a;--o-bad-bd:#ff8a80;
+--o-info-bg:#16365f;--o-info-bd:#6aa8ff;--k-maj-bg:#43265e;--k-maj-bd:#c79bf0;--k-min-bg:#2f3944;--k-min-bd:#9db0c2;
 }
 *{box-sizing:border-box}
 html{color-scheme:light dark}
@@ -181,10 +185,14 @@ td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:now
 td.obj{min-width:260px;max-width:520px}
 td .sub{color:var(--muted);font-size:.78rem}
 .tag{display:inline-block;background:var(--chip);border-radius:6px;padding:0 6px;font-size:.75rem;white-space:nowrap}
-.tag.out-adjudicado,.tag.out-none{background:var(--o-ok-bg);border:1px solid var(--o-ok-bd);color:var(--ink)}
-.tag.out-desierto{background:var(--o-warn-bg);border:1px solid var(--o-warn-bd);color:var(--ink)}
+.tag.out-adjudicado,.tag.st-RES{background:var(--o-ok-bg);border:1px solid var(--o-ok-bd);color:var(--ink)}
+.tag.out-none,.tag.st-PUB{background:var(--o-info-bg);border:1px solid var(--o-info-bd);color:var(--ink)}
+.tag.kind-licitacion{background:var(--k-maj-bg);border:1px solid var(--k-maj-bd);color:var(--ink)}
+.tag.kind-menor{background:var(--k-min-bg);border:1px solid var(--k-min-bd);color:var(--ink)}
+.tag.st-EV{background:var(--o-mid-bg);border:1px solid var(--o-mid-bd);color:var(--ink)}
+.tag.out-desierto,.tag.st-ADJ{background:var(--o-warn-bg);border:1px solid var(--o-warn-bd);color:var(--ink)}
 .tag.out-mixto{background:linear-gradient(135deg,var(--o-warn-bg) 50%,var(--o-mid-bg) 50%);border:1px solid var(--o-mid-bd);color:var(--ink)}
-.tag.out-renuncia,.tag.out-desistimiento{background:var(--o-bad-bg);border:1px solid var(--o-bad-bd);color:var(--ink)}
+.tag.out-renuncia,.tag.out-desistimiento,.tag.st-ANUL{background:var(--o-bad-bg);border:1px solid var(--o-bad-bd);color:var(--ink)}
 .est{color:var(--muted);font-style:italic}
 .pager{display:flex;gap:8px;align-items:center;justify-content:space-between;margin-top:12px;flex-wrap:wrap}
 .muted{color:var(--muted)}
@@ -443,10 +451,12 @@ const DATA = JSON.parse(document.getElementById("data").textContent);
 const TYPE = {1:"Suministros",2:"Servicios",3:"Obras",7:"Administrativo especial",8:"Privado",21:"Gestión de servicios públicos",22:"Concesión de servicios",31:"Concesión de obras públicas",32:"Concesión de obras",40:"Colaboración público-privada",50:"Patrimonial",999:"Otros"};
 const PROC = {1:"Abierto",2:"Restringido",3:"Negociado sin publicidad",4:"Negociado con publicidad",5:"Diálogo competitivo",6:"Contrato menor",7:"Derivado de acuerdo marco",8:"Concurso de proyectos",9:"Abierto simplificado",10:"Asociación para la innovación",11:"Derivado de asociación para la innovación",12:"Sistema dinámico de adquisición",13:"Licitación con negociación",100:"Normas internas",999:"Otros"};
 const STATUS = {PUB:"Publicada",EV:"En evaluación",ADJ:"Adjudicada",RES:"Resuelta",ANUL:"Anulada",PRE:"Anuncio previo"};
-const KIND = {licitacion:"Licitación",menor:"Contrato menor"};
+const KIND = {licitacion:"Cont. mayor",menor:"Cont. menor"};
 // Resultado del procedimiento (calculado en transparencia/extract.js a partir del código de resultado de cada lote)
 const OUTCOME = {adjudicado:"Adjudicado",desierto:"Desierto",desistimiento:"Desistimiento",renuncia:"Renuncia",mixto:"Parcialmente adjudicado",otro:"Otro resultado"};
 const outTag = (o, text) => `<span class="tag out-${o || "none"}">${esc(text)}</span>`;
+const kindTag = (k) => `<span class="tag kind-${k}">${esc(KIND[k])}</span>`; // clase del contrato: morado (mayor) / pizarra (menor)
+const statusTag = (s) => `<span class="tag st-${s}">${esc(STATUS[s] || s || "—")}</span>`; // estado en la Plataforma: PUB azul, EV naranja, ADJ amarillo, RES verde, ANUL rojo
 const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin adjudicar
 // Corporaciones municipales (la actual se constituyó el 17/06/2023). El color de cada contrato indica cuál lo sacó:
 // licitaciones por la fecha de publicación del anuncio; contratos menores (sin licitación) por la de adjudicación.
@@ -789,7 +799,7 @@ const winnerLinks = (r) => r.winners.length
 const amountCell = (r) => r.hasAward ? eur2.format(r.amount)
   : `<span class="est" title="Sin importe adjudicado: se muestra el presupuesto">${eur2.format(r.amount)}</span><div class="sub">${
     VOID_OUTCOMES.includes(r.outcome) ? `${OUTCOME[r.outcome].toLowerCase()} · presupuesto` : "presupuesto"}</div>`;
-const titleCell = (r) => `${esc(r.title)}<div class="sub"><span class="tag">${esc(KIND[r.kind])}</span>${r.nextgen ? ' <span class="tag">NextGenerationEU</span>' : ""}</div>`;
+const titleCell = (r) => `${esc(r.title)}<div class="sub">${kindTag(r.kind)}${r.nextgen ? ' <span class="tag">NextGenerationEU</span>' : ""}</div>`;
 const linkCell = (r) => `<button type="button" class="linkbtn" data-d="${esc(r.id)}">Ficha</button>${r.url ? ` · <a href="${esc(r.url)}" target="_blank" rel="noopener">Ver</a>` : ""}`;
 
 // ---------- ficha del contrato (ventana de detalle) ----------
@@ -828,8 +838,9 @@ function renderDetail(id) {
 
   // Cabecera
   const cpv = (r.cpv || []).map((c) => { const code = String(c).padStart(8, "0"); const div = CPV_DIV[code.slice(0, 2)]; return `${code}${div ? ` (${esc(div)})` : ""}`; });
-  const badges = [[null, KIND[r.kind]], [null, TYPE[r.type]], [null, PROC[r.procedure]], [r.outcome ? r.outcome : "none", r.outcome ? OUTCOME[r.outcome] : STATUS[r.status]], [null, PERIODS[r.period].label], [null, r.nextgenProgram ? "NextGenerationEU" : null]]
-    .filter(([, b]) => b).map(([o, b]) => (o ? outTag(o, b) : `<span class="tag">${esc(b)}</span>`)).join("");
+  const plain = (b) => (b ? `<span class="tag">${esc(b)}</span>` : "");
+  const badges = [kindTag(r.kind), plain(TYPE[r.type]), plain(PROC[r.procedure]), r.outcome ? outTag(r.outcome, OUTCOME[r.outcome]) : r.status ? statusTag(r.status) : "", plain(PERIODS[r.period].label), plain(r.nextgenProgram ? "NextGenerationEU" : null)]
+    .filter(Boolean).join("");
   out.push(`<div class="dbadges">${badges}</div>`);
 
   // Cifras clave
@@ -1525,7 +1536,7 @@ function renderList() {
     { key:"type", label:"Tipo", sort: (r) => TYPE[r.type] || "", html: (r) => esc(TYPE[r.type] || "—") },
     ...(optCols.has("body") ? [{ key:"body", label:"Órgano", sort: (r) => r.bodyShort, html: (r) => esc(r.bodyShort) }] : []),
     ...(optCols.has("procedure") ? [{ key:"procedure", label:"Procedimiento", sort: (r) => PROC[r.procedure] || "", html: (r) => esc(PROC[r.procedure] || "—") }] : []),
-    ...(optCols.has("status") ? [{ key:"status", label:"Estado", sort: (r) => r.status || "", html: (r) => esc(STATUS[r.status] || r.status || "—") }] : []),
+    ...(optCols.has("status") ? [{ key:"status", label:"Estado", sort: (r) => r.status || "", html: (r) => r.status ? statusTag(r.status) : "—" }] : []),
     ...(optCols.has("outcome") ? [{ key:"outcome", label:"Resultado", sort: (r) => r.outcome || "", html: (r) => outTag(r.outcome, r.outcome ? OUTCOME[r.outcome] || r.outcome : "Sin resultado todavía") }] : []),
     ...(optCols.has("period") ? [{ key:"period", label:"Corporación", sort: (r) => r.period, html: (r) => `<span class="tag"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>${esc(PERIODS[r.period].label)}</span>` }] : []),
     ...(optCols.has("published") ? [{ key:"published", label:"Publicación", desc:true, sort: (r) => r.published || "", html: (r) => fmtDate(r.published) }] : []),

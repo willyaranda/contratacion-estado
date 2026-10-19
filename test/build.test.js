@@ -125,10 +125,11 @@ test('el build es determinista: dos ejecuciones dan exactamente el mismo HTML', 
   t.is(run(), run());
 });
 
-test('las etiquetas de resultado se colorean por resultado (verde, amarillo, diagonal, rojo)', (t) => {
+test('las etiquetas de resultado se colorean por resultado (verde, azul, amarillo, diagonal, rojo)', (t) => {
   const rule = (sel) => TEMPLATE.match(new RegExp(`\\.tag\\.${sel}[^{]*\\{([^}]*)\\}`))?.[1] ?? '';
   t.regex(rule('out-adjudicado'), /--o-ok-bg/);
-  t.regex(rule('out-none'), /--o-ok-bg/); // sin resultado todavía: verde
+  t.regex(rule('out-none'), /--o-info-bg/); // sin resultado todavía: azul (no verde)
+  t.notRegex(rule('out-none'), /--o-ok-bg/);
   t.regex(rule('out-desierto'), /--o-warn-bg/);
   t.regex(rule('out-renuncia'), /--o-bad-bg/);
   t.regex(rule('out-desistimiento'), /--o-bad-bg/);
@@ -138,6 +139,28 @@ test('las etiquetas de resultado se colorean por resultado (verde, amarillo, dia
   // variables definidas en claro y en las dos variantes oscuras
   t.is(TEMPLATE.match(/--o-ok-bg:#/g).length, 3);
   t.is(TEMPLATE.match(/--o-mid-bg:#/g).length, 3);
+  for (const v of ['--o-info-bg', '--o-info-bd', '--k-maj-bg', '--k-maj-bd', '--k-min-bg', '--k-min-bd']) t.is(TEMPLATE.match(new RegExp(`${v}:#`, 'g')).length, 3, v);
+});
+
+test('la clase del contrato es "Cont. mayor"/"Cont. menor" con color propio', (t) => {
+  t.regex(TEMPLATE, /const KIND = \{licitacion:"Cont\. mayor",menor:"Cont\. menor"\}/);
+  const rule = (sel) => TEMPLATE.match(new RegExp(`\\.tag\\.${sel}[^{]*\\{([^}]*)\\}`))?.[1] ?? '';
+  t.regex(rule('kind-licitacion'), /--k-maj-bg/);
+  t.regex(rule('kind-menor'), /--k-min-bg/);
+  t.regex(TEMPLATE, /const kindTag = \(k\) => `<span class="tag kind-\$\{k\}">/);
+  t.regex(TEMPLATE, /const badges = \[kindTag\(r\.kind\)/); // detalle
+  t.regex(TEMPLATE, /\$\{kindTag\(r\.kind\)\}/); // listado
+});
+
+test('las etiquetas de estado se colorean por código de la Plataforma', (t) => {
+  const rule = (code) => TEMPLATE.match(new RegExp(`[^\\n]*\\.tag\\.st-${code}[^{]*\\{([^}]*)\\}`))?.[0] ?? '';
+  t.regex(rule('ADJ'), /--o-warn-bg/); // amarillo
+  t.regex(rule('EV'), /--o-mid-bg/); // naranja
+  t.regex(rule('RES'), /--o-ok-bg/); // verde
+  t.regex(rule('PUB'), /--o-info-bg/); // azul
+  t.regex(rule('ANUL'), /--o-bad-bg/); // rojo
+  t.regex(TEMPLATE, /label:"Estado"[^\n]*statusTag\(r\.status\)/);
+  t.regex(TEMPLATE, /r\.outcome \? outTag\(r\.outcome, OUTCOME\[r\.outcome\]\) : r\.status \? statusTag\(r\.status\)/);
 });
 
 test('la columna Resultado y las insignias del detalle usan outTag', (t) => {
