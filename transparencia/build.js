@@ -5,8 +5,10 @@ import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { buildIcs } from '../lib/ics.js';
+import { buildIcs, upcomingMesas } from '../lib/ics.js';
 import { buildRecords } from './extract.js';
+
+const MESAS_MARGIN_MS = 7 * 24 * 3600 * 1000;
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 
@@ -63,7 +65,15 @@ const main = () => {
   const dumpDir = arg('dump', join(HERE, '..', 'dump'));
   const outDir = arg('out', HERE);
   const { files, generated, records, details } = buildRecords(dumpDir);
-  const data = { generated, records };
+  // Aperturas de ofertas (las escribe index.js en dump/aperturas.json)
+  let aperturas = {};
+  try {
+    aperturas = JSON.parse(readFileSync(join(dumpDir, 'aperturas.json'), 'utf8'));
+  } catch { /* sin aperturas todavía */ }
+  // Mesas de contratación para la franja de la página: desde 7 días antes de la fecha de los datos (determinista con el
+  // mismo input); el navegador filtra las que siguen siendo futuras comparando con su reloj.
+  const mesas = upcomingMesas(aperturas, Date.parse(generated) - MESAS_MARGIN_MS);
+  const data = { generated, records, mesas };
 
   mkdirSync(outDir, { recursive: true });
   writeFileSync(join(outDir, 'data.json'), JSON.stringify(data));
@@ -72,11 +82,7 @@ const main = () => {
   writeFileSync(join(outDir, 'index.html'), html);
   writeFileSync(join(outDir, 'artifact.html'), toArtifact(html));
 
-  // Calendario de contratación: aperturas de ofertas (las escribe index.js en dump/aperturas.json) y plazos de licitaciones
-  let aperturas = {};
-  try {
-    aperturas = JSON.parse(readFileSync(join(dumpDir, 'aperturas.json'), 'utf8'));
-  } catch { /* sin aperturas todavía */ }
+  // Calendario de contratación: aperturas de ofertas y plazos de licitaciones
   writeFileSync(join(outDir, 'aperturas.ics'), buildIcs(aperturas, { tenders: records }));
 
   console.log({

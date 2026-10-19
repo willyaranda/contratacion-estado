@@ -5,7 +5,9 @@ import { join } from 'path';
 import {
   decodeEntities, eventStartMs, madridToUtcMs, parseDocuments, parseEvents, readAperturas, syncAperturas, writeAperturas,
 } from '../lib/aperturas.js';
-import { buildIcs } from '../lib/ics.js';
+import {
+  buildIcs, mesaFields, mesaIcs, storeEvents, upcomingMesas,
+} from '../lib/ics.js';
 import { openingsLines, shortType } from '../lib/aperturas-text.js';
 import { buildRecords } from '../transparencia/extract.js';
 import { buildDigest } from '../lib/notify.js';
@@ -351,4 +353,49 @@ test('buildIcs añade ADJ, ADJ. MENOR y AVISO FIN, con alarma el día antes en p
   t.notRegex(ics, /SUMMARY:ADJ: Sin adjudicar/);
   t.is((ics.match(/BEGIN:VALARM/g) ?? []).length, 2);
   t.regex(ics, /TRIGGER:-PT15H/);
+});
+
+// ---- mesas: el mismo código que el calendario
+
+test('mesaIcs: un solo VEVENT, con las mismas líneas que el calendario completo', (t) => {
+  const items = [...storeEvents(store)];
+  const full = buildIcs(store, { now: NOW });
+  t.true(items.length > 3);
+  for (const item of items) {
+    const m = mesaFields(item);
+    if (m.startMs < NOW - 60 * 24 * 3600 * 1000) continue;
+    const single = mesaIcs(m);
+    t.true(single.startsWith('BEGIN:VCALENDAR\r\n'));
+    t.true(single.endsWith('END:VEVENT\r\nEND:VCALENDAR\r\n'));
+    t.is((single.match(/BEGIN:VEVENT/g) ?? []).length, 1);
+    // el bloque VEVENT es literalmente el del calendario completo
+    const block = single.slice(single.indexOf('BEGIN:VEVENT'), single.indexOf('END:VCALENDAR'));
+    t.true(full.includes(block), m.uid);
+  }
+});
+
+test('mesaFields da resumen, hora UTC, duración, lugar y descripción como el calendario', (t) => {
+  const record = {
+    ref: 'X1', title: 'Servicio de limpieza', link: 'https://example.org/f', version: 1000,
+    events: [{
+      kind: 2, type: 'Apertura sobre administrativo', sobre: 'B', date: '2026-10-21', time: '11:30', place: 'Salón', address: 'PZ MAYOR, 1', public: false,
+    }],
+  };
+  const [item] = [...storeEvents({ 7: record })];
+  const m = mesaFields(item);
+  t.is(m.summary, 'PRIV · Administrativo: Servicio de limpieza');
+  t.is(new Date(m.startMs).toISOString(), '2026-10-21T09:30:00.000Z');
+  t.is(m.endMs - m.startMs, 30 * 60 * 1000);
+  t.is(m.location, 'Salón · PZ MAYOR, 1');
+  t.is(m.description, 'Servicio de limpieza\nExpediente: X1\nSobre: B\nActo no público\nhttps://example.org/f');
+  t.is(m.uid, '7-2-b@contratacion-estado');
+  t.is(m.link, 'https://example.org/f');
+});
+
+test('upcomingMesas filtra por fecha, ordena y lleva el .ics de cada mesa', (t) => {
+  const mesas = upcomingMesas(store, NOW);
+  t.true(mesas.every((m) => m.start >= NOW));
+  t.deepEqual(mesas.map((m) => m.start), [...mesas.map((m) => m.start)].sort((a, b) => a - b));
+  for (const m of mesas) t.regex(m.ics, new RegExp(`UID:${m.uid.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
+  t.deepEqual(upcomingMesas({}, NOW), []);
 });
