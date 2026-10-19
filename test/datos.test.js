@@ -1,13 +1,14 @@
 import test from 'ava';
 import { spawnSync } from 'child_process';
-import { readFileSync } from 'fs';
+import { readFileSync, statSync } from 'fs';
 import { join } from 'path';
 
 import {
-  ADJ_FIELDS, FIELDS, LICENSE, PERIODS, buildAdjudicatarios, buildAdjudicatariosCsv, buildContratosCsv,
+  ADJ_FIELDS, FIELDS, FILES, LICENSE, PERIODS, buildAdjudicatarios, buildAdjudicatariosCsv, buildContratosCsv,
   buildContratosJson, mandatoOf, periodOf, temporalCoverage, toCsv,
 } from '../lib/datos.js';
 import { buildRecords } from '../transparencia/extract.js';
+import { AYTO_URL, REPO_URL, SITE_URL } from '../transparencia/site.js';
 import { FIXTURES_DUMP, ROOT, tmpDir } from './helpers.js';
 
 const { records, generated } = buildRecords(FIXTURES_DUMP);
@@ -176,4 +177,125 @@ test('el código y los datos no mencionan partidos políticos', (t) => {
   const source = readFileSync(join(ROOT, 'lib', 'datos.js'), 'utf8');
   t.notRegex(source, /Sentir|Partido Popular|\bPSOE\b|\bPP\b|Ciudadanos|Podemos|\bVOX\b/i);
   t.notRegex(PERIODS.map((p) => p.label).join(' '), /Sentir|Popular|PSOE/);
+});
+
+// ---------- página /datos ----------
+const PAGE_TEMPLATE = readFileSync(join(ROOT, 'transparencia', 'datos.html'), 'utf8');
+const MAIN_TEMPLATE = readFileSync(join(ROOT, 'transparencia', 'template.html'), 'utf8');
+
+let built;
+const site = () => {
+  if (!built) {
+    const out = tmpDir('datos-page-');
+    const result = spawnSync(process.execPath, [join(ROOT, 'transparencia', 'build.js'), '--dump', FIXTURES_DUMP, '--out', out], { encoding: 'utf8' });
+    if (result.status !== 0) throw new Error(result.stderr);
+    built = { out, html: readFileSync(join(out, 'datos', 'index.html'), 'utf8') };
+  }
+  return built;
+};
+
+test('la página /datos se escribe en datos/index.html y no deja marcadores sin sustituir', (t) => {
+  const { html } = site();
+  t.regex(html, /^<!doctype html>/);
+  t.notRegex(html, /__[A-Z_]+__|\/\*[A-Z]+\*\//);
+});
+
+test('la página lista todos los ficheros con su enlace, tamaño real y fecha de los datos', (t) => {
+  const { out, html } = site();
+  for (const f of FILES) {
+    const name = f.path.split('/').pop();
+    const href = f.path.startsWith('datos/') ? name : `../${f.path}`;
+    const bytes = statSync(join(out, f.path)).size;
+    const row = html.match(new RegExp(`<tr><th scope="row"><a href="${href.replace('.', '\\.')}"[^>]*>${name.replace('.', '\\.')}</a></th>[^\\n]*</tr>`))?.[0];
+    t.truthy(row, name);
+    t.true(row.includes(`data-bytes="${bytes}"`), name);
+    t.regex(row, /<time datetime="[^"]+">\d{2}\/\d{2}\/\d{4}<\/time>/);
+    t.is(/ download[ >]/.test(row), !name.endsWith('.xml'), `${name}: atributo download`);
+  }
+  t.true(FILES.some((f) => f.path === 'datos/contratos.csv') && FILES.some((f) => f.path === 'feed.xml'));
+  t.is(FILES.filter((f) => f.path.endsWith('.ics')).length, 5);
+});
+
+test('la tabla de ficheros y las del diccionario usan th scope; el diccionario lista todos los campos', (t) => {
+  const { html } = site();
+  t.true((html.match(/<th scope="col">/g) || []).length >= 11);
+  for (const f of [...FIELDS, ...ADJ_FIELDS]) t.true(html.includes(`<th scope="row"><code>${f.name}</code></th>`), f.name);
+  t.notRegex(html, /<th>/);
+});
+
+test('el JSON-LD es un Dataset válido con una distribution por fichero', (t) => {
+  const { html } = site();
+  const ld = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+  t.is(ld['@type'], 'Dataset');
+  t.is(ld.inLanguage, 'es');
+  t.is(ld.license, LICENSE.url);
+  t.is(ld.creator.name, 'Ayuntamiento de Aranda de Duero');
+  t.is(ld.publisher.name, 'Ayuntamiento de Aranda de Duero');
+  t.is(ld.dateModified, generated);
+  t.is(ld.url, `${SITE_URL}datos/`);
+  t.regex(ld.temporalCoverage, /^\d{4}-\d{2}-\d{2}\/\d{4}-\d{2}-\d{2}$/);
+  t.is(ld.distribution.length, FILES.length);
+  for (const f of FILES) {
+    const d = ld.distribution.find((x) => x.contentUrl === `${SITE_URL}${f.path}`);
+    t.truthy(d, f.path);
+    t.is(d['@type'], 'DataDownload');
+    t.is(d.encodingFormat, f.mime);
+  }
+});
+
+test('la página usa las constantes de site.js, el canonical y las metas básicas', (t) => {
+  const { html } = site();
+  t.true(html.includes(`<link rel="canonical" href="${SITE_URL}datos/">`));
+  t.true(html.includes(`<meta property="og:image" content="${SITE_URL}images/og-contratacion.png">`));
+  t.true(html.includes(`<meta name="twitter:image" content="${SITE_URL}images/og-contratacion.png">`));
+  t.regex(html, /<title>[^<]+<\/title>/);
+  t.regex(html, /<meta name="description" content="[^"]+">/);
+  t.regex(html, /<meta name="theme-color"/);
+  t.regex(html, /<link rel="icon"/);
+  t.true(html.includes(`${REPO_URL}/tree/main/dump`));
+  t.true(html.includes(`href="${AYTO_URL}"`));
+  t.true(html.includes(LICENSE.attribution));
+  // la plantilla no lleva URLs del sitio escritas a mano
+  t.notRegex(PAGE_TEMPLATE, /willyaranda|github\.com\/[a-z]/);
+});
+
+test('la página es estática (sin scripts ejecutables), con landmarks y sin ocultar el contenido hasta "ready"', (t) => {
+  const { html } = site();
+  t.notRegex(html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, ''), /<script/);
+  t.notRegex(html, /body:not\(\.ready\)|visibility:hidden/);
+  t.regex(html, /<header class="top">[\s\S]*<h1>[\s\S]*<\/header>\s*<main[^>]*id="contenido"/);
+  t.regex(html, /<\/main>\s*<footer/);
+  t.is((html.match(/<h1>/g) || []).length, 1);
+  t.regex(html, /<a class="skip" href="#contenido">/);
+  t.regex(html, /:focus-visible/);
+  t.regex(html, /prefers-color-scheme:dark/);
+});
+
+test('la página explica la licencia, el origen, la actualización y la fuente oficial, sin partidos', (t) => {
+  const { html } = site();
+  t.regex(html, /Ley 37\/2007/);
+  t.regex(html, /CC BY 4\.0/);
+  t.regex(html, /cada noche/);
+  t.regex(html, /fuente oficial es siempre el anuncio original/);
+  t.regex(html, /curl -O/);
+  t.notRegex(html, /Sentir|Partido Popular|\bPSOE\b|\bPP\b/);
+});
+
+test('la paleta de la página /datos es la misma que la de la principal', (t) => {
+  for (const token of ['--brand', '--primary-accessible', '--secondary', '--bg', '--surface', '--ink', '--muted', '--line', '--focus', '--chip']) {
+    const value = (tpl) => [...tpl.matchAll(new RegExp(`${token}:(#[0-9a-f]{3,6})`, 'g'))].map((m) => m[1]);
+    const datos = value(PAGE_TEMPLATE);
+    t.true(datos.length > 0, token);
+    // cada valor (claro u oscuro) de /datos aparece, en el mismo orden, en la principal
+    const main = value(MAIN_TEMPLATE);
+    t.deepEqual(main.filter((v) => datos.includes(v)).slice(0, datos.length), datos, token);
+  }
+});
+
+test('la principal enlaza a datos/ en la cabecera y el pie, y /datos enlaza de vuelta a ../', (t) => {
+  t.regex(MAIN_TEMPLATE, /<p class="cal">[\s\S]*<a href="datos\/"[^>]*>Datos abiertos<\/a><\/p>/);
+  t.regex(MAIN_TEMPLATE, /<p class="foot-links">[\s\S]*<a href="datos\/">Datos abiertos<\/a>[\s\S]*<\/p>/);
+  const { html } = site();
+  t.regex(html, /<header class="top">[\s\S]*<a href="\.\.\/">[^<]*Volver[^<]*<\/a>[\s\S]*<\/header>/);
+  t.regex(html, /<footer[\s\S]*<a href="\.\.\/">Página de transparencia<\/a>[\s\S]*<\/footer>/);
 });

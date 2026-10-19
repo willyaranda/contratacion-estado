@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Datos abiertos de contratación · Ayuntamiento de Aranda de Duero</title>
+<link rel="canonical" href="__SITE_URL__datos/">
+<meta name="description" content="Datos abiertos de contratación del Ayuntamiento de Aranda de Duero: contratos en CSV y JSON, calendarios y feeds para descargar y reutilizar con licencia CC BY 4.0.">
+<meta name="robots" content="index,follow">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0083c1" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0b2a3a" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="__SITE_URL__images/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="__SITE_URL__images/favicon-32.png">
+<link rel="apple-touch-icon" href="__SITE_URL__images/apple-touch-icon.png">
+<link rel="manifest" href="__SITE_URL__site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Ayuntamiento de Aranda de Duero">
+<meta property="og:title" content="Datos abiertos de contratación · Ayuntamiento de Aranda de Duero">
+<meta property="og:description" content="Contratos del Ayuntamiento de Aranda de Duero en CSV y JSON, calendarios y feeds para descargar y reutilizar con licencia CC BY 4.0.">
+<meta property="og:url" content="__SITE_URL__datos/">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="__SITE_URL__images/og-contratacion.png">
+<meta property="og:image:secure_url" content="__SITE_URL__images/og-contratacion.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Contratación pública · Aranda de Duero: licitaciones, contratos menores, adjudicaciones y calendario de mesas, con el logotipo del Ayuntamiento">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@aytoaranda">
+<meta name="twitter:title" content="Datos abiertos de contratación · Ayuntamiento de Aranda de Duero">
+<meta name="twitter:description" content="Contratos del Ayuntamiento de Aranda de Duero en CSV y JSON, calendarios y feeds para descargar y reutilizar con licencia CC BY 4.0.">
+<meta name="twitter:image" content="__SITE_URL__images/og-contratacion.png">
+<meta name="twitter:image:alt" content="Contratación pública · Aranda de Duero: licitaciones, contratos menores, adjudicaciones y calendario de mesas, con el logotipo del Ayuntamiento">
+<script type="application/ld+json">/*JSONLD*/</script>
+<style>
+/*FONTFACE*/
+/* Misma paleta que la página principal (transparencia/template.html): un test comprueba que no se desvían */
+:root{
+  --brand:#30b5e5;--primary:#0083c1;--primary-accessible:#0073ad;--secondary:#e9f4f9;
+  --bg:#f4f8fb;--surface:#fff;--ink:#3c3c3c;--muted:#646464;--line:#d9e4ec;
+  --accent:var(--primary-accessible);--accent-ink:#fff;--chip:var(--secondary);--focus:var(--primary-accessible);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f161c;--surface:#182029;--ink:#e8eef2;--muted:#a3b0ba;--line:#2a3641;
+    --accent:#4cb4e8;--accent-ink:#0b1218;--chip:#16303f;--focus:#7fd0f5;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f161c;--surface:#182029;--ink:#e8eef2;--muted:#a3b0ba;--line:#2a3641;
+  --accent:#4cb4e8;--accent-ink:#0b1218;--chip:#16303f;--focus:#7fd0f5;color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{color-scheme:light dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Outfit",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 16px}
+.skip{position:absolute;left:8px;top:-60px;background:var(--accent);color:var(--accent-ink);padding:8px 12px;border-radius:8px;z-index:10}
+.skip:focus{top:8px}
+header.top{background:var(--surface);border-bottom:1px solid var(--line);padding:0}
+header.top .brand{background:var(--brand);padding:12px 0}
+header.top .brand img{display:block;height:52px;width:auto;max-width:100%;aspect-ratio:720/183}
+header.top .wrap.head{padding-top:18px;padding-bottom:14px}
+header.top h1{margin:0 0 4px;font-size:1.5rem}
+header.top p{margin:0 0 10px;color:var(--muted);max-width:75ch}
+header.top p.cal{margin:0;font-size:.85rem}
+main{padding-top:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
+.panel h2{margin:0 0 12px;font-size:1.05rem}
+.panel p,.panel ul{max-width:80ch}
+.panel p:last-child,.panel ul:last-child{margin-bottom:0}
+.note{font-size:.82rem;color:var(--muted)}
+code{background:var(--chip);border-radius:4px;padding:1px 5px;font-size:.88em}
+pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:12px;overflow-x:auto;margin:0 0 12px;font-size:.85rem}
+pre code{background:none;padding:0}
+.scroll{overflow-x:auto}
+.scroll+.scroll{margin-top:16px}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+caption{text-align:left;color:var(--muted);padding:0 0 8px;font-size:.85rem}
+th,td{text-align:left;vertical-align:top;padding:8px 10px;border-bottom:1px solid var(--line)}
+thead th{border-bottom:2px solid var(--line);white-space:nowrap}
+tbody th{font-weight:600;white-space:nowrap}
+td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.site-foot{margin-top:32px;padding:20px 0 28px;border-top:1px solid var(--line);background:var(--surface)}
+.foot-id{display:flex;gap:16px;align-items:flex-start;font-size:.85rem}
+.foot-id p{margin:0 0 4px}
+.foot-crest{flex:none;height:64px;width:auto;background:#fff;border-radius:8px;padding:4px}
+.foot-links{display:flex;gap:6px 18px;flex-wrap:wrap;margin-top:8px!important}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top">
+<div class="brand"><div class="wrap"><img src="__LOGO_AYTO_NEG__" width="720" height="183" alt="Ayuntamiento de Aranda de Duero"></div></div>
+<div class="wrap head">
+  <h1>Datos abiertos de contratación</h1>
+  <p>Contratos del Ayuntamiento de Aranda de Duero publicados en la Plataforma de Contratación del Sector Público, en formatos abiertos para descargarlos y reutilizarlos.</p>
+  <p class="cal"><a href="../">&larr; Volver a la página de transparencia</a></p>
+</div></header>
+
+<main class="wrap" id="contenido">
+
+<section class="panel" aria-labelledby="que-es">
+  <h2 id="que-es">Qué son estos datos</h2>
+  <p>Esta página reúne, para su descarga, los conjuntos de datos que alimentan la <a href="../">página de transparencia en materia de contratación</a>:
+  los contratos del Ayuntamiento de Aranda de Duero (licitaciones y contratos menores), un resumen por adjudicatario, los calendarios
+  y los feeds de novedades. Sirven para consultar, analizar o comparar la contratación municipal sin tener que recorrer los anuncios uno a uno.</p>
+  <p>Contienen <strong>__N_CONTRATOS__ contratos</strong> y <strong>__N_ADJ__ adjudicatarios</strong>, con anuncios de __COVERAGE__.
+  Fecha de los datos: <time datetime="__GENERATED__">__GENERATED_DATE__</time>.</p>
+</section>
+
+<section class="panel" aria-labelledby="licencia">
+  <h2 id="licencia">Licencia y atribución</h2>
+  <p>Los datos se publican para su reutilización conforme a la Ley 37/2007, sobre reutilización de la información del sector público,
+  bajo la licencia <a href="__LICENSE_URL__" rel="license noopener">__LICENSE_NAME__</a>. Se pueden copiar, distribuir y adaptar, también con fines
+  comerciales, citando la fuente.</p>
+  <p>Atribución: <strong>__ATTRIBUTION__</strong>.</p>
+  <p class="note">La licencia de los datos es independiente de la del código que los genera, que es
+  <a href="__REPO_URL__/blob/main/LICENSE" rel="noopener">MIT</a>.</p>
+</section>
+
+<section class="panel" aria-labelledby="ficheros">
+  <h2 id="ficheros">Ficheros</h2>
+  <div class="scroll" role="region" aria-labelledby="ficheros" tabindex="0">
+  <table>
+    <caption>Ficheros disponibles para descargar</caption>
+    <thead><tr><th scope="col">Fichero</th><th scope="col">Descripción</th><th scope="col">Formato</th><th scope="col">Tamaño</th><th scope="col">Fecha de los datos</th></tr></thead>
+    <tbody>
+__FILES_ROWS__
+    </tbody>
+  </table>
+  </div>
+  <p class="note">Los calendarios (.ics) se pueden suscribir desde Google Calendar, Apple Calendar u Outlook, y los feeds (Atom y RSS) desde cualquier lector de noticias.</p>
+</section>
+
+<section class="panel" aria-labelledby="bruto">
+  <h2 id="bruto">Código fuente y datos en bruto</h2>
+  <p>Los anuncios originales, tal como se descargan de la Plataforma de Contratación del Sector Público, se guardan en formato JSON en la carpeta
+  <a href="__REPO_URL__/tree/main/dump" rel="noopener"><code>dump/</code></a> del repositorio (unos 50 MB en total).
+  El código que descarga, transforma y publica los datos está en el <a href="__REPO_URL__" rel="noopener">repositorio de GitHub</a>.</p>
+</section>
+
+<section class="panel" aria-labelledby="diccionario">
+  <h2 id="diccionario">Diccionario de datos</h2>
+  <p>Campos de <code>contratos.csv</code> y de cada elemento de <code>contratos</code> en <code>contratos.json</code>. Los importes son números con punto
+  decimal (en euros), las fechas siguen el formato ISO 8601 (AAAA-MM-DD) y los datos que faltan van como campo vacío en el CSV y como <code>null</code> en el JSON.</p>
+  <div class="scroll" role="region" aria-label="Campos de contratos.csv y contratos.json" tabindex="0">
+  <table>
+    <caption>Campos de los contratos</caption>
+    <thead><tr><th scope="col">Campo</th><th scope="col">Tipo</th><th scope="col">Descripción</th></tr></thead>
+    <tbody>
+__DICT_CONTRATOS__
+    </tbody>
+  </table>
+  </div>
+  <div class="scroll" role="region" aria-label="Campos de adjudicatarios.csv" tabindex="0">
+  <table>
+    <caption>Campos de adjudicatarios.csv</caption>
+    <thead><tr><th scope="col">Campo</th><th scope="col">Tipo</th><th scope="col">Descripción</th></tr></thead>
+    <tbody>
+__DICT_ADJ__
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section class="panel" aria-labelledby="uso">
+  <h2 id="uso">Ejemplo de uso</h2>
+<pre tabindex="0"><code>curl -O __SITE_URL__datos/contratos.csv
+python3 -c "import pandas as pd; print(pd.read_csv('contratos.csv').groupby('mandato').size())"
+node -e "fetch('__SITE_URL__datos/contratos.json').then(r =&gt; r.json()).then(d =&gt; console.log(d.contratos.length))"</code></pre>
+</section>
+
+<section class="panel" aria-labelledby="actualizacion">
+  <h2 id="actualizacion">Actualización</h2>
+  <p>Los ficheros se regeneran cada noche; las ejecuciones de mediodía recogen lo publicado por la mañana. Solo cambian cuando hay anuncios nuevos o modificados.</p>
+</section>
+
+<section class="panel" aria-labelledby="fuente">
+  <h2 id="fuente">Fuente oficial y consulta</h2>
+  <p>La fuente oficial es siempre el anuncio original en la <a href="__SOURCE_URL__" rel="noopener">Plataforma de Contratación del Sector Público</a>
+  (cada contrato lleva su enlace en el campo <code>url_anuncio</code>): conviene confirmar allí el estado del contrato. Estos ficheros son una copia
+  informativa y pueden contener retrasos o errores de transcripción.</p>
+  <p>Para cualquier consulta, puede dirigirse al Ayuntamiento de Aranda de Duero a través de <a href="__AYTO_URL__" rel="noopener">www.arandadeduero.es</a>.</p>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-id">
+      <img src="__ESCUDO_AYTO__" width="239" height="360" alt="" class="foot-crest">
+      <div>
+        <p>Datos abiertos de contratación del Ayuntamiento de Aranda de Duero. Datos de la Plataforma de Contratación del Sector Público.</p>
+        <p>© __BUILD_YEAR__ Ayuntamiento de Aranda de Duero</p>
+        <p class="foot-links">
+          <a href="../">Página de transparencia</a>
+          <a href="__AYTO_URL__" rel="noopener">www.arandadeduero.es</a>
+          <a href="__REPO_URL__" rel="noopener">Código en GitHub</a>
+          <a href="__REPO_URL__/blob/main/LICENSE" rel="noopener">Licencia MIT del código</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

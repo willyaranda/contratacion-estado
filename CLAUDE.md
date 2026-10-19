@@ -29,6 +29,8 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
 - Los contratos se asignan a la corporación que los sacó: licitaciones por fecha de publicación del anuncio y
   contratos menores por fecha de adjudicación.
 
+La página `/datos` (datos abiertos) se genera con `transparencia/datos.html` y `lib/datos.js`.
+
 ## Pipeline
 
 - `.github/workflows/nightly.yml` (02:17, 05:43, 14:17 y 15:17 UTC; GitHub no garantiza los disparos programados,

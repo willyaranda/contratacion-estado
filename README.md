@@ -31,6 +31,22 @@ feeds, y la página los anuncia para el descubrimiento automático.
 
 Las entradas son una foto de los datos del último nocturno (las fechas son las de los anuncios, no la de la consulta).
 
+## Datos abiertos
+
+Página con todos los ficheros y el diccionario de datos: <https://willyaranda.github.io/contratacion-estado/datos/>
+
+| Fichero | URL |
+| --- | --- |
+| Contratos (CSV) | <https://willyaranda.github.io/contratacion-estado/datos/contratos.csv> |
+| Contratos (JSON) | <https://willyaranda.github.io/contratacion-estado/datos/contratos.json> |
+| Adjudicatarios (CSV) | <https://willyaranda.github.io/contratacion-estado/datos/adjudicatarios.csv> |
+
+Más los calendarios y los feeds de arriba. Los anuncios originales descargados de la Plataforma están en [`dump/`](dump/).
+Se regeneran cada noche. Los **datos** se publican con licencia
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/deed.es) (reutilización de la información del sector público,
+Ley 37/2007), citando: «Ayuntamiento de Aranda de Duero, a partir de la Plataforma de Contratación del Sector Público».
+La licencia MIT es solo del código.
+
 ## Qué incluye
 
 - Licitaciones y contratos menores del Ayuntamiento, con adjudicatarios, importes, ofertas y plazos.
@@ -75,4 +91,5 @@ confirma siempre el estado de cada procedimiento en el anuncio original.
 
 ## Licencia
 
-[MIT](LICENSE), © 2026 Ayuntamiento de Aranda de Duero.
+El código: [MIT](LICENSE), © 2026 Ayuntamiento de Aranda de Duero. Los datos publicados en `/datos`: CC BY 4.0
+(ver «Datos abiertos»).
