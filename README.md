@@ -51,4 +51,4 @@ confirma siempre el estado de cada procedimiento en el anuncio original.
 
 ## Licencia
 
-ISC.
+[MIT](LICENSE), © 2026 Ayuntamiento de Aranda de Duero.
