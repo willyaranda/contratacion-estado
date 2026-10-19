@@ -61,6 +61,13 @@ header.top p.cal{margin:-6px 0 14px;font-size:.85rem}
 .kpi .s{margin-top:6px;padding-top:6px;border-top:1px solid var(--line);font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px;margin-bottom:16px}
 .panel h2{margin:0 0 12px;font-size:1.05rem}
+#filters h2{margin:0}
+#filters-body:not([hidden]){margin-top:12px}
+.ftoggle{display:flex;align-items:center;gap:8px;border:0;background:none;padding:2px 0;font:inherit;font-weight:700;color:var(--ink);cursor:pointer;text-align:left}
+.ftoggle .chev{flex:none;transition:transform .15s ease}
+.ftoggle[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.fcount{background:var(--o-info-bg);border:1px solid var(--o-info-bd);border-radius:999px;padding:0 8px;font-size:.75rem;font-weight:600}
+@media (prefers-reduced-motion:reduce){.ftoggle .chev{transition:none}}
 .filters{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
 .filters .search{grid-column:1/-1}
 label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:3px}
@@ -222,7 +229,8 @@ footer{padding:24px 0 40px}
 
 <main class="wrap">
   <section class="panel" id="filters" aria-labelledby="h-filtros" style="margin-top:16px">
-    <h2 id="h-filtros">Buscar y filtrar</h2>
+    <h2 id="h-filtros"><button type="button" id="filters-toggle" class="ftoggle" aria-expanded="false" aria-controls="filters-body"><svg class="chev" viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" focusable="false"><path d="M5 2l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Buscar y filtrar</span><span class="fcount" id="filters-count" hidden></span></button></h2>
+    <div id="filters-body" hidden>
     <div class="filters">
       <div class="search">
         <label for="q">Texto libre: objeto del contrato, contratista, NIF o nº de expediente</label>
@@ -242,6 +250,7 @@ footer{padding:24px 0 40px}
       <div><label for="f-from">Desde</label><input id="f-from" type="date"></div>
       <div><label for="f-to">Hasta</label><input id="f-to" type="date"></div>
       <div class="row"><button id="reset" class="primary" type="button">Limpiar filtros</button></div>
+    </div>
     </div>
     <div class="chips" id="chips"></div>
   </section>
@@ -567,6 +576,10 @@ for (const [id,key,delay] of bind) {
     clearTimeout(timer); timer = setTimeout(render, delay);
   });
 }
+$("filters-toggle").addEventListener("click", () => {
+  const open = $("filters-toggle").getAttribute("aria-expanded") !== "true";
+  $("filters-toggle").setAttribute("aria-expanded", String(open)); $("filters-body").hidden = !open;
+});
 $("reset").addEventListener("click", () => {
   Object.assign(state, { q:"",year:"",month:"",body:"",kind:"",type:"",proc:"",status:"",result:"",period:"",min:"",max:"",from:"",to:"",winner:"" });
   for (const [id,key] of bind) if (!key.startsWith("cmp") && key !== "adjQ") $(id).value = "";
@@ -1000,6 +1013,9 @@ function render() {
   document.querySelectorAll("[data-tab]").forEach((s) => { s.hidden = s.dataset.tab !== state.tab; });
 
   filtered = R.filter((r) => passes(r));
+  // indicador de filtros activos en el botón (los filtros se aplican aunque el panel esté colapsado)
+  const nActive = ["q","year","month","body","kind","type","proc","status","result","period","min","max","from","to","winner"].filter((k) => state[k] !== "" && state[k] != null).length;
+  $("filters-count").hidden = !nActive; $("filters-count").textContent = nActive ? `${nActive} ${nActive === 1 ? "activo" : "activos"}` : "";
   const chips = [];
   if (state.winner) chips.push(["winner", "Contratista: " + winnerLabel(state.winner)]);
   $("chips").innerHTML = chips.map(([k,t]) => `<span class="chip">${esc(t)}<button data-k="${k}" aria-label="Quitar filtro: ${esc(t)}">×</button></span>`).join("");

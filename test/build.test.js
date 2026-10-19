@@ -226,3 +226,13 @@ test('la etiqueta NextGenerationEU es azul, con la bandera de la UE incrustada (
   const html = renderPage(TEMPLATE, { generated: 'x', records: [] }, '', assetUris());
   t.regex(html, /const NG_FLAG = "data:image\/svg\+xml;base64,/);
 });
+
+test('"Buscar y filtrar" carga colapsado: botón con aria-expanded="false", aria-controls y chevron', (t) => {
+  t.regex(TEMPLATE, /<button type="button" id="filters-toggle" class="ftoggle" aria-expanded="false" aria-controls="filters-body"><svg class="chev"[^>]*aria-hidden="true"[\s\S]*?<span>Buscar y filtrar<\/span>/);
+  t.regex(TEMPLATE, /<div id="filters-body" hidden>/);
+  t.regex(TEMPLATE, /\.ftoggle\[aria-expanded="true"\] \.chev\{transform:rotate\(90deg\)\}/);
+  t.regex(TEMPLATE, /prefers-reduced-motion:reduce\)\{\.ftoggle \.chev\{transition:none\}/);
+  // los filtros activos se indican en el botón y las pestañas informativas siguen ocultando todo el panel
+  t.true(TEMPLATE.includes('id="filters-count"'));
+  t.true(TEMPLATE.includes('$("filters").hidden = state.tab === "sentiraranda"'));
+});
