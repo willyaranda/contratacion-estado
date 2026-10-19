@@ -1,0 +1,25 @@
+test/build.test.js
+  s_9e2a1116b4316a::t_a3a3de1a39ade5 180-186
+  s_9e2a1116b4316a::t_e6a51475e4a7dd 148-179,187-196
+transparencia/template.html
+  s_9e2a1116b4316a::t_2a64bfee5ae4c5 14-15,25,34,105-106,108,114-116,163-165,304,311,450,452-460,463,508,645,648,998,1053,1084,1319,1385,1391,1401,1405,1475,1478
+  s_9e2a1116b4316a::t_9096d8bf394272 461-462,1409,1412,1415
+docs/index.html
+  s_9e2a1116b4316a::t_65d3b8d5379a8b 15-16,26,35,106-107,109,115-117,164-166,305,312,451,453-464,509,646,649,999,1054,1085,1320,1386,1392,1402,1406,1410,1413,1416,1476,1479
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "37e2a41791eba42d0d31f135543254b5bd294e24",
+  "prompts": {},
+  "sessions": {
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
