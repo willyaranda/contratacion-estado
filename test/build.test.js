@@ -323,8 +323,15 @@ test('renderMesas: solo mesas futuras, con las cuatro opciones de calendario y t
   t.regex(html, /href="https:\/\/outlook\.office\.com\/calendar\/0\/deeplink\/compose\?path=%2Fcalendar%2Faction%2Fcompose&amp;rru=addevent/);
   t.is((html.match(/data:text\/calendar/g) ?? []).length, 2); // Apple e ICS
   t.regex(html, /download="mesa-10-2-sobre-a\.ics"/);
-  t.regex(html, />📅 ICS</);
+  t.regex(html, />ICS</);
   t.regex(html, /Apple Calendar/);
+  // emoji delante de cada opción, oculto a los lectores de pantalla
+  for (const [emoji, name] of [['🗓️', 'Google Calendar'], ['📧', 'Outlook 365'], ['📱', 'Apple Calendar'], ['📅', 'ICS']]) {
+    t.true(html.includes(`<span class="emo" aria-hidden="true">${emoji}</span>${name}`), name);
+  }
+  t.is((html.match(/class="emo" aria-hidden="true"/g) ?? []).length, 4);
+  // enlace al calendario de mesas junto al título de la franja (misma función en Resumen y en Abiertas)
+  t.regex(html, /<div class="head"><h2 id="h-mesas">[\s\S]*?<\/h2><a class="cal-link" href="mesas\.ics"[^>]*>📅 Calendario mesas de contratación<\/a><\/div>/);
   t.is((html.match(/target="_blank" rel="noopener noreferrer"/g) ?? []).length, 3); // ficha, Google y Outlook
   t.regex(html, /aria-label="Añadir al calendario: /);
 });
@@ -334,6 +341,7 @@ test('renderMesas: sin mesas futuras, una línea discreta; con más de cuatro, "
   mesasApi([{ ...MESA, start: NOW_MESAS - 1 }]).renderMesas(none, NOW_MESAS);
   t.regex(none.innerHTML, /No hay mesas de contratación pendientes/);
   t.notRegex(none.innerHTML, /mesacal/);
+  t.regex(none.innerHTML, /href="mesas\.ics"/);
   const many = fakeBox();
   mesasApi(Array.from({ length: 6 }, (_, i) => ({ ...MESA, uid: `m${i}@x`, start: MESA.start + i }))).renderMesas(many, NOW_MESAS);
   t.regex(many.innerHTML, /Ver todas \(6\)/);
@@ -386,4 +394,12 @@ test('build.js escribe el calendario completo y los cuatro temáticos', (t) => {
     t.true(ics.startsWith('BEGIN:VCALENDAR\r\n'), file);
     t.true(ics.includes(`X-WR-CALNAME:${name}`), file);
   }
+});
+
+test('la página enlaza a plazos.ics en Licitaciones abiertas y no a adjudicaciones.ics ni vencimientos.ics', (t) => {
+  t.regex(TEMPLATE, /<div data-tab="abiertas" hidden>[\s\S]*?<a class="cal-link" href="plazos\.ics"[^>]*>📅 Calendario de plazos de licitaciones<\/a>/);
+  t.is((TEMPLATE.match(/href="plazos\.ics"/g) ?? []).length, 1);
+  t.is((TEMPLATE.match(/href="mesas\.ics"/g) ?? []).length, 1); // dentro de renderMesas
+  t.notRegex(TEMPLATE, /adjudicaciones\.ics|vencimientos\.ics/);
+  t.regex(TEMPLATE, /<a href="aperturas\.ics" title="Calendario completo[^"]*">Calendario de Contratación<\/a>/);
 });

@@ -222,6 +222,7 @@ footer{padding:24px 0 40px}
 .empty{padding:24px;text-align:center;color:var(--muted)}
 /* franja "Próximas mesas de contratación" (renderMesas): la misma en Resumen y en Licitaciones abiertas */
 .mesas{padding:10px 14px;margin-bottom:16px}
+.mesas .head{display:flex;gap:4px 16px;align-items:baseline;justify-content:space-between;flex-wrap:wrap}
 .mesas h2{margin:0;font-size:.95rem;display:flex;gap:8px;align-items:baseline;flex-wrap:wrap}
 .mesas h2 .note{font-weight:400}
 .mesas ul{list-style:none;margin:6px 0 0;padding:0}
@@ -236,6 +237,10 @@ footer{padding:24px 0 40px}
 .mesas .more{margin-top:4px}
 .mesas .more>summary{cursor:pointer;color:var(--accent);font-size:.85rem;padding:4px 0}
 .mesas .empty-line{margin:4px 0 0;color:var(--muted);font-size:.88rem}
+.cal-link{font-size:.82rem;color:var(--muted);text-decoration:none;white-space:nowrap}
+.cal-link:hover{text-decoration:underline;color:var(--accent)}
+.cal-link:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+details.mesacal .menu a .emo{display:inline-block;width:1.5em}
 details.mesacal{position:relative}
 details.mesacal>summary{cursor:pointer;list-style:none;border:1px solid var(--line);border-radius:8px;padding:3px 10px;font-size:.8rem;white-space:nowrap;background:var(--surface);color:var(--ink)}
 details.mesacal>summary::-webkit-details-marker{display:none}
@@ -254,7 +259,7 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
   <p>Explorador ciudadano y no oficial de los contratos del Ayuntamiento (Alcaldía, Junta de Gobierno y Pleno) publicados en la
   Plataforma de Contratación del Sector Público
   (<a href="https://contrataciondelestado.es" rel="noopener">contrataciondelestado.es</a>): licitaciones y contratos menores.</p>
-  <p class="cal"><a href="aperturas.ics" title="Fichero .ics: publicación y último día de cada licitación, y aperturas de ofertas (últimos 60 días y próximos)">Calendario de Contratación</a></p>
+  <p class="cal"><a href="aperturas.ics" title="Calendario completo (.ics): mesas de contratación, plazos de licitaciones, adjudicaciones y vencimientos de contratos (últimos 60 días y próximos)">Calendario de Contratación</a></p>
   <div class="tabs" role="tablist" aria-label="Secciones" id="tabs"></div>
 </div></header>
 
@@ -457,6 +462,7 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
       <h2>Licitaciones con plazo de presentación abierto</h2>
       <div id="t-open"></div>
       <p class="note" id="open-note"></p>
+      <p class="note" style="margin:6px 0 0"><a class="cal-link" href="plazos.ics" title="Fichero .ics con la publicación y el último día de plazo de cada licitación">📅 Calendario de plazos de licitaciones</a></p>
     </section>
   </div>
 
@@ -1584,6 +1590,7 @@ const mesaWhen = (ms, now) => {
   const diff = Math.round((Date.UTC(+p.year, +p.month - 1, +p.day) - Date.UTC(+q.year, +q.month - 1, +q.day)) / 864e5);
   return { label: `${p.weekday.replace(".", "")} ${p.day}/${p.month} · ${p.hour}:${p.minute}`, rel: diff <= 0 ? "hoy" : diff === 1 ? "mañana" : `en ${diff} días` };
 };
+const emo = (e) => `<span class="emo" aria-hidden="true">${e}</span>`;
 const mesaRow = (m, now) => {
   const w = mesaWhen(m.start, now);
   const title = m.link ? `<a href="${esc(m.link)}" target="_blank" rel="noopener noreferrer" title="${esc(m.title)}">${esc(m.title)}</a>` : `<span class="t" title="${esc(m.title)}">${esc(m.title)}</span>`;
@@ -1592,10 +1599,10 @@ const mesaRow = (m, now) => {
     + `<div class="typ"><span class="tag">${esc(m.type)}</span>${m.public === false ? ' <span class="tag">no público</span>' : ""}</div>`
     + `<div class="what">${title}${m.location ? `<span class="sub">${esc(m.location)}</span>` : ""}</div>`
     + `<div class="act"><details class="mesacal"><summary aria-label="Añadir al calendario: ${esc(m.type)}, ${esc(m.title)}, ${esc(w.label)}">Añadir al calendario</summary><div class="menu">`
-    + `<a href="${esc(mesaGoogleUrl(m))}" ${ext}>Google Calendar</a>`
-    + `<a href="${esc(mesaOutlookUrl(m))}" ${ext}>Outlook 365</a>`
-    + `<a href="${esc(mesaIcsUri(m))}" download="${esc(mesaFile(m))}">Apple Calendar (.ics)</a>`
-    + `<a href="${esc(mesaIcsUri(m))}" download="${esc(mesaFile(m))}">📅 ICS</a>`
+    + `<a href="${esc(mesaGoogleUrl(m))}" ${ext}>${emo("🗓️")}Google Calendar</a>`
+    + `<a href="${esc(mesaOutlookUrl(m))}" ${ext}>${emo("📧")}Outlook 365</a>`
+    + `<a href="${esc(mesaIcsUri(m))}" download="${esc(mesaFile(m))}">${emo("📱")}Apple Calendar (.ics)</a>`
+    + `<a href="${esc(mesaIcsUri(m))}" download="${esc(mesaFile(m))}">${emo("📅")}ICS</a>`
     + `</div></details></div></li>`;
 };
 const MESAS_VISIBLE = 4;
@@ -1603,7 +1610,8 @@ const MESAS_VISIBLE = 4;
 function renderMesas(container, now = Date.now()) {
   const next = (DATA.mesas || []).filter((m) => m.start >= now);
   const hid = container.getAttribute("aria-labelledby");
-  const head = `<h2 id="${esc(hid)}">Próximas mesas de contratación${next.length ? ` <span class="note">(${next.length})</span>` : ""}</h2>`;
+  const head = `<div class="head"><h2 id="${esc(hid)}">Próximas mesas de contratación${next.length ? ` <span class="note">(${next.length})</span>` : ""}</h2>`
+    + '<a class="cal-link" href="mesas.ics" title="Fichero .ics con todas las mesas de contratación: suscríbete desde tu calendario">📅 Calendario mesas de contratación</a></div>';
   if (!next.length) { container.innerHTML = head + '<p class="empty-line">No hay mesas de contratación pendientes</p>'; return; }
   const rest = next.slice(MESAS_VISIBLE);
   container.innerHTML = head + `<ul>${next.slice(0, MESAS_VISIBLE).map((m) => mesaRow(m, now)).join("")}</ul>`
