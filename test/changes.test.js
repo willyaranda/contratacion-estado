@@ -57,8 +57,8 @@ test('buildDigest indica el estado anterior y los cambios de documentos', (t) =>
   const before = version({ ts: 1000, status: 'PUB', docs: [['a', 'Pliego.pdf']] });
   const after = version({ ts: 2000, status: 'EV', docs: [['a', 'Pliego.pdf'], ['c', 'Acta.pdf']] });
   const { body } = buildDigest([after], () => before);
-  t.regex(body, /Estado: PUB -> EV/);
+  t.regex(body, /Estado: Publicada -> En evaluación/);
   t.regex(body, /Documentos añadidos \(1\): Acta\.pdf/);
   t.notRegex(body, /retirados/);
-  t.regex(buildDigest([after]).body, /Novedad: anuncio nuevo \(estado EV\)/);
+  t.regex(buildDigest([after]).body, /Novedad: anuncio nuevo \(estado En evaluación\)/);
 });

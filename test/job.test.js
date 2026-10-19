@@ -127,7 +127,7 @@ test('runJob: descarga el anuncio, consulta sus aperturas reales y las incluye e
   const [message] = ses.sent;
   t.deepEqual(message.Destination, { BccAddresses: ['uno@example.com', 'dos@example.org'] });
   const { Data: body } = message.Message.Body.Text;
-  t.regex(body, /Estado: PUB -> EV/);
+  t.regex(body, /Estado: Publicada -> En evaluación/);
   t.regex(body, /Documentos añadidos \(1\): Acta\.pdf/);
   t.regex(body, /PRIV · Administrativo: 14\/10\/2026 11:30 · Salón de Plenos · acto no público/);
   t.regex(body, /^ {2}Oferta técnica: 14\/10\/2026 11:45 · Salón de Plenos$/m);
@@ -151,7 +151,7 @@ test('runJob: si la ficha falla, el aviso sale igualmente y la ficha se reintent
   });
   t.is(result.sent, 1);
   const { Data: body } = ses.sent[0].Message.Body.Text;
-  t.regex(body, /Estado: PUB -> EV/);
+  t.regex(body, /Estado: Publicada -> En evaluación/);
   t.notRegex(body, /Oferta económica/);
   t.true(logs.some((m) => /no se pudo consultar \(HTTP 500\)/.test(m)));
   t.false('999' in JSON.parse(readFileSync(join(dump, 'aperturas.json'), 'utf8')));

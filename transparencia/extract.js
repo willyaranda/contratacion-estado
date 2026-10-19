@@ -231,15 +231,9 @@ export const detailFromEntry = (entry, versions = []) => {
   });
 };
 
-// Un anuncio del feed -> un registro plano. `dir` es la carpeta de origen ('menores' marca los contratos menores).
-export const recordFromEntry = (entry, dir) => {
-  const cf = entry['cac-place-ext:ContractFolderStatus'];
-  const pp = cf['cac:ProcurementProject'] || {};
-  const budget = pp['cac:BudgetAmount'] || {};
-  const results = asArray(cf['cac:TenderResult']);
-  const proc = cf['cac:TenderingProcess'] || {};
-  const entryId = entry.id.split('/').pop();
-
+// Resultado de la adjudicación a partir de los cac:TenderResult de un anuncio (uno por lote): códigos de resultado,
+// adjudicatarios, importes adjudicados (con y sin IVA), fecha y número de ofertas. También lo usa el correo de avisos.
+export const awardOf = (results) => {
   const resultCodes = results.map((result) => num(result['cbc:ResultCode'])).filter(isPresent);
   const winners = [];
   let awarded = 0;
@@ -260,6 +254,23 @@ export const recordFromEntry = (entry, dir) => {
     awardDate = awardDate || result['cbc:AwardDate'] || null;
     if (isPresent(result['cbc:ReceivedTenderQuantity'])) offers = (offers || 0) + Number(result['cbc:ReceivedTenderQuantity']);
   }
+  return {
+    resultCodes, winners, awarded, awardedNet, awardDate, offers,
+  };
+};
+
+// Un anuncio del feed -> un registro plano. `dir` es la carpeta de origen ('menores' marca los contratos menores).
+export const recordFromEntry = (entry, dir) => {
+  const cf = entry['cac-place-ext:ContractFolderStatus'];
+  const pp = cf['cac:ProcurementProject'] || {};
+  const budget = pp['cac:BudgetAmount'] || {};
+  const results = asArray(cf['cac:TenderResult']);
+  const proc = cf['cac:TenderingProcess'] || {};
+  const entryId = entry.id.split('/').pop();
+
+  const {
+    resultCodes, winners, awarded, awardedNet, awardDate, offers,
+  } = awardOf(results);
 
   const duration = pp['cac:PlannedPeriod']?.['cbc:DurationMeasure'];
   const terms = cf['cac:TenderingTerms'] || {};
