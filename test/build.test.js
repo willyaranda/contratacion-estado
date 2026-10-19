@@ -1,6 +1,6 @@
 import test from 'ava';
 import { spawnSync } from 'child_process';
-import { existsSync, readFileSync } from 'fs';
+import { existsSync, readFileSync, statSync } from 'fs';
 import { join } from 'path';
 
 import {
@@ -102,17 +102,44 @@ test('renderPage incrusta las fichas y escapa "<" en ellas', (t) => {
 
 test('los logotipos de NextGenerationEU se incrustan y no queda ningún marcador', (t) => {
   const uris = assetUris();
-  t.deepEqual(Object.keys(uris).sort(), ['__LOGO_EU__', '__LOGO_NGEU__', '__LOGO_PRTR__']);
+  t.deepEqual(Object.keys(uris).sort(), ['__ESCUDO_AYTO__', '__LOGO_AYTO_COLOR__', '__LOGO_AYTO_NEG__', '__LOGO_EU__', '__LOGO_NGEU__', '__LOGO_PRTR__']);
   for (const uri of Object.values(uris)) t.regex(uri, /^data:image\/(svg\+xml|webp);base64,[A-Za-z0-9+/=]+$/);
 
   const html = renderPage(TEMPLATE, { generated: 'x', records: [] }, '', uris);
-  t.notRegex(html, /__LOGO_[A-Z]+__/);
-  t.is((html.match(/src="data:image\//g) || []).length, 3);
+  t.notRegex(html, /__(LOGO|ESCUDO)_[A-Z_]+__/);
+  t.is((html.match(/src="data:image\//g) || []).length, 4);
   // el contenido de los SVG no debe poder ejecutar nada
   for (const uri of [uris.__LOGO_EU__, uris.__LOGO_PRTR__]) {
     const svg = Buffer.from(uri.split(',')[1], 'base64').toString('utf8');
     t.notRegex(svg, /<script|onload=|javascript:/i);
   }
+});
+
+test('la cabecera lleva el logotipo oficial del Ayuntamiento incrustado, con alt y tamaño', (t) => {
+  t.regex(TEMPLATE, /<header class="top">\s*<div class="brand">[\s\S]*?<img src="__LOGO_AYTO_NEG__" width="720" height="183" alt="Ayuntamiento de Aranda de Duero">/);
+  const html = renderPage(TEMPLATE, { generated: 'x', records: [] }, '', assetUris());
+  t.regex(html, /<header class="top">\s*<div class="brand">[\s\S]*?<img src="data:image\/webp;base64,[A-Za-z0-9+/=]+" width="720" height="183" alt="Ayuntamiento de Aranda de Duero">/);
+  // el fondo de la banda es el del JPG oficial (sin costuras)
+  t.regex(TEMPLATE, /--brand:#30b5e5/);
+  t.regex(TEMPLATE, /header\.top \.brand\{background:var\(--brand\)/);
+});
+
+test('la paleta oficial del Ayuntamiento está en :root y los colores con significado no cambian', (t) => {
+  const root = TEMPLATE.match(/:root\{([\s\S]*?)\n\}/)[1];
+  for (const c of ['--primary:#0083c1', '--primary-accessible:#0073ad', '--secondary:#e9f4f9', '--ink:#3c3c3c', '--muted:#646464']) t.true(root.includes(c), c);
+  t.true(root.includes('--accent:var(--primary-accessible)'));
+  t.notRegex(TEMPLATE, /#9b1c31/);
+  // mandatos: azul y naranja de los gráficos, y los colores de resultado, intactos
+  for (const c of ['--p0:#1565c0', '--p3:#dd8500', '--o-ok-bd:#1b7f3b', '--o-bad-bd:#b3261e', '--m-blue-bd:#1565c0', '--m-orange-bd:#dd8500']) t.true(root.includes(c), c);
+});
+
+test('los logotipos pesan poco y están registrados en el README de assets', (t) => {
+  const readme = readFileSync(join(ROOT, 'transparencia', 'assets', 'README.md'), 'utf8');
+  for (const f of ['logo-horizontal-negativo.webp', 'logo-horizontal-color.webp', 'escudo.webp']) {
+    t.true(readme.includes(f), f);
+    t.true(statSync(join(ROOT, 'transparencia', 'assets', f)).size < 60 * 1024, f);
+  }
+  t.regex(readme, /Imagen Institucional/);
 });
 
 test('el build es determinista: dos ejecuciones dan exactamente el mismo HTML', (t) => {

@@ -8,9 +8,13 @@
 <style>
 /*FONTFACE*/
 :root{
-  --bg:#f6f7f9;--surface:#fff;--ink:#17202a;--muted:#5f6b7a;--line:#dfe3e8;
-  --accent:#9b1c31;--accent-ink:#fff;--bar:#9b1c31;--chip:#f0e6e8;--focus:#1d5fd1;
-  --c1:#9b1c31;--c2:#1f6f8b;--c3:#b87d12;--c4:#4f7a3a;--c5:#7b8794;
+  /* paleta oficial del Ayuntamiento (tema WordPress arandadeduero): primary #0083c1 (Pantone 7460C) solo decoración;
+     primary-accessible #0073ad para texto y botones; secondary #e9f4f9; ink = dark #3c3c3c; muted = gray #646464.
+     --brand = fondo exacto del logotipo negativo (JPG oficial), para que la banda no tenga costuras */
+  --brand:#30b5e5;--primary:#0083c1;--primary-accessible:#0073ad;--secondary:#e9f4f9;
+  --bg:#f4f8fb;--surface:#fff;--ink:#3c3c3c;--muted:#646464;--line:#d9e4ec;
+  --accent:var(--primary-accessible);--accent-ink:#fff;--bar:var(--primary);--chip:var(--secondary);--focus:var(--primary-accessible);
+  --c1:#0073ad;--c2:#a4541c;--c3:#b87d12;--c4:#4f7a3a;--c5:#7b8794;
   /* corporaciones: p0, p1 y p2 (mandatos 11-15, 15-19 y 19-23) comparten el azul; p3 (desde el 17/06/2023) es amarillo-naranja */
   --p0:#1565c0;--p1:#1565c0;--p2:#1565c0;--p3:#dd8500;
   --good:#1b7f3b;--bad:#b3261e;
@@ -23,9 +27,9 @@
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
-    --bg:#12151a;--surface:#1b2027;--ink:#e8ebef;--muted:#9aa5b3;--line:#2c333c;
-    --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
-    --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
+    --bg:#0f161c;--surface:#182029;--ink:#e8eef2;--muted:#a3b0ba;--line:#2a3641;
+    --accent:#4cb4e8;--accent-ink:#0b1218;--bar:#3cb4e5;--chip:#16303f;--focus:#7fd0f5;
+    --c1:#4cb4e8;--c2:#e08a52;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
     --p0:#5aa9f5;--p1:#5aa9f5;--p2:#5aa9f5;--p3:#ffb02e;
     --good:#5fcf80;--bad:#ff8a80;
     --o-ok-bg:#1f4d2e;--o-ok-bd:#5fcf80;--o-warn-bg:#5a4708;--o-warn-bd:#e3b04b;--o-mid-bg:#6b3a0c;--o-mid-bd:#ff9d3d;--o-bad-bg:#5e1f1a;--o-bad-bd:#ff8a80;
@@ -34,9 +38,9 @@
   }
 }
 :root[data-theme="dark"]{
-  --bg:#12151a;--surface:#1b2027;--ink:#e8ebef;--muted:#9aa5b3;--line:#2c333c;
-  --accent:#e0707f;--accent-ink:#12151a;--bar:#e0707f;--chip:#3a262a;--focus:#7aa7ff;
-  --c1:#e0707f;--c2:#5bb3d0;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
+  --bg:#0f161c;--surface:#182029;--ink:#e8eef2;--muted:#a3b0ba;--line:#2a3641;
+  --accent:#4cb4e8;--accent-ink:#0b1218;--bar:#3cb4e5;--chip:#16303f;--focus:#7fd0f5;
+  --c1:#4cb4e8;--c2:#e08a52;--c3:#e3b04b;--c4:#8fc07a;--c5:#9aa5b3;color-scheme:dark;
   --p0:#5aa9f5;--p1:#5aa9f5;--p2:#5aa9f5;--p3:#ffb02e;
   --good:#5fcf80;--bad:#ff8a80;
   --o-ok-bg:#1f4d2e;--o-ok-bd:#5fcf80;--o-warn-bg:#5a4708;--o-warn-bd:#e3b04b;--o-mid-bg:#6b3a0c;--o-mid-bd:#ff9d3d;--o-bad-bg:#5e1f1a;--o-bad-bd:#ff8a80;
@@ -50,7 +54,10 @@ body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 "Outfit",syste
 a{color:var(--accent)}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 .wrap{max-width:1240px;margin:0 auto;padding:0 16px}
-header.top{background:var(--surface);border-bottom:1px solid var(--line);padding:20px 0 0}
+header.top{background:var(--surface);border-bottom:1px solid var(--line);padding:0}
+header.top .brand{background:var(--brand);padding:12px 0}
+header.top .brand img{display:block;height:52px;width:auto;max-width:100%}
+header.top .wrap.head{padding-top:18px}
 header.top h1{margin:0 0 4px;font-size:1.5rem}
 header.top p{margin:0 0 14px;color:var(--muted);max-width:75ch}
 header.top p.cal{margin:-6px 0 14px;font-size:.85rem}
@@ -253,7 +260,9 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
 </style>
 </head>
 <body>
-<header class="top"><div class="wrap">
+<header class="top">
+<div class="brand"><div class="wrap"><img src="__LOGO_AYTO_NEG__" width="720" height="183" alt="Ayuntamiento de Aranda de Duero"></div></div>
+<div class="wrap head">
   <h1>Contratación del Ayuntamiento de Aranda de Duero</h1>
   <p>Explorador ciudadano y no oficial de los contratos del Ayuntamiento (Alcaldía, Junta de Gobierno y Pleno) publicados en la
   Plataforma de Contratación del Sector Público

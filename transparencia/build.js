@@ -23,11 +23,15 @@ export const fontCss = (fontsDir = join(HERE, 'fonts')) => FONT_FACES.map(([file
   return `@font-face{font-family:"Outfit";font-style:normal;font-weight:400 700;font-display:swap;src:url(data:font/woff2;base64,${base64}) format("woff2");unicode-range:${range}}`;
 }).join('\n');
 
-// Logotipos de la pestaña NextGenerationEU: marcador de la plantilla -> fichero de transparencia/assets/
+// Imágenes de la página (NextGenerationEU y Ayuntamiento): marcador de la plantilla -> fichero de transparencia/assets/
 const ASSETS = {
   __LOGO_EU__: ['bandera-ue.svg', 'image/svg+xml'],
   __LOGO_NGEU__: ['financiado-ue-nextgenerationeu.webp', 'image/webp'],
   __LOGO_PRTR__: ['prtr.svg', 'image/svg+xml'],
+  // logotipos oficiales del Ayuntamiento (Imagen Institucional)
+  __LOGO_AYTO_NEG__: ['logo-horizontal-negativo.webp', 'image/webp'],
+  __LOGO_AYTO_COLOR__: ['logo-horizontal-color.webp', 'image/webp'],
+  __ESCUDO_AYTO__: ['escudo.webp', 'image/webp'],
 };
 
 // Imágenes incrustadas como data: URI (la página no carga nada externo).
