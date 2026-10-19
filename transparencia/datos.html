@@ -88,6 +88,7 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .foot-id p{margin:0 0 4px}
 .foot-crest{flex:none;height:64px;width:auto;background:#fff;border-radius:8px;padding:4px}
 .foot-links{display:flex;gap:6px 18px;flex-wrap:wrap;margin-top:8px!important}
+/*ANALYTICS_CSS*/
 </style>
 </head>
 <body>
@@ -200,10 +201,13 @@ node -e "fetch('__SITE_URL__datos/contratos.json').then(r =&gt; r.json()).then(d
           <a href="__AYTO_URL__" rel="noopener">www.arandadeduero.es</a>
           <a href="__REPO_URL__" rel="noopener">Código en GitHub</a>
           <a href="__REPO_URL__/blob/main/LICENSE" rel="noopener">Licencia MIT del código</a>
+          <a href="__PRIVACY_URL__" rel="noopener">Política de privacidad</a>
+          <button type="button" class="linklike" data-analytics-prefs>Preferencias de analítica</button>
         </p>
       </div>
     </div>
   </div>
 </footer>
+<!--ANALYTICS-->
 </body>
 </html>

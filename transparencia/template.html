@@ -306,6 +306,7 @@ details.mesacal .menu a:hover{background:var(--chip)}
 details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mesas a:focus-visible,.mesas .more>summary:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
 @media (max-width:700px){.mesas li{grid-template-columns:minmax(0,1fr) auto}.mesas .when{grid-row:1;grid-column:1}.mesas .act{grid-row:1;grid-column:2}.mesas .typ{grid-row:2;grid-column:1/-1}.mesas .what{grid-row:3;grid-column:1/-1}}
 @media (max-width:600px){.bar{grid-template-columns:100px 1fr auto}}
+/*ANALYTICS_CSS*/
 </style>
 </head>
 <body>
@@ -557,6 +558,8 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
           <a href="__AYTO_URL__" rel="noopener">www.arandadeduero.es</a>
           <a href="__REPO_URL__" rel="noopener">Código en GitHub</a>
           <a href="__REPO_URL__/blob/main/LICENSE" rel="noopener">Licencia MIT</a>
+          <a href="__PRIVACY_URL__" rel="noopener">Política de privacidad</a>
+          <button type="button" class="linklike" data-analytics-prefs>Preferencias de analítica</button>
         </p>
       </div>
     </div>
@@ -1794,5 +1797,6 @@ $("foot").innerHTML = `Fuente: Plataforma de Contratación del Sector Público (
 $("foot-year").textContent = new Date().getFullYear();
 try { setTab(location.hash.slice(1) || "resumen"); } finally { document.body.classList.add("ready"); }
 </script>
+<!--ANALYTICS-->
 </body>
 </html>

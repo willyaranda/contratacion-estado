@@ -31,6 +31,11 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
 
 La página `/datos` (datos abiertos) se genera con `transparencia/datos.html` y `lib/datos.js`.
 
+- La página no pide nada externo hasta que se acepta la analítica (Google Analytics con consentimiento): `GA_ID` y la
+  clave de consentimiento están en `transparencia/site.js`, y el tiempo de re-pregunta tras rechazar es
+  `DENIED_TTL_DAYS` (4 días) en ese mismo fichero. El script y el aviso (`transparencia/analytics.{js,css,html}`)
+  se inyectan en la principal y en `/datos`; Google solo puede aparecer dentro de `loadGa()`.
+
 ## Pipeline
 
 - `.github/workflows/nightly.yml` (02:17, 05:43, 14:17 y 15:17 UTC; GitHub no garantiza los disparos programados,

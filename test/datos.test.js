@@ -259,9 +259,12 @@ test('la página usa las constantes de site.js, el canonical y las metas básica
   t.notRegex(PAGE_TEMPLATE, /willyaranda|github\.com\/[a-z]/);
 });
 
-test('la página es estática (sin scripts ejecutables), con landmarks y sin ocultar el contenido hasta "ready"', (t) => {
+test('la página solo lleva el script de analítica con consentimiento (y el JSON-LD), con landmarks y sin ocultar el contenido hasta "ready"', (t) => {
   const { html } = site();
-  t.notRegex(html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, ''), /<script/);
+  // único script ejecutable: el de analítica (test/analytics.test.js), que no carga nada de Google sin «Aceptar»
+  const scripts = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, '').match(/<script[^>]*>/g);
+  t.deepEqual(scripts, ['<script>']);
+  t.true(html.includes('data-analytics-consent'));
   t.notRegex(html, /body:not\(\.ready\)|visibility:hidden/);
   t.regex(html, /<header class="top">[\s\S]*<h1>[\s\S]*<\/header>\s*<main[^>]*id="contenido"/);
   t.regex(html, /<\/main>\s*<footer/);

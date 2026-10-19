@@ -47,6 +47,20 @@ Se regeneran cada noche. Los **datos** se publican con licencia
 Ley 37/2007), citando: «Ayuntamiento de Aranda de Duero, a partir de la Plataforma de Contratación del Sector Público».
 La licencia MIT es solo del código.
 
+## Analítica
+
+La página usa Google Analytics 4 (ID compartido con las webs de fiestas y bienestar animal, `GA_ID` en
+`transparencia/site.js`) y **no carga ni envía nada a Google hasta que la persona pulsa «Aceptar»** en el aviso.
+
+- «Aceptar» se recuerda para siempre; «Rechazar» no instala nada y a los 4 días se vuelve a preguntar
+  (`DENIED_TTL_DAYS`). La decisión se guarda en `localStorage` (`contratacionAranda:analytics-consent`); sin
+  `localStorage` se pregunta en cada visita.
+- Con Do Not Track activo no se muestra el aviso ni se carga nada.
+- El enlace «Preferencias de analítica» del pie borra la decisión, detiene el seguimiento y vuelve a mostrar el aviso.
+- El aviso enlaza a la [política de privacidad](https://www.arandadeduero.es/politica-privacidad/) del Ayuntamiento.
+- Funciona igual en la página principal y en `/datos`: un único script (`transparencia/analytics.js`) incrustado por
+  `npm run build:site`.
+
 ## Qué incluye
 
 - Licitaciones y contratos menores del Ayuntamiento, con adjudicatarios, importes, ofertas y plazos.

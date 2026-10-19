@@ -1,0 +1,12 @@
+/* Aviso de analítica: fijo abajo (no desplaza el contenido, sin CLS), con las variables de la página. Sin animaciones
+   (respeta prefers-reduced-motion). «Aceptar» y «Rechazar» comparten estilo. */
+.analytics-consent{position:fixed;z-index:1000;left:12px;right:12px;bottom:12px;max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font-size:.85rem;line-height:1.45}
+.analytics-consent[hidden]{display:none}
+.analytics-consent p{margin:0;flex:1 1 280px}
+.analytics-consent a{color:var(--accent);text-decoration:underline}
+.analytics-consent .analytics-actions{display:flex;gap:8px;flex:0 0 auto}
+.analytics-btn{font:inherit;font-weight:600;min-height:40px;padding:0 18px;border-radius:8px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.analytics-btn:hover{filter:brightness(1.1)}
+.analytics-btn:focus-visible,.linklike:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.linklike{font:inherit;background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;cursor:pointer}
+@media (max-width:480px){.analytics-consent .analytics-actions{width:100%}.analytics-btn{flex:1}}

@@ -18,4 +18,9 @@ export default [
       'prefer-const': 'error',
     },
   },
+  {
+    // script del navegador (se incrusta en las páginas)
+    files: ['transparencia/analytics.js'],
+    languageOptions: { sourceType: 'script', globals: { ...globals.browser } },
+  },
 ];

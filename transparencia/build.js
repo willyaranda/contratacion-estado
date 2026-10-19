@@ -13,8 +13,11 @@ import {
 } from '../lib/datos.js';
 import { FEED_FILE, RSS_FILE, buildAtom, buildRss } from '../lib/feed.js';
 import { CALENDARS, buildIcs, upcomingMesas } from '../lib/ics.js';
+import { applyAnalytics } from '../lib/analytics.js';
 import { buildRecords } from './extract.js';
-import { AYTO_URL, REPO_URL, SITE_URL } from './site.js';
+import {
+  AYTO_URL, PRIVACY_URL, REPO_URL, SITE_URL,
+} from './site.js';
 
 const MESAS_MARGIN_MS = 7 * 24 * 3600 * 1000;
 
@@ -25,7 +28,7 @@ const FONT_FACES = [
   ['outfit-latin.woff2', 'U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD'],
 ];
 
-// Fuente Outfit incrustada (autoalojada): la página no hace ninguna petición externa.
+// Fuente Outfit incrustada (autoalojada): la página no pide nada externo hasta que se acepta la analítica.
 export const fontCss = (fontsDir = join(HERE, 'fonts')) => FONT_FACES.map(([file, range]) => {
   const base64 = readFileSync(join(fontsDir, file)).toString('base64');
   return `@font-face{font-family:"Outfit";font-style:normal;font-weight:400 700;font-display:swap;src:url(data:font/woff2;base64,${base64}) format("woff2");unicode-range:${range}}`;
@@ -42,7 +45,7 @@ const ASSETS = {
   __ESCUDO_AYTO__: ['escudo.webp', 'image/webp'],
 };
 
-// Imágenes incrustadas como data: URI (la página no carga nada externo).
+// Imágenes incrustadas como data: URI (no se carga nada externo hasta que se acepta la analítica).
 export const assetUris = (assetsDir = join(HERE, 'assets')) => Object.fromEntries(Object.entries(ASSETS).map(
   ([marker, [file, mime]]) => [marker, `data:${mime};base64,${readFileSync(join(assetsDir, file)).toString('base64')}`],
 ));
@@ -51,14 +54,14 @@ export const assetUris = (assetsDir = join(HERE, 'assets')) => Object.fromEntrie
 export const renderPage = (template, data, fonts, assets = {}, details = {}) => {
   // "<" escapado para que los datos no puedan cerrar el <script> por accidente
   const escape = (value) => JSON.stringify(value).replace(/</g, '\\u003c');
-  let html = template.replace('/*FONTFACE*/', () => fonts)
+  let html = applyAnalytics(template).replace('/*FONTFACE*/', () => fonts)
     .replace('/*DATA*/', () => escape(data))
     // fichas de contrato: la página las lee solo al abrir una
     .replace('/*DETAILS*/', () => escape(details));
   for (const [marker, uri] of Object.entries(assets)) html = html.replaceAll(marker, () => uri);
   // URLs del sitio (transparencia/site.js) y año del build (contenido por defecto del © sin JS)
   const year = String(data.generated || '').match(/^\d{4}/)?.[0] || '';
-  const site = { __SITE_URL__: SITE_URL, __REPO_URL__: REPO_URL, __AYTO_URL__: AYTO_URL, __BUILD_YEAR__: year };
+  const site = { __SITE_URL__: SITE_URL, __REPO_URL__: REPO_URL, __AYTO_URL__: AYTO_URL, __PRIVACY_URL__: PRIVACY_URL, __BUILD_YEAR__: year };
   for (const [marker, value] of Object.entries(site)) html = html.replaceAll(marker, () => value);
   return html;
 };

@@ -89,6 +89,18 @@ td.num{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
 .foot-id p{margin:0 0 4px}
 .foot-crest{flex:none;height:64px;width:auto;background:#fff;border-radius:8px;padding:4px}
 .foot-links{display:flex;gap:6px 18px;flex-wrap:wrap;margin-top:8px!important}
+/* Aviso de analítica: fijo abajo (no desplaza el contenido, sin CLS), con las variables de la página. Sin animaciones
+   (respeta prefers-reduced-motion). «Aceptar» y «Rechazar» comparten estilo. */
+.analytics-consent{position:fixed;z-index:1000;left:12px;right:12px;bottom:12px;max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:0 6px 24px rgba(0,0,0,.25);font-size:.85rem;line-height:1.45}
+.analytics-consent[hidden]{display:none}
+.analytics-consent p{margin:0;flex:1 1 280px}
+.analytics-consent a{color:var(--accent);text-decoration:underline}
+.analytics-consent .analytics-actions{display:flex;gap:8px;flex:0 0 auto}
+.analytics-btn{font:inherit;font-weight:600;min-height:40px;padding:0 18px;border-radius:8px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer}
+.analytics-btn:hover{filter:brightness(1.1)}
+.analytics-btn:focus-visible,.linklike:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.linklike{font:inherit;background:none;border:0;padding:0;color:var(--accent);text-decoration:underline;cursor:pointer}
+@media (max-width:480px){.analytics-consent .analytics-actions{width:100%}.analytics-btn{flex:1}}
 </style>
 </head>
 <body>
@@ -239,10 +251,122 @@ node -e "fetch('https://willyaranda.github.io/contratacion-estado/datos/contrato
           <a href="https://www.arandadeduero.es" rel="noopener">www.arandadeduero.es</a>
           <a href="https://github.com/willyaranda/contratacion-estado" rel="noopener">Código en GitHub</a>
           <a href="https://github.com/willyaranda/contratacion-estado/blob/main/LICENSE" rel="noopener">Licencia MIT del código</a>
+          <a href="https://www.arandadeduero.es/politica-privacidad/" rel="noopener">Política de privacidad</a>
+          <button type="button" class="linklike" data-analytics-prefs>Preferencias de analítica</button>
         </p>
       </div>
     </div>
   </div>
 </footer>
+<div class="analytics-consent" data-analytics-consent role="region" aria-label="Aviso de analítica y privacidad" hidden>
+  <p>Esta web mide cómo se usa con Google Analytics. No se carga ni se envía nada a Google hasta que pulses «Aceptar».
+  «Rechazar» no instala nada y se volverá a preguntar pasados 4 días.
+  <a href="https://www.arandadeduero.es/politica-privacidad/" rel="noopener">Más información en la política de privacidad</a>.</p>
+  <div class="analytics-actions">
+    <button type="button" class="analytics-btn" data-analytics-accept>Aceptar</button>
+    <button type="button" class="analytics-btn" data-analytics-reject>Rechazar</button>
+  </div>
+</div>
+<script>
+// Google Analytics 4 con consentimiento (RGPD). Un único origen para la página principal y /datos: build.js sustituye
+// los marcadores G-BXMC22W46S, contratacionAranda:analytics-consent y 345600000 (valores de transparencia/site.js) e incrusta el script.
+// No se carga ni se envía nada a Google hasta que la persona pulsa «Aceptar».
+(() => {
+  const GA_ID = 'G-BXMC22W46S';
+  const CONSENT_KEY = 'contratacionAranda:analytics-consent';
+  const DENIED_TTL_MS = Number('345600000');
+  const GRANTED = 'granted';
+  const DENIED = 'denied';
+  let gaLoaded = false;
+
+  // Decisión vigente a partir del valor guardado: 'granted' | 'denied' | '' (hay que preguntar).
+  // «Aceptar» no caduca; «Rechazar» vale DENIED_TTL_MS. Valores corruptos o con fecha futura -> se pregunta.
+  const consentState = (raw, nowMs) => {
+    let saved;
+    try { saved = JSON.parse(raw); } catch { return ''; }
+    if (!saved || typeof saved !== 'object') return '';
+    const { v, t } = saved;
+    if (typeof t !== 'number' || !Number.isFinite(t) || t > nowMs) return '';
+    if (v === GRANTED) return GRANTED;
+    if (v === DENIED) return nowMs - t < DENIED_TTL_MS ? DENIED : '';
+    return '';
+  };
+
+  const doNotTrack = () => window.navigator?.doNotTrack === '1' || window.doNotTrack === '1';
+
+  const readConsent = () => {
+    try { return consentState(window.localStorage.getItem(CONSENT_KEY), Date.now()); } catch { return ''; }
+  };
+  const saveConsent = (v) => {
+    // sin localStorage (privado o bloqueado) no se recuerda: se vuelve a preguntar y GA nunca carga sin «Aceptar»
+    try { window.localStorage.setItem(CONSENT_KEY, JSON.stringify({ v, t: Date.now() })); } catch { /* sin almacenamiento */ }
+  };
+  const clearConsent = () => {
+    try { window.localStorage.removeItem(CONSENT_KEY); } catch { /* sin almacenamiento */ }
+  };
+
+  const loadGa = () => {
+    window[`ga-disable-${GA_ID}`] = false;
+    if (gaLoaded) return;
+    gaLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA_ID);
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(GA_ID)}`;
+    document.head.appendChild(s);
+  };
+
+  // Borra las cookies de GA (_ga, _ga_XXXX) al retirar el consentimiento, en el host y en sus dominios superiores.
+  const clearGaCookies = () => {
+    const names = String(document.cookie || '').split(';').map((c) => c.split('=')[0].trim()).filter((n) => n.startsWith('_ga'));
+    const parts = String(window.location?.hostname || '').split('.');
+    const domains = [''];
+    for (let i = 0; i < parts.length - 1; i += 1) domains.push(`; domain=.${parts.slice(i).join('.')}`);
+    for (const n of names) for (const d of domains) document.cookie = `${n}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/${d}`;
+  };
+
+  const init = () => {
+    const banner = document.querySelector('[data-analytics-consent]');
+    const prefs = [...document.querySelectorAll('[data-analytics-prefs]')];
+    if (doNotTrack()) {
+      // Do Not Track: ni aviso ni GA ni enlace de preferencias (no hay nada que decidir)
+      for (const p of prefs) p.hidden = true;
+      return;
+    }
+    const show = (visible) => { if (banner) banner.hidden = !visible; };
+    const state = readConsent();
+    if (state === GRANTED) loadGa();
+    show(state === '');
+    if (banner) {
+      banner.querySelector('[data-analytics-accept]')?.addEventListener('click', () => {
+        saveConsent(GRANTED);
+        loadGa();
+        show(false);
+      });
+      banner.querySelector('[data-analytics-reject]')?.addEventListener('click', () => {
+        saveConsent(DENIED);
+        window[`ga-disable-${GA_ID}`] = true;
+        show(false);
+      });
+    }
+    for (const p of prefs) {
+      p.addEventListener('click', () => {
+        // retirar el consentimiento: borra la decisión, detiene el seguimiento y vuelve a preguntar
+        clearConsent();
+        window[`ga-disable-${GA_ID}`] = true;
+        clearGaCookies();
+        show(true);
+        banner?.querySelector('[data-analytics-accept]')?.focus();
+      });
+    }
+  };
+
+  window.contratacionAnalytics = { consentState, loadGa };
+  init();
+})();
+</script>
 </body>
 </html>
