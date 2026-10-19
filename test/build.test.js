@@ -248,3 +248,20 @@ test('los valores que van en nombres de clase pasan por safeCls (el estado viene
   t.is(safeCls('x" onmouseover="alert(1)'), 'xonmouseoveralert1');
   t.is(safeCls(null), '');
 });
+
+test('Resumen: resultado y tramo de importe en una fila al 50 %, mayor importe a todo el ancho', (t) => {
+  const resumen = TEMPLATE.match(/<div data-tab="resumen">([\s\S]*?)<!-- =+ EVOLUCI/)[1];
+  const pair = resumen.match(/<section class="grid-pair" id="resumen-outcome-range">([\s\S]*?)<\/section>/)[1];
+  t.true(pair.includes('Por resultado del procedimiento'));
+  t.true(pair.includes('Por tramo de importe adjudicado'));
+  t.false(pair.includes('Contratos de mayor importe'));
+  // mayor importe: panel propio, fuera de las rejillas, después de la fila
+  t.regex(resumen, /<section class="panel" id="resumen-top">\s*<h2>Contratos de mayor importe<\/h2>\s*<div id="c-top"><\/div>/);
+  t.true(resumen.indexOf('id="resumen-top"') > resumen.indexOf('id="resumen-outcome-range"'));
+  const grid2 = resumen.match(/<section class="grid2">([\s\S]*?)<\/section>/)[1];
+  t.false(grid2.includes('Contratos de mayor importe'));
+  t.false(grid2.includes('Por resultado del procedimiento'));
+  // CSS: dos columnas iguales y una sola en móvil
+  t.regex(TEMPLATE, /\.grid-pair\{display:grid;grid-template-columns:repeat\(2,minmax\(0,1fr\)\)/);
+  t.regex(TEMPLATE, /@media \(max-width:700px\)\{\.grid-pair\{grid-template-columns:minmax\(0,1fr\)\}\}/);
+});
