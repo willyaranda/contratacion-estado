@@ -519,12 +519,15 @@ test('build.js escribe el calendario completo y los cuatro temáticos', (t) => {
   }
 });
 
-test('la página enlaza a plazos.ics en Licitaciones abiertas y no a adjudicaciones.ics ni vencimientos.ics', (t) => {
+test('la cabecera enlaza al calendario completo y a los otros cuatro; plazos y mesas también en su sitio', (t) => {
   t.regex(TEMPLATE, /<div data-tab="abiertas" hidden>[\s\S]*?<a class="cal-link" href="plazos\.ics"[^>]*>📅 Calendario de plazos de licitaciones<\/a>/);
-  t.is((TEMPLATE.match(/href="plazos\.ics"/g) ?? []).length, 1);
-  t.is((TEMPLATE.match(/href="mesas\.ics"/g) ?? []).length, 1); // dentro de renderMesas
-  t.notRegex(TEMPLATE, /adjudicaciones\.ics|vencimientos\.ics/);
-  t.regex(TEMPLATE, /<a href="aperturas\.ics" title="Calendario completo[^"]*">Calendario de Contratación<\/a>/);
+  t.is((TEMPLATE.match(/href="plazos\.ics"/g) ?? []).length, 2); // cabecera + Licitaciones abiertas
+  t.is((TEMPLATE.match(/href="mesas\.ics"/g) ?? []).length, 2); // cabecera + renderMesas
+  // en la cabecera, entre paréntesis detrás del calendario completo, y solo ahí
+  t.regex(TEMPLATE, /<header class="top">[\s\S]*Calendario de Contratación<\/a> \(<a href="mesas\.ics"[^>]*>Mesas<\/a> · <a href="plazos\.ics"[^>]*>Plazos<\/a> · <a href="adjudicaciones\.ics"[^>]*>Adjudicaciones<\/a> · <a href="vencimientos\.ics"[^>]*>Vencimientos<\/a>\)[\s\S]*<\/header>/);
+  t.is((TEMPLATE.match(/href="adjudicaciones\.ics"/g) ?? []).length, 1);
+  t.is((TEMPLATE.match(/href="vencimientos\.ics"/g) ?? []).length, 1);
+  t.regex(TEMPLATE, /<a href="aperturas\.ics" title="Calendario completo[^"]*">Calendario de Contratación<\/a> \(/);
 });
 
 // ---------- eje Y de los gráficos de columnas ----------
