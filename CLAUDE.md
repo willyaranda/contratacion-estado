@@ -16,6 +16,7 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
 
 - Se trabaja y se hace push directo a `main`, sin ramas de feature. Hacer `git fetch` antes de empujar y
   `git rebase origin/main` si hay algo nuevo (el workflow nocturno también sube commits). Nunca `--force`.
+- Los commits terminan con el trailer `Co-Authored-By: Claude <noreply@anthropic.com>`.
 - Tras cambiar `transparencia/template.html` o `extract.js`, reconstruir y **commitear siempre `docs/index.html`**
   (`npm run build:site` y copiar `transparencia/index.html` a `docs/index.html`).
 - Nunca imprimir ni escribir credenciales. Las credenciales de AWS son secrets de GitHub (`AWS_ACCESS_KEY_ID`,
