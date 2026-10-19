@@ -1489,6 +1489,7 @@ function renderOpen() {
     { key:"body", label:"Órgano", sort: (r) => r.bodyShort, html: (r) => esc(r.bodyShort) },
     { key:"type", label:"Categoría", sort: (r) => TYPE[r.type] || "", html: (r) => esc(TYPE[r.type] || "—") },
     { key:"budget", label:"Presupuesto sin IVA", num:true, sort: budget, html: (r) => eur2.format(budget(r)) },
+    { key:"published", label:"Publicación", sort: (r) => r.published || "", html: (r) => fmtDate(r.published) },
     { key:"deadline", label:"Fecha límite", sort: (r) => r.deadline, html: (r) => `${fmtDate(r.deadline)}<div class="sub">en ${days(TODAY, r.deadline)} días</div>` },
     { key:"link", label:"Anuncio", sort: () => "", html: linkCell },
   ], open, tbl.open, 25, "No hay licitaciones con plazo abierto en los datos.");
