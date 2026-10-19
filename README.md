@@ -7,6 +7,19 @@ Descarga los anuncios de contratación del Ayuntamiento de Aranda de Duero publi
 - **Página de transparencia:** <https://willyaranda.github.io/contratacion-estado/>
 - **Calendario de Contratación (.ics):** <https://willyaranda.github.io/contratacion-estado/aperturas.ics>
 
+## Calendarios
+
+Se pueden suscribir desde cualquier cliente (Google Calendar, Apple, Outlook). Todos usan los mismos identificadores
+de evento, así que suscribirse a varios no duplica nada.
+
+| Calendario | URL | Para qué sirve |
+| --- | --- | --- |
+| Completo | <https://willyaranda.github.io/contratacion-estado/aperturas.ics> | Todo lo siguiente junto. |
+| Mesas de contratación | <https://willyaranda.github.io/contratacion-estado/mesas.ics> | Aperturas de ofertas. |
+| Plazos de licitaciones | <https://willyaranda.github.io/contratacion-estado/plazos.ics> | `PUB` (publicación) y `ULT. DÍA` (fin del plazo de ofertas, con alarma). |
+| Adjudicaciones | <https://willyaranda.github.io/contratacion-estado/adjudicaciones.ics> | `ADJ` y `ADJ. MENOR`. |
+| Vencimientos de contratos | <https://willyaranda.github.io/contratacion-estado/vencimientos.ics> | `AVISO FIN`: contratos que caducan, con alarma el día antes. |
+
 ## Qué incluye
 
 - Licitaciones y contratos menores del Ayuntamiento, con adjudicatarios, importes, ofertas y plazos.
@@ -21,7 +34,7 @@ Descarga los anuncios de contratación del Ayuntamiento de Aranda de Duero publi
 1. `npm run fetch` recorre el feed de la Plataforma y descarga a `dump/` los anuncios nuevos. Guarda un punto de
    control en `dump/.state.json` para recorrer solo lo nuevo, porque el servidor es lento. Si `SEND_EMAILS=1`, avisa
    por email (Amazon SES) de los anuncios nuevos.
-2. `npm run build:site` genera `transparencia/index.html` (página autocontenida) y `aperturas.ics` a partir de `dump/`
+2. `npm run build:site` genera `transparencia/index.html` (página autocontenida) y los cinco calendarios `.ics` a partir de `dump/`
    y de `transparencia/template.html`.
 3. El workflow [`nightly.yml`](.github/workflows/nightly.yml) lo hace cada noche y a mediodía, sube los datos y
    despliega la página en GitHub Pages desde `docs/`.

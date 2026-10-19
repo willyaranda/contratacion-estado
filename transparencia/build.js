@@ -1,11 +1,11 @@
 // Construye la página de transparencia: lee dump/ y genera data.json, details.json, index.html (autocontenido),
-// artifact.html y aperturas.ics (calendario).
+// artifact.html y los calendarios .ics.
 //   node transparencia/build.js [--dump <carpeta>] [--out <carpeta>]
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
-import { buildIcs, upcomingMesas } from '../lib/ics.js';
+import { CALENDARS, buildIcs, upcomingMesas } from '../lib/ics.js';
 import { buildRecords } from './extract.js';
 
 const MESAS_MARGIN_MS = 7 * 24 * 3600 * 1000;
@@ -82,13 +82,16 @@ const main = () => {
   writeFileSync(join(outDir, 'index.html'), html);
   writeFileSync(join(outDir, 'artifact.html'), toArtifact(html));
 
-  // Calendario de contratación: aperturas de ofertas y plazos de licitaciones
-  writeFileSync(join(outDir, 'aperturas.ics'), buildIcs(aperturas, { tenders: records }));
+  // Calendarios: el completo (aperturas.ics) y los temáticos (mesas, plazos, adjudicaciones, vencimientos)
+  const now = Date.now();
+  for (const { file, ...calendar } of CALENDARS) {
+    writeFileSync(join(outDir, file), buildIcs(aperturas, { now, tenders: records, ...calendar }));
+  }
 
   console.log({
     files, contracts: records.length, withWinner: records.filter((r) => r.winners.length).length, generated,
   });
-  console.log(`data.json, details.json, index.html, artifact.html y aperturas.ics escritos en ${outDir}`);
+  console.log(`data.json, details.json, index.html, artifact.html y ${CALENDARS.map((c) => c.file).join(', ')} escritos en ${outDir}`);
 };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

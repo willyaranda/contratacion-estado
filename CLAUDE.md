@@ -9,7 +9,8 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
 - `npm run build:site`: genera `transparencia/index.html` y `artifact.html` desde `dump/` y `template.html`.
 - `dump/aperturas.json`: fechas de apertura de ofertas de todas las licitaciones (las escribe `npm run fetch`
   leyendo la ficha web: el feed no las trae). De él sale `docs/aperturas.ics` (calendario), que `build:site` genera en
-  `transparencia/aperturas.ics` y el nocturno copia a `docs/`.
+  `transparencia/aperturas.ics` y el nocturno copia a `docs/`. Hay 5 .ics (`aperturas` completo, `mesas`, `plazos`,
+  `adjudicaciones`, `vencimientos`), definidos en `CALENDARS` de `lib/ics.js`.
 - `npm run lint` y `npm test` (ava + c8): deben pasar antes de commitear.
 
 ## Convenciones

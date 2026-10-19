@@ -6,7 +6,7 @@ import {
   decodeEntities, eventStartMs, madridToUtcMs, parseDocuments, parseEvents, readAperturas, syncAperturas, writeAperturas,
 } from '../lib/aperturas.js';
 import {
-  buildIcs, mesaFields, mesaIcs, storeEvents, upcomingMesas,
+  CALENDARS, buildIcs, mesaFields, mesaIcs, storeEvents, upcomingMesas,
 } from '../lib/ics.js';
 import { openingsLines, shortType } from '../lib/aperturas-text.js';
 import { buildRecords } from '../transparencia/extract.js';
@@ -398,4 +398,46 @@ test('upcomingMesas filtra por fecha, ordena y lleva el .ics de cada mesa', (t) 
   t.deepEqual(mesas.map((m) => m.start), [...mesas.map((m) => m.start)].sort((a, b) => a - b));
   for (const m of mesas) t.regex(m.ics, new RegExp(`UID:${m.uid.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
   t.deepEqual(upcomingMesas({}, NOW), []);
+});
+
+// ---- calendarios temáticos
+
+test('los calendarios temáticos llevan solo sus tipos; el completo, la unión, con los mismos UID y nombres propios', (t) => {
+  const tenders = [
+    { id: 'l-1', kind: 'licitacion', title: 'Obra A', published: '2026-10-01', deadline: '2026-10-20', outcome: 'adjudicado', awardDate: '2026-10-10', durationMonths: 3 },
+    { id: 'm-2', kind: 'menor', title: 'Servicio B', outcome: 'adjudicado', awardDate: '2026-10-12', plannedEnd: '2026-12-31' },
+  ];
+  const build = (calendar) => {
+    const { prodId, name, kinds } = calendar;
+    return buildIcs(store, {
+      now: NOW, tenders, prodId, name, kinds,
+    }).replace(/\r\n /g, '');
+  };
+  const uids = (ics) => [...ics.matchAll(/UID:(.+)\r\n/g)].map((m) => m[1]);
+  const byFile = Object.fromEntries(CALENDARS.map((c) => [c.file, build(c)]));
+  t.deepEqual(Object.keys(byFile), ['aperturas.ics', 'mesas.ics', 'plazos.ics', 'adjudicaciones.ics', 'vencimientos.ics']);
+
+  t.true(uids(byFile['mesas.ics']).length > 0);
+  t.true(uids(byFile['mesas.ics']).every((u) => /^10-/.test(u)));
+  t.deepEqual(uids(byFile['plazos.ics']).sort(), ['l-1-pub@contratacion-estado', 'l-1-ult@contratacion-estado']);
+  t.deepEqual(uids(byFile['adjudicaciones.ics']).sort(), ['l-1-adj@contratacion-estado', 'm-2-adj@contratacion-estado']);
+  t.deepEqual(uids(byFile['vencimientos.ics']).sort(), ['l-1-fin@contratacion-estado', 'm-2-fin@contratacion-estado']);
+  t.regex(byFile['vencimientos.ics'], /TRIGGER:-PT15H/);
+  t.notRegex(byFile['mesas.ics'], /VALARM/);
+
+  const union = Object.entries(byFile).filter(([f]) => f !== 'aperturas.ics').flatMap(([, ics]) => uids(ics)).sort();
+  t.deepEqual(uids(byFile['aperturas.ics']).sort(), union);
+
+  const names = Object.values(byFile).map((ics) => ics.match(/X-WR-CALNAME:(.+)\r\n/)[1]);
+  t.deepEqual(names, [
+    'Contratación Ayuntamiento Aranda de Duero',
+    'Contratación Aranda de Duero · Mesas de contratación',
+    'Contratación Aranda de Duero · Plazos de licitaciones',
+    'Contratación Aranda de Duero · Adjudicaciones',
+    'Contratación Aranda de Duero · Vencimientos de contratos',
+  ]);
+  const prodIds = Object.values(byFile).map((ics) => ics.match(/PRODID:(.+)\r\n/)[1]);
+  t.is(new Set(prodIds).size, 5);
+  // el completo no cambia: es el que genera buildIcs sin opciones
+  t.is(build(CALENDARS[0]), buildIcs(store, { now: NOW, tenders }).replace(/\r\n /g, ''));
 });

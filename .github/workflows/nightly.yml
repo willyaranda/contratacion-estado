@@ -59,7 +59,7 @@ jobs:
           npm run build:site
           mkdir -p docs
           cp transparencia/index.html docs/index.html
-          cp transparencia/aperturas.ics docs/aperturas.ics
+          cp transparencia/*.ics docs/
           touch docs/.nojekyll
 
       - name: Commit y push

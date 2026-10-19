@@ -368,3 +368,22 @@ test('las etiquetas de mandato usan el azul (11-15, 15-19, 19-23) y el naranja (
   t.regex(TEMPLATE, /Sacado por: \$\{periodTag\(r\.period\)\}/);
   t.false(TEMPLATE.includes('plain(PERIODS[r.period].label)'));
 });
+
+test('build.js escribe el calendario completo y los cuatro temáticos', (t) => {
+  const out = tmpDir();
+  const r = buildInto(out);
+  t.is(r.status, 0, r.stderr);
+  const names = {
+    'aperturas.ics': 'Contratación Ayuntamiento Aranda de Duero',
+    'mesas.ics': 'Contratación Aranda de Duero · Mesas de contratación',
+    'plazos.ics': 'Contratación Aranda de Duero · Plazos de licitaciones',
+    'adjudicaciones.ics': 'Contratación Aranda de Duero · Adjudicaciones',
+    'vencimientos.ics': 'Contratación Aranda de Duero · Vencimientos de contratos',
+  };
+  for (const [file, name] of Object.entries(names)) {
+    t.true(existsSync(join(out, file)), file);
+    const ics = readFileSync(join(out, file), 'utf8');
+    t.true(ics.startsWith('BEGIN:VCALENDAR\r\n'), file);
+    t.true(ics.includes(`X-WR-CALNAME:${name}`), file);
+  }
+});
