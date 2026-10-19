@@ -193,7 +193,7 @@ footer{padding:24px 0 40px}
   <p>Explorador ciudadano y no oficial de los contratos del Ayuntamiento (Alcaldía, Junta de Gobierno y Pleno) publicados en la
   Plataforma de Contratación del Sector Público
   (<a href="https://contrataciondelestado.es" rel="noopener">contrataciondelestado.es</a>): licitaciones y contratos menores.</p>
-  <p class="cal"><a href="aperturas.ics" title="Fichero .ics: aperturas de ofertas de los últimos 60 días y las próximas">Enlace al calendario de mesas de contratación</a></p>
+  <p class="cal"><a href="aperturas.ics" title="Fichero .ics: publicación y último día de cada licitación, y aperturas de ofertas (últimos 60 días y próximos)">Calendario de Contratación</a></p>
   <div class="tabs" role="tablist" aria-label="Secciones" id="tabs"></div>
 </div></header>
 
@@ -879,7 +879,7 @@ function renderDetail(id) {
   out.push(dsec("Aperturas de ofertas", ops.length ? `<table class="dtable"><thead><tr><th>Sobre</th><th>Fecha y hora</th><th>Lugar</th><th>Acto</th></tr></thead><tbody>${ops.map((o) => `<tr${o.date < TODAY ? ' class="muted"' : ""}>
     <td>${esc(opLabel(o.type))}</td><td>${esc(fmtDate(o.date))}${o.time ? ` ${esc(o.time)}` : ""}</td>
     <td>${esc([o.place, o.address].filter(Boolean).join(" · ") || "—")}</td><td>${o.public === true ? "Público" : o.public === false ? "Privado" : "—"}</td></tr>`).join("")}</tbody></table>
-    <p class="note" style="margin:6px 0 0">Según el anuncio y el pliego publicados en la Plataforma. <a href="aperturas.ics">Calendario de aperturas (.ics)</a></p>` : ""));
+    <p class="note" style="margin:6px 0 0">Según el anuncio y el pliego publicados en la Plataforma. <a href="aperturas.ics">Calendario de Contratación (.ics)</a></p>` : ""));
 
   // Procedimiento y condiciones
   const pr = d.proc || {};

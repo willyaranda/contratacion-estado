@@ -71,12 +71,12 @@ const main = () => {
   writeFileSync(join(outDir, 'index.html'), html);
   writeFileSync(join(outDir, 'artifact.html'), toArtifact(html));
 
-  // Calendario de aperturas de ofertas (lo escribe index.js en dump/aperturas.json)
+  // Calendario de contratación: aperturas de ofertas (las escribe index.js en dump/aperturas.json) y plazos de licitaciones
   let aperturas = {};
   try {
     aperturas = JSON.parse(readFileSync(join(dumpDir, 'aperturas.json'), 'utf8'));
   } catch { /* sin aperturas todavía */ }
-  writeFileSync(join(outDir, 'aperturas.ics'), buildIcs(aperturas));
+  writeFileSync(join(outDir, 'aperturas.ics'), buildIcs(aperturas, { tenders: records.filter((r) => r.kind === 'licitacion') }));
 
   console.log({
     files, contracts: records.length, withWinner: records.filter((r) => r.winners.length).length, generated,

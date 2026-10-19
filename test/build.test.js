@@ -26,7 +26,7 @@ test('la plantilla tiene los marcadores que rellena el build', (t) => {
 });
 
 test('la cabecera enlaza al calendario de aperturas (.ics)', (t) => {
-  t.regex(TEMPLATE, /<header class="top">[\s\S]*<a href="aperturas\.ics"[^>]*>Enlace al calendario de mesas de contratación<\/a>[\s\S]*<\/header>/);
+  t.regex(TEMPLATE, /<header class="top">[\s\S]*<a href="aperturas\.ics"[^>]*>Calendario de Contratación<\/a>[\s\S]*<\/header>/);
 });
 
 test('la pestaña de Sentir Aranda está oculta salvo que se abra #sentiraranda', (t) => {

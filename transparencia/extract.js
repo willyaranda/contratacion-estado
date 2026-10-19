@@ -289,6 +289,7 @@ export const recordFromEntry = (entry, dir) => {
     awardDate,
     published: noticeDates(cf, ['DOC_CN'])[0] ?? noticeDates(cf)[0] ?? null,
     deadline: asArray(proc['cac:TenderSubmissionDeadlinePeriod'])[0]?.['cbc:EndDate'] ?? null,
+    deadlineTime: `${asArray(proc['cac:TenderSubmissionDeadlinePeriod'])[0]?.['cbc:EndTime'] ?? ''}`.slice(0, 5) || null,
     fundingCodes: asArray(terms['cbc:FundingProgramCode']).map((x) => text(x)).filter(Boolean),
     fundingProgram: fundingProgram || null,
     nextgen: nextgenProgramValue !== null,

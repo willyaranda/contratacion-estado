@@ -319,3 +319,17 @@ test('buildIcs: ventana de 60 días respecto a la fecha de generación, sin toca
   t.notRegex(ics, /UID:2-4-a@/);
   t.is(Object.keys(input).length, 2);
 });
+
+test('buildIcs añade PUB y ULT. DÍA de las licitaciones como eventos de día completo', (t) => {
+  const tenders = [
+    { id: 'l-1', title: 'Obra A', folder: 'EXP/1', published: '2026-10-01', deadline: '2026-10-20', deadlineTime: '23:59', url: 'https://x/y', updated: '2026-10-02T10:00:00+02:00' },
+    { id: 'l-2', title: 'Obra B', published: '2026-10-05', deadline: '2026-10-22', deadlineTime: '14:00' },
+    { id: 'l-3', title: 'Vieja', published: '2025-01-01', deadline: '2025-02-01' },
+  ];
+  const ics = buildIcs({}, { now: NOW, tenders }).replace(/\r\n /g, '');
+  t.is((ics.match(/BEGIN:VEVENT/g) ?? []).length, 4);
+  t.regex(ics, /X-WR-CALNAME:Contratación Ayuntamiento Aranda de Duero/);
+  t.regex(ics, /DTSTART;VALUE=DATE:20261001\r\nDTEND;VALUE=DATE:20261002\r\nSUMMARY:PUB: Obra A/);
+  t.regex(ics, /SUMMARY:ULT. DÍA: Obra A/);
+  t.regex(ics, /SUMMARY:ULT. DÍA \(14:00\): Obra B/);
+});
