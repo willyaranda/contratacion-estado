@@ -18,6 +18,8 @@
   --o-ok-bg:#d3f0de;--o-ok-bd:#1b7f3b;--o-warn-bg:#fdecab;--o-warn-bd:#9a7400;--o-mid-bg:#ffd3a3;--o-mid-bd:#b35400;--o-bad-bg:#ffd6d2;--o-bad-bd:#b3261e;
   /* sin resultado / estado Publicado (azul) y clase del contrato (morado = mayor, pizarra = menor) */
   --o-info-bg:#d6e6fb;--o-info-bd:#1565c0;--k-maj-bg:#ead9f7;--k-maj-bd:#7b2fb0;--k-min-bg:#dde3ea;--k-min-bd:#52606f;
+  /* etiquetas de mandato: mismo azul/naranja que los gráficos (--p0 / --p3), fondo tenue */
+  --m-blue-bg:#e6effa;--m-blue-bd:#1565c0;--m-orange-bg:#fdecd0;--m-orange-bd:#dd8500;
 }
 @media (prefers-color-scheme:dark){
   :root:not([data-theme="light"]){
@@ -28,6 +30,7 @@
     --good:#5fcf80;--bad:#ff8a80;
     --o-ok-bg:#1f4d2e;--o-ok-bd:#5fcf80;--o-warn-bg:#5a4708;--o-warn-bd:#e3b04b;--o-mid-bg:#6b3a0c;--o-mid-bd:#ff9d3d;--o-bad-bg:#5e1f1a;--o-bad-bd:#ff8a80;
 --o-info-bg:#16365f;--o-info-bd:#6aa8ff;--k-maj-bg:#43265e;--k-maj-bd:#c79bf0;--k-min-bg:#2f3944;--k-min-bd:#9db0c2;
+--m-blue-bg:#14304f;--m-blue-bd:#5aa9f5;--m-orange-bg:#4a3208;--m-orange-bd:#ffb02e;
   }
 }
 :root[data-theme="dark"]{
@@ -38,6 +41,7 @@
   --good:#5fcf80;--bad:#ff8a80;
   --o-ok-bg:#1f4d2e;--o-ok-bd:#5fcf80;--o-warn-bg:#5a4708;--o-warn-bd:#e3b04b;--o-mid-bg:#6b3a0c;--o-mid-bd:#ff9d3d;--o-bad-bg:#5e1f1a;--o-bad-bd:#ff8a80;
 --o-info-bg:#16365f;--o-info-bd:#6aa8ff;--k-maj-bg:#43265e;--k-maj-bd:#c79bf0;--k-min-bg:#2f3944;--k-min-bd:#9db0c2;
+--m-blue-bg:#14304f;--m-blue-bd:#5aa9f5;--m-orange-bg:#4a3208;--m-orange-bd:#ffb02e;
 }
 *{box-sizing:border-box}
 html{color-scheme:light dark}
@@ -196,6 +200,8 @@ td .sub{color:var(--muted);font-size:.78rem}
 .tag.ng img{width:14px;height:auto;aspect-ratio:3/2;vertical-align:-2px;margin-right:4px;border-radius:1px}
 .tag.kind-licitacion{background:var(--k-maj-bg);border:1px solid var(--k-maj-bd);color:var(--ink)}
 .tag.kind-menor{background:var(--k-min-bg);border:1px solid var(--k-min-bd);color:var(--ink)}
+.tag.per-p0,.tag.per-p1,.tag.per-p2{background:var(--m-blue-bg);border:1px solid var(--m-blue-bd);color:var(--ink)}
+.tag.per-p3{background:var(--m-orange-bg);border:1px solid var(--m-orange-bd);color:var(--ink)}
 .tag.st-EV{background:var(--o-mid-bg);border:1px solid var(--o-mid-bd);color:var(--ink)}
 .tag.out-desierto,.tag.st-ADJ{background:var(--o-warn-bg);border:1px solid var(--o-warn-bd);color:var(--ink)}
 .tag.out-mixto{background:linear-gradient(135deg,var(--o-warn-bg) 50%,var(--o-mid-bg) 50%);border:1px solid var(--o-mid-bd);color:var(--ink)}
@@ -504,6 +510,8 @@ const VOID_OUTCOMES = ["desierto","desistimiento","renuncia"]; // terminan sin a
 // licitaciones por la fecha de publicación del anuncio; contratos menores (sin licitación) por la de adjudicación.
 // Cada mandato dura desde su constitución hasta el día anterior a la del siguiente; lo anterior al primero cuenta en el primero.
 // <periodos>
+// etiqueta del mandato: cuadradito del color del gráfico + texto; azul (p0-p2) o naranja (p3) vía .per-pN
+const periodTag = (p) => `<span class="tag per-p${safeCls(p)}"><i class="p${safeCls(p)}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>${esc(PERIODS[p].label)}</span>`;
 const PERIODS = [
   { label: "Mandato 11-15", start: "2011-06-11" }, { label: "Mandato 15-19", start: "2015-06-14" },
   { label: "Mandato 19-23", start: "2019-06-15" }, { label: "Mandato 23-27", start: "2023-06-17" },
@@ -786,7 +794,7 @@ function showTip(e) {
   tip.innerHTML = `<strong>${esc(r.title.length > 140 ? r.title.slice(0, 140) + "…" : r.title)}</strong>
     <div>${eur2.format(r.amount)} · ${fmtDate(r.date)}</div>
     <div class="muted">${esc(TYPE[r.type] || "—")} · ${esc(r.bodyShort)}${who ? " · " + esc(who) : ""}</div>
-    <div class="muted"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>Sacado por: ${esc(PERIODS[r.period].label)}</div>
+    <div class="muted">Sacado por: ${periodTag(r.period)}</div>
     <div class="muted">Clic para ver la ficha del contrato</div>`;
   tip.hidden = false;
   moveTip(e);
@@ -885,7 +893,7 @@ function renderDetail(id) {
   // Cabecera
   const cpv = (r.cpv || []).map((c) => { const code = String(c).padStart(8, "0"); const div = CPV_DIV[code.slice(0, 2)]; return `${code}${div ? ` (${esc(div)})` : ""}`; });
   const plain = (b) => (b ? `<span class="tag">${esc(b)}</span>` : "");
-  const badges = [kindTag(r.kind), plain(TYPE[r.type]), plain(PROC[r.procedure]), r.outcome ? outTag(r.outcome, OUTCOME[r.outcome]) : r.status ? statusTag(r.status) : "", plain(PERIODS[r.period].label), r.nextgenProgram ? ngTag() : ""]
+  const badges = [kindTag(r.kind), plain(TYPE[r.type]), plain(PROC[r.procedure]), r.outcome ? outTag(r.outcome, OUTCOME[r.outcome]) : r.status ? statusTag(r.status) : "", periodTag(r.period), r.nextgenProgram ? ngTag() : ""]
     .filter(Boolean).join("");
   out.push(`<div class="dbadges">${badges}</div>`);
 
@@ -1639,7 +1647,7 @@ function renderList() {
     ...(optCols.has("procedure") ? [{ key:"procedure", label:"Procedimiento", sort: (r) => PROC[r.procedure] || "", html: (r) => esc(PROC[r.procedure] || "—") }] : []),
     ...(optCols.has("status") ? [{ key:"status", label:"Estado", sort: (r) => r.status || "", html: (r) => r.status ? statusTag(r.status) : "—" }] : []),
     ...(optCols.has("outcome") ? [{ key:"outcome", label:"Resultado", sort: (r) => r.outcome || "", html: (r) => outTag(r.outcome, r.outcome ? OUTCOME[r.outcome] || r.outcome : "Sin resultado todavía") }] : []),
-    ...(optCols.has("period") ? [{ key:"period", label:"Corporación", sort: (r) => r.period, html: (r) => `<span class="tag"><i class="p${r.period}" style="display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:5px"></i>${esc(PERIODS[r.period].label)}</span>` }] : []),
+    ...(optCols.has("period") ? [{ key:"period", label:"Corporación", sort: (r) => r.period, html: (r) => periodTag(r.period) }] : []),
     ...(optCols.has("published") ? [{ key:"published", label:"Publicación", desc:true, sort: (r) => r.published || "", html: (r) => fmtDate(r.published) }] : []),
     ...(optCols.has("deadline") ? [{ key:"deadline", label:"Fecha límite", desc:true, sort: (r) => r.deadline || "", html: (r) => fmtDate(r.deadline) }] : []),
     ...(optCols.has("offers") ? [{ key:"offers", label:"Ofertas", num:true, sort: (r) => r.offers ?? -1, html: (r) => r.offers ?? "—" }] : []),

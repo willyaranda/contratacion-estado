@@ -355,3 +355,16 @@ test('enlaces de Google y Outlook: fecha UTC y título codificados', (t) => {
   t.is(mesaWhen(NOW_MESAS + 3600e3, NOW_MESAS).rel, 'hoy');
   t.is(mesaWhen(NOW_MESAS + 86400e3, NOW_MESAS).rel, 'mañana');
 });
+
+test('las etiquetas de mandato usan el azul (11-15, 15-19, 19-23) y el naranja (23-27) de los gráficos', (t) => {
+  for (const v of ['--m-blue-bg', '--m-blue-bd', '--m-orange-bg', '--m-orange-bd']) t.is(TEMPLATE.match(new RegExp(`${v}:#`, 'g')).length, 3, v);
+  const bd = [...TEMPLATE.matchAll(/--m-blue-bd:(#\w+);--m-orange-bg:#\w+;--m-orange-bd:(#\w+);/g)].map((m) => m.slice(1));
+  t.deepEqual(bd, [['#1565c0', '#dd8500'], ['#5aa9f5', '#ffb02e'], ['#5aa9f5', '#ffb02e']]); // = --p0 / --p3 de cada tema
+  t.regex(TEMPLATE, /\.tag\.per-p0,\.tag\.per-p1,\.tag\.per-p2\{background:var\(--m-blue-bg\);border:1px solid var\(--m-blue-bd\);color:var\(--ink\)\}/);
+  t.regex(TEMPLATE, /\.tag\.per-p3\{background:var\(--m-orange-bg\);border:1px solid var\(--m-orange-bd\);color:var\(--ink\)\}/);
+  t.regex(TEMPLATE, /const periodTag = \(p\) => `<span class="tag per-p\$\{safeCls\(p\)\}"><i class="p\$\{safeCls\(p\)\}"/);
+  t.regex(TEMPLATE, /label:"Corporación"[^\n]*html: \(r\) => periodTag\(r\.period\)/);
+  t.regex(TEMPLATE, /const badges = \[[^\n]*periodTag\(r\.period\)/);
+  t.regex(TEMPLATE, /Sacado por: \$\{periodTag\(r\.period\)\}/);
+  t.false(TEMPLATE.includes('plain(PERIODS[r.period].label)'));
+});
