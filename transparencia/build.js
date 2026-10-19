@@ -1,10 +1,13 @@
 // Construye la página de transparencia: lee dump/ y genera data.json, details.json, index.html (autocontenido),
-// artifact.html, los calendarios .ics y los feeds feed.xml y rss.xml.
+// artifact.html, los calendarios .ics, los feeds feed.xml y rss.xml y los datos abiertos (datos/).
 //   node transparencia/build.js [--dump <carpeta>] [--out <carpeta>]
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
+import {
+  DATA_DIR, DATA_FILES, buildAdjudicatariosCsv, buildContratosCsv, buildContratosJson,
+} from '../lib/datos.js';
 import { FEED_FILE, RSS_FILE, buildAtom, buildRss } from '../lib/feed.js';
 import { CALENDARS, buildIcs, upcomingMesas } from '../lib/ics.js';
 import { buildRecords } from './extract.js';
@@ -102,10 +105,17 @@ const main = () => {
   writeFileSync(join(outDir, FEED_FILE), buildAtom(records, generated));
   writeFileSync(join(outDir, RSS_FILE), buildRss(records, generated));
 
+  // Datos abiertos (datos/): los mismos registros que la página, en CSV y JSON
+  const dataDir = join(outDir, DATA_DIR);
+  mkdirSync(dataDir, { recursive: true });
+  writeFileSync(join(dataDir, DATA_FILES.csv), buildContratosCsv(records));
+  writeFileSync(join(dataDir, DATA_FILES.json), buildContratosJson(records, generated));
+  writeFileSync(join(dataDir, DATA_FILES.adjudicatarios), buildAdjudicatariosCsv(records));
+
   console.log({
     files, contracts: records.length, withWinner: records.filter((r) => r.winners.length).length, generated,
   });
-  console.log(`data.json, details.json, index.html, artifact.html, ${CALENDARS.map((c) => c.file).join(', ')}, ${FEED_FILE} y ${RSS_FILE} escritos en ${outDir}`);
+  console.log(`data.json, details.json, index.html, artifact.html, ${CALENDARS.map((c) => c.file).join(', ')}, ${FEED_FILE}, ${RSS_FILE} y ${DATA_DIR}/ (${Object.values(DATA_FILES).join(', ')}) escritos en ${outDir}`);
 };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

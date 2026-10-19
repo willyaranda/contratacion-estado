@@ -61,6 +61,8 @@ jobs:
           cp transparencia/index.html docs/index.html
           cp transparencia/*.ics docs/
           cp transparencia/*.xml docs/
+          mkdir -p docs/datos
+          cp transparencia/datos/* docs/datos/
           touch docs/.nojekyll
 
       - name: Commit y push
