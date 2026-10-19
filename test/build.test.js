@@ -164,6 +164,13 @@ test('las URLs absolutas salen de transparencia/site.js', (t) => {
   t.notRegex(readFileSync(join(ROOT, 'transparencia', 'build.js'), 'utf8'), /github\.com|github\.io/);
 });
 
+test('el README solo usa URLs del sitio y del repositorio que coinciden con transparencia/site.js', (t) => {
+  const readme = readFileSync(join(ROOT, 'README.md'), 'utf8');
+  const urls = readme.match(/https:\/\/[^\s>)]*(github\.io|github\.com)[^\s>)]*/g) || [];
+  t.true(urls.length > 0);
+  for (const url of urls) t.true(url.startsWith(SITE_URL) || url.startsWith(REPO_URL), url);
+});
+
 test('el build es determinista: dos ejecuciones dan exactamente el mismo HTML', (t) => {
   const run = () => {
     const out = tmpDir('build-');

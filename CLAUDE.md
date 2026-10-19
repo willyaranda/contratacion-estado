@@ -23,6 +23,9 @@ Público), los guarda en `dump/` y publica una página de transparencia en GitHu
 - Nunca imprimir ni escribir credenciales. Las credenciales de AWS son secrets de GitHub (`AWS_ACCESS_KEY_ID`,
   `AWS_SECRET_ACCESS_KEY`); los destinatarios son la variable de repositorio `NOTIFY_TO` (no es un secreto) y van
   siempre en CCO.
+- Al transferir el repo a la organización oficial, actualizar `SITE_URL`/`REPO_URL` en `transparencia/site.js` (única fuente
+  para el template y el build) y las URLs de `README.md` (Markdown, no puede importarlas; un test comprueba que coinciden).
+  Revisar además `.github/` y la variable `NOTIFY_TO` por si dependen del repo.
 - Los contratos se asignan a la corporación que los sacó: licitaciones por fecha de publicación del anuncio y
   contratos menores por fecha de adjudicación.
 
