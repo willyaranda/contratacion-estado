@@ -43,6 +43,9 @@ La página `/datos` (datos abiertos) se genera con `transparencia/datos.html` y 
   descarga, build, commit de `dump/` y `docs/`, y despliegue de Pages. La descarga guarda un punto de control en
   `dump/.state.json` (hasta dónde llegó en el feed de toda España) para recorrer solo lo nuevo; el servidor de la
   Plataforma es lento (minutos por página) y no hay que quitar el límite de tiempo por petición ni el punto de control.
+  El nocturno reintenta hasta 3 veces (descarga y `git push`, con espera creciente) sin enviar correos duplicados ni de
+  fallo: cada intento parte del `dump/` del último commit y el job escribe un marcador (`DIGEST_SENT_FILE`, fuera del
+  repo) al enviar el resumen para que un reintento no lo repita. Si fallan los 3, el job falla como siempre.
 - `.github/workflows/pages.yml`: publica `docs/` en cada push a `main` que lo cambie, o cuando lo invoca el nocturno.
 - `.github/workflows/test.yml`: lint y tests en cada push y pull request.
 - `.github/workflows/test-email.yml`: manual. Manda un correo de prueba por SES con los secrets del repositorio

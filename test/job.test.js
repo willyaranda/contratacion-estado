@@ -165,6 +165,49 @@ test('runJob: si la ficha falla, el aviso sale igualmente y la ficha se reintent
   t.is(ses.sent.length, 1); // sin novedades no se manda otro correo
 });
 
+test('runJob: el primer intento envía y escribe el marcador; un reintento con marcador no vuelve a enviar', async (t) => {
+  const marker = join(tmpDir(), 'digest-sent');
+  const env = { ...ENV, DIGEST_SENT_FILE: marker };
+  const ses = sesDouble();
+  const first = await runJob({
+    env, dumpDir: jobDump(), feeds, fetchText: fakeWeb(), createClient: ses.createClient, log: () => {},
+  });
+  t.is(first.sent, 1);
+  t.true(existsSync(marker));
+  const content = readFileSync(marker, 'utf8');
+  t.notRegex(content, /@|example|AKIA|secret/i);
+
+  // reintento: dump limpio (como hace el workflow), mismos anuncios nuevos
+  const logs = [];
+  const second = await runJob({
+    env, dumpDir: jobDump(), feeds, fetchText: fakeWeb(), createClient: ses.createClient, log: (m) => logs.push(m),
+  });
+  t.deepEqual(second, { created: 1, aperturasChecked: 1, sent: 0 });
+  t.is(ses.sent.length, 1);
+  t.true(logs.some((m) => /ya se envió/.test(m)));
+  t.false(logs.some((m) => /example\.(com|org)/.test(m)));
+});
+
+test('runJob: sin marcador envía, y si el envío falla no deja marcador (el reintento volverá a intentarlo)', async (t) => {
+  const marker = join(tmpDir(), 'digest-sent');
+  const env = { ...ENV, DIGEST_SENT_FILE: marker };
+  await t.throwsAsync(runJob({
+    env,
+    dumpDir: jobDump(),
+    feeds,
+    fetchText: fakeWeb(),
+    createClient: () => ({ send: async () => { throw new Error('SES caído'); } }),
+    log: () => {},
+  }));
+  t.false(existsSync(marker));
+  const ses = sesDouble();
+  const retry = await runJob({
+    env, dumpDir: jobDump(), feeds, fetchText: fakeWeb(), createClient: ses.createClient, log: () => {},
+  });
+  t.is(retry.sent, 1);
+  t.true(existsSync(marker));
+});
+
 test('runJob: con el aviso desactivado descarga y consulta aperturas sin crear cliente de correo', async (t) => {
   const dump = jobDump();
   const result = await runJob({

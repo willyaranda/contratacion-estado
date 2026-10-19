@@ -4,6 +4,9 @@ name: Actualización nocturna
 # transparencia y sube todo en un único commit automático (dump/ + docs/).
 # Si la página ha cambiado, se publica en GitHub Pages llamando a pages.yml (ver ese fichero).
 # También se puede lanzar a mano desde la pestaña Actions ("Run workflow").
+# Si la descarga o el push fallan se reintenta en silencio (3 intentos en total, con espera creciente), sin avisos
+# por email del fallo ni de los reintentos; si fallan todos, el job falla como siempre. Los reintentos no duplican
+# el correo resumen: ver DIGEST_SENT_FILE más abajo.
 on:
   schedule:
     # GitHub no garantiza los disparos programados (pueden retrasarse o saltarse): hay varios al día. Los que no
@@ -22,7 +25,8 @@ jobs:
   update:
     name: Descargar, construir y subir
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # peor caso: 3 intentos de descarga de 15 min (timeout) + esperas de 1 y 2 min, más build y push
+    timeout-minutes: 60
     permissions:
       contents: write
     outputs:
@@ -43,8 +47,31 @@ jobs:
       # (Settings > Secrets and variables > Actions): GitHub oculta sus valores en los logs y el código nunca los
       # imprime. Los destinatarios (NOTIFY_TO) no son secretos: es una variable del repositorio.
       # Si NOTIFY_TO está vacía o mal formada, o faltan las credenciales, el job falla antes de descargar nada.
+      # Reintentos: cada intento parte del dump/ del último commit (git checkout + clean), porque una descarga a medias
+      # deja ficheros nuevos sin punto de control y el reintento los vería como "ya existentes" (no los avisaría ni
+      # seguiría más atrás en el feed). El job escribe el marcador DIGEST_SENT_FILE (fuera del repo) justo tras enviar
+      # el correo; si existe, un reintento descarga igual pero no vuelve a enviar. El marcador no contiene datos.
       - name: Descargar anuncios nuevos y avisar por email
-        run: npm run fetch
+        run: |
+          export DIGEST_SENT_FILE="$RUNNER_TEMP/digest-sent"
+          rm -f "$DIGEST_SENT_FILE"
+          max=3
+          for attempt in $(seq 1 "$max"); do
+            if [ "$attempt" -gt 1 ]; then
+              echo "Intento ${attempt} de ${max} tras un fallo; no se enviará correo si ya se envió."
+              git checkout -- dump
+              git clean -fdq -- dump
+            fi
+            if timeout 15m npm run fetch; then
+              exit 0
+            fi
+            echo "Intento ${attempt} de ${max} fallido."
+            if [ "$attempt" -lt "$max" ]; then
+              sleep $((attempt * ${RETRY_BASE_SECONDS:-60}))
+            fi
+          done
+          echo "La descarga falló en los ${max} intentos."
+          exit 1
         env:
           SEND_EMAILS: '1'
           NOTIFY_TO: ${{ vars.NOTIFY_TO }}
@@ -78,7 +105,24 @@ jobs:
             git diff --cached --quiet -- docs || pages_changed=true
             n=$(git diff --cached --name-only -- dump | wc -l | tr -d ' ')
             git commit -m "datos: ${n} ficheros nuevos y página reconstruida ($(date -u +%F))"
-            git push
+            # Si main avanzó mientras tanto (p. ej. un push manual), se rebasa el commit y se reintenta.
+            max=3
+            for attempt in $(seq 1 "$max"); do
+              if git push; then
+                break
+              fi
+              if [ "$attempt" -ge "$max" ]; then
+                echo "No se pudo hacer push en ${max} intentos."
+                exit 1
+              fi
+              echo "Push fallido (intento ${attempt} de ${max}); se rebasa sobre origin/main y se reintenta."
+              sleep $((attempt * ${RETRY_BASE_SECONDS:-60}))
+              if ! git pull --rebase origin main; then
+                git rebase --abort || true
+                echo "No se pudo rebasar sobre origin/main."
+                exit 1
+              fi
+            done
           fi
           echo "pages_changed=${pages_changed}" >> "$GITHUB_OUTPUT"
 
