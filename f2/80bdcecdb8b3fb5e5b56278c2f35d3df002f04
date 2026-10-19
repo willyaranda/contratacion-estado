@@ -1,0 +1,29 @@
+transparencia/build.js
+  s_9e2a1116b4316a::t_8da7369945c747 10,52-55
+transparencia/template.html
+  s_9e2a1116b4316a::t_8da7369945c747 7,221-227,504-520,1731
+test/build.test.js
+  s_9e2a1116b4316a::t_ade7cfa5cad6a1 111
+  s_9e2a1116b4316a::t_4db0b5f187ec05 9,146-165
+  s_9e2a1116b4316a::t_1df9741b3540cc 166
+transparencia/site.js
+  s_9e2a1116b4316a::t_8da7369945c747 1-5
+docs/index.html
+  s_9e2a1116b4316a::t_97187158240d6d 7,222-228,505-521,1732
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "f280bdcecdb8b3fb5e5b56278c2f35d3df002f04",
+  "prompts": {},
+  "sessions": {
+    "s_9e2a1116b4316a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b0f22546-d7c6-4e35-8da9-54b45bd591cf",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López <willyaranda@gmail.com>"
+    }
+  }
+}
