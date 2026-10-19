@@ -61,7 +61,7 @@ test('loadMailConfig devuelve destinatarios, remitente y región por defecto', (
   const config = loadMailConfig(goodEnv());
   t.true(config.enabled);
   t.deepEqual(config.recipients, ['uno@example.com', 'dos@example.org']);
-  t.is(config.from, 'info@sentiraranda.es');
+  t.is(config.from, 'no-reply@arandadeduero.dev');
   t.is(config.region, 'eu-west-1');
 });
 
@@ -70,7 +70,7 @@ test('loadMailConfig acepta remitente y región propios (y vacíos cuentan como 
   t.is(own.from, 'avisos@example.com');
   t.is(own.region, 'eu-south-2');
   const empty = loadMailConfig(goodEnv({ MAIL_FROM: '', AWS_REGION: '' }));
-  t.is(empty.from, 'info@sentiraranda.es');
+  t.is(empty.from, 'no-reply@arandadeduero.dev');
   t.is(empty.region, 'eu-west-1');
 });
 
@@ -137,7 +137,7 @@ test('sendDigest envía los destinatarios solo en CCO', async (t) => {
   t.deepEqual(input.Destination, { BccAddresses: ['uno@example.com', 'dos@example.org'] });
   t.false('ToAddresses' in input.Destination);
   t.false('CcAddresses' in input.Destination);
-  t.is(input.Source, 'info@sentiraranda.es');
+  t.is(input.Source, 'no-reply@arandadeduero.dev');
   t.regex(input.Message.Subject.Data, /1 anuncio nuevo/);
   // el cuerpo no contiene a los destinatarios
   t.notRegex(input.Message.Body.Text.Data, /example\.(com|org)/);
@@ -149,7 +149,7 @@ test('sendDigest reparte en varios mensajes si hay más de 50 destinatarios', as
   const recipients = Array.from({ length: total }, (_, i) => `persona${i}@example.com`);
   const messages = await sendDigest({
     config: {
-      enabled: true, recipients, from: 'info@sentiraranda.es', region: 'eu-west-1',
+      enabled: true, recipients, from: 'no-reply@arandadeduero.dev', region: 'eu-west-1',
     },
     entries: [entryFor('Pleno del Ayuntamiento de Aranda de Duero')],
     client,
