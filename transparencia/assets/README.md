@@ -12,3 +12,5 @@ Logotipos e imágenes de la página (cabecera, pie y pestaña NextGenerationEU).
 | `escudo.webp` | Escudo del Ayuntamiento de Aranda de Duero | Escudo oficial del Ayuntamiento de Aranda de Duero (Imagen Institucional), `08-escudo-color`. Recortado, reducido a 360 px de alto y convertido a WebP |
 
 Los logotipos y el escudo son marca e imagen oficiales del Ayuntamiento de Aranda de Duero: uso institucional.
+
+Las imágenes de `docs/images/` (miniaturas para redes e iconos) salen de los mismos originales oficiales; ver `docs/images/README.md`.
