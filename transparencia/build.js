@@ -1,4 +1,5 @@
-// Construye la página de transparencia: lee dump/, genera data.json, index.html (autocontenido) y artifact.html.
+// Construye la página de transparencia: lee dump/ y genera data.json, details.json, index.html (autocontenido),
+// artifact.html y aperturas.ics (calendario).
 //   node transparencia/build.js [--dump <carpeta>] [--out <carpeta>]
 import { mkdirSync, readFileSync, writeFileSync } from 'fs';
 import { dirname, join, resolve } from 'path';
@@ -81,7 +82,7 @@ const main = () => {
   console.log({
     files, contracts: records.length, withWinner: records.filter((r) => r.winners.length).length, generated,
   });
-  console.log(`index.html y artifact.html escritos en ${outDir}`);
+  console.log(`data.json, details.json, index.html, artifact.html y aperturas.ics escritos en ${outDir}`);
 };
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
