@@ -582,3 +582,8 @@ test('Evolución anual: la tabla comparativa usa th scope="col" en cabeceras y t
   t.regex(TEMPLATE, /<tr><th scope="row">\$\{l\}<\/th><td class="num">/);
   t.regex(TEMPLATE, /\.cmp tbody th\{font-weight:400;color:var\(--muted\)\}/);
 });
+
+test('Filtros: el contenedor de chips vacío no ocupa espacio (sin hueco bajo el panel colapsado)', (t) => {
+  t.regex(TEMPLATE, /\.chips:empty\{display:none\}/);
+  t.regex(TEMPLATE, /<div class="chips" id="chips"><\/div>/);
+});
