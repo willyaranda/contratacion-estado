@@ -27,6 +27,30 @@ TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:m-20722178-fin@contratacion-estado
+DTSTAMP:20261019T061307Z
+LAST-MODIFIED:20261019T061307Z
+SEQUENCE:1792390387
+DTSTART;VALUE=DATE:20270416
+DTEND;VALUE=DATE:20270417
+SUMMARY:AVISO FIN: Reparacion y acondicionamiento de la ribera del rio Bañ
+ uelos.
+DESCRIPTION:Reparacion y acondicionamiento de la ribera del rio Bañuelos.\
+ nExpediente: MEN/OBR/2026000111\nPublicada: 2026-10-19\nAdjudicada el 2026
+ -10-16 a TRANSPORTES Y CONSTRUCCIONES BLASGON SA\nFin previsto del contrat
+ o: 2027-04-16 (estimado: adjudicación + duración)\nhttps://contrataciond
+ elestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=Y7dKscpvlaXE6P%2
+ FuLemXRw%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=Y7dKscpvlaXE6P%2FuLemXRw%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AVISO FIN: Reparacion y acondicionamiento de la ribera del rio 
+ Bañuelos.
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:l-20416552-fin@contratacion-estado
 DTSTAMP:20261015T105903Z
 LAST-MODIFIED:20261015T105903Z
