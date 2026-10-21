@@ -282,7 +282,7 @@ test('HTML: importe en formato es-ES, expediente, cabecera, pie con los enlaces 
   t.regex(html, /Exp\. EXP\/1/);
   t.regex(html, /Novedades de contratación<\/div>/);
   t.regex(html, /Lunes 19 de octubre de 2026 &middot; Plataforma de Contratación del Sector Público/);
-    t.true(html.includes(`src="${SITE_URL}images/correo-logo.png" width="240" alt="Ayuntamiento de Aranda de Duero"`));
+  t.true(html.includes(`src="${SITE_URL}images/correo-logo.png" width="240" alt="Ayuntamiento de Aranda de Duero"`));
   for (const href of [SITE_URL, `${SITE_URL}aperturas.ics`, `${SITE_URL}datos/`, `${SITE_URL}feed.xml`, PRIVACY_URL]) {
     t.true(html.includes(`href="${href}"`), href);
   }
