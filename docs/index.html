@@ -887,7 +887,7 @@ function bubbles(el, list) {
   bubblePoints = [...pts].sort((a, b) => b.amount - a.amount);
   bubblePoints.forEach((r, i) => {
     const cy = T + groups.indexOf(typeGroup(r.type)) * rowH + rowH / 2;
-    svg += `<circle class="p${r.period}" data-i="${i}" cx="${x(r.date).toFixed(1)}" cy="${cy}" r="${rad(r.amount).toFixed(1)}"></circle>`;
+    svg += `<circle class="p${safeCls(r.period)}" data-i="${i}" cx="${x(r.date).toFixed(1)}" cy="${cy}" r="${rad(r.amount).toFixed(1)}"></circle>`;
   });
   el.innerHTML = svg + "</svg>";
 }
@@ -909,7 +909,7 @@ function showTip(e) {
   if (!r) { tip.hidden = true; return; }
   const who = r.winners.map((w) => winnerLabel(w.key)).join(", ");
   tip.innerHTML = `<strong>${esc(r.title.length > 140 ? r.title.slice(0, 140) + "…" : r.title)}</strong>
-    <div>${eur2.format(r.amount)} · ${fmtDate(r.date)}</div>
+    <div>${esc(eur2.format(r.amount))} · ${esc(fmtDate(r.date))}</div>
     <div class="muted">${esc(TYPE[r.type] || "—")} · ${esc(r.bodyShort)}${who ? " · " + esc(who) : ""}</div>
     <div class="muted">Sacado por: ${periodTag(r.period)}</div>
     <div class="muted">Clic para ver la ficha del contrato</div>`;
@@ -1286,8 +1286,8 @@ function renderResumen() {
   });
   const topC = filtered.filter((r) => r.hasAward).sort((a, b) => b.amount - a.amount).slice(0, 8);
   $("c-top").innerHTML = topC.length ? `<table><tbody>` + topC.map((r) =>
-    `<tr><td>${esc(r.title.length > 90 ? r.title.slice(0, 90) + "…" : r.title)}<div class="sub">${esc(r.winners.map((w) => winnerLabel(w.key)).join(", ") || "—")} · ${fmtDate(r.date)} · <button type="button" class="linkbtn" data-d="${esc(r.id)}">Ficha</button></div></td>
-     <td class="num"><strong>${eur.format(r.amount)}</strong></td></tr>`).join("") + `</tbody></table>` : '<div class="empty">Sin datos</div>';
+    `<tr><td>${esc(r.title.length > 90 ? r.title.slice(0, 90) + "…" : r.title)}<div class="sub">${esc(r.winners.map((w) => winnerLabel(w.key)).join(", ") || "—")} · ${esc(fmtDate(r.date))} · <button type="button" class="linkbtn" data-d="${esc(r.id)}">Ficha</button></div></td>
+     <td class="num"><strong>${esc(eur.format(r.amount))}</strong></td></tr>`).join("") + `</tbody></table>` : '<div class="empty">Sin datos</div>';
   bubbles($("c-bubbles"), filtered);
 }
 // igual que passes() pero sin el filtro de importe (para los tramos)
