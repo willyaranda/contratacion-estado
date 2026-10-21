@@ -516,6 +516,44 @@ URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
  n&idEvl=Ss1Cr0uek%2B59Zh%2FyRJgM8w%3D%3D
 END:VEVENT
 BEGIN:VEVENT
+UID:l-20416971-pub@contratacion-estado
+DTSTAMP:20261021T072320Z
+LAST-MODIFIED:20261021T072320Z
+SEQUENCE:1792567400
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+SUMMARY:PUB: Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Du
+ ero
+DESCRIPTION:Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Due
+ ro\nExpediente: ABR/SERV/2026000038\nPublicada: 2026-09-11\nFin del plazo 
+ de ofertas: 2026-10-13 23:59\nhttps://contrataciondelestado.es/wps/poc?uri
+ =deeplink:detalle_licitacion&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
+END:VEVENT
+BEGIN:VEVENT
+UID:l-20416971-ult@contratacion-estado
+DTSTAMP:20261021T072320Z
+LAST-MODIFIED:20261021T072320Z
+SEQUENCE:1792567400
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:ULT. DÍA: Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda
+  de Duero
+DESCRIPTION:Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Due
+ ro\nExpediente: ABR/SERV/2026000038\nPublicada: 2026-09-11\nFin del plazo 
+ de ofertas: 2026-10-13 23:59\nhttps://contrataciondelestado.es/wps/poc?uri
+ =deeplink:detalle_licitacion&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ULT. DÍA: Servicio de Ayuda a Domicilio del Ayuntamiento de Ar
+ anda de Duero
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:l-20329134-ult@contratacion-estado
 DTSTAMP:20261019T114752Z
 LAST-MODIFIED:20261019T114752Z
@@ -619,44 +657,6 @@ ACTION:DISPLAY
 DESCRIPTION:ULT. DÍA: Servicio de actualización permanente del sistema de
   protección de datos de carácter personal y del registro de actividades 
  de tratamiento del Ayuntamiento de Aranda de Duero
-TRIGGER:-PT15H
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20416971-pub@contratacion-estado
-DTSTAMP:20261019T072058Z
-LAST-MODIFIED:20261019T072058Z
-SEQUENCE:1792394458
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260912
-SUMMARY:PUB: Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Du
- ero
-DESCRIPTION:Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Due
- ro\nExpediente: ABR/SERV/2026000038\nPublicada: 2026-09-11\nFin del plazo 
- de ofertas: 2026-10-13 23:59\nhttps://contrataciondelestado.es/wps/poc?uri
- =deeplink:detalle_licitacion&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20416971-ult@contratacion-estado
-DTSTAMP:20261019T072058Z
-LAST-MODIFIED:20261019T072058Z
-SEQUENCE:1792394458
-DTSTART;VALUE=DATE:20261013
-DTEND;VALUE=DATE:20261014
-SUMMARY:ULT. DÍA: Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda
-  de Duero
-DESCRIPTION:Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Due
- ro\nExpediente: ABR/SERV/2026000038\nPublicada: 2026-09-11\nFin del plazo 
- de ofertas: 2026-10-13 23:59\nhttps://contrataciondelestado.es/wps/poc?uri
- =deeplink:detalle_licitacion&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:ULT. DÍA: Servicio de Ayuda a Domicilio del Ayuntamiento de Ar
- anda de Duero
 TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
