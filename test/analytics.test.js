@@ -166,7 +166,7 @@ test('el host de Google solo aparece dentro de loadGa, en ambas páginas', (t) =
   for (const [name, html] of [['principal', main], ['datos', datos]]) {
     t.is(html.split(GTM).length - 1, 1, name);
     const fn = html.match(/const loadGa = \(\) => \{[\s\S]*?\n {2}\};/)[0];
-    t.true(fn.includes(GTM), name);
+    t.is(fn.split(GTM).length - 1, 1, name);
     t.notRegex(html, /google-analytics\.com|doubleclick|googleapis|gstatic|preconnect|dns-prefetch|prefetch/, name);
     t.notRegex(html, /<script[^>]+src=/, name);
     const head = html.slice(0, html.indexOf('</head>')).replace(/<style>[\s\S]*<\/style>/, '');

@@ -62,7 +62,7 @@ test('tope de 200 entradas, las más recientes', (t) => {
 test('ids estables, únicos y con esquema tag:', (t) => {
   const ids = feedEntries(RECORDS, GENERATED).map((e) => e.id);
   t.is(new Set(ids).size, ids.length);
-  for (const id of ids) t.regex(id, new RegExp(`^tag:${HOST.replace(/\./g, '\\.')},\\d{4}:[lm]-\\w+-(licitacion|adjudicacion|menor)$`));
+  for (const id of ids) t.regex(id, new RegExp(`^tag:${HOST.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')},\\d{4}:[lm]-\\w+-(licitacion|adjudicacion|menor)$`));
   t.deepEqual(feedEntries([...RECORDS].reverse(), GENERATED).map((e) => e.id), ids);
 });
 

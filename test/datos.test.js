@@ -262,7 +262,7 @@ test('la página usa las constantes de site.js, el canonical y las metas básica
 test('la página solo lleva el script de analítica con consentimiento (y el JSON-LD), con landmarks y sin ocultar el contenido hasta "ready"', (t) => {
   const { html } = site();
   // único script ejecutable: el de analítica (test/analytics.test.js), que no carga nada de Google sin «Aceptar»
-  const scripts = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, '').match(/<script[^>]*>/g);
+  const scripts = html.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, '').match(/<script[^>]*>/gi);
   t.deepEqual(scripts, ['<script>']);
   t.true(html.includes('data-analytics-consent'));
   t.notRegex(html, /body:not\(\.ready\)|visibility:hidden/);
