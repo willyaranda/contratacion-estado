@@ -6,6 +6,46 @@ METHOD:PUBLISH
 X-WR-CALNAME:Contratación Aranda de Duero · Plazos de licitaciones
 X-WR-TIMEZONE:Europe/Madrid
 BEGIN:VEVENT
+UID:l-20593604-pub@contratacion-estado
+DTSTAMP:20261022T071518Z
+LAST-MODIFIED:20261022T071518Z
+SEQUENCE:1792653318
+DTSTART;VALUE=DATE:20260930
+DTEND;VALUE=DATE:20261001
+SUMMARY:PUB: Suministro de furgón de atestados para la Policía Local de A
+ randa de Duero
+DESCRIPTION:Suministro de furgón de atestados para la Policía Local de Ar
+ anda de Duero\nExpediente: ABR_SMPL/SUMIN/2026000041\nPublicada: 2026-09-3
+ 0\nFin del plazo de ofertas: 2026-10-15 23:59\nhttps://contrataciondelesta
+ do.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1YIBJEct%2BG4IYE3ZiZ%2
+ BxmQ%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=1YIBJEct%2BG4IYE3ZiZ%2BxmQ%3D%3D
+END:VEVENT
+BEGIN:VEVENT
+UID:l-20593604-ult@contratacion-estado
+DTSTAMP:20261022T071518Z
+LAST-MODIFIED:20261022T071518Z
+SEQUENCE:1792653318
+DTSTART;VALUE=DATE:20261015
+DTEND;VALUE=DATE:20261016
+SUMMARY:ULT. DÍA: Suministro de furgón de atestados para la Policía Loca
+ l de Aranda de Duero
+DESCRIPTION:Suministro de furgón de atestados para la Policía Local de Ar
+ anda de Duero\nExpediente: ABR_SMPL/SUMIN/2026000041\nPublicada: 2026-09-3
+ 0\nFin del plazo de ofertas: 2026-10-15 23:59\nhttps://contrataciondelesta
+ do.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1YIBJEct%2BG4IYE3ZiZ%2
+ BxmQ%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=1YIBJEct%2BG4IYE3ZiZ%2BxmQ%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ULT. DÍA: Suministro de furgón de atestados para la Policía 
+ Local de Aranda de Duero
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:l-20416971-pub@contratacion-estado
 DTSTAMP:20261021T072320Z
 LAST-MODIFIED:20261021T072320Z
@@ -62,46 +102,6 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:ULT. DÍA: Contratación de un Programa de Ocio Alternativo par
  a fines de semana
-TRIGGER:-PT15H
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20593604-pub@contratacion-estado
-DTSTAMP:20261019T110449Z
-LAST-MODIFIED:20261019T110449Z
-SEQUENCE:1792407889
-DTSTART;VALUE=DATE:20260930
-DTEND;VALUE=DATE:20261001
-SUMMARY:PUB: Suministro de furgón de atestados para la Policía Local de A
- randa de Duero
-DESCRIPTION:Suministro de furgón de atestados para la Policía Local de Ar
- anda de Duero\nExpediente: ABR_SMPL/SUMIN/2026000041\nPublicada: 2026-09-3
- 0\nFin del plazo de ofertas: 2026-10-15 23:59\nhttps://contrataciondelesta
- do.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1YIBJEct%2BG4IYE3ZiZ%2
- BxmQ%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=1YIBJEct%2BG4IYE3ZiZ%2BxmQ%3D%3D
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20593604-ult@contratacion-estado
-DTSTAMP:20261019T110449Z
-LAST-MODIFIED:20261019T110449Z
-SEQUENCE:1792407889
-DTSTART;VALUE=DATE:20261015
-DTEND;VALUE=DATE:20261016
-SUMMARY:ULT. DÍA: Suministro de furgón de atestados para la Policía Loca
- l de Aranda de Duero
-DESCRIPTION:Suministro de furgón de atestados para la Policía Local de Ar
- anda de Duero\nExpediente: ABR_SMPL/SUMIN/2026000041\nPublicada: 2026-09-3
- 0\nFin del plazo de ofertas: 2026-10-15 23:59\nhttps://contrataciondelesta
- do.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=1YIBJEct%2BG4IYE3ZiZ%2
- BxmQ%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=1YIBJEct%2BG4IYE3ZiZ%2BxmQ%3D%3D
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:ULT. DÍA: Suministro de furgón de atestados para la Policía 
- Local de Aranda de Duero
 TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
@@ -227,9 +227,9 @@ END:VALARM
 END:VEVENT
 BEGIN:VEVENT
 UID:l-20497029-pub@contratacion-estado
-DTSTAMP:20261019T070825Z
-LAST-MODIFIED:20261019T070825Z
-SEQUENCE:1792393705
+DTSTAMP:20261022T064231Z
+LAST-MODIFIED:20261022T064231Z
+SEQUENCE:1792651351
 DTSTART;VALUE=DATE:20260831
 DTEND;VALUE=DATE:20260901
 SUMMARY:PUB: Campaña asfáltica 2026.
@@ -243,9 +243,9 @@ URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
 END:VEVENT
 BEGIN:VEVENT
 UID:l-20497029-ult@contratacion-estado
-DTSTAMP:20261019T070825Z
-LAST-MODIFIED:20261019T070825Z
-SEQUENCE:1792393705
+DTSTAMP:20261022T064231Z
+LAST-MODIFIED:20261022T064231Z
+SEQUENCE:1792651351
 DTSTART;VALUE=DATE:20260921
 DTEND;VALUE=DATE:20260922
 SUMMARY:ULT. DÍA: Campaña asfáltica 2026.
