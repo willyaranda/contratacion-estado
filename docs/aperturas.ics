@@ -516,6 +516,23 @@ URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
  n&idEvl=Ss1Cr0uek%2B59Zh%2FyRJgM8w%3D%3D
 END:VEVENT
 BEGIN:VEVENT
+UID:l-19627745-adj@contratacion-estado
+DTSTAMP:20261026T131032Z
+LAST-MODIFIED:20261026T131032Z
+SEQUENCE:1793020232
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:ADJ: Gestión RRSS y diseño de contenidos WEB para el Ayuntamiento
+  de Aranda de Duero
+DESCRIPTION:Gestión RRSS y diseño de contenidos WEB para el Ayuntamiento 
+ de Aranda de Duero\nExpediente: ABR_SMPL/SERV/2026000016\nPublicada: 2026-
+ 05-06\nFin del plazo de ofertas: 2026-05-21 23:59\nAdjudicada el 2026-10-2
+ 4 a ELENA CEBOLLA MANSO\nhttps://contrataciondelestado.es/wps/poc?uri=deep
+ link:detalle_licitacion&idEvl=e05vDBSEOVeIzo3LHNPGcQ%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=e05vDBSEOVeIzo3LHNPGcQ%3D%3D
+END:VEVENT
+BEGIN:VEVENT
 UID:l-20416971-pub@contratacion-estado
 DTSTAMP:20261023T111622Z
 LAST-MODIFIED:20261023T111622Z
@@ -718,28 +735,6 @@ TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:l-20329134-ult@contratacion-estado
-DTSTAMP:20261019T114752Z
-LAST-MODIFIED:20261019T114752Z
-SEQUENCE:1792410472
-DTSTART;VALUE=DATE:20260907
-DTEND;VALUE=DATE:20260908
-SUMMARY:ULT. DÍA: Contratación de un Programa de Ocio Alternativo para fi
- nes de semana
-DESCRIPTION:Contratación de un Programa de Ocio Alternativo para fines de 
- semana\nExpediente: ABR/SERV/2026000032\nPublicada: 2026-08-21\nFin del pl
- azo de ofertas: 2026-09-07 23:59\nhttps://contrataciondelestado.es/wps/poc
- ?uri=deeplink:detalle_licitacion&idEvl=5tAdr968iIY7u6%2B%2FR7DUoA%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=5tAdr968iIY7u6%2B%2FR7DUoA%3D%3D
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:ULT. DÍA: Contratación de un Programa de Ocio Alternativo par
- a fines de semana
-TRIGGER:-PT15H
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
 UID:l-20417756-pub@contratacion-estado
 DTSTAMP:20261019T072301Z
 LAST-MODIFIED:20261019T072301Z
@@ -858,6 +853,46 @@ ACTION:DISPLAY
 DESCRIPTION:ULT. DÍA: Reparación muro contención CEIP Fuenteminaya.
 TRIGGER:-PT15H
 END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:l-20329134-ult@contratacion-estado
+DTSTAMP:20261026T080001Z
+LAST-MODIFIED:20261026T080001Z
+SEQUENCE:1793001601
+DTSTART;VALUE=DATE:20260907
+DTEND;VALUE=DATE:20260908
+SUMMARY:ULT. DÍA: Contratación de un Programa de Ocio Alternativo para fi
+ nes de semana
+DESCRIPTION:Contratación de un Programa de Ocio Alternativo para fines de 
+ semana\nExpediente: ABR/SERV/2026000032\nPublicada: 2026-08-21\nFin del pl
+ azo de ofertas: 2026-09-07 23:59\nAdjudicada el 2026-10-19 a PROACTIVA FOR
+ MACIÓN S.L.\nhttps://contrataciondelestado.es/wps/poc?uri=deeplink:detall
+ e_licitacion&idEvl=5tAdr968iIY7u6%2B%2FR7DUoA%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=5tAdr968iIY7u6%2B%2FR7DUoA%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ULT. DÍA: Contratación de un Programa de Ocio Alternativo par
+ a fines de semana
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:l-20329134-adj@contratacion-estado
+DTSTAMP:20261026T080001Z
+LAST-MODIFIED:20261026T080001Z
+SEQUENCE:1793001601
+DTSTART;VALUE=DATE:20261019
+DTEND;VALUE=DATE:20261020
+SUMMARY:ADJ: Contratación de un Programa de Ocio Alternativo para fines de
+  semana
+DESCRIPTION:Contratación de un Programa de Ocio Alternativo para fines de 
+ semana\nExpediente: ABR/SERV/2026000032\nPublicada: 2026-08-21\nFin del pl
+ azo de ofertas: 2026-09-07 23:59\nAdjudicada el 2026-10-19 a PROACTIVA FOR
+ MACIÓN S.L.\nhttps://contrataciondelestado.es/wps/poc?uri=deeplink:detall
+ e_licitacion&idEvl=5tAdr968iIY7u6%2B%2FR7DUoA%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=5tAdr968iIY7u6%2B%2FR7DUoA%3D%3D
 END:VEVENT
 BEGIN:VEVENT
 UID:l-20497029-pub@contratacion-estado
