@@ -25,8 +25,8 @@ jobs:
   update:
     name: Descargar, construir y subir
     runs-on: ubuntu-latest
-    # peor caso: 3 intentos de descarga de 15 min (timeout) + esperas de 1 y 2 min, más build y push
-    timeout-minutes: 60
+    # peor caso: 3 intentos de descarga de 30 min (timeout) + esperas de 1 y 2 min, más build y push
+    timeout-minutes: 110
     permissions:
       contents: write
     outputs:
@@ -62,7 +62,7 @@ jobs:
               git checkout -- dump
               git clean -fdq -- dump
             fi
-            if timeout 15m npm run fetch; then
+            if timeout 30m npm run fetch; then
               exit 0
             fi
             echo "Intento ${attempt} de ${max} fallido."
