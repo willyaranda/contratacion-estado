@@ -736,6 +736,48 @@ TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:m-20794106-adj@contratacion-estado
+DTSTAMP:20261027T093741Z
+LAST-MODIFIED:20261027T093741Z
+SEQUENCE:1793093861
+DTSTART;VALUE=DATE:20261026
+DTEND;VALUE=DATE:20261027
+SUMMARY:ADJ. MENOR: contrato suministro e instalación pladur para cierre d
+ e huecos escalera en portales del ERRP Santa Catalina
+DESCRIPTION:contrato suministro e instalación pladur para cierre de huecos
+  escalera en portales del ERRP Santa Catalina\nExpediente: MEN/OBR/2026000
+ 124\nPublicada: 2026-10-27\nAdjudicada el 2026-10-26 a ARALLEVA UNIVERSAL 
+ SL\nFin previsto del contrato: 2026-11-21 (estimado: adjudicación + durac
+ ión)\nhttps://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licit
+ acion&idEvl=x5Kb8bf5FXw4NavIWzMcHA%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=x5Kb8bf5FXw4NavIWzMcHA%3D%3D
+END:VEVENT
+BEGIN:VEVENT
+UID:m-20794106-fin@contratacion-estado
+DTSTAMP:20261027T093741Z
+LAST-MODIFIED:20261027T093741Z
+SEQUENCE:1793093861
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+SUMMARY:AVISO FIN: contrato suministro e instalación pladur para cierre de
+  huecos escalera en portales del ERRP Santa Catalina
+DESCRIPTION:contrato suministro e instalación pladur para cierre de huecos
+  escalera en portales del ERRP Santa Catalina\nExpediente: MEN/OBR/2026000
+ 124\nPublicada: 2026-10-27\nAdjudicada el 2026-10-26 a ARALLEVA UNIVERSAL 
+ SL\nFin previsto del contrato: 2026-11-21 (estimado: adjudicación + durac
+ ión)\nhttps://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licit
+ acion&idEvl=x5Kb8bf5FXw4NavIWzMcHA%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=x5Kb8bf5FXw4NavIWzMcHA%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AVISO FIN: contrato suministro e instalación pladur para cierr
+ e de huecos escalera en portales del ERRP Santa Catalina
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:l-19627745-adj@contratacion-estado
 DTSTAMP:20261026T131032Z
 LAST-MODIFIED:20261026T131032Z
@@ -976,21 +1018,6 @@ DESCRIPTION:ULT. DÍA: Dirección de Obra y Coordinación de Seguridad y Sa
  lud para la Campaña asfáltica 2026\, de Aranda de Duero
 TRIGGER:-PT15H
 END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20497482-pub@contratacion-estado
-DTSTAMP:20261019T055115Z
-LAST-MODIFIED:20261019T055115Z
-SEQUENCE:1792389075
-DTSTART;VALUE=DATE:20260828
-DTEND;VALUE=DATE:20260829
-SUMMARY:PUB: Reparación muro contención CEIP Fuenteminaya.
-DESCRIPTION:Reparación muro contención CEIP Fuenteminaya.\nExpediente: AB
- R_SMPL/OBR/2026000036\nPublicada: 2026-08-28\nFin del plazo de ofertas: 20
- 26-09-17 23:59\nhttps://contrataciondelestado.es/wps/poc?uri=deeplink:deta
- lle_licitacion&idEvl=pV9XV%2BShuLicTfjQf3USOg%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=pV9XV%2BShuLicTfjQf3USOg%3D%3D
 END:VEVENT
 BEGIN:VEVENT
 UID:l-20497482-ult@contratacion-estado
@@ -2929,32 +2956,6 @@ ACTION:DISPLAY
 DESCRIPTION:AVISO FIN: Contrato basado en el acuerdo marco para la homologa
  ción de los servicios postales utilizados por la administración de la Co
  munidad de Castilla y León y entidades adheridas (JCYL)
-TRIGGER:-PT15H
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:m-19729486-fin@contratacion-estado
-DTSTAMP:20260521T074949Z
-LAST-MODIFIED:20260521T074949Z
-SEQUENCE:1779349789
-DTSTART;VALUE=DATE:20260828
-DTEND;VALUE=DATE:20260829
-SUMMARY:AVISO FIN: contratación servicio de 2 ambulancias vitales avanzada
- s con médico para cobertura sanitaria X edición vuelta ciclista a la rib
- era 2026 20\,21\,22 y 23 agosto
-DESCRIPTION:contratación servicio de 2 ambulancias vitales avanzadas con m
- édico para cobertura sanitaria X edición vuelta ciclista a la ribera 202
- 6 20\,21\,22 y 23 agosto\nExpediente: MEN/SERV/2026000033\nPublicada: 2026
- -05-21\nAdjudicada el 2026-05-20 a AMBULANCIAS NORTELEON S.L.\nFin previst
- o del contrato: 2026-08-28\nhttps://contrataciondelestado.es/wps/poc?uri=d
- eeplink:detalle_licitacion&idEvl=VYBPvmOq41Il5NjlNci%2BtA%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=VYBPvmOq41Il5NjlNci%2BtA%3D%3D
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:AVISO FIN: contratación servicio de 2 ambulancias vitales avan
- zadas con médico para cobertura sanitaria X edición vuelta ciclista a la
-  ribera 2026 20\,21\,22 y 23 agosto
 TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
