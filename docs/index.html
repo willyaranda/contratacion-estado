@@ -538,6 +538,21 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
     </section>
   </div>
 
+  <!-- ============ CADUCIDADES ============ -->
+  <div data-tab="caducidades" hidden>
+    <section class="kpis" id="kpis-cad"></section>
+    <section class="panel">
+      <h2>Fin previsto de los contratos</h2>
+      <div class="filters" style="margin-bottom:12px">
+        <div><label for="cad-h">Vencimiento</label><select id="cad-h"></select></div>
+        <div><label for="cad-k">Clase</label><select id="cad-k"></select></div>
+      </div>
+      <div id="t-cad"></div>
+      <p class="note" id="cad-note"></p>
+      <p class="note" style="margin:6px 0 0"><a class="cal-link" href="vencimientos.ics" title="Fichero .ics con el fin previsto de cada contrato">📅 Calendario de vencimientos</a></p>
+    </section>
+  </div>
+
   <!-- ============ LISTADO ============ -->
   <div data-tab="listado" hidden>
     <section class="panel" aria-labelledby="h-lista">
@@ -622,7 +637,7 @@ const countParts = (e) => e.byP.map((x) => x.n);
 const emptyP = () => PERIODS.map(() => ({ n: 0, nAw: 0, sum: 0 }));
 const MONTHS = ["Ene","Feb","Mar","Abr","May","Jun","Jul","Ago","Sep","Oct","Nov","Dic"];
 const MONTHS_LONG = ["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
-const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["sentiraranda","Sentir Aranda vs Partido Popular"],["nextgen","NextGenerationEU"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["listado","Listado general"]];
+const TABS = [["resumen","Resumen"],["evolucion","Evolución anual"],["sentiraranda","Sentir Aranda vs Partido Popular"],["nextgen","NextGenerationEU"],["adjudicatarios","Adjudicatarios"],["abiertas","Licitaciones abiertas"],["caducidades","Caducidades"],["listado","Listado general"]];
 // Tramos (desde, hasta]: cada uno incluye su importe superior ("hasta 3.000" incluye 3.000,00 €)
 const RANGES = [["Hasta 3.000 €",-Infinity,3000],["3.000 – 5.000 €",3000,5000],["5.000 – 15.000 €",5000,15000],["15.000 – 40.000 €",15000,40000],["Más de 40.000 €",40000,Infinity]];
 const TYPE_GROUPS = ["Servicios","Suministros","Obras","Otros"];
@@ -678,6 +693,7 @@ const state = { q:"", year:"", month:"", body:"", kind:"", type:"", proc:"", sta
 const tbl = {
   adj:  { sort:"sum", dir:-1, page:0 },
   open: { sort:"deadline", dir:1, page:0 },
+  cad:  { sort:"end", dir:1, page:0 },
   list: { sort:"date", dir:-1, page:0 },
   ng:   { sort:"date", dir:-1, page:0 },
 };
@@ -1161,7 +1177,7 @@ $("detail").addEventListener("click", (e) => { if (e.target === $("detail")) $("
 let filtered = [], listRows = [], adjRows = [];
 function render() {
   tip.hidden = true;
-  $("filters").hidden = state.tab === "sentiraranda" || state.tab === "nextgen"; // pestañas solo informativas: sin filtros
+  $("filters").hidden = ["sentiraranda", "nextgen", "caducidades"].includes(state.tab); // pestañas solo informativas: sin filtros
   // pestañas
   $("tabs").innerHTML = visibleTabs().map(([k, l]) => `<button role="tab" id="tab-${k}" aria-selected="${state.tab === k}" data-t="${k}">${esc(l)}</button>`).join("");
   $("tabs").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => goTab(b.dataset.t)));
@@ -1176,7 +1192,7 @@ function render() {
   $("chips").innerHTML = chips.map(([k,t]) => `<span class="chip">${esc(t)}<button data-k="${k}" aria-label="Quitar filtro: ${esc(t)}">×</button></span>`).join("");
   $("chips").querySelectorAll("button").forEach((b) => b.addEventListener("click", () => { state[b.dataset.k] = ""; for (const t of Object.values(tbl)) t.page = 0; render(); }));
 
-  ({ resumen: renderResumen, evolucion: renderEvolucion, sentiraranda: renderVersus, nextgen: renderNextGen, adjudicatarios: renderAdj, abiertas: renderOpen, listado: renderList })[state.tab]();
+  ({ resumen: renderResumen, evolucion: renderEvolucion, sentiraranda: renderVersus, nextgen: renderNextGen, adjudicatarios: renderAdj, abiertas: renderOpen, caducidades: renderCad, listado: renderList })[state.tab]();
 }
 
 // Leyenda de colores con el recuento de cada corporación sobre lo que se está viendo
@@ -1754,6 +1770,55 @@ function renderOpen() {
     { key:"link", label:"Anuncio", sort: () => "", html: linkCell },
   ], open, tbl.open, 25, "No hay licitaciones con plazo abierto en los datos.");
   $("open-note").textContent = `Se consideran abiertas las licitaciones publicadas o en evaluación con fecha límite igual o posterior a hoy (${fmtDate(TODAY)}). Los datos son del ${fmtDate(REF)}: confirma siempre el estado en el anuncio original.`;
+}
+
+// Fin previsto: el de la ficha si lo trae; si no, inicio de ejecución (o adjudicación) + duración (mismo criterio que vencimientos.ics)
+function endOf(r) {
+  if (r.plannedEnd) return { date: r.plannedEnd, estimated: false };
+  const from = r.plannedStart || r.awardDate;
+  if (!from || !r.durationMonths) return null;
+  const d = new Date(`${from}T00:00:00Z`);
+  d.setUTCMonth(d.getUTCMonth() + r.durationMonths);
+  return { date: d.toISOString().slice(0, 10), estimated: true };
+}
+const CAD_H = [["next12", "Próximos 12 meses"], ["next3", "Próximos 3 meses"], ["next6", "Próximos 6 meses"], ["next24", "Próximos 24 meses"], ["past", "Ya vencidos"], ["all", "Todos"]];
+const cadState = { h: "next12", k: "" };
+const addMonthsStr = (n) => { const d = new Date(`${TODAY}T00:00:00Z`); d.setUTCMonth(d.getUTCMonth() + n); return d.toISOString().slice(0, 10); };
+fillSelect($("cad-h"), CAD_H);
+fillSelect($("cad-k"), Object.entries(KIND), "Todas");
+for (const [id, key] of [["cad-h", "h"], ["cad-k", "k"]]) $(id).addEventListener("change", (e) => { cadState[key] = e.target.value; tbl.cad.page = 0; render(); });
+function renderCad() {
+  $("cad-h").value = cadState.h; $("cad-k").value = cadState.k;
+  const all = R.filter((r) => r.hasAward && !VOID_OUTCOMES.includes(r.outcome)).map((r) => ({ ...r, end: endOf(r) })).filter((r) => r.end);
+  const inK = all.filter((r) => !cadState.k || r.kind === cadState.k);
+  const h = cadState.h;
+  const rows = inK.filter((r) => {
+    const e = r.end.date;
+    if (h === "past") return e < TODAY;
+    if (h === "all") return true;
+    return e >= TODAY && e <= addMonthsStr(+h.slice(4));
+  });
+  const upcoming = (m) => inK.filter((r) => r.end.date >= TODAY && r.end.date <= addMonthsStr(m));
+  const sumIn = (a) => a.reduce((s, r) => s + r.amount, 0);
+  const next = inK.filter((r) => r.end.date >= TODAY).sort((a, b) => a.end.date.localeCompare(b.end.date))[0];
+  $("kpis-cad").innerHTML =
+    kpi(nf.format(upcoming(3).length), "vencen en 3 meses", eur.format(sumIn(upcoming(3)))) +
+    kpi(nf.format(upcoming(12).length), "vencen en 12 meses", eur.format(sumIn(upcoming(12)))) +
+    kpi(nf.format(inK.filter((r) => r.end.date < TODAY).length), "ya vencidos", "según fecha de fin o duración") +
+    kpi(next ? fmtDate(next.end.date) : "—", "próximo vencimiento", next ? `en ${days(TODAY, next.end.date)} días` : "");
+  if (!$("t-cad").firstChild) mountTable("t-cad");
+  drawTable("t-cad", [
+    { key:"end", label:"Fin previsto", sort: (r) => r.end.date, html: (r) => `${fmtDate(r.end.date)}${r.end.estimated ? ' <span class="note" title="Estimado: inicio o adjudicación + duración">(est.)</span>' : ""}<div class="sub">${r.end.date >= TODAY ? `en ${days(TODAY, r.end.date)} días` : `hace ${days(r.end.date, TODAY)} días`}</div>` },
+    { key:"title", label:"Contrato", cls:"obj", sort: (r) => r.title, html: titleCell },
+    { key:"type", label:"Tipo", sort: (r) => TYPE[r.type] || "", html: (r) => esc(TYPE[r.type] || "—") },
+    { key:"winner", label:"Contratista", sort: (r) => winnerLabel(r.winners[0]?.key || ""), html: winnerLinks },
+    { key:"duration", label:"Duración (meses)", num:true, sort: (r) => r.durationMonths ?? -1, html: (r) => r.durationMonths ?? "—" },
+    { key:"amount", label:"Importe", num:true, sort: (r) => r.amount, html: amountCell },
+    { key:"link", label:"Anuncio", sort: () => "", html: linkCell },
+  ], rows, tbl.cad, 25, "No hay contratos con ese vencimiento en los datos.");
+  $("cad-note").textContent = `Solo contratos adjudicados con fecha de fin en la ficha o con duración indicada (${nf.format(all.length)} de ${nf.format(R.filter((r) => r.hasAward).length)}). `
+    + `Cuando la ficha no trae fecha de fin, se estima sumando la duración al inicio de ejecución o, si no consta, a la adjudicación («est.»). `
+    + `No incluye prórrogas ni modificaciones: la fecha real puede ser posterior. Los datos son del ${fmtDate(REF)}: confirma siempre en el anuncio original.`;
 }
 
 function renderList() {

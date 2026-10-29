@@ -357,7 +357,7 @@ test('"Buscar y filtrar" carga colapsado: botón con aria-expanded="false", aria
   t.regex(TEMPLATE, /prefers-reduced-motion:reduce\)\{\.ftoggle \.chev\{transition:none\}/);
   // los filtros activos se indican en el botón y las pestañas informativas siguen ocultando todo el panel
   t.true(TEMPLATE.includes('id="filters-count"'));
-  t.true(TEMPLATE.includes('$("filters").hidden = state.tab === "sentiraranda"'));
+  t.true(TEMPLATE.includes('$("filters").hidden = ["sentiraranda", "nextgen", "caducidades"].includes(state.tab)'));
 });
 
 test('los valores que van en nombres de clase pasan por safeCls (el estado viene del feed externo)', (t) => {
@@ -526,7 +526,8 @@ test('la cabecera enlaza al calendario completo y a los otros cuatro; plazos y m
   // en la cabecera, entre paréntesis detrás del calendario completo, y solo ahí
   t.regex(TEMPLATE, /<header class="top">[\s\S]*Calendario de Contratación<\/a> \(<a href="mesas\.ics"[^>]*>Mesas<\/a> · <a href="plazos\.ics"[^>]*>Plazos<\/a> · <a href="adjudicaciones\.ics"[^>]*>Adjudicaciones<\/a> · <a href="vencimientos\.ics"[^>]*>Vencimientos<\/a>\)[\s\S]*<\/header>/);
   t.is((TEMPLATE.match(/href="adjudicaciones\.ics"/g) ?? []).length, 1);
-  t.is((TEMPLATE.match(/href="vencimientos\.ics"/g) ?? []).length, 1);
+  t.regex(TEMPLATE, /<div data-tab="caducidades" hidden>[\s\S]*?<a class="cal-link" href="vencimientos\.ics"[^>]*>📅 Calendario de vencimientos<\/a>/);
+  t.is((TEMPLATE.match(/href="vencimientos\.ics"/g) ?? []).length, 2); // cabecera + Caducidades
   t.regex(TEMPLATE, /<a href="aperturas\.ics" title="Calendario completo[^"]*">Calendario de Contratación<\/a> \(/);
 });
 
