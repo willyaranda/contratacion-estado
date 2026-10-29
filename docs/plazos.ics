@@ -6,6 +6,84 @@ METHOD:PUBLISH
 X-WR-CALNAME:Contratación Aranda de Duero · Plazos de licitaciones
 X-WR-TIMEZONE:Europe/Madrid
 BEGIN:VEVENT
+UID:l-20586273-pub@contratacion-estado
+DTSTAMP:20261029T121049Z
+LAST-MODIFIED:20261029T121049Z
+SEQUENCE:1793275849
+DTSTART;VALUE=DATE:20260929
+DTEND;VALUE=DATE:20260930
+SUMMARY:PUB: Suministro de energía a varias dependencias municipales a tra
+ vés de la red de calor de Aranda de Duero
+DESCRIPTION:Suministro de energía a varias dependencias municipales a trav
+ és de la red de calor de Aranda de Duero\nExpediente: ABR/SUMIN/202600004
+ 2\nPublicada: 2026-09-29\nFin del plazo de ofertas: 2026-10-28 23:59\nhttp
+ s://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl
+ =BEtE8Mxlvfxq1DdmE7eaXg%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=BEtE8Mxlvfxq1DdmE7eaXg%3D%3D
+END:VEVENT
+BEGIN:VEVENT
+UID:l-20586273-ult@contratacion-estado
+DTSTAMP:20261029T121049Z
+LAST-MODIFIED:20261029T121049Z
+SEQUENCE:1793275849
+DTSTART;VALUE=DATE:20261028
+DTEND;VALUE=DATE:20261029
+SUMMARY:ULT. DÍA: Suministro de energía a varias dependencias municipales
+  a través de la red de calor de Aranda de Duero
+DESCRIPTION:Suministro de energía a varias dependencias municipales a trav
+ és de la red de calor de Aranda de Duero\nExpediente: ABR/SUMIN/202600004
+ 2\nPublicada: 2026-09-29\nFin del plazo de ofertas: 2026-10-28 23:59\nhttp
+ s://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl
+ =BEtE8Mxlvfxq1DdmE7eaXg%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=BEtE8Mxlvfxq1DdmE7eaXg%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ULT. DÍA: Suministro de energía a varias dependencias municip
+ ales a través de la red de calor de Aranda de Duero
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:l-20416971-pub@contratacion-estado
+DTSTAMP:20261029T120143Z
+LAST-MODIFIED:20261029T120143Z
+SEQUENCE:1793275303
+DTSTART;VALUE=DATE:20260911
+DTEND;VALUE=DATE:20260912
+SUMMARY:PUB: Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Du
+ ero
+DESCRIPTION:Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Due
+ ro\nExpediente: ABR/SERV/2026000038\nPublicada: 2026-09-11\nFin del plazo 
+ de ofertas: 2026-10-13 23:59\nhttps://contrataciondelestado.es/wps/poc?uri
+ =deeplink:detalle_licitacion&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
+END:VEVENT
+BEGIN:VEVENT
+UID:l-20416971-ult@contratacion-estado
+DTSTAMP:20261029T120143Z
+LAST-MODIFIED:20261029T120143Z
+SEQUENCE:1793275303
+DTSTART;VALUE=DATE:20261013
+DTEND;VALUE=DATE:20261014
+SUMMARY:ULT. DÍA: Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda
+  de Duero
+DESCRIPTION:Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Due
+ ro\nExpediente: ABR/SERV/2026000038\nPublicada: 2026-09-11\nFin del plazo 
+ de ofertas: 2026-10-13 23:59\nhttps://contrataciondelestado.es/wps/poc?uri
+ =deeplink:detalle_licitacion&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:ULT. DÍA: Servicio de Ayuda a Domicilio del Ayuntamiento de Ar
+ anda de Duero
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:l-20670799-pub@contratacion-estado
 DTSTAMP:20261028T125937Z
 LAST-MODIFIED:20261028T125937Z
@@ -102,44 +180,6 @@ DESCRIPTION:ULT. DÍA: Servicio de transporte-desplazamiento en autobús\,
  alojamiento y manutención para el intercambio escolar con la ciudad herma
  nada de Romorantin-Lanthenay (Francia) de los alumnos de los Institutos de
   Educación Secundaria de Aranda de Duero. Año 2026.
-TRIGGER:-PT15H
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20416971-pub@contratacion-estado
-DTSTAMP:20261028T114039Z
-LAST-MODIFIED:20261028T114039Z
-SEQUENCE:1793187639
-DTSTART;VALUE=DATE:20260911
-DTEND;VALUE=DATE:20260912
-SUMMARY:PUB: Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Du
- ero
-DESCRIPTION:Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Due
- ro\nExpediente: ABR/SERV/2026000038\nPublicada: 2026-09-11\nFin del plazo 
- de ofertas: 2026-10-13 23:59\nhttps://contrataciondelestado.es/wps/poc?uri
- =deeplink:detalle_licitacion&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20416971-ult@contratacion-estado
-DTSTAMP:20261028T114039Z
-LAST-MODIFIED:20261028T114039Z
-SEQUENCE:1793187639
-DTSTART;VALUE=DATE:20261013
-DTEND;VALUE=DATE:20261014
-SUMMARY:ULT. DÍA: Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda
-  de Duero
-DESCRIPTION:Servicio de Ayuda a Domicilio del Ayuntamiento de Aranda de Due
- ro\nExpediente: ABR/SERV/2026000038\nPublicada: 2026-09-11\nFin del plazo 
- de ofertas: 2026-10-13 23:59\nhttps://contrataciondelestado.es/wps/poc?uri
- =deeplink:detalle_licitacion&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=3U9TsquDg3msNfRW6APEDw%3D%3D
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:ULT. DÍA: Servicio de Ayuda a Domicilio del Ayuntamiento de Ar
- anda de Duero
 TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
@@ -640,46 +680,6 @@ BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:ULT. DÍA: Contrato de mantenimiento y certificación de los me
  didores de cloro en continuo del Ayuntamiento de Aranda de Duero.
-TRIGGER:-PT15H
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20586273-pub@contratacion-estado
-DTSTAMP:20260929T075411Z
-LAST-MODIFIED:20260929T075411Z
-SEQUENCE:1790668451
-DTSTART;VALUE=DATE:20260929
-DTEND;VALUE=DATE:20260930
-SUMMARY:PUB: Suministro de energía a varias dependencias municipales a tra
- vés de la red de calor de Aranda de Duero
-DESCRIPTION:Suministro de energía a varias dependencias municipales a trav
- és de la red de calor de Aranda de Duero\nExpediente: ABR/SUMIN/202600004
- 2\nPublicada: 2026-09-29\nFin del plazo de ofertas: 2026-10-28 23:59\nhttp
- s://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl
- =BEtE8Mxlvfxq1DdmE7eaXg%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=BEtE8Mxlvfxq1DdmE7eaXg%3D%3D
-END:VEVENT
-BEGIN:VEVENT
-UID:l-20586273-ult@contratacion-estado
-DTSTAMP:20260929T075411Z
-LAST-MODIFIED:20260929T075411Z
-SEQUENCE:1790668451
-DTSTART;VALUE=DATE:20261028
-DTEND;VALUE=DATE:20261029
-SUMMARY:ULT. DÍA: Suministro de energía a varias dependencias municipales
-  a través de la red de calor de Aranda de Duero
-DESCRIPTION:Suministro de energía a varias dependencias municipales a trav
- és de la red de calor de Aranda de Duero\nExpediente: ABR/SUMIN/202600004
- 2\nPublicada: 2026-09-29\nFin del plazo de ofertas: 2026-10-28 23:59\nhttp
- s://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl
- =BEtE8Mxlvfxq1DdmE7eaXg%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=BEtE8Mxlvfxq1DdmE7eaXg%3D%3D
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:ULT. DÍA: Suministro de energía a varias dependencias municip
- ales a través de la red de calor de Aranda de Duero
 TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
