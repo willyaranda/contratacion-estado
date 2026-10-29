@@ -1,0 +1,28 @@
+test/build.test.js
+  s_506974bef192f4::t_4664d3ee815cf1 360,529-530
+transparencia/template.html
+  s_506974bef192f4::t_4ad53370b0d95e 684
+  s_506974bef192f4::t_4fd700621506a0 529-543
+  s_506974bef192f4::t_243a0cd94ee05f 628
+  s_506974bef192f4::t_27b054c93bfbdd 1168
+  s_506974bef192f4::t_12401f03d3db0c 1763-1811
+  s_506974bef192f4::t_5a98de4e85fe71 1183
+docs/index.html
+  s_506974bef192f4::t_08c296939d40cb 541-555,640,696,1180,1195,1775-1823
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "be76c9cef45997cca85b369e84f49763a9ee75e7",
+  "prompts": {},
+  "sessions": {
+    "s_506974bef192f4": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "40dc81e0-fedd-4543-a6a1-7c52c2ce7e44",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Guillermo López Leal <guillermo.lopezleal@vonage.com>"
+    }
+  }
+}
