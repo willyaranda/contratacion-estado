@@ -544,6 +544,7 @@ details.mesacal summary:focus-visible,details.mesacal .menu a:focus-visible,.mes
     <section class="panel">
       <h2>Fin previsto de los contratos</h2>
       <div class="filters" style="margin-bottom:12px">
+        <div class="search"><label for="cad-q">Texto libre: objeto del contrato, contratista, NIF o nº de expediente</label><input id="cad-q" type="search" placeholder="Ej.: limpieza viaria, B09013335, 322/15…" autocomplete="off"></div>
         <div><label for="cad-h">Vencimiento</label><select id="cad-h"></select></div>
         <div><label for="cad-k">Clase</label><select id="cad-k"></select></div>
       </div>
@@ -1782,15 +1783,18 @@ function endOf(r) {
   return { date: d.toISOString().slice(0, 10), estimated: true };
 }
 const CAD_H = [["next12", "Próximos 12 meses"], ["next3", "Próximos 3 meses"], ["next6", "Próximos 6 meses"], ["next24", "Próximos 24 meses"], ["past", "Ya vencidos"], ["all", "Todos"]];
-const cadState = { h: "next12", k: "" };
+const cadState = { h: "next12", k: "", q: "" };
 const addMonthsStr = (n) => { const d = new Date(`${TODAY}T00:00:00Z`); d.setUTCMonth(d.getUTCMonth() + n); return d.toISOString().slice(0, 10); };
 fillSelect($("cad-h"), CAD_H);
 fillSelect($("cad-k"), Object.entries(KIND), "Todas");
 for (const [id, key] of [["cad-h", "h"], ["cad-k", "k"]]) $(id).addEventListener("change", (e) => { cadState[key] = e.target.value; tbl.cad.page = 0; render(); });
+let cadTimer;
+$("cad-q").addEventListener("input", (e) => { cadState.q = e.target.value; tbl.cad.page = 0; clearTimeout(cadTimer); cadTimer = setTimeout(render, 150); });
 function renderCad() {
   $("cad-h").value = cadState.h; $("cad-k").value = cadState.k;
   const all = R.filter((r) => r.hasAward && !VOID_OUTCOMES.includes(r.outcome)).map((r) => ({ ...r, end: endOf(r) })).filter((r) => r.end);
-  const inK = all.filter((r) => !cadState.k || r.kind === cadState.k);
+  const terms = norm(cadState.q).split(/\s+/).filter(Boolean);
+  const inK = all.filter((r) => (!cadState.k || r.kind === cadState.k) && terms.every((t) => r.hay.includes(t)));
   const h = cadState.h;
   const rows = inK.filter((r) => {
     const e = r.end.date;
