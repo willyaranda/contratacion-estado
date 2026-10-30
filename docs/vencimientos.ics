@@ -102,6 +102,30 @@ TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
+UID:m-20812250-fin@contratacion-estado
+DTSTAMP:20261029T083734Z
+LAST-MODIFIED:20261029T083734Z
+SEQUENCE:1793263054
+DTSTART;VALUE=DATE:20261122
+DTEND;VALUE=DATE:20261123
+SUMMARY:AVISO FIN: Suministro e instalación de licencias de software técn
+ ico ZWCAD y PRESTO 2026
+DESCRIPTION:Suministro e instalación de licencias de software técnico ZWC
+ AD y PRESTO 2026\nExpediente: MEN/SUMIN/2026000115\nPublicada: 2026-10-29\
+ nAdjudicada el 2026-10-22 a MPS SOFTWARE TECNICO\nFin previsto del contrat
+ o: 2026-11-22 (estimado: adjudicación + duración)\nhttps://contrataciond
+ elestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=ccKLq5N3lXWIzo3L
+ HNPGcQ%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=ccKLq5N3lXWIzo3LHNPGcQ%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AVISO FIN: Suministro e instalación de licencias de software t
+ écnico ZWCAD y PRESTO 2026
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:m-20775036-fin@contratacion-estado
 DTSTAMP:20261023T063105Z
 LAST-MODIFIED:20261023T063105Z
