@@ -6,6 +6,32 @@ METHOD:PUBLISH
 X-WR-CALNAME:Contratación Aranda de Duero · Vencimientos de contratos
 X-WR-TIMEZONE:Europe/Madrid
 BEGIN:VEVENT
+UID:m-20820608-fin@contratacion-estado
+DTSTAMP:20261030T122124Z
+LAST-MODIFIED:20261030T122124Z
+SEQUENCE:1793362884
+DTSTART;VALUE=DATE:20261130
+DTEND;VALUE=DATE:20261201
+SUMMARY:AVISO FIN: Contrato menor para el acondicionamiento\, pintado y vin
+ ilado de los elementos informativos MUPI's del Polígono Industrial Allend
+ eduero
+DESCRIPTION:Contrato menor para el acondicionamiento\, pintado y vinilado d
+ e los elementos informativos MUPI's del Polígono Industrial Allendeduero\
+ nExpediente: MEN/SERV/2026000119\nPublicada: 2026-10-30\nAdjudicada el 202
+ 6-10-29 a ROTULOS ARANDA SL\nFin previsto del contrato: 2026-11-30\nhttps:
+ //contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=X
+ nPd53WuJuQzjChw4z%2FXvw%3D%3D
+URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
+ n&idEvl=XnPd53WuJuQzjChw4z%2FXvw%3D%3D
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:AVISO FIN: Contrato menor para el acondicionamiento\, pintado y
+  vinilado de los elementos informativos MUPI's del Polígono Industrial Al
+ lendeduero
+TRIGGER:-PT15H
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
 UID:l-20287240-fin@contratacion-estado
 DTSTAMP:20261028T124654Z
 LAST-MODIFIED:20261028T124654Z
@@ -1242,30 +1268,6 @@ URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
 BEGIN:VALARM
 ACTION:DISPLAY
 DESCRIPTION:AVISO FIN: Procedimiento de cita previa
-TRIGGER:-PT15H
-END:VALARM
-END:VEVENT
-BEGIN:VEVENT
-UID:m-19720958-fin@contratacion-estado
-DTSTAMP:20260520T061901Z
-LAST-MODIFIED:20260520T061901Z
-SEQUENCE:1779257941
-DTSTART;VALUE=DATE:20260831
-DTEND;VALUE=DATE:20260901
-SUMMARY:AVISO FIN: Transporte de personas en autobús a las piscinas de La 
- Calabaza desde Aranda de Duero\, los meses de Julio y Agosto de 2026
-DESCRIPTION:Transporte de personas en autobús a las piscinas de La Calabaz
- a desde Aranda de Duero\, los meses de Julio y Agosto de 2026\nExpediente:
-  MEN/SERV/2026000032\nPublicada: 2026-05-20\nAdjudicada el 2026-05-13 a AU
- TOCARES VICTOR BAYO SL\nFin previsto del contrato: 2026-08-31\nhttps://con
- trataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacion&idEvl=cvEyY%
- 2BFSSDI%2Bk2oCbDosIw%3D%3D
-URL:https://contrataciondelestado.es/wps/poc?uri=deeplink:detalle_licitacio
- n&idEvl=cvEyY%2BFSSDI%2Bk2oCbDosIw%3D%3D
-BEGIN:VALARM
-ACTION:DISPLAY
-DESCRIPTION:AVISO FIN: Transporte de personas en autobús a las piscinas de
-  La Calabaza desde Aranda de Duero\, los meses de Julio y Agosto de 2026
 TRIGGER:-PT15H
 END:VALARM
 END:VEVENT
